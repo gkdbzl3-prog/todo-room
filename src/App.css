@@ -467,49 +467,49 @@ input:focus {
   color: #a5b4fc;
 }
 
-/* ─── 토스트 ─── */
-.toast-stack {
-  position: fixed;
-  top: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 9999;
-  width: min(92vw, 380px);
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  pointer-events: none;
+/* ─── 완수 로그 (멤버 패널 내) ─── */
+.noti-log {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.toast {
-  background: rgba(15, 10, 30, 0.92);
-  color: white;
-  padding: 11px 16px;
-  border-radius: 14px;
-  text-align: center;
+.noti-log-title {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+  opacity: 0.45;
+  margin-bottom: 8px;
+}
+
+.noti-log-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 6px 0;
+  font-size: 12px;
+  opacity: 0.75;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  animation: logFadeIn 0.3s ease;
+}
+
+.noti-log-item:last-child {
+  border-bottom: none;
+}
+
+.noti-log-icon {
   font-size: 13px;
-  border: 1px solid rgba(159, 92, 255, 0.3);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-  animation: toastIn 0.25s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
+  flex: 0 0 auto;
+  line-height: 1.3;
 }
 
-.toast-icon {
-  font-size: 16px;
+.noti-log-msg {
+  line-height: 1.4;
 }
 
-@keyframes toastIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px) scale(0.96);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+@keyframes logFadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 0.75; transform: translateY(0); }
 }
 
 /* ─── 멤버 카드 ─── */

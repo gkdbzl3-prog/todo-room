@@ -435,8 +435,6 @@ export default function App() {
   /* ── 메인 렌더 ── */
   return (
     <main className="room">
-      <ToastStack toasts={toasts} />
-
       <header className="room-header">
         <h1>TO-DO ROOM</h1>
         <p>{todayKey()}</p>
@@ -477,6 +475,19 @@ export default function App() {
                 <MemberCard key={m.id} member={m} />
               ))}
             </div>
+
+            {/* 완수 로그 */}
+            {toasts.length > 0 && (
+              <div className="noti-log">
+                <div className="noti-log-title">ACTIVITY</div>
+                {toasts.map((toast) => (
+                  <div key={toast.id} className="noti-log-item">
+                    <span className="noti-log-icon">🎉</span>
+                    <span className="noti-log-msg">{toast.message}</span>
+                  </div>
+                ))}
+              </div>
+            )}
           </section>
 
           {/* 내 투두 */}
@@ -626,21 +637,6 @@ function TodoItem({ todo, onToggle, onStart, onDelete }) {
       <button className="todo-delete" onClick={() => onDelete(todo.id)}>
         ×
       </button>
-    </div>
-  );
-}
-
-/* ─────────────── ToastStack ─────────────── */
-function ToastStack({ toasts }) {
-  if (!toasts.length) return null;
-  return (
-    <div className="toast-stack">
-      {toasts.map((toast) => (
-        <div key={toast.id} className="toast">
-          <span className="toast-icon">🎉</span>
-          {toast.message}
-        </div>
-      ))}
     </div>
   );
 }
