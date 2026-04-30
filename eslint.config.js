@@ -24,7 +24,7 @@ export default defineConfig([
 
       // useEffect dependency 배열 뭐라 하는 거 끄기
       'react-hooks/exhaustive-deps': 'off',
-
+      'react-hooks/refs': 'off',
       // Vite React Refresh 관련 잔소리 끄기
       'react-refresh/only-export-components': 'off',
     },
