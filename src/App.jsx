@@ -63,7 +63,8 @@ const historyDatesCol = () => "historyDates";
 
 /* ─────────────────────────────── App ─────────────────────────────── */
 export default function App() {
-  const uid = useRef(getUid()).current;
+  const uidRef = useRef(getUid());
+  const uid = uidRef.current;
 
   const [nickname, setNickname] = useState(getSavedNickname);
   const [avatar, setAvatar] = useState(getSavedAvatar);

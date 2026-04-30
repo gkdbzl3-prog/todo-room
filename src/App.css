@@ -35,7 +35,6 @@ body {
   min-height: 80dvh;
   gap: 16px;
   text-align: center;
-  background: #ef4444
 }
 
 .nickname-setup h1 {
@@ -117,13 +116,14 @@ body {
   font-size: 18px !important;
   padding: 16px !important;
   border-radius: 20px !important;
+  background: #f87171;
 }
 
 .btn-primary {
   border: none;
   border-radius: 20px;
   padding: 14px 40px;
-  background: linear-gradient(135deg, #9f5cff, #6d28d9);
+  background: linear-gradient(135deg, #ff825c, #db3f24);
   color: white;
   font-size: 16px;
   font-weight: 800;
