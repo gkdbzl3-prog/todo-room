@@ -15,13 +15,33 @@ import {
 import "./App.css";
 
 /* ── 유틸 ── */
-const todayKey = () => new Date().toISOString().slice(0, 10);
+// 새벽 2시 기준: 2시 이전이면 전날로 취급
+function getEffectiveDate() {
+  const now = new Date();
+  const adjusted = new Date(now);
+  if (now.getHours() < 2) {
+    adjusted.setDate(adjusted.getDate() - 1);
+  }
+  return adjusted;
+}
+
+const todayKey = () => getEffectiveDate().toISOString().slice(0, 10);
 
 function weekKey() {
-  const now = new Date();
-  const d = new Date(now);
-  d.setDate(d.getDate() - d.getDay() + 1); // 월요일 기준
+  const d = getEffectiveDate();
+  const day = d.getDay();
+  // 월요일 기준 (일요일=0 → 전 주로)
+  d.setDate(d.getDate() - ((day + 6) % 7));
   return d.toISOString().slice(0, 10);
+}
+
+function nextMondayLabel() {
+  const d = getEffectiveDate();
+  const day = d.getDay();
+  const daysUntilMon = (8 - day) % 7 || 7;
+  const next = new Date(d);
+  next.setDate(next.getDate() + daysUntilMon);
+  return `${next.getMonth() + 1}/${next.getDate()}(월)`;
 }
 
 function getUid() {
@@ -114,8 +134,7 @@ export default function App() {
   const [historyData, setHistoryData] = useState(null);
   const [selectedDate, setSelectedDate] = useState(null);
 
-  // 위클리 토글
-  const [showWeekly, setShowWeekly] = useState(false);
+  // (위클리 항상 표시)
 
   /* ── 닉네임 확정 ── */
   const confirmNickname = () => {
@@ -534,6 +553,7 @@ export default function App() {
                   {dailyDoneCount}/{myDaily.length}
                 </span>
               </h2>
+              <p className="reset-notice">매일 새벽 2시에 초기화됩니다</p>
 
               {myDaily.length === 0 ? (
                 <div className="empty">아직 투두가 없어요.</div>
@@ -552,53 +572,46 @@ export default function App() {
               )}
             </div>
 
-            {/* 위클리 투두 토글 */}
-            <button
-              className="weekly-toggle"
-              onClick={() => setShowWeekly(!showWeekly)}
-            >
-              {showWeekly ? "▲ 주간 TO-DO 접기" : "▼ 주간 TO-DO 펼치기"}
-              <span className="weekly-period">({weekKey()} ~)</span>
-            </button>
+            {/* 위클리 투두 (항상 표시) */}
+            <div className="todo-panel weekly">
+              <h2>
+                주간 TO-DO{" "}
+                <span className="count-badge">
+                  {myWeekly.filter((t) => t.done).length}/{myWeekly.length}
+                </span>
+              </h2>
+              <p className="reset-notice">
+                매주 월요일 새벽 2시에 초기화됩니다 · 다음 초기화: {nextMondayLabel()}
+              </p>
 
-            {showWeekly && (
-              <div className="todo-panel weekly">
-                <h2>
-                  주간 TO-DO{" "}
-                  <span className="count-badge">
-                    {myWeekly.filter((t) => t.done).length}/{myWeekly.length}
-                  </span>
-                </h2>
-
-                <div className="todo-input-row">
-                  <input
-                    value={weeklyTodoText}
-                    onChange={(e) => setWeeklyTodoText(e.target.value)}
-                    onKeyDown={(e) => e.key === "Enter" && addWeekly()}
-                    placeholder="이번 주 할일 입력"
-                  />
-                  <button className="btn-add" onClick={addWeekly}>
-                    추가
-                  </button>
-                </div>
-
-                {myWeekly.length === 0 ? (
-                  <div className="empty">주간 투두가 없어요.</div>
-                ) : (
-                  <div className="todo-list">
-                    {myWeekly.map((todo) => (
-                      <TodoItem
-                        key={todo.id}
-                        todo={todo}
-                        onToggle={toggleWeekly}
-                        onStart={startWeekly}
-                        onDelete={deleteWeekly}
-                      />
-                    ))}
-                  </div>
-                )}
+              <div className="todo-input-row">
+                <input
+                  value={weeklyTodoText}
+                  onChange={(e) => setWeeklyTodoText(e.target.value)}
+                  onKeyDown={(e) => e.key === "Enter" && addWeekly()}
+                  placeholder="이번 주 할일 입력"
+                />
+                <button className="btn-add" onClick={addWeekly}>
+                  추가
+                </button>
               </div>
-            )}
+
+              {myWeekly.length === 0 ? (
+                <div className="empty">주간 투두가 없어요.</div>
+              ) : (
+                <div className="todo-list">
+                  {myWeekly.map((todo) => (
+                    <TodoItem
+                      key={todo.id}
+                      todo={todo}
+                      onToggle={toggleWeekly}
+                      onStart={startWeekly}
+                      onDelete={deleteWeekly}
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
           </section>
         </div>
       ) : (
@@ -702,6 +715,12 @@ function MiniTodoList({ todos }) {
           <span className={todo.done ? "mini-text done" : "mini-text"}>
             {todo.text}
           </span>
+          {!todo.done && todo.started && (
+            <span className="mini-status-doing">진행중</span>
+          )}
+          {todo.done && (
+            <span className="mini-status-done">완료</span>
+          )}
         </div>
       ))}
     </div>
