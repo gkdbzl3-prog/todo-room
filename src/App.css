@@ -1,0 +1,779 @@
+/* ─── 리셋 & 기본 ─── */
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans KR", sans-serif;
+  color: #fff;
+  background-image: url("/bg.jpg");
+  background: #fff;
+  overscroll-behavior: none;
+}
+
+/* ─── 루트 ─── */
+.room {
+  min-height: 100dvh;
+  padding: 20px 16px 40px;
+  position: relative;
+  overflow-x: hidden;
+  background-image: url("/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overscroll-behavior: none;
+}
+
+/* ─── 닉네임 설정 화면 ─── */
+.nickname-setup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80dvh;
+  gap: 16px;
+  text-align: center;
+  background: #ef4444
+}
+
+.nickname-setup h1 {
+  font-size: 32px;
+  letter-spacing: 4px;
+  margin: 0;
+  background: linear-gradient(135deg, #ffb39b,
+    #ffe7de);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.setup-desc {
+  opacity: 0.7;
+  margin: 0;
+}
+
+/* ─── 아바타 선택 ─── */
+.avatar-preview {
+  font-size: 56px;
+  line-height: 1;
+  margin: 4px 0;
+  animation: avatarBounce 0.3s ease;
+}
+
+@keyframes avatarBounce {
+  0% { transform: scale(0.8); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.avatar-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 6px;
+  max-width: 320px;
+  margin-bottom: 4px;
+}
+
+.avatar-option {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+  padding: 0;
+}
+
+.avatar-option.selected {
+  border-color: rgba(159, 92, 255, 0.7);
+  background: rgba(159, 92, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.avatar-option:active {
+  transform: scale(0.9);
+}
+
+.my-avatar-header {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.me-avatar-inline {
+  font-size: 22px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.nickname-input {
+  max-width: 260px;
+  text-align: center;
+  font-size: 18px !important;
+  padding: 16px !important;
+  border-radius: 20px !important;
+}
+
+.btn-primary {
+  border: none;
+  border-radius: 20px;
+  padding: 14px 40px;
+  background: linear-gradient(135deg, #9f5cff, #6d28d9);
+  color: white;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(109, 40, 217, 0.4);
+  transition: transform 0.1s;
+}
+
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+/* ─── 헤더 ─── */
+.room-header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.room-header h1 {
+  margin: 0;
+  font-size: 26px;
+  letter-spacing: 3px;
+  background: linear-gradient(135deg, #c084fc, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.room-header p {
+  margin: 4px 0 0;
+  opacity: 0.6;
+  font-size: 13px;
+}
+
+.my-info {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.my-nickname {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.my-badge {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(159, 92, 255, 0.3), rgba(109, 40, 217, 0.3));
+  border: 1px solid rgba(159, 92, 255, 0.3);
+}
+
+/* ─── 탭 ─── */
+.tab-bar {
+  display: flex;
+  gap: 6px;
+  max-width: 600px;
+  margin: 0 auto 16px;
+}
+
+.tab-btn {
+  flex: 1;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 76, 44, 0.06);
+  color: rgba(255, 255, 255, 0.5);
+  border-radius: 14px;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab-btn.active {
+  background: linear-gradient(135deg, rgba(253, 11, 11, 0.308), rgba(109, 40, 217, 0.25));
+  border-color: rgba(159, 92, 255, 0.4);
+  color: #fff;
+}
+
+/* ─── 레이아웃 ─── */
+.room-layout {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ─── 공통 카드 ─── */
+.member-panel,
+.me-card,
+.todo-panel,
+.history-panel {
+  background: rgba(249, 131, 108, 0.521);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 18px;
+}
+
+.member-panel h2,
+.todo-panel h2 {
+  margin: 0 0 14px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  opacity: 0.85;
+}
+
+.my-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ─── 내 카드 ─── */
+.me-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.me-label {
+  font-size: 11px;
+  opacity: 0.5;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.btn-small {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  padding: 4px 10px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.me-nickname-display {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+/* ─── 인풋 ─── */
+input {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-radius: 14px;
+  padding: 12px 14px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+input:focus {
+  border-color: rgba(159, 92, 255, 0.5);
+}
+
+.todo-input-row {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-add {
+  flex: 0 0 auto;
+  border: none;
+  border-radius: 14px;
+  padding: 0 16px;
+  background: linear-gradient(135deg, #d89577,
+    #d92828);
+  color: white;
+  font-weight: 800;
+  font-size: 13px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(109, 40, 217, 0.3);
+  transition: transform 0.1s;
+}
+
+.btn-add:active {
+  transform: scale(0.95);
+}
+
+/* ─── 카운트 뱃지 ─── */
+.count-badge {
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  font-weight: 600;
+  vertical-align: middle;
+  margin-left: 6px;
+}
+
+/* ─── 투두 아이템 ─── */
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.todo-item:last-child {
+  border-bottom: none;
+}
+
+.todo-check {
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  transition: all 0.15s;
+}
+
+.todo-item.done .todo-check {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  border-color: #22c55e;
+}
+
+.todo-start {
+  border: none;
+  border-radius: 999px;
+  padding: 4px 10px;
+  background: rgba(239, 68, 68, 0.18);
+  color: #f87171;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  flex: 0 0 auto;
+  transition: background 0.15s;
+}
+
+.todo-start:active {
+  background: rgba(239, 68, 68, 0.3);
+}
+
+.doing-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #f87171;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(239, 68, 68, 0.12);
+  flex: 0 0 auto;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.todo-text {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+.todo-item.done .todo-text {
+  text-decoration: line-through;
+  opacity: 0.45;
+}
+
+.todo-delete {
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 2px 6px;
+  flex: 0 0 auto;
+  line-height: 1;
+}
+
+.todo-delete:active {
+  color: #f87171;
+}
+
+.empty {
+  opacity: 0.5;
+  font-size: 13px;
+  padding: 8px 0;
+}
+
+/* ─── 위클리 토글 ─── */
+.weekly-toggle {
+  width: 100%;
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.6);
+  border-radius: 16px;
+  padding: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.weekly-toggle:active {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.weekly-period {
+  margin-left: 6px;
+  font-size: 11px;
+  opacity: 0.6;
+  font-weight: 400;
+}
+
+.todo-panel.weekly {
+  border-color: rgba(129, 140, 248, 0.25);
+}
+
+.todo-panel.weekly h2 {
+  color: #a5b4fc;
+}
+
+/* ─── 토스트 ─── */
+.toast-stack {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  width: min(92vw, 380px);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  pointer-events: none;
+}
+
+.toast {
+  background: rgba(15, 10, 30, 0.92);
+  color: white;
+  padding: 11px 16px;
+  border-radius: 14px;
+  text-align: center;
+  font-size: 13px;
+  border: 1px solid rgba(159, 92, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  animation: toastIn 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.toast-icon {
+  font-size: 16px;
+}
+
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ─── 멤버 카드 ─── */
+.member-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.member-card {
+  padding: 14px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: border-color 0.2s;
+}
+
+.member-card.is-me {
+  border-color: rgba(159, 92, 255, 0.3);
+  background: rgba(159, 92, 255, 0.08);
+}
+
+.member-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.member-name-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.member-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex: 0 0 auto;
+  line-height: 1;
+}
+
+.member-avatar.small {
+  width: 28px;
+  height: 28px;
+  font-size: 16px;
+  border-radius: 9px;
+}
+
+.me-tag {
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: rgba(159, 92, 255, 0.3);
+  margin-left: 5px;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.badge {
+  display: block;
+  margin-top: 2px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.member-count {
+  font-weight: 800;
+  font-size: 15px;
+  opacity: 0.8;
+  flex: 0 0 auto;
+}
+
+.member-todo-title {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+  opacity: 0.45;
+}
+
+.member-mini-todos {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mini-todo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  line-height: 1.3;
+  min-width: 0;
+}
+
+.todo-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+}
+
+.todo-dot.ready {
+  background: transparent;
+}
+
+.todo-dot.doing {
+  background: #ef4444;
+  border-color: #ef4444;
+  box-shadow: 0 0 6px rgba(239, 68, 68, 0.5);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.todo-dot.done {
+  background: #22c55e;
+  border-color: #22c55e;
+  box-shadow: 0 0 6px rgba(34, 197, 94, 0.5);
+}
+
+.mini-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.mini-text.done {
+  text-decoration: line-through;
+  opacity: 0.4;
+}
+
+.mini-empty {
+  font-size: 11px;
+  opacity: 0.4;
+}
+
+/* ─── 히스토리 ─── */
+.history-panel {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.history-panel h2 {
+  margin: 0 0 14px;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.history-dates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.history-date-btn {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  padding: 8px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.history-date-btn.active {
+  background: linear-gradient(135deg, rgba(159, 92, 255, 0.25), rgba(109, 40, 217, 0.25));
+  border-color: rgba(159, 92, 255, 0.4);
+  color: #fff;
+}
+
+.history-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.history-content h3 {
+  margin: 0;
+  font-size: 15px;
+  opacity: 0.8;
+}
+
+.history-member {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 14px;
+}
+
+.history-member-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.history-count {
+  margin-left: auto;
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+.history-todos {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.history-todo {
+  font-size: 13px;
+  padding: 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.history-todo.done {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.history-check {
+  font-size: 12px;
+  width: 18px;
+  text-align: center;
+  flex: 0 0 auto;
+}
+
+.history-todo.done .history-check {
+  color: #22c55e;
+}
+
+/* ─── 모바일 최적화 ─── */
+@media (max-width: 480px) {
+  .room {
+    padding: 14px 12px 36px;
+  }
+
+  .room-header h1 {
+    font-size: 22px;
+  }
+
+  .member-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+  }
+}
+
+/* ─── safe area 지원 ─── */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .room {
+    padding-bottom: calc(40px + env(safe-area-inset-bottom));
+  }
+}
