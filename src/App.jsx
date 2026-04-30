@@ -64,6 +64,10 @@ const historyDatesCol = () => "historyDates";
 /* ─────────────────────────────── App ─────────────────────────────── */
 export default function App() {
   const uidRef = useRef(getUid());
+  const profileRef = useRef({
+    nickname: getSavedNickname(),
+    avatar: getSavedAvatar(),
+  });
   const uid = uidRef.current;
 
   const [nickname, setNickname] = useState(getSavedNickname);
@@ -119,7 +123,7 @@ export default function App() {
       // 날짜 기록
       setDoc(doc(db, historyDatesCol(), date), { date });
     },
-    [uid, nickname, nicknameConfirmed]
+    [uid, nickname, avatar, nicknameConfirmed]
   );
 
   const syncMyWeekly = useCallback(
@@ -133,7 +137,7 @@ export default function App() {
         updatedAt: serverTimestamp(),
       });
     },
-    [uid, nickname, nicknameConfirmed]
+    [uid, nickname, avatar, nicknameConfirmed]
   );
 
   /* ── 실시간 리스너 ── */
@@ -207,11 +211,19 @@ export default function App() {
     };
   }, [uid, nicknameConfirmed]);
 
-  /* ── 닉네임 변경 시 Firestore 업데이트 ── */
+  /* ── 프로필 변경 시 Firestore 업데이트 ── */
   useEffect(() => {
     if (!nicknameConfirmed) return;
+    const prevProfile = profileRef.current;
+    const profileChanged =
+      prevProfile.nickname !== nickname || prevProfile.avatar !== avatar;
+
+    if (!profileChanged) return;
+
+    profileRef.current = { nickname, avatar };
     syncMyDaily(myDaily);
-  }, [nickname]);
+    syncMyWeekly(myWeekly);
+  }, [nickname, avatar, nicknameConfirmed, myDaily, myWeekly, syncMyDaily, syncMyWeekly]);
 
   /* ── 투두 추가 ── */
   const addDaily = () => {
