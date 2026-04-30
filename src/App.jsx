@@ -314,27 +314,23 @@ export default function App() {
     setWeeklyTodoText("");
   };
 
-  /* ── 투두 토글/시작 ── */
-  const toggleDaily = (id) => {
+  /* ── 투두 3단계 순환: 진행 전 → 진행중 → 완료 ── */
+  const cycleDaily = (id) => {
     const next = myDaily.map((t) => {
       if (t.id !== id) return t;
-      const nextDone = !t.done;
-      if (nextDone) {
+      // 진행 전 → 진행중
+      if (!t.started && !t.done) return { ...t, started: true };
+      // 진행중 → 완료
+      if (t.started && !t.done) {
         addDoc(collection(db, notiCol(todayKey())), {
           message: `${nickname}님이 '${t.text}'을(를) 완수하였습니다!`,
           createdAt: serverTimestamp(),
         });
+        return { ...t, done: true, completedAt: Date.now() };
       }
-      return { ...t, done: nextDone, completedAt: nextDone ? Date.now() : null };
+      // 완료 → 진행 전 (되돌리기)
+      return { ...t, started: false, done: false, completedAt: null };
     });
-    setMyDaily(next);
-    syncMyDaily(next);
-  };
-
-  const startDaily = (id) => {
-    const next = myDaily.map((t) =>
-      t.id === id ? { ...t, started: true } : t
-    );
     setMyDaily(next);
     syncMyDaily(next);
   };
@@ -345,26 +341,19 @@ export default function App() {
     syncMyDaily(next);
   };
 
-  const toggleWeekly = (id) => {
+  const cycleWeekly = (id) => {
     const next = myWeekly.map((t) => {
       if (t.id !== id) return t;
-      const nextDone = !t.done;
-      if (nextDone) {
+      if (!t.started && !t.done) return { ...t, started: true };
+      if (t.started && !t.done) {
         addDoc(collection(db, notiCol(todayKey())), {
           message: `${nickname}님이 '${t.text}'을(를) 완수하였습니다! (주간)`,
           createdAt: serverTimestamp(),
         });
+        return { ...t, done: true, completedAt: Date.now() };
       }
-      return { ...t, done: nextDone, completedAt: nextDone ? Date.now() : null };
+      return { ...t, started: false, done: false, completedAt: null };
     });
-    setMyWeekly(next);
-    syncMyWeekly(next);
-  };
-
-  const startWeekly = (id) => {
-    const next = myWeekly.map((t) =>
-      t.id === id ? { ...t, started: true } : t
-    );
     setMyWeekly(next);
     syncMyWeekly(next);
   };
@@ -563,8 +552,7 @@ export default function App() {
                     <TodoItem
                       key={todo.id}
                       todo={todo}
-                      onToggle={toggleDaily}
-                      onStart={startDaily}
+                      onCycle={cycleDaily}
                       onDelete={deleteDaily}
                     />
                   ))}
@@ -604,8 +592,7 @@ export default function App() {
                     <TodoItem
                       key={todo.id}
                       todo={todo}
-                      onToggle={toggleWeekly}
-                      onStart={startWeekly}
+                      onCycle={cycleWeekly}
                       onDelete={deleteWeekly}
                     />
                   ))}
@@ -628,24 +615,28 @@ export default function App() {
 }
 
 /* ─────────────── TodoItem ─────────────── */
-function TodoItem({ todo, onToggle, onStart, onDelete }) {
+function TodoItem({ todo, onCycle, onDelete }) {
+  // 상태: 진행 전 → 진행중 → 완료
+  const status = todo.done ? "done" : todo.started ? "doing" : "ready";
+  const statusLabel = { ready: "진행 전", doing: "진행중", done: "완료" };
+
   return (
-    <div className={`todo-item ${todo.done ? "done" : ""}`}>
-      <button className="todo-check" onClick={() => onToggle(todo.id)}>
-        {todo.done ? "✓" : ""}
+    <div className={`todo-item ${status}`}>
+      <button
+        className={`todo-cycle-btn ${status}`}
+        onClick={() => onCycle(todo.id)}
+        title="상태 변경"
+      >
+        {status === "ready" && "○"}
+        {status === "doing" && "◐"}
+        {status === "done" && "✓"}
       </button>
 
-      {!todo.done && !todo.started && (
-        <button className="todo-start" onClick={() => onStart(todo.id)}>
-          진행
-        </button>
-      )}
-
-      {!todo.done && todo.started && (
-        <span className="todo-status doing-label">진행중</span>
-      )}
-
       <div className="todo-text">{todo.text}</div>
+
+      <span className={`todo-status-label ${status}`}>
+        {statusLabel[status]}
+      </span>
 
       <button className="todo-delete" onClick={() => onDelete(todo.id)}>
         ×
@@ -715,6 +706,9 @@ function MiniTodoList({ todos }) {
           <span className={todo.done ? "mini-text done" : "mini-text"}>
             {todo.text}
           </span>
+          {!todo.done && !todo.started && (
+            <span className="mini-status-ready">진행 전</span>
+          )}
           {!todo.done && todo.started && (
             <span className="mini-status-doing">진행중</span>
           )}
