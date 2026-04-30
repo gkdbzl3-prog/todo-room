@@ -418,7 +418,14 @@ export default function App() {
         weeklyTodos: w.todos || [],
         isMe: false,
       })),
-  ];
+  ].sort((a, b) => {
+    // 투두 있는 멤버 우선
+    const aTodos = (a.todos?.length || 0) + (a.weeklyTodos?.length || 0);
+    const bTodos = (b.todos?.length || 0) + (b.weeklyTodos?.length || 0);
+    if (aTodos > 0 && bTodos === 0) return -1;
+    if (aTodos === 0 && bTodos > 0) return 1;
+    return 0;
+  });
 
   /* ── 닉네임 미설정 화면 ── */
   if (!nicknameConfirmed) {
