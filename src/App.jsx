@@ -192,9 +192,17 @@ export default function App() {
     saveStoredTodos(weeklyStorageKey, myWeekly);
   }, [weeklyStorageKey, myWeekly]);
 
-  /* ── 앱 시작 시 모든 멤버 완료 항목 정리 ── */
+  /* ── 새벽 2시 넘겼을 때만 완료 항목 정리 ── */
   useEffect(() => {
     if (!nicknameConfirmed) return;
+    const now = new Date();
+    const lastClean = localStorage.getItem("todoRoom_lastClean");
+    const todayAt2 = new Date(now);
+    todayAt2.setHours(2, 0, 0, 0);
+    // 오늘 2시 이후이고, 마지막 정리가 2시 이전(혹은 처음)일 때만 실행
+    if (now < todayAt2) return;
+    if (lastClean && new Date(lastClean) >= todayAt2) return;
+
     const date = todayKey();
     getDocs(collection(db, dailyCol(date))).then((snap) => {
       snap.forEach((d) => {
@@ -208,6 +216,7 @@ export default function App() {
         }
       });
     });
+    localStorage.setItem("todoRoom_lastClean", now.toISOString());
   }, [nicknameConfirmed]);
 
   /* ── 실시간 리스너 ── */
