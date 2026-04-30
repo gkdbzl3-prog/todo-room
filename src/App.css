@@ -13,6 +13,8 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100dvh;
 }
 
 /* ─── 루트 ─── */
@@ -20,12 +22,6 @@ body {
   min-height: 100dvh;
   padding: 20px 16px 40px;
   position: relative;
-  overflow-x: hidden;
-  background-image: url("/bg.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  overscroll-behavior: none;
 }
 
 /* ─── 닉네임 설정 화면 ─── */
