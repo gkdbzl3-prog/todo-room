@@ -61,14 +61,12 @@ function getSavedAvatar() {
   return localStorage.getItem("todoRoom_avatar") || "";
 }
 
-function loadStoredTodos(key, filterDone = false) {
+function loadStoredTodos(key) {
   try {
     const raw = localStorage.getItem(key);
     if (!raw) return [];
     const parsed = JSON.parse(raw);
-    if (!Array.isArray(parsed)) return [];
-    // 새 날 시작 시 완료 항목 제거
-    return filterDone ? parsed.filter((t) => !t.done) : parsed;
+    return Array.isArray(parsed) ? parsed : [];
   } catch {
     return [];
   }
@@ -98,26 +96,6 @@ const weeklyCol = (wk) => `weekly/${wk}/users`;
 const notiCol = (date) => `daily/${date}/notifications`;
 const historyDatesCol = () => "historyDates";
 
-/* ── 앱 시작 시 지난 날짜 localStorage 정리 ── */
-function cleanOldStorage(uid) {
-  const today = todayKey();
-  const thisWeek = weekKey();
-  const keysToRemove = [];
-  for (let i = 0; i < localStorage.length; i++) {
-    const k = localStorage.key(i);
-    if (!k) continue;
-    // 오늘이 아닌 데일리 키 제거
-    if (k.startsWith(`todoRoom_daily_${uid}_`) && !k.endsWith(today)) {
-      keysToRemove.push(k);
-    }
-    // 이번 주가 아닌 위클리 키 제거
-    if (k.startsWith(`todoRoom_weekly_${uid}_`) && !k.endsWith(thisWeek)) {
-      keysToRemove.push(k);
-    }
-  }
-  keysToRemove.forEach((k) => localStorage.removeItem(k));
-}
-
 /* ─────────────────────────────── App ─────────────────────────────── */
 export default function App() {
   const uidRef = useRef(getUid());
@@ -128,10 +106,6 @@ export default function App() {
   const dayKeyRef = useRef(todayKey());
   const weekKeyRef = useRef(weekKey());
   const uid = uidRef.current;
-
-  // 지난 날짜 캐시 정리
-  useRef(cleanOldStorage(uid));
-
   const dailyStorageKey = `todoRoom_daily_${uid}_${dayKeyRef.current}`;
   const weeklyStorageKey = `todoRoom_weekly_${uid}_${weekKeyRef.current}`;
 
@@ -218,32 +192,23 @@ export default function App() {
     saveStoredTodos(weeklyStorageKey, myWeekly);
   }, [weeklyStorageKey, myWeekly]);
 
-  /* ── 앱 시작 시 완료 항목 정리 (새벽 2시 넘겼으면) ── */
+  /* ── 앱 시작 시 모든 멤버 완료 항목 정리 ── */
   useEffect(() => {
     if (!nicknameConfirmed) return;
-    const now = new Date();
-    const lastClean = localStorage.getItem("todoRoom_lastClean");
-    const todayAt2 = new Date(now);
-    todayAt2.setHours(2, 0, 0, 0);
-
-    // 마지막 정리가 오늘 2시 이전이고, 지금이 2시 이후면 정리 실행
-    const shouldClean = !lastClean || (new Date(lastClean) < todayAt2 && now >= todayAt2);
-
-    if (shouldClean) {
-      const date = todayKey();
-      getDocs(collection(db, dailyCol(date))).then((snap) => {
-        snap.forEach((d) => {
-          if (d.id === uid) {
-            const todos = (d.data().todos || []).filter((t) => !t.done);
-            setDoc(doc(db, dailyCol(date), uid), {
-              ...d.data(), todos, updatedAt: serverTimestamp(),
-            }).catch(() => {});
-          }
-        });
+    const date = todayKey();
+    getDocs(collection(db, dailyCol(date))).then((snap) => {
+      snap.forEach((d) => {
+        const data = d.data();
+        const todos = data.todos || [];
+        const active = todos.filter((t) => !t.done);
+        if (active.length !== todos.length) {
+          setDoc(doc(db, dailyCol(date), d.id), {
+            ...data, todos: active, updatedAt: serverTimestamp(),
+          }).catch(() => {});
+        }
       });
-      localStorage.setItem("todoRoom_lastClean", now.toISOString());
-    }
-  }, [uid, nicknameConfirmed]);
+    });
+  }, [nicknameConfirmed]);
 
   /* ── 실시간 리스너 ── */
   useEffect(() => {
