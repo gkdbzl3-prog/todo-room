@@ -61,12 +61,14 @@ function getSavedAvatar() {
   return localStorage.getItem("todoRoom_avatar") || "";
 }
 
-function loadStoredTodos(key) {
+function loadStoredTodos(key, filterDone = false) {
   try {
     const raw = localStorage.getItem(key);
     if (!raw) return [];
     const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? parsed : [];
+    if (!Array.isArray(parsed)) return [];
+    // 새 날 시작 시 완료 항목 제거
+    return filterDone ? parsed.filter((t) => !t.done) : parsed;
   } catch {
     return [];
   }
@@ -96,6 +98,26 @@ const weeklyCol = (wk) => `weekly/${wk}/users`;
 const notiCol = (date) => `daily/${date}/notifications`;
 const historyDatesCol = () => "historyDates";
 
+/* ── 앱 시작 시 지난 날짜 localStorage 정리 ── */
+function cleanOldStorage(uid) {
+  const today = todayKey();
+  const thisWeek = weekKey();
+  const keysToRemove = [];
+  for (let i = 0; i < localStorage.length; i++) {
+    const k = localStorage.key(i);
+    if (!k) continue;
+    // 오늘이 아닌 데일리 키 제거
+    if (k.startsWith(`todoRoom_daily_${uid}_`) && !k.endsWith(today)) {
+      keysToRemove.push(k);
+    }
+    // 이번 주가 아닌 위클리 키 제거
+    if (k.startsWith(`todoRoom_weekly_${uid}_`) && !k.endsWith(thisWeek)) {
+      keysToRemove.push(k);
+    }
+  }
+  keysToRemove.forEach((k) => localStorage.removeItem(k));
+}
+
 /* ─────────────────────────────── App ─────────────────────────────── */
 export default function App() {
   const uidRef = useRef(getUid());
@@ -106,6 +128,10 @@ export default function App() {
   const dayKeyRef = useRef(todayKey());
   const weekKeyRef = useRef(weekKey());
   const uid = uidRef.current;
+
+  // 지난 날짜 캐시 정리
+  useRef(cleanOldStorage(uid));
+
   const dailyStorageKey = `todoRoom_daily_${uid}_${dayKeyRef.current}`;
   const weeklyStorageKey = `todoRoom_weekly_${uid}_${weekKeyRef.current}`;
 
@@ -625,12 +651,7 @@ function TodoItem({ todo, onCycle, onDelete }) {
       <button
         className={`todo-cycle-btn ${status}`}
         onClick={() => onCycle(todo.id)}
-        title="상태 변경"
-      >
-        {status === "ready" && "○"}
-        {status === "doing" && "◐"}
-        {status === "done" && "✓"}
-      </button>
+      />
 
       <div className="todo-text">{todo.text}</div>
 
@@ -706,15 +727,6 @@ function MiniTodoList({ todos }) {
           <span className={todo.done ? "mini-text done" : "mini-text"}>
             {todo.text}
           </span>
-          {!todo.done && !todo.started && (
-            <span className="mini-status-ready">진행 전</span>
-          )}
-          {!todo.done && todo.started && (
-            <span className="mini-status-doing">진행중</span>
-          )}
-          {todo.done && (
-            <span className="mini-status-done">완료</span>
-          )}
         </div>
       ))}
     </div>
