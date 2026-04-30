@@ -41,6 +41,21 @@ function getSavedAvatar() {
   return localStorage.getItem("todoRoom_avatar") || "";
 }
 
+function loadStoredTodos(key) {
+  try {
+    const raw = localStorage.getItem(key);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+}
+
+function saveStoredTodos(key, todos) {
+  localStorage.setItem(key, JSON.stringify(todos));
+}
+
 const AVATAR_LIST = [
   "🥹","💓","🌿","😴","😺","😻","🐱","🐤",
   "👻","🌙","🐰","🍧","🍕","🥚","🐮","🐷",
@@ -68,7 +83,11 @@ export default function App() {
     nickname: getSavedNickname(),
     avatar: getSavedAvatar(),
   });
+  const dayKeyRef = useRef(todayKey());
+  const weekKeyRef = useRef(weekKey());
   const uid = uidRef.current;
+  const dailyStorageKey = `todoRoom_daily_${uid}_${dayKeyRef.current}`;
+  const weeklyStorageKey = `todoRoom_weekly_${uid}_${weekKeyRef.current}`;
 
   const [nickname, setNickname] = useState(getSavedNickname);
   const [avatar, setAvatar] = useState(getSavedAvatar);
@@ -79,8 +98,8 @@ export default function App() {
   // 투두
   const [todoText, setTodoText] = useState("");
   const [weeklyTodoText, setWeeklyTodoText] = useState("");
-  const [myDaily, setMyDaily] = useState([]);
-  const [myWeekly, setMyWeekly] = useState([]);
+  const [myDaily, setMyDaily] = useState(() => loadStoredTodos(dailyStorageKey));
+  const [myWeekly, setMyWeekly] = useState(() => loadStoredTodos(weeklyStorageKey));
 
   // 다른 멤버
   const [members, setMembers] = useState([]);
@@ -114,14 +133,18 @@ export default function App() {
     (todos) => {
       if (!nicknameConfirmed) return;
       const date = todayKey();
-      setDoc(doc(db, dailyCol(date), uid), {
+      void setDoc(doc(db, dailyCol(date), uid), {
         nickname,
         avatar,
         todos,
         updatedAt: serverTimestamp(),
+      }).catch((error) => {
+        console.error("Failed to sync daily todos", error);
       });
       // 날짜 기록
-      setDoc(doc(db, historyDatesCol(), date), { date });
+      void setDoc(doc(db, historyDatesCol(), date), { date }).catch((error) => {
+        console.error("Failed to sync history date", error);
+      });
     },
     [uid, nickname, avatar, nicknameConfirmed]
   );
@@ -130,15 +153,25 @@ export default function App() {
     (todos) => {
       if (!nicknameConfirmed) return;
       const wk = weekKey();
-      setDoc(doc(db, weeklyCol(wk), uid), {
+      void setDoc(doc(db, weeklyCol(wk), uid), {
         nickname,
         avatar,
         todos,
         updatedAt: serverTimestamp(),
+      }).catch((error) => {
+        console.error("Failed to sync weekly todos", error);
       });
     },
     [uid, nickname, avatar, nicknameConfirmed]
   );
+
+  useEffect(() => {
+    saveStoredTodos(dailyStorageKey, myDaily);
+  }, [dailyStorageKey, myDaily]);
+
+  useEffect(() => {
+    saveStoredTodos(weeklyStorageKey, myWeekly);
+  }, [weeklyStorageKey, myWeekly]);
 
   /* ── 실시간 리스너 ── */
   useEffect(() => {
@@ -160,6 +193,9 @@ export default function App() {
           all.push({ id: d.id, ...data });
         });
         setMembers(all.filter((m) => m.id !== uid));
+      },
+      (error) => {
+        console.error("Failed to subscribe daily todos", error);
       }
     );
 
@@ -176,6 +212,9 @@ export default function App() {
           all.push({ id: d.id, ...data });
         });
         setWeeklyMembers(all.filter((m) => m.id !== uid));
+      },
+      (error) => {
+        console.error("Failed to subscribe weekly todos", error);
       }
     );
 
@@ -190,6 +229,9 @@ export default function App() {
         const notes = [];
         snap.forEach((d) => notes.push({ id: d.id, ...d.data() }));
         setToasts(notes);
+      },
+      (error) => {
+        console.error("Failed to subscribe notifications", error);
       }
     );
 
@@ -200,6 +242,9 @@ export default function App() {
         const dates = [];
         snap.forEach((d) => dates.push(d.data().date));
         setHistoryDates(dates.filter((d) => d !== todayKey()));
+      },
+      (error) => {
+        console.error("Failed to subscribe history dates", error);
       }
     );
 
