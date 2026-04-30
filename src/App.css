@@ -113,10 +113,10 @@ body {
 .nickname-input {
   max-width: 260px;
   text-align: center;
-  font-size: 18px !important;
-  padding: 16px !important;
-  border-radius: 20px !important;
-  background: #f87171;
+  font-size: 14px !important;
+  padding: 12px !important;
+  border-radius: 14px !important;
+  background: #fce5e5;
 }
 
 .btn-primary {
