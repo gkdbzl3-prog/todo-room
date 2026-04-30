@@ -218,6 +218,33 @@ export default function App() {
     saveStoredTodos(weeklyStorageKey, myWeekly);
   }, [weeklyStorageKey, myWeekly]);
 
+  /* ── 앱 시작 시 완료 항목 정리 (새벽 2시 넘겼으면) ── */
+  useEffect(() => {
+    if (!nicknameConfirmed) return;
+    const now = new Date();
+    const lastClean = localStorage.getItem("todoRoom_lastClean");
+    const todayAt2 = new Date(now);
+    todayAt2.setHours(2, 0, 0, 0);
+
+    // 마지막 정리가 오늘 2시 이전이고, 지금이 2시 이후면 정리 실행
+    const shouldClean = !lastClean || (new Date(lastClean) < todayAt2 && now >= todayAt2);
+
+    if (shouldClean) {
+      const date = todayKey();
+      getDocs(collection(db, dailyCol(date))).then((snap) => {
+        snap.forEach((d) => {
+          if (d.id === uid) {
+            const todos = (d.data().todos || []).filter((t) => !t.done);
+            setDoc(doc(db, dailyCol(date), uid), {
+              ...d.data(), todos, updatedAt: serverTimestamp(),
+            }).catch(() => {});
+          }
+        });
+      });
+      localStorage.setItem("todoRoom_lastClean", now.toISOString());
+    }
+  }, [uid, nicknameConfirmed]);
+
   /* ── 실시간 리스너 ── */
   useEffect(() => {
     if (!nicknameConfirmed) return;
