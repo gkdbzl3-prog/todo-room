@@ -10,6 +10,7 @@ import {
   orderBy,
   addDoc,
   getDocs,
+  where,
   serverTimestamp,
   limit,
 } from "./firebase";
@@ -81,6 +82,47 @@ function loadStoredTodos(key) {
 
 function saveStoredTodos(key, todos) {
   localStorage.setItem(key, JSON.stringify(todos));
+}
+
+function resetTodosForNewDay(todos) {
+  return (todos || [])
+    .filter((todo) => !todo.done)
+    .map((todo) => ({
+      ...todo,
+      started: false,
+      done: false,
+      completedAt: null,
+    }));
+}
+
+async function findRecentDailyMatchByNickname(targetNickname) {
+  if (!targetNickname) return null;
+
+  const historySnap = await getDocs(
+    query(collection(db, historyDatesCol()), orderBy("date", "desc"), limit(14))
+  );
+
+  for (const historyDoc of historySnap.docs) {
+    const historyDate = historyDoc.data().date;
+    const matchSnap = await getDocs(
+      query(
+        collection(db, dailyCol(historyDate)),
+        where("nickname", "==", targetNickname),
+        limit(1)
+      )
+    );
+
+    if (!matchSnap.empty) {
+      const matchDoc = matchSnap.docs[0];
+      return {
+        id: matchDoc.id,
+        date: historyDate,
+        data: matchDoc.data(),
+      };
+    }
+  }
+
+  return null;
 }
 
 const AVATAR_LIST = [
@@ -281,6 +323,47 @@ export default function App() {
     };
   }, [uid, nicknameConfirmed]);
 
+  /* ── uid가 바뀌었으면 최근 닉네임 문서로 재연결 ── */
+  useEffect(() => {
+    if (!nicknameConfirmed || !nickname.trim()) return;
+
+    let cancelled = false;
+
+    const reconnectUid = async () => {
+      try {
+        const [todaySnap, weeklySnap] = await Promise.all([
+          getDoc(doc(db, dailyCol(todayKey()), uid)),
+          getDoc(doc(db, weeklyCol(weekKey()), uid)),
+        ]);
+
+        if (cancelled) return;
+
+        const hasOwnData =
+          todaySnap.exists() ||
+          weeklySnap.exists() ||
+          myDaily.length > 0 ||
+          myWeekly.length > 0;
+
+        if (hasOwnData) return;
+
+        const recentMatch = await findRecentDailyMatchByNickname(nickname.trim());
+
+        if (cancelled || !recentMatch || recentMatch.id === uid) return;
+
+        localStorage.setItem("todoRoom_uid", recentMatch.id);
+        window.location.reload();
+      } catch (error) {
+        console.error("Failed to reconnect uid", error);
+      }
+    };
+
+    void reconnectUid();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [uid, nicknameConfirmed, nickname, myDaily.length, myWeekly.length]);
+
   /* ── 새벽 2시 넘겼을 때만 완료 항목 정리 ── */
   useEffect(() => {
     if (!nicknameConfirmed) return;
@@ -313,47 +396,59 @@ export default function App() {
     if (!nicknameConfirmed) return;
 
     const carryKey = `todoRoom_dailyCarry_${uid}_${todayKey()}`;
-    if (localStorage.getItem(carryKey)) return;
 
     let cancelled = false;
 
     const carryOverTodos = async () => {
       try {
-        const todayRef = doc(db, dailyCol(todayKey()), uid);
+        const today = todayKey();
+        const todayRef = doc(db, dailyCol(today), uid);
         const todaySnap = await getDoc(todayRef);
+        const todayTodos = todaySnap.exists() ? todaySnap.data().todos || [] : [];
 
-        if (cancelled || todaySnap.exists()) return;
+        if (cancelled) return;
+        if (todayTodos.length > 0) {
+          localStorage.setItem(carryKey, "done");
+          return;
+        }
 
         const prevSnap = await getDoc(doc(db, dailyCol(previousDayKey()), uid));
+        let sourceData = prevSnap.exists() ? prevSnap.data() : null;
 
-        if (cancelled || !prevSnap.exists()) return;
+        if (cancelled) return;
 
-        const prevData = prevSnap.data();
-        const carryTodos = (prevData.todos || [])
-          .filter((todo) => !todo.done)
-          .map((todo) => ({
-            ...todo,
-            started: false,
-            done: false,
-            completedAt: null,
-          }));
+        if (!sourceData && nickname.trim()) {
+          const recentMatch = await findRecentDailyMatchByNickname(nickname.trim());
+          if (!cancelled && recentMatch) {
+            sourceData = recentMatch.data;
+          }
+        }
+
+        if (!sourceData) return;
+
+        const carryTodos = resetTodosForNewDay(sourceData.todos || []);
 
         if (!carryTodos.length) return;
 
+        const nextAvatar = sourceData.avatar || avatar;
+
+        if (nextAvatar && nextAvatar !== avatar) {
+          setAvatar(nextAvatar);
+          setAvatarPick(nextAvatar);
+          localStorage.setItem("todoRoom_avatar", nextAvatar);
+        }
+
         setMyDaily(carryTodos);
         await setDoc(todayRef, {
-          nickname: prevData.nickname || nickname,
-          avatar: prevData.avatar || avatar,
+          nickname: sourceData.nickname || nickname,
+          avatar: nextAvatar,
           todos: carryTodos,
           updatedAt: serverTimestamp(),
         });
-        await setDoc(doc(db, historyDatesCol(), todayKey()), { date: todayKey() });
+        await setDoc(doc(db, historyDatesCol(), today), { date: today });
+        localStorage.setItem(carryKey, "done");
       } catch (error) {
         console.error("Failed to carry over daily todos", error);
-      } finally {
-        if (!cancelled) {
-          localStorage.setItem(carryKey, "done");
-        }
       }
     };
 
@@ -568,6 +663,7 @@ export default function App() {
       .map((w) => ({
         id: w.id,
         nickname: w.nickname,
+        avatar: w.avatar,
         todos: [],
         weeklyTodos: w.todos || [],
         isMe: false,
