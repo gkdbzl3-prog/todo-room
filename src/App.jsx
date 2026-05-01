@@ -3,6 +3,7 @@ import {
   db,
   collection,
   doc,
+  getDoc,
   setDoc,
   onSnapshot,
   query,
@@ -42,6 +43,12 @@ function nextMondayLabel() {
   const next = new Date(d);
   next.setDate(next.getDate() + daysUntilMon);
   return `${next.getMonth() + 1}/${next.getDate()}(월)`;
+}
+
+function previousDayKey() {
+  const d = getEffectiveDate();
+  d.setDate(d.getDate() - 1);
+  return d.toISOString().slice(0, 10);
 }
 
 function getUid() {
@@ -112,6 +119,9 @@ export default function App() {
   const [nickname, setNickname] = useState(getSavedNickname);
   const [avatar, setAvatar] = useState(getSavedAvatar);
   const [nicknameConfirmed, setNicknameConfirmed] = useState(!!getSavedNickname());
+  const [profileRecoveryChecked, setProfileRecoveryChecked] = useState(
+    !!getSavedNickname()
+  );
   const [nickInput, setNickInput] = useState(getSavedNickname());
   const [avatarPick, setAvatarPick] = useState(getSavedAvatar() || AVATAR_LIST[0]);
 
@@ -192,6 +202,85 @@ export default function App() {
     saveStoredTodos(weeklyStorageKey, myWeekly);
   }, [weeklyStorageKey, myWeekly]);
 
+  /* ── 로컬 프로필이 비었을 때 Firestore에서 복구 ── */
+  useEffect(() => {
+    if (nicknameConfirmed) return;
+
+    let cancelled = false;
+
+    const recoverProfile = async () => {
+      try {
+        const [dailySnap, weeklySnap] = await Promise.all([
+          getDoc(doc(db, dailyCol(todayKey()), uid)),
+          getDoc(doc(db, weeklyCol(weekKey()), uid)),
+        ]);
+
+        if (cancelled) return;
+
+        const dailyData = dailySnap.exists() ? dailySnap.data() : null;
+        const weeklyData = weeklySnap.exists() ? weeklySnap.data() : null;
+        let profileData = dailyData || weeklyData;
+
+        if (!profileData) {
+          const historySnap = await getDocs(
+            query(collection(db, historyDatesCol()), orderBy("date", "desc"), limit(7))
+          );
+
+          for (const historyDoc of historySnap.docs) {
+            const historyDate = historyDoc.data().date;
+            const historyUserSnap = await getDoc(doc(db, dailyCol(historyDate), uid));
+
+            if (historyUserSnap.exists()) {
+              profileData = historyUserSnap.data();
+              break;
+            }
+          }
+        }
+
+        if (cancelled) return;
+
+        const recoveredNickname = profileData?.nickname?.trim();
+        const recoveredAvatar =
+          dailyData?.avatar || weeklyData?.avatar || profileData?.avatar || "";
+
+        if (!recoveredNickname) return;
+
+        setNickname(recoveredNickname);
+        setNickInput(recoveredNickname);
+        setAvatar(recoveredAvatar);
+        setAvatarPick(recoveredAvatar || AVATAR_LIST[0]);
+        setNicknameConfirmed(true);
+        profileRef.current = {
+          nickname: recoveredNickname,
+          avatar: recoveredAvatar,
+        };
+
+        localStorage.setItem("todoRoom_nickname", recoveredNickname);
+        localStorage.setItem("todoRoom_avatar", recoveredAvatar);
+
+        if (Array.isArray(dailyData?.todos)) {
+          setMyDaily(dailyData.todos);
+        }
+
+        if (Array.isArray(weeklyData?.todos)) {
+          setMyWeekly(weeklyData.todos);
+        }
+      } catch (error) {
+        console.error("Failed to recover profile", error);
+      } finally {
+        if (!cancelled) {
+          setProfileRecoveryChecked(true);
+        }
+      }
+    };
+
+    void recoverProfile();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [uid, nicknameConfirmed]);
+
   /* ── 새벽 2시 넘겼을 때만 완료 항목 정리 ── */
   useEffect(() => {
     if (!nicknameConfirmed) return;
@@ -218,6 +307,62 @@ export default function App() {
     });
     localStorage.setItem("todoRoom_lastClean", now.toISOString());
   }, [nicknameConfirmed]);
+
+  /* ── 새 날짜 첫 진입 시 어제 미완료 투두 이어받기 ── */
+  useEffect(() => {
+    if (!nicknameConfirmed) return;
+
+    const carryKey = `todoRoom_dailyCarry_${uid}_${todayKey()}`;
+    if (localStorage.getItem(carryKey)) return;
+
+    let cancelled = false;
+
+    const carryOverTodos = async () => {
+      try {
+        const todayRef = doc(db, dailyCol(todayKey()), uid);
+        const todaySnap = await getDoc(todayRef);
+
+        if (cancelled || todaySnap.exists()) return;
+
+        const prevSnap = await getDoc(doc(db, dailyCol(previousDayKey()), uid));
+
+        if (cancelled || !prevSnap.exists()) return;
+
+        const prevData = prevSnap.data();
+        const carryTodos = (prevData.todos || [])
+          .filter((todo) => !todo.done)
+          .map((todo) => ({
+            ...todo,
+            started: false,
+            done: false,
+            completedAt: null,
+          }));
+
+        if (!carryTodos.length) return;
+
+        setMyDaily(carryTodos);
+        await setDoc(todayRef, {
+          nickname: prevData.nickname || nickname,
+          avatar: prevData.avatar || avatar,
+          todos: carryTodos,
+          updatedAt: serverTimestamp(),
+        });
+        await setDoc(doc(db, historyDatesCol(), todayKey()), { date: todayKey() });
+      } catch (error) {
+        console.error("Failed to carry over daily todos", error);
+      } finally {
+        if (!cancelled) {
+          localStorage.setItem(carryKey, "done");
+        }
+      }
+    };
+
+    void carryOverTodos();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [uid, nicknameConfirmed, nickname, avatar]);
 
   /* ── 실시간 리스너 ── */
   useEffect(() => {
@@ -435,6 +580,17 @@ export default function App() {
     if (aTodos === 0 && bTodos > 0) return 1;
     return 0;
   });
+
+  if (!nicknameConfirmed && !profileRecoveryChecked) {
+    return (
+      <main className="room">
+        <div className="nickname-setup">
+          <h1>TO-DO ROOM</h1>
+          <p className="setup-desc">기존 데이터 찾는 중...</p>
+        </div>
+      </main>
+    );
+  }
 
   /* ── 닉네임 미설정 화면 ── */
   if (!nicknameConfirmed) {
