@@ -46,8 +46,8 @@ function nextMondayLabel() {
   return `${next.getMonth() + 1}/${next.getDate()}(월)`;
 }
 
-function previousDayKey() {
-  const d = getEffectiveDate();
+function previousDayKeyFrom(dateKey) {
+  const d = new Date(`${dateKey}T00:00:00`);
   d.setDate(d.getDate() - 1);
   return d.toISOString().slice(0, 10);
 }
@@ -301,6 +301,24 @@ function collectNicknameMatches(dailyRecords, weeklyRecords, recentMatch) {
   return Array.from(matches.values());
 }
 
+function chooseSelfRecord(records, uid, nickname, todoKey = "todos") {
+  const selfCandidates = records.filter(
+    (record) => record.id === uid || hasSameNickname(record, nickname)
+  );
+  const ownRecord = selfCandidates.find((record) => record.id === uid) || null;
+
+  if (ownRecord) {
+    return { preferred: ownRecord, selfCandidates };
+  }
+
+  const preferred = selfCandidates.reduce((best, candidate) => {
+    if (!best) return candidate;
+    return choosePreferredRecord(best, candidate, todoKey);
+  }, null);
+
+  return { preferred, selfCandidates };
+}
+
 function resetTodosForNewDay(todos) {
   return (todos || [])
     .filter((todo) => !todo.done)
@@ -379,16 +397,16 @@ export default function App() {
     nickname: getSavedNickname(),
     avatar: getSavedAvatar(),
   });
-  const dayKeyRef = useRef(todayKey());
-  const weekKeyRef = useRef(weekKey());
 
   const [uid, setUid] = useState(() => getUid());
+  const [currentDayKey, setCurrentDayKey] = useState(() => todayKey());
+  const [currentWeekKey, setCurrentWeekKey] = useState(() => weekKey());
   const [nickname, setNickname] = useState(getSavedNickname);
   const [avatar, setAvatar] = useState(getSavedAvatar);
   const [nicknameConfirmed, setNicknameConfirmed] = useState(!!getSavedNickname());
 
-  const dailyStorageKey = `todoRoom_daily_${uid}_${dayKeyRef.current}`;
-  const weeklyStorageKey = `todoRoom_weekly_${uid}_${weekKeyRef.current}`;
+  const dailyStorageKey = `todoRoom_daily_${uid}_${currentDayKey}`;
+  const weeklyStorageKey = `todoRoom_weekly_${uid}_${currentWeekKey}`;
   const [profileRecoveryChecked, setProfileRecoveryChecked] = useState(
     !!getSavedNickname()
   );
@@ -413,8 +431,64 @@ export default function App() {
   const [historyDates, setHistoryDates] = useState([]);
   const [historyData, setHistoryData] = useState(null);
   const [selectedDate, setSelectedDate] = useState(null);
+  const skipDailyStorageSaveRef = useRef(false);
+  const skipWeeklyStorageSaveRef = useRef(false);
 
   // (위클리 항상 표시)
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      const nextDayKey = todayKey();
+      const nextWeekKey = weekKey();
+
+      setCurrentDayKey((prev) => (prev === nextDayKey ? prev : nextDayKey));
+      setCurrentWeekKey((prev) => (prev === nextWeekKey ? prev : nextWeekKey));
+    }, 10000);
+
+    return () => {
+      window.clearInterval(timer);
+    };
+  }, []);
+
+  useEffect(() => {
+    skipDailyStorageSaveRef.current = true;
+    const timer = window.setTimeout(() => {
+      setMyDaily(loadStoredTodos(dailyStorageKey));
+    }, 0);
+
+    return () => {
+      window.clearTimeout(timer);
+    };
+  }, [dailyStorageKey]);
+
+  useEffect(() => {
+    skipWeeklyStorageSaveRef.current = true;
+    const timer = window.setTimeout(() => {
+      setMyWeekly(loadStoredTodos(weeklyStorageKey));
+    }, 0);
+
+    return () => {
+      window.clearTimeout(timer);
+    };
+  }, [weeklyStorageKey]);
+
+  const syncDuplicateNicknameDocs = useCallback(
+    async (collectionPath, nextNickname, payload) => {
+      const normalizedNickname = normalizeNickname(nextNickname);
+      if (!normalizedNickname) return;
+
+      const sameNicknameSnap = await getDocs(
+        query(collection(db, collectionPath), where("nickname", "==", normalizedNickname))
+      );
+
+      await Promise.all(
+        sameNicknameSnap.docs
+          .filter((docSnap) => docSnap.id !== uid)
+          .map((docSnap) => setDoc(doc(db, collectionPath, docSnap.id), payload))
+      );
+    },
+    [uid]
+  );
 
   const loadNicknameMatches = useCallback(async (rawNickname) => {
     const normalizedNickname = normalizeNickname(rawNickname);
@@ -423,13 +497,13 @@ export default function App() {
     const [dailyMatches, weeklyMatches, recentMatch] = await Promise.all([
       getDocs(
         query(
-          collection(db, dailyCol(todayKey())),
+          collection(db, dailyCol(currentDayKey)),
           where("nickname", "==", normalizedNickname)
         )
       ),
       getDocs(
         query(
-          collection(db, weeklyCol(weekKey())),
+          collection(db, weeklyCol(currentWeekKey)),
           where("nickname", "==", normalizedNickname)
         )
       ),
@@ -446,7 +520,7 @@ export default function App() {
     }));
 
     return collectNicknameMatches(dailyRecords, weeklyRecords, recentMatch);
-  }, []);
+  }, [currentDayKey, currentWeekKey]);
 
   const resolveNicknameSession = useCallback(
     async (rawNickname, fallbackAvatar = avatarPick) => {
@@ -511,45 +585,65 @@ export default function App() {
   const syncMyDaily = useCallback(
     (todos) => {
       if (!nicknameConfirmed || !uid) return;
-      const date = todayKey();
-      void setDoc(doc(db, dailyCol(date), uid), {
+      const date = currentDayKey;
+      const payload = {
         nickname,
         avatar,
         todos,
         updatedAt: serverTimestamp(),
-      }).catch((error) => {
+      };
+
+      void setDoc(doc(db, dailyCol(date), uid), payload).catch((error) => {
         console.error("Failed to sync daily todos", error);
+      });
+      void syncDuplicateNicknameDocs(dailyCol(date), nickname, payload).catch((error) => {
+        console.error("Failed to sync duplicate daily todos", error);
       });
       // 날짜 기록
       void setDoc(doc(db, historyDatesCol(), date), { date }).catch((error) => {
         console.error("Failed to sync history date", error);
       });
     },
-    [uid, nickname, avatar, nicknameConfirmed]
+    [uid, nickname, avatar, nicknameConfirmed, currentDayKey, syncDuplicateNicknameDocs]
   );
 
   const syncMyWeekly = useCallback(
     (todos) => {
       if (!nicknameConfirmed || !uid) return;
-      const wk = weekKey();
-      void setDoc(doc(db, weeklyCol(wk), uid), {
+      const wk = currentWeekKey;
+      const payload = {
         nickname,
         avatar,
         todos,
         updatedAt: serverTimestamp(),
-      }).catch((error) => {
+      };
+
+      void setDoc(doc(db, weeklyCol(wk), uid), payload).catch((error) => {
         console.error("Failed to sync weekly todos", error);
       });
+      void syncDuplicateNicknameDocs(weeklyCol(wk), nickname, payload).catch((error) => {
+        console.error("Failed to sync duplicate weekly todos", error);
+      });
     },
-    [uid, nickname, avatar, nicknameConfirmed]
+    [uid, nickname, avatar, nicknameConfirmed, currentWeekKey, syncDuplicateNicknameDocs]
   );
 
   useEffect(() => {
-    if (dailyStorageKey) saveStoredTodos(dailyStorageKey, myDaily);
+    if (!dailyStorageKey) return;
+    if (skipDailyStorageSaveRef.current) {
+      skipDailyStorageSaveRef.current = false;
+      return;
+    }
+    saveStoredTodos(dailyStorageKey, myDaily);
   }, [dailyStorageKey, myDaily]);
 
   useEffect(() => {
-    if (weeklyStorageKey) saveStoredTodos(weeklyStorageKey, myWeekly);
+    if (!weeklyStorageKey) return;
+    if (skipWeeklyStorageSaveRef.current) {
+      skipWeeklyStorageSaveRef.current = false;
+      return;
+    }
+    saveStoredTodos(weeklyStorageKey, myWeekly);
   }, [weeklyStorageKey, myWeekly]);
 
   /* ── 로컬 프로필이 비었을 때 기존 uuid로 Firestore 복구 ── */
@@ -564,8 +658,8 @@ export default function App() {
     const recoverProfile = async () => {
       try {
         const [dailySnap, weeklySnap] = await Promise.all([
-          getDoc(doc(db, dailyCol(todayKey()), oldUid)),
-          getDoc(doc(db, weeklyCol(weekKey()), oldUid)),
+          getDoc(doc(db, dailyCol(currentDayKey), oldUid)),
+          getDoc(doc(db, weeklyCol(currentWeekKey), oldUid)),
         ]);
 
         if (cancelled) return;
@@ -615,7 +709,7 @@ export default function App() {
     return () => {
       cancelled = true;
     };
-  }, [nicknameConfirmed, uid]);
+  }, [nicknameConfirmed, uid, currentDayKey, currentWeekKey]);
 
   /* ── 같은 닉네임의 더 좋은 문서가 있으면 그 uid로 재연결 ── */
   useEffect(() => {
@@ -675,13 +769,13 @@ export default function App() {
   useEffect(() => {
     if (!nicknameConfirmed || !uid) return;
 
-    const carryKey = `todoRoom_dailyCarry_${uid}_${todayKey()}`;
+    const carryKey = `todoRoom_dailyCarry_${uid}_${currentDayKey}`;
 
     let cancelled = false;
 
     const carryOverTodos = async () => {
       try {
-        const today = todayKey();
+        const today = currentDayKey;
         const todayRef = doc(db, dailyCol(today), uid);
         const todaySnap = await getDoc(todayRef);
         const todayTodos = todaySnap.exists() ? todaySnap.data().todos || [] : [];
@@ -692,7 +786,7 @@ export default function App() {
           return;
         }
 
-        const prevSnap = await getDoc(doc(db, dailyCol(previousDayKey()), uid));
+        const prevSnap = await getDoc(doc(db, dailyCol(previousDayKeyFrom(today)), uid));
         let sourceData = prevSnap.exists() ? prevSnap.data() : null;
 
         if (cancelled) return;
@@ -737,14 +831,14 @@ export default function App() {
     return () => {
       cancelled = true;
     };
-  }, [uid, nicknameConfirmed, nickname, avatar]);
+  }, [uid, nicknameConfirmed, nickname, avatar, currentDayKey]);
 
   /* ── 실시간 리스너 ── */
   useEffect(() => {
     if (!nicknameConfirmed || !uid) return;
 
-    const date = todayKey();
-    const wk = weekKey();
+    const date = currentDayKey;
+    const wk = currentWeekKey;
 
     // 데일리 멤버 리스너
     const unsubDaily = onSnapshot(
@@ -755,16 +849,16 @@ export default function App() {
           all.push({ id: d.id, ...d.data() });
         });
 
-        const selfCandidates = all.filter(
-          (member) => member.id === uid || hasSameNickname(member, nickname)
+        const { preferred: preferredSelf, selfCandidates } = chooseSelfRecord(
+          all,
+          uid,
+          nickname
         );
-        const preferredSelf = selfCandidates.reduce((best, candidate) => {
-          if (!best) return candidate;
-          return choosePreferredRecord(best, candidate);
-        }, null);
 
         if (preferredSelf) {
           setMyDaily(preferredSelf.todos || []);
+        } else {
+          setMyDaily([]);
         }
 
         setMembers(
@@ -787,16 +881,16 @@ export default function App() {
           all.push({ id: d.id, ...d.data() });
         });
 
-        const selfCandidates = all.filter(
-          (member) => member.id === uid || hasSameNickname(member, nickname)
+        const { preferred: preferredSelf, selfCandidates } = chooseSelfRecord(
+          all,
+          uid,
+          nickname
         );
-        const preferredSelf = selfCandidates.reduce((best, candidate) => {
-          if (!best) return candidate;
-          return choosePreferredRecord(best, candidate);
-        }, null);
 
         if (preferredSelf) {
           setMyWeekly(preferredSelf.todos || []);
+        } else {
+          setMyWeekly([]);
         }
 
         setWeeklyMembers(
@@ -833,7 +927,7 @@ export default function App() {
       (snap) => {
         const dates = [];
         snap.forEach((d) => dates.push(d.data().date));
-        setHistoryDates(dates.filter((d) => d !== todayKey()));
+        setHistoryDates(dates.filter((d) => d !== currentDayKey));
       },
       (error) => {
         console.error("Failed to subscribe history dates", error);
@@ -846,7 +940,7 @@ export default function App() {
       unsubNoti();
       unsubHistory();
     };
-  }, [uid, nicknameConfirmed, nickname]);
+  }, [uid, nicknameConfirmed, nickname, currentDayKey, currentWeekKey]);
 
   /* ── 프로필 변경 시 Firestore 업데이트 ── */
   useEffect(() => {
@@ -895,7 +989,7 @@ export default function App() {
       if (!t.started && !t.done) return { ...t, started: true };
       // 진행중 → 완료
       if (t.started && !t.done) {
-        addDoc(collection(db, notiCol(todayKey())), {
+        addDoc(collection(db, notiCol(currentDayKey)), {
           message: `${nickname}님이 '${t.text}'을(를) 완수하였습니다!`,
           createdAt: serverTimestamp(),
         });
@@ -919,7 +1013,7 @@ export default function App() {
       if (t.id !== id) return t;
       if (!t.started && !t.done) return { ...t, started: true };
       if (t.started && !t.done) {
-        addDoc(collection(db, notiCol(todayKey())), {
+        addDoc(collection(db, notiCol(currentDayKey)), {
           message: `${nickname}님이 '${t.text}'을(를) 완수하였습니다! (주간)`,
           createdAt: serverTimestamp(),
         });
@@ -1020,7 +1114,7 @@ export default function App() {
     <main className="room">
       <header className="room-header">
         <h1>TO-DO ROOM</h1>
-        <p>{todayKey()}</p>
+        <p>{currentDayKey}</p>
         <div className="my-info">
           <span className="my-avatar-header">{avatar}</span>
           <span className="my-nickname">{nickname}</span>

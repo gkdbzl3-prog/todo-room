@@ -17,6 +17,17 @@ body {
   min-height: 100dvh;
 }
 
+html,
+body,
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
 /* ─── 루트 ─── */
 .room {
   min-height: 100dvh;
