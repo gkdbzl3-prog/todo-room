@@ -5,7 +5,6 @@ import {
   doc,
   getDoc,
   setDoc,
-  deleteDoc,
   onSnapshot,
   query,
   orderBy,
@@ -51,6 +50,15 @@ function previousDayKey() {
   const d = getEffectiveDate();
   d.setDate(d.getDate() - 1);
   return d.toISOString().slice(0, 10);
+}
+
+function getUid() {
+  let uid = localStorage.getItem("todoRoom_uid");
+  if (!uid) {
+    uid = crypto.randomUUID();
+    localStorage.setItem("todoRoom_uid", uid);
+  }
+  return uid;
 }
 
 function getSavedNickname() {
@@ -196,6 +204,103 @@ function mergeDisplayMembers(dailyMembers, weeklyMembers) {
   return Array.from(merged.values());
 }
 
+function getNicknameMatchCurrentTotal(match) {
+  return getTodoCount(match?.dailyTodos) + getTodoCount(match?.weeklyTodos);
+}
+
+function getNicknameMatchUpdatedAt(match) {
+  return Math.max(
+    getUpdatedAtValue(match?.dailyUpdatedAt),
+    getUpdatedAtValue(match?.weeklyUpdatedAt),
+    getUpdatedAtValue(match?.recentUpdatedAt)
+  );
+}
+
+function choosePreferredNicknameMatch(a, b) {
+  if (!a) return b;
+  if (!b) return a;
+
+  const aCurrentTotal = getNicknameMatchCurrentTotal(a);
+  const bCurrentTotal = getNicknameMatchCurrentTotal(b);
+
+  if (aCurrentTotal !== bCurrentTotal) {
+    return bCurrentTotal > aCurrentTotal ? b : a;
+  }
+
+  const aRecentCount = getTodoCount(a.recentTodos);
+  const bRecentCount = getTodoCount(b.recentTodos);
+
+  if (aRecentCount !== bRecentCount) {
+    return bRecentCount > aRecentCount ? b : a;
+  }
+
+  const aDailyCount = getTodoCount(a.dailyTodos);
+  const bDailyCount = getTodoCount(b.dailyTodos);
+
+  if (aDailyCount !== bDailyCount) {
+    return bDailyCount > aDailyCount ? b : a;
+  }
+
+  if (!!a.avatar !== !!b.avatar) {
+    return b.avatar ? b : a;
+  }
+
+  return getNicknameMatchUpdatedAt(b) > getNicknameMatchUpdatedAt(a) ? b : a;
+}
+
+function collectNicknameMatches(dailyRecords, weeklyRecords, recentMatch) {
+  const matches = new Map();
+
+  const ensureMatch = (id) => {
+    if (!matches.has(id)) {
+      matches.set(id, {
+        id,
+        nickname: "",
+        avatar: "",
+        dailyTodos: [],
+        weeklyTodos: [],
+        recentTodos: [],
+        hasDailyDoc: false,
+        hasWeeklyDoc: false,
+        dailyUpdatedAt: null,
+        weeklyUpdatedAt: null,
+        recentUpdatedAt: null,
+      });
+    }
+
+    return matches.get(id);
+  };
+
+  dailyRecords.forEach((record) => {
+    const match = ensureMatch(record.id);
+    match.nickname = record.nickname || match.nickname;
+    match.avatar = match.avatar || record.avatar || "";
+    match.dailyTodos = Array.isArray(record.todos) ? record.todos : [];
+    match.hasDailyDoc = true;
+    match.dailyUpdatedAt = record.updatedAt || match.dailyUpdatedAt;
+  });
+
+  weeklyRecords.forEach((record) => {
+    const match = ensureMatch(record.id);
+    match.nickname = record.nickname || match.nickname;
+    match.avatar = match.avatar || record.avatar || "";
+    match.weeklyTodos = Array.isArray(record.todos) ? record.todos : [];
+    match.hasWeeklyDoc = true;
+    match.weeklyUpdatedAt = record.updatedAt || match.weeklyUpdatedAt;
+  });
+
+  if (recentMatch?.id) {
+    const match = ensureMatch(recentMatch.id);
+    const recentData = recentMatch.data || {};
+    match.nickname = recentData.nickname || match.nickname;
+    match.avatar = match.avatar || recentData.avatar || "";
+    match.recentTodos = Array.isArray(recentData.todos) ? recentData.todos : [];
+    match.recentUpdatedAt = recentData.updatedAt || match.recentUpdatedAt;
+  }
+
+  return Array.from(matches.values());
+}
+
 function resetTodosForNewDay(todos) {
   return (todos || [])
     .filter((todo) => !todo.done)
@@ -277,14 +382,13 @@ export default function App() {
   const dayKeyRef = useRef(todayKey());
   const weekKeyRef = useRef(weekKey());
 
+  const [uid, setUid] = useState(() => getUid());
   const [nickname, setNickname] = useState(getSavedNickname);
   const [avatar, setAvatar] = useState(getSavedAvatar);
   const [nicknameConfirmed, setNicknameConfirmed] = useState(!!getSavedNickname());
 
-  // 닉네임 = Firestore 문서 ID (로그인 전에는 null)
-  const uid = nicknameConfirmed ? nickname : null;
-  const dailyStorageKey = uid ? `todoRoom_daily_${uid}_${dayKeyRef.current}` : null;
-  const weeklyStorageKey = uid ? `todoRoom_weekly_${uid}_${weekKeyRef.current}` : null;
+  const dailyStorageKey = `todoRoom_daily_${uid}_${dayKeyRef.current}`;
+  const weeklyStorageKey = `todoRoom_weekly_${uid}_${weekKeyRef.current}`;
   const [profileRecoveryChecked, setProfileRecoveryChecked] = useState(
     !!getSavedNickname()
   );
@@ -312,105 +416,95 @@ export default function App() {
 
   // (위클리 항상 표시)
 
-  /* ── 닉네임 확정 (+ 기존 uuid 데이터 마이그레이션) ── */
+  const loadNicknameMatches = useCallback(async (rawNickname) => {
+    const normalizedNickname = normalizeNickname(rawNickname);
+    if (!normalizedNickname) return [];
+
+    const [dailyMatches, weeklyMatches, recentMatch] = await Promise.all([
+      getDocs(
+        query(
+          collection(db, dailyCol(todayKey())),
+          where("nickname", "==", normalizedNickname)
+        )
+      ),
+      getDocs(
+        query(
+          collection(db, weeklyCol(weekKey())),
+          where("nickname", "==", normalizedNickname)
+        )
+      ),
+      findRecentDailyMatchByNickname(normalizedNickname),
+    ]);
+
+    const dailyRecords = dailyMatches.docs.map((docSnap) => ({
+      id: docSnap.id,
+      ...docSnap.data(),
+    }));
+    const weeklyRecords = weeklyMatches.docs.map((docSnap) => ({
+      id: docSnap.id,
+      ...docSnap.data(),
+    }));
+
+    return collectNicknameMatches(dailyRecords, weeklyRecords, recentMatch);
+  }, []);
+
+  const resolveNicknameSession = useCallback(
+    async (rawNickname, fallbackAvatar = avatarPick) => {
+      const normalizedNickname = normalizeNickname(rawNickname);
+      if (!normalizedNickname) return false;
+
+      try {
+        const matches = await loadNicknameMatches(normalizedNickname);
+        const bestMatch = matches.reduce((best, candidate) => {
+          if (!best) return candidate;
+          return choosePreferredNicknameMatch(best, candidate);
+        }, null);
+
+        const nextUid = bestMatch?.id || uid;
+        const nextAvatar =
+          bestMatch?.avatar || fallbackAvatar || avatar || AVATAR_LIST[0];
+
+        if (nextUid !== uid) {
+          localStorage.setItem("todoRoom_uid", nextUid);
+          setUid(nextUid);
+        }
+
+        if (bestMatch) {
+          setMyDaily(bestMatch.hasDailyDoc ? bestMatch.dailyTodos : []);
+          setMyWeekly(bestMatch.hasWeeklyDoc ? bestMatch.weeklyTodos : []);
+        }
+
+        setNickname(normalizedNickname);
+        setNickInput(normalizedNickname);
+        setAvatar(nextAvatar);
+        setAvatarPick(nextAvatar || AVATAR_LIST[0]);
+        setNicknameConfirmed(true);
+        localStorage.setItem("todoRoom_nickname", normalizedNickname);
+        localStorage.setItem("todoRoom_avatar", nextAvatar || "");
+        return true;
+      } catch (error) {
+        console.error("Nickname resolve failed:", error);
+        const nextAvatar = fallbackAvatar || avatar || AVATAR_LIST[0];
+
+        setNickname(normalizedNickname);
+        setNickInput(normalizedNickname);
+        setAvatar(nextAvatar);
+        setAvatarPick(nextAvatar || AVATAR_LIST[0]);
+        setNicknameConfirmed(true);
+        localStorage.setItem("todoRoom_nickname", normalizedNickname);
+        localStorage.setItem("todoRoom_avatar", nextAvatar || "");
+        return false;
+      }
+    },
+    [avatar, avatarPick, loadNicknameMatches, uid]
+  );
+
+  /* ── 닉네임 확정: 같은 닉네임이면 기존 uid에 연결 ── */
   const confirmNickname = async () => {
-    const n = nickInput.trim();
-    if (!n) return;
+    const normalizedNickname = normalizeNickname(nickInput);
+    if (!normalizedNickname) return;
 
-    const oldUid = localStorage.getItem("todoRoom_uid");
-    const date = todayKey();
-    const wk = weekKey();
-
-    try {
-      // 1) 기존 uuid 문서 → 닉네임 문서로 마이그레이션
-      if (oldUid && oldUid !== n) {
-        const [oldDailySnap, oldWeeklySnap] = await Promise.all([
-          getDoc(doc(db, dailyCol(date), oldUid)),
-          getDoc(doc(db, weeklyCol(wk), oldUid)),
-        ]);
-
-        if (oldDailySnap.exists()) {
-          const data = oldDailySnap.data();
-          const existSnap = await getDoc(doc(db, dailyCol(date), n));
-          const merged = choosePreferredRecord(
-            existSnap.exists() ? existSnap.data() : null, data
-          );
-          await setDoc(doc(db, dailyCol(date), n), {
-            ...(merged || data),
-            nickname: n, avatar: avatarPick, updatedAt: serverTimestamp(),
-          });
-          await deleteDoc(doc(db, dailyCol(date), oldUid));
-        }
-
-        if (oldWeeklySnap.exists()) {
-          const data = oldWeeklySnap.data();
-          const existSnap = await getDoc(doc(db, weeklyCol(wk), n));
-          const merged = choosePreferredRecord(
-            existSnap.exists() ? existSnap.data() : null, data
-          );
-          await setDoc(doc(db, weeklyCol(wk), n), {
-            ...(merged || data),
-            nickname: n, avatar: avatarPick, updatedAt: serverTimestamp(),
-          });
-          await deleteDoc(doc(db, weeklyCol(wk), oldUid));
-        }
-      }
-
-      // 2) 같은 닉네임의 다른 uuid 문서 정리 (다른 기기에서 생성된 것)
-      const [dailyMatches, weeklyMatches] = await Promise.all([
-        getDocs(query(collection(db, dailyCol(date)), where("nickname", "==", n))),
-        getDocs(query(collection(db, weeklyCol(wk)), where("nickname", "==", n))),
-      ]);
-
-      for (const snap of dailyMatches.docs) {
-        if (snap.id === n) continue;
-        const existSnap = await getDoc(doc(db, dailyCol(date), n));
-        const merged = choosePreferredRecord(
-          existSnap.exists() ? existSnap.data() : null, snap.data()
-        );
-        await setDoc(doc(db, dailyCol(date), n), {
-          ...(merged || snap.data()),
-          nickname: n, avatar: avatarPick, updatedAt: serverTimestamp(),
-        });
-        await deleteDoc(doc(db, dailyCol(date), snap.id));
-      }
-
-      for (const snap of weeklyMatches.docs) {
-        if (snap.id === n) continue;
-        const existSnap = await getDoc(doc(db, weeklyCol(wk), n));
-        const merged = choosePreferredRecord(
-          existSnap.exists() ? existSnap.data() : null, snap.data()
-        );
-        await setDoc(doc(db, weeklyCol(wk), n), {
-          ...(merged || snap.data()),
-          nickname: n, avatar: avatarPick, updatedAt: serverTimestamp(),
-        });
-        await deleteDoc(doc(db, weeklyCol(wk), snap.id));
-      }
-
-      // 3) 닉네임 기반 문서에서 투두 로드
-      const [myDSnap, myWSnap] = await Promise.all([
-        getDoc(doc(db, dailyCol(date), n)),
-        getDoc(doc(db, weeklyCol(wk), n)),
-      ]);
-      if (myDSnap.exists() && Array.isArray(myDSnap.data().todos)) {
-        setMyDaily(myDSnap.data().todos);
-      }
-      if (myWSnap.exists() && Array.isArray(myWSnap.data().todos)) {
-        setMyWeekly(myWSnap.data().todos);
-      }
-    } catch (err) {
-      console.error("Migration failed:", err);
-    }
-
-    // uuid 기반 키 제거
-    localStorage.removeItem("todoRoom_uid");
-
-    setNickname(n);
-    setAvatar(avatarPick);
-    setNicknameConfirmed(true);
-    localStorage.setItem("todoRoom_nickname", n);
-    localStorage.setItem("todoRoom_avatar", avatarPick);
+    await resolveNicknameSession(normalizedNickname, avatarPick);
   };
 
   /* ── Firestore 데일리 동기화 ── */
@@ -462,11 +556,8 @@ export default function App() {
   useEffect(() => {
     if (nicknameConfirmed) return;
 
-    const oldUid = localStorage.getItem("todoRoom_uid");
-    if (!oldUid) {
-      setProfileRecoveryChecked(true);
-      return;
-    }
+    const oldUid = uid;
+    if (!oldUid) return;
 
     let cancelled = false;
 
@@ -524,97 +615,61 @@ export default function App() {
     return () => {
       cancelled = true;
     };
-  }, [nicknameConfirmed]);
+  }, [nicknameConfirmed, uid]);
 
-  /* ── 자동 로그인 시 기존 uuid 문서 → 닉네임 문서 마이그레이션 ── */
+  /* ── 같은 닉네임의 더 좋은 문서가 있으면 그 uid로 재연결 ── */
   useEffect(() => {
-    if (!nicknameConfirmed || !uid) return;
-    const oldUid = localStorage.getItem("todoRoom_uid");
-    if (!oldUid || oldUid === uid) {
-      localStorage.removeItem("todoRoom_uid");
-      return;
-    }
+    if (!nicknameConfirmed || !nickname.trim()) return;
 
     let cancelled = false;
 
-    const migrateOldUid = async () => {
+    const reconnectUid = async () => {
       try {
-        const date = todayKey();
-        const wk = weekKey();
-        const [oldDailySnap, oldWeeklySnap] = await Promise.all([
-          getDoc(doc(db, dailyCol(date), oldUid)),
-          getDoc(doc(db, weeklyCol(wk), oldUid)),
-        ]);
+        const matches = await loadNicknameMatches(nickname);
 
-        if (cancelled) return;
+        if (cancelled || !matches.length) return;
 
-        if (oldDailySnap.exists()) {
-          const existSnap = await getDoc(doc(db, dailyCol(date), uid));
-          const merged = choosePreferredRecord(
-            existSnap.exists() ? existSnap.data() : null,
-            oldDailySnap.data()
+        const bestMatch = matches.reduce((best, candidate) => {
+          if (!best) return candidate;
+          return choosePreferredNicknameMatch(best, candidate);
+        }, null);
+        const currentMatch = matches.find((candidate) => candidate.id === uid);
+        const shouldReconnect =
+          bestMatch &&
+          bestMatch.id !== uid &&
+          (
+            !currentMatch ||
+            getNicknameMatchCurrentTotal(bestMatch) >
+              getNicknameMatchCurrentTotal(currentMatch) ||
+            (
+              getNicknameMatchCurrentTotal(bestMatch) ===
+                getNicknameMatchCurrentTotal(currentMatch) &&
+              getTodoCount(bestMatch.recentTodos) >
+                getTodoCount(currentMatch.recentTodos)
+            ) ||
+            (!avatar && !!bestMatch.avatar)
           );
-          await setDoc(doc(db, dailyCol(date), uid), {
-            ...(merged || oldDailySnap.data()),
-            nickname, avatar, updatedAt: serverTimestamp(),
-          });
-          await deleteDoc(doc(db, dailyCol(date), oldUid));
+
+        if (!shouldReconnect) return;
+
+        localStorage.setItem("todoRoom_uid", bestMatch.id);
+        if (bestMatch.avatar) {
+          localStorage.setItem("todoRoom_avatar", bestMatch.avatar);
+          setAvatar(bestMatch.avatar);
+          setAvatarPick(bestMatch.avatar);
         }
 
-        if (oldWeeklySnap.exists()) {
-          const existSnap = await getDoc(doc(db, weeklyCol(wk), uid));
-          const merged = choosePreferredRecord(
-            existSnap.exists() ? existSnap.data() : null,
-            oldWeeklySnap.data()
-          );
-          await setDoc(doc(db, weeklyCol(wk), uid), {
-            ...(merged || oldWeeklySnap.data()),
-            nickname, avatar, updatedAt: serverTimestamp(),
-          });
-          await deleteDoc(doc(db, weeklyCol(wk), oldUid));
-        }
-
-        // 같은 닉네임의 다른 uuid 문서도 정리
-        const [dailyMatches, weeklyMatches] = await Promise.all([
-          getDocs(query(collection(db, dailyCol(date)), where("nickname", "==", nickname))),
-          getDocs(query(collection(db, weeklyCol(wk)), where("nickname", "==", nickname))),
-        ]);
-
-        for (const snap of dailyMatches.docs) {
-          if (snap.id === uid) continue;
-          const existSnap = await getDoc(doc(db, dailyCol(date), uid));
-          const merged = choosePreferredRecord(
-            existSnap.exists() ? existSnap.data() : null, snap.data()
-          );
-          await setDoc(doc(db, dailyCol(date), uid), {
-            ...(merged || snap.data()),
-            nickname, avatar, updatedAt: serverTimestamp(),
-          });
-          await deleteDoc(doc(db, dailyCol(date), snap.id));
-        }
-
-        for (const snap of weeklyMatches.docs) {
-          if (snap.id === uid) continue;
-          const existSnap = await getDoc(doc(db, weeklyCol(wk), uid));
-          const merged = choosePreferredRecord(
-            existSnap.exists() ? existSnap.data() : null, snap.data()
-          );
-          await setDoc(doc(db, weeklyCol(wk), uid), {
-            ...(merged || snap.data()),
-            nickname, avatar, updatedAt: serverTimestamp(),
-          });
-          await deleteDoc(doc(db, weeklyCol(wk), snap.id));
-        }
-
-        localStorage.removeItem("todoRoom_uid");
+        setUid(bestMatch.id);
+        setMyDaily(bestMatch.hasDailyDoc ? bestMatch.dailyTodos : []);
+        setMyWeekly(bestMatch.hasWeeklyDoc ? bestMatch.weeklyTodos : []);
       } catch (err) {
-        console.error("Auto-migration failed:", err);
+        console.error("Nickname reconnect failed:", err);
       }
     };
 
-    void migrateOldUid();
+    void reconnectUid();
     return () => { cancelled = true; };
-  }, [uid, nicknameConfirmed, nickname, avatar]);
+  }, [uid, nicknameConfirmed, nickname, avatar, loadNicknameMatches]);
 
   /* ── 새 날짜 첫 진입 시 어제 미완료 투두 이어받기 ── */
   useEffect(() => {
@@ -1028,34 +1083,7 @@ export default function App() {
                   onClick={async () => {
                     const n = prompt("닉네임 변경", nickname);
                     if (!n?.trim() || n.trim() === nickname) return;
-                    const newNick = n.trim();
-                    const oldNick = nickname;
-                    const date = todayKey();
-                    const wk = weekKey();
-
-                    try {
-                      const [dSnap, wSnap] = await Promise.all([
-                        getDoc(doc(db, dailyCol(date), oldNick)),
-                        getDoc(doc(db, weeklyCol(wk), oldNick)),
-                      ]);
-                      if (dSnap.exists()) {
-                        await setDoc(doc(db, dailyCol(date), newNick), {
-                          ...dSnap.data(), nickname: newNick, updatedAt: serverTimestamp(),
-                        });
-                        await deleteDoc(doc(db, dailyCol(date), oldNick));
-                      }
-                      if (wSnap.exists()) {
-                        await setDoc(doc(db, weeklyCol(wk), newNick), {
-                          ...wSnap.data(), nickname: newNick, updatedAt: serverTimestamp(),
-                        });
-                        await deleteDoc(doc(db, weeklyCol(wk), oldNick));
-                      }
-                    } catch (err) {
-                      console.error("Nickname change migration failed:", err);
-                    }
-
-                    setNickname(newNick);
-                    localStorage.setItem("todoRoom_nickname", newNick);
+                    await resolveNicknameSession(n.trim(), avatar || avatarPick);
                   }}
                 >
                   닉네임 변경
