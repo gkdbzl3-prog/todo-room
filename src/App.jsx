@@ -84,6 +84,126 @@ function saveStoredTodos(key, todos) {
   localStorage.setItem(key, JSON.stringify(todos));
 }
 
+function normalizeNickname(nickname) {
+  return nickname?.trim() || "";
+}
+
+function getTodoCount(todos) {
+  return Array.isArray(todos) ? todos.length : 0;
+}
+
+function getUpdatedAtValue(updatedAt) {
+  if (!updatedAt) return 0;
+  if (typeof updatedAt === "number") return updatedAt;
+  if (typeof updatedAt.seconds === "number") return updatedAt.seconds;
+  return 0;
+}
+
+function hasSameNickname(record, nickname) {
+  const normalizedNickname = normalizeNickname(nickname);
+  const recordNickname = normalizeNickname(record?.nickname);
+  return !!normalizedNickname && recordNickname === normalizedNickname;
+}
+
+function choosePreferredRecord(a, b, todoKey = "todos") {
+  if (!a) return b;
+  if (!b) return a;
+
+  const aTodoCount = getTodoCount(a[todoKey]);
+  const bTodoCount = getTodoCount(b[todoKey]);
+
+  if (aTodoCount !== bTodoCount) {
+    return bTodoCount > aTodoCount ? b : a;
+  }
+
+  if (!!a.avatar !== !!b.avatar) {
+    return b.avatar ? b : a;
+  }
+
+  return getUpdatedAtValue(b.updatedAt) > getUpdatedAtValue(a.updatedAt) ? b : a;
+}
+
+function mergeRecordsByNickname(records, todoKey = "todos") {
+  const merged = new Map();
+
+  records.forEach((record) => {
+    const nicknameKey = normalizeNickname(record.nickname);
+    const key = nicknameKey ? `nick:${nicknameKey}` : `id:${record.id}`;
+    const existing = merged.get(key);
+
+    if (!existing) {
+      merged.set(key, {
+        ...record,
+        [todoKey]: Array.isArray(record[todoKey]) ? record[todoKey] : [],
+      });
+      return;
+    }
+
+    const preferred = choosePreferredRecord(existing, record, todoKey);
+    const fallback = preferred === existing ? record : existing;
+
+    merged.set(key, {
+      ...existing,
+      ...preferred,
+      avatar: preferred.avatar || fallback.avatar || "",
+      [todoKey]:
+        getTodoCount(preferred[todoKey]) >= getTodoCount(fallback[todoKey])
+          ? preferred[todoKey] || []
+          : fallback[todoKey] || [],
+    });
+  });
+
+  return Array.from(merged.values());
+}
+
+function mergeDisplayMembers(dailyMembers, weeklyMembers) {
+  const merged = new Map();
+
+  dailyMembers.forEach((member) => {
+    const nicknameKey = normalizeNickname(member.nickname);
+    const key = nicknameKey ? `nick:${nicknameKey}` : `id:${member.id}`;
+    merged.set(key, {
+      ...member,
+      todos: member.todos || [],
+      weeklyTodos: [],
+      isMe: false,
+    });
+  });
+
+  weeklyMembers.forEach((member) => {
+    const nicknameKey = normalizeNickname(member.nickname);
+    const key = nicknameKey ? `nick:${nicknameKey}` : `id:${member.id}`;
+    const existing = merged.get(key);
+
+    if (!existing) {
+      merged.set(key, {
+        id: member.id,
+        nickname: member.nickname,
+        avatar: member.avatar,
+        todos: [],
+        weeklyTodos: member.todos || [],
+        isMe: false,
+      });
+      return;
+    }
+
+    const preferred = choosePreferredRecord(existing, member, "todos");
+    merged.set(key, {
+      ...existing,
+      id: preferred.id || existing.id,
+      nickname: preferred.nickname || existing.nickname,
+      avatar: existing.avatar || member.avatar || "",
+      weeklyTodos:
+        getTodoCount(existing.weeklyTodos) >= getTodoCount(member.todos)
+          ? existing.weeklyTodos
+          : member.todos || [],
+      isMe: false,
+    });
+  });
+
+  return Array.from(merged.values());
+}
+
 function resetTodosForNewDay(todos) {
   return (todos || [])
     .filter((todo) => !todo.done)
@@ -102,27 +222,38 @@ async function findRecentDailyMatchByNickname(targetNickname) {
     query(collection(db, historyDatesCol()), orderBy("date", "desc"), limit(14))
   );
 
+  let bestMatch = null;
+
   for (const historyDoc of historySnap.docs) {
     const historyDate = historyDoc.data().date;
     const matchSnap = await getDocs(
       query(
         collection(db, dailyCol(historyDate)),
-        where("nickname", "==", targetNickname),
-        limit(1)
+        where("nickname", "==", targetNickname)
       )
     );
 
     if (!matchSnap.empty) {
-      const matchDoc = matchSnap.docs[0];
-      return {
-        id: matchDoc.id,
+      const bestDoc = matchSnap.docs.reduce((best, current) => {
+        if (!best) return current;
+        const bestData = best.data();
+        const currentData = current.data();
+        return choosePreferredRecord(bestData, currentData) === currentData ? current : best;
+      }, null);
+      const nextMatch = {
+        id: bestDoc.id,
         date: historyDate,
-        data: matchDoc.data(),
+        data: bestDoc.data(),
       };
+      bestMatch = !bestMatch
+        ? nextMatch
+        : choosePreferredRecord(bestMatch.data, nextMatch.data) === nextMatch.data
+          ? nextMatch
+          : bestMatch;
     }
   }
 
-  return null;
+  return bestMatch;
 }
 
 const AVATAR_LIST = [
@@ -321,7 +452,7 @@ export default function App() {
     return () => {
       cancelled = true;
     };
-  }, [uid, nicknameConfirmed]);
+  }, [uid, nicknameConfirmed, nickname]);
 
   /* ── uid가 바뀌었으면 최근 닉네임 문서로 재연결 ── */
   useEffect(() => {
@@ -331,26 +462,58 @@ export default function App() {
 
     const reconnectUid = async () => {
       try {
-        const [todaySnap, weeklySnap] = await Promise.all([
-          getDoc(doc(db, dailyCol(todayKey()), uid)),
-          getDoc(doc(db, weeklyCol(weekKey()), uid)),
+        const normalizedNickname = normalizeNickname(nickname);
+        const [todayMatches, weeklyMatches, recentMatch] = await Promise.all([
+          getDocs(
+            query(
+              collection(db, dailyCol(todayKey())),
+              where("nickname", "==", normalizedNickname)
+            )
+          ),
+          getDocs(
+            query(
+              collection(db, weeklyCol(weekKey())),
+              where("nickname", "==", normalizedNickname)
+            )
+          ),
+          findRecentDailyMatchByNickname(normalizedNickname),
         ]);
 
         if (cancelled) return;
 
-        const hasOwnData =
-          todaySnap.exists() ||
-          weeklySnap.exists() ||
-          myDaily.length > 0 ||
-          myWeekly.length > 0;
+        const candidates = [];
+        todayMatches.forEach((docSnap) =>
+          candidates.push({ id: docSnap.id, ...docSnap.data() })
+        );
+        weeklyMatches.forEach((docSnap) =>
+          candidates.push({ id: docSnap.id, ...docSnap.data() })
+        );
+        if (recentMatch) {
+          candidates.push({ id: recentMatch.id, ...recentMatch.data });
+        }
 
-        if (hasOwnData) return;
+        if (!candidates.length) return;
 
-        const recentMatch = await findRecentDailyMatchByNickname(nickname.trim());
+        const bestMatch = candidates.reduce((best, candidate) => {
+          if (!best) return candidate;
+          return choosePreferredRecord(best, candidate);
+        }, null);
+        const currentMatch = candidates.find((candidate) => candidate.id === uid);
+        const shouldReconnect =
+          bestMatch &&
+          bestMatch.id !== uid &&
+          (
+            !currentMatch ||
+            getTodoCount(bestMatch.todos) > getTodoCount(currentMatch.todos) ||
+            (!avatar && !!bestMatch.avatar)
+          );
 
-        if (cancelled || !recentMatch || recentMatch.id === uid) return;
+        if (!shouldReconnect) return;
 
-        localStorage.setItem("todoRoom_uid", recentMatch.id);
+        localStorage.setItem("todoRoom_uid", bestMatch.id);
+        if (bestMatch.avatar) {
+          localStorage.setItem("todoRoom_avatar", bestMatch.avatar);
+        }
         window.location.reload();
       } catch (error) {
         console.error("Failed to reconnect uid", error);
@@ -362,34 +525,7 @@ export default function App() {
     return () => {
       cancelled = true;
     };
-  }, [uid, nicknameConfirmed, nickname, myDaily.length, myWeekly.length]);
-
-  /* ── 새벽 2시 넘겼을 때만 완료 항목 정리 ── */
-  useEffect(() => {
-    if (!nicknameConfirmed) return;
-    const now = new Date();
-    const lastClean = localStorage.getItem("todoRoom_lastClean");
-    const todayAt2 = new Date(now);
-    todayAt2.setHours(2, 0, 0, 0);
-    // 오늘 2시 이후이고, 마지막 정리가 2시 이전(혹은 처음)일 때만 실행
-    if (now < todayAt2) return;
-    if (lastClean && new Date(lastClean) >= todayAt2) return;
-
-    const date = todayKey();
-    getDocs(collection(db, dailyCol(date))).then((snap) => {
-      snap.forEach((d) => {
-        const data = d.data();
-        const todos = data.todos || [];
-        const active = todos.filter((t) => !t.done);
-        if (active.length !== todos.length) {
-          setDoc(doc(db, dailyCol(date), d.id), {
-            ...data, todos: active, updatedAt: serverTimestamp(),
-          }).catch(() => {});
-        }
-      });
-    });
-    localStorage.setItem("todoRoom_lastClean", now.toISOString());
-  }, [nicknameConfirmed]);
+  }, [uid, nicknameConfirmed, nickname, avatar]);
 
   /* ── 새 날짜 첫 진입 시 어제 미완료 투두 이어받기 ── */
   useEffect(() => {
@@ -472,13 +608,26 @@ export default function App() {
       (snap) => {
         const all = [];
         snap.forEach((d) => {
-          const data = d.data();
-          if (d.id === uid) {
-            setMyDaily(data.todos || []);
-          }
-          all.push({ id: d.id, ...data });
+          all.push({ id: d.id, ...d.data() });
         });
-        setMembers(all.filter((m) => m.id !== uid));
+
+        const selfCandidates = all.filter(
+          (member) => member.id === uid || hasSameNickname(member, nickname)
+        );
+        const preferredSelf = selfCandidates.reduce((best, candidate) => {
+          if (!best) return candidate;
+          return choosePreferredRecord(best, candidate);
+        }, null);
+
+        if (preferredSelf) {
+          setMyDaily(preferredSelf.todos || []);
+        }
+
+        setMembers(
+          mergeRecordsByNickname(
+            all.filter((member) => !selfCandidates.some((self) => self.id === member.id))
+          )
+        );
       },
       (error) => {
         console.error("Failed to subscribe daily todos", error);
@@ -491,13 +640,26 @@ export default function App() {
       (snap) => {
         const all = [];
         snap.forEach((d) => {
-          const data = d.data();
-          if (d.id === uid) {
-            setMyWeekly(data.todos || []);
-          }
-          all.push({ id: d.id, ...data });
+          all.push({ id: d.id, ...d.data() });
         });
-        setWeeklyMembers(all.filter((m) => m.id !== uid));
+
+        const selfCandidates = all.filter(
+          (member) => member.id === uid || hasSameNickname(member, nickname)
+        );
+        const preferredSelf = selfCandidates.reduce((best, candidate) => {
+          if (!best) return candidate;
+          return choosePreferredRecord(best, candidate);
+        }, null);
+
+        if (preferredSelf) {
+          setMyWeekly(preferredSelf.todos || []);
+        }
+
+        setWeeklyMembers(
+          mergeRecordsByNickname(
+            all.filter((member) => !selfCandidates.some((self) => self.id === member.id))
+          )
+        );
       },
       (error) => {
         console.error("Failed to subscribe weekly todos", error);
@@ -540,7 +702,7 @@ export default function App() {
       unsubNoti();
       unsubHistory();
     };
-  }, [uid, nicknameConfirmed]);
+  }, [uid, nicknameConfirmed, nickname]);
 
   /* ── 프로필 변경 시 Firestore 업데이트 ── */
   useEffect(() => {
@@ -637,7 +799,7 @@ export default function App() {
     const snap = await getDocs(collection(db, dailyCol(date)));
     const data = [];
     snap.forEach((d) => data.push({ id: d.id, ...d.data() }));
-    setHistoryData(data);
+    setHistoryData(mergeRecordsByNickname(data));
   };
 
   /* ── 합산 ── */
@@ -647,27 +809,10 @@ export default function App() {
   const badge = getBadge(totalDoneCount);
 
   // 전체 멤버 (나 포함) 카드 데이터
+  const otherMembers = mergeDisplayMembers(members, weeklyMembers);
   const allMembers = [
     { id: uid, nickname, avatar, todos: myDaily, weeklyTodos: myWeekly, isMe: true },
-    ...members.map((m) => {
-      const wm = weeklyMembers.find((w) => w.id === m.id);
-      return {
-        ...m,
-        weeklyTodos: wm?.todos || [],
-        isMe: false,
-      };
-    }),
-    // 위클리에만 있는 멤버
-    ...weeklyMembers
-      .filter((w) => !members.find((m) => m.id === w.id))
-      .map((w) => ({
-        id: w.id,
-        nickname: w.nickname,
-        avatar: w.avatar,
-        todos: [],
-        weeklyTodos: w.todos || [],
-        isMe: false,
-      })),
+    ...otherMembers,
   ].sort((a, b) => {
     // 투두 있는 멤버 우선
     const aTodos = (a.todos?.length || 0) + (a.weeklyTodos?.length || 0);
