@@ -174,6 +174,11 @@ function mergeRecordsByNickname(records, todoKey = "todos") {
   return Array.from(merged.values());
 }
 
+function getRecordIdentityKey(record) {
+  const nicknameKey = normalizeNickname(record?.nickname);
+  return nicknameKey ? `nick:${nicknameKey}` : `id:${record?.id}`;
+}
+
 function mergeDisplayMembers(dailyMembers, weeklyMembers) {
   const merged = new Map();
 
@@ -368,6 +373,19 @@ function resetTodosForNewDay(todos) {
       done: false,
       completedAt: null,
     }));
+}
+
+function buildFallbackDailyRecords(currentRecords, previousRecords) {
+  const mergedCurrentRecords = mergeRecordsByNickname(currentRecords);
+  const currentKeys = new Set(mergedCurrentRecords.map(getRecordIdentityKey));
+
+  return mergeRecordsByNickname(previousRecords)
+    .filter((record) => !currentKeys.has(getRecordIdentityKey(record)))
+    .map((record) => ({
+      ...record,
+      todos: resetTodosForNewDay(record.todos || []),
+    }))
+    .filter((record) => getTodoCount(record.todos) > 0);
 }
 
 async function findRecentDailyMatchByNickname(targetNickname) {
@@ -915,12 +933,39 @@ export default function App() {
     if (!nicknameConfirmed || !uid) return;
 
     const date = currentDayKey;
+    const previousDate = previousDayKeyFrom(currentDayKey);
     const weeklyKeys =
       currentWeekKey === legacyWeekKeyValue
         ? [currentWeekKey]
         : [currentWeekKey, legacyWeekKeyValue];
 
     // 데일리 멤버 리스너
+    const dailyDocsBySource = new Map();
+    const applyDailyMembers = () => {
+      const todayRecords = dailyDocsBySource.get("today") || [];
+      const previousRecords = dailyDocsBySource.get("previous") || [];
+      const fallbackRecords = buildFallbackDailyRecords(todayRecords, previousRecords);
+      const all = mergeRecordsByNickname([...todayRecords, ...fallbackRecords]);
+
+      const { preferred: preferredSelf, selfCandidates } = chooseSelfRecord(
+        all,
+        uid,
+        nickname
+      );
+
+      if (preferredSelf) {
+        setMyDaily(preferredSelf.todos || []);
+      } else {
+        setMyDaily([]);
+      }
+
+      setMembers(
+        mergeRecordsByNickname(
+          all.filter((member) => !selfCandidates.some((self) => self.id === member.id))
+        )
+      );
+    };
+
     const unsubDaily = onSnapshot(
       collection(db, dailyCol(date)),
       (snap) => {
@@ -928,27 +973,26 @@ export default function App() {
         snap.forEach((d) => {
           all.push({ id: d.id, ...d.data() });
         });
-
-        const { preferred: preferredSelf, selfCandidates } = chooseSelfRecord(
-          all,
-          uid,
-          nickname
-        );
-
-        if (preferredSelf) {
-          setMyDaily(preferredSelf.todos || []);
-        } else {
-          setMyDaily([]);
-        }
-
-        setMembers(
-          mergeRecordsByNickname(
-            all.filter((member) => !selfCandidates.some((self) => self.id === member.id))
-          )
-        );
+        dailyDocsBySource.set("today", all);
+        applyDailyMembers();
       },
       (error) => {
         console.error("Failed to subscribe daily todos", error);
+      }
+    );
+
+    const unsubPreviousDaily = onSnapshot(
+      collection(db, dailyCol(previousDate)),
+      (snap) => {
+        const all = [];
+        snap.forEach((d) => {
+          all.push({ id: d.id, ...d.data() });
+        });
+        dailyDocsBySource.set("previous", all);
+        applyDailyMembers();
+      },
+      (error) => {
+        console.error("Failed to subscribe previous daily todos", error);
       }
     );
 
@@ -1041,6 +1085,7 @@ export default function App() {
 
     return () => {
       unsubDaily();
+      unsubPreviousDaily();
       weeklyUnsubs.forEach((unsubscribe) => unsubscribe());
       unsubNoti();
       unsubHistory();
