@@ -1070,13 +1070,22 @@ export default function App() {
       }
     );
 
-    // 히스토리 날짜 리스너
+    // 히스토리 날짜 리스너 (과거순 정렬)
+    let historyAutoLoaded = false;
     const unsubHistory = onSnapshot(
-      query(collection(db, historyDatesCol()), orderBy("date", "desc")),
+      query(collection(db, historyDatesCol()), orderBy("date", "asc")),
       (snap) => {
         const dates = [];
         snap.forEach((d) => dates.push(d.data().date));
-        setHistoryDates(dates.filter((d) => d !== currentDayKey));
+        const filtered = dates.filter((d) => d !== currentDayKey);
+        setHistoryDates(filtered);
+
+        // 어제 기록 자동 로드 (최초 1회)
+        if (!historyAutoLoaded && filtered.length > 0) {
+          historyAutoLoaded = true;
+          const yesterday = filtered[filtered.length - 1];
+          loadHistory(yesterday);
+        }
       },
       (error) => {
         console.error("Failed to subscribe history dates", error);
