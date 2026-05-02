@@ -27,14 +27,32 @@ function getEffectiveDate() {
   return adjusted;
 }
 
-const todayKey = () => getEffectiveDate().toISOString().slice(0, 10);
+function formatLocalDateKey(date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
+function formatUtcDateKey(date) {
+  return date.toISOString().slice(0, 10);
+}
+
+const todayKey = () => formatLocalDateKey(getEffectiveDate());
 
 function weekKey() {
   const d = getEffectiveDate();
   const day = d.getDay();
   // 월요일 기준 (일요일=0 → 전 주로)
   d.setDate(d.getDate() - ((day + 6) % 7));
-  return d.toISOString().slice(0, 10);
+  return formatLocalDateKey(d);
+}
+
+function legacyWeekKey() {
+  const d = getEffectiveDate();
+  const day = d.getDay();
+  d.setDate(d.getDate() - ((day + 6) % 7));
+  return formatUtcDateKey(d);
 }
 
 function nextMondayLabel() {
@@ -49,7 +67,7 @@ function nextMondayLabel() {
 function previousDayKeyFrom(dateKey) {
   const d = new Date(`${dateKey}T00:00:00`);
   d.setDate(d.getDate() - 1);
-  return d.toISOString().slice(0, 10);
+  return formatLocalDateKey(d);
 }
 
 function getUid() {
@@ -282,11 +300,34 @@ function collectNicknameMatches(dailyRecords, weeklyRecords, recentMatch) {
 
   weeklyRecords.forEach((record) => {
     const match = ensureMatch(record.id);
-    match.nickname = record.nickname || match.nickname;
-    match.avatar = match.avatar || record.avatar || "";
-    match.weeklyTodos = Array.isArray(record.todos) ? record.todos : [];
-    match.hasWeeklyDoc = true;
-    match.weeklyUpdatedAt = record.updatedAt || match.weeklyUpdatedAt;
+    const nextWeeklyTodos = Array.isArray(record.todos) ? record.todos : [];
+
+    if (!match.hasWeeklyDoc) {
+      match.nickname = record.nickname || match.nickname;
+      match.avatar = match.avatar || record.avatar || "";
+      match.weeklyTodos = nextWeeklyTodos;
+      match.hasWeeklyDoc = true;
+      match.weeklyUpdatedAt = record.updatedAt || match.weeklyUpdatedAt;
+      return;
+    }
+
+    const existingWeeklyRecord = {
+      nickname: match.nickname,
+      avatar: match.avatar,
+      todos: match.weeklyTodos,
+      updatedAt: match.weeklyUpdatedAt,
+    };
+    const preferredWeeklyRecord = choosePreferredRecord(
+      existingWeeklyRecord,
+      record
+    );
+
+    if (preferredWeeklyRecord === record) {
+      match.nickname = record.nickname || match.nickname;
+      match.avatar = record.avatar || match.avatar || "";
+      match.weeklyTodos = nextWeeklyTodos;
+      match.weeklyUpdatedAt = record.updatedAt || match.weeklyUpdatedAt;
+    }
   });
 
   if (recentMatch?.id) {
@@ -324,7 +365,6 @@ function resetTodosForNewDay(todos) {
     .filter((todo) => !todo.done)
     .map((todo) => ({
       ...todo,
-      started: false,
       done: false,
       completedAt: null,
     }));
@@ -433,6 +473,7 @@ export default function App() {
   const [selectedDate, setSelectedDate] = useState(null);
   const skipDailyStorageSaveRef = useRef(false);
   const skipWeeklyStorageSaveRef = useRef(false);
+  const legacyWeekKeyValue = legacyWeekKey();
 
   // (위클리 항상 표시)
 
@@ -493,18 +534,26 @@ export default function App() {
   const loadNicknameMatches = useCallback(async (rawNickname) => {
     const normalizedNickname = normalizeNickname(rawNickname);
     if (!normalizedNickname) return [];
+    const weeklyKeys =
+      currentWeekKey === legacyWeekKeyValue
+        ? [currentWeekKey]
+        : [currentWeekKey, legacyWeekKeyValue];
 
-    const [dailyMatches, weeklyMatches, recentMatch] = await Promise.all([
+    const [dailyMatches, weeklyMatchGroups, recentMatch] = await Promise.all([
       getDocs(
         query(
           collection(db, dailyCol(currentDayKey)),
           where("nickname", "==", normalizedNickname)
         )
       ),
-      getDocs(
-        query(
-          collection(db, weeklyCol(currentWeekKey)),
-          where("nickname", "==", normalizedNickname)
+      Promise.all(
+        weeklyKeys.map((wk) =>
+          getDocs(
+            query(
+              collection(db, weeklyCol(wk)),
+              where("nickname", "==", normalizedNickname)
+            )
+          )
         )
       ),
       findRecentDailyMatchByNickname(normalizedNickname),
@@ -514,13 +563,15 @@ export default function App() {
       id: docSnap.id,
       ...docSnap.data(),
     }));
-    const weeklyRecords = weeklyMatches.docs.map((docSnap) => ({
-      id: docSnap.id,
-      ...docSnap.data(),
-    }));
+    const weeklyRecords = weeklyMatchGroups.flatMap((weeklyMatches) =>
+      weeklyMatches.docs.map((docSnap) => ({
+        id: docSnap.id,
+        ...docSnap.data(),
+      }))
+    );
 
     return collectNicknameMatches(dailyRecords, weeklyRecords, recentMatch);
-  }, [currentDayKey, currentWeekKey]);
+  }, [currentDayKey, currentWeekKey, legacyWeekKeyValue]);
 
   const resolveNicknameSession = useCallback(
     async (rawNickname, fallbackAvatar = avatarPick) => {
@@ -610,7 +661,7 @@ export default function App() {
   const syncMyWeekly = useCallback(
     (todos) => {
       if (!nicknameConfirmed || !uid) return;
-      const wk = currentWeekKey;
+      const weeklyKeys = Array.from(new Set([currentWeekKey, legacyWeekKeyValue]));
       const payload = {
         nickname,
         avatar,
@@ -618,14 +669,24 @@ export default function App() {
         updatedAt: serverTimestamp(),
       };
 
-      void setDoc(doc(db, weeklyCol(wk), uid), payload).catch((error) => {
-        console.error("Failed to sync weekly todos", error);
-      });
-      void syncDuplicateNicknameDocs(weeklyCol(wk), nickname, payload).catch((error) => {
-        console.error("Failed to sync duplicate weekly todos", error);
+      weeklyKeys.forEach((wk) => {
+        void setDoc(doc(db, weeklyCol(wk), uid), payload).catch((error) => {
+          console.error("Failed to sync weekly todos", error);
+        });
+        void syncDuplicateNicknameDocs(weeklyCol(wk), nickname, payload).catch((error) => {
+          console.error("Failed to sync duplicate weekly todos", error);
+        });
       });
     },
-    [uid, nickname, avatar, nicknameConfirmed, currentWeekKey, syncDuplicateNicknameDocs]
+    [
+      uid,
+      nickname,
+      avatar,
+      nicknameConfirmed,
+      currentWeekKey,
+      legacyWeekKeyValue,
+      syncDuplicateNicknameDocs,
+    ]
   );
 
   useEffect(() => {
@@ -657,15 +718,31 @@ export default function App() {
 
     const recoverProfile = async () => {
       try {
-        const [dailySnap, weeklySnap] = await Promise.all([
+        const weeklyKeys =
+          currentWeekKey === legacyWeekKeyValue
+            ? [currentWeekKey]
+            : [currentWeekKey, legacyWeekKeyValue];
+        const [dailySnap, weeklySnaps] = await Promise.all([
           getDoc(doc(db, dailyCol(currentDayKey), oldUid)),
-          getDoc(doc(db, weeklyCol(currentWeekKey), oldUid)),
+          Promise.all(
+            weeklyKeys.map((wk) => getDoc(doc(db, weeklyCol(wk), oldUid)))
+          ),
         ]);
 
         if (cancelled) return;
 
         const dailyData = dailySnap.exists() ? dailySnap.data() : null;
-        const weeklyData = weeklySnap.exists() ? weeklySnap.data() : null;
+        const weeklyData = weeklySnaps.reduce((best, snap) => {
+          if (!snap.exists()) return best;
+          const candidate = snap.data();
+          if (!best) return candidate;
+          return choosePreferredRecord(
+            { ...best, todos: best.todos || [] },
+            { ...candidate, todos: candidate.todos || [] }
+          ) === candidate
+            ? candidate
+            : best;
+        }, null);
         let profileData = dailyData || weeklyData;
 
         if (!profileData) {
@@ -709,7 +786,7 @@ export default function App() {
     return () => {
       cancelled = true;
     };
-  }, [nicknameConfirmed, uid, currentDayKey, currentWeekKey]);
+  }, [nicknameConfirmed, uid, currentDayKey, currentWeekKey, legacyWeekKeyValue]);
 
   /* ── 같은 닉네임의 더 좋은 문서가 있으면 그 uid로 재연결 ── */
   useEffect(() => {
@@ -838,7 +915,10 @@ export default function App() {
     if (!nicknameConfirmed || !uid) return;
 
     const date = currentDayKey;
-    const wk = currentWeekKey;
+    const weeklyKeys =
+      currentWeekKey === legacyWeekKeyValue
+        ? [currentWeekKey]
+        : [currentWeekKey, legacyWeekKeyValue];
 
     // 데일리 멤버 리스너
     const unsubDaily = onSnapshot(
@@ -873,35 +953,60 @@ export default function App() {
     );
 
     // 위클리 멤버 리스너
-    const unsubWeekly = onSnapshot(
-      collection(db, weeklyCol(wk)),
-      (snap) => {
-        const all = [];
-        snap.forEach((d) => {
-          all.push({ id: d.id, ...d.data() });
+    const weeklyDocsByKey = new Map();
+    const applyWeeklyMembers = () => {
+      const mergedWeeklyRecords = new Map();
+
+      weeklyDocsByKey.forEach((records) => {
+        records.forEach((record) => {
+          const existing = mergedWeeklyRecords.get(record.id);
+          if (!existing) {
+            mergedWeeklyRecords.set(record.id, record);
+            return;
+          }
+
+          mergedWeeklyRecords.set(
+            record.id,
+            choosePreferredRecord(existing, record)
+          );
         });
+      });
 
-        const { preferred: preferredSelf, selfCandidates } = chooseSelfRecord(
-          all,
-          uid,
-          nickname
-        );
+      const all = Array.from(mergedWeeklyRecords.values());
+      const { preferred: preferredSelf, selfCandidates } = chooseSelfRecord(
+        all,
+        uid,
+        nickname
+      );
 
-        if (preferredSelf) {
-          setMyWeekly(preferredSelf.todos || []);
-        } else {
-          setMyWeekly([]);
-        }
-
-        setWeeklyMembers(
-          mergeRecordsByNickname(
-            all.filter((member) => !selfCandidates.some((self) => self.id === member.id))
-          )
-        );
-      },
-      (error) => {
-        console.error("Failed to subscribe weekly todos", error);
+      if (preferredSelf) {
+        setMyWeekly(preferredSelf.todos || []);
+      } else {
+        setMyWeekly([]);
       }
+
+      setWeeklyMembers(
+        mergeRecordsByNickname(
+          all.filter((member) => !selfCandidates.some((self) => self.id === member.id))
+        )
+      );
+    };
+
+    const weeklyUnsubs = weeklyKeys.map((weeklyKey) =>
+      onSnapshot(
+        collection(db, weeklyCol(weeklyKey)),
+        (snap) => {
+          const all = [];
+          snap.forEach((d) => {
+            all.push({ id: d.id, ...d.data() });
+          });
+          weeklyDocsByKey.set(weeklyKey, all);
+          applyWeeklyMembers();
+        },
+        (error) => {
+          console.error("Failed to subscribe weekly todos", error);
+        }
+      )
     );
 
     // 알림 리스너 (최근 3개)
@@ -936,11 +1041,11 @@ export default function App() {
 
     return () => {
       unsubDaily();
-      unsubWeekly();
+      weeklyUnsubs.forEach((unsubscribe) => unsubscribe());
       unsubNoti();
       unsubHistory();
     };
-  }, [uid, nicknameConfirmed, nickname, currentDayKey, currentWeekKey]);
+  }, [uid, nicknameConfirmed, nickname, currentDayKey, currentWeekKey, legacyWeekKeyValue]);
 
   /* ── 프로필 변경 시 Firestore 업데이트 ── */
   useEffect(() => {
