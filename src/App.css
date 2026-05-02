@@ -786,7 +786,7 @@ input:focus {
     min-width: 0;
     position: sticky;
     top: 16px;
-    max-height: calc(100dvh - 120px);
+    max-height: fit-content;
     overflow-y: auto;
   }
 
