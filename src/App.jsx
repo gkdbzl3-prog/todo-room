@@ -388,11 +388,36 @@ function buildFallbackDailyRecords(currentRecords, previousRecords) {
     .filter((record) => getTodoCount(record.todos) > 0);
 }
 
+async function findRecentDailyFallbackRecords(currentDateKey) {
+  const historySnap = await getDocs(
+    query(collection(db, historyDatesCol()), orderBy("date", "desc"))
+  );
+
+  const fallbackRecordsByKey = new Map();
+
+  for (const historyDoc of historySnap.docs) {
+    const historyDate = historyDoc.data().date;
+    if (!historyDate || historyDate >= currentDateKey) continue;
+
+    const dailySnap = await getDocs(collection(db, dailyCol(historyDate)));
+    dailySnap.forEach((docSnap) => {
+      const record = { id: docSnap.id, ...docSnap.data() };
+      const key = getRecordIdentityKey(record);
+
+      if (!fallbackRecordsByKey.has(key)) {
+        fallbackRecordsByKey.set(key, record);
+      }
+    });
+  }
+
+  return Array.from(fallbackRecordsByKey.values());
+}
+
 async function findRecentDailyMatchByNickname(targetNickname) {
   if (!targetNickname) return null;
 
   const historySnap = await getDocs(
-    query(collection(db, historyDatesCol()), orderBy("date", "desc"), limit(14))
+    query(collection(db, historyDatesCol()), orderBy("date", "desc"))
   );
 
   let bestMatch = null;
@@ -765,7 +790,7 @@ export default function App() {
 
         if (!profileData) {
           const historySnap = await getDocs(
-            query(collection(db, historyDatesCol()), orderBy("date", "desc"), limit(7))
+            query(collection(db, historyDatesCol()), orderBy("date", "desc"))
           );
 
           for (const historyDoc of historySnap.docs) {
@@ -933,7 +958,6 @@ export default function App() {
     if (!nicknameConfirmed || !uid) return;
 
     const date = currentDayKey;
-    const previousDate = previousDayKeyFrom(currentDayKey);
     const weeklyKeys =
       currentWeekKey === legacyWeekKeyValue
         ? [currentWeekKey]
@@ -941,10 +965,11 @@ export default function App() {
 
     // 데일리 멤버 리스너
     const dailyDocsBySource = new Map();
+    let cancelled = false;
     const applyDailyMembers = () => {
       const todayRecords = dailyDocsBySource.get("today") || [];
-      const previousRecords = dailyDocsBySource.get("previous") || [];
-      const fallbackRecords = buildFallbackDailyRecords(todayRecords, previousRecords);
+      const fallbackSourceRecords = dailyDocsBySource.get("fallback") || [];
+      const fallbackRecords = buildFallbackDailyRecords(todayRecords, fallbackSourceRecords);
       const all = mergeRecordsByNickname([...todayRecords, ...fallbackRecords]);
 
       const { preferred: preferredSelf, selfCandidates } = chooseSelfRecord(
@@ -981,20 +1006,15 @@ export default function App() {
       }
     );
 
-    const unsubPreviousDaily = onSnapshot(
-      collection(db, dailyCol(previousDate)),
-      (snap) => {
-        const all = [];
-        snap.forEach((d) => {
-          all.push({ id: d.id, ...d.data() });
-        });
-        dailyDocsBySource.set("previous", all);
+    void findRecentDailyFallbackRecords(currentDayKey)
+      .then((records) => {
+        if (cancelled) return;
+        dailyDocsBySource.set("fallback", records);
         applyDailyMembers();
-      },
-      (error) => {
-        console.error("Failed to subscribe previous daily todos", error);
-      }
-    );
+      })
+      .catch((error) => {
+        console.error("Failed to load fallback daily todos", error);
+      });
 
     // 위클리 멤버 리스너
     const weeklyDocsByKey = new Map();
@@ -1093,8 +1113,8 @@ export default function App() {
     );
 
     return () => {
+      cancelled = true;
       unsubDaily();
-      unsubPreviousDaily();
       weeklyUnsubs.forEach((unsubscribe) => unsubscribe());
       unsubNoti();
       unsubHistory();
@@ -1191,13 +1211,13 @@ export default function App() {
   };
 
   /* ── 히스토리 조회 ── */
-  const loadHistory = async (date) => {
+  async function loadHistory(date) {
     setSelectedDate(date);
     const snap = await getDocs(collection(db, dailyCol(date)));
     const data = [];
     snap.forEach((d) => data.push({ id: d.id, ...d.data() }));
     setHistoryData(mergeRecordsByNickname(data));
-  };
+  }
 
   /* ── 합산 ── */
   const dailyDoneCount = myDaily.filter((t) => t.done).length;
