@@ -384,8 +384,7 @@ function buildFallbackDailyRecords(currentRecords, previousRecords) {
     .map((record) => ({
       ...record,
       todos: resetTodosForNewDay(record.todos || []),
-    }))
-    .filter((record) => getTodoCount(record.todos) > 0);
+    }));
 }
 
 async function findRecentDailyFallbackRecords(currentDateKey) {
