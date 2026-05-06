@@ -250,6 +250,11 @@ body,
   gap: 12px;
 }
 
+/* 모바일 순서: 입력 → 멤버 → 투두 목록 */
+.my-panel-input { order: -1; }
+.member-panel   { order: 0; }
+.my-panel-todos { order: 1; }
+
 /* ─── 내 카드 ─── */
 .me-card-header {
   display: flex;
@@ -822,12 +827,18 @@ input:focus {
 @media (min-width: 768px) {
   .room-layout {
     max-width: 1200px;
-    flex-direction: row;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: auto 1fr;
+    align-items: start;
+    gap: 16px;
   }
 
+  /* 데스크탑: 왼쪽 = 멤버, 오른쪽 = 입력+투두 */
   .member-panel {
-    flex: 3;
+    grid-column: 1;
+    grid-row: 1 / -1;
+    order: unset;
     min-width: 0;
     position: sticky;
     top: 16px;
@@ -835,8 +846,19 @@ input:focus {
     overflow-y: auto;
   }
 
+  .my-panel-input {
+    grid-column: 2;
+    grid-row: 1;
+    order: unset;
+  }
+
+  .my-panel-todos {
+    grid-column: 2;
+    grid-row: 2;
+    order: unset;
+  }
+
   .my-panel {
-    flex: 2;
     min-width: 0;
     position: sticky;
     top: 16px;

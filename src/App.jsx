@@ -1371,6 +1371,41 @@ export default function App() {
 
       {tab === "today" ? (
         <div className="room-layout">
+          {/* 투두 입력 (모바일에서 최상단) */}
+          <section className="my-panel my-panel-input">
+            <div className="me-card">
+              <div className="me-card-header">
+                <span className="me-label">내 프로필</span>
+                <button
+                  className="btn-small"
+                  onClick={async () => {
+                    const n = prompt("닉네임 변경", nickname);
+                    if (!n?.trim() || n.trim() === nickname) return;
+                    await resolveNicknameSession(n.trim(), avatar || avatarPick);
+                  }}
+                >
+                  닉네임 변경
+                </button>
+              </div>
+              <div className="me-nickname-display">
+                <span className="me-avatar-inline">{avatar}</span>
+                {nickname}
+              </div>
+
+              <div className="todo-input-row">
+                <input
+                  value={todoText}
+                  onChange={(e) => setTodoText(e.target.value)}
+                  onKeyDown={(e) => e.key === "Enter" && addDaily()}
+                  placeholder="오늘 할일 입력"
+                />
+                <button className="btn-add" onClick={addDaily}>
+                  추가
+                </button>
+              </div>
+            </div>
+          </section>
+
           {/* 멤버 패널 */}
           <section className="member-panel">
             <h2>MEMBERS</h2>
@@ -1422,40 +1457,8 @@ export default function App() {
             )}
           </section>
 
-          {/* 내 투두 */}
-          <section className="my-panel">
-            <div className="me-card">
-              <div className="me-card-header">
-                <span className="me-label">내 프로필</span>
-                <button
-                  className="btn-small"
-                  onClick={async () => {
-                    const n = prompt("닉네임 변경", nickname);
-                    if (!n?.trim() || n.trim() === nickname) return;
-                    await resolveNicknameSession(n.trim(), avatar || avatarPick);
-                  }}
-                >
-                  닉네임 변경
-                </button>
-              </div>
-              <div className="me-nickname-display">
-                <span className="me-avatar-inline">{avatar}</span>
-                {nickname}
-              </div>
-
-              <div className="todo-input-row">
-                <input
-                  value={todoText}
-                  onChange={(e) => setTodoText(e.target.value)}
-                  onKeyDown={(e) => e.key === "Enter" && addDaily()}
-                  placeholder="오늘 할일 입력"
-                />
-                <button className="btn-add" onClick={addDaily}>
-                  추가
-                </button>
-              </div>
-            </div>
-
+          {/* 내 투두 목록 */}
+          <section className="my-panel my-panel-todos">
             {/* 데일리 투두 */}
             <div className="todo-panel">
               <h2>
