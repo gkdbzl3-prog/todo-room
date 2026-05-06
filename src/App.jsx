@@ -110,6 +110,10 @@ function getTodoCount(todos) {
   return Array.isArray(todos) ? todos.length : 0;
 }
 
+function getMemberTodoTotal(member) {
+  return getTodoCount(member?.todos) + getTodoCount(member?.weeklyTodos);
+}
+
 function getUpdatedAtValue(updatedAt) {
   if (!updatedAt) return 0;
   if (typeof updatedAt === "number") return updatedAt;
@@ -513,9 +517,13 @@ export default function App() {
   const [historyDates, setHistoryDates] = useState([]);
   const [historyData, setHistoryData] = useState(null);
   const [selectedDate, setSelectedDate] = useState(null);
+  const [showIdleMembers, setShowIdleMembers] = useState(false);
+  const [membersReadyKey, setMembersReadyKey] = useState("");
   const skipDailyStorageSaveRef = useRef(false);
   const skipWeeklyStorageSaveRef = useRef(false);
   const legacyWeekKeyValue = legacyWeekKey();
+  const currentMembersReadyKey = `${uid}:${nickname}:${currentDayKey}:${currentWeekKey}:${legacyWeekKeyValue}`;
+  const membersReady = membersReadyKey === currentMembersReadyKey;
 
   // (위클리 항상 표시)
 
@@ -965,6 +973,21 @@ export default function App() {
     // 데일리 멤버 리스너
     const dailyDocsBySource = new Map();
     let cancelled = false;
+    let dailyLoaded = false;
+    let fallbackLoaded = false;
+    const weeklyLoadedKeys = new Set();
+
+    const finalizeMembersReady = () => {
+      if (cancelled) return;
+      if (
+        dailyLoaded &&
+        fallbackLoaded &&
+        weeklyLoadedKeys.size === weeklyKeys.length
+      ) {
+        setMembersReadyKey(currentMembersReadyKey);
+      }
+    };
+
     const applyDailyMembers = () => {
       const todayRecords = dailyDocsBySource.get("today") || [];
       const fallbackSourceRecords = dailyDocsBySource.get("fallback") || [];
@@ -998,10 +1021,14 @@ export default function App() {
           all.push({ id: d.id, ...d.data() });
         });
         dailyDocsBySource.set("today", all);
+        dailyLoaded = true;
         applyDailyMembers();
+        finalizeMembersReady();
       },
       (error) => {
         console.error("Failed to subscribe daily todos", error);
+        dailyLoaded = true;
+        finalizeMembersReady();
       }
     );
 
@@ -1009,10 +1036,14 @@ export default function App() {
       .then((records) => {
         if (cancelled) return;
         dailyDocsBySource.set("fallback", records);
+        fallbackLoaded = true;
         applyDailyMembers();
+        finalizeMembersReady();
       })
       .catch((error) => {
         console.error("Failed to load fallback daily todos", error);
+        fallbackLoaded = true;
+        finalizeMembersReady();
       });
 
     // 위클리 멤버 리스너
@@ -1064,10 +1095,14 @@ export default function App() {
             all.push({ id: d.id, ...d.data() });
           });
           weeklyDocsByKey.set(weeklyKey, all);
+          weeklyLoadedKeys.add(weeklyKey);
           applyWeeklyMembers();
+          finalizeMembersReady();
         },
         (error) => {
           console.error("Failed to subscribe weekly todos", error);
+          weeklyLoadedKeys.add(weeklyKey);
+          finalizeMembersReady();
         }
       )
     );
@@ -1118,7 +1153,15 @@ export default function App() {
       unsubNoti();
       unsubHistory();
     };
-  }, [uid, nicknameConfirmed, nickname, currentDayKey, currentWeekKey, legacyWeekKeyValue]);
+  }, [
+    uid,
+    nicknameConfirmed,
+    nickname,
+    currentDayKey,
+    currentWeekKey,
+    legacyWeekKeyValue,
+    currentMembersReadyKey,
+  ]);
 
   /* ── 프로필 변경 시 Firestore 업데이트 ── */
   useEffect(() => {
@@ -1231,12 +1274,18 @@ export default function App() {
     ...otherMembers,
   ].sort((a, b) => {
     // 투두 있는 멤버 우선
-    const aTodos = (a.todos?.length || 0) + (a.weeklyTodos?.length || 0);
-    const bTodos = (b.todos?.length || 0) + (b.weeklyTodos?.length || 0);
+    const aTodos = getMemberTodoTotal(a);
+    const bTodos = getMemberTodoTotal(b);
     if (aTodos > 0 && bTodos === 0) return -1;
     if (aTodos === 0 && bTodos > 0) return 1;
     return 0;
   });
+  const visibleMembers = allMembers.filter(
+    (member) => member.isMe || getMemberTodoTotal(member) > 0
+  );
+  const idleMembers = allMembers.filter(
+    (member) => !member.isMe && getMemberTodoTotal(member) === 0
+  );
 
   if (!nicknameConfirmed && !profileRecoveryChecked) {
     return (
@@ -1325,11 +1374,39 @@ export default function App() {
           {/* 멤버 패널 */}
           <section className="member-panel">
             <h2>MEMBERS</h2>
-            <div className="member-list">
-              {allMembers.map((m) => (
-                <MemberCard key={m.id} member={m} />
-              ))}
-            </div>
+            {!membersReady ? (
+              <div className="member-loading">
+                <div className="member-loading-card" />
+                <div className="member-loading-card" />
+                <div className="member-loading-card" />
+              </div>
+            ) : (
+              <>
+                <div className="member-list">
+                  {visibleMembers.map((m) => (
+                    <MemberCard key={m.id} member={m} />
+                  ))}
+                </div>
+
+                {idleMembers.length > 0 && (
+                  <div className="member-group">
+                    <button
+                      className="member-group-toggle"
+                      onClick={() => setShowIdleMembers((prev) => !prev)}
+                    >
+                      투두 0인 멤버 {idleMembers.length}명 {showIdleMembers ? "접기" : "보기"}
+                    </button>
+                    {showIdleMembers && (
+                      <div className="member-list member-list-idle">
+                        {idleMembers.map((m) => (
+                          <MemberCard key={m.id} member={m} />
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )}
+              </>
+            )}
 
             {/* 완수 로그 */}
             {toasts.length > 0 && (
