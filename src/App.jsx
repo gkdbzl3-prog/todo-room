@@ -369,6 +369,17 @@ function chooseSelfRecord(records, uid, nickname, todoKey = "todos") {
   return { preferred, selfCandidates };
 }
 
+function isWeeklyTodoVisible(todo, dayKey) {
+  if (!todo.done) return true;
+  if (!todo.completedAt) return true;
+  const completedDate = new Date(todo.completedAt);
+  const adjusted = new Date(completedDate);
+  if (completedDate.getHours() < 2) {
+    adjusted.setDate(adjusted.getDate() - 1);
+  }
+  return formatLocalDateKey(adjusted) === dayKey;
+}
+
 function resetTodosForNewDay(todos) {
   return (todos || [])
     .filter((todo) => !todo.done)
@@ -1262,9 +1273,10 @@ export default function App() {
   }
 
   /* ── 합산 ── */
+  const visibleWeekly = myWeekly.filter((t) => isWeeklyTodoVisible(t, currentDayKey));
   const dailyDoneCount = myDaily.filter((t) => t.done).length;
   const totalDoneCount =
-    dailyDoneCount + myWeekly.filter((t) => t.done).length;
+    dailyDoneCount + visibleWeekly.filter((t) => t.done).length;
   const badge = getBadge(totalDoneCount);
 
   // 전체 멤버 (나 포함) 카드 데이터
@@ -1490,7 +1502,7 @@ export default function App() {
               <h2>
                 주간 TO-DO{" "}
                 <span className="count-badge">
-                  {myWeekly.filter((t) => t.done).length}/{myWeekly.length}
+                  {visibleWeekly.filter((t) => t.done).length}/{visibleWeekly.length}
                 </span>
               </h2>
               <p className="reset-notice">
@@ -1509,11 +1521,11 @@ export default function App() {
                 </button>
               </div>
 
-              {myWeekly.length === 0 ? (
+              {visibleWeekly.length === 0 ? (
                 <div className="empty">주간 투두가 없어요.</div>
               ) : (
                 <div className="todo-list">
-                  {myWeekly.map((todo) => (
+                  {visibleWeekly.map((todo) => (
                     <TodoItem
                       key={todo.id}
                       todo={todo}
@@ -1567,8 +1579,10 @@ function TodoItem({ todo, onCycle, onDelete }) {
 
 /* ─────────────── MemberCard ─────────────── */
 function MemberCard({ member }) {
+  const dayKey = todayKey();
+  const visibleWeeklyTodos = (member.weeklyTodos || []).filter((t) => isWeeklyTodoVisible(t, dayKey));
   const dailyDone = (member.todos || []).filter((t) => t.done).length;
-  const weeklyDone = (member.weeklyTodos || []).filter((t) => t.done).length;
+  const weeklyDone = visibleWeeklyTodos.filter((t) => t.done).length;
   const totalDone = dailyDone + weeklyDone;
   const badge = getBadge(totalDone);
 
@@ -1599,10 +1613,10 @@ function MemberCard({ member }) {
       <div className="member-todo-title">TODAY</div>
       <MiniTodoList todos={member.todos || []} />
 
-      {(member.weeklyTodos || []).length > 0 && (
+      {visibleWeeklyTodos.length > 0 && (
         <>
           <div className="member-todo-title">WEEKLY</div>
-          <MiniTodoList todos={member.weeklyTodos} />
+          <MiniTodoList todos={visibleWeeklyTodos} />
         </>
       )}
     </div>
