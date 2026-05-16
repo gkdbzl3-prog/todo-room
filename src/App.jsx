@@ -70,6 +70,20 @@ function previousDayKeyFrom(dateKey) {
   return formatLocalDateKey(d);
 }
 
+function weekKeyForDate(dateKey) {
+  const d = new Date(`${dateKey}T12:00:00`);
+  const day = d.getDay();
+  d.setDate(d.getDate() - ((day + 6) % 7));
+  return formatLocalDateKey(d);
+}
+
+function legacyWeekKeyForDate(dateKey) {
+  const d = new Date(`${dateKey}T12:00:00`);
+  const day = d.getDay();
+  d.setDate(d.getDate() - ((day + 6) % 7));
+  return formatUtcDateKey(d);
+}
+
 function getUid() {
   let uid = localStorage.getItem("todoRoom_uid");
   if (!uid) {
@@ -527,6 +541,7 @@ export default function App() {
   const [tab, setTab] = useState("today"); // today | history
   const [historyDates, setHistoryDates] = useState([]);
   const [historyData, setHistoryData] = useState(null);
+  const [historyWeeklyData, setHistoryWeeklyData] = useState(null);
   const [selectedDate, setSelectedDate] = useState(null);
   const [showIdleMembers, setShowIdleMembers] = useState(false);
   const [membersReadyKey, setMembersReadyKey] = useState("");
@@ -1266,10 +1281,25 @@ export default function App() {
   /* ── 히스토리 조회 ── */
   async function loadHistory(date) {
     setSelectedDate(date);
-    const snap = await getDocs(collection(db, dailyCol(date)));
-    const data = [];
-    snap.forEach((d) => data.push({ id: d.id, ...d.data() }));
-    setHistoryData(mergeRecordsByNickname(data));
+    const wk = weekKeyForDate(date);
+    const legacyWk = legacyWeekKeyForDate(date);
+    const weeklyKeys = Array.from(new Set([wk, legacyWk]));
+
+    const [dailySnap, ...weeklySnaps] = await Promise.all([
+      getDocs(collection(db, dailyCol(date))),
+      ...weeklyKeys.map((k) => getDocs(collection(db, weeklyCol(k)))),
+    ]);
+
+    const dailyData = [];
+    dailySnap.forEach((d) => dailyData.push({ id: d.id, ...d.data() }));
+    setHistoryData(mergeRecordsByNickname(dailyData));
+
+    const allWeeklyRecords = weeklySnaps.flatMap((snap) => {
+      const records = [];
+      snap.forEach((d) => records.push({ id: d.id, ...d.data() }));
+      return records;
+    });
+    setHistoryWeeklyData(mergeRecordsByNickname(allWeeklyRecords));
   }
 
   /* ── 합산 ── */
@@ -1544,6 +1574,7 @@ export default function App() {
           dates={historyDates}
           selectedDate={selectedDate}
           data={historyData}
+          weeklyData={historyWeeklyData}
           onSelect={loadHistory}
         />
       )}
@@ -1647,7 +1678,26 @@ function MiniTodoList({ todos }) {
 }
 
 /* ─────────────── HistoryPanel ─────────────── */
-function HistoryPanel({ dates, selectedDate, data, onSelect }) {
+function HistoryPanel({ dates, selectedDate, data, weeklyData, onSelect }) {
+  const mergedMembers = (() => {
+    const map = new Map();
+    (data || []).forEach((m) => {
+      const key = m.nickname || m.id;
+      map.set(key, { ...m, todos: m.todos || [], weeklyTodos: [] });
+    });
+    (weeklyData || []).forEach((m) => {
+      const key = m.nickname || m.id;
+      if (map.has(key)) {
+        map.get(key).weeklyTodos = m.todos || [];
+      } else {
+        map.set(key, { ...m, todos: [], weeklyTodos: m.todos || [] });
+      }
+    });
+    return Array.from(map.values()).filter(
+      (m) => m.todos.length > 0 || m.weeklyTodos.length > 0
+    );
+  })();
+
   return (
     <div className="history-panel">
       <h2>과거 기록</h2>
@@ -1670,13 +1720,13 @@ function HistoryPanel({ dates, selectedDate, data, onSelect }) {
         </div>
       )}
 
-      {selectedDate && data && (
+      {selectedDate && (
         <div className="history-content">
           <h3>{selectedDate} 기록</h3>
-          {data.length === 0 ? (
+          {mergedMembers.length === 0 ? (
             <div className="empty">해당 날짜에 기록이 없어요.</div>
           ) : (
-            data.map((member) => (
+            mergedMembers.map((member) => (
               <div key={member.id} className="history-member">
                 <div className="history-member-name">
                   <div className="member-avatar small">
@@ -1684,23 +1734,39 @@ function HistoryPanel({ dates, selectedDate, data, onSelect }) {
                   </div>
                   <strong>{member.nickname}</strong>
                   <span className="history-count">
-                    {(member.todos || []).filter((t) => t.done).length}/
-                    {(member.todos || []).length} 완료
+                    {member.todos.filter((t) => t.done).length}/
+                    {member.todos.length} 완료
                   </span>
                 </div>
-                <div className="history-todos">
-                  {(member.todos || []).map((t) => (
-                    <div
-                      key={t.id}
-                      className={`history-todo ${t.done ? "done" : ""}`}
-                    >
-                      <span className="history-check">
-                        {t.done ? "✓" : "○"}
-                      </span>
-                      {t.text}
+                {member.todos.length > 0 && (
+                  <div className="history-todos">
+                    {member.todos.map((t) => (
+                      <div
+                        key={t.id}
+                        className={`history-todo ${t.done ? "done" : ""}`}
+                      >
+                        <span className="history-check">{t.done ? "✓" : "○"}</span>
+                        {t.text}
+                      </div>
+                    ))}
+                  </div>
+                )}
+                {member.weeklyTodos.length > 0 && (
+                  <>
+                    <div className="history-section-label">주간</div>
+                    <div className="history-todos">
+                      {member.weeklyTodos.map((t) => (
+                        <div
+                          key={t.id}
+                          className={`history-todo ${t.done ? "done" : ""}`}
+                        >
+                          <span className="history-check">{t.done ? "✓" : "○"}</span>
+                          {t.text}
+                        </div>
+                      ))}
                     </div>
-                  ))}
-                </div>
+                  </>
+                )}
               </div>
             ))
           )}
