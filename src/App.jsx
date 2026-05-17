@@ -1694,17 +1694,31 @@ function HistoryPanel({ dates, selectedDate, data, weeklyData, onSelect }) {
       {dates.length === 0 ? (
         <div className="empty">아직 과거 기록이 없어요.</div>
       ) : (
-        <div className="history-dates">
-          {dates.map((date) => (
-            <button
-              key={date}
-              className={`history-date-btn ${
-                selectedDate === date ? "active" : ""
-              }`}
-              onClick={() => onSelect(date)}
-            >
-              {date}
-            </button>
+        <div className="history-months">
+          {Object.entries(
+            dates.reduce((acc, date) => {
+              const month = date.slice(0, 7);
+              if (!acc[month]) acc[month] = [];
+              acc[month].push(date);
+              return acc;
+            }, {})
+          ).map(([month, monthDates]) => (
+            <div key={month} className="history-month-group">
+              <div className="history-month-label">
+                {parseInt(month.slice(5))}월
+              </div>
+              <div className="history-dates">
+                {monthDates.map((date) => (
+                  <button
+                    key={date}
+                    className={`history-date-btn ${selectedDate === date ? "active" : ""}`}
+                    onClick={() => onSelect(date)}
+                  >
+                    {parseInt(date.slice(8))}일
+                  </button>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       )}
