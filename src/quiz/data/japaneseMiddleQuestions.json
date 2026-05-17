@@ -1,0 +1,3482 @@
+[
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n確認",
+    "choices": [
+      "확인",
+      "찬성",
+      "중요",
+      "안전"
+    ],
+    "answer": "확인",
+    "explanation": "確認은/는 사실이나 내용을 분명히 알아보는 것입니다.",
+    "id": "jp-middle-001",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n準備",
+    "choices": [
+      "책임",
+      "감소",
+      "긴장",
+      "준비"
+    ],
+    "answer": "준비",
+    "explanation": "準備은/는 일을 하기 전에 필요한 것을 갖추는 것입니다.",
+    "id": "jp-middle-002",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n連絡",
+    "choices": [
+      "연락",
+      "조건",
+      "이해",
+      "안심"
+    ],
+    "answer": "연락",
+    "explanation": "連絡은/는 정보나 소식을 서로 전하는 것입니다.",
+    "id": "jp-middle-003",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n相談",
+    "choices": [
+      "예정",
+      "반대",
+      "상담, 의논",
+      "안심"
+    ],
+    "answer": "상담, 의논",
+    "explanation": "相談은/는 문제를 해결하기 위해 함께 이야기하는 것입니다.",
+    "id": "jp-middle-004",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n説明",
+    "choices": [
+      "원인",
+      "이해",
+      "유감, 아쉬움",
+      "설명"
+    ],
+    "answer": "설명",
+    "explanation": "説明은/는 상대가 이해할 수 있도록 내용을 풀어 말하는 것입니다.",
+    "id": "jp-middle-005",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n原因",
+    "choices": [
+      "중요",
+      "해결",
+      "원인",
+      "오해"
+    ],
+    "answer": "원인",
+    "explanation": "原因은/는 어떤 일이 일어나게 된 까닭입니다.",
+    "id": "jp-middle-006",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n結果",
+    "choices": [
+      "결과",
+      "중요",
+      "확인",
+      "반대"
+    ],
+    "answer": "결과",
+    "explanation": "結果은/는 어떤 일 뒤에 나타나는 상태나 결론입니다.",
+    "id": "jp-middle-007",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n予定",
+    "choices": [
+      "선택",
+      "경험",
+      "증가",
+      "예정"
+    ],
+    "answer": "예정",
+    "explanation": "予定은/는 앞으로 하기로 정해 둔 일입니다.",
+    "id": "jp-middle-008",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n都合",
+    "choices": [
+      "사정, 형편",
+      "참음",
+      "증가",
+      "설명"
+    ],
+    "answer": "사정, 형편",
+    "explanation": "都合은/는 개인의 시간이나 상황상의 조건입니다.",
+    "id": "jp-middle-009",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n場合",
+    "choices": [
+      "정보",
+      "증가",
+      "경우",
+      "반대"
+    ],
+    "answer": "경우",
+    "explanation": "場合은/는 어떤 상황이나 때를 나타냅니다.",
+    "id": "jp-middle-010",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n必要",
+    "choices": [
+      "정보",
+      "필요",
+      "영향",
+      "이해"
+    ],
+    "answer": "필요",
+    "explanation": "必要은/는 반드시 요구되는 상태입니다.",
+    "id": "jp-middle-011",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n重要",
+    "choices": [
+      "비교",
+      "중요",
+      "정보",
+      "증가"
+    ],
+    "answer": "중요",
+    "explanation": "重要은/는 가치나 영향이 큰 상태입니다.",
+    "id": "jp-middle-012",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n安全",
+    "choices": [
+      "기대",
+      "예정",
+      "개선",
+      "안전"
+    ],
+    "answer": "안전",
+    "explanation": "安全은/는 위험이 없는 상태입니다.",
+    "id": "jp-middle-013",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n危険",
+    "choices": [
+      "가능",
+      "기대",
+      "위험",
+      "판단"
+    ],
+    "answer": "위험",
+    "explanation": "危険은/는 해를 입을 가능성이 있는 상태입니다.",
+    "id": "jp-middle-014",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n残念",
+    "choices": [
+      "준비",
+      "비교",
+      "유감, 아쉬움",
+      "의견"
+    ],
+    "answer": "유감, 아쉬움",
+    "explanation": "残念은/는 기대와 달라 아쉽거나 안타까운 마음입니다.",
+    "id": "jp-middle-015",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n失敗",
+    "choices": [
+      "책임",
+      "실패",
+      "개선",
+      "이해"
+    ],
+    "answer": "실패",
+    "explanation": "失敗은/는 목표한 일을 이루지 못하는 것입니다.",
+    "id": "jp-middle-016",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n成功",
+    "choices": [
+      "안전",
+      "증가",
+      "성공",
+      "이해"
+    ],
+    "answer": "성공",
+    "explanation": "成功은/는 목표한 일을 이루는 것입니다.",
+    "id": "jp-middle-017",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n努力",
+    "choices": [
+      "노력",
+      "안심",
+      "책임",
+      "연락"
+    ],
+    "answer": "노력",
+    "explanation": "努力은/는 목표를 위해 힘쓰는 것입니다.",
+    "id": "jp-middle-018",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n経験",
+    "choices": [
+      "경험",
+      "가능",
+      "의견",
+      "성공"
+    ],
+    "answer": "경험",
+    "explanation": "経験은/는 직접 겪어 알게 된 일입니다.",
+    "id": "jp-middle-019",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n習慣",
+    "choices": [
+      "위험",
+      "경우",
+      "정보",
+      "습관"
+    ],
+    "answer": "습관",
+    "explanation": "習慣은/는 반복되어 익숙해진 행동 방식입니다.",
+    "id": "jp-middle-020",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n情報",
+    "choices": [
+      "기대",
+      "의견",
+      "불가능",
+      "정보"
+    ],
+    "answer": "정보",
+    "explanation": "情報은/는 판단이나 행동에 필요한 자료나 소식입니다.",
+    "id": "jp-middle-021",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n関係",
+    "choices": [
+      "관계",
+      "노력",
+      "책임",
+      "중요"
+    ],
+    "answer": "관계",
+    "explanation": "関係은/는 서로 관련되어 있는 상태입니다.",
+    "id": "jp-middle-022",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n影響",
+    "choices": [
+      "노력",
+      "표현",
+      "영향",
+      "유감, 아쉬움"
+    ],
+    "answer": "영향",
+    "explanation": "影響은/는 다른 것에 미치는 작용이나 결과입니다.",
+    "id": "jp-middle-023",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n可能",
+    "choices": [
+      "태도",
+      "가능",
+      "증가",
+      "반대"
+    ],
+    "answer": "가능",
+    "explanation": "可能은/는 할 수 있는 상태입니다.",
+    "id": "jp-middle-024",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n不可能",
+    "choices": [
+      "습관",
+      "판단",
+      "불가능",
+      "결과"
+    ],
+    "answer": "불가능",
+    "explanation": "不可能은/는 할 수 없는 상태입니다.",
+    "id": "jp-middle-025",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n責任",
+    "choices": [
+      "개선",
+      "의견",
+      "책임",
+      "긴장"
+    ],
+    "answer": "책임",
+    "explanation": "責任은/는 맡은 일이나 결과에 대해 져야 하는 의무입니다.",
+    "id": "jp-middle-026",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n意見",
+    "choices": [
+      "이해",
+      "설명",
+      "영향",
+      "의견"
+    ],
+    "answer": "의견",
+    "explanation": "意見은/는 어떤 일에 대한 생각이나 주장입니다.",
+    "id": "jp-middle-027",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n反対",
+    "choices": [
+      "예정",
+      "노력",
+      "오해",
+      "반대"
+    ],
+    "answer": "반대",
+    "explanation": "反対은/는 찬성하지 않고 다른 입장을 취하는 것입니다.",
+    "id": "jp-middle-028",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n賛成",
+    "choices": [
+      "이해",
+      "표현",
+      "실패",
+      "찬성"
+    ],
+    "answer": "찬성",
+    "explanation": "賛成은/는 어떤 의견이나 제안에 동의하는 것입니다.",
+    "id": "jp-middle-029",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n増加",
+    "choices": [
+      "기회",
+      "결과",
+      "증가",
+      "예정"
+    ],
+    "answer": "증가",
+    "explanation": "増加은/는 수나 양이 늘어나는 것입니다.",
+    "id": "jp-middle-030",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n減少",
+    "choices": [
+      "기회",
+      "확인",
+      "책임",
+      "감소"
+    ],
+    "answer": "감소",
+    "explanation": "減少은/는 수나 양이 줄어드는 것입니다.",
+    "id": "jp-middle-031",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n変化",
+    "choices": [
+      "실패",
+      "변화",
+      "증가",
+      "표현"
+    ],
+    "answer": "변화",
+    "explanation": "変化은/는 상태나 모양이 달라지는 것입니다.",
+    "id": "jp-middle-032",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n改善",
+    "choices": [
+      "오해",
+      "개선",
+      "판단",
+      "기대"
+    ],
+    "answer": "개선",
+    "explanation": "改善은/는 부족한 점을 고쳐 더 좋게 만드는 것입니다.",
+    "id": "jp-middle-033",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n解決",
+    "choices": [
+      "해결",
+      "반대",
+      "사정, 형편",
+      "관계"
+    ],
+    "answer": "해결",
+    "explanation": "解決은/는 문제나 어려움을 처리하여 끝내는 것입니다.",
+    "id": "jp-middle-034",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n選択",
+    "choices": [
+      "의견",
+      "비교",
+      "선택",
+      "결과"
+    ],
+    "answer": "선택",
+    "explanation": "選択은/는 여러 것 중 하나를 고르는 것입니다.",
+    "id": "jp-middle-035",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n比較",
+    "choices": [
+      "비교",
+      "오해",
+      "확인",
+      "책임"
+    ],
+    "answer": "비교",
+    "explanation": "比較은/는 둘 이상의 차이나 공통점을 견주어 보는 것입니다.",
+    "id": "jp-middle-036",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n判断",
+    "choices": [
+      "결과",
+      "감소",
+      "확인",
+      "판단"
+    ],
+    "answer": "판단",
+    "explanation": "判断은/는 상황을 보고 결론을 내리는 것입니다.",
+    "id": "jp-middle-037",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n表現",
+    "choices": [
+      "변화",
+      "기회",
+      "표현",
+      "불가능"
+    ],
+    "answer": "표현",
+    "explanation": "表現은/는 생각이나 감정을 말, 글, 행동으로 나타내는 것입니다.",
+    "id": "jp-middle-038",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n理解",
+    "choices": [
+      "정보",
+      "이해",
+      "원인",
+      "반대"
+    ],
+    "answer": "이해",
+    "explanation": "理解은/는 뜻이나 내용을 알아차리는 것입니다.",
+    "id": "jp-middle-039",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n誤解",
+    "choices": [
+      "오해",
+      "이해",
+      "태도",
+      "중요"
+    ],
+    "answer": "오해",
+    "explanation": "誤解은/는 잘못 이해하는 것입니다.",
+    "id": "jp-middle-040",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n遠慮",
+    "choices": [
+      "사양, 삼감",
+      "필요",
+      "책임",
+      "원인"
+    ],
+    "answer": "사양, 삼감",
+    "explanation": "遠慮은/는 상대나 상황을 생각해 행동을 조심하는 것입니다.",
+    "id": "jp-middle-041",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n我慢",
+    "choices": [
+      "참음",
+      "가능",
+      "유감, 아쉬움",
+      "연락"
+    ],
+    "answer": "참음",
+    "explanation": "我慢은/는 힘든 것을 참고 견디는 것입니다.",
+    "id": "jp-middle-042",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n感謝",
+    "choices": [
+      "설명",
+      "감사",
+      "이해",
+      "위험"
+    ],
+    "answer": "감사",
+    "explanation": "感謝은/는 고마움을 느끼거나 표현하는 것입니다.",
+    "id": "jp-middle-043",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n緊張",
+    "choices": [
+      "관계",
+      "경험",
+      "설명",
+      "긴장"
+    ],
+    "answer": "긴장",
+    "explanation": "緊張은/는 마음이나 몸이 굳고 불안한 상태입니다.",
+    "id": "jp-middle-044",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n安心",
+    "choices": [
+      "가능",
+      "이해",
+      "안심",
+      "반대"
+    ],
+    "answer": "안심",
+    "explanation": "安心은/는 걱정이 사라져 마음이 놓이는 상태입니다.",
+    "id": "jp-middle-045",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n期待",
+    "choices": [
+      "표현",
+      "변화",
+      "위험",
+      "기대"
+    ],
+    "answer": "기대",
+    "explanation": "期待은/는 좋은 결과를 바라며 기다리는 마음입니다.",
+    "id": "jp-middle-046",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n興味",
+    "choices": [
+      "필요",
+      "찬성",
+      "판단",
+      "흥미"
+    ],
+    "answer": "흥미",
+    "explanation": "興味은/는 재미나 관심을 느끼는 마음입니다.",
+    "id": "jp-middle-047",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n態度",
+    "choices": [
+      "위험",
+      "태도",
+      "경험",
+      "이해"
+    ],
+    "answer": "태도",
+    "explanation": "態度은/는 사람이나 일에 대해 드러나는 마음가짐이나 행동 방식입니다.",
+    "id": "jp-middle-048",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n機会",
+    "choices": [
+      "찬성",
+      "유감, 아쉬움",
+      "기회",
+      "기대"
+    ],
+    "answer": "기회",
+    "explanation": "機会은/는 무언가를 할 수 있는 좋은 때입니다.",
+    "id": "jp-middle-049",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 단어의 뜻으로 가장 알맞은 것은?\n条件",
+    "choices": [
+      "흥미",
+      "안전",
+      "노력",
+      "조건"
+    ],
+    "answer": "조건",
+    "explanation": "条件은/는 일이 성립되기 위해 필요한 사항입니다.",
+    "id": "jp-middle-050",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n사실이나 내용을 분명히 알아보는 것입니다.",
+    "choices": [
+      "確認",
+      "増加",
+      "場合",
+      "関係"
+    ],
+    "answer": "確認",
+    "explanation": "해당 설명은 確認에 대한 내용입니다.",
+    "id": "jp-middle-051",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n일을 하기 전에 필요한 것을 갖추는 것입니다.",
+    "choices": [
+      "危険",
+      "都合",
+      "場合",
+      "準備"
+    ],
+    "answer": "準備",
+    "explanation": "해당 설명은 準備에 대한 내용입니다.",
+    "id": "jp-middle-052",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n정보나 소식을 서로 전하는 것입니다.",
+    "choices": [
+      "連絡",
+      "誤解",
+      "反対",
+      "重要"
+    ],
+    "answer": "連絡",
+    "explanation": "해당 설명은 連絡에 대한 내용입니다.",
+    "id": "jp-middle-053",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n문제를 해결하기 위해 함께 이야기하는 것입니다.",
+    "choices": [
+      "原因",
+      "比較",
+      "期待",
+      "相談"
+    ],
+    "answer": "相談",
+    "explanation": "해당 설명은 相談에 대한 내용입니다.",
+    "id": "jp-middle-054",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n상대가 이해할 수 있도록 내용을 풀어 말하는 것입니다.",
+    "choices": [
+      "情報",
+      "説明",
+      "緊張",
+      "経験"
+    ],
+    "answer": "説明",
+    "explanation": "해당 설명은 説明에 대한 내용입니다.",
+    "id": "jp-middle-055",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n어떤 일이 일어나게 된 까닭입니다.",
+    "choices": [
+      "都合",
+      "成功",
+      "責任",
+      "原因"
+    ],
+    "answer": "原因",
+    "explanation": "해당 설명은 原因에 대한 내용입니다.",
+    "id": "jp-middle-056",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n어떤 일 뒤에 나타나는 상태나 결론입니다.",
+    "choices": [
+      "結果",
+      "我慢",
+      "機会",
+      "賛成"
+    ],
+    "answer": "結果",
+    "explanation": "해당 설명은 結果에 대한 내용입니다.",
+    "id": "jp-middle-057",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n앞으로 하기로 정해 둔 일입니다.",
+    "choices": [
+      "予定",
+      "重要",
+      "必要",
+      "場合"
+    ],
+    "answer": "予定",
+    "explanation": "해당 설명은 予定에 대한 내용입니다.",
+    "id": "jp-middle-058",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n개인의 시간이나 상황상의 조건입니다.",
+    "choices": [
+      "都合",
+      "失敗",
+      "不可能",
+      "緊張"
+    ],
+    "answer": "都合",
+    "explanation": "해당 설명은 都合에 대한 내용입니다.",
+    "id": "jp-middle-059",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n어떤 상황이나 때를 나타냅니다.",
+    "choices": [
+      "場合",
+      "誤解",
+      "賛成",
+      "期待"
+    ],
+    "answer": "場合",
+    "explanation": "해당 설명은 場合에 대한 내용입니다.",
+    "id": "jp-middle-060",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n반드시 요구되는 상태입니다.",
+    "choices": [
+      "安心",
+      "変化",
+      "必要",
+      "選択"
+    ],
+    "answer": "必要",
+    "explanation": "해당 설명은 必要에 대한 내용입니다.",
+    "id": "jp-middle-061",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n가치나 영향이 큰 상태입니다.",
+    "choices": [
+      "緊張",
+      "結果",
+      "経験",
+      "重要"
+    ],
+    "answer": "重要",
+    "explanation": "해당 설명은 重要에 대한 내용입니다.",
+    "id": "jp-middle-062",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n위험이 없는 상태입니다.",
+    "choices": [
+      "安全",
+      "我慢",
+      "安心",
+      "解決"
+    ],
+    "answer": "安全",
+    "explanation": "해당 설명은 安全에 대한 내용입니다.",
+    "id": "jp-middle-063",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n해를 입을 가능성이 있는 상태입니다.",
+    "choices": [
+      "反対",
+      "危険",
+      "成功",
+      "理解"
+    ],
+    "answer": "危険",
+    "explanation": "해당 설명은 危険에 대한 내용입니다.",
+    "id": "jp-middle-064",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n기대와 달라 아쉽거나 안타까운 마음입니다.",
+    "choices": [
+      "感謝",
+      "判断",
+      "残念",
+      "経験"
+    ],
+    "answer": "残念",
+    "explanation": "해당 설명은 残念에 대한 내용입니다.",
+    "id": "jp-middle-065",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n목표한 일을 이루지 못하는 것입니다.",
+    "choices": [
+      "安心",
+      "失敗",
+      "都合",
+      "表現"
+    ],
+    "answer": "失敗",
+    "explanation": "해당 설명은 失敗에 대한 내용입니다.",
+    "id": "jp-middle-066",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n목표한 일을 이루는 것입니다.",
+    "choices": [
+      "成功",
+      "誤解",
+      "期待",
+      "都合"
+    ],
+    "answer": "成功",
+    "explanation": "해당 설명은 成功에 대한 내용입니다.",
+    "id": "jp-middle-067",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n목표를 위해 힘쓰는 것입니다.",
+    "choices": [
+      "重要",
+      "努力",
+      "予定",
+      "比較"
+    ],
+    "answer": "努力",
+    "explanation": "해당 설명은 努力에 대한 내용입니다.",
+    "id": "jp-middle-068",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n직접 겪어 알게 된 일입니다.",
+    "choices": [
+      "選択",
+      "相談",
+      "経験",
+      "遠慮"
+    ],
+    "answer": "経験",
+    "explanation": "해당 설명은 経験에 대한 내용입니다.",
+    "id": "jp-middle-069",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n반복되어 익숙해진 행동 방식입니다.",
+    "choices": [
+      "態度",
+      "不可能",
+      "努力",
+      "習慣"
+    ],
+    "answer": "習慣",
+    "explanation": "해당 설명은 習慣에 대한 내용입니다.",
+    "id": "jp-middle-070",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n판단이나 행동에 필요한 자료나 소식입니다.",
+    "choices": [
+      "条件",
+      "賛成",
+      "確認",
+      "情報"
+    ],
+    "answer": "情報",
+    "explanation": "해당 설명은 情報에 대한 내용입니다.",
+    "id": "jp-middle-071",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n서로 관련되어 있는 상태입니다.",
+    "choices": [
+      "減少",
+      "関係",
+      "機会",
+      "変化"
+    ],
+    "answer": "関係",
+    "explanation": "해당 설명은 関係에 대한 내용입니다.",
+    "id": "jp-middle-072",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n다른 것에 미치는 작용이나 결과입니다.",
+    "choices": [
+      "結果",
+      "影響",
+      "関係",
+      "表現"
+    ],
+    "answer": "影響",
+    "explanation": "해당 설명은 影響에 대한 내용입니다.",
+    "id": "jp-middle-073",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n할 수 있는 상태입니다.",
+    "choices": [
+      "可能",
+      "予定",
+      "解決",
+      "相談"
+    ],
+    "answer": "可能",
+    "explanation": "해당 설명은 可能에 대한 내용입니다.",
+    "id": "jp-middle-074",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n할 수 없는 상태입니다.",
+    "choices": [
+      "責任",
+      "増加",
+      "減少",
+      "不可能"
+    ],
+    "answer": "不可能",
+    "explanation": "해당 설명은 不可能에 대한 내용입니다.",
+    "id": "jp-middle-075",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n맡은 일이나 결과에 대해 져야 하는 의무입니다.",
+    "choices": [
+      "期待",
+      "感謝",
+      "可能",
+      "責任"
+    ],
+    "answer": "責任",
+    "explanation": "해당 설명은 責任에 대한 내용입니다.",
+    "id": "jp-middle-076",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n어떤 일에 대한 생각이나 주장입니다.",
+    "choices": [
+      "判断",
+      "重要",
+      "意見",
+      "確認"
+    ],
+    "answer": "意見",
+    "explanation": "해당 설명은 意見에 대한 내용입니다.",
+    "id": "jp-middle-077",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n찬성하지 않고 다른 입장을 취하는 것입니다.",
+    "choices": [
+      "安心",
+      "反対",
+      "期待",
+      "連絡"
+    ],
+    "answer": "反対",
+    "explanation": "해당 설명은 反対에 대한 내용입니다.",
+    "id": "jp-middle-078",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n어떤 의견이나 제안에 동의하는 것입니다.",
+    "choices": [
+      "努力",
+      "確認",
+      "経験",
+      "賛成"
+    ],
+    "answer": "賛成",
+    "explanation": "해당 설명은 賛成에 대한 내용입니다.",
+    "id": "jp-middle-079",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n수나 양이 늘어나는 것입니다.",
+    "choices": [
+      "増加",
+      "反対",
+      "解決",
+      "機会"
+    ],
+    "answer": "増加",
+    "explanation": "해당 설명은 増加에 대한 내용입니다.",
+    "id": "jp-middle-080",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n수나 양이 줄어드는 것입니다.",
+    "choices": [
+      "判断",
+      "減少",
+      "反対",
+      "残念"
+    ],
+    "answer": "減少",
+    "explanation": "해당 설명은 減少에 대한 내용입니다.",
+    "id": "jp-middle-081",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n상태나 모양이 달라지는 것입니다.",
+    "choices": [
+      "遠慮",
+      "可能",
+      "努力",
+      "変化"
+    ],
+    "answer": "変化",
+    "explanation": "해당 설명은 変化에 대한 내용입니다.",
+    "id": "jp-middle-082",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n부족한 점을 고쳐 더 좋게 만드는 것입니다.",
+    "choices": [
+      "場合",
+      "必要",
+      "条件",
+      "改善"
+    ],
+    "answer": "改善",
+    "explanation": "해당 설명은 改善에 대한 내용입니다.",
+    "id": "jp-middle-083",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n문제나 어려움을 처리하여 끝내는 것입니다.",
+    "choices": [
+      "我慢",
+      "結果",
+      "解決",
+      "変化"
+    ],
+    "answer": "解決",
+    "explanation": "해당 설명은 解決에 대한 내용입니다.",
+    "id": "jp-middle-084",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n여러 것 중 하나를 고르는 것입니다.",
+    "choices": [
+      "遠慮",
+      "緊張",
+      "反対",
+      "選択"
+    ],
+    "answer": "選択",
+    "explanation": "해당 설명은 選択에 대한 내용입니다.",
+    "id": "jp-middle-085",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n둘 이상의 차이나 공통점을 견주어 보는 것입니다.",
+    "choices": [
+      "賛成",
+      "比較",
+      "緊張",
+      "予定"
+    ],
+    "answer": "比較",
+    "explanation": "해당 설명은 比較에 대한 내용입니다.",
+    "id": "jp-middle-086",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n상황을 보고 결론을 내리는 것입니다.",
+    "choices": [
+      "増加",
+      "判断",
+      "重要",
+      "解決"
+    ],
+    "answer": "判断",
+    "explanation": "해당 설명은 判断에 대한 내용입니다.",
+    "id": "jp-middle-087",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n생각이나 감정을 말, 글, 행동으로 나타내는 것입니다.",
+    "choices": [
+      "増加",
+      "原因",
+      "表現",
+      "相談"
+    ],
+    "answer": "表現",
+    "explanation": "해당 설명은 表現에 대한 내용입니다.",
+    "id": "jp-middle-088",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n뜻이나 내용을 알아차리는 것입니다.",
+    "choices": [
+      "機会",
+      "危険",
+      "理解",
+      "変化"
+    ],
+    "answer": "理解",
+    "explanation": "해당 설명은 理解에 대한 내용입니다.",
+    "id": "jp-middle-089",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n잘못 이해하는 것입니다.",
+    "choices": [
+      "必要",
+      "改善",
+      "誤解",
+      "理解"
+    ],
+    "answer": "誤解",
+    "explanation": "해당 설명은 誤解에 대한 내용입니다.",
+    "id": "jp-middle-090",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n상대나 상황을 생각해 행동을 조심하는 것입니다.",
+    "choices": [
+      "関係",
+      "残念",
+      "遠慮",
+      "連絡"
+    ],
+    "answer": "遠慮",
+    "explanation": "해당 설명은 遠慮에 대한 내용입니다.",
+    "id": "jp-middle-091",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n힘든 것을 참고 견디는 것입니다.",
+    "choices": [
+      "習慣",
+      "安心",
+      "我慢",
+      "機会"
+    ],
+    "answer": "我慢",
+    "explanation": "해당 설명은 我慢에 대한 내용입니다.",
+    "id": "jp-middle-092",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n고마움을 느끼거나 표현하는 것입니다.",
+    "choices": [
+      "感謝",
+      "努力",
+      "期待",
+      "経験"
+    ],
+    "answer": "感謝",
+    "explanation": "해당 설명은 感謝에 대한 내용입니다.",
+    "id": "jp-middle-093",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n마음이나 몸이 굳고 불안한 상태입니다.",
+    "choices": [
+      "関係",
+      "条件",
+      "緊張",
+      "解決"
+    ],
+    "answer": "緊張",
+    "explanation": "해당 설명은 緊張에 대한 내용입니다.",
+    "id": "jp-middle-094",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n걱정이 사라져 마음이 놓이는 상태입니다.",
+    "choices": [
+      "説明",
+      "安心",
+      "興味",
+      "遠慮"
+    ],
+    "answer": "安心",
+    "explanation": "해당 설명은 安心에 대한 내용입니다.",
+    "id": "jp-middle-095",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n좋은 결과를 바라며 기다리는 마음입니다.",
+    "choices": [
+      "理解",
+      "結果",
+      "情報",
+      "期待"
+    ],
+    "answer": "期待",
+    "explanation": "해당 설명은 期待에 대한 내용입니다.",
+    "id": "jp-middle-096",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n재미나 관심을 느끼는 마음입니다.",
+    "choices": [
+      "成功",
+      "我慢",
+      "興味",
+      "判断"
+    ],
+    "answer": "興味",
+    "explanation": "해당 설명은 興味에 대한 내용입니다.",
+    "id": "jp-middle-097",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n사람이나 일에 대해 드러나는 마음가짐이나 행동 방식입니다.",
+    "choices": [
+      "結果",
+      "賛成",
+      "影響",
+      "態度"
+    ],
+    "answer": "態度",
+    "explanation": "해당 설명은 態度에 대한 내용입니다.",
+    "id": "jp-middle-098",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n무언가를 할 수 있는 좋은 때입니다.",
+    "choices": [
+      "重要",
+      "機会",
+      "安心",
+      "情報"
+    ],
+    "answer": "機会",
+    "explanation": "해당 설명은 機会에 대한 내용입니다.",
+    "id": "jp-middle-099",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 단어는?\n일이 성립되기 위해 필요한 사항입니다.",
+    "choices": [
+      "危険",
+      "場合",
+      "緊張",
+      "条件"
+    ],
+    "answer": "条件",
+    "explanation": "해당 설명은 条件에 대한 내용입니다.",
+    "id": "jp-middle-100",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\nこの問題は子ども ____ 難しい。",
+    "choices": [
+      "にとって",
+      "によると",
+      "として",
+      "に対して"
+    ],
+    "answer": "にとって",
+    "explanation": "にとって는 '~에게 있어서'라는 뜻입니다.",
+    "id": "jp-middle-101",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n天気予報 ____、明日は雨だそうです。",
+    "choices": [
+      "によると",
+      "にとって",
+      "について",
+      "に対して"
+    ],
+    "answer": "によると",
+    "explanation": "によると는 정보의 출처를 나타내어 '~에 따르면'입니다.",
+    "id": "jp-middle-102",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n日本の文化 ____ レポートを書きました。",
+    "choices": [
+      "について",
+      "によって",
+      "にとって",
+      "として"
+    ],
+    "answer": "について",
+    "explanation": "について는 '~에 관하여'라는 뜻입니다.",
+    "id": "jp-middle-103",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n学生 ____、もっと勉強するべきです。",
+    "choices": [
+      "として",
+      "によると",
+      "に対して",
+      "について"
+    ],
+    "answer": "として",
+    "explanation": "として는 '~로서'라는 자격·입장을 나타냅니다.",
+    "id": "jp-middle-104",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n先生は学生 ____ とても親切です。",
+    "choices": [
+      "に対して",
+      "によって",
+      "にとって",
+      "として"
+    ],
+    "answer": "に対して",
+    "explanation": "に対して는 '~에 대하여'라는 대상 표현입니다.",
+    "id": "jp-middle-105",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n努力した ____、結果はよくなかった。",
+    "choices": [
+      "にもかかわらず",
+      "にしたがって",
+      "について",
+      "として"
+    ],
+    "answer": "にもかかわらず",
+    "explanation": "にもかかわらず는 '~했음에도 불구하고'라는 뜻입니다.",
+    "id": "jp-middle-106",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n年を取る ____、体力が落ちてきた。",
+    "choices": [
+      "につれて",
+      "について",
+      "に対して",
+      "として"
+    ],
+    "answer": "につれて",
+    "explanation": "につれて는 한 변화에 따라 다른 변화가 함께 일어남을 나타냅니다.",
+    "id": "jp-middle-107",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n説明書 ____、機械を操作してください。",
+    "choices": [
+      "にしたがって",
+      "に対して",
+      "について",
+      "によると"
+    ],
+    "answer": "にしたがって",
+    "explanation": "にしたがって는 '~에 따라'라는 뜻입니다.",
+    "id": "jp-middle-108",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\nこの薬は人 ____ 効果が違う。",
+    "choices": [
+      "によって",
+      "にとって",
+      "について",
+      "として"
+    ],
+    "answer": "によって",
+    "explanation": "によって는 '~에 따라, ~에 의해'라는 뜻입니다.",
+    "id": "jp-middle-109",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n健康の ____、毎日運動しています。",
+    "choices": [
+      "ために",
+      "ように",
+      "ところに",
+      "うちに"
+    ],
+    "answer": "ために",
+    "explanation": "ために는 목적을 나타내어 '~을 위해'라는 뜻입니다.",
+    "id": "jp-middle-110",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n忘れない ____、メモしておきます。",
+    "choices": [
+      "ように",
+      "ために",
+      "ところに",
+      "たびに"
+    ],
+    "answer": "ように",
+    "explanation": "ように는 목적이나 바람을 나타냅니다.",
+    "id": "jp-middle-111",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n日本へ行く ____、日本語を勉強しています。",
+    "choices": [
+      "ために",
+      "ように",
+      "うちに",
+      "たびに"
+    ],
+    "answer": "ために",
+    "explanation": "의지동사의 목적에는 ために가 자연스럽습니다.",
+    "id": "jp-middle-112",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n若い ____、いろいろな経験をしたほうがいい。",
+    "choices": [
+      "うちに",
+      "ところに",
+      "たびに",
+      "かわりに"
+    ],
+    "answer": "うちに",
+    "explanation": "うちに는 '~하는 동안에, ~일 때'라는 뜻입니다.",
+    "id": "jp-middle-113",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n家を出ようとした ____、電話が鳴った。",
+    "choices": [
+      "ところに",
+      "うちに",
+      "たびに",
+      "ために"
+    ],
+    "answer": "ところに",
+    "explanation": "ところに는 막 ~하려던 때에 어떤 일이 일어남을 나타냅니다.",
+    "id": "jp-middle-114",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\nこの写真を見る ____、故郷を思い出す。",
+    "choices": [
+      "たびに",
+      "ために",
+      "ところに",
+      "かわりに"
+    ],
+    "answer": "たびに",
+    "explanation": "たびに는 '~할 때마다'라는 뜻입니다.",
+    "id": "jp-middle-115",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n今日は映画を見る ____、家で勉強した。",
+    "choices": [
+      "かわりに",
+      "うちに",
+      "たびに",
+      "ところに"
+    ],
+    "answer": "かわりに",
+    "explanation": "かわりに는 '~하는 대신에'라는 뜻입니다.",
+    "id": "jp-middle-116",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\nこの店は安い ____、味もいい。",
+    "choices": [
+      "うえに",
+      "かわりに",
+      "たびに",
+      "ところに"
+    ],
+    "answer": "うえに",
+    "explanation": "うえに는 '~뿐만 아니라'라는 추가 표현입니다.",
+    "id": "jp-middle-117",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n彼は日本語 ____ 英語も話せる。",
+    "choices": [
+      "だけでなく",
+      "ばかりで",
+      "ほどで",
+      "しか"
+    ],
+    "answer": "だけでなく",
+    "explanation": "だけでなく는 '~뿐만 아니라'라는 뜻입니다.",
+    "id": "jp-middle-118",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n一生懸命勉強した ____、試験に落ちた。",
+    "choices": [
+      "のに",
+      "ので",
+      "なら",
+      "ため"
+    ],
+    "answer": "のに",
+    "explanation": "のに는 기대와 다른 결과를 나타내는 역접입니다.",
+    "id": "jp-middle-119",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n熱がある ____、会社を休みました。",
+    "choices": [
+      "ので",
+      "のに",
+      "なら",
+      "ても"
+    ],
+    "answer": "ので",
+    "explanation": "ので는 원인·이유를 나타냅니다.",
+    "id": "jp-middle-120",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n日本へ行く ____、京都に行きたいです。",
+    "choices": [
+      "なら",
+      "のに",
+      "ので",
+      "ても"
+    ],
+    "answer": "なら",
+    "explanation": "なら는 상대의 말이나 가정 조건을 받아 '~라면'이라는 뜻입니다.",
+    "id": "jp-middle-121",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\nどんなに忙しく ____、食事はきちんと取るべきです。",
+    "choices": [
+      "ても",
+      "なら",
+      "ので",
+      "のに"
+    ],
+    "answer": "ても",
+    "explanation": "どんなに~ても는 아무리 ~해도라는 뜻입니다.",
+    "id": "jp-middle-122",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\nこの本は難し ____ すぎて、読めません。",
+    "choices": [
+      "すぎる",
+      "そう",
+      "よう",
+      "らしい"
+    ],
+    "answer": "すぎる",
+    "explanation": "동사·형용사 어간 + すぎる는 지나치게 ~하다는 뜻입니다.",
+    "id": "jp-middle-123",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\nこの料理は辛 ____ そうです。",
+    "choices": [
+      "そう",
+      "よう",
+      "らしい",
+      "ため"
+    ],
+    "answer": "そう",
+    "explanation": "형용사 어간 + そう는 보기에 ~해 보인다는 뜻입니다.",
+    "id": "jp-middle-124",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n彼は医者 ____。白衣を着ている。",
+    "choices": [
+      "らしい",
+      "ためだ",
+      "ところだ",
+      "かわりだ"
+    ],
+    "answer": "らしい",
+    "explanation": "らしい는 근거를 바탕으로 한 추정을 나타냅니다.",
+    "id": "jp-middle-125",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n宿題をし ____ まま寝てしまった。",
+    "choices": [
+      "ない",
+      "なく",
+      "ず",
+      "ぬ"
+    ],
+    "answer": "ない",
+    "explanation": "ないまま는 ~하지 않은 채라는 뜻입니다.",
+    "id": "jp-middle-126",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n財布を忘れた ____、昼ご飯が食べられなかった。",
+    "choices": [
+      "せいで",
+      "おかげで",
+      "ために",
+      "ように"
+    ],
+    "answer": "せいで",
+    "explanation": "せいで는 나쁜 결과의 원인을 나타냅니다.",
+    "id": "jp-middle-127",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n友だちが手伝ってくれた ____、早く終わった。",
+    "choices": [
+      "おかげで",
+      "せいで",
+      "に対して",
+      "として"
+    ],
+    "answer": "おかげで",
+    "explanation": "おかげで는 좋은 결과의 원인을 나타냅니다.",
+    "id": "jp-middle-128",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n説明を聞いた ____、まだよくわからない。",
+    "choices": [
+      "ものの",
+      "ために",
+      "として",
+      "によると"
+    ],
+    "answer": "ものの",
+    "explanation": "ものの는 '~하기는 했지만'이라는 역접입니다.",
+    "id": "jp-middle-129",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\nこの問題は考えれば考える ____ 難しくなる。",
+    "choices": [
+      "ほど",
+      "だけ",
+      "しか",
+      "ばかり"
+    ],
+    "answer": "ほど",
+    "explanation": "ば~ほど는 ~하면 할수록이라는 뜻입니다.",
+    "id": "jp-middle-130",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n試験まであと一週間 ____ ない。",
+    "choices": [
+      "しか",
+      "だけ",
+      "ほど",
+      "でも"
+    ],
+    "answer": "しか",
+    "explanation": "しかない는 겨우 ~밖에 없다는 뜻입니다.",
+    "id": "jp-middle-131",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n日本語を勉強し始めた ____ です。",
+    "choices": [
+      "ばかり",
+      "しか",
+      "ほど",
+      "でも"
+    ],
+    "answer": "ばかり",
+    "explanation": "たばかり는 막 ~했다는 뜻입니다.",
+    "id": "jp-middle-132",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\nこの本は読む ____ 価値がある。",
+    "choices": [
+      "だけの",
+      "しかの",
+      "ばかりの",
+      "でもの"
+    ],
+    "answer": "だけの",
+    "explanation": "だけの価値がある는 ~할 만한 가치가 있다는 뜻입니다.",
+    "id": "jp-middle-133",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n彼は来る ____ 来ない ____、連絡してほしい。",
+    "choices": [
+      "か, か",
+      "と, と",
+      "し, し",
+      "たり, たり"
+    ],
+    "answer": "か, か",
+    "explanation": "AかBか는 A인지 B인지라는 선택 표현입니다.",
+    "id": "jp-middle-134",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\nこの仕事は一人 ____ できません。",
+    "choices": [
+      "では",
+      "でも",
+      "だけ",
+      "ほど"
+    ],
+    "answer": "では",
+    "explanation": "一人ではできない는 혼자서는 할 수 없다는 뜻입니다.",
+    "id": "jp-middle-135",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n日本語が上手に話せる ____ なりたいです。",
+    "choices": [
+      "ように",
+      "ために",
+      "ところに",
+      "たびに"
+    ],
+    "answer": "ように",
+    "explanation": "가능 상태를 목표로 할 때 ように가 자연스럽습니다.",
+    "id": "jp-middle-136",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\nこの問題は難しい ____、やってみます。",
+    "choices": [
+      "けれども",
+      "ので",
+      "ため",
+      "なら"
+    ],
+    "answer": "けれども",
+    "explanation": "けれども는 역접 표현입니다.",
+    "id": "jp-middle-137",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n電車が遅れた ____、会議に遅刻しました。",
+    "choices": [
+      "ために",
+      "ように",
+      "かわりに",
+      "たびに"
+    ],
+    "answer": "ために",
+    "explanation": "전철 지연이 지각의 원인입니다.",
+    "id": "jp-middle-138",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n説明を読めば読む ____、わからなくなった。",
+    "choices": [
+      "ほど",
+      "だけ",
+      "しか",
+      "でも"
+    ],
+    "answer": "ほど",
+    "explanation": "ば~ほど는 ~하면 할수록입니다.",
+    "id": "jp-middle-139",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n友だち ____、この店は安くておいしいそうです。",
+    "choices": [
+      "によると",
+      "にとって",
+      "として",
+      "に対して"
+    ],
+    "answer": "によると",
+    "explanation": "정보 출처를 나타냅니다.",
+    "id": "jp-middle-140",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\n説明書にしたがって、機械を操作してください。",
+    "choices": [
+      "설명서에 따라 기계를 조작해 주세요.",
+      "설명서를 버리고 기계를 조작해 주세요.",
+      "기계를 조작한 뒤 설명서를 읽어 주세요.",
+      "설명서는 기계와 관계가 없습니다."
+    ],
+    "answer": "설명서에 따라 기계를 조작해 주세요.",
+    "explanation": "にしたがって는 '~에 따라'라는 뜻입니다.",
+    "id": "jp-middle-141",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\n年を取るにつれて、体力が落ちてきました。",
+    "choices": [
+      "나이가 들면서 체력이 떨어져 왔습니다.",
+      "나이가 들수록 체력이 좋아졌습니다.",
+      "나이를 먹어도 체력은 변하지 않았습니다.",
+      "체력이 떨어져서 나이를 잊었습니다."
+    ],
+    "answer": "나이가 들면서 체력이 떨어져 왔습니다.",
+    "explanation": "につれて는 한 변화에 따라 다른 변화가 일어남을 나타냅니다.",
+    "id": "jp-middle-142",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\n努力したにもかかわらず、結果はよくありませんでした。",
+    "choices": [
+      "노력했음에도 불구하고 결과는 좋지 않았습니다.",
+      "노력했기 때문에 결과가 좋았습니다.",
+      "노력하지 않았지만 결과가 좋았습니다.",
+      "결과가 좋아서 노력했습니다."
+    ],
+    "answer": "노력했음에도 불구하고 결과는 좋지 않았습니다.",
+    "explanation": "にもかかわらず는 '~했음에도 불구하고'입니다.",
+    "id": "jp-middle-143",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\nこの町は静かなうえに、交通も便利です。",
+    "choices": [
+      "이 마을은 조용할 뿐만 아니라 교통도 편리합니다.",
+      "이 마을은 조용하지만 교통은 불편합니다.",
+      "이 마을은 시끄럽고 교통도 나쁩니다.",
+      "이 마을은 교통만 편리합니다."
+    ],
+    "answer": "이 마을은 조용할 뿐만 아니라 교통도 편리합니다.",
+    "explanation": "うえに는 추가 표현입니다.",
+    "id": "jp-middle-144",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\n忘れないように、ノートに書いておきました。",
+    "choices": [
+      "잊지 않도록 노트에 적어 두었습니다.",
+      "잊었기 때문에 노트를 버렸습니다.",
+      "노트에 쓰지 않으려고 했습니다.",
+      "노트를 잊어서 쓸 수 없었습니다."
+    ],
+    "answer": "잊지 않도록 노트에 적어 두었습니다.",
+    "explanation": "ように는 목적을 나타냅니다.",
+    "id": "jp-middle-145",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\n若いうちに、いろいろな経験をしたほうがいいです。",
+    "choices": [
+      "젊을 때 여러 경험을 하는 편이 좋습니다.",
+      "젊을 때는 경험하지 않는 편이 좋습니다.",
+      "경험이 많으면 젊어집니다.",
+      "젊은 사람은 경험이 없습니다."
+    ],
+    "answer": "젊을 때 여러 경험을 하는 편이 좋습니다.",
+    "explanation": "うちに는 '~하는 동안에'라는 뜻입니다.",
+    "id": "jp-middle-146",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\n彼は忙しいながら、毎日日本語を勉強しています。",
+    "choices": [
+      "그는 바쁘면서도 매일 일본어를 공부하고 있습니다.",
+      "그는 바빠서 일본어를 전혀 공부하지 않습니다.",
+      "그는 일본어가 바쁘다고 말합니다.",
+      "그는 매일 공부하지만 바쁘지 않습니다."
+    ],
+    "answer": "그는 바쁘면서도 매일 일본어를 공부하고 있습니다.",
+    "explanation": "ながら는 역접으로 '~이면서도'라는 뜻이 됩니다.",
+    "id": "jp-middle-147",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\n財布を忘れたせいで、昼ご飯が食べられませんでした。",
+    "choices": [
+      "지갑을 잊어버린 탓에 점심을 먹을 수 없었습니다.",
+      "지갑을 찾아서 점심을 먹었습니다.",
+      "점심을 먹어서 지갑을 잊었습니다.",
+      "지갑은 점심 식사와 관계없었습니다."
+    ],
+    "answer": "지갑을 잊어버린 탓에 점심을 먹을 수 없었습니다.",
+    "explanation": "せいで는 나쁜 결과의 원인을 나타냅니다.",
+    "id": "jp-middle-148",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\n友だちのおかげで、宿題が早く終わりました。",
+    "choices": [
+      "친구 덕분에 숙제가 빨리 끝났습니다.",
+      "친구 때문에 숙제를 못 했습니다.",
+      "친구가 숙제를 잊었습니다.",
+      "숙제를 끝내서 친구를 만났습니다."
+    ],
+    "answer": "친구 덕분에 숙제가 빨리 끝났습니다.",
+    "explanation": "おかげで는 좋은 결과의 원인을 나타냅니다.",
+    "id": "jp-middle-149",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\nこの問題は考えれば考えるほど難しくなります。",
+    "choices": [
+      "이 문제는 생각하면 생각할수록 어려워집니다.",
+      "이 문제는 생각하지 않으면 쉬워집니다.",
+      "이 문제는 생각할 필요가 없습니다.",
+      "이 문제는 이미 해결되었습니다."
+    ],
+    "answer": "이 문제는 생각하면 생각할수록 어려워집니다.",
+    "explanation": "ば~ほど는 ~하면 할수록이라는 뜻입니다.",
+    "id": "jp-middle-150",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\n彼は医者らしいです。白衣を着ています。",
+    "choices": [
+      "그는 의사인 것 같습니다. 흰 가운을 입고 있습니다.",
+      "그는 의사답게 행동해야 합니다.",
+      "그는 의사가 아닙니다.",
+      "그는 흰 가운을 싫어합니다."
+    ],
+    "answer": "그는 의사인 것 같습니다. 흰 가운을 입고 있습니다.",
+    "explanation": "らしい는 근거를 바탕으로 한 추정을 나타냅니다.",
+    "id": "jp-middle-151",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\nこの料理は辛そうに見えます。",
+    "choices": [
+      "이 요리는 매워 보입니다.",
+      "이 요리는 매웠습니다.",
+      "이 요리는 맵지 않습니다.",
+      "이 요리는 먹을 수 없습니다."
+    ],
+    "answer": "이 요리는 매워 보입니다.",
+    "explanation": "そうに見える는 ~해 보인다는 뜻입니다.",
+    "id": "jp-middle-152",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\n宿題をしないまま学校へ行きました。",
+    "choices": [
+      "숙제를 하지 않은 채 학교에 갔습니다.",
+      "숙제를 하고 학교에 갔습니다.",
+      "학교에서 숙제를 했습니다.",
+      "숙제를 하려고 학교에 가지 않았습니다."
+    ],
+    "answer": "숙제를 하지 않은 채 학교에 갔습니다.",
+    "explanation": "ないまま는 ~하지 않은 채라는 뜻입니다.",
+    "id": "jp-middle-153",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\n試験まであと一週間しかありません。",
+    "choices": [
+      "시험까지 이제 일주일밖에 없습니다.",
+      "시험까지 아직 한 달이 있습니다.",
+      "시험은 일주일 전에 끝났습니다.",
+      "시험은 일주일 동안 봅니다."
+    ],
+    "answer": "시험까지 이제 일주일밖에 없습니다.",
+    "explanation": "しかない는 '~밖에 없다'라는 뜻입니다.",
+    "id": "jp-middle-154",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\n日本語を勉強し始めたばかりです。",
+    "choices": [
+      "일본어 공부를 막 시작했습니다.",
+      "일본어 공부를 이미 끝냈습니다.",
+      "일본어 공부를 오래 했습니다.",
+      "일본어 공부를 그만두었습니다."
+    ],
+    "answer": "일본어 공부를 막 시작했습니다.",
+    "explanation": "たばかり는 막 ~했다는 뜻입니다.",
+    "id": "jp-middle-155",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\nこの本は読むだけの価値があります。",
+    "choices": [
+      "이 책은 읽을 만한 가치가 있습니다.",
+      "이 책은 읽을 필요가 없습니다.",
+      "이 책은 너무 쉬워서 가치가 없습니다.",
+      "이 책은 읽을 수 없습니다."
+    ],
+    "answer": "이 책은 읽을 만한 가치가 있습니다.",
+    "explanation": "だけの価値がある는 ~할 만한 가치가 있다는 뜻입니다.",
+    "id": "jp-middle-156",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\n日本へ行くなら、京都にも行ってみたいです。",
+    "choices": [
+      "일본에 간다면 교토에도 가 보고 싶습니다.",
+      "일본에 갔기 때문에 교토에 가지 않았습니다.",
+      "교토에 가면 일본을 떠납니다.",
+      "일본에는 교토가 없습니다."
+    ],
+    "answer": "일본에 간다면 교토에도 가 보고 싶습니다.",
+    "explanation": "なら는 '~라면'이라는 조건 표현입니다.",
+    "id": "jp-middle-157",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\nどんなに忙しくても、食事はきちんと取るべきです。",
+    "choices": [
+      "아무리 바빠도 식사는 제대로 해야 합니다.",
+      "바쁘면 식사를 하지 않아도 됩니다.",
+      "식사하면 바쁘지 않습니다.",
+      "식사는 바쁠 때만 해야 합니다."
+    ],
+    "answer": "아무리 바빠도 식사는 제대로 해야 합니다.",
+    "explanation": "どんなに~ても는 아무리 ~해도라는 뜻입니다.",
+    "id": "jp-middle-158",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\n説明を聞いたものの、まだよくわかりません。",
+    "choices": [
+      "설명을 듣기는 했지만 아직 잘 모르겠습니다.",
+      "설명을 들어서 완전히 이해했습니다.",
+      "설명을 듣지 않았지만 알고 있습니다.",
+      "설명은 필요하지 않습니다."
+    ],
+    "answer": "설명을 듣기는 했지만 아직 잘 모르겠습니다.",
+    "explanation": "ものの는 '~하기는 했지만'이라는 뜻입니다.",
+    "id": "jp-middle-159",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\n子どもでも読めるように、簡単な言葉で書いてあります。",
+    "choices": [
+      "아이도 읽을 수 있도록 쉬운 말로 쓰여 있습니다.",
+      "아이는 읽을 수 없도록 어렵게 쓰여 있습니다.",
+      "아이만 읽을 수 있습니다.",
+      "쉬운 말이 아니어서 읽기 어렵습니다."
+    ],
+    "answer": "아이도 읽을 수 있도록 쉬운 말로 쓰여 있습니다.",
+    "explanation": "でも는 '~조차도, ~라도'라는 뜻으로 쓰였습니다.",
+    "id": "jp-middle-160",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n最近、短い動画で情報を得る人が増えている。短時間で多くのことを知ることができる一方で、内容を深く理解しないまま次の情報へ進んでしまうこともある。大切なのは、情報を集める速さだけではなく、その情報について考える時間を持つことだ。\n\n筆者が大切だと言っていることは何ですか。",
+    "choices": [
+      "情報について考える時間を持つこと",
+      "できるだけ多くの動画を見ること",
+      "長い文章を読まないこと",
+      "情報を集める速さだけを重視すること"
+    ],
+    "answer": "情報について考える時間を持つこと",
+    "explanation": "마지막 문장에서 정보에 대해 생각할 시간을 갖는 것이 중요하다고 말합니다.",
+    "id": "jp-middle-161",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n駅前に新しい図書館ができた。以前の図書館より広く、机の数も多い。特に学生たちには評判がよく、試験前になると朝から多くの人が利用している。\n\n新しい図書館について正しいものはどれですか。",
+    "choices": [
+      "以前より広く、机の数も多い",
+      "駅から遠くなった",
+      "学生にはあまり人気がない",
+      "試験前は利用できない"
+    ],
+    "answer": "以前より広く、机の数も多い",
+    "explanation": "지문에 이전 도서관보다 넓고 책상 수도 많다고 되어 있습니다.",
+    "id": "jp-middle-162",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n田中さんは毎朝早く起きて散歩をしている。最初は健康のために始めたが、今では一日の予定を考える大切な時間にもなっている。\n\n田中さんにとって朝の散歩は今どんな時間ですか。",
+    "choices": [
+      "予定を考える大切な時間",
+      "友だちと会うための時間",
+      "買い物をする時間",
+      "仕事を終える時間"
+    ],
+    "answer": "予定を考える大切な時間",
+    "explanation": "散歩가 하루 일정을 생각하는 중요한 시간이 되었다고 합니다.",
+    "id": "jp-middle-163",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n外国語を勉強するとき、間違えることを恐れすぎると話す機会が少なくなる。もちろん正確さも大切だが、まず使ってみることによって学べることも多い。\n\n筆者の考えに近いものはどれですか。",
+    "choices": [
+      "間違いを恐れすぎず使ってみることも大切だ",
+      "正確でなければ絶対に話してはいけない",
+      "外国語は読むだけで十分だ",
+      "間違える人は勉強しないほうがよい"
+    ],
+    "answer": "間違いを恐れすぎず使ってみることも大切だ",
+    "explanation": "실수를 너무 두려워하지 말고 사용해 보는 것이 중요하다는 글입니다.",
+    "id": "jp-middle-164",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n会社では来月から紙の資料を減らし、会議ではできるだけ電子資料を使うことになった。印刷の手間と費用を減らすだけでなく、環境にも配慮するためである。\n\n会社が電子資料を使う理由として合っているものはどれですか。",
+    "choices": [
+      "手間と費用を減らし、環境にも配慮するため",
+      "会議の回数を増やすため",
+      "社員の出勤時間を変えるため",
+      "紙の資料をもっと増やすため"
+    ],
+    "answer": "手間と費用を減らし、環境にも配慮するため",
+    "explanation": "인쇄 수고와 비용을 줄이고 환경도 배려하기 위해서입니다.",
+    "id": "jp-middle-165",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n新しいことを始めるとき、最初から完璧を求めると続けるのが難しくなる。小さく始めて、少しずつ改善していくほうが長く続きやすい。\n\n筆者が勧めていることは何ですか。",
+    "choices": [
+      "小さく始めて少しずつ改善すること",
+      "最初から完璧にすること",
+      "難しいことは始めないこと",
+      "すぐに結果を出すこと"
+    ],
+    "answer": "小さく始めて少しずつ改善すること",
+    "explanation": "작게 시작해 조금씩 개선하는 것이 오래 지속하기 쉽다고 말합니다.",
+    "id": "jp-middle-166",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n地域のイベントには、若い人から高齢者まで多くの人が参加した。世代の違う人たちが話す機会になり、地域のつながりを強める効果もあった。\n\nイベントの効果として合っているものはどれですか。",
+    "choices": [
+      "地域のつながりを強めた",
+      "参加者が少なくなった",
+      "世代間の会話が減った",
+      "地域活動が中止された"
+    ],
+    "answer": "地域のつながりを強めた",
+    "explanation": "세대가 다른 사람들이 이야기할 기회가 되고 지역 연결이 강화되었다고 했습니다.",
+    "id": "jp-middle-167",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n最近、料理をする若者が増えている。節約のためだけでなく、自分の健康を考えて食材を選べる点も魅力だという。\n\n若者が料理をする理由として述べられているものはどれですか。",
+    "choices": [
+      "節約と健康管理のため",
+      "外食を増やすため",
+      "料理教室を開くため",
+      "食材を選ばないため"
+    ],
+    "answer": "節約と健康管理のため",
+    "explanation": "절약뿐 아니라 건강을 생각해 식재료를 고를 수 있다는 점이 매력이라고 했습니다.",
+    "id": "jp-middle-168",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n山田さんは忙しいときほど、予定を紙に書き出すようにしている。頭の中だけで考えていると、何を先にすべきか分からなくなるからだ。\n\n山田さんはなぜ予定を書き出しますか。",
+    "choices": [
+      "何を先にすべきか整理するため",
+      "紙を使い切るため",
+      "予定を忘れるため",
+      "忙しくないことを確認するため"
+    ],
+    "answer": "何を先にすべきか整理するため",
+    "explanation": "우선순위를 알기 위해 적어 둔다고 볼 수 있습니다.",
+    "id": "jp-middle-169",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\nある町では、古い建物を壊すのではなく、修理してカフェや展示スペースとして利用している。新しい建物を建てるより、その町らしさを残せると考えたからだ。\n\nこの町が古い建物を利用している理由は何ですか。",
+    "choices": [
+      "町らしさを残せるから",
+      "新しい建物を建てたいから",
+      "展示スペースをなくしたいから",
+      "修理が必要ないから"
+    ],
+    "answer": "町らしさを残せるから",
+    "explanation": "町らしさ를 남길 수 있다고 생각했기 때문입니다.",
+    "id": "jp-middle-170",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 OX",
+    "type": "ox",
+    "question": "にとって는 '~에게 있어서'라는 뜻으로 사용할 수 있습니다.",
+    "answer": "O",
+    "explanation": "私にとって大切です처럼 씁니다.",
+    "id": "jp-middle-171",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 OX",
+    "type": "ox",
+    "question": "によると는 정보의 출처를 나타낼 수 있습니다.",
+    "answer": "O",
+    "explanation": "天気予報によると처럼 씁니다.",
+    "id": "jp-middle-172",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 OX",
+    "type": "ox",
+    "question": "について는 '~에 관하여'라는 뜻입니다.",
+    "answer": "O",
+    "explanation": "日本文化について話す처럼 씁니다.",
+    "id": "jp-middle-173",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 OX",
+    "type": "ox",
+    "question": "として는 자격이나 입장을 나타낼 수 있습니다.",
+    "answer": "O",
+    "explanation": "学生として처럼 씁니다.",
+    "id": "jp-middle-174",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 OX",
+    "type": "ox",
+    "question": "にもかかわらず는 기대와 다른 결과를 나타내는 역접입니다.",
+    "answer": "O",
+    "explanation": "努力したにもかかわらず失敗した처럼 씁니다.",
+    "id": "jp-middle-175",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 OX",
+    "type": "ox",
+    "question": "につれて는 한 변화에 따라 다른 변화가 함께 일어남을 나타냅니다.",
+    "answer": "O",
+    "explanation": "年を取るにつれて처럼 씁니다.",
+    "id": "jp-middle-176",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 OX",
+    "type": "ox",
+    "question": "にしたがって는 '~에 따라'라는 뜻입니다.",
+    "answer": "O",
+    "explanation": "説明書にしたがって처럼 씁니다.",
+    "id": "jp-middle-177",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 OX",
+    "type": "ox",
+    "question": "ために는 목적이나 원인을 나타낼 수 있습니다.",
+    "answer": "O",
+    "explanation": "健康のために, 雨のために처럼 씁니다.",
+    "id": "jp-middle-178",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 OX",
+    "type": "ox",
+    "question": "ように는 가능이나 상태를 목표로 할 때 자주 씁니다.",
+    "answer": "O",
+    "explanation": "忘れないように처럼 씁니다.",
+    "id": "jp-middle-179",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 OX",
+    "type": "ox",
+    "question": "うちに는 '~하는 동안에'라는 뜻으로 사용할 수 있습니다.",
+    "answer": "O",
+    "explanation": "若いうちに처럼 씁니다.",
+    "id": "jp-middle-180",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 OX",
+    "type": "ox",
+    "question": "たびに는 '~할 때마다'라는 뜻입니다.",
+    "answer": "O",
+    "explanation": "見るたびに처럼 씁니다.",
+    "id": "jp-middle-181",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 OX",
+    "type": "ox",
+    "question": "かわりに는 '~하는 대신에'라는 뜻입니다.",
+    "answer": "O",
+    "explanation": "映画を見るかわりに勉強する처럼 씁니다.",
+    "id": "jp-middle-182",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 OX",
+    "type": "ox",
+    "question": "のに는 기대와 다른 결과를 나타내는 역접 표현입니다.",
+    "answer": "O",
+    "explanation": "勉強したのに落ちた처럼 씁니다.",
+    "id": "jp-middle-183",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 OX",
+    "type": "ox",
+    "question": "せいで는 주로 좋은 결과의 원인을 나타냅니다.",
+    "answer": "X",
+    "explanation": "せいで는 주로 나쁜 결과의 원인을 나타냅니다.",
+    "id": "jp-middle-184",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 OX",
+    "type": "ox",
+    "question": "おかげで는 주로 좋은 결과의 원인을 나타냅니다.",
+    "answer": "O",
+    "explanation": "友だちのおかげで助かった처럼 씁니다.",
+    "id": "jp-middle-185",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 OX",
+    "type": "ox",
+    "question": "ものの는 '~하기는 했지만'이라는 뜻입니다.",
+    "answer": "O",
+    "explanation": "聞いたもののわからない처럼 씁니다.",
+    "id": "jp-middle-186",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 OX",
+    "type": "ox",
+    "question": "しかない는 '~밖에 없다'라는 뜻입니다.",
+    "answer": "O",
+    "explanation": "一週間しかない처럼 씁니다.",
+    "id": "jp-middle-187",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 OX",
+    "type": "ox",
+    "question": "たばかり는 오래전에 했다는 뜻입니다.",
+    "answer": "X",
+    "explanation": "たばかり는 막 ~했다는 뜻입니다.",
+    "id": "jp-middle-188",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 OX",
+    "type": "ox",
+    "question": "ば~ほど는 '~하면 할수록'이라는 뜻입니다.",
+    "answer": "O",
+    "explanation": "考えれば考えるほど처럼 씁니다.",
+    "id": "jp-middle-189",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 OX",
+    "type": "ox",
+    "question": "らしい는 근거를 바탕으로 한 추정을 나타낼 수 있습니다.",
+    "answer": "O",
+    "explanation": "医者らしい처럼 씁니다.",
+    "id": "jp-middle-190",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\nこの仕事は一人 ____ できません。",
+    "choices": [
+      "では",
+      "でも",
+      "だけ",
+      "ほど"
+    ],
+    "answer": "では",
+    "explanation": "一人ではできない는 혼자서는 할 수 없다는 뜻입니다.",
+    "id": "jp-middle-191",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n日本語が上手に話せる ____ なりたいです。",
+    "choices": [
+      "ように",
+      "ために",
+      "ところに",
+      "たびに"
+    ],
+    "answer": "ように",
+    "explanation": "가능 상태를 목표로 할 때 ように가 자연스럽습니다.",
+    "id": "jp-middle-192",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n風邪をひいた ____、学校を休みました。",
+    "choices": [
+      "ため",
+      "のに",
+      "なら",
+      "ても"
+    ],
+    "answer": "ため",
+    "explanation": "ため는 원인·이유를 나타낼 수 있습니다.",
+    "id": "jp-middle-193",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\nこの問題は難しい ____、やってみます。",
+    "choices": [
+      "けれども",
+      "ので",
+      "ため",
+      "なら"
+    ],
+    "answer": "けれども",
+    "explanation": "けれども는 역접 표현입니다.",
+    "id": "jp-middle-194",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n電車が遅れた ____、会議に遅刻しました。",
+    "choices": [
+      "ために",
+      "ように",
+      "かわりに",
+      "たびに"
+    ],
+    "answer": "ために",
+    "explanation": "전철 지연이 지각의 원인입니다.",
+    "id": "jp-middle-195",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n彼は日本に10年住んでいる ____、日本語が上手だ。",
+    "choices": [
+      "だけあって",
+      "に対して",
+      "によると",
+      "について"
+    ],
+    "answer": "だけあって",
+    "explanation": "배경에 걸맞은 결과를 나타냅니다.",
+    "id": "jp-middle-196",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n説明を読めば読む ____、わからなくなった。",
+    "choices": [
+      "ほど",
+      "だけ",
+      "しか",
+      "でも"
+    ],
+    "answer": "ほど",
+    "explanation": "ば~ほど는 ~하면 할수록입니다.",
+    "id": "jp-middle-197",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\nこの映画は泣く ____ 感動した。",
+    "choices": [
+      "ほど",
+      "しか",
+      "ばかり",
+      "でも"
+    ],
+    "answer": "ほど",
+    "explanation": "울 정도로 감동했다는 뜻입니다.",
+    "id": "jp-middle-198",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n彼は忙しい ____、メールの返事をくれた。",
+    "choices": [
+      "にもかかわらず",
+      "ために",
+      "について",
+      "として"
+    ],
+    "answer": "にもかかわらず",
+    "explanation": "바쁜데도 답장을 준 역접입니다.",
+    "id": "jp-middle-199",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  },
+  {
+    "topic": "N3~N2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n友だち ____、この店は安くておいしいそうです。",
+    "choices": [
+      "によると",
+      "にとって",
+      "として",
+      "に対して"
+    ],
+    "answer": "によると",
+    "explanation": "정보 출처를 나타냅니다.",
+    "id": "jp-middle-200",
+    "subject": "일본어 중급",
+    "sourceLabel": "JLPT N3~N2",
+    "examStyle": "jlpt-middle",
+    "difficulty": 4
+  }
+]

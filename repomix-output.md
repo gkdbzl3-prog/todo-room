@@ -1,3 +1,1466 @@
+This file is a merged representation of a subset of the codebase, containing files not matching ignore patterns, combined into a single document by Repomix.
+
+# File Summary
+
+## Purpose
+This file contains a packed representation of a subset of the repository's contents that is considered the most important context.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+
+## File Format
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  a. A header with the file path (## File: path/to/file)
+  b. The full contents of the file in a code block
+
+## Usage Guidelines
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+
+## Notes
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching these patterns are excluded: node_modules, dist, build, .env, .env.*, repomix-output.*, *.log, data/*.json
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+
+# Directory Structure
+```
+.claude/
+  settings.local.json
+.github/
+  workflows/
+    fly.yml
+public/
+  bg.jpg
+src/
+  App.css
+  App.jsx
+  firebase.js
+  main.jsx
+.dockerignore
+.gitignore
+Dockerfile
+eslint.config.js
+fly.toml
+index.html
+nginx.conf
+package.json
+pnpm-workspace.yaml
+README.md
+vite.config.js
+```
+
+# Files
+
+## File: .claude/settings.local.json
+```json
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm build *)",
+      "Bash(fly status *)",
+      "Bash(fly releases *)"
+    ]
+  }
+}
+```
+
+## File: src/main.jsx
+```javascript
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+```
+
+## File: .dockerignore
+```
+node_modules
+dist
+.git
+.env
+```
+
+## File: .gitignore
+```
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+.env
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+```
+
+## File: Dockerfile
+```dockerfile
+FROM node:20-alpine AS build
+WORKDIR /app
+COPY package.json pnpm-lock.yaml* ./
+RUN corepack enable && pnpm install --frozen-lockfile || npm install
+COPY . .
+ARG VITE_FIREBASE_API_KEY
+ARG VITE_FIREBASE_AUTH_DOMAIN
+ARG VITE_FIREBASE_PROJECT_ID
+ARG VITE_FIREBASE_STORAGE_BUCKET
+ARG VITE_FIREBASE_MESSAGING_SENDER_ID
+ARG VITE_FIREBASE_APP_ID
+ARG VITE_FIREBASE_MEASUREMENT_ID
+RUN npm run build
+
+FROM nginx:alpine
+COPY --from=build /app/dist /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+EXPOSE 8080
+CMD ["nginx", "-g", "daemon off;"]
+```
+
+## File: nginx.conf
+```ini
+server {
+    listen 8080;
+    root /usr/share/nginx/html;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff2?)$ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+    }
+}
+```
+
+## File: package.json
+```json
+{
+  "name": "todo-room",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "firebase": "^11.0.0",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "eslint": "^10.2.1",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.5.0",
+    "vite": "^8.0.10"
+  }
+}
+```
+
+## File: pnpm-workspace.yaml
+```yaml
+allowBuilds:
+  '@firebase/util': false
+  protobufjs: false
+```
+
+## File: README.md
+```markdown
+# React + Vite
+
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+
+## React Compiler
+
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+
+## File: vite.config.js
+```javascript
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react()],
+})
+```
+
+## File: src/firebase.js
+```javascript
+import { initializeApp } from "firebase/app";
+import {
+  getFirestore,
+  collection,
+  doc,
+  getDoc,
+  setDoc,
+  deleteDoc,
+  onSnapshot,
+  query,
+  orderBy,
+  addDoc,
+  getDocs,
+  where,
+  serverTimestamp,
+  limit,
+} from "firebase/firestore";
+
+const firebaseConfig = {
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+export {
+  db,
+  collection,
+  doc,
+  getDoc,
+  setDoc,
+  deleteDoc,
+  onSnapshot,
+  query,
+  orderBy,
+  addDoc,
+  getDocs,
+  where,
+  serverTimestamp,
+  limit,
+};
+```
+
+## File: eslint.config.js
+```javascript
+import js from '@eslint/js'
+import globals from 'globals'
+import reactHooks from 'eslint-plugin-react-hooks'
+import reactRefresh from 'eslint-plugin-react-refresh'
+import { defineConfig, globalIgnores } from 'eslint/config'
+
+export default defineConfig([
+  globalIgnores(['dist', 'node_modules']),
+
+  {
+    files: ['**/*.{js,jsx}'],
+    extends: [
+      js.configs.recommended,
+      reactHooks.configs.flat.recommended,
+      reactRefresh.configs.vite,
+    ],
+    languageOptions: {
+      globals: globals.browser,
+      parserOptions: { ecmaFeatures: { jsx: true } },
+    },
+    rules: {
+      // 안 쓰는 변수 있다고 뭐라 하는 거 끄기
+      'no-unused-vars': 'off',
+
+      // useEffect dependency 배열 뭐라 하는 거 끄기
+      'react-hooks/exhaustive-deps': 'off',
+      'react-hooks/refs': 'off',
+      // Vite React Refresh 관련 잔소리 끄기
+      'react-refresh/only-export-components': 'off',
+    },
+  },
+])
+```
+
+## File: fly.toml
+```toml
+# fly.toml app configuration file generated for todo-room on 2026-04-30T14:30:02+09:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'todo-room'
+primary_region = 'nrt'
+
+[build]
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+
+[[vm]]
+  memory = '1gb'
+  cpus = 1
+  memory_mb = 1024
+```
+
+## File: index.html
+```html
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="theme-color" content="#15111f" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>TO-DO ROOM</title>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+```
+
+## File: .github/workflows/fly.yml
+```yaml
+name: Fly Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy app
+    runs-on: ubuntu-latest
+    concurrency: deploy-group
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate Firebase build env
+        env:
+          VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
+          VITE_FIREBASE_AUTH_DOMAIN: ${{ secrets.VITE_FIREBASE_AUTH_DOMAIN }}
+          VITE_FIREBASE_PROJECT_ID: ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
+          VITE_FIREBASE_STORAGE_BUCKET: ${{ secrets.VITE_FIREBASE_STORAGE_BUCKET }}
+          VITE_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.VITE_FIREBASE_MESSAGING_SENDER_ID }}
+          VITE_FIREBASE_APP_ID: ${{ secrets.VITE_FIREBASE_APP_ID }}
+          VITE_FIREBASE_MEASUREMENT_ID: ${{ secrets.VITE_FIREBASE_MEASUREMENT_ID }}
+        run: |
+          missing=0
+          for key in \
+            VITE_FIREBASE_API_KEY \
+            VITE_FIREBASE_AUTH_DOMAIN \
+            VITE_FIREBASE_PROJECT_ID \
+            VITE_FIREBASE_STORAGE_BUCKET \
+            VITE_FIREBASE_MESSAGING_SENDER_ID \
+            VITE_FIREBASE_APP_ID \
+            VITE_FIREBASE_MEASUREMENT_ID
+          do
+            if [ -z "${!key}" ]; then
+              echo "::error::Missing GitHub secret: $key"
+              missing=1
+            fi
+          done
+          if [ "$missing" -ne 0 ]; then
+            exit 1
+          fi
+
+      - name: Create production env file
+        run: |
+          cat <<EOF > .env.production
+          VITE_FIREBASE_API_KEY=${{ secrets.VITE_FIREBASE_API_KEY }}
+          VITE_FIREBASE_AUTH_DOMAIN=${{ secrets.VITE_FIREBASE_AUTH_DOMAIN }}
+          VITE_FIREBASE_PROJECT_ID=${{ secrets.VITE_FIREBASE_PROJECT_ID }}
+          VITE_FIREBASE_STORAGE_BUCKET=${{ secrets.VITE_FIREBASE_STORAGE_BUCKET }}
+          VITE_FIREBASE_MESSAGING_SENDER_ID=${{ secrets.VITE_FIREBASE_MESSAGING_SENDER_ID }}
+          VITE_FIREBASE_APP_ID=${{ secrets.VITE_FIREBASE_APP_ID }}
+          VITE_FIREBASE_MEASUREMENT_ID=${{ secrets.VITE_FIREBASE_MEASUREMENT_ID }}
+          EOF
+
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+
+      - run: flyctl deploy --remote-only
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+```
+
+## File: src/App.css
+```css
+/* ─── 리셋 & 기본 ─── */
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans KR", sans-serif;
+  color: #fff;
+  background-color: #1a1230;
+  background-image: url("/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100dvh;
+}
+
+html,
+body,
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* ─── 루트 ─── */
+.room {
+  min-height: 100dvh;
+  padding: 20px 16px 40px;
+  position: relative;
+}
+
+/* ─── 닉네임 설정 화면 ─── */
+.nickname-setup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80dvh;
+  gap: 16px;
+  text-align: center;
+}
+
+.nickname-setup h1 {
+  font-size: 32px;
+  letter-spacing: 4px;
+  margin: 0;
+  background: linear-gradient(135deg, #ffb39b,
+      #ffe7de);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.setup-desc {
+  opacity: 0.7;
+  margin: 0;
+}
+
+/* ─── 아바타 선택 ─── */
+.avatar-preview {
+  font-size: 56px;
+  line-height: 1;
+  margin: 4px 0;
+  animation: avatarBounce 0.3s ease;
+}
+
+@keyframes avatarBounce {
+  0% {
+    transform: scale(0.8);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.avatar-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 6px;
+  max-width: 320px;
+  margin-bottom: 4px;
+}
+
+.avatar-option {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+  padding: 0;
+}
+
+.avatar-option.selected {
+  border-color: rgba(159, 92, 255, 0.7);
+  background: rgba(159, 92, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.avatar-option:active {
+  transform: scale(0.9);
+}
+
+.my-avatar-header {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.me-avatar-inline {
+  font-size: 22px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.nickname-input {
+  max-width: 260px;
+  text-align: center;
+  font-size: 14px !important;
+  padding: 12px !important;
+  border-radius: 14px !important;
+  background: #fce5e5;
+  color: black
+}
+
+.btn-primary {
+  border: none;
+  border-radius: 20px;
+  padding: 14px 40px;
+  background: linear-gradient(135deg, #ff825c, #db3f24);
+  color: white;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(109, 40, 217, 0.4);
+  transition: transform 0.1s;
+}
+
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+/* ─── 헤더 ─── */
+.room-header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.room-header h1 {
+  margin: 0;
+  font-size: 26px;
+  letter-spacing: 3px;
+  background: linear-gradient(135deg, #c084fc, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.room-header p {
+  margin: 4px 0 0;
+  opacity: 0.6;
+  font-size: 13px;
+}
+
+.my-info {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.my-nickname {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.my-badge {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(159, 92, 255, 0.3), rgba(109, 40, 217, 0.3));
+  border: 1px solid rgba(159, 92, 255, 0.3);
+}
+
+/* ─── 탭 ─── */
+.tab-bar {
+  display: flex;
+  gap: 6px;
+  max-width: 600px;
+  margin: 0 auto 16px;
+}
+
+.tab-btn {
+  flex: 1;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 76, 44, 0.06);
+  color: rgba(255, 255, 255, 0.5);
+  border-radius: 14px;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab-btn.active {
+  background: linear-gradient(135deg, rgba(253, 11, 11, 0.308), rgba(109, 40, 217, 0.25));
+  border-color: rgba(159, 92, 255, 0.4);
+  color: #fff;
+}
+
+/* ─── 레이아웃 ─── */
+.room-layout {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ─── 공통 카드 ─── */
+.member-panel,
+.me-card,
+.todo-panel,
+.history-panel {
+  background: rgba(249, 131, 108, 0.521);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 18px;
+}
+
+.member-panel h2,
+.todo-panel h2 {
+  margin: 0 0 14px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  opacity: 0.85;
+}
+
+.my-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* 모바일 순서: 입력 → 멤버 → 투두 목록 */
+.my-panel-input {
+  order: -1;
+}
+
+.member-panel {
+  order: 0;
+}
+
+.my-panel-todos {
+  order: 1;
+}
+
+/* ─── 내 카드 ─── */
+.me-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.me-label {
+  font-size: 11px;
+  opacity: 0.5;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.btn-small {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  padding: 4px 10px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.me-nickname-display {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+/* ─── 인풋 ─── */
+input {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-radius: 14px;
+  padding: 12px 14px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+input:focus {
+  border-color: rgba(159, 92, 255, 0.5);
+}
+
+.todo-input-row {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-add {
+  flex: 0 0 auto;
+  border: none;
+  border-radius: 14px;
+  padding: 0 16px;
+  background: linear-gradient(135deg, #d89577,
+      #d92828);
+  color: white;
+  font-weight: 800;
+  font-size: 13px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(109, 40, 217, 0.3);
+  transition: transform 0.1s;
+}
+
+.btn-add:active {
+  transform: scale(0.95);
+}
+
+/* ─── 카운트 뱃지 ─── */
+.count-badge {
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  font-weight: 600;
+  vertical-align: middle;
+  margin-left: 6px;
+}
+
+/* ─── 투두 아이템 ─── */
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.todo-item:last-child {
+  border-bottom: none;
+}
+
+/* ─── 상태 순환 버튼 (색만) ─── */
+.todo-cycle-btn {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  background: transparent;
+  cursor: pointer;
+  flex: 0 0 auto;
+  transition: all 0.15s;
+  padding: 0;
+}
+
+.todo-cycle-btn:active {
+  transform: scale(0.85);
+}
+
+.todo-cycle-btn.doing {
+  border-color: #f87171;
+  background: rgba(239, 68, 68, 0.5);
+  box-shadow: 0 0 6px rgba(239, 68, 68, 0.4);
+}
+
+.todo-cycle-btn.done {
+  border-color: #22c55e;
+  background: #22c55e;
+  box-shadow: 0 0 6px rgba(34, 197, 94, 0.4);
+}
+
+/* ─── 상태 라벨 ─── */
+.todo-status-label {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 999px;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.todo-status-label.ready {
+  color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.todo-status-label.doing {
+  color: #f87171;
+  background: rgba(239, 68, 68, 0.12);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.todo-status-label.done {
+  color: #4ade80;
+  background: rgba(34, 197, 94, 0.12);
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.todo-text {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+.todo-item.done .todo-text {
+  text-decoration: line-through;
+  opacity: 0.45;
+}
+
+.todo-delete {
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 2px 6px;
+  flex: 0 0 auto;
+  line-height: 1;
+}
+
+.todo-delete:active {
+  color: #f87171;
+}
+
+.empty {
+  opacity: 0.5;
+  font-size: 13px;
+  padding: 8px 0;
+}
+
+/* ─── 초기화 안내 ─── */
+.reset-notice {
+  margin: -8px 0 12px;
+  font-size: 11px;
+  opacity: 0.45;
+  font-weight: 400;
+}
+
+/* ─── 위클리 패널 ─── */
+.todo-panel.weekly {
+  border-color: rgba(129, 140, 248, 0.25);
+}
+
+.todo-panel.weekly h2 {
+  color: #fce9e4;
+}
+
+/* (멤버 미니 상태는 동그라미 색으로만 표현) */
+
+/* ─── 완수 로그 (멤버 패널 내) ─── */
+.noti-log {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.noti-log-title {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+  opacity: 0.45;
+  margin-bottom: 8px;
+}
+
+.noti-log-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 6px 0;
+  font-size: 12px;
+  opacity: 0.75;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  animation: logFadeIn 0.3s ease;
+}
+
+.noti-log-item:last-child {
+  border-bottom: none;
+}
+
+.noti-log-icon {
+  font-size: 13px;
+  flex: 0 0 auto;
+  line-height: 1.3;
+}
+
+.noti-log-msg {
+  line-height: 1.4;
+}
+
+@keyframes logFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 0.75;
+    transform: translateY(0);
+  }
+}
+
+/* ─── 멤버 카드 ─── */
+.member-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.member-loading {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.member-loading-card {
+  height: 84px;
+  border-radius: 16px;
+  background: linear-gradient(90deg,
+      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.11),
+      rgba(255, 255, 255, 0.05));
+  background-size: 200% 100%;
+  animation: memberLoadingShimmer 1.1s linear infinite;
+}
+
+@keyframes memberLoadingShimmer {
+  from {
+    background-position: 200% 0;
+  }
+
+  to {
+    background-position: -200% 0;
+  }
+}
+
+.member-group {
+  margin-top: 12px;
+}
+
+.member-group-toggle {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.78);
+  border-radius: 14px;
+  padding: 10px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+}
+
+.member-list-idle {
+  margin-top: 10px;
+}
+
+.member-card {
+  padding: 14px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: border-color 0.2s;
+}
+
+.member-card.is-me {
+  border-color: rgba(159, 92, 255, 0.3);
+  background: rgba(159, 92, 255, 0.08);
+}
+
+.member-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.member-name-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.member-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex: 0 0 auto;
+  line-height: 1;
+}
+
+.member-avatar.small {
+  width: 28px;
+  height: 28px;
+  font-size: 16px;
+  border-radius: 9px;
+}
+
+.me-tag {
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: rgba(159, 92, 255, 0.3);
+  margin-left: 5px;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.badge {
+  display: block;
+  margin-top: 2px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.member-count {
+  font-weight: 800;
+  font-size: 15px;
+  opacity: 0.8;
+  flex: 0 0 auto;
+}
+
+.member-todo-title {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+  opacity: 0.45;
+}
+
+.member-mini-todos {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mini-todo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  line-height: 1.3;
+  min-width: 0;
+}
+
+.todo-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+}
+
+.todo-dot.ready {
+  background: transparent;
+}
+
+.todo-dot.doing {
+  background: #ef4444;
+  border-color: #ef4444;
+  box-shadow: 0 0 6px rgba(239, 68, 68, 0.5);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.todo-dot.done {
+  background: #22c55e;
+  border-color: #22c55e;
+  box-shadow: 0 0 6px rgba(34, 197, 94, 0.5);
+}
+
+.mini-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.mini-text.done {
+  text-decoration: line-through;
+  opacity: 0.4;
+}
+
+.mini-empty {
+  font-size: 11px;
+  opacity: 0.4;
+}
+
+/* ─── 히스토리 ─── */
+.history-panel {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.history-panel h2 {
+  margin: 0 0 14px;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.history-months {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.history-month-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.history-month-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+}
+
+.history-dates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.history-date-btn {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  padding: 8px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.history-date-btn.active {
+  background: linear-gradient(135deg, rgba(159, 92, 255, 0.25), rgba(109, 40, 217, 0.25));
+  border-color: rgba(159, 92, 255, 0.4);
+  color: #fff;
+}
+
+.history-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.history-content h3 {
+  margin: 0;
+  font-size: 15px;
+  opacity: 0.8;
+}
+
+.history-member {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 14px;
+}
+
+.history-member-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.history-count {
+  margin-left: auto;
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+.history-todos {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.history-todo {
+  font-size: 13px;
+  padding: 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.history-todo.done {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.history-check {
+  font-size: 12px;
+  width: 18px;
+  text-align: center;
+  flex: 0 0 auto;
+}
+
+.history-todo.done .history-check {
+  color: #22c55e;
+}
+
+.history-section-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.35);
+  margin: 10px 0 4px;
+  text-transform: uppercase;
+}
+
+/* ─── 모바일 최적화 ─── */
+@media (max-width: 480px) {
+  .room {
+    padding: 14px 12px 36px;
+  }
+
+  .room-header h1 {
+    font-size: 22px;
+  }
+
+  .member-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+  }
+
+  .member-card {
+    max-height: 280px;
+    overflow-y: auto;
+  }
+}
+
+/* ─── 데스크탑: 한 화면에 최대한 ─── */
+@media (min-width: 768px) {
+  .room-layout {
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: auto 1fr;
+    align-items: start;
+    gap: 16px;
+  }
+
+  /* 데스크탑: 왼쪽 = 멤버, 오른쪽 = 입력+투두 */
+  .member-panel {
+    grid-column: 1;
+    grid-row: 1 / -1;
+    order: unset;
+    min-width: fit-content;
+    position: sticky;
+    top: 16px;
+    max-height: fit-content;
+    overflow-y: auto;
+  }
+
+  .my-panel-input {
+    grid-column: 2;
+    grid-row: 1;
+    order: unset;
+  }
+
+  .my-panel-todos {
+    grid-column: 2;
+    grid-row: 2;
+    order: unset;
+  }
+
+  .my-panel {
+    min-width: 0;
+    position: sticky;
+    top: 16px;
+  }
+
+  .member-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .member-loading {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .member-list-idle {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .member-card {
+    padding: 10px;
+  }
+
+  .member-avatar {
+    width: 30px;
+    height: 30px;
+    font-size: 17px;
+    border-radius: 10px;
+  }
+
+  .member-head strong {
+    font-size: 13px;
+  }
+
+  .member-count {
+    font-size: 13px;
+  }
+
+  .member-todo-title {
+    margin-top: 6px;
+    margin-bottom: 3px;
+    font-size: 9px;
+  }
+
+  .mini-todo {
+    font-size: 11px;
+    gap: 4px;
+  }
+
+  .todo-dot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .badge {
+    font-size: 10px;
+  }
+
+  .tab-bar {
+    max-width: 1200px;
+  }
+
+  .history-panel {
+    max-width: 1200px;
+  }
+}
+
+/* ─── 와이드 데스크탑: 3열 그리드 ─── */
+@media (min-width: 1100px) {
+  .member-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .member-loading {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .member-list-idle {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ─── safe area 지원 ─── */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .room {
+    padding-bottom: calc(40px + env(safe-area-inset-bottom));
+  }
+}
+```
+
+## File: src/App.jsx
+```javascript
 import { useEffect, useState, useCallback, useRef } from "react";
 import {
   db,
@@ -15,8 +1478,7 @@ import {
   limit,
 } from "./firebase";
 import "./App.css";
-import QuizHome from "./quiz/QuizHome";
-import QuizPlayer from "./quiz/QuizPlayer";
+
 /* ── 유틸 ── */
 // 새벽 2시 기준: 2시 이전이면 전날로 취급
 function getEffectiveDate() {
@@ -474,9 +1936,9 @@ async function findRecentDailyMatchByNickname(targetNickname) {
 }
 
 const AVATAR_LIST = [
-  "🥹", "💓", "🌿", "😴", "😺", "😻", "🐱", "🐤",
-  "👻", "🌙", "🐰", "🍧", "🍕", "🥚", "🐮", "🐷",
-  "🐙", "🦋", "🌸", "🌻", "🍀", "⭐", "🔥", "💎",
+  "🥹","💓","🌿","😴","😺","😻","🐱","🐤",
+  "👻","🌙","🐰","🍧","🍕","🥚","🐮","🐷",
+  "🐙","🦋","🌸","🌻","🍀","⭐","🔥","💎",
 ];
 
 function getBadge(doneCount) {
@@ -541,7 +2003,6 @@ export default function App() {
   const legacyWeekKeyValue = legacyWeekKey();
   const currentMembersReadyKey = `${uid}:${nickname}:${currentDayKey}:${currentWeekKey}:${legacyWeekKeyValue}`;
   const membersReady = membersReadyKey === currentMembersReadyKey;
-  const [quizConfig, setQuizConfig] = useState(null);
 
   // (위클리 항상 표시)
 
@@ -879,12 +2340,12 @@ export default function App() {
           (
             !currentMatch ||
             getNicknameMatchCurrentTotal(bestMatch) >
-            getNicknameMatchCurrentTotal(currentMatch) ||
+              getNicknameMatchCurrentTotal(currentMatch) ||
             (
               getNicknameMatchCurrentTotal(bestMatch) ===
-              getNicknameMatchCurrentTotal(currentMatch) &&
+                getNicknameMatchCurrentTotal(currentMatch) &&
               getTodoCount(bestMatch.recentTodos) >
-              getTodoCount(currentMatch.recentTodos)
+                getTodoCount(currentMatch.recentTodos)
             ) ||
             (!avatar && !!bestMatch.avatar)
           );
@@ -1395,20 +2856,11 @@ export default function App() {
         >
           오늘
         </button>
-
-
-
         <button
           className={`tab-btn ${tab === "history" ? "active" : ""}`}
           onClick={() => setTab("history")}
         >
           기록
-        </button>
-        <button
-          className={`tab-btn ${tab === "quiz" ? "active" : ""}`}
-          onClick={() => setTab("quiz")}
-        >
-          퀴즈
         </button>
       </div>
 
@@ -1569,24 +3021,8 @@ export default function App() {
             </div>
           </section>
         </div>
-      ) : tab === "quiz" ? (
-        quizConfig ? (
-          <QuizPlayer
-            subject={quizConfig.subject}
-            level={quizConfig.level}
-            uid={uid}
-            nickname={nickname}
-            onExit={() => setQuizConfig(null)}
-          />
-        ) : (
-          <QuizHome
-            uid={uid}
-            onStart={(subject, level) => {
-              setQuizConfig({ subject, level });
-            }}
-          />
-        )
       ) : (
+        /* 히스토리 탭 */
         <HistoryPanel
           dates={historyDates}
           selectedDate={selectedDate}
@@ -1595,7 +3031,7 @@ export default function App() {
           onSelect={loadHistory}
         />
       )}
-    </main >
+    </main>
   );
 }
 
@@ -1680,8 +3116,9 @@ function MiniTodoList({ todos }) {
       {todos.map((todo) => (
         <div className="mini-todo" key={todo.id}>
           <span
-            className={`todo-dot ${todo.done ? "done" : todo.started ? "doing" : "ready"
-              }`}
+            className={`todo-dot ${
+              todo.done ? "done" : todo.started ? "doing" : "ready"
+            }`}
           />
           <span className={todo.done ? "mini-text done" : "mini-text"}>
             {todo.text}
@@ -1804,3 +3241,4 @@ function HistoryPanel({ dates, selectedDate, data, weeklyData, onSelect }) {
     </div>
   );
 }
+```

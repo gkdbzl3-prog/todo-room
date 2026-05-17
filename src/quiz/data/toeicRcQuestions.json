@@ -1,0 +1,3356 @@
+[
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The new software update will be installed ____ the weekend.",
+    "choices": [
+      "during",
+      "among",
+      "between",
+      "beside"
+    ],
+    "answer": "during",
+    "explanation": "during은 특정 기간 동안이라는 뜻으로 the weekend와 자연스럽게 어울립니다.",
+    "id": "toeic-rc-001",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "All employees are required ____ their identification badges at all times.",
+    "choices": [
+      "to wear",
+      "wearing",
+      "wear",
+      "worn"
+    ],
+    "answer": "to wear",
+    "explanation": "be required to 동사원형은 '~하도록 요구받다'라는 뜻입니다.",
+    "id": "toeic-rc-002",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The manager asked the team ____ the report by Friday.",
+    "choices": [
+      "to complete",
+      "complete",
+      "completed",
+      "completing"
+    ],
+    "answer": "to complete",
+    "explanation": "ask + 목적어 + to부정사 구조입니다.",
+    "id": "toeic-rc-003",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "Because of the weather, the outdoor event was ____ until next week.",
+    "choices": [
+      "postponed",
+      "postponing",
+      "postpone",
+      "postpones"
+    ],
+    "answer": "postponed",
+    "explanation": "행사가 연기되었다는 수동 의미이므로 was postponed가 알맞습니다.",
+    "id": "toeic-rc-004",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The conference room is available ____ 2 p.m. and 5 p.m.",
+    "choices": [
+      "between",
+      "during",
+      "among",
+      "within"
+    ],
+    "answer": "between",
+    "explanation": "between A and B는 A와 B 사이를 나타냅니다.",
+    "id": "toeic-rc-005",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "Please contact the front desk if you need ____ assistance.",
+    "choices": [
+      "further",
+      "farther",
+      "furthest",
+      "farthest"
+    ],
+    "answer": "further",
+    "explanation": "further assistance는 '추가 지원'이라는 자연스러운 표현입니다.",
+    "id": "toeic-rc-006",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The shipment is expected ____ tomorrow morning.",
+    "choices": [
+      "to arrive",
+      "arriving",
+      "arrived",
+      "arrives"
+    ],
+    "answer": "to arrive",
+    "explanation": "be expected to 동사원형은 '~할 것으로 예상되다'라는 뜻입니다.",
+    "id": "toeic-rc-007",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The company has decided ____ its customer service department.",
+    "choices": [
+      "to expand",
+      "expanding",
+      "expanded",
+      "expand"
+    ],
+    "answer": "to expand",
+    "explanation": "decide는 뒤에 to부정사를 목적어로 자주 취합니다.",
+    "id": "toeic-rc-008",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The instructions were clear enough for everyone ____.",
+    "choices": [
+      "to understand",
+      "understanding",
+      "understood",
+      "understands"
+    ],
+    "answer": "to understand",
+    "explanation": "enough for 목적어 to 동사원형 구조입니다.",
+    "id": "toeic-rc-009",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "Ms. Carter is responsible ____ organizing the annual workshop.",
+    "choices": [
+      "for",
+      "to",
+      "with",
+      "at"
+    ],
+    "answer": "for",
+    "explanation": "be responsible for는 '~을 담당하다'라는 뜻입니다.",
+    "id": "toeic-rc-010",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The proposal was reviewed ____ before it was submitted.",
+    "choices": [
+      "carefully",
+      "careful",
+      "care",
+      "caring"
+    ],
+    "answer": "carefully",
+    "explanation": "동사 reviewed를 수식하므로 부사 carefully가 알맞습니다.",
+    "id": "toeic-rc-011",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "Several employees expressed interest ____ the training program.",
+    "choices": [
+      "in",
+      "on",
+      "at",
+      "by"
+    ],
+    "answer": "in",
+    "explanation": "interest in은 '~에 대한 관심'이라는 표현입니다.",
+    "id": "toeic-rc-012",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The factory will remain closed ____ repairs are completed.",
+    "choices": [
+      "until",
+      "during",
+      "while",
+      "despite"
+    ],
+    "answer": "until",
+    "explanation": "until은 '~할 때까지'라는 뜻입니다.",
+    "id": "toeic-rc-013",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The new policy applies ____ all full-time employees.",
+    "choices": [
+      "to",
+      "for",
+      "with",
+      "by"
+    ],
+    "answer": "to",
+    "explanation": "apply to는 '~에 적용되다'라는 뜻입니다.",
+    "id": "toeic-rc-014",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The sales figures were ____ than expected.",
+    "choices": [
+      "higher",
+      "high",
+      "highest",
+      "highly"
+    ],
+    "answer": "higher",
+    "explanation": "than이 있으므로 비교급 higher가 알맞습니다.",
+    "id": "toeic-rc-015",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The brochure provides ____ information about the tour package.",
+    "choices": [
+      "detailed",
+      "detail",
+      "details",
+      "detailing"
+    ],
+    "answer": "detailed",
+    "explanation": "information을 수식하는 형용사 detailed가 알맞습니다.",
+    "id": "toeic-rc-016",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The budget must be approved ____ the project can begin.",
+    "choices": [
+      "before",
+      "during",
+      "despite",
+      "unless"
+    ],
+    "answer": "before",
+    "explanation": "프로젝트가 시작되기 전에 예산이 승인되어야 하므로 before가 알맞습니다.",
+    "id": "toeic-rc-017",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The printer is not working ____ because it needs new ink cartridges.",
+    "choices": [
+      "properly",
+      "proper",
+      "property",
+      "properties"
+    ],
+    "answer": "properly",
+    "explanation": "동사구 is not working을 수식하는 부사 properly가 필요합니다.",
+    "id": "toeic-rc-018",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "Customers who register online will receive a confirmation email ____.",
+    "choices": [
+      "automatically",
+      "automatic",
+      "automation",
+      "automated"
+    ],
+    "answer": "automatically",
+    "explanation": "동사 receive를 수식하는 부사 automatically가 알맞습니다.",
+    "id": "toeic-rc-019",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The restaurant offers a discount to customers ____ make reservations online.",
+    "choices": [
+      "who",
+      "which",
+      "where",
+      "what"
+    ],
+    "answer": "who",
+    "explanation": "customers를 수식하는 관계대명사로 사람을 나타내는 who가 알맞습니다.",
+    "id": "toeic-rc-020",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The manual explains how ____ the device safely.",
+    "choices": [
+      "to operate",
+      "operating",
+      "operated",
+      "operates"
+    ],
+    "answer": "to operate",
+    "explanation": "how to 동사원형 구조입니다.",
+    "id": "toeic-rc-021",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The meeting was canceled ____ the director was unavailable.",
+    "choices": [
+      "because",
+      "although",
+      "despite",
+      "unless"
+    ],
+    "answer": "because",
+    "explanation": "취소된 이유를 설명하므로 because가 알맞습니다.",
+    "id": "toeic-rc-022",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The new branch is located ____ the central station.",
+    "choices": [
+      "near",
+      "nearly",
+      "nearby",
+      "nearness"
+    ],
+    "answer": "near",
+    "explanation": "near는 전치사로 '~근처에'라는 뜻입니다.",
+    "id": "toeic-rc-023",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "Employees should submit their requests ____ writing.",
+    "choices": [
+      "in",
+      "on",
+      "by",
+      "with"
+    ],
+    "answer": "in",
+    "explanation": "in writing은 '서면으로'라는 고정 표현입니다.",
+    "id": "toeic-rc-024",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The product is popular ____ its reasonable price.",
+    "choices": [
+      "because of",
+      "although",
+      "despite",
+      "since"
+    ],
+    "answer": "because of",
+    "explanation": "뒤에 명사구 its reasonable price가 있으므로 because of가 알맞습니다.",
+    "id": "toeic-rc-025",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The board will discuss the issue ____ the next meeting.",
+    "choices": [
+      "at",
+      "by",
+      "to",
+      "from"
+    ],
+    "answer": "at",
+    "explanation": "at the meeting은 회의에서라는 뜻입니다.",
+    "id": "toeic-rc-026",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The hotel provides free transportation ____ the airport.",
+    "choices": [
+      "to",
+      "on",
+      "with",
+      "by"
+    ],
+    "answer": "to",
+    "explanation": "transportation to the airport는 공항까지의 교통편이라는 뜻입니다.",
+    "id": "toeic-rc-027",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The application form must be filled out ____.",
+    "choices": [
+      "completely",
+      "complete",
+      "completion",
+      "completed"
+    ],
+    "answer": "completely",
+    "explanation": "filled out을 수식하는 부사 completely가 필요합니다.",
+    "id": "toeic-rc-028",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The supervisor reminded staff ____ the safety guidelines.",
+    "choices": [
+      "of",
+      "to",
+      "for",
+      "with"
+    ],
+    "answer": "of",
+    "explanation": "remind A of B는 A에게 B를 상기시키다는 뜻입니다.",
+    "id": "toeic-rc-029",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The report contains data ____ from customer surveys.",
+    "choices": [
+      "collected",
+      "collecting",
+      "collect",
+      "collection"
+    ],
+    "answer": "collected",
+    "explanation": "data를 수식하는 과거분사 collected가 알맞습니다.",
+    "id": "toeic-rc-030",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The company is looking for candidates ____ have experience in marketing.",
+    "choices": [
+      "who",
+      "which",
+      "whose",
+      "where"
+    ],
+    "answer": "who",
+    "explanation": "candidates를 수식하므로 사람을 나타내는 who가 알맞습니다.",
+    "id": "toeic-rc-031",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "Please arrive early ____ you can find a seat.",
+    "choices": [
+      "so that",
+      "because of",
+      "despite",
+      "unless"
+    ],
+    "answer": "so that",
+    "explanation": "so that은 '~할 수 있도록'이라는 목적을 나타냅니다.",
+    "id": "toeic-rc-032",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The contract will be renewed ____ both parties agree.",
+    "choices": [
+      "if",
+      "despite",
+      "during",
+      "until"
+    ],
+    "answer": "if",
+    "explanation": "조건을 나타내므로 if가 알맞습니다.",
+    "id": "toeic-rc-033",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The speaker gave a presentation ____ lasted two hours.",
+    "choices": [
+      "that",
+      "what",
+      "who",
+      "where"
+    ],
+    "answer": "that",
+    "explanation": "presentation을 수식하는 관계대명사 that이 알맞습니다.",
+    "id": "toeic-rc-034",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The invoice should be sent ____ the accounting department.",
+    "choices": [
+      "to",
+      "by",
+      "with",
+      "at"
+    ],
+    "answer": "to",
+    "explanation": "send A to B 구조에서 to가 알맞습니다.",
+    "id": "toeic-rc-035",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The team worked hard ____ meet the deadline.",
+    "choices": [
+      "to",
+      "for",
+      "by",
+      "with"
+    ],
+    "answer": "to",
+    "explanation": "목적을 나타내는 to부정사입니다.",
+    "id": "toeic-rc-036",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The price of office supplies has increased ____.",
+    "choices": [
+      "significantly",
+      "significant",
+      "significance",
+      "signify"
+    ],
+    "answer": "significantly",
+    "explanation": "동사 has increased를 수식하는 부사 significantly가 알맞습니다.",
+    "id": "toeic-rc-037",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The technician repaired the machine ____ than expected.",
+    "choices": [
+      "faster",
+      "fast",
+      "fastest",
+      "fastly"
+    ],
+    "answer": "faster",
+    "explanation": "than이 있으므로 비교급 faster가 필요합니다.",
+    "id": "toeic-rc-038",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The company announced ____ plans to open a new office.",
+    "choices": [
+      "its",
+      "it",
+      "itself",
+      "they"
+    ],
+    "answer": "its",
+    "explanation": "plans를 수식하는 소유격 its가 알맞습니다.",
+    "id": "toeic-rc-039",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The documents ____ on the desk belong to Mr. Lee.",
+    "choices": [
+      "placed",
+      "placing",
+      "place",
+      "places"
+    ],
+    "answer": "placed",
+    "explanation": "documents를 수식하는 과거분사 placed가 알맞습니다.",
+    "id": "toeic-rc-040",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The training session is intended ____ new employees.",
+    "choices": [
+      "for",
+      "to",
+      "by",
+      "with"
+    ],
+    "answer": "for",
+    "explanation": "be intended for는 '~을 대상으로 하다'라는 뜻입니다.",
+    "id": "toeic-rc-041",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The office will be closed ____ Monday due to maintenance.",
+    "choices": [
+      "on",
+      "in",
+      "at",
+      "by"
+    ],
+    "answer": "on",
+    "explanation": "요일 앞에는 전치사 on을 씁니다.",
+    "id": "toeic-rc-042",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The committee will make a decision ____ reviewing all applications.",
+    "choices": [
+      "after",
+      "despite",
+      "because",
+      "unless"
+    ],
+    "answer": "after",
+    "explanation": "모든 지원서를 검토한 후 결정한다는 의미입니다.",
+    "id": "toeic-rc-043",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The updated schedule is available ____ the company website.",
+    "choices": [
+      "on",
+      "in",
+      "at",
+      "by"
+    ],
+    "answer": "on",
+    "explanation": "웹사이트에 게시되어 있다는 의미로 on the website를 씁니다.",
+    "id": "toeic-rc-044",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The new model is more energy-efficient ____ the previous one.",
+    "choices": [
+      "than",
+      "as",
+      "to",
+      "from"
+    ],
+    "answer": "than",
+    "explanation": "비교급 more energy-efficient와 함께 than을 씁니다.",
+    "id": "toeic-rc-045",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The manager praised the team for ____ excellent work.",
+    "choices": [
+      "its",
+      "it",
+      "they",
+      "them"
+    ],
+    "answer": "its",
+    "explanation": "team은 단수 집합명사로 여기서는 its가 자연스럽습니다.",
+    "id": "toeic-rc-046",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "All visitors must sign in ____ entering the building.",
+    "choices": [
+      "before",
+      "because",
+      "although",
+      "despite"
+    ],
+    "answer": "before",
+    "explanation": "건물에 들어가기 전에 서명해야 하므로 before가 알맞습니다.",
+    "id": "toeic-rc-047",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The store offers refunds only ____ customers have receipts.",
+    "choices": [
+      "if",
+      "whether",
+      "during",
+      "despite"
+    ],
+    "answer": "if",
+    "explanation": "조건을 나타내므로 if가 알맞습니다.",
+    "id": "toeic-rc-048",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The employee handbook ____ the company’s vacation policy.",
+    "choices": [
+      "describes",
+      "describing",
+      "description",
+      "describe"
+    ],
+    "answer": "describes",
+    "explanation": "주어 handbook에 맞는 동사 describes가 필요합니다.",
+    "id": "toeic-rc-049",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 문법",
+    "type": "multiple",
+    "question": "The survey results were ____ positive.",
+    "choices": [
+      "mostly",
+      "most",
+      "almost",
+      "more"
+    ],
+    "answer": "mostly",
+    "explanation": "mostly positive는 대체로 긍정적이라는 뜻입니다.",
+    "id": "toeic-rc-050",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The company plans to ____ a new product line next month.",
+    "choices": [
+      "launch",
+      "attend",
+      "repair",
+      "borrow"
+    ],
+    "answer": "launch",
+    "explanation": "launch a product line은 제품군을 출시하다는 뜻입니다.",
+    "id": "toeic-rc-051",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "Please ____ the attached document before the meeting.",
+    "choices": [
+      "review",
+      "delay",
+      "ship",
+      "install"
+    ],
+    "answer": "review",
+    "explanation": "review는 검토하다는 뜻으로 문맥상 가장 자연스럽습니다.",
+    "id": "toeic-rc-052",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The hotel is conveniently ____ near the convention center.",
+    "choices": [
+      "located",
+      "delivered",
+      "attached",
+      "expired"
+    ],
+    "answer": "located",
+    "explanation": "be located near는 '~근처에 위치하다'라는 뜻입니다.",
+    "id": "toeic-rc-053",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "We need to ____ the number of participants by Friday.",
+    "choices": [
+      "confirm",
+      "decorate",
+      "replace",
+      "manufacture"
+    ],
+    "answer": "confirm",
+    "explanation": "confirm은 확인하다라는 뜻입니다.",
+    "id": "toeic-rc-054",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The company will ____ additional staff for the holiday season.",
+    "choices": [
+      "hire",
+      "print",
+      "reserve",
+      "decorate"
+    ],
+    "answer": "hire",
+    "explanation": "hire staff는 직원을 고용하다는 뜻입니다.",
+    "id": "toeic-rc-055",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The sales department exceeded its monthly ____.",
+    "choices": [
+      "target",
+      "receipt",
+      "appliance",
+      "entrance"
+    ],
+    "answer": "target",
+    "explanation": "sales target은 판매 목표라는 뜻입니다.",
+    "id": "toeic-rc-056",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The flight was ____ due to heavy snow.",
+    "choices": [
+      "delayed",
+      "familiar",
+      "available",
+      "accurate"
+    ],
+    "answer": "delayed",
+    "explanation": "비행기가 지연되었다는 의미로 delayed가 알맞습니다.",
+    "id": "toeic-rc-057",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The customer requested a ____ for the damaged item.",
+    "choices": [
+      "refund",
+      "deadline",
+      "survey",
+      "branch"
+    ],
+    "answer": "refund",
+    "explanation": "refund는 환불이라는 뜻입니다.",
+    "id": "toeic-rc-058",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The new policy will be ____ next Monday.",
+    "choices": [
+      "implemented",
+      "impressed",
+      "invited",
+      "interviewed"
+    ],
+    "answer": "implemented",
+    "explanation": "implement a policy는 정책을 시행하다라는 뜻입니다.",
+    "id": "toeic-rc-059",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The training program is designed to improve employee ____.",
+    "choices": [
+      "productivity",
+      "location",
+      "entrance",
+      "postage"
+    ],
+    "answer": "productivity",
+    "explanation": "productivity는 생산성이라는 뜻입니다.",
+    "id": "toeic-rc-060",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "Please keep all receipts for ____ purposes.",
+    "choices": [
+      "accounting",
+      "decorative",
+      "mechanical",
+      "annual"
+    ],
+    "answer": "accounting",
+    "explanation": "accounting purposes는 회계 목적이라는 뜻입니다.",
+    "id": "toeic-rc-061",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The office furniture will be ____ tomorrow afternoon.",
+    "choices": [
+      "delivered",
+      "attended",
+      "increased",
+      "recruited"
+    ],
+    "answer": "delivered",
+    "explanation": "가구가 배송된다는 의미이므로 delivered가 알맞습니다.",
+    "id": "toeic-rc-062",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The company is seeking ways to reduce operating ____.",
+    "choices": [
+      "costs",
+      "seats",
+      "forms",
+      "goals"
+    ],
+    "answer": "costs",
+    "explanation": "operating costs는 운영 비용이라는 뜻입니다.",
+    "id": "toeic-rc-063",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The workshop is open to all ____ employees.",
+    "choices": [
+      "eligible",
+      "portable",
+      "distant",
+      "temporary"
+    ],
+    "answer": "eligible",
+    "explanation": "eligible employees는 자격이 있는 직원이라는 뜻입니다.",
+    "id": "toeic-rc-064",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The technician found a ____ in the security system.",
+    "choices": [
+      "defect",
+      "benefit",
+      "survey",
+      "profit"
+    ],
+    "answer": "defect",
+    "explanation": "defect는 결함이라는 뜻입니다.",
+    "id": "toeic-rc-065",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The brochure includes a ____ map of the city center.",
+    "choices": [
+      "detailed",
+      "delayed",
+      "damaged",
+      "divided"
+    ],
+    "answer": "detailed",
+    "explanation": "detailed map은 상세한 지도라는 뜻입니다.",
+    "id": "toeic-rc-066",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The marketing team developed an effective advertising ____.",
+    "choices": [
+      "strategy",
+      "appliance",
+      "invoice",
+      "ingredient"
+    ],
+    "answer": "strategy",
+    "explanation": "advertising strategy는 광고 전략이라는 뜻입니다.",
+    "id": "toeic-rc-067",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The deadline for applications has been ____ to June 10.",
+    "choices": [
+      "extended",
+      "exchanged",
+      "examined",
+      "excluded"
+    ],
+    "answer": "extended",
+    "explanation": "extend a deadline은 마감일을 연장하다라는 뜻입니다.",
+    "id": "toeic-rc-068",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The hotel offers ____ rates for business travelers.",
+    "choices": [
+      "special",
+      "separate",
+      "former",
+      "accurate"
+    ],
+    "answer": "special",
+    "explanation": "special rates는 특별 요금이라는 뜻입니다.",
+    "id": "toeic-rc-069",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The manager gave a brief ____ of the new procedure.",
+    "choices": [
+      "overview",
+      "invoice",
+      "shipment",
+      "subscription"
+    ],
+    "answer": "overview",
+    "explanation": "overview는 개요, 개관이라는 뜻입니다.",
+    "id": "toeic-rc-070",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The company will ____ its website this weekend.",
+    "choices": [
+      "update",
+      "borrow",
+      "attach",
+      "attend"
+    ],
+    "answer": "update",
+    "explanation": "update a website는 웹사이트를 업데이트하다라는 뜻입니다.",
+    "id": "toeic-rc-071",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The new printer is more ____ than the old one.",
+    "choices": [
+      "reliable",
+      "eligible",
+      "annual",
+      "temporary"
+    ],
+    "answer": "reliable",
+    "explanation": "reliable은 신뢰할 수 있는이라는 뜻입니다.",
+    "id": "toeic-rc-072",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The team needs to ____ the final design by Friday.",
+    "choices": [
+      "approve",
+      "arrive",
+      "avoid",
+      "apply"
+    ],
+    "answer": "approve",
+    "explanation": "approve는 승인하다라는 뜻입니다.",
+    "id": "toeic-rc-073",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The job requires strong communication ____.",
+    "choices": [
+      "skills",
+      "prices",
+      "routes",
+      "seats"
+    ],
+    "answer": "skills",
+    "explanation": "communication skills는 의사소통 능력이라는 뜻입니다.",
+    "id": "toeic-rc-074",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The restaurant is known for its ____ service.",
+    "choices": [
+      "prompt",
+      "former",
+      "distant",
+      "annual"
+    ],
+    "answer": "prompt",
+    "explanation": "prompt service는 신속한 서비스라는 뜻입니다.",
+    "id": "toeic-rc-075",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The new policy is intended to ____ customer satisfaction.",
+    "choices": [
+      "improve",
+      "borrow",
+      "damage",
+      "expire"
+    ],
+    "answer": "improve",
+    "explanation": "improve customer satisfaction은 고객 만족도를 향상시키다라는 뜻입니다.",
+    "id": "toeic-rc-076",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The warehouse keeps a large ____ of office supplies.",
+    "choices": [
+      "inventory",
+      "interview",
+      "ingredient",
+      "invoice"
+    ],
+    "answer": "inventory",
+    "explanation": "inventory는 재고라는 뜻입니다.",
+    "id": "toeic-rc-077",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The contract includes a detailed ____ of services.",
+    "choices": [
+      "description",
+      "subscription",
+      "transportation",
+      "permission"
+    ],
+    "answer": "description",
+    "explanation": "description of services는 서비스 설명이라는 뜻입니다.",
+    "id": "toeic-rc-078",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The company received many positive ____ from customers.",
+    "choices": [
+      "comments",
+      "delays",
+      "defects",
+      "branches"
+    ],
+    "answer": "comments",
+    "explanation": "positive comments는 긍정적인 의견이라는 뜻입니다.",
+    "id": "toeic-rc-079",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The repair work was completed ahead of ____.",
+    "choices": [
+      "schedule",
+      "receipt",
+      "survey",
+      "profit"
+    ],
+    "answer": "schedule",
+    "explanation": "ahead of schedule은 예정보다 빨리라는 뜻입니다.",
+    "id": "toeic-rc-080",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The new employee will ____ orientation next week.",
+    "choices": [
+      "attend",
+      "extend",
+      "reduce",
+      "replace"
+    ],
+    "answer": "attend",
+    "explanation": "attend orientation은 오리엔테이션에 참석하다는 뜻입니다.",
+    "id": "toeic-rc-081",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The company is trying to ____ its market share.",
+    "choices": [
+      "increase",
+      "borrow",
+      "expire",
+      "decorate"
+    ],
+    "answer": "increase",
+    "explanation": "increase market share는 시장 점유율을 늘리다는 뜻입니다.",
+    "id": "toeic-rc-082",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "Please ____ the file to your email response.",
+    "choices": [
+      "attach",
+      "attend",
+      "arrange",
+      "approve"
+    ],
+    "answer": "attach",
+    "explanation": "attach a file은 파일을 첨부하다라는 뜻입니다.",
+    "id": "toeic-rc-083",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The department will ____ the results of the survey.",
+    "choices": [
+      "analyze",
+      "deliver",
+      "decorate",
+      "reserve"
+    ],
+    "answer": "analyze",
+    "explanation": "analyze results는 결과를 분석하다라는 뜻입니다.",
+    "id": "toeic-rc-084",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The product comes with a one-year ____.",
+    "choices": [
+      "warranty",
+      "receipt",
+      "branch",
+      "route"
+    ],
+    "answer": "warranty",
+    "explanation": "warranty는 보증이라는 뜻입니다.",
+    "id": "toeic-rc-085",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The company has opened a new ____ in Busan.",
+    "choices": [
+      "branch",
+      "benefit",
+      "invoice",
+      "survey"
+    ],
+    "answer": "branch",
+    "explanation": "branch는 지점이라는 뜻입니다.",
+    "id": "toeic-rc-086",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The seminar will cover recent industry ____.",
+    "choices": [
+      "trends",
+      "receipts",
+      "repairs",
+      "entrances"
+    ],
+    "answer": "trends",
+    "explanation": "industry trends는 업계 동향이라는 뜻입니다.",
+    "id": "toeic-rc-087",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The manager made several ____ to the proposal.",
+    "choices": [
+      "revisions",
+      "routes",
+      "invoices",
+      "appliances"
+    ],
+    "answer": "revisions",
+    "explanation": "revision은 수정이라는 뜻입니다.",
+    "id": "toeic-rc-088",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The office is ____ equipped with modern facilities.",
+    "choices": [
+      "fully",
+      "former",
+      "near",
+      "annual"
+    ],
+    "answer": "fully",
+    "explanation": "fully equipped는 완전히 갖추어진이라는 뜻입니다.",
+    "id": "toeic-rc-089",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The payment must be made in ____.",
+    "choices": [
+      "advance",
+      "entrance",
+      "survey",
+      "defect"
+    ],
+    "answer": "advance",
+    "explanation": "in advance는 미리, 사전에라는 뜻입니다.",
+    "id": "toeic-rc-090",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The company offers ____ benefits to full-time employees.",
+    "choices": [
+      "comprehensive",
+      "temporary",
+      "distant",
+      "damaged"
+    ],
+    "answer": "comprehensive",
+    "explanation": "comprehensive benefits는 포괄적인 복리후생이라는 뜻입니다.",
+    "id": "toeic-rc-091",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The staff meeting was ____ to Tuesday morning.",
+    "choices": [
+      "rescheduled",
+      "repaired",
+      "removed",
+      "reduced"
+    ],
+    "answer": "rescheduled",
+    "explanation": "reschedule은 일정을 변경하다라는 뜻입니다.",
+    "id": "toeic-rc-092",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The store has a wide ____ of kitchen appliances.",
+    "choices": [
+      "selection",
+      "permission",
+      "transportation",
+      "location"
+    ],
+    "answer": "selection",
+    "explanation": "a wide selection of는 다양한 선택이라는 뜻입니다.",
+    "id": "toeic-rc-093",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The company will conduct a customer ____ next month.",
+    "choices": [
+      "survey",
+      "branch",
+      "receipt",
+      "warranty"
+    ],
+    "answer": "survey",
+    "explanation": "customer survey는 고객 설문조사라는 뜻입니다.",
+    "id": "toeic-rc-094",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The assistant will ____ travel arrangements for the executives.",
+    "choices": [
+      "coordinate",
+      "damage",
+      "borrow",
+      "expire"
+    ],
+    "answer": "coordinate",
+    "explanation": "coordinate arrangements는 일정을 조율하다라는 뜻입니다.",
+    "id": "toeic-rc-095",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The machine requires regular ____ to operate efficiently.",
+    "choices": [
+      "maintenance",
+      "permission",
+      "subscription",
+      "transportation"
+    ],
+    "answer": "maintenance",
+    "explanation": "maintenance는 유지보수라는 뜻입니다.",
+    "id": "toeic-rc-096",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The conference attracted many industry ____.",
+    "choices": [
+      "professionals",
+      "receipts",
+      "routes",
+      "ingredients"
+    ],
+    "answer": "professionals",
+    "explanation": "industry professionals는 업계 전문가라는 뜻입니다.",
+    "id": "toeic-rc-097",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The deadline is ____ approaching.",
+    "choices": [
+      "rapidly",
+      "rapid",
+      "rapidity",
+      "rapids"
+    ],
+    "answer": "rapidly",
+    "explanation": "approaching을 수식하는 부사 rapidly가 필요합니다.",
+    "id": "toeic-rc-098",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The company values ____ from its customers.",
+    "choices": [
+      "feedback",
+      "furniture",
+      "postage",
+      "entrance"
+    ],
+    "answer": "feedback",
+    "explanation": "feedback은 의견, 피드백이라는 뜻입니다.",
+    "id": "toeic-rc-099",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 5 어휘",
+    "type": "multiple",
+    "question": "The event was a great ____.",
+    "choices": [
+      "success",
+      "successful",
+      "succeed",
+      "successfully"
+    ],
+    "answer": "success",
+    "explanation": "a great success는 큰 성공이라는 명사구입니다.",
+    "id": "toeic-rc-100",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "Part 6 문장 삽입/빈칸",
+    "type": "multiple",
+    "question": "다음 문장의 빈칸에 알맞은 것을 고르세요.\nThank you for registering for the online seminar. A confirmation email will be sent to you ____ after your payment is processed.",
+    "choices": [
+      "automatically",
+      "automatic",
+      "automation",
+      "automate"
+    ],
+    "answer": "automatically",
+    "explanation": "sent를 수식하는 부사가 필요하므로 automatically가 알맞습니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-101",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 6 문장 삽입/빈칸",
+    "type": "multiple",
+    "question": "다음 문장의 빈칸에 알맞은 것을 고르세요.\nThe office renovation is almost complete. Employees may return to their regular work areas ____ Monday morning.",
+    "choices": [
+      "on",
+      "in",
+      "at",
+      "by"
+    ],
+    "answer": "on",
+    "explanation": "요일과 특정 날짜 앞에는 on을 씁니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-102",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 6 문장 삽입/빈칸",
+    "type": "multiple",
+    "question": "다음 문장의 빈칸에 알맞은 것을 고르세요.\nWe apologize for the delay in shipping your order. The item is currently out of stock, but it will be ____ next week.",
+    "choices": [
+      "available",
+      "availability",
+      "avail",
+      "availably"
+    ],
+    "answer": "available",
+    "explanation": "be available은 이용 가능하다, 재고가 있다는 뜻입니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-103",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 6 문장 삽입/빈칸",
+    "type": "multiple",
+    "question": "다음 문장의 빈칸에 알맞은 것을 고르세요.\nTo improve security, all visitors must present photo identification ____ entering the building.",
+    "choices": [
+      "before",
+      "because",
+      "despite",
+      "unless"
+    ],
+    "answer": "before",
+    "explanation": "건물에 들어가기 전에 신분증을 제시해야 하므로 before가 알맞습니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-104",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 6 문장 삽입/빈칸",
+    "type": "multiple",
+    "question": "다음 문장의 빈칸에 알맞은 것을 고르세요.\nThe annual report contains financial information ____ by the accounting department.",
+    "choices": [
+      "prepared",
+      "preparing",
+      "prepare",
+      "prepares"
+    ],
+    "answer": "prepared",
+    "explanation": "information을 수식하는 과거분사 prepared가 알맞습니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-105",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 6 문장 삽입/빈칸",
+    "type": "multiple",
+    "question": "다음 문장의 빈칸에 알맞은 것을 고르세요.\nPlease note that the cafeteria will be closed tomorrow ____ maintenance work.",
+    "choices": [
+      "due to",
+      "although",
+      "unless",
+      "while"
+    ],
+    "answer": "due to",
+    "explanation": "뒤에 명사구 maintenance work가 있으므로 due to가 알맞습니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-106",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 6 문장 삽입/빈칸",
+    "type": "multiple",
+    "question": "다음 문장의 빈칸에 알맞은 것을 고르세요.\nThe training materials are designed ____ new employees understand company procedures.",
+    "choices": [
+      "to help",
+      "helping",
+      "helped",
+      "helps"
+    ],
+    "answer": "to help",
+    "explanation": "목적을 나타내는 to부정사가 알맞습니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-107",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 6 문장 삽입/빈칸",
+    "type": "multiple",
+    "question": "다음 문장의 빈칸에 알맞은 것을 고르세요.\nCustomers can receive a full refund ____ they return the product within 30 days.",
+    "choices": [
+      "if",
+      "while",
+      "although",
+      "because of"
+    ],
+    "answer": "if",
+    "explanation": "조건을 나타내므로 if가 알맞습니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-108",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 6 문장 삽입/빈칸",
+    "type": "multiple",
+    "question": "다음 문장의 빈칸에 알맞은 것을 고르세요.\nThe marketing department will conduct a survey ____ customer preferences.",
+    "choices": [
+      "regarding",
+      "despite",
+      "between",
+      "instead"
+    ],
+    "answer": "regarding",
+    "explanation": "regarding은 '~에 관하여'라는 뜻입니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-109",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 6 문장 삽입/빈칸",
+    "type": "multiple",
+    "question": "다음 문장의 빈칸에 알맞은 것을 고르세요.\nAll participants are encouraged ____ questions after the presentation.",
+    "choices": [
+      "to ask",
+      "asking",
+      "asked",
+      "ask"
+    ],
+    "answer": "to ask",
+    "explanation": "be encouraged to 동사원형 구조입니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-110",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 6 문장 삽입/빈칸",
+    "type": "multiple",
+    "question": "다음 문장의 빈칸에 알맞은 것을 고르세요.\nThe new software allows users ____ files more efficiently.",
+    "choices": [
+      "to organize",
+      "organizing",
+      "organized",
+      "organize"
+    ],
+    "answer": "to organize",
+    "explanation": "allow + 목적어 + to부정사 구조입니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-111",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 6 문장 삽입/빈칸",
+    "type": "multiple",
+    "question": "다음 문장의 빈칸에 알맞은 것을 고르세요.\nThe position requires applicants ____ at least two years of experience.",
+    "choices": [
+      "to have",
+      "having",
+      "have",
+      "had"
+    ],
+    "answer": "to have",
+    "explanation": "require + 목적어 + to부정사 구조입니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-112",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 6 문장 삽입/빈칸",
+    "type": "multiple",
+    "question": "다음 문장의 빈칸에 알맞은 것을 고르세요.\nThe restaurant received excellent reviews ____ its fast service.",
+    "choices": [
+      "for",
+      "by",
+      "to",
+      "at"
+    ],
+    "answer": "for",
+    "explanation": "receive reviews for는 '~에 대해 평가를 받다'라는 문맥에 어울립니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-113",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 6 문장 삽입/빈칸",
+    "type": "multiple",
+    "question": "다음 문장의 빈칸에 알맞은 것을 고르세요.\nThe company will announce the results ____ the end of the week.",
+    "choices": [
+      "by",
+      "on",
+      "among",
+      "during"
+    ],
+    "answer": "by",
+    "explanation": "by the end of는 '~까지'라는 기한을 나타냅니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-114",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 6 문장 삽입/빈칸",
+    "type": "multiple",
+    "question": "다음 문장의 빈칸에 알맞은 것을 고르세요.\nThe package was delivered to the wrong address, ____ caused a delay.",
+    "choices": [
+      "which",
+      "who",
+      "what",
+      "where"
+    ],
+    "answer": "which",
+    "explanation": "앞 문장 전체를 받는 관계대명사 which가 알맞습니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-115",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 6 문장 삽입/빈칸",
+    "type": "multiple",
+    "question": "다음 문장의 빈칸에 알맞은 것을 고르세요.\nThe instructions should be read ____ before operating the equipment.",
+    "choices": [
+      "carefully",
+      "careful",
+      "care",
+      "caring"
+    ],
+    "answer": "carefully",
+    "explanation": "read를 수식하는 부사가 필요합니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-116",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 6 문장 삽입/빈칸",
+    "type": "multiple",
+    "question": "다음 문장의 빈칸에 알맞은 것을 고르세요.\nThe company is committed to ____ waste in its offices.",
+    "choices": [
+      "reducing",
+      "reduce",
+      "reduced",
+      "reduces"
+    ],
+    "answer": "reducing",
+    "explanation": "be committed to에서 to는 전치사이므로 동명사 reducing이 옵니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-117",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 6 문장 삽입/빈칸",
+    "type": "multiple",
+    "question": "다음 문장의 빈칸에 알맞은 것을 고르세요.\nThe museum offers guided tours ____ the summer season.",
+    "choices": [
+      "during",
+      "between",
+      "among",
+      "beside"
+    ],
+    "answer": "during",
+    "explanation": "during the summer season은 여름 시즌 동안이라는 뜻입니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-118",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 6 문장 삽입/빈칸",
+    "type": "multiple",
+    "question": "다음 문장의 빈칸에 알맞은 것을 고르세요.\nThe manager requested that the report ____ revised immediately.",
+    "choices": [
+      "be",
+      "is",
+      "was",
+      "being"
+    ],
+    "answer": "be",
+    "explanation": "request that 주어 + 동사원형 형태의 가정법적 용법입니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-119",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 6 문장 삽입/빈칸",
+    "type": "multiple",
+    "question": "다음 문장의 빈칸에 알맞은 것을 고르세요.\nThe store manager is responsible for ____ inventory records.",
+    "choices": [
+      "maintaining",
+      "maintain",
+      "maintained",
+      "maintains"
+    ],
+    "answer": "maintaining",
+    "explanation": "for 뒤에는 명사나 동명사가 옵니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-120",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nNotice: The fitness center will be closed on Saturday, June 8, for equipment inspection. Regular hours will resume on Sunday morning.\n\nWhy will the fitness center be closed?",
+    "choices": [
+      "For equipment inspection",
+      "For staff training",
+      "For a holiday party",
+      "For membership registration"
+    ],
+    "answer": "For equipment inspection",
+    "explanation": "공지에 for equipment inspection이라고 명시되어 있습니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-121",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nEmail: Please send the revised brochure to the marketing team by 3 p.m. today so that it can be reviewed before printing.\n\nWhat is the reader asked to do?",
+    "choices": [
+      "Send the revised brochure",
+      "Print the brochure immediately",
+      "Cancel the marketing meeting",
+      "Design a new logo"
+    ],
+    "answer": "Send the revised brochure",
+    "explanation": "이메일에서 revised brochure를 보내 달라고 요청하고 있습니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-122",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nAdvertisement: Green Valley Hotel offers complimentary breakfast, free airport shuttle service, and discounted rates for corporate guests.\n\nWhat is offered for free?",
+    "choices": [
+      "Airport shuttle service",
+      "Conference registration",
+      "Room upgrades",
+      "Laundry service"
+    ],
+    "answer": "Airport shuttle service",
+    "explanation": "광고에 free airport shuttle service라고 되어 있습니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-123",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nMemo: Starting next month, employees must submit travel expense reports within five business days after returning from a trip.\n\nWhen must travel expense reports be submitted?",
+    "choices": [
+      "Within five business days after returning",
+      "Before booking a trip",
+      "At the end of each year",
+      "Within one month of departure"
+    ],
+    "answer": "Within five business days after returning",
+    "explanation": "메모에 returning from a trip 후 five business days within이라고 되어 있습니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-124",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nSchedule: The product demonstration will begin at 10:00 a.m. in Room 204. Attendees should arrive ten minutes early to sign in.\n\nWhere will the demonstration take place?",
+    "choices": [
+      "Room 204",
+      "The lobby",
+      "The cafeteria",
+      "The main warehouse"
+    ],
+    "answer": "Room 204",
+    "explanation": "일정표에 Room 204라고 되어 있습니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-125",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nEmail: Your subscription will expire on July 31. To continue receiving updates, please renew your membership before that date.\n\nWhat is the purpose of the email?",
+    "choices": [
+      "To remind the reader to renew a membership",
+      "To confirm a hotel reservation",
+      "To announce a new employee",
+      "To request a refund"
+    ],
+    "answer": "To remind the reader to renew a membership",
+    "explanation": "구독 만료와 갱신을 안내하는 이메일입니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-126",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nNotice: Due to road construction, the employee parking lot will be unavailable this Friday. Staff may use the visitor parking area instead.\n\nWhat are employees advised to do?",
+    "choices": [
+      "Use the visitor parking area",
+      "Work from home",
+      "Cancel appointments",
+      "Park on the street"
+    ],
+    "answer": "Use the visitor parking area",
+    "explanation": "공지에서 visitor parking area를 대신 이용하라고 안내합니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-127",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nEmail: We appreciate your interest in the sales associate position. Interviews will be held next Tuesday at our downtown office.\n\nWhat is the email mainly about?",
+    "choices": [
+      "A job interview schedule",
+      "A product return",
+      "A store closing",
+      "A training manual"
+    ],
+    "answer": "A job interview schedule",
+    "explanation": "sales associate position의 면접 일정을 안내하고 있습니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-128",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nAnnouncement: The company picnic has been moved indoors because of rain. It will now take place in the main cafeteria.\n\nWhy was the picnic moved indoors?",
+    "choices": [
+      "Because of rain",
+      "Because of low attendance",
+      "Because of a scheduling conflict",
+      "Because of construction"
+    ],
+    "answer": "Because of rain",
+    "explanation": "announcement에 because of rain이라고 되어 있습니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-129",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nMessage: The copier on the third floor is currently out of order. Please use the machine near the reception desk until repairs are completed.\n\nWhat problem is mentioned?",
+    "choices": [
+      "A copier is not working",
+      "The reception desk is closed",
+      "The third floor is being painted",
+      "Repairs have been canceled"
+    ],
+    "answer": "A copier is not working",
+    "explanation": "out of order는 고장났다는 뜻입니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-130",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nNotice: All orders placed before noon will be shipped the same day. Orders received after noon will be shipped the following business day.\n\nWhen will orders placed before noon be shipped?",
+    "choices": [
+      "The same day",
+      "The next week",
+      "After two business days",
+      "At the end of the month"
+    ],
+    "answer": "The same day",
+    "explanation": "before noon 주문은 same day shipped라고 되어 있습니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-131",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nEmail: Thank you for attending yesterday’s workshop. Attached is a copy of the presentation slides for your reference.\n\nWhat is attached to the email?",
+    "choices": [
+      "Presentation slides",
+      "A receipt",
+      "A contract",
+      "A seating chart"
+    ],
+    "answer": "Presentation slides",
+    "explanation": "Attached is a copy of the presentation slides라고 되어 있습니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-132",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nAdvertisement: Buy two boxes of printer paper and receive a third box at no additional cost. Offer valid through Friday.\n\nWhat is being advertised?",
+    "choices": [
+      "A special offer on printer paper",
+      "A new printer model",
+      "A delivery service",
+      "A paper recycling program"
+    ],
+    "answer": "A special offer on printer paper",
+    "explanation": "프린터 용지 2박스 구매 시 1박스 무료 제공 광고입니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-133",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nMemo: The accounting department has moved to the fifth floor. All invoices should be delivered to the new office starting Monday.\n\nWhat change is announced?",
+    "choices": [
+      "The accounting department has moved",
+      "Invoice forms have changed",
+      "A department has closed",
+      "A payment deadline has been extended"
+    ],
+    "answer": "The accounting department has moved",
+    "explanation": "accounting department가 fifth floor로 이동했다고 안내합니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-134",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nNotice: The customer service hotline will operate from 8 a.m. to 6 p.m. beginning May 1.\n\nWhat will change on May 1?",
+    "choices": [
+      "The hotline hours",
+      "The company address",
+      "The refund policy",
+      "The product price"
+    ],
+    "answer": "The hotline hours",
+    "explanation": "customer service hotline 운영 시간이 바뀐다는 내용입니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-135",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nEmail: The design team has completed the first draft of the website layout. Please review it and send your comments by Thursday.\n\nWhat is the reader asked to send?",
+    "choices": [
+      "Comments",
+      "An invoice",
+      "A resume",
+      "A delivery schedule"
+    ],
+    "answer": "Comments",
+    "explanation": "send your comments by Thursday라고 요청합니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-136",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nNotice: To reduce energy use, lights in the building will automatically turn off at 8 p.m. each evening.\n\nWhy will the lights turn off automatically?",
+    "choices": [
+      "To reduce energy use",
+      "To test new alarms",
+      "To clean the building",
+      "To prevent visitors"
+    ],
+    "answer": "To reduce energy use",
+    "explanation": "목적이 To reduce energy use라고 되어 있습니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-137",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nInvitation: You are invited to a reception honoring this year’s award winners. Light refreshments will be served.\n\nWhat will be provided at the reception?",
+    "choices": [
+      "Light refreshments",
+      "Free parking passes",
+      "Training manuals",
+      "Product samples"
+    ],
+    "answer": "Light refreshments",
+    "explanation": "초대장에 Light refreshments will be served라고 되어 있습니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-138",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nEmail: The replacement parts you requested are currently unavailable. We expect them to arrive at our warehouse next Wednesday.\n\nWhat is unavailable?",
+    "choices": [
+      "Replacement parts",
+      "Warehouse space",
+      "A delivery truck",
+      "A user manual"
+    ],
+    "answer": "Replacement parts",
+    "explanation": "replacement parts가 currently unavailable이라고 되어 있습니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-139",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nNotice: Employees who wish to participate in the charity run should register with Human Resources by April 12.\n\nWho should employees contact to register?",
+    "choices": [
+      "Human Resources",
+      "The accounting department",
+      "The security office",
+      "The cafeteria manager"
+    ],
+    "answer": "Human Resources",
+    "explanation": "register with Human Resources라고 되어 있습니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-140",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nMemo: Beginning next quarter, monthly sales reports will be due on the fifth business day of each month.\n\nWhat is the memo about?",
+    "choices": [
+      "A new deadline for sales reports",
+      "A change in office hours",
+      "A new sales product",
+      "A training location"
+    ],
+    "answer": "A new deadline for sales reports",
+    "explanation": "월간 판매 보고서 마감일 변경에 관한 메모입니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-141",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nEmail: Your order has been processed and will be delivered within three business days. You will receive a tracking number shortly.\n\nWhat will the customer receive shortly?",
+    "choices": [
+      "A tracking number",
+      "A refund form",
+      "A survey result",
+      "A new catalog"
+    ],
+    "answer": "A tracking number",
+    "explanation": "tracking number를 곧 받을 것이라고 되어 있습니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-142",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nNotice: The employee entrance will be temporarily closed while the security system is upgraded.\n\nWhy will the entrance be closed?",
+    "choices": [
+      "The security system is being upgraded",
+      "The building is being sold",
+      "The elevator is broken",
+      "The lobby is crowded"
+    ],
+    "answer": "The security system is being upgraded",
+    "explanation": "security system upgrade 때문에 임시 폐쇄됩니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-143",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nEmail: Please confirm your attendance at the awards dinner no later than June 3 so that seating arrangements can be finalized.\n\nWhy should attendance be confirmed?",
+    "choices": [
+      "To finalize seating arrangements",
+      "To order new uniforms",
+      "To prepare invoices",
+      "To arrange interviews"
+    ],
+    "answer": "To finalize seating arrangements",
+    "explanation": "좌석 배치를 확정하기 위해 참석 확인을 요청하고 있습니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-144",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nAdvertisement: The new laptop features a lightweight design, extended battery life, and a high-resolution display.\n\nWhich feature is mentioned?",
+    "choices": [
+      "Extended battery life",
+      "Free software training",
+      "Waterproof keyboard",
+      "Built-in printer"
+    ],
+    "answer": "Extended battery life",
+    "explanation": "광고에 extended battery life가 언급되어 있습니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-145",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nNotice: The library will extend its hours during final exam week to provide students with additional study time.\n\nWhy will the library extend its hours?",
+    "choices": [
+      "To provide additional study time",
+      "To host a concert",
+      "To repair computers",
+      "To train new staff"
+    ],
+    "answer": "To provide additional study time",
+    "explanation": "학생들에게 추가 학습 시간을 제공하기 위해서입니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-146",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nEmail: The attached invoice includes charges for installation and monthly service. Please contact us if you have any questions.\n\nWhat does the invoice include?",
+    "choices": [
+      "Installation and monthly service charges",
+      "Travel and meal expenses",
+      "Refund and discount details",
+      "Training and hiring costs"
+    ],
+    "answer": "Installation and monthly service charges",
+    "explanation": "invoice에 installation과 monthly service charges가 포함되어 있습니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-147",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nAnnouncement: The guest speaker’s presentation has been moved from 1 p.m. to 3 p.m. because of a flight delay.\n\nWhat changed?",
+    "choices": [
+      "The presentation time",
+      "The speaker",
+      "The topic",
+      "The location"
+    ],
+    "answer": "The presentation time",
+    "explanation": "1 p.m.에서 3 p.m.으로 시간이 변경되었습니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-148",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nNotice: Please remove all personal items from the refrigerator by Friday afternoon. The kitchen will be cleaned over the weekend.\n\nWhy should items be removed?",
+    "choices": [
+      "The kitchen will be cleaned",
+      "The refrigerator will be sold",
+      "The office is moving",
+      "The cafeteria is closing permanently"
+    ],
+    "answer": "The kitchen will be cleaned",
+    "explanation": "주말에 주방 청소가 예정되어 있기 때문입니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-149",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nEmail: We are pleased to inform you that your proposal has been accepted. A contract will be sent for your signature next week.\n\nWhat will happen next week?",
+    "choices": [
+      "A contract will be sent",
+      "A proposal will be rejected",
+      "An interview will be canceled",
+      "A payment will be refunded"
+    ],
+    "answer": "A contract will be sent",
+    "explanation": "계약서가 다음 주에 발송된다고 되어 있습니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-150",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nFlyer: Join our free online class on basic spreadsheet skills. The class is intended for beginners and requires no previous experience.\n\nWho is the class intended for?",
+    "choices": [
+      "Beginners",
+      "Professional accountants",
+      "Software developers only",
+      "Office managers only"
+    ],
+    "answer": "Beginners",
+    "explanation": "intended for beginners라고 되어 있습니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-151",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nMemo: Employees are encouraged to use reusable cups in the office kitchen as part of our waste reduction effort.\n\nWhat are employees encouraged to use?",
+    "choices": [
+      "Reusable cups",
+      "Disposable plates",
+      "Paper invoices",
+      "Plastic bags"
+    ],
+    "answer": "Reusable cups",
+    "explanation": "reusable cups 사용을 권장하고 있습니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-152",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nEmail: The supplier has agreed to offer a 10 percent discount on all orders placed before the end of the month.\n\nWhat has the supplier agreed to do?",
+    "choices": [
+      "Offer a discount",
+      "Cancel all orders",
+      "Change the delivery address",
+      "Hire additional staff"
+    ],
+    "answer": "Offer a discount",
+    "explanation": "10 percent discount를 제공하기로 했다고 되어 있습니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-153",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nNotice: The training room must be reserved at least two days in advance through the company’s online booking system.\n\nHow can employees reserve the training room?",
+    "choices": [
+      "Through the online booking system",
+      "By calling the cafeteria",
+      "By emailing customers",
+      "At the reception desk only"
+    ],
+    "answer": "Through the online booking system",
+    "explanation": "online booking system을 통해 예약해야 합니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-154",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nEmail: The revised contract includes the changes discussed during Monday’s meeting. Please review the document carefully before signing.\n\nWhat should the reader do before signing?",
+    "choices": [
+      "Review the document carefully",
+      "Schedule another meeting",
+      "Send a payment",
+      "Cancel the contract"
+    ],
+    "answer": "Review the document carefully",
+    "explanation": "signing 전에 문서를 신중히 검토하라고 합니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-155",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nNotice: Due to increased demand, the customer support team will add evening hours starting next week.\n\nWhy will evening hours be added?",
+    "choices": [
+      "Because of increased demand",
+      "Because of lower prices",
+      "Because of office repairs",
+      "Because of staff vacations"
+    ],
+    "answer": "Because of increased demand",
+    "explanation": "수요 증가로 저녁 운영 시간이 추가됩니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-156",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nAdvertisement: Register by May 5 to receive early-bird pricing for the annual technology conference.\n\nWhat benefit is offered for early registration?",
+    "choices": [
+      "Early-bird pricing",
+      "Free hotel rooms",
+      "A job interview",
+      "A product warranty"
+    ],
+    "answer": "Early-bird pricing",
+    "explanation": "May 5까지 등록하면 early-bird pricing을 받을 수 있습니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-157",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nEmail: The office supply order arrived this morning, but several items were missing. I have contacted the vendor about the issue.\n\nWhat problem is mentioned?",
+    "choices": [
+      "Some items were missing",
+      "The order was delivered late",
+      "The vendor changed its address",
+      "The invoice was paid twice"
+    ],
+    "answer": "Some items were missing",
+    "explanation": "several items were missing이라고 되어 있습니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-158",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "Part 7 독해",
+    "type": "multiple",
+    "question": "다음 지문을 읽고 답하세요.\nNotice: To ensure safety, employees must wear protective glasses when entering the laboratory.\n\nWhat is required in the laboratory?",
+    "choices": [
+      "Protective glasses",
+      "Formal clothing",
+      "Visitor badges only",
+      "Mobile phones"
+    ],
+    "answer": "Protective glasses",
+    "explanation": "실험실 입장 시 protective glasses 착용이 요구됩니다.",
+    "difficulty": 4,
+    "id": "toeic-rc-159",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc"
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "be responsible for 뒤에는 명사나 동명사가 올 수 있다.",
+    "answer": "O",
+    "explanation": "for는 전치사이므로 뒤에 명사나 동명사가 올 수 있습니다.",
+    "id": "toeic-rc-160",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "be expected to 뒤에는 동사원형이 온다.",
+    "answer": "O",
+    "explanation": "be expected to 동사원형은 '~할 것으로 예상되다'라는 뜻입니다.",
+    "id": "toeic-rc-161",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "because of 뒤에는 완전한 절이 와야 한다.",
+    "answer": "X",
+    "explanation": "because of 뒤에는 명사구가 옵니다. 절이 오려면 because를 씁니다.",
+    "id": "toeic-rc-162",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "during은 특정 기간 동안이라는 뜻으로 사용할 수 있다.",
+    "answer": "O",
+    "explanation": "during the meeting, during the weekend처럼 기간을 나타낼 수 있습니다.",
+    "id": "toeic-rc-163",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "although 뒤에는 명사구만 올 수 있다.",
+    "answer": "X",
+    "explanation": "although 뒤에는 주어와 동사가 있는 절이 옵니다.",
+    "id": "toeic-rc-164",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "DISTINCT는 중복을 제거한다는 뜻으로 토익 문법 문제에서도 자주 나온다.",
+    "answer": "O",
+    "explanation": "distinct는 '뚜렷한, 별개의'라는 형용사로도 쓰입니다.",
+    "id": "toeic-rc-165",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "to부정사는 목적을 나타낼 수 있다.",
+    "answer": "O",
+    "explanation": "to improve, to meet처럼 목적을 나타낼 수 있습니다.",
+    "id": "toeic-rc-166",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "관계대명사 who는 사물을 수식할 때 주로 사용한다.",
+    "answer": "X",
+    "explanation": "who는 주로 사람을 수식합니다.",
+    "id": "toeic-rc-167",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "carefully는 동사를 수식할 수 있는 부사이다.",
+    "answer": "O",
+    "explanation": "carefully는 부사로 read, review 같은 동사를 수식할 수 있습니다.",
+    "id": "toeic-rc-168",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "a confirmation email에서 confirmation은 명사를 수식하는 역할을 한다.",
+    "answer": "O",
+    "explanation": "confirmation이 email을 수식하여 확인 이메일이라는 뜻을 만듭니다.",
+    "id": "toeic-rc-169",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "be expected to 뒤에는 동사원형이 온다.",
+    "answer": "O",
+    "explanation": "be expected to 동사원형은 '~할 것으로 예상되다'라는 뜻입니다.",
+    "id": "toeic-rc-170",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "because of 뒤에는 완전한 절이 와야 한다.",
+    "answer": "X",
+    "explanation": "because of 뒤에는 명사구가 옵니다. 절이 오려면 because를 씁니다.",
+    "id": "toeic-rc-171",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "during은 특정 기간 동안이라는 뜻으로 사용할 수 있다.",
+    "answer": "O",
+    "explanation": "during the meeting, during the weekend처럼 기간을 나타낼 수 있습니다.",
+    "id": "toeic-rc-172",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "although 뒤에는 명사구만 올 수 있다.",
+    "answer": "X",
+    "explanation": "although 뒤에는 주어와 동사가 있는 절이 옵니다.",
+    "id": "toeic-rc-173",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "to부정사는 목적을 나타낼 수 있다.",
+    "answer": "O",
+    "explanation": "to improve, to meet처럼 목적을 나타낼 수 있습니다.",
+    "id": "toeic-rc-174",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "관계대명사 who는 사물을 수식할 때 주로 사용한다.",
+    "answer": "X",
+    "explanation": "who는 주로 사람을 수식합니다.",
+    "id": "toeic-rc-175",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "carefully는 동사를 수식할 수 있는 부사이다.",
+    "answer": "O",
+    "explanation": "carefully는 부사로 read, review 같은 동사를 수식할 수 있습니다.",
+    "id": "toeic-rc-176",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "be responsible for 뒤에는 명사나 동명사가 올 수 있다.",
+    "answer": "O",
+    "explanation": "for는 전치사이므로 뒤에 명사나 동명사가 올 수 있습니다.",
+    "id": "toeic-rc-177",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "be expected to 뒤에는 동사원형이 온다.",
+    "answer": "O",
+    "explanation": "be expected to 동사원형은 '~할 것으로 예상되다'라는 뜻입니다.",
+    "id": "toeic-rc-178",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "because of 뒤에는 완전한 절이 와야 한다.",
+    "answer": "X",
+    "explanation": "because of 뒤에는 명사구가 옵니다. 절이 오려면 because를 씁니다.",
+    "id": "toeic-rc-179",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "during은 특정 기간 동안이라는 뜻으로 사용할 수 있다.",
+    "answer": "O",
+    "explanation": "during the meeting, during the weekend처럼 기간을 나타낼 수 있습니다.",
+    "id": "toeic-rc-180",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "although 뒤에는 명사구만 올 수 있다.",
+    "answer": "X",
+    "explanation": "although 뒤에는 주어와 동사가 있는 절이 옵니다.",
+    "id": "toeic-rc-181",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "to부정사는 목적을 나타낼 수 있다.",
+    "answer": "O",
+    "explanation": "to improve, to meet처럼 목적을 나타낼 수 있습니다.",
+    "id": "toeic-rc-182",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "관계대명사 who는 사물을 수식할 때 주로 사용한다.",
+    "answer": "X",
+    "explanation": "who는 주로 사람을 수식합니다.",
+    "id": "toeic-rc-183",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "carefully는 동사를 수식할 수 있는 부사이다.",
+    "answer": "O",
+    "explanation": "carefully는 부사로 read, review 같은 동사를 수식할 수 있습니다.",
+    "id": "toeic-rc-184",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "be responsible for 뒤에는 명사나 동명사가 올 수 있다.",
+    "answer": "O",
+    "explanation": "for는 전치사이므로 뒤에 명사나 동명사가 올 수 있습니다.",
+    "id": "toeic-rc-185",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "be expected to 뒤에는 동사원형이 온다.",
+    "answer": "O",
+    "explanation": "be expected to 동사원형은 '~할 것으로 예상되다'라는 뜻입니다.",
+    "id": "toeic-rc-186",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "because of 뒤에는 완전한 절이 와야 한다.",
+    "answer": "X",
+    "explanation": "because of 뒤에는 명사구가 옵니다. 절이 오려면 because를 씁니다.",
+    "id": "toeic-rc-187",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "during은 특정 기간 동안이라는 뜻으로 사용할 수 있다.",
+    "answer": "O",
+    "explanation": "during the meeting, during the weekend처럼 기간을 나타낼 수 있습니다.",
+    "id": "toeic-rc-188",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "although 뒤에는 명사구만 올 수 있다.",
+    "answer": "X",
+    "explanation": "although 뒤에는 주어와 동사가 있는 절이 옵니다.",
+    "id": "toeic-rc-189",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "to부정사는 목적을 나타낼 수 있다.",
+    "answer": "O",
+    "explanation": "to improve, to meet처럼 목적을 나타낼 수 있습니다.",
+    "id": "toeic-rc-190",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "관계대명사 who는 사물을 수식할 때 주로 사용한다.",
+    "answer": "X",
+    "explanation": "who는 주로 사람을 수식합니다.",
+    "id": "toeic-rc-191",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "carefully는 동사를 수식할 수 있는 부사이다.",
+    "answer": "O",
+    "explanation": "carefully는 부사로 read, review 같은 동사를 수식할 수 있습니다.",
+    "id": "toeic-rc-192",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "be responsible for 뒤에는 명사나 동명사가 올 수 있다.",
+    "answer": "O",
+    "explanation": "for는 전치사이므로 뒤에 명사나 동명사가 올 수 있습니다.",
+    "id": "toeic-rc-193",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "be expected to 뒤에는 동사원형이 온다.",
+    "answer": "O",
+    "explanation": "be expected to 동사원형은 '~할 것으로 예상되다'라는 뜻입니다.",
+    "id": "toeic-rc-194",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "because of 뒤에는 완전한 절이 와야 한다.",
+    "answer": "X",
+    "explanation": "because of 뒤에는 명사구가 옵니다. 절이 오려면 because를 씁니다.",
+    "id": "toeic-rc-195",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "during은 특정 기간 동안이라는 뜻으로 사용할 수 있다.",
+    "answer": "O",
+    "explanation": "during the meeting, during the weekend처럼 기간을 나타낼 수 있습니다.",
+    "id": "toeic-rc-196",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "although 뒤에는 명사구만 올 수 있다.",
+    "answer": "X",
+    "explanation": "although 뒤에는 주어와 동사가 있는 절이 옵니다.",
+    "id": "toeic-rc-197",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "to부정사는 목적을 나타낼 수 있다.",
+    "answer": "O",
+    "explanation": "to improve, to meet처럼 목적을 나타낼 수 있습니다.",
+    "id": "toeic-rc-198",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "관계대명사 who는 사물을 수식할 때 주로 사용한다.",
+    "answer": "X",
+    "explanation": "who는 주로 사람을 수식합니다.",
+    "id": "toeic-rc-199",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  },
+  {
+    "topic": "토익 RC OX",
+    "type": "ox",
+    "question": "carefully는 동사를 수식할 수 있는 부사이다.",
+    "answer": "O",
+    "explanation": "carefully는 부사로 read, review 같은 동사를 수식할 수 있습니다.",
+    "id": "toeic-rc-200",
+    "subject": "토익 RC",
+    "sourceLabel": "TOEIC RC",
+    "examStyle": "toeic-rc",
+    "difficulty": 3
+  }
+]

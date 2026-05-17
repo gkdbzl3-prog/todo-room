@@ -1,0 +1,3052 @@
+[
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "구석기 시대의 생활 모습으로 알맞은 것은?",
+    "choices": [
+      "주먹도끼와 찍개를 사용하였다.",
+      "비파형 동검을 사용하였다.",
+      "철제 농기구를 널리 사용하였다.",
+      "고인돌을 축조하였다."
+    ],
+    "answer": "주먹도끼와 찍개를 사용하였다.",
+    "explanation": "구석기 시대에는 뗀석기인 주먹도끼, 찍개 등을 사용하였습니다.",
+    "id": "history-mixed-001",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "신석기 시대의 대표적인 토기는?",
+    "choices": [
+      "빗살무늬 토기",
+      "민무늬 토기",
+      "청자",
+      "백자"
+    ],
+    "answer": "빗살무늬 토기",
+    "explanation": "신석기 시대에는 빗살무늬 토기가 대표적입니다.",
+    "id": "history-mixed-002",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "청동기 시대의 사회 모습으로 알맞은 것은?",
+    "choices": [
+      "고인돌이 만들어졌다.",
+      "동굴에서 주로 생활하였다.",
+      "불교가 전래되었다.",
+      "화폐인 건원중보가 발행되었다."
+    ],
+    "answer": "고인돌이 만들어졌다.",
+    "explanation": "청동기 시대에는 계급 발생과 관련된 고인돌이 만들어졌습니다.",
+    "id": "history-mixed-003",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "고조선의 사회 모습을 보여 주는 법 조항은?",
+    "choices": [
+      "8조법",
+      "골품제",
+      "율령",
+      "신문고"
+    ],
+    "answer": "8조법",
+    "explanation": "고조선의 8조법은 사유 재산과 생명 존중, 계급 사회의 모습을 보여 줍니다.",
+    "id": "history-mixed-004",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "부여의 풍습으로 알맞은 것은?",
+    "choices": [
+      "영고",
+      "동맹",
+      "무천",
+      "서옥제"
+    ],
+    "answer": "영고",
+    "explanation": "부여의 제천 행사는 영고입니다.",
+    "id": "history-mixed-005",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "고구려의 제천 행사와 혼인 풍습을 바르게 묶은 것은?",
+    "choices": [
+      "동맹, 서옥제",
+      "영고, 민며느리제",
+      "무천, 족외혼",
+      "계절제, 형사취수제"
+    ],
+    "answer": "동맹, 서옥제",
+    "explanation": "고구려에는 제천 행사 동맹과 혼인 풍습 서옥제가 있었습니다.",
+    "id": "history-mixed-006",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "옥저의 풍습으로 알맞은 것은?",
+    "choices": [
+      "민며느리제",
+      "서옥제",
+      "화백 회의",
+      "골품제"
+    ],
+    "answer": "민며느리제",
+    "explanation": "옥저에는 민며느리제와 가족 공동 무덤 풍습이 있었습니다.",
+    "id": "history-mixed-007",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "삼한의 제천 행사로 알맞은 것은?",
+    "choices": [
+      "수릿날과 계절제",
+      "영고",
+      "동맹",
+      "무천"
+    ],
+    "answer": "수릿날과 계절제",
+    "explanation": "삼한은 수릿날과 계절제라는 제천 행사가 있었습니다.",
+    "id": "history-mixed-008",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "고구려 태조왕의 업적으로 알맞은 것은?",
+    "choices": [
+      "옥저를 복속하였다.",
+      "불교를 공인하였다.",
+      "평양으로 천도하였다.",
+      "백제를 공격하다 전사하였다."
+    ],
+    "answer": "옥저를 복속하였다.",
+    "explanation": "고구려 태조왕은 옥저를 복속하고 왕위 세습을 강화하였습니다.",
+    "id": "history-mixed-009",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "고구려 고국천왕의 업적으로 알맞은 것은?",
+    "choices": [
+      "진대법을 실시하였다.",
+      "율령을 반포하였다.",
+      "한강 유역을 장악하였다.",
+      "독서삼품과를 실시하였다."
+    ],
+    "answer": "진대법을 실시하였다.",
+    "explanation": "고국천왕 때 을파소의 건의로 진대법이 실시되었습니다.",
+    "id": "history-mixed-010",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "고구려 소수림왕의 업적으로 알맞은 것은?",
+    "choices": [
+      "불교 공인과 태학 설립",
+      "평양 천도",
+      "살수 대첩",
+      "연개소문 집권"
+    ],
+    "answer": "불교 공인과 태학 설립",
+    "explanation": "소수림왕은 불교 공인, 태학 설립, 율령 반포로 국가 체제를 정비하였습니다.",
+    "id": "history-mixed-011",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "고구려 광개토 대왕의 업적으로 알맞은 것은?",
+    "choices": [
+      "신라에 침입한 왜를 격퇴하였다.",
+      "웅진으로 천도하였다.",
+      "화랑도를 국가 조직으로 개편하였다.",
+      "발해를 건국하였다."
+    ],
+    "answer": "신라에 침입한 왜를 격퇴하였다.",
+    "explanation": "광개토 대왕은 신라를 도와 왜를 격퇴하고 만주 지역으로 세력을 확대하였습니다.",
+    "id": "history-mixed-012",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "고구려 장수왕의 업적으로 알맞은 것은?",
+    "choices": [
+      "평양으로 천도하였다.",
+      "불교를 공인하였다.",
+      "대가야를 정복하였다.",
+      "화백 회의를 설치하였다."
+    ],
+    "answer": "평양으로 천도하였다.",
+    "explanation": "장수왕은 평양 천도 후 남진 정책을 추진하였습니다.",
+    "id": "history-mixed-013",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "백제 근초고왕의 업적으로 알맞은 것은?",
+    "choices": [
+      "마한을 병합하고 고구려 평양성을 공격하였다.",
+      "사비로 천도하였다.",
+      "무령왕릉을 축조하였다.",
+      "불교를 공인하였다."
+    ],
+    "answer": "마한을 병합하고 고구려 평양성을 공격하였다.",
+    "explanation": "근초고왕은 백제의 전성기를 이끌고 고구려 고국원왕을 전사시켰습니다.",
+    "id": "history-mixed-014",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "백제 침류왕 때의 사실로 알맞은 것은?",
+    "choices": [
+      "불교를 공인하였다.",
+      "나제 동맹을 결성하였다.",
+      "사비로 천도하였다.",
+      "대야성을 함락하였다."
+    ],
+    "answer": "불교를 공인하였다.",
+    "explanation": "백제 침류왕 때 불교가 공인되었습니다.",
+    "id": "history-mixed-015",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "백제 문주왕의 업적으로 알맞은 것은?",
+    "choices": [
+      "웅진으로 천도하였다.",
+      "사비로 천도하였다.",
+      "관산성 전투에서 전사하였다.",
+      "무령왕릉을 만들었다."
+    ],
+    "answer": "웅진으로 천도하였다.",
+    "explanation": "장수왕의 공격으로 한성이 함락된 뒤 문주왕은 웅진으로 천도하였습니다.",
+    "id": "history-mixed-016",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "백제 성왕의 업적으로 알맞은 것은?",
+    "choices": [
+      "사비로 천도하고 국호를 남부여로 바꾸었다.",
+      "마한을 병합하였다.",
+      "익산 미륵사를 창건하였다.",
+      "백강 전투에서 패배하였다."
+    ],
+    "answer": "사비로 천도하고 국호를 남부여로 바꾸었다.",
+    "explanation": "성왕은 사비 천도와 중앙 관제 정비를 추진하였습니다.",
+    "id": "history-mixed-017",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "신라 지증왕의 업적으로 알맞은 것은?",
+    "choices": [
+      "국호를 신라로 정하고 왕호를 왕으로 하였다.",
+      "불교를 공인하였다.",
+      "한강 유역을 차지하였다.",
+      "삼국 통일을 완성하였다."
+    ],
+    "answer": "국호를 신라로 정하고 왕호를 왕으로 하였다.",
+    "explanation": "지증왕은 국호 신라와 왕호 왕을 사용하고 우산국을 복속하였습니다.",
+    "id": "history-mixed-018",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "신라 법흥왕의 업적으로 알맞은 것은?",
+    "choices": [
+      "율령 반포와 불교 공인",
+      "대가야 정복",
+      "독서삼품과 실시",
+      "9주 5소경 정비"
+    ],
+    "answer": "율령 반포와 불교 공인",
+    "explanation": "법흥왕은 율령 반포, 공복 제정, 불교 공인 등으로 체제를 정비하였습니다.",
+    "id": "history-mixed-019",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "신라 진흥왕의 업적으로 알맞은 것은?",
+    "choices": [
+      "한강 유역을 장악하고 대가야를 정복하였다.",
+      "골품제를 폐지하였다.",
+      "독서삼품과를 실시하였다.",
+      "무열왕계 왕위 세습을 시작하였다."
+    ],
+    "answer": "한강 유역을 장악하고 대가야를 정복하였다.",
+    "explanation": "진흥왕은 한강 유역을 차지하고 대가야를 정복하며 신라 전성기를 이끌었습니다.",
+    "id": "history-mixed-020",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "가야 연맹에 대한 설명으로 알맞은 것은?",
+    "choices": [
+      "철 생산과 중계 무역이 발달하였다.",
+      "골품제를 운영하였다.",
+      "9서당 10정을 편성하였다.",
+      "만장일치제인 화백 회의를 운영하였다."
+    ],
+    "answer": "철 생산과 중계 무역이 발달하였다.",
+    "explanation": "가야는 풍부한 철을 바탕으로 낙랑, 왜 등과 교역하였습니다.",
+    "id": "history-mixed-021",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "고구려와 수의 전쟁에서 을지문덕이 승리한 전투는?",
+    "choices": [
+      "살수 대첩",
+      "안시성 전투",
+      "관산성 전투",
+      "황산벌 전투"
+    ],
+    "answer": "살수 대첩",
+    "explanation": "612년 을지문덕은 살수 대첩에서 수의 대군을 물리쳤습니다.",
+    "id": "history-mixed-022",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "고구려와 당의 전쟁에서 양만춘이 활약한 전투는?",
+    "choices": [
+      "안시성 전투",
+      "살수 대첩",
+      "기벌포 전투",
+      "매소성 전투"
+    ],
+    "answer": "안시성 전투",
+    "explanation": "안시성 전투에서 양만춘이 당의 공격을 막아냈다고 전해집니다.",
+    "id": "history-mixed-023",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "신라의 삼국 통일 과정에서 백제가 멸망한 때는?",
+    "choices": [
+      "660년",
+      "668년",
+      "676년",
+      "698년"
+    ],
+    "answer": "660년",
+    "explanation": "백제는 660년 나당 연합군의 공격으로 멸망하였습니다.",
+    "id": "history-mixed-024",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "신라가 고구려를 멸망시킨 시기는?",
+    "choices": [
+      "668년",
+      "660년",
+      "676년",
+      "698년"
+    ],
+    "answer": "668년",
+    "explanation": "고구려는 668년 나당 연합군의 공격으로 멸망하였습니다.",
+    "id": "history-mixed-025",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "통일 신라가 당을 몰아내고 삼국 통일을 완성한 시기는?",
+    "choices": [
+      "676년",
+      "660년",
+      "668년",
+      "698년"
+    ],
+    "answer": "676년",
+    "explanation": "신라는 매소성·기벌포 전투 등을 거쳐 676년 삼국 통일을 완성하였습니다.",
+    "id": "history-mixed-026",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "발해를 건국한 인물은?",
+    "choices": [
+      "대조영",
+      "궁예",
+      "견훤",
+      "왕건"
+    ],
+    "answer": "대조영",
+    "explanation": "대조영은 698년 발해를 건국하였습니다.",
+    "id": "history-mixed-027",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "발해 무왕의 업적으로 알맞은 것은?",
+    "choices": [
+      "장문휴를 보내 당의 산둥 지방을 공격하였다.",
+      "상경으로 천도하였다.",
+      "전성기를 이루어 해동성국이라 불렸다.",
+      "독서삼품과를 실시하였다."
+    ],
+    "answer": "장문휴를 보내 당의 산둥 지방을 공격하였다.",
+    "explanation": "발해 무왕은 장문휴를 보내 당의 등주를 공격하였습니다.",
+    "id": "history-mixed-028",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "발해 문왕의 업적으로 알맞은 것은?",
+    "choices": [
+      "당의 문물을 수용하고 상경으로 천도하였다.",
+      "산둥 지방을 공격하였다.",
+      "후삼국을 통일하였다.",
+      "신라를 멸망시켰다."
+    ],
+    "answer": "당의 문물을 수용하고 상경으로 천도하였다.",
+    "explanation": "발해 문왕은 당과 친선 관계를 맺고 제도 정비와 상경 천도를 추진하였습니다.",
+    "id": "history-mixed-029",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "발해 선왕 때의 설명으로 알맞은 것은?",
+    "choices": [
+      "해동성국이라 불릴 만큼 전성기를 이루었다.",
+      "대조영이 건국하였다.",
+      "후삼국을 통일하였다.",
+      "원 간섭기가 시작되었다."
+    ],
+    "answer": "해동성국이라 불릴 만큼 전성기를 이루었다.",
+    "explanation": "발해 선왕 때 영토가 크게 확대되어 해동성국이라 불렸습니다.",
+    "id": "history-mixed-030",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "통일 신라 신문왕의 업적으로 알맞은 것은?",
+    "choices": [
+      "관료전을 지급하고 녹읍을 폐지하였다.",
+      "불교를 공인하였다.",
+      "과거제를 실시하였다.",
+      "훈요 10조를 남겼다."
+    ],
+    "answer": "관료전을 지급하고 녹읍을 폐지하였다.",
+    "explanation": "신문왕은 김흠돌의 난을 진압하고 관료전 지급, 녹읍 폐지 등 왕권 강화를 추진하였습니다.",
+    "id": "history-mixed-031",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "통일 신라의 지방 행정 제도로 알맞은 것은?",
+    "choices": [
+      "9주 5소경",
+      "5도 양계",
+      "8도",
+      "23부"
+    ],
+    "answer": "9주 5소경",
+    "explanation": "통일 신라는 전국을 9주 5소경으로 정비하였습니다.",
+    "id": "history-mixed-032",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "통일 신라의 군사 제도로 알맞은 것은?",
+    "choices": [
+      "9서당 10정",
+      "2군 6위",
+      "5위",
+      "별무반"
+    ],
+    "answer": "9서당 10정",
+    "explanation": "통일 신라는 중앙군 9서당과 지방군 10정을 편성하였습니다.",
+    "id": "history-mixed-033",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "원효의 사상으로 알맞은 것은?",
+    "choices": [
+      "일심 사상과 화쟁 사상",
+      "풍수지리설",
+      "성리학",
+      "실학"
+    ],
+    "answer": "일심 사상과 화쟁 사상",
+    "explanation": "원효는 일심 사상과 화쟁 사상을 통해 불교 대중화에 기여하였습니다.",
+    "id": "history-mixed-034",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "의상이 강조한 사상은?",
+    "choices": [
+      "화엄 사상",
+      "일심 사상",
+      "위정척사 사상",
+      "북학론"
+    ],
+    "answer": "화엄 사상",
+    "explanation": "의상은 화엄 사상을 바탕으로 부석사를 창건하였습니다.",
+    "id": "history-mixed-035",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "신라 말 선종이 유행한 배경으로 알맞은 것은?",
+    "choices": [
+      "지방 호족의 성장과 관련이 깊다.",
+      "골품제가 완전히 폐지되었기 때문이다.",
+      "과거제가 처음 시행되었기 때문이다.",
+      "원 간섭이 시작되었기 때문이다."
+    ],
+    "answer": "지방 호족의 성장과 관련이 깊다.",
+    "explanation": "선종은 교종 중심 질서와 달리 개인 수행을 강조해 지방 호족의 지지를 받았습니다.",
+    "id": "history-mixed-036",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "독서삼품과를 실시한 왕은?",
+    "choices": [
+      "원성왕",
+      "신문왕",
+      "진흥왕",
+      "무열왕"
+    ],
+    "answer": "원성왕",
+    "explanation": "독서삼품과는 통일 신라 원성왕 때 실시되었습니다.",
+    "id": "history-mixed-037",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "후백제를 세운 인물은?",
+    "choices": [
+      "견훤",
+      "궁예",
+      "왕건",
+      "대조영"
+    ],
+    "answer": "견훤",
+    "explanation": "견훤은 완산주를 중심으로 후백제를 세웠습니다.",
+    "id": "history-mixed-038",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "후고구려를 세운 인물은?",
+    "choices": [
+      "궁예",
+      "견훤",
+      "왕건",
+      "대조영"
+    ],
+    "answer": "궁예",
+    "explanation": "궁예는 후고구려를 세웠고 이후 국호를 마진, 태봉으로 바꾸었습니다.",
+    "id": "history-mixed-039",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "고려를 건국한 인물은?",
+    "choices": [
+      "왕건",
+      "궁예",
+      "견훤",
+      "최충헌"
+    ],
+    "answer": "왕건",
+    "explanation": "왕건은 918년 고려를 건국하였습니다.",
+    "id": "history-mixed-040",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "다음 사건의 순서로 알맞은 것은?",
+    "choices": [
+      "백제 멸망 → 고구려 멸망 → 신라의 삼국 통일",
+      "고구려 멸망 → 백제 멸망 → 신라의 삼국 통일",
+      "신라의 삼국 통일 → 백제 멸망 → 고구려 멸망",
+      "백제 멸망 → 신라의 삼국 통일 → 고구려 멸망"
+    ],
+    "answer": "백제 멸망 → 고구려 멸망 → 신라의 삼국 통일",
+    "explanation": "백제는 660년, 고구려는 668년, 신라의 삼국 통일은 676년입니다.",
+    "id": "history-mixed-041",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "다음 중 신라 진흥왕 순수비와 관련된 내용은?",
+    "choices": [
+      "한강 유역 확보와 영토 확장을 보여 준다.",
+      "고려의 북진 정책을 보여 준다.",
+      "조선의 사림 정치를 보여 준다.",
+      "대한 제국의 근대 개혁을 보여 준다."
+    ],
+    "answer": "한강 유역 확보와 영토 확장을 보여 준다.",
+    "explanation": "진흥왕 순수비는 진흥왕의 영토 확장을 보여 주는 자료입니다.",
+    "id": "history-mixed-042",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "삼국 시대 불교 수용 순서로 알맞은 것은?",
+    "choices": [
+      "고구려 → 백제 → 신라",
+      "신라 → 백제 → 고구려",
+      "백제 → 신라 → 고구려",
+      "고구려 → 신라 → 백제"
+    ],
+    "answer": "고구려 → 백제 → 신라",
+    "explanation": "불교는 고구려 소수림왕, 백제 침류왕, 신라 법흥왕 때 공인되었습니다.",
+    "id": "history-mixed-043",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "선사~남북국",
+    "type": "multiple",
+    "question": "발해의 중앙 정치 조직은 당의 제도를 참고하여 무엇으로 정비되었나요?",
+    "choices": [
+      "3성 6부",
+      "2성 6부",
+      "의정부 6조",
+      "비변사"
+    ],
+    "answer": "3성 6부",
+    "explanation": "발해는 당의 제도를 참고하여 3성 6부를 운영하였습니다.",
+    "id": "history-mixed-044",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "고려",
+    "type": "multiple",
+    "question": "고려 태조 왕건의 정책으로 알맞은 것은?",
+    "choices": [
+      "훈요 10조를 남겼다.",
+      "노비안검법을 실시하였다.",
+      "전시과를 처음 실시하였다.",
+      "쌍성총관부를 공격하였다."
+    ],
+    "answer": "훈요 10조를 남겼다.",
+    "explanation": "태조 왕건은 후대 왕에게 훈요 10조를 남겼습니다.",
+    "id": "history-mixed-045",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "고려",
+    "type": "multiple",
+    "question": "고려 광종의 업적으로 알맞은 것은?",
+    "choices": [
+      "노비안검법과 과거제 실시",
+      "12목 설치",
+      "전시과 실시",
+      "별무반 편성"
+    ],
+    "answer": "노비안검법과 과거제 실시",
+    "explanation": "광종은 노비안검법과 과거제를 통해 왕권을 강화하였습니다.",
+    "id": "history-mixed-046",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "고려",
+    "type": "multiple",
+    "question": "고려 성종의 업적으로 알맞은 것은?",
+    "choices": [
+      "12목 설치와 유교 정치 이념 수용",
+      "노비안검법 실시",
+      "훈요 10조 작성",
+      "강동 6주 확보"
+    ],
+    "answer": "12목 설치와 유교 정치 이념 수용",
+    "explanation": "성종은 최승로의 시무 28조를 받아들여 유교적 통치 체제를 정비하였습니다.",
+    "id": "history-mixed-047",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "고려",
+    "type": "multiple",
+    "question": "고려의 중앙 정치 기구 중 정책 심의와 결정에 참여한 최고 기구는?",
+    "choices": [
+      "중서문하성",
+      "상서성",
+      "어사대",
+      "삼사"
+    ],
+    "answer": "중서문하성",
+    "explanation": "중서문하성은 고려의 최고 정무 기구였습니다.",
+    "id": "history-mixed-048",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "고려",
+    "type": "multiple",
+    "question": "고려의 지방 행정 제도는?",
+    "choices": [
+      "5도 양계",
+      "9주 5소경",
+      "8도",
+      "13도"
+    ],
+    "answer": "5도 양계",
+    "explanation": "고려는 일반 행정 구역인 5도와 군사 행정 구역인 양계를 두었습니다.",
+    "id": "history-mixed-049",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "고려",
+    "type": "multiple",
+    "question": "고려의 군사 조직 중 중앙군은?",
+    "choices": [
+      "2군 6위",
+      "9서당",
+      "5위",
+      "훈련도감"
+    ],
+    "answer": "2군 6위",
+    "explanation": "고려의 중앙군은 2군 6위입니다.",
+    "id": "history-mixed-050",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "고려",
+    "type": "multiple",
+    "question": "거란의 1차 침입 때 활약하여 강동 6주를 확보한 인물은?",
+    "choices": [
+      "서희",
+      "강감찬",
+      "윤관",
+      "김윤후"
+    ],
+    "answer": "서희",
+    "explanation": "서희는 외교 담판을 통해 강동 6주를 확보하였습니다.",
+    "id": "history-mixed-051",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "고려",
+    "type": "multiple",
+    "question": "거란의 3차 침입을 물리친 전투는?",
+    "choices": [
+      "귀주 대첩",
+      "살수 대첩",
+      "처인성 전투",
+      "한산도 대첩"
+    ],
+    "answer": "귀주 대첩",
+    "explanation": "강감찬은 귀주 대첩에서 거란군을 크게 물리쳤습니다.",
+    "id": "history-mixed-052",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "고려",
+    "type": "multiple",
+    "question": "여진 정벌을 위해 윤관이 편성한 부대는?",
+    "choices": [
+      "별무반",
+      "삼별초",
+      "도방",
+      "훈련도감"
+    ],
+    "answer": "별무반",
+    "explanation": "윤관은 여진 정벌을 위해 별무반을 편성하였습니다.",
+    "id": "history-mixed-053",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "고려",
+    "type": "multiple",
+    "question": "고려 중기 문벌 귀족 사회의 동요를 보여 주는 사건은?",
+    "choices": [
+      "이자겸의 난과 묘청의 서경 천도 운동",
+      "임오군란과 갑신정변",
+      "무신정변과 홍경래의 난",
+      "병자호란과 정묘호란"
+    ],
+    "answer": "이자겸의 난과 묘청의 서경 천도 운동",
+    "explanation": "이자겸의 난과 묘청의 서경 천도 운동은 문벌 귀족 사회의 모순을 보여 줍니다.",
+    "id": "history-mixed-054",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "고려",
+    "type": "multiple",
+    "question": "1170년에 일어난 사건은?",
+    "choices": [
+      "무신정변",
+      "위화도 회군",
+      "갑신정변",
+      "임오군란"
+    ],
+    "answer": "무신정변",
+    "explanation": "1170년 정중부, 이의방 등이 무신정변을 일으켰습니다.",
+    "id": "history-mixed-055",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "고려",
+    "type": "multiple",
+    "question": "무신 집권기 최충헌이 설치한 권력 기구는?",
+    "choices": [
+      "교정도감",
+      "비변사",
+      "집현전",
+      "춘추관"
+    ],
+    "answer": "교정도감",
+    "explanation": "최충헌은 교정도감을 설치하여 권력을 장악하였습니다.",
+    "id": "history-mixed-056",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "고려",
+    "type": "multiple",
+    "question": "무신 정권의 사병 조직으로 최씨 정권의 권력 기반이 된 것은?",
+    "choices": [
+      "도방",
+      "별무반",
+      "2군 6위",
+      "훈련도감"
+    ],
+    "answer": "도방",
+    "explanation": "도방은 최씨 무신 정권의 사병 조직으로 기능하였습니다.",
+    "id": "history-mixed-057",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "고려",
+    "type": "multiple",
+    "question": "몽골 침입 때 강화도로 천도한 배경으로 알맞은 것은?",
+    "choices": [
+      "몽골의 침입에 대응하기 위해서였다.",
+      "왜구를 토벌하기 위해서였다.",
+      "거란과 외교 담판을 하기 위해서였다.",
+      "홍건적을 피하기 위해서였다."
+    ],
+    "answer": "몽골의 침입에 대응하기 위해서였다.",
+    "explanation": "고려는 몽골 침입에 대응하여 강화도로 천도하였습니다.",
+    "id": "history-mixed-058",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "고려",
+    "type": "multiple",
+    "question": "몽골 침입 때 처인성에서 살리타를 사살한 승려는?",
+    "choices": [
+      "김윤후",
+      "의천",
+      "지눌",
+      "혜초"
+    ],
+    "answer": "김윤후",
+    "explanation": "김윤후는 처인성 전투에서 몽골 장수 살리타를 사살한 것으로 알려져 있습니다.",
+    "id": "history-mixed-059",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "고려",
+    "type": "multiple",
+    "question": "개경 환도에 반대하여 항쟁한 세력은?",
+    "choices": [
+      "삼별초",
+      "별무반",
+      "화랑도",
+      "독립협회"
+    ],
+    "answer": "삼별초",
+    "explanation": "삼별초는 개경 환도에 반대하여 진도와 제주도에서 항쟁하였습니다.",
+    "id": "history-mixed-060",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "고려",
+    "type": "multiple",
+    "question": "공민왕의 개혁 정치로 알맞은 것은?",
+    "choices": [
+      "쌍성총관부를 공격하고 전민변정도감을 설치하였다.",
+      "노비안검법을 실시하였다.",
+      "훈련도감을 설치하였다.",
+      "대동법을 실시하였다."
+    ],
+    "answer": "쌍성총관부를 공격하고 전민변정도감을 설치하였다.",
+    "explanation": "공민왕은 반원 자주 정책과 권문세족 억제를 위한 개혁을 추진하였습니다.",
+    "id": "history-mixed-061",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "고려",
+    "type": "multiple",
+    "question": "고려 말 신진 사대부가 성장한 기반으로 알맞은 것은?",
+    "choices": [
+      "성리학 수용과 과거제",
+      "골품제",
+      "화백 회의",
+      "녹읍"
+    ],
+    "answer": "성리학 수용과 과거제",
+    "explanation": "신진 사대부는 성리학을 사상적 기반으로 하여 성장하였습니다.",
+    "id": "history-mixed-062",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "고려",
+    "type": "multiple",
+    "question": "고려의 토지 제도 중 관리에게 관직과 인품에 따라 지급한 것은?",
+    "choices": [
+      "전시과",
+      "과전법",
+      "직전법",
+      "대동법"
+    ],
+    "answer": "전시과",
+    "explanation": "전시과는 고려 시대 관리에게 지급한 토지 제도입니다.",
+    "id": "history-mixed-063",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "고려",
+    "type": "multiple",
+    "question": "고려 시대 향·부곡·소에 대한 설명으로 알맞은 것은?",
+    "choices": [
+      "일반 군현보다 차별받는 특수 행정 구역이었다.",
+      "중앙 관청이었다.",
+      "왕족의 교육 기관이었다.",
+      "무역 항구였다."
+    ],
+    "answer": "일반 군현보다 차별받는 특수 행정 구역이었다.",
+    "explanation": "향·부곡·소 주민은 일반 군현민보다 차별을 받았습니다.",
+    "id": "history-mixed-064",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "고려",
+    "type": "multiple",
+    "question": "고려의 대표적인 역사서로 김부식이 편찬한 것은?",
+    "choices": [
+      "삼국사기",
+      "삼국유사",
+      "제왕운기",
+      "동국통감"
+    ],
+    "answer": "삼국사기",
+    "explanation": "김부식의 삼국사기는 현존하는 가장 오래된 역사서입니다.",
+    "id": "history-mixed-065",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "고려",
+    "type": "multiple",
+    "question": "일연이 편찬한 역사서는?",
+    "choices": [
+      "삼국유사",
+      "삼국사기",
+      "고려사",
+      "조선왕조실록"
+    ],
+    "answer": "삼국유사",
+    "explanation": "일연은 불교 설화와 단군 신화 등이 담긴 삼국유사를 편찬하였습니다.",
+    "id": "history-mixed-066",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "고려",
+    "type": "multiple",
+    "question": "고려 대장경판이 보관된 곳은?",
+    "choices": [
+      "해인사 장경판전",
+      "불국사",
+      "부석사",
+      "법주사"
+    ],
+    "answer": "해인사 장경판전",
+    "explanation": "팔만대장경판은 해인사 장경판전에 보관되어 있습니다.",
+    "id": "history-mixed-067",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "고려",
+    "type": "multiple",
+    "question": "의천이 중심이 되어 교종을 통합하려 한 종파는?",
+    "choices": [
+      "천태종",
+      "조계종",
+      "화엄종",
+      "법상종"
+    ],
+    "answer": "천태종",
+    "explanation": "의천은 교종 중심의 천태종을 개창하였습니다.",
+    "id": "history-mixed-068",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "고려",
+    "type": "multiple",
+    "question": "지눌이 결사 운동을 전개한 곳은?",
+    "choices": [
+      "수선사",
+      "부석사",
+      "황룡사",
+      "정림사"
+    ],
+    "answer": "수선사",
+    "explanation": "지눌은 수선사 결사를 통해 불교 개혁을 추진하였습니다.",
+    "id": "history-mixed-069",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "고려",
+    "type": "multiple",
+    "question": "고려의 국제 무역항으로 벽란도가 발달한 강은?",
+    "choices": [
+      "예성강",
+      "한강",
+      "낙동강",
+      "금강"
+    ],
+    "answer": "예성강",
+    "explanation": "벽란도는 예성강 하구에 위치한 고려의 국제 무역항입니다.",
+    "id": "history-mixed-070",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "고려",
+    "type": "multiple",
+    "question": "고려 시대 화폐로 알맞은 것은?",
+    "choices": [
+      "건원중보",
+      "상평통보",
+      "당백전",
+      "백동화"
+    ],
+    "answer": "건원중보",
+    "explanation": "건원중보는 고려 성종 때 주조된 화폐입니다.",
+    "id": "history-mixed-071",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "고려",
+    "type": "multiple",
+    "question": "고려 시대 원 간섭기에 설치된 원의 내정 간섭 기구는?",
+    "choices": [
+      "정동행성 이문소",
+      "통리기무아문",
+      "교정청",
+      "군국기무처"
+    ],
+    "answer": "정동행성 이문소",
+    "explanation": "정동행성 이문소는 원의 내정 간섭 기구로 기능하였습니다.",
+    "id": "history-mixed-072",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "고려",
+    "type": "multiple",
+    "question": "고려 말 홍건적과 왜구 격퇴로 성장한 세력은?",
+    "choices": [
+      "신흥 무인 세력",
+      "훈구 세력",
+      "붕당 세력",
+      "개화파"
+    ],
+    "answer": "신흥 무인 세력",
+    "explanation": "이성계 등 신흥 무인 세력은 홍건적과 왜구 격퇴 과정에서 성장하였습니다.",
+    "id": "history-mixed-073",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "고려",
+    "type": "multiple",
+    "question": "위화도 회군을 단행한 인물은?",
+    "choices": [
+      "이성계",
+      "최영",
+      "정몽주",
+      "권문세족"
+    ],
+    "answer": "이성계",
+    "explanation": "이성계는 1388년 위화도 회군을 단행하였습니다.",
+    "id": "history-mixed-074",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "고려",
+    "type": "multiple",
+    "question": "고려의 과거 제도를 처음 실시한 왕은?",
+    "choices": [
+      "광종",
+      "태조",
+      "성종",
+      "공민왕"
+    ],
+    "answer": "광종",
+    "explanation": "광종은 쌍기의 건의로 과거제를 실시하였습니다.",
+    "id": "history-mixed-075",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "고려",
+    "type": "multiple",
+    "question": "고려 시대 유학 교육 기관으로 중앙에 설치된 것은?",
+    "choices": [
+      "국자감",
+      "성균관",
+      "향교",
+      "서원"
+    ],
+    "answer": "국자감",
+    "explanation": "고려의 중앙 교육 기관은 국자감입니다.",
+    "id": "history-mixed-076",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "고려",
+    "type": "multiple",
+    "question": "고려 시대 사학 12도의 대표적 인물은?",
+    "choices": [
+      "최충",
+      "정몽주",
+      "이황",
+      "서희"
+    ],
+    "answer": "최충",
+    "explanation": "최충의 9재 학당은 사학 12도의 대표적 사례입니다.",
+    "id": "history-mixed-077",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "고려",
+    "type": "multiple",
+    "question": "고려 말 신진 사대부와 신흥 무인 세력이 연합하여 추진한 변화는?",
+    "choices": [
+      "조선 건국",
+      "갑오개혁",
+      "대한 제국 수립",
+      "삼국 통일"
+    ],
+    "answer": "조선 건국",
+    "explanation": "고려 말 신진 사대부와 신흥 무인 세력은 조선 건국의 주도 세력이 되었습니다.",
+    "id": "history-mixed-078",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "고려",
+    "type": "multiple",
+    "question": "다음 사건의 순서로 알맞은 것은?",
+    "choices": [
+      "무신정변 → 몽골 침입 → 공민왕 개혁",
+      "몽골 침입 → 무신정변 → 공민왕 개혁",
+      "공민왕 개혁 → 무신정변 → 몽골 침입",
+      "무신정변 → 공민왕 개혁 → 몽골 침입"
+    ],
+    "answer": "무신정변 → 몽골 침입 → 공민왕 개혁",
+    "explanation": "무신정변은 1170년, 몽골 침입은 13세기, 공민왕 개혁은 14세기입니다.",
+    "id": "history-mixed-079",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "조선 건국 후 한양 천도를 추진한 왕은?",
+    "choices": [
+      "태조",
+      "태종",
+      "세종",
+      "성종"
+    ],
+    "answer": "태조",
+    "explanation": "태조 이성계는 조선을 건국하고 한양으로 천도하였습니다.",
+    "id": "history-mixed-080",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "조선 태종의 업적으로 알맞은 것은?",
+    "choices": [
+      "6조 직계제 실시와 사병 혁파",
+      "훈민정음 창제",
+      "경국대전 완성",
+      "대동법 실시"
+    ],
+    "answer": "6조 직계제 실시와 사병 혁파",
+    "explanation": "태종은 왕권 강화를 위해 사병 혁파와 6조 직계제를 실시하였습니다.",
+    "id": "history-mixed-081",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "조선 세종의 업적으로 알맞은 것은?",
+    "choices": [
+      "훈민정음 창제",
+      "경국대전 완성",
+      "비변사 설치",
+      "탕평책 실시"
+    ],
+    "answer": "훈민정음 창제",
+    "explanation": "세종은 훈민정음을 창제하고 과학 기술과 문화 발전을 이끌었습니다.",
+    "id": "history-mixed-082",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "조선 세조의 정책으로 알맞은 것은?",
+    "choices": [
+      "6조 직계제를 부활시키고 집현전을 폐지하였다.",
+      "훈민정음을 창제하였다.",
+      "대동법을 전국에 실시하였다.",
+      "규장각을 설치하였다."
+    ],
+    "answer": "6조 직계제를 부활시키고 집현전을 폐지하였다.",
+    "explanation": "세조는 왕권 강화를 위해 6조 직계제를 부활하고 집현전을 폐지하였습니다.",
+    "id": "history-mixed-083",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "경국대전을 완성한 왕은?",
+    "choices": [
+      "성종",
+      "세종",
+      "태조",
+      "영조"
+    ],
+    "answer": "성종",
+    "explanation": "경국대전은 세조 때 편찬이 시작되어 성종 때 완성·반포되었습니다.",
+    "id": "history-mixed-084",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "조선의 최고 중앙 행정 기구는?",
+    "choices": [
+      "의정부",
+      "비변사",
+      "승정원",
+      "사헌부"
+    ],
+    "answer": "의정부",
+    "explanation": "조선의 최고 중앙 행정 기구는 의정부입니다.",
+    "id": "history-mixed-085",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "조선 시대 왕명 출납을 담당한 기관은?",
+    "choices": [
+      "승정원",
+      "사간원",
+      "홍문관",
+      "의금부"
+    ],
+    "answer": "승정원",
+    "explanation": "승정원은 왕명의 출납을 담당한 왕의 비서 기관입니다.",
+    "id": "history-mixed-086",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "조선 시대 언론 기능을 담당한 삼사에 해당하지 않는 것은?",
+    "choices": [
+      "의금부",
+      "사헌부",
+      "사간원",
+      "홍문관"
+    ],
+    "answer": "의금부",
+    "explanation": "삼사는 사헌부, 사간원, 홍문관입니다.",
+    "id": "history-mixed-087",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "조선의 지방 행정 제도는?",
+    "choices": [
+      "8도",
+      "5도 양계",
+      "9주 5소경",
+      "23부"
+    ],
+    "answer": "8도",
+    "explanation": "조선은 전국을 8도로 나누어 통치하였습니다.",
+    "id": "history-mixed-088",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "조선 시대 수령을 보좌하고 향촌 자치를 담당한 기구는?",
+    "choices": [
+      "향청",
+      "비변사",
+      "집현전",
+      "교정도감"
+    ],
+    "answer": "향청",
+    "explanation": "향청은 수령을 보좌하고 향촌 사회 운영에 관여하였습니다.",
+    "id": "history-mixed-089",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "조선 시대 향촌 사회의 유교 윤리 보급을 위한 규약은?",
+    "choices": [
+      "향약",
+      "균역법",
+      "대동법",
+      "과전법"
+    ],
+    "answer": "향약",
+    "explanation": "향약은 유교 윤리를 바탕으로 향촌 질서를 유지하려 한 규약입니다.",
+    "id": "history-mixed-090",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "조선의 토지 제도 중 관리에게 수조권을 지급한 제도는?",
+    "choices": [
+      "과전법",
+      "전시과",
+      "대동법",
+      "균역법"
+    ],
+    "answer": "과전법",
+    "explanation": "과전법은 고려 말 제정되어 조선 초기 토지 제도의 기반이 되었습니다.",
+    "id": "history-mixed-091",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "조선 세종 때 4군 6진 개척과 관련된 지역은?",
+    "choices": [
+      "압록강과 두만강 유역",
+      "한강 유역",
+      "낙동강 유역",
+      "요동 전역"
+    ],
+    "answer": "압록강과 두만강 유역",
+    "explanation": "세종 때 4군 6진을 개척하여 압록강과 두만강을 경계로 하는 영토를 확보하였습니다.",
+    "id": "history-mixed-092",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "임진왜란이 시작된 해는?",
+    "choices": [
+      "1592년",
+      "1636년",
+      "1627년",
+      "1876년"
+    ],
+    "answer": "1592년",
+    "explanation": "임진왜란은 1592년에 시작되었습니다.",
+    "id": "history-mixed-093",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "임진왜란 때 한산도 대첩을 이끈 인물은?",
+    "choices": [
+      "이순신",
+      "권율",
+      "곽재우",
+      "김시민"
+    ],
+    "answer": "이순신",
+    "explanation": "이순신은 한산도 대첩에서 일본 수군을 크게 물리쳤습니다.",
+    "id": "history-mixed-094",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "임진왜란 때 행주 대첩을 이끈 인물은?",
+    "choices": [
+      "권율",
+      "이순신",
+      "김시민",
+      "조헌"
+    ],
+    "answer": "권율",
+    "explanation": "권율은 행주산성에서 왜군을 물리쳤습니다.",
+    "id": "history-mixed-095",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "정묘호란이 일어난 해는?",
+    "choices": [
+      "1627년",
+      "1592년",
+      "1636년",
+      "1894년"
+    ],
+    "answer": "1627년",
+    "explanation": "정묘호란은 후금이 침입한 1627년에 일어났습니다.",
+    "id": "history-mixed-096",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "병자호란이 일어난 해는?",
+    "choices": [
+      "1636년",
+      "1627년",
+      "1592년",
+      "1866년"
+    ],
+    "answer": "1636년",
+    "explanation": "병자호란은 청이 조선을 침입한 1636년에 일어났습니다.",
+    "id": "history-mixed-097",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "조선 후기 비변사의 성격 변화로 알맞은 것은?",
+    "choices": [
+      "군사 기구에서 국정 전반을 총괄하는 기구로 확대되었다.",
+      "교육 기관으로 바뀌었다.",
+      "언론 기관으로 축소되었다.",
+      "상업 조합으로 바뀌었다."
+    ],
+    "answer": "군사 기구에서 국정 전반을 총괄하는 기구로 확대되었다.",
+    "explanation": "비변사는 임진왜란 이후 권한이 확대되어 국정 전반을 다루었습니다.",
+    "id": "history-mixed-098",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "대동법의 내용으로 알맞은 것은?",
+    "choices": [
+      "공물을 쌀·포·동전 등으로 대신 내게 하였다.",
+      "군포를 1필로 줄였다.",
+      "토지 소유에 따라 세금을 물렸다.",
+      "노비를 해방하였다."
+    ],
+    "answer": "공물을 쌀·포·동전 등으로 대신 내게 하였다.",
+    "explanation": "대동법은 공납의 폐단을 줄이기 위해 공물을 쌀 등으로 납부하게 한 제도입니다.",
+    "id": "history-mixed-099",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "균역법의 내용으로 알맞은 것은?",
+    "choices": [
+      "군포를 1년에 1필로 줄였다.",
+      "공물을 쌀로 납부하게 하였다.",
+      "토지 지급을 폐지하였다.",
+      "과거제를 폐지하였다."
+    ],
+    "answer": "군포를 1년에 1필로 줄였다.",
+    "explanation": "영조는 균역법을 실시하여 군포 부담을 줄였습니다.",
+    "id": "history-mixed-100",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "영조의 정치 운영 방식으로 알맞은 것은?",
+    "choices": [
+      "탕평책",
+      "세도 정치",
+      "붕당 정치 강화",
+      "위정척사 운동"
+    ],
+    "answer": "탕평책",
+    "explanation": "영조는 붕당 간 균형을 꾀하는 탕평책을 추진하였습니다.",
+    "id": "history-mixed-101",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "정조가 설치한 왕실 도서관이자 정책 연구 기관은?",
+    "choices": [
+      "규장각",
+      "집현전",
+      "성균관",
+      "홍문관"
+    ],
+    "answer": "규장각",
+    "explanation": "정조는 규장각을 설치하여 개혁 정치의 중심 기구로 활용하였습니다.",
+    "id": "history-mixed-102",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "정조가 수원에 건설한 성은?",
+    "choices": [
+      "화성",
+      "남한산성",
+      "북한산성",
+      "행주산성"
+    ],
+    "answer": "화성",
+    "explanation": "정조는 정치·군사적 목적을 담아 수원 화성을 건설하였습니다.",
+    "id": "history-mixed-103",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "조선 후기 실학자 유형원과 관련된 저서는?",
+    "choices": [
+      "반계수록",
+      "목민심서",
+      "북학의",
+      "열하일기"
+    ],
+    "answer": "반계수록",
+    "explanation": "유형원은 반계수록에서 토지 제도 개혁 등을 주장하였습니다.",
+    "id": "history-mixed-104",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "정약용의 저서로 알맞은 것은?",
+    "choices": [
+      "목민심서",
+      "북학의",
+      "반계수록",
+      "동사강목"
+    ],
+    "answer": "목민심서",
+    "explanation": "정약용은 지방관의 자세를 다룬 목민심서를 저술하였습니다.",
+    "id": "history-mixed-105",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "박지원의 저서로 알맞은 것은?",
+    "choices": [
+      "열하일기",
+      "목민심서",
+      "북학의",
+      "성학십도"
+    ],
+    "answer": "열하일기",
+    "explanation": "박지원은 청에 다녀온 경험을 바탕으로 열하일기를 썼습니다.",
+    "id": "history-mixed-106",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "박제가의 저서로 알맞은 것은?",
+    "choices": [
+      "북학의",
+      "열하일기",
+      "목민심서",
+      "반계수록"
+    ],
+    "answer": "북학의",
+    "explanation": "박제가는 북학의에서 청의 문물 수용과 상공업 진흥을 주장하였습니다.",
+    "id": "history-mixed-107",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "조선 후기 상품 화폐 경제 발달과 관련된 화폐는?",
+    "choices": [
+      "상평통보",
+      "건원중보",
+      "당백전",
+      "명도전"
+    ],
+    "answer": "상평통보",
+    "explanation": "상평통보는 조선 후기 널리 유통된 동전입니다.",
+    "id": "history-mixed-108",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "조선 후기 공인에 대한 설명으로 알맞은 것은?",
+    "choices": [
+      "대동법 시행 이후 관청에 필요한 물품을 조달하였다.",
+      "향촌 자치를 담당하였다.",
+      "중앙군을 지휘하였다.",
+      "왜관에서만 무역하였다."
+    ],
+    "answer": "대동법 시행 이후 관청에 필요한 물품을 조달하였다.",
+    "explanation": "공인은 대동법 시행 이후 관청 수요품을 납품하면서 성장한 상인입니다.",
+    "id": "history-mixed-109",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "홍경래의 난이 일어난 시기는?",
+    "choices": [
+      "세도 정치기",
+      "태조 때",
+      "세종 때",
+      "대한 제국기"
+    ],
+    "answer": "세도 정치기",
+    "explanation": "홍경래의 난은 세도 정치기 평안도 지역 차별과 수탈에 반발하여 일어났습니다.",
+    "id": "history-mixed-110",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "진주 농민 봉기가 일어난 해는?",
+    "choices": [
+      "1862년",
+      "1811년",
+      "1592년",
+      "1894년"
+    ],
+    "answer": "1862년",
+    "explanation": "진주 농민 봉기는 1862년에 일어났습니다.",
+    "id": "history-mixed-111",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "흥선 대원군의 정책으로 알맞은 것은?",
+    "choices": [
+      "서원 정리와 경복궁 중건",
+      "대동법 실시",
+      "규장각 설치",
+      "독립협회 창립"
+    ],
+    "answer": "서원 정리와 경복궁 중건",
+    "explanation": "흥선 대원군은 서원을 정리하고 경복궁을 중건하였습니다.",
+    "id": "history-mixed-112",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "흥선 대원군이 경복궁 중건 비용 마련을 위해 발행한 화폐는?",
+    "choices": [
+      "당백전",
+      "상평통보",
+      "건원중보",
+      "백동화"
+    ],
+    "answer": "당백전",
+    "explanation": "흥선 대원군은 경복궁 중건 비용을 마련하기 위해 당백전을 발행하였습니다.",
+    "id": "history-mixed-113",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "병인양요와 관련된 국가는?",
+    "choices": [
+      "프랑스",
+      "미국",
+      "일본",
+      "청"
+    ],
+    "answer": "프랑스",
+    "explanation": "병인양요는 병인박해를 구실로 프랑스군이 침입한 사건입니다.",
+    "id": "history-mixed-114",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "신미양요와 관련된 국가는?",
+    "choices": [
+      "미국",
+      "프랑스",
+      "일본",
+      "러시아"
+    ],
+    "answer": "미국",
+    "explanation": "신미양요는 제너럴 셔먼호 사건 등을 배경으로 미국이 강화도를 침입한 사건입니다.",
+    "id": "history-mixed-115",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "척화비의 내용과 관련된 정책 기조는?",
+    "choices": [
+      "통상 수교 거부 정책",
+      "개화 정책",
+      "친일 정책",
+      "대한 제국 광무개혁"
+    ],
+    "answer": "통상 수교 거부 정책",
+    "explanation": "척화비는 서양과의 통상을 거부하는 흥선 대원군의 정책을 보여 줍니다.",
+    "id": "history-mixed-116",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "조선 시대 붕당 정치가 처음 본격화된 사건은?",
+    "choices": [
+      "동인과 서인의 분화",
+      "무신정변",
+      "갑신정변",
+      "임오군란"
+    ],
+    "answer": "동인과 서인의 분화",
+    "explanation": "선조 때 동인과 서인의 분화로 붕당 정치가 본격화되었습니다.",
+    "id": "history-mixed-117",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "사림이 중앙 정계에 본격 진출하기 시작한 왕은?",
+    "choices": [
+      "성종",
+      "태종",
+      "세종",
+      "광해군"
+    ],
+    "answer": "성종",
+    "explanation": "성종 때 김종직 등 사림이 중앙 정계에 진출하였습니다.",
+    "id": "history-mixed-118",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "조선 전기 사화가 발생한 배경으로 알맞은 것은?",
+    "choices": [
+      "훈구와 사림의 갈등",
+      "개화파와 위정척사파의 갈등",
+      "노론과 소론의 탕평",
+      "무신과 문신의 갈등"
+    ],
+    "answer": "훈구와 사림의 갈등",
+    "explanation": "사화는 훈구 세력과 사림 세력의 갈등 속에서 발생하였습니다.",
+    "id": "history-mixed-119",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "조광조가 추진한 개혁으로 알맞은 것은?",
+    "choices": [
+      "현량과 실시와 소격서 폐지",
+      "대동법 전국 실시",
+      "균역법 실시",
+      "규장각 설치"
+    ],
+    "answer": "현량과 실시와 소격서 폐지",
+    "explanation": "조광조는 중종 때 현량과 실시, 소격서 폐지 등을 추진하였습니다.",
+    "id": "history-mixed-120",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "조선 후기 세도 정치의 폐단으로 알맞은 것은?",
+    "choices": [
+      "삼정의 문란",
+      "골품제 강화",
+      "전시과 붕괴",
+      "화백 회의 약화"
+    ],
+    "answer": "삼정의 문란",
+    "explanation": "세도 정치기에는 전정, 군정, 환곡의 문란이 심화되었습니다.",
+    "id": "history-mixed-121",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "임진왜란 이후 조선에 들어온 새로운 조총 부대에 대응하여 설치된 군영은?",
+    "choices": [
+      "훈련도감",
+      "별무반",
+      "9서당",
+      "도방"
+    ],
+    "answer": "훈련도감",
+    "explanation": "훈련도감은 임진왜란 중 설치된 중앙 군영입니다.",
+    "id": "history-mixed-122",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "조선",
+    "type": "multiple",
+    "question": "조선 후기 5군영에 해당하지 않는 것은?",
+    "choices": [
+      "별무반",
+      "훈련도감",
+      "어영청",
+      "금위영"
+    ],
+    "answer": "별무반",
+    "explanation": "별무반은 고려 시대 여진 정벌을 위해 편성된 부대입니다.",
+    "id": "history-mixed-123",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "강화도 조약이 체결된 해는?",
+    "choices": [
+      "1876년",
+      "1882년",
+      "1884년",
+      "1894년"
+    ],
+    "answer": "1876년",
+    "explanation": "강화도 조약은 1876년 조선과 일본 사이에 체결되었습니다.",
+    "id": "history-mixed-124",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "강화도 조약의 성격으로 알맞은 것은?",
+    "choices": [
+      "불평등 조약",
+      "상호 방위 조약",
+      "군사 동맹",
+      "비밀 조약"
+    ],
+    "answer": "불평등 조약",
+    "explanation": "강화도 조약은 조선이 체결한 최초의 근대적 조약이지만 불평등 조약이었습니다.",
+    "id": "history-mixed-125",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "임오군란이 일어난 해는?",
+    "choices": [
+      "1882년",
+      "1876년",
+      "1884년",
+      "1894년"
+    ],
+    "answer": "1882년",
+    "explanation": "임오군란은 구식 군인 차별과 개화 정책에 대한 반발로 1882년에 일어났습니다.",
+    "id": "history-mixed-126",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "갑신정변이 일어난 해는?",
+    "choices": [
+      "1884년",
+      "1882년",
+      "1894년",
+      "1895년"
+    ],
+    "answer": "1884년",
+    "explanation": "갑신정변은 김옥균 등 급진 개화파가 일으킨 정변입니다.",
+    "id": "history-mixed-127",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "갑신정변을 주도한 세력은?",
+    "choices": [
+      "급진 개화파",
+      "위정척사파",
+      "동학 농민군",
+      "의병"
+    ],
+    "answer": "급진 개화파",
+    "explanation": "갑신정변은 급진 개화파가 청의 내정 간섭을 배제하고 근대 개혁을 추진하려 한 사건입니다.",
+    "id": "history-mixed-128",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "동학 농민 운동이 일어난 해는?",
+    "choices": [
+      "1894년",
+      "1884년",
+      "1876년",
+      "1905년"
+    ],
+    "answer": "1894년",
+    "explanation": "동학 농민 운동은 1894년에 일어났습니다.",
+    "id": "history-mixed-129",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "동학 농민 운동의 1차 봉기와 관련된 인물은?",
+    "choices": [
+      "전봉준",
+      "김옥균",
+      "안중근",
+      "이완용"
+    ],
+    "answer": "전봉준",
+    "explanation": "전봉준은 고부 농민 봉기와 동학 농민 운동을 이끈 대표 인물입니다.",
+    "id": "history-mixed-130",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "갑오개혁의 내용으로 알맞은 것은?",
+    "choices": [
+      "신분제 폐지",
+      "훈민정음 창제",
+      "대동법 실시",
+      "별무반 편성"
+    ],
+    "answer": "신분제 폐지",
+    "explanation": "갑오개혁에서는 신분제 폐지, 과거제 폐지 등 근대적 개혁이 추진되었습니다.",
+    "id": "history-mixed-131",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "을미사변이 일어난 해는?",
+    "choices": [
+      "1895년",
+      "1894년",
+      "1896년",
+      "1905년"
+    ],
+    "answer": "1895년",
+    "explanation": "을미사변은 1895년 명성 황후가 시해된 사건입니다.",
+    "id": "history-mixed-132",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "아관파천이 일어난 해는?",
+    "choices": [
+      "1896년",
+      "1895년",
+      "1897년",
+      "1905년"
+    ],
+    "answer": "1896년",
+    "explanation": "아관파천은 고종이 러시아 공사관으로 거처를 옮긴 사건입니다.",
+    "id": "history-mixed-133",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "독립협회가 창립된 해는?",
+    "choices": [
+      "1896년",
+      "1884년",
+      "1894년",
+      "1907년"
+    ],
+    "answer": "1896년",
+    "explanation": "독립협회는 1896년에 창립되었습니다.",
+    "id": "history-mixed-134",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "독립협회의 활동으로 알맞은 것은?",
+    "choices": [
+      "만민 공동회 개최",
+      "훈민정음 창제",
+      "대동법 실시",
+      "별무반 편성"
+    ],
+    "answer": "만민 공동회 개최",
+    "explanation": "독립협회는 만민 공동회 등을 통해 자주 민권 운동을 전개하였습니다.",
+    "id": "history-mixed-135",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "대한 제국이 수립된 해는?",
+    "choices": [
+      "1897년",
+      "1894년",
+      "1896년",
+      "1910년"
+    ],
+    "answer": "1897년",
+    "explanation": "고종은 1897년 대한 제국을 선포하고 황제로 즉위하였습니다.",
+    "id": "history-mixed-136",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "대한 제국의 개혁은?",
+    "choices": [
+      "광무개혁",
+      "갑오개혁",
+      "을미개혁",
+      "갑신정변"
+    ],
+    "answer": "광무개혁",
+    "explanation": "대한 제국은 광무개혁을 추진하였습니다.",
+    "id": "history-mixed-137",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "을사늑약이 체결된 해는?",
+    "choices": [
+      "1905년",
+      "1907년",
+      "1910년",
+      "1895년"
+    ],
+    "answer": "1905년",
+    "explanation": "을사늑약으로 대한 제국의 외교권이 박탈되었습니다.",
+    "id": "history-mixed-138",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "헤이그 특사 파견과 관련된 왕은?",
+    "choices": [
+      "고종",
+      "순종",
+      "세종",
+      "정조"
+    ],
+    "answer": "고종",
+    "explanation": "고종은 을사늑약의 부당함을 알리기 위해 헤이그에 특사를 파견하였습니다.",
+    "id": "history-mixed-139",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "국권 피탈이 일어난 해는?",
+    "choices": [
+      "1910년",
+      "1905년",
+      "1907년",
+      "1919년"
+    ],
+    "answer": "1910년",
+    "explanation": "1910년 한일 병합 조약으로 국권이 피탈되었습니다.",
+    "id": "history-mixed-140",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "1910년대 일제의 통치 방식은?",
+    "choices": [
+      "무단 통치",
+      "문화 통치",
+      "민족 말살 통치",
+      "광무개혁"
+    ],
+    "answer": "무단 통치",
+    "explanation": "1910년대 일제는 헌병 경찰을 앞세운 무단 통치를 실시하였습니다.",
+    "id": "history-mixed-141",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "3·1 운동이 일어난 해는?",
+    "choices": [
+      "1919년",
+      "1910년",
+      "1920년",
+      "1931년"
+    ],
+    "answer": "1919년",
+    "explanation": "3·1 운동은 1919년에 일어난 전국적 독립운동입니다.",
+    "id": "history-mixed-142",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "대한민국 임시 정부가 수립된 곳은?",
+    "choices": [
+      "상하이",
+      "한성",
+      "블라디보스토크",
+      "연해주"
+    ],
+    "answer": "상하이",
+    "explanation": "대한민국 임시 정부는 1919년 중국 상하이에 수립되었습니다.",
+    "id": "history-mixed-143",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "1920년 봉오동 전투를 이끈 대표 인물은?",
+    "choices": [
+      "홍범도",
+      "김좌진",
+      "이봉창",
+      "윤봉길"
+    ],
+    "answer": "홍범도",
+    "explanation": "홍범도 부대는 봉오동 전투에서 일본군을 격파하였습니다.",
+    "id": "history-mixed-144",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "청산리 대첩을 이끈 대표 인물은?",
+    "choices": [
+      "김좌진",
+      "홍범도",
+      "안중근",
+      "신채호"
+    ],
+    "answer": "김좌진",
+    "explanation": "김좌진의 북로 군정서군 등 독립군 연합 부대가 청산리 대첩에서 승리하였습니다.",
+    "id": "history-mixed-145",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "의열단을 조직한 인물은?",
+    "choices": [
+      "김원봉",
+      "안창호",
+      "김구",
+      "여운형"
+    ],
+    "answer": "김원봉",
+    "explanation": "김원봉은 1919년 의열단을 조직하였습니다.",
+    "id": "history-mixed-146",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "한인 애국단과 관련된 인물은?",
+    "choices": [
+      "김구",
+      "김원봉",
+      "안창호",
+      "박은식"
+    ],
+    "answer": "김구",
+    "explanation": "김구는 한인 애국단을 조직하여 의거 활동을 전개하였습니다.",
+    "id": "history-mixed-147",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "윤봉길 의거가 일어난 곳은?",
+    "choices": [
+      "상하이 훙커우 공원",
+      "하얼빈역",
+      "도쿄 궁성",
+      "봉오동"
+    ],
+    "answer": "상하이 훙커우 공원",
+    "explanation": "윤봉길은 1932년 상하이 훙커우 공원에서 의거를 일으켰습니다.",
+    "id": "history-mixed-148",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "안중근이 이토 히로부미를 처단한 곳은?",
+    "choices": [
+      "하얼빈",
+      "상하이",
+      "도쿄",
+      "서울"
+    ],
+    "answer": "하얼빈",
+    "explanation": "안중근은 1909년 하얼빈에서 이토 히로부미를 처단하였습니다.",
+    "id": "history-mixed-149",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "민족주의 사학자로 조선상고사를 저술한 인물은?",
+    "choices": [
+      "신채호",
+      "박은식",
+      "정인보",
+      "백남운"
+    ],
+    "answer": "신채호",
+    "explanation": "신채호는 조선상고사를 저술하고 민족주의 사학을 발전시켰습니다.",
+    "id": "history-mixed-150",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "한국통사를 저술한 인물은?",
+    "choices": [
+      "박은식",
+      "신채호",
+      "김구",
+      "안창호"
+    ],
+    "answer": "박은식",
+    "explanation": "박은식은 한국통사와 한국독립운동지혈사를 저술하였습니다.",
+    "id": "history-mixed-151",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "신간회가 창립된 해는?",
+    "choices": [
+      "1927년",
+      "1919년",
+      "1931년",
+      "1945년"
+    ],
+    "answer": "1927년",
+    "explanation": "신간회는 1927년 민족주의 세력과 사회주의 세력이 연합하여 창립되었습니다.",
+    "id": "history-mixed-152",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "물산 장려 운동의 구호와 관련 깊은 것은?",
+    "choices": [
+      "내 살림 내 것으로",
+      "조선 사람 조선으로",
+      "토지는 농민에게",
+      "대한 독립 만세"
+    ],
+    "answer": "내 살림 내 것으로",
+    "explanation": "물산 장려 운동은 국산품 애용을 강조하였습니다.",
+    "id": "history-mixed-153",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "일제의 민족 말살 통치 시기 정책으로 알맞은 것은?",
+    "choices": [
+      "황국 신민 서사 암송 강요",
+      "헌병 경찰제 실시",
+      "만민 공동회 개최",
+      "광무개혁 추진"
+    ],
+    "answer": "황국 신민 서사 암송 강요",
+    "explanation": "1930년대 후반 이후 일제는 황국 신민화 정책을 강요하였습니다.",
+    "id": "history-mixed-154",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "광복이 이루어진 해는?",
+    "choices": [
+      "1945년",
+      "1919년",
+      "1948년",
+      "1950년"
+    ],
+    "answer": "1945년",
+    "explanation": "한국은 1945년 8월 15일 광복을 맞았습니다.",
+    "id": "history-mixed-155",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "대한민국 정부 수립일은?",
+    "choices": [
+      "1948년 8월 15일",
+      "1945년 8월 15일",
+      "1950년 6월 25일",
+      "1960년 4월 19일"
+    ],
+    "answer": "1948년 8월 15일",
+    "explanation": "대한민국 정부는 1948년 8월 15일 수립되었습니다.",
+    "id": "history-mixed-156",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "6·25 전쟁이 발발한 해는?",
+    "choices": [
+      "1950년",
+      "1945년",
+      "1948년",
+      "1953년"
+    ],
+    "answer": "1950년",
+    "explanation": "6·25 전쟁은 1950년 6월 25일 북한의 남침으로 시작되었습니다.",
+    "id": "history-mixed-157",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "4·19 혁명의 결과로 알맞은 것은?",
+    "choices": [
+      "이승만 대통령이 하야하였다.",
+      "대한민국 정부가 수립되었다.",
+      "한일 병합 조약이 체결되었다.",
+      "독립협회가 해산되었다."
+    ],
+    "answer": "이승만 대통령이 하야하였다.",
+    "explanation": "4·19 혁명으로 이승만 정부가 붕괴되었습니다.",
+    "id": "history-mixed-158",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "5·16 군사 정변이 일어난 해는?",
+    "choices": [
+      "1961년",
+      "1960년",
+      "1972년",
+      "1980년"
+    ],
+    "answer": "1961년",
+    "explanation": "5·16 군사 정변은 1961년에 일어났습니다.",
+    "id": "history-mixed-159",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "유신 헌법이 제정된 해는?",
+    "choices": [
+      "1972년",
+      "1961년",
+      "1980년",
+      "1987년"
+    ],
+    "answer": "1972년",
+    "explanation": "유신 헌법은 1972년에 제정되었습니다.",
+    "id": "history-mixed-160",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "5·18 민주화 운동이 일어난 해는?",
+    "choices": [
+      "1980년",
+      "1960년",
+      "1972년",
+      "1987년"
+    ],
+    "answer": "1980년",
+    "explanation": "5·18 민주화 운동은 1980년 광주에서 일어났습니다.",
+    "id": "history-mixed-161",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "6월 민주 항쟁이 일어난 해는?",
+    "choices": [
+      "1987년",
+      "1980년",
+      "1972년",
+      "1960년"
+    ],
+    "answer": "1987년",
+    "explanation": "6월 민주 항쟁은 대통령 직선제 개헌을 이끌어 낸 민주화 운동입니다.",
+    "id": "history-mixed-162",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "6·15 남북 공동 선언이 발표된 해는?",
+    "choices": [
+      "2000년",
+      "1991년",
+      "1987년",
+      "2018년"
+    ],
+    "answer": "2000년",
+    "explanation": "6·15 남북 공동 선언은 2000년 남북 정상 회담의 결과 발표되었습니다.",
+    "id": "history-mixed-163",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "남북한이 동시에 유엔에 가입한 해는?",
+    "choices": [
+      "1991년",
+      "1948년",
+      "1972년",
+      "2000년"
+    ],
+    "answer": "1991년",
+    "explanation": "남북한은 1991년 유엔에 동시 가입하였습니다.",
+    "id": "history-mixed-164",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "대한민국 임시 정부의 초대 대통령은?",
+    "choices": [
+      "이승만",
+      "김구",
+      "안창호",
+      "여운형"
+    ],
+    "answer": "이승만",
+    "explanation": "대한민국 임시 정부의 초대 대통령은 이승만입니다.",
+    "id": "history-mixed-165",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "대한민국 임시 정부의 국무령을 지낸 인물로 알맞은 것은?",
+    "choices": [
+      "이상룡",
+      "박정희",
+      "전두환",
+      "이완용"
+    ],
+    "answer": "이상룡",
+    "explanation": "이상룡은 대한민국 임시 정부에서 국무령을 지낸 독립운동가입니다.",
+    "id": "history-mixed-166",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "조선어 학회 사건이 일어난 시기는?",
+    "choices": [
+      "일제 강점기 민족 말살 통치기",
+      "조선 전기",
+      "고려 전기",
+      "대한 제국 초기"
+    ],
+    "answer": "일제 강점기 민족 말살 통치기",
+    "explanation": "조선어 학회 사건은 일제의 우리말 탄압과 관련된 사건입니다.",
+    "id": "history-mixed-167",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "브나로드 운동과 관련 깊은 신문은?",
+    "choices": [
+      "동아일보",
+      "독립신문",
+      "한성순보",
+      "대한매일신보"
+    ],
+    "answer": "동아일보",
+    "explanation": "브나로드 운동은 동아일보가 농촌 계몽을 위해 전개하였습니다.",
+    "id": "history-mixed-168",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "국채 보상 운동이 시작된 곳은?",
+    "choices": [
+      "대구",
+      "평양",
+      "상하이",
+      "전주"
+    ],
+    "answer": "대구",
+    "explanation": "국채 보상 운동은 1907년 대구에서 시작되었습니다.",
+    "id": "history-mixed-169",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "대성 학교를 세운 인물은?",
+    "choices": [
+      "안창호",
+      "이승훈",
+      "김구",
+      "전봉준"
+    ],
+    "answer": "안창호",
+    "explanation": "안창호는 평양에 대성 학교를 세워 민족 교육을 추진하였습니다.",
+    "id": "history-mixed-170",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "오산 학교를 세운 인물은?",
+    "choices": [
+      "이승훈",
+      "안창호",
+      "신채호",
+      "박은식"
+    ],
+    "answer": "이승훈",
+    "explanation": "이승훈은 정주에 오산 학교를 세웠습니다.",
+    "id": "history-mixed-171",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "대한 광복회를 조직한 인물로 알맞은 것은?",
+    "choices": [
+      "박상진",
+      "김구",
+      "김좌진",
+      "홍범도"
+    ],
+    "answer": "박상진",
+    "explanation": "박상진은 대한 광복회를 이끌었습니다.",
+    "id": "history-mixed-172",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "독립 의군부를 조직한 인물은?",
+    "choices": [
+      "임병찬",
+      "안중근",
+      "나철",
+      "김원봉"
+    ],
+    "answer": "임병찬",
+    "explanation": "임병찬은 고종의 밀명을 받아 독립 의군부를 조직하였습니다.",
+    "id": "history-mixed-173",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "1910년대 국내 비밀 결사인 대한 광복회의 활동 목표로 알맞은 것은?",
+    "choices": [
+      "공화정 수립과 독립운동 자금 마련",
+      "대동법 실시",
+      "서원 철폐",
+      "훈민정음 창제"
+    ],
+    "answer": "공화정 수립과 독립운동 자금 마련",
+    "explanation": "대한 광복회는 독립군 기지 건설과 공화정 수립을 지향하였습니다.",
+    "id": "history-mixed-174",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "한국사 OX",
+    "type": "ox",
+    "question": "구석기 시대에는 주로 뗀석기를 사용하였다.",
+    "answer": "O",
+    "explanation": "구석기 시대의 대표 도구는 주먹도끼 등 뗀석기입니다.",
+    "id": "history-mixed-175",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "한국사 OX",
+    "type": "ox",
+    "question": "신석기 시대에는 농경과 목축이 시작되었다.",
+    "answer": "O",
+    "explanation": "신석기 시대에는 농경과 목축이 시작되었습니다.",
+    "id": "history-mixed-176",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "한국사 OX",
+    "type": "ox",
+    "question": "청동기 시대에는 고인돌이 만들어졌다.",
+    "answer": "O",
+    "explanation": "고인돌은 청동기 시대 계급 사회의 모습을 보여 줍니다.",
+    "id": "history-mixed-177",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "한국사 OX",
+    "type": "ox",
+    "question": "부여의 제천 행사는 동맹이다.",
+    "answer": "X",
+    "explanation": "부여의 제천 행사는 영고입니다.",
+    "id": "history-mixed-178",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "한국사 OX",
+    "type": "ox",
+    "question": "고구려 소수림왕은 불교를 공인하고 태학을 설립하였다.",
+    "answer": "O",
+    "explanation": "소수림왕은 불교 공인, 태학 설립, 율령 반포를 추진하였습니다.",
+    "id": "history-mixed-179",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "한국사 OX",
+    "type": "ox",
+    "question": "백제 성왕은 사비로 천도하였다.",
+    "answer": "O",
+    "explanation": "성왕은 사비로 천도하고 국호를 남부여로 바꾸었습니다.",
+    "id": "history-mixed-180",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "한국사 OX",
+    "type": "ox",
+    "question": "신라 법흥왕은 한강 유역을 장악하고 대가야를 정복하였다.",
+    "answer": "X",
+    "explanation": "한강 유역 장악과 대가야 정복은 진흥왕의 업적입니다.",
+    "id": "history-mixed-181",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "한국사 OX",
+    "type": "ox",
+    "question": "발해는 고구려 계승 의식을 가지고 있었다.",
+    "answer": "O",
+    "explanation": "발해는 고구려 계승 의식을 바탕으로 건국되었습니다.",
+    "id": "history-mixed-182",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "한국사 OX",
+    "type": "ox",
+    "question": "고려 광종은 노비안검법과 과거제를 실시하였다.",
+    "answer": "O",
+    "explanation": "광종은 왕권 강화를 위해 노비안검법과 과거제를 시행하였습니다.",
+    "id": "history-mixed-183",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "한국사 OX",
+    "type": "ox",
+    "question": "서희는 거란과의 외교 담판으로 강동 6주를 확보하였다.",
+    "answer": "O",
+    "explanation": "서희는 거란의 1차 침입 때 외교 담판으로 강동 6주를 확보했습니다.",
+    "id": "history-mixed-184",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "한국사 OX",
+    "type": "ox",
+    "question": "강감찬은 살수 대첩에서 수를 물리쳤다.",
+    "answer": "X",
+    "explanation": "강감찬은 귀주 대첩에서 거란군을 물리쳤습니다. 살수 대첩은 을지문덕입니다.",
+    "id": "history-mixed-185",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "한국사 OX",
+    "type": "ox",
+    "question": "무신정변은 1170년에 일어났다.",
+    "answer": "O",
+    "explanation": "무신정변은 1170년에 발생하였습니다.",
+    "id": "history-mixed-186",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "한국사 OX",
+    "type": "ox",
+    "question": "공민왕은 쌍성총관부를 공격하고 전민변정도감을 설치하였다.",
+    "answer": "O",
+    "explanation": "공민왕은 반원 자주 정책과 왕권 강화를 추진하였습니다.",
+    "id": "history-mixed-187",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "한국사 OX",
+    "type": "ox",
+    "question": "조선 세종은 훈민정음을 창제하였다.",
+    "answer": "O",
+    "explanation": "훈민정음은 세종 때 창제되었습니다.",
+    "id": "history-mixed-188",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "한국사 OX",
+    "type": "ox",
+    "question": "경국대전은 정조 때 완성되었다.",
+    "answer": "X",
+    "explanation": "경국대전은 성종 때 완성·반포되었습니다.",
+    "id": "history-mixed-189",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "한국사 OX",
+    "type": "ox",
+    "question": "대동법은 공납의 폐단을 줄이기 위해 시행되었다.",
+    "answer": "O",
+    "explanation": "대동법은 공물을 쌀 등으로 대신 내게 하여 공납 부담을 완화하려 했습니다.",
+    "id": "history-mixed-190",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "한국사 OX",
+    "type": "ox",
+    "question": "균역법은 군포 부담을 1년에 1필로 줄였다.",
+    "answer": "O",
+    "explanation": "영조 때 균역법으로 군포가 1필로 줄었습니다.",
+    "id": "history-mixed-191",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "한국사 OX",
+    "type": "ox",
+    "question": "정조는 규장각을 설치하였다.",
+    "answer": "O",
+    "explanation": "정조는 규장각을 개혁 정치의 중심 기구로 활용했습니다.",
+    "id": "history-mixed-192",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "한국사 OX",
+    "type": "ox",
+    "question": "병인양요는 미국이 조선을 침입한 사건이다.",
+    "answer": "X",
+    "explanation": "병인양요는 프랑스군의 침입이고, 신미양요가 미국과 관련됩니다.",
+    "id": "history-mixed-193",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "한국사 OX",
+    "type": "ox",
+    "question": "강화도 조약은 조선이 체결한 불평등 조약이다.",
+    "answer": "O",
+    "explanation": "강화도 조약은 조선 최초의 근대적 조약이지만 불평등 조약입니다.",
+    "id": "history-mixed-194",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "한국사 OX",
+    "type": "ox",
+    "question": "갑신정변은 급진 개화파가 주도하였다.",
+    "answer": "O",
+    "explanation": "갑신정변은 김옥균 등 급진 개화파가 주도했습니다.",
+    "id": "history-mixed-195",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "한국사 OX",
+    "type": "ox",
+    "question": "동학 농민 운동은 1894년에 일어났다.",
+    "answer": "O",
+    "explanation": "동학 농민 운동은 1894년에 전개되었습니다.",
+    "id": "history-mixed-196",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "한국사 OX",
+    "type": "ox",
+    "question": "을사늑약으로 대한 제국의 외교권이 박탈되었다.",
+    "answer": "O",
+    "explanation": "1905년 을사늑약으로 외교권이 박탈되었습니다.",
+    "id": "history-mixed-197",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "한국사 OX",
+    "type": "ox",
+    "question": "3·1 운동은 1919년에 일어났다.",
+    "answer": "O",
+    "explanation": "3·1 운동은 1919년에 일어났습니다.",
+    "id": "history-mixed-198",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "topic": "한국사 OX",
+    "type": "ox",
+    "question": "6월 민주 항쟁은 대통령 직선제 개헌을 이끌어 냈다.",
+    "answer": "O",
+    "explanation": "1987년 6월 민주 항쟁은 대통령 직선제 개헌으로 이어졌습니다.",
+    "id": "history-mixed-199",
+    "subject": "한국사",
+    "sourceLabel": "한국사 통합"
+  },
+  {
+    "id": "history-mixed-200",
+    "subject": "한국사",
+    "topic": "근현대",
+    "type": "multiple",
+    "question": "좌우 합작 운동을 추진한 대표 인물로 알맞은 것은?",
+    "choices": [
+      "여운형과 김규식",
+      "김좌진과 홍범도",
+      "전봉준과 손화중",
+      "김옥균과 박영효"
+    ],
+    "answer": "여운형과 김규식",
+    "explanation": "좌우 합작 운동은 광복 이후 여운형과 김규식 등이 중심이 되어 추진하였습니다.",
+    "sourceLabel": "한국사 통합"
+  }
+]

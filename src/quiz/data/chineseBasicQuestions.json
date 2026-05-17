@@ -1,0 +1,3482 @@
+[
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n我",
+    "choices": [
+      "나",
+      "너",
+      "그",
+      "우리"
+    ],
+    "answer": "나",
+    "explanation": "我(wǒ)는 '나'라는 뜻입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-001"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n你",
+    "choices": [
+      "너",
+      "나",
+      "그녀",
+      "우리"
+    ],
+    "answer": "너",
+    "explanation": "你(nǐ)는 '너, 당신'이라는 뜻입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-002"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n他",
+    "choices": [
+      "그",
+      "그녀",
+      "나",
+      "너희"
+    ],
+    "answer": "그",
+    "explanation": "他(tā)는 남성 3인칭 '그'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-003"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n她",
+    "choices": [
+      "그녀",
+      "그",
+      "우리",
+      "너"
+    ],
+    "answer": "그녀",
+    "explanation": "她(tā)는 여성 3인칭 '그녀'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-004"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n我们",
+    "choices": [
+      "우리",
+      "그들",
+      "너",
+      "그녀"
+    ],
+    "answer": "우리",
+    "explanation": "我们(wǒmen)은 '우리'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-005"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n老师",
+    "choices": [
+      "선생님",
+      "학생",
+      "의사",
+      "친구"
+    ],
+    "answer": "선생님",
+    "explanation": "老师(lǎoshī)는 '선생님'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-006"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n学生",
+    "choices": [
+      "학생",
+      "선생님",
+      "회사원",
+      "가족"
+    ],
+    "answer": "학생",
+    "explanation": "学生(xuésheng)은 '학생'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-007"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n朋友",
+    "choices": [
+      "친구",
+      "가족",
+      "동료",
+      "아이"
+    ],
+    "answer": "친구",
+    "explanation": "朋友(péngyou)는 '친구'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-008"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n妈妈",
+    "choices": [
+      "엄마",
+      "아빠",
+      "언니",
+      "친구"
+    ],
+    "answer": "엄마",
+    "explanation": "妈妈(māma)는 '엄마'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-009"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n爸爸",
+    "choices": [
+      "아빠",
+      "엄마",
+      "오빠",
+      "선생님"
+    ],
+    "answer": "아빠",
+    "explanation": "爸爸(bàba)는 '아빠'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-010"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n家",
+    "choices": [
+      "집, 가족",
+      "학교",
+      "회사",
+      "상점"
+    ],
+    "answer": "집, 가족",
+    "explanation": "家(jiā)는 '집' 또는 '가족'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-011"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n学校",
+    "choices": [
+      "학교",
+      "병원",
+      "공항",
+      "식당"
+    ],
+    "answer": "학교",
+    "explanation": "学校(xuéxiào)는 '학교'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-012"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n医院",
+    "choices": [
+      "병원",
+      "학교",
+      "은행",
+      "방"
+    ],
+    "answer": "병원",
+    "explanation": "医院(yīyuàn)은 '병원'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-013"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n商店",
+    "choices": [
+      "상점",
+      "역",
+      "집",
+      "교실"
+    ],
+    "answer": "상점",
+    "explanation": "商店(shāngdiàn)은 '상점'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-014"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n中国",
+    "choices": [
+      "중국",
+      "한국",
+      "일본",
+      "미국"
+    ],
+    "answer": "중국",
+    "explanation": "中国(Zhōngguó)은 '중국'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-015"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n北京",
+    "choices": [
+      "베이징",
+      "상하이",
+      "서울",
+      "도쿄"
+    ],
+    "answer": "베이징",
+    "explanation": "北京(Běijīng)은 '베이징'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-016"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n今天",
+    "choices": [
+      "오늘",
+      "어제",
+      "내일",
+      "올해"
+    ],
+    "answer": "오늘",
+    "explanation": "今天(jīntiān)은 '오늘'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-017"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n昨天",
+    "choices": [
+      "어제",
+      "오늘",
+      "내일",
+      "지금"
+    ],
+    "answer": "어제",
+    "explanation": "昨天(zuótiān)은 '어제'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-018"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n明天",
+    "choices": [
+      "내일",
+      "어제",
+      "오늘",
+      "매일"
+    ],
+    "answer": "내일",
+    "explanation": "明天(míngtiān)은 '내일'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-019"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n现在",
+    "choices": [
+      "지금",
+      "아까",
+      "내일",
+      "매년"
+    ],
+    "answer": "지금",
+    "explanation": "现在(xiànzài)는 '지금'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-020"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n上午",
+    "choices": [
+      "오전",
+      "오후",
+      "저녁",
+      "밤"
+    ],
+    "answer": "오전",
+    "explanation": "上午(shàngwǔ)는 '오전'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-021"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n下午",
+    "choices": [
+      "오후",
+      "오전",
+      "아침",
+      "밤"
+    ],
+    "answer": "오후",
+    "explanation": "下午(xiàwǔ)는 '오후'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-022"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n晚上",
+    "choices": [
+      "저녁, 밤",
+      "아침",
+      "점심",
+      "오전"
+    ],
+    "answer": "저녁, 밤",
+    "explanation": "晚上(wǎnshang)은 '저녁, 밤'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-023"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n早上",
+    "choices": [
+      "아침",
+      "저녁",
+      "밤",
+      "오후"
+    ],
+    "answer": "아침",
+    "explanation": "早上(zǎoshang)은 '아침'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-024"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n水",
+    "choices": [
+      "물",
+      "차",
+      "밥",
+      "우유"
+    ],
+    "answer": "물",
+    "explanation": "水(shuǐ)는 '물'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-025"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n茶",
+    "choices": [
+      "차",
+      "물",
+      "밥",
+      "과일"
+    ],
+    "answer": "차",
+    "explanation": "茶(chá)는 '차'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-026"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n米饭",
+    "choices": [
+      "밥",
+      "물",
+      "차",
+      "사과"
+    ],
+    "answer": "밥",
+    "explanation": "米饭(mǐfàn)은 '밥'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-027"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n苹果",
+    "choices": [
+      "사과",
+      "바나나",
+      "밥",
+      "차"
+    ],
+    "answer": "사과",
+    "explanation": "苹果(píngguǒ)는 '사과'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-028"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n东西",
+    "choices": [
+      "물건",
+      "사람",
+      "장소",
+      "시간"
+    ],
+    "answer": "물건",
+    "explanation": "东西(dōngxi)는 '물건'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-029"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n钱",
+    "choices": [
+      "돈",
+      "시간",
+      "날씨",
+      "책"
+    ],
+    "answer": "돈",
+    "explanation": "钱(qián)은 '돈'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-030"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n书",
+    "choices": [
+      "책",
+      "돈",
+      "의자",
+      "물"
+    ],
+    "answer": "책",
+    "explanation": "书(shū)는 '책'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-031"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n电影",
+    "choices": [
+      "영화",
+      "음식",
+      "학교",
+      "날씨"
+    ],
+    "answer": "영화",
+    "explanation": "电影(diànyǐng)은 '영화'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-032"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n天气",
+    "choices": [
+      "날씨",
+      "시간",
+      "음식",
+      "교통"
+    ],
+    "answer": "날씨",
+    "explanation": "天气(tiānqì)는 '날씨'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-033"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n名字",
+    "choices": [
+      "이름",
+      "나이",
+      "주소",
+      "날짜"
+    ],
+    "answer": "이름",
+    "explanation": "名字(míngzi)는 '이름'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-034"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n年",
+    "choices": [
+      "해, 년",
+      "월",
+      "일",
+      "시간"
+    ],
+    "answer": "해, 년",
+    "explanation": "年(nián)은 '해, 년'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-035"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n月",
+    "choices": [
+      "월, 달",
+      "해",
+      "날",
+      "분"
+    ],
+    "answer": "월, 달",
+    "explanation": "月(yuè)는 '월, 달'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-036"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n星期",
+    "choices": [
+      "요일, 주",
+      "월",
+      "시간",
+      "계절"
+    ],
+    "answer": "요일, 주",
+    "explanation": "星期(xīngqī)는 '요일, 주'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-037"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n喜欢",
+    "choices": [
+      "좋아하다",
+      "가다",
+      "오다",
+      "사다"
+    ],
+    "answer": "좋아하다",
+    "explanation": "喜欢(xǐhuan)은 '좋아하다'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-038"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n学习",
+    "choices": [
+      "공부하다",
+      "마시다",
+      "사다",
+      "앉다"
+    ],
+    "answer": "공부하다",
+    "explanation": "学习(xuéxí)는 '공부하다'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-039"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n工作",
+    "choices": [
+      "일하다, 일",
+      "쉬다",
+      "먹다",
+      "읽다"
+    ],
+    "answer": "일하다, 일",
+    "explanation": "工作(gōngzuò)는 '일하다' 또는 '일'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-040"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n看",
+    "choices": [
+      "보다, 읽다",
+      "듣다",
+      "말하다",
+      "가다"
+    ],
+    "answer": "보다, 읽다",
+    "explanation": "看(kàn)은 '보다, 읽다'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-041"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n听",
+    "choices": [
+      "듣다",
+      "보다",
+      "쓰다",
+      "먹다"
+    ],
+    "answer": "듣다",
+    "explanation": "听(tīng)은 '듣다'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-042"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n说",
+    "choices": [
+      "말하다",
+      "듣다",
+      "읽다",
+      "사다"
+    ],
+    "answer": "말하다",
+    "explanation": "说(shuō)는 '말하다'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-043"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n写",
+    "choices": [
+      "쓰다",
+      "읽다",
+      "보다",
+      "마시다"
+    ],
+    "answer": "쓰다",
+    "explanation": "写(xiě)는 '쓰다'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-044"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n读",
+    "choices": [
+      "읽다",
+      "쓰다",
+      "듣다",
+      "사다"
+    ],
+    "answer": "읽다",
+    "explanation": "读(dú)는 '읽다'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-045"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n吃",
+    "choices": [
+      "먹다",
+      "마시다",
+      "가다",
+      "사다"
+    ],
+    "answer": "먹다",
+    "explanation": "吃(chī)는 '먹다'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-046"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n喝",
+    "choices": [
+      "마시다",
+      "먹다",
+      "보다",
+      "오다"
+    ],
+    "answer": "마시다",
+    "explanation": "喝(hē)는 '마시다'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-047"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n买",
+    "choices": [
+      "사다",
+      "팔다",
+      "가다",
+      "듣다"
+    ],
+    "answer": "사다",
+    "explanation": "买(mǎi)는 '사다'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-048"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n去",
+    "choices": [
+      "가다",
+      "오다",
+      "먹다",
+      "말하다"
+    ],
+    "answer": "가다",
+    "explanation": "去(qù)는 '가다'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-049"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n来",
+    "choices": [
+      "오다",
+      "가다",
+      "보다",
+      "사다"
+    ],
+    "answer": "오다",
+    "explanation": "来(lái)는 '오다'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-050"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n坐",
+    "choices": [
+      "앉다, 타다",
+      "서다",
+      "먹다",
+      "듣다"
+    ],
+    "answer": "앉다, 타다",
+    "explanation": "坐(zuò)는 '앉다' 또는 교통수단을 '타다'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-051"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n住",
+    "choices": [
+      "살다, 거주하다",
+      "먹다",
+      "사다",
+      "읽다"
+    ],
+    "answer": "살다, 거주하다",
+    "explanation": "住(zhù)는 '살다, 거주하다'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-052"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n开",
+    "choices": [
+      "열다, 운전하다",
+      "닫다",
+      "먹다",
+      "배우다"
+    ],
+    "answer": "열다, 운전하다",
+    "explanation": "开(kāi)는 '열다' 또는 '운전하다'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-053"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n爱",
+    "choices": [
+      "사랑하다",
+      "싫어하다",
+      "기다리다",
+      "입다"
+    ],
+    "answer": "사랑하다",
+    "explanation": "爱(ài)는 '사랑하다'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-054"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n会",
+    "choices": [
+      "할 줄 알다",
+      "가고 있다",
+      "이미",
+      "매우"
+    ],
+    "answer": "할 줄 알다",
+    "explanation": "会(huì)는 능력을 나타내어 '~할 줄 알다'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-055"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n能",
+    "choices": [
+      "할 수 있다",
+      "좋아하다",
+      "필요하다",
+      "끝나다"
+    ],
+    "answer": "할 수 있다",
+    "explanation": "能(néng)은 상황상 가능함을 나타냅니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-056"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n想",
+    "choices": [
+      "생각하다, ~하고 싶다",
+      "끝나다",
+      "입다",
+      "팔다"
+    ],
+    "answer": "생각하다, ~하고 싶다",
+    "explanation": "想(xiǎng)은 생각하다 또는 ~하고 싶다는 뜻입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-057"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n好",
+    "choices": [
+      "좋다",
+      "크다",
+      "비싸다",
+      "적다"
+    ],
+    "answer": "좋다",
+    "explanation": "好(hǎo)는 '좋다'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-058"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n大",
+    "choices": [
+      "크다",
+      "작다",
+      "많다",
+      "덥다"
+    ],
+    "answer": "크다",
+    "explanation": "大(dà)는 '크다'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-059"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n小",
+    "choices": [
+      "작다",
+      "크다",
+      "많다",
+      "춥다"
+    ],
+    "answer": "작다",
+    "explanation": "小(xiǎo)는 '작다'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-060"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n多",
+    "choices": [
+      "많다",
+      "적다",
+      "크다",
+      "작다"
+    ],
+    "answer": "많다",
+    "explanation": "多(duō)는 '많다'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-061"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n少",
+    "choices": [
+      "적다",
+      "많다",
+      "빠르다",
+      "느리다"
+    ],
+    "answer": "적다",
+    "explanation": "少(shǎo)는 '적다'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-062"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n热",
+    "choices": [
+      "덥다, 뜨겁다",
+      "춥다",
+      "멀다",
+      "비싸다"
+    ],
+    "answer": "덥다, 뜨겁다",
+    "explanation": "热(rè)는 '덥다, 뜨겁다'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-063"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n冷",
+    "choices": [
+      "춥다, 차갑다",
+      "덥다",
+      "가깝다",
+      "싸다"
+    ],
+    "answer": "춥다, 차갑다",
+    "explanation": "冷(lěng)은 '춥다, 차갑다'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-064"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n高兴",
+    "choices": [
+      "기쁘다",
+      "바쁘다",
+      "비싸다",
+      "예쁘다"
+    ],
+    "answer": "기쁘다",
+    "explanation": "高兴(gāoxìng)은 '기쁘다'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-065"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n忙",
+    "choices": [
+      "바쁘다",
+      "한가하다",
+      "기쁘다",
+      "느리다"
+    ],
+    "answer": "바쁘다",
+    "explanation": "忙(máng)은 '바쁘다'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-066"
+  },
+  {
+    "topic": "HSK 1~2 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 알맞은 것은?\n漂亮",
+    "choices": [
+      "예쁘다",
+      "바쁘다",
+      "춥다",
+      "적다"
+    ],
+    "answer": "예쁘다",
+    "explanation": "漂亮(piàoliang)은 '예쁘다'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-067"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n你 ____ 韩国人吗？",
+    "choices": [
+      "是",
+      "在",
+      "有",
+      "去"
+    ],
+    "answer": "是",
+    "explanation": "是는 '~이다'라는 뜻의 판단동사입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-068"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 学生。",
+    "choices": [
+      "是",
+      "在",
+      "有",
+      "会"
+    ],
+    "answer": "是",
+    "explanation": "A 是 B는 'A는 B이다'라는 구조입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-069"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n你喜欢咖啡 ____？",
+    "choices": [
+      "吗",
+      "了",
+      "的",
+      "在"
+    ],
+    "answer": "吗",
+    "explanation": "吗는 예/아니오 의문문을 만들 때 문장 끝에 붙입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-070"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n这 ____ 我的书。",
+    "choices": [
+      "是",
+      "在",
+      "去",
+      "想"
+    ],
+    "answer": "是",
+    "explanation": "这 是 A는 '이것은 A이다'라는 구조입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-071"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 北京工作。",
+    "choices": [
+      "在",
+      "是",
+      "有",
+      "会"
+    ],
+    "answer": "在",
+    "explanation": "在 + 장소 + 동사는 '~에서 ~하다'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-072"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n他 ____ 学校。",
+    "choices": [
+      "在",
+      "是",
+      "会",
+      "想"
+    ],
+    "answer": "在",
+    "explanation": "사람이 어디에 있다고 할 때 在를 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-073"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 一个朋友。",
+    "choices": [
+      "有",
+      "是",
+      "在",
+      "去"
+    ],
+    "answer": "有",
+    "explanation": "有는 '있다, 가지고 있다'라는 뜻입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-074"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我没有钱。에서 没有의 뜻은?",
+    "choices": [
+      "없다",
+      "아니다",
+      "가지러 가다",
+      "좋아하다"
+    ],
+    "answer": "없다",
+    "explanation": "没有는 有의 부정으로 '없다'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-075"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 去中国。",
+    "choices": [
+      "想",
+      "在",
+      "是",
+      "有"
+    ],
+    "answer": "想",
+    "explanation": "想 + 동사는 '~하고 싶다'라는 뜻입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-076"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 说汉语。",
+    "choices": [
+      "会",
+      "在",
+      "是",
+      "去"
+    ],
+    "answer": "会",
+    "explanation": "会는 배워서 할 줄 안다는 능력을 나타냅니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-077"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n你 ____ 吃什么？",
+    "choices": [
+      "想",
+      "是",
+      "在",
+      "有"
+    ],
+    "answer": "想",
+    "explanation": "想吃什么은 '무엇을 먹고 싶니?'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-078"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 喜欢喝咖啡。",
+    "choices": [
+      "不",
+      "没",
+      "了",
+      "在"
+    ],
+    "answer": "不",
+    "explanation": "일반 현재의 부정에는 不를 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-079"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我昨天 ____ 去学校。",
+    "choices": [
+      "没",
+      "不",
+      "吗",
+      "的"
+    ],
+    "answer": "没",
+    "explanation": "과거 동작의 부정에는 보통 没를 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-080"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我买 ____ 三个苹果。",
+    "choices": [
+      "了",
+      "吗",
+      "的",
+      "在"
+    ],
+    "answer": "了",
+    "explanation": "了는 동작의 완료를 나타낼 수 있습니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-081"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n这是我 ____ 朋友。",
+    "choices": [
+      "的",
+      "了",
+      "吗",
+      "在"
+    ],
+    "answer": "的",
+    "explanation": "的는 소유나 수식을 나타냅니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-082"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n桌子上 ____ 一本书。",
+    "choices": [
+      "有",
+      "是",
+      "会",
+      "想"
+    ],
+    "answer": "有",
+    "explanation": "장소 + 有 + 사물은 '~에 ~가 있다'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-083"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我比他 ____。",
+    "choices": [
+      "高",
+      "在",
+      "会",
+      "的"
+    ],
+    "answer": "高",
+    "explanation": "A 比 B + 형용사는 비교 표현입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-084"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n这个苹果很 ____。",
+    "choices": [
+      "大",
+      "吗",
+      "了",
+      "在"
+    ],
+    "answer": "大",
+    "explanation": "很 + 형용사 구조가 자연스럽습니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-085"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n你是老师 ____ 学生？",
+    "choices": [
+      "还是",
+      "或者",
+      "但是",
+      "因为"
+    ],
+    "answer": "还是",
+    "explanation": "의문문에서 A还是B는 'A 아니면 B?'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-086"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我喜欢茶，____ 不喜欢咖啡。",
+    "choices": [
+      "但是",
+      "因为",
+      "所以",
+      "还是"
+    ],
+    "answer": "但是",
+    "explanation": "但是는 '하지만'이라는 뜻입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-087"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n____ 下雨，我不去学校。",
+    "choices": [
+      "因为",
+      "所以",
+      "但是",
+      "还是"
+    ],
+    "answer": "因为",
+    "explanation": "因为는 원인을 나타내는 '왜냐하면'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-088"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n今天下雨，____ 我不去公园。",
+    "choices": [
+      "所以",
+      "因为",
+      "但是",
+      "还是"
+    ],
+    "answer": "所以",
+    "explanation": "所以는 결과를 나타내는 '그래서'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-089"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n你 ____ 什么名字？",
+    "choices": [
+      "叫",
+      "去",
+      "吃",
+      "买"
+    ],
+    "answer": "叫",
+    "explanation": "叫什么名字는 이름이 무엇이냐고 물을 때 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-090"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n现在 ____ 点？",
+    "choices": [
+      "几",
+      "哪",
+      "谁",
+      "怎么"
+    ],
+    "answer": "几",
+    "explanation": "几点은 몇 시라는 뜻입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-091"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n你家 ____ 哪儿？",
+    "choices": [
+      "在",
+      "是",
+      "有",
+      "会"
+    ],
+    "answer": "在",
+    "explanation": "장소를 물을 때 在哪儿 구조를 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-092"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n你 ____ 去学校？",
+    "choices": [
+      "怎么",
+      "谁",
+      "几",
+      "什么"
+    ],
+    "answer": "怎么",
+    "explanation": "怎么去는 어떻게 가느냐는 뜻입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-093"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n这本书 ____ 钱？",
+    "choices": [
+      "多少钱",
+      "多少",
+      "几",
+      "什么"
+    ],
+    "answer": "多少钱",
+    "explanation": "가격을 물을 때 多少钱을 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-094"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n你有 ____ 个苹果？",
+    "choices": [
+      "几",
+      "谁",
+      "哪儿",
+      "怎么"
+    ],
+    "answer": "几",
+    "explanation": "个수를 물을 때 几个를 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-095"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 看电影。",
+    "choices": [
+      "正在",
+      "是",
+      "有",
+      "没"
+    ],
+    "answer": "正在",
+    "explanation": "正在 + 동사는 진행 중인 동작을 나타냅니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-096"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n你吃饭 ____ 吗？",
+    "choices": [
+      "了吗",
+      "的",
+      "在",
+      "比"
+    ],
+    "answer": "了吗",
+    "explanation": "동작 완료 여부를 물을 때 了吗를 쓸 수 있습니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-097"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n请 ____ 一下。",
+    "choices": [
+      "等",
+      "是",
+      "有",
+      "想"
+    ],
+    "answer": "等",
+    "explanation": "等一下은 '잠깐 기다리세요'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-098"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我想 ____ 杯水。",
+    "choices": [
+      "喝一",
+      "一喝",
+      "喝个",
+      "个喝"
+    ],
+    "answer": "喝一",
+    "explanation": "동사 + 수량사 + 명사 구조입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-099"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n一 ____ 书",
+    "choices": [
+      "本",
+      "个",
+      "杯",
+      "块"
+    ],
+    "answer": "本",
+    "explanation": "책의 양사는 本입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-100"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n一 ____ 水",
+    "choices": [
+      "杯",
+      "本",
+      "个",
+      "张"
+    ],
+    "answer": "杯",
+    "explanation": "물 한 컵은 一杯水입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-101"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n一 ____ 人",
+    "choices": [
+      "个",
+      "本",
+      "杯",
+      "张"
+    ],
+    "answer": "个",
+    "explanation": "사람에는 일반 양사 个를 쓸 수 있습니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-102"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n一 ____ 电影票",
+    "choices": [
+      "张",
+      "本",
+      "杯",
+      "块"
+    ],
+    "answer": "张",
+    "explanation": "표나 종이류에는 张을 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-103"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n他 ____ 医院工作。",
+    "choices": [
+      "在",
+      "去",
+      "有",
+      "叫"
+    ],
+    "answer": "在",
+    "explanation": "在医院工作는 병원에서 일하다는 뜻입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-104"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 今年二十岁。",
+    "choices": [
+      "今年",
+      "岁",
+      "叫",
+      "是"
+    ],
+    "answer": "今年",
+    "explanation": "나이를 말할 때 我今年二十岁처럼 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-105"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n你 ____ 岁？",
+    "choices": [
+      "几",
+      "谁",
+      "什么",
+      "哪儿"
+    ],
+    "answer": "几",
+    "explanation": "나이를 물을 때 几岁를 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-106"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n明天 ____ 星期几？",
+    "choices": [
+      "是",
+      "在",
+      "有",
+      "会"
+    ],
+    "answer": "是",
+    "explanation": "요일을 말할 때 明天是星期几 구조를 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-107"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 坐出租车去机场。",
+    "choices": [
+      "想",
+      "在",
+      "是",
+      "有"
+    ],
+    "answer": "想",
+    "explanation": "想坐出租车는 택시를 타고 싶다는 뜻입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-108"
+  },
+  {
+    "topic": "HSK 1~2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n我喜欢喝茶。",
+    "choices": [
+      "나는 차 마시는 것을 좋아합니다.",
+      "나는 차를 마시지 않습니다.",
+      "나는 차를 샀습니다.",
+      "나는 차를 마실 수 없습니다."
+    ],
+    "answer": "나는 차 마시는 것을 좋아합니다.",
+    "explanation": "喜欢 + 동사는 '~하는 것을 좋아하다'입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-109"
+  },
+  {
+    "topic": "HSK 1~2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n他在学校学习汉语。",
+    "choices": [
+      "그는 학교에서 중국어를 공부합니다.",
+      "그는 집에서 영어를 공부합니다.",
+      "그는 학교에 가지 않습니다.",
+      "그는 중국어 선생님입니다."
+    ],
+    "answer": "그는 학교에서 중국어를 공부합니다.",
+    "explanation": "在学校는 학교에서, 学习汉语는 중국어를 공부하다입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-110"
+  },
+  {
+    "topic": "HSK 1~2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n我昨天没去公司。",
+    "choices": [
+      "나는 어제 회사에 가지 않았습니다.",
+      "나는 오늘 회사에 갑니다.",
+      "나는 어제 회사에서 일했습니다.",
+      "나는 회사원이 아닙니다."
+    ],
+    "answer": "나는 어제 회사에 가지 않았습니다.",
+    "explanation": "没 + 동사는 과거 동작의 부정을 나타낼 수 있습니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-111"
+  },
+  {
+    "topic": "HSK 1~2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n你叫什么名字？",
+    "choices": [
+      "너는 이름이 뭐니?",
+      "너는 어디에 사니?",
+      "너는 몇 살이니?",
+      "너는 무엇을 먹니?"
+    ],
+    "answer": "너는 이름이 뭐니?",
+    "explanation": "叫什么名字는 이름을 묻는 표현입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-112"
+  },
+  {
+    "topic": "HSK 1~2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n现在几点？",
+    "choices": [
+      "지금 몇 시입니까?",
+      "오늘은 무슨 요일입니까?",
+      "지금 어디입니까?",
+      "몇 개 있습니까?"
+    ],
+    "answer": "지금 몇 시입니까?",
+    "explanation": "几点은 몇 시라는 뜻입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-113"
+  },
+  {
+    "topic": "HSK 1~2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n桌子上有一本书。",
+    "choices": [
+      "책상 위에 책 한 권이 있습니다.",
+      "책상 아래에 책이 없습니다.",
+      "나는 책 한 권을 샀습니다.",
+      "책은 비쌉니다."
+    ],
+    "answer": "책상 위에 책 한 권이 있습니다.",
+    "explanation": "장소 + 有 + 사물 구조입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-114"
+  },
+  {
+    "topic": "HSK 1~2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n我会说一点儿汉语。",
+    "choices": [
+      "나는 중국어를 조금 할 줄 압니다.",
+      "나는 중국어를 배우고 싶습니다.",
+      "나는 중국어를 좋아하지 않습니다.",
+      "나는 중국어 책을 샀습니다."
+    ],
+    "answer": "나는 중국어를 조금 할 줄 압니다.",
+    "explanation": "会说은 말할 줄 안다는 뜻입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-115"
+  },
+  {
+    "topic": "HSK 1~2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n这件衣服多少钱？",
+    "choices": [
+      "이 옷은 얼마입니까?",
+      "이 옷은 누구의 것입니까?",
+      "이 옷은 어디에 있습니까?",
+      "이 옷은 예쁩니까?"
+    ],
+    "answer": "이 옷은 얼마입니까?",
+    "explanation": "多少钱은 얼마냐고 가격을 묻는 표현입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-116"
+  },
+  {
+    "topic": "HSK 1~2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n明天我想去看电影。",
+    "choices": [
+      "내일 나는 영화 보러 가고 싶습니다.",
+      "어제 나는 영화를 봤습니다.",
+      "내일 나는 영화관에 가지 않습니다.",
+      "오늘 나는 영화를 싫어합니다."
+    ],
+    "answer": "내일 나는 영화 보러 가고 싶습니다.",
+    "explanation": "想去看电影은 영화 보러 가고 싶다는 뜻입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-117"
+  },
+  {
+    "topic": "HSK 1~2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n因为今天很忙，所以我不去。",
+    "choices": [
+      "오늘 매우 바쁘기 때문에 나는 가지 않습니다.",
+      "오늘 바쁘지만 나는 갑니다.",
+      "오늘 한가해서 나는 갑니다.",
+      "오늘 날씨가 좋아서 나는 갑니다."
+    ],
+    "answer": "오늘 매우 바쁘기 때문에 나는 가지 않습니다.",
+    "explanation": "因为는 원인, 所以는 결과를 나타냅니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-118"
+  },
+  {
+    "topic": "HSK 1~2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n他比我高。",
+    "choices": [
+      "그는 나보다 키가 큽니다.",
+      "그는 나와 같습니다.",
+      "나는 그보다 키가 큽니다.",
+      "그는 키가 작습니다."
+    ],
+    "answer": "그는 나보다 키가 큽니다.",
+    "explanation": "A比B+형용사는 비교 표현입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-119"
+  },
+  {
+    "topic": "HSK 1~2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n请给我一杯水。",
+    "choices": [
+      "물 한 잔 주세요.",
+      "책 한 권 주세요.",
+      "물은 없습니다.",
+      "나는 물을 마셨습니다."
+    ],
+    "answer": "물 한 잔 주세요.",
+    "explanation": "一杯水는 물 한 잔입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-120"
+  },
+  {
+    "topic": "HSK 1~2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n我正在吃饭。",
+    "choices": [
+      "나는 지금 밥을 먹고 있습니다.",
+      "나는 밥을 먹지 않았습니다.",
+      "나는 밥을 먹고 싶습니다.",
+      "나는 밥을 살 것입니다."
+    ],
+    "answer": "나는 지금 밥을 먹고 있습니다.",
+    "explanation": "正在은 동작의 진행을 나타냅니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-121"
+  },
+  {
+    "topic": "HSK 1~2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n你去过中国吗？",
+    "choices": [
+      "너는 중국에 가 본 적이 있니?",
+      "너는 중국에 가고 싶니?",
+      "너는 중국 사람입니까?",
+      "너는 중국어를 하니?"
+    ],
+    "answer": "너는 중국에 가 본 적이 있니?",
+    "explanation": "去过는 가 본 적이 있다는 경험 표현입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-122"
+  },
+  {
+    "topic": "HSK 1~2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n我家离学校很近。",
+    "choices": [
+      "우리 집은 학교에서 매우 가깝습니다.",
+      "우리 집은 학교보다 큽니다.",
+      "우리 집은 학교 안에 있습니다.",
+      "나는 학교에 살고 있습니다."
+    ],
+    "answer": "우리 집은 학교에서 매우 가깝습니다.",
+    "explanation": "离는 거리의 기준을 나타내고 很近은 매우 가깝다는 뜻입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-123"
+  },
+  {
+    "topic": "HSK 1~2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n我没有哥哥。",
+    "choices": [
+      "나는 형/오빠가 없습니다.",
+      "나는 형/오빠가 있습니다.",
+      "나는 형/오빠를 좋아합니다.",
+      "형/오빠는 학생입니다."
+    ],
+    "answer": "나는 형/오빠가 없습니다.",
+    "explanation": "没有는 없다라는 뜻입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-124"
+  },
+  {
+    "topic": "HSK 1~2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n今天的天气很好。",
+    "choices": [
+      "오늘 날씨가 매우 좋습니다.",
+      "오늘 날씨가 춥지 않습니다.",
+      "오늘은 무슨 요일입니까?",
+      "오늘은 비가 옵니다."
+    ],
+    "answer": "오늘 날씨가 매우 좋습니다.",
+    "explanation": "天气很好는 날씨가 좋다는 뜻입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-125"
+  },
+  {
+    "topic": "HSK 1~2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n我坐地铁去学校。",
+    "choices": [
+      "나는 지하철을 타고 학교에 갑니다.",
+      "나는 학교에서 지하철을 봅니다.",
+      "나는 학교에 가지 않습니다.",
+      "나는 학교에서 공부합니다."
+    ],
+    "answer": "나는 지하철을 타고 학교에 갑니다.",
+    "explanation": "坐地铁는 지하철을 타다입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-126"
+  },
+  {
+    "topic": "HSK 1~2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n你想买什么？",
+    "choices": [
+      "너는 무엇을 사고 싶니?",
+      "너는 무엇을 먹었니?",
+      "너는 어디에 가니?",
+      "너는 누구니?"
+    ],
+    "answer": "너는 무엇을 사고 싶니?",
+    "explanation": "想买什么은 무엇을 사고 싶냐는 뜻입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-127"
+  },
+  {
+    "topic": "HSK 1~2 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n这个菜不太辣。",
+    "choices": [
+      "이 요리는 그다지 맵지 않습니다.",
+      "이 요리는 매우 맵습니다.",
+      "이 요리는 비쌉니다.",
+      "이 요리는 없습니다."
+    ],
+    "answer": "이 요리는 그다지 맵지 않습니다.",
+    "explanation": "不太는 그다지 ~하지 않다는 뜻입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-128"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 喝咖啡。",
+    "choices": [
+      "不",
+      "没",
+      "在",
+      "了"
+    ],
+    "answer": "不",
+    "explanation": "습관이나 일반적 부정에는 不를 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-129"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我昨天 ____ 看电影。",
+    "choices": [
+      "没",
+      "不",
+      "吗",
+      "的"
+    ],
+    "answer": "没",
+    "explanation": "과거 동작의 부정에는 没를 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-130"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\nA: 你喝茶 ____？ B: 喝。",
+    "choices": [
+      "吗",
+      "了",
+      "的",
+      "在"
+    ],
+    "answer": "吗",
+    "explanation": "예/아니오 의문문에는 문장 끝에 吗를 붙일 수 있습니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-131"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 北京人。",
+    "choices": [
+      "是",
+      "在",
+      "有",
+      "想"
+    ],
+    "answer": "是",
+    "explanation": "A是B는 A는 B이다라는 뜻입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-132"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n她 ____ 家。",
+    "choices": [
+      "在",
+      "是",
+      "去",
+      "会"
+    ],
+    "answer": "在",
+    "explanation": "사람이 어디에 있다고 할 때 在를 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-133"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 三本书。",
+    "choices": [
+      "有",
+      "是",
+      "在",
+      "想"
+    ],
+    "answer": "有",
+    "explanation": "有는 가지고 있다라는 뜻입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-134"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n他 ____ 学中文。",
+    "choices": [
+      "想",
+      "是",
+      "在",
+      "有"
+    ],
+    "answer": "想",
+    "explanation": "想 + 동사는 ~하고 싶다입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-135"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n这 ____ 书是我的。",
+    "choices": [
+      "本",
+      "个",
+      "杯",
+      "张"
+    ],
+    "answer": "本",
+    "explanation": "책의 양사는 本입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-136"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我买了两 ____ 电影票。",
+    "choices": [
+      "张",
+      "本",
+      "杯",
+      "个"
+    ],
+    "answer": "张",
+    "explanation": "표의 양사는 张입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-137"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n你 ____ 去学校？",
+    "choices": [
+      "怎么",
+      "什么",
+      "谁",
+      "几"
+    ],
+    "answer": "怎么",
+    "explanation": "怎么는 방법을 물을 때 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-138"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 喝咖啡。",
+    "choices": [
+      "不",
+      "没",
+      "在",
+      "了"
+    ],
+    "answer": "不",
+    "explanation": "습관이나 일반적 부정에는 不를 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-139"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我昨天 ____ 看电影。",
+    "choices": [
+      "没",
+      "不",
+      "吗",
+      "的"
+    ],
+    "answer": "没",
+    "explanation": "과거 동작의 부정에는 没를 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-140"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\nA: 你喝茶 ____？ B: 喝。",
+    "choices": [
+      "吗",
+      "了",
+      "的",
+      "在"
+    ],
+    "answer": "吗",
+    "explanation": "예/아니오 의문문에는 문장 끝에 吗를 붙일 수 있습니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-141"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 北京人。",
+    "choices": [
+      "是",
+      "在",
+      "有",
+      "想"
+    ],
+    "answer": "是",
+    "explanation": "A是B는 A는 B이다라는 뜻입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-142"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n她 ____ 家。",
+    "choices": [
+      "在",
+      "是",
+      "去",
+      "会"
+    ],
+    "answer": "在",
+    "explanation": "사람이 어디에 있다고 할 때 在를 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-143"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 三本书。",
+    "choices": [
+      "有",
+      "是",
+      "在",
+      "想"
+    ],
+    "answer": "有",
+    "explanation": "有는 가지고 있다라는 뜻입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-144"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n他 ____ 学中文。",
+    "choices": [
+      "想",
+      "是",
+      "在",
+      "有"
+    ],
+    "answer": "想",
+    "explanation": "想 + 동사는 ~하고 싶다입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-145"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n这 ____ 书是我的。",
+    "choices": [
+      "本",
+      "个",
+      "杯",
+      "张"
+    ],
+    "answer": "本",
+    "explanation": "책의 양사는 本입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-146"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我买了两 ____ 电影票。",
+    "choices": [
+      "张",
+      "本",
+      "杯",
+      "个"
+    ],
+    "answer": "张",
+    "explanation": "표의 양사는 张입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-147"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n你 ____ 去学校？",
+    "choices": [
+      "怎么",
+      "什么",
+      "谁",
+      "几"
+    ],
+    "answer": "怎么",
+    "explanation": "怎么는 방법을 물을 때 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-148"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 喝咖啡。",
+    "choices": [
+      "不",
+      "没",
+      "在",
+      "了"
+    ],
+    "answer": "不",
+    "explanation": "습관이나 일반적 부정에는 不를 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-149"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我昨天 ____ 看电影。",
+    "choices": [
+      "没",
+      "不",
+      "吗",
+      "的"
+    ],
+    "answer": "没",
+    "explanation": "과거 동작의 부정에는 没를 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-150"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\nA: 你喝茶 ____？ B: 喝。",
+    "choices": [
+      "吗",
+      "了",
+      "的",
+      "在"
+    ],
+    "answer": "吗",
+    "explanation": "예/아니오 의문문에는 문장 끝에 吗를 붙일 수 있습니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-151"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 北京人。",
+    "choices": [
+      "是",
+      "在",
+      "有",
+      "想"
+    ],
+    "answer": "是",
+    "explanation": "A是B는 A는 B이다라는 뜻입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-152"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n她 ____ 家。",
+    "choices": [
+      "在",
+      "是",
+      "去",
+      "会"
+    ],
+    "answer": "在",
+    "explanation": "사람이 어디에 있다고 할 때 在를 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-153"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 三本书。",
+    "choices": [
+      "有",
+      "是",
+      "在",
+      "想"
+    ],
+    "answer": "有",
+    "explanation": "有는 가지고 있다라는 뜻입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-154"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n他 ____ 学中文。",
+    "choices": [
+      "想",
+      "是",
+      "在",
+      "有"
+    ],
+    "answer": "想",
+    "explanation": "想 + 동사는 ~하고 싶다입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-155"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n这 ____ 书是我的。",
+    "choices": [
+      "本",
+      "个",
+      "杯",
+      "张"
+    ],
+    "answer": "本",
+    "explanation": "책의 양사는 本입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-156"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我买了两 ____ 电影票。",
+    "choices": [
+      "张",
+      "本",
+      "杯",
+      "个"
+    ],
+    "answer": "张",
+    "explanation": "표의 양사는 张입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-157"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n你 ____ 去学校？",
+    "choices": [
+      "怎么",
+      "什么",
+      "谁",
+      "几"
+    ],
+    "answer": "怎么",
+    "explanation": "怎么는 방법을 물을 때 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-158"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 喝咖啡。",
+    "choices": [
+      "不",
+      "没",
+      "在",
+      "了"
+    ],
+    "answer": "不",
+    "explanation": "습관이나 일반적 부정에는 不를 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-159"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我昨天 ____ 看电影。",
+    "choices": [
+      "没",
+      "不",
+      "吗",
+      "的"
+    ],
+    "answer": "没",
+    "explanation": "과거 동작의 부정에는 没를 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-160"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\nA: 你喝茶 ____？ B: 喝。",
+    "choices": [
+      "吗",
+      "了",
+      "的",
+      "在"
+    ],
+    "answer": "吗",
+    "explanation": "예/아니오 의문문에는 문장 끝에 吗를 붙일 수 있습니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-161"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 北京人。",
+    "choices": [
+      "是",
+      "在",
+      "有",
+      "想"
+    ],
+    "answer": "是",
+    "explanation": "A是B는 A는 B이다라는 뜻입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-162"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n她 ____ 家。",
+    "choices": [
+      "在",
+      "是",
+      "去",
+      "会"
+    ],
+    "answer": "在",
+    "explanation": "사람이 어디에 있다고 할 때 在를 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-163"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 三本书。",
+    "choices": [
+      "有",
+      "是",
+      "在",
+      "想"
+    ],
+    "answer": "有",
+    "explanation": "有는 가지고 있다라는 뜻입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-164"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n他 ____ 学中文。",
+    "choices": [
+      "想",
+      "是",
+      "在",
+      "有"
+    ],
+    "answer": "想",
+    "explanation": "想 + 동사는 ~하고 싶다입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-165"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n这 ____ 书是我的。",
+    "choices": [
+      "本",
+      "个",
+      "杯",
+      "张"
+    ],
+    "answer": "本",
+    "explanation": "책의 양사는 本입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-166"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我买了两 ____ 电影票。",
+    "choices": [
+      "张",
+      "本",
+      "杯",
+      "个"
+    ],
+    "answer": "张",
+    "explanation": "표의 양사는 张입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-167"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n你 ____ 去学校？",
+    "choices": [
+      "怎么",
+      "什么",
+      "谁",
+      "几"
+    ],
+    "answer": "怎么",
+    "explanation": "怎么는 방법을 물을 때 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-168"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 喝咖啡。",
+    "choices": [
+      "不",
+      "没",
+      "在",
+      "了"
+    ],
+    "answer": "不",
+    "explanation": "습관이나 일반적 부정에는 不를 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-169"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我昨天 ____ 看电影。",
+    "choices": [
+      "没",
+      "不",
+      "吗",
+      "的"
+    ],
+    "answer": "没",
+    "explanation": "과거 동작의 부정에는 没를 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-170"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\nA: 你喝茶 ____？ B: 喝。",
+    "choices": [
+      "吗",
+      "了",
+      "的",
+      "在"
+    ],
+    "answer": "吗",
+    "explanation": "예/아니오 의문문에는 문장 끝에 吗를 붙일 수 있습니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-171"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 北京人。",
+    "choices": [
+      "是",
+      "在",
+      "有",
+      "想"
+    ],
+    "answer": "是",
+    "explanation": "A是B는 A는 B이다라는 뜻입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-172"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n她 ____ 家。",
+    "choices": [
+      "在",
+      "是",
+      "去",
+      "会"
+    ],
+    "answer": "在",
+    "explanation": "사람이 어디에 있다고 할 때 在를 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-173"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 三本书。",
+    "choices": [
+      "有",
+      "是",
+      "在",
+      "想"
+    ],
+    "answer": "有",
+    "explanation": "有는 가지고 있다라는 뜻입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-174"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n他 ____ 学中文。",
+    "choices": [
+      "想",
+      "是",
+      "在",
+      "有"
+    ],
+    "answer": "想",
+    "explanation": "想 + 동사는 ~하고 싶다입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-175"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n这 ____ 书是我的。",
+    "choices": [
+      "本",
+      "个",
+      "杯",
+      "张"
+    ],
+    "answer": "本",
+    "explanation": "책의 양사는 本입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-176"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我买了两 ____ 电影票。",
+    "choices": [
+      "张",
+      "本",
+      "杯",
+      "个"
+    ],
+    "answer": "张",
+    "explanation": "표의 양사는 张입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-177"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n你 ____ 去学校？",
+    "choices": [
+      "怎么",
+      "什么",
+      "谁",
+      "几"
+    ],
+    "answer": "怎么",
+    "explanation": "怎么는 방법을 물을 때 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-178"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 喝咖啡。",
+    "choices": [
+      "不",
+      "没",
+      "在",
+      "了"
+    ],
+    "answer": "不",
+    "explanation": "습관이나 일반적 부정에는 不를 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-179"
+  },
+  {
+    "topic": "HSK 1~2 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我昨天 ____ 看电影。",
+    "choices": [
+      "没",
+      "不",
+      "吗",
+      "的"
+    ],
+    "answer": "没",
+    "explanation": "과거 동작의 부정에는 没를 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-180"
+  },
+  {
+    "topic": "HSK 1~2 OX",
+    "type": "ox",
+    "question": "吗는 예/아니오 의문문을 만들 때 문장 끝에 붙일 수 있습니다.",
+    "answer": "O",
+    "explanation": "你好吗？처럼 문장 끝에 吗를 붙이면 의문문이 됩니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-181"
+  },
+  {
+    "topic": "HSK 1~2 OX",
+    "type": "ox",
+    "question": "是는 '~이다'라는 뜻의 판단동사입니다.",
+    "answer": "O",
+    "explanation": "我是学生처럼 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-182"
+  },
+  {
+    "topic": "HSK 1~2 OX",
+    "type": "ox",
+    "question": "有의 부정은 보통 不有입니다.",
+    "answer": "X",
+    "explanation": "有의 부정은 没有입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-183"
+  },
+  {
+    "topic": "HSK 1~2 OX",
+    "type": "ox",
+    "question": "과거 동작의 부정에는 没를 쓸 수 있습니다.",
+    "answer": "O",
+    "explanation": "我昨天没去처럼 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-184"
+  },
+  {
+    "topic": "HSK 1~2 OX",
+    "type": "ox",
+    "question": "的는 소유나 수식을 나타낼 수 있습니다.",
+    "answer": "O",
+    "explanation": "我的书처럼 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-185"
+  },
+  {
+    "topic": "HSK 1~2 OX",
+    "type": "ox",
+    "question": "在는 장소를 나타낼 수 있습니다.",
+    "answer": "O",
+    "explanation": "我在学校처럼 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-186"
+  },
+  {
+    "topic": "HSK 1~2 OX",
+    "type": "ox",
+    "question": "会는 배워서 할 줄 아는 능력을 나타낼 수 있습니다.",
+    "answer": "O",
+    "explanation": "我会说汉语처럼 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-187"
+  },
+  {
+    "topic": "HSK 1~2 OX",
+    "type": "ox",
+    "question": "一杯水에서 杯는 양사입니다.",
+    "answer": "O",
+    "explanation": "杯는 컵 단위의 양사입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-188"
+  },
+  {
+    "topic": "HSK 1~2 OX",
+    "type": "ox",
+    "question": "比는 비교 표현에 사용할 수 없습니다.",
+    "answer": "X",
+    "explanation": "A比B高처럼 비교 표현에 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-189"
+  },
+  {
+    "topic": "HSK 1~2 OX",
+    "type": "ox",
+    "question": "因为는 결과를 나타내고 所以는 원인을 나타냅니다.",
+    "answer": "X",
+    "explanation": "因为는 원인, 所以는 결과를 나타냅니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-190"
+  },
+  {
+    "topic": "HSK 1~2 OX",
+    "type": "ox",
+    "question": "正在은 동작이 진행 중임을 나타낼 수 있습니다.",
+    "answer": "O",
+    "explanation": "我正在吃饭처럼 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-191"
+  },
+  {
+    "topic": "HSK 1~2 OX",
+    "type": "ox",
+    "question": "不太는 '그다지 ~하지 않다'라는 뜻으로 쓸 수 있습니다.",
+    "answer": "O",
+    "explanation": "不太辣는 그다지 맵지 않다는 뜻입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-192"
+  },
+  {
+    "topic": "HSK 1~2 OX",
+    "type": "ox",
+    "question": "几는 작은 수량이나 나이를 물을 때 쓸 수 있습니다.",
+    "answer": "O",
+    "explanation": "几岁, 几个처럼 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-193"
+  },
+  {
+    "topic": "HSK 1~2 OX",
+    "type": "ox",
+    "question": "多少钱은 가격을 물을 때 쓰는 표현입니다.",
+    "answer": "O",
+    "explanation": "这个多少钱？처럼 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-194"
+  },
+  {
+    "topic": "HSK 1~2 OX",
+    "type": "ox",
+    "question": "还是는 평서문에서 '그리고'라는 뜻으로만 씁니다.",
+    "answer": "X",
+    "explanation": "의문문에서 A还是B는 A 아니면 B를 뜻합니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-195"
+  },
+  {
+    "topic": "HSK 1~2 OX",
+    "type": "ox",
+    "question": "离는 거리의 기준을 나타낼 수 있습니다.",
+    "answer": "O",
+    "explanation": "我家离学校很近처럼 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-196"
+  },
+  {
+    "topic": "HSK 1~2 OX",
+    "type": "ox",
+    "question": "坐는 앉다뿐 아니라 교통수단을 타다라는 뜻도 있습니다.",
+    "answer": "O",
+    "explanation": "坐地铁는 지하철을 타다입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-197"
+  },
+  {
+    "topic": "HSK 1~2 OX",
+    "type": "ox",
+    "question": "过는 경험을 나타내는 데 쓰일 수 있습니다.",
+    "answer": "O",
+    "explanation": "去过中国은 중국에 가 본 적이 있다는 뜻입니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-198"
+  },
+  {
+    "topic": "HSK 1~2 OX",
+    "type": "ox",
+    "question": "了는 동작의 완료를 나타낼 수 있습니다.",
+    "answer": "O",
+    "explanation": "我买了书처럼 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-199"
+  },
+  {
+    "topic": "HSK 1~2 OX",
+    "type": "ox",
+    "question": "请는 정중한 요청에 사용할 수 있습니다.",
+    "answer": "O",
+    "explanation": "请等一下처럼 씁니다.",
+    "subject": "중국어 초급",
+    "sourceLabel": "HSK 1~2",
+    "examStyle": "hsk-basic",
+    "difficulty": 2,
+    "id": "zh-basic-200"
+  }
+]

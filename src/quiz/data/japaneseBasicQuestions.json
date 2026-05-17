@@ -1,0 +1,3542 @@
+[
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\nわたしは 学生 ____ です。",
+    "choices": [
+      "が",
+      "を",
+      "に",
+      "は"
+    ],
+    "answer": "は",
+    "explanation": "は는 문장의 주제를 나타내는 조사입니다.",
+    "id": "jp-basic-001",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\n本 ____ 読みます。",
+    "choices": [
+      "を",
+      "に",
+      "で",
+      "へ"
+    ],
+    "answer": "を",
+    "explanation": "を는 동작의 대상을 나타냅니다.",
+    "id": "jp-basic-002",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\n学校 ____ 行きます。",
+    "choices": [
+      "へ",
+      "を",
+      "が",
+      "と"
+    ],
+    "answer": "へ",
+    "explanation": "へ는 이동의 방향을 나타냅니다.",
+    "id": "jp-basic-003",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\n7時 ____ 起きます。",
+    "choices": [
+      "に",
+      "を",
+      "で",
+      "が"
+    ],
+    "answer": "に",
+    "explanation": "に는 특정 시간을 나타낼 때 씁니다.",
+    "id": "jp-basic-004",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\n図書館 ____ 勉強します。",
+    "choices": [
+      "で",
+      "に",
+      "を",
+      "へ"
+    ],
+    "answer": "で",
+    "explanation": "で는 동작이 이루어지는 장소를 나타냅니다.",
+    "id": "jp-basic-005",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\n友だち ____ 映画を見ます。",
+    "choices": [
+      "と",
+      "を",
+      "が",
+      "に"
+    ],
+    "answer": "と",
+    "explanation": "と는 '~와/과 함께'라는 뜻입니다.",
+    "id": "jp-basic-006",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\n机の上 ____ ねこがいます。",
+    "choices": [
+      "に",
+      "で",
+      "を",
+      "へ"
+    ],
+    "answer": "に",
+    "explanation": "존재 장소에는 に를 씁니다.",
+    "id": "jp-basic-007",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\n日本語 ____ 少し わかります。",
+    "choices": [
+      "が",
+      "を",
+      "に",
+      "で"
+    ],
+    "answer": "が",
+    "explanation": "わかる와 함께 능력·대상을 나타낼 때 が를 자주 씁니다.",
+    "id": "jp-basic-008",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\nバス ____ 会社へ行きます。",
+    "choices": [
+      "で",
+      "に",
+      "を",
+      "が"
+    ],
+    "answer": "で",
+    "explanation": "교통수단에는 で를 씁니다.",
+    "id": "jp-basic-009",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\nこれは わたし ____ かばんです。",
+    "choices": [
+      "の",
+      "に",
+      "で",
+      "を"
+    ],
+    "answer": "の",
+    "explanation": "の는 소유나 수식을 나타냅니다.",
+    "id": "jp-basic-010",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\nわたしは 学生 ____ です。",
+    "choices": [
+      "が",
+      "を",
+      "に",
+      "は"
+    ],
+    "answer": "は",
+    "explanation": "は는 문장의 주제를 나타내는 조사입니다.",
+    "id": "jp-basic-011",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\n本 ____ 読みます。",
+    "choices": [
+      "を",
+      "に",
+      "で",
+      "へ"
+    ],
+    "answer": "を",
+    "explanation": "を는 동작의 대상을 나타냅니다.",
+    "id": "jp-basic-012",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\n学校 ____ 行きます。",
+    "choices": [
+      "へ",
+      "を",
+      "が",
+      "と"
+    ],
+    "answer": "へ",
+    "explanation": "へ는 이동의 방향을 나타냅니다.",
+    "id": "jp-basic-013",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\n7時 ____ 起きます。",
+    "choices": [
+      "に",
+      "を",
+      "で",
+      "が"
+    ],
+    "answer": "に",
+    "explanation": "に는 특정 시간을 나타낼 때 씁니다.",
+    "id": "jp-basic-014",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\n図書館 ____ 勉強します。",
+    "choices": [
+      "で",
+      "に",
+      "を",
+      "へ"
+    ],
+    "answer": "で",
+    "explanation": "で는 동작이 이루어지는 장소를 나타냅니다.",
+    "id": "jp-basic-015",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\n友だち ____ 映画を見ます。",
+    "choices": [
+      "と",
+      "を",
+      "が",
+      "に"
+    ],
+    "answer": "と",
+    "explanation": "と는 '~와/과 함께'라는 뜻입니다.",
+    "id": "jp-basic-016",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\n机の上 ____ ねこがいます。",
+    "choices": [
+      "に",
+      "で",
+      "を",
+      "へ"
+    ],
+    "answer": "に",
+    "explanation": "존재 장소에는 に를 씁니다.",
+    "id": "jp-basic-017",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\n日本語 ____ 少し わかります。",
+    "choices": [
+      "が",
+      "を",
+      "に",
+      "で"
+    ],
+    "answer": "が",
+    "explanation": "わかる와 함께 능력·대상을 나타낼 때 が를 자주 씁니다.",
+    "id": "jp-basic-018",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\nバス ____ 会社へ行きます。",
+    "choices": [
+      "で",
+      "に",
+      "を",
+      "が"
+    ],
+    "answer": "で",
+    "explanation": "교통수단에는 で를 씁니다.",
+    "id": "jp-basic-019",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\nこれは わたし ____ かばんです。",
+    "choices": [
+      "の",
+      "に",
+      "で",
+      "を"
+    ],
+    "answer": "の",
+    "explanation": "の는 소유나 수식을 나타냅니다.",
+    "id": "jp-basic-020",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\nわたしは 学生 ____ です。",
+    "choices": [
+      "が",
+      "を",
+      "に",
+      "は"
+    ],
+    "answer": "は",
+    "explanation": "は는 문장의 주제를 나타내는 조사입니다.",
+    "id": "jp-basic-021",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\n本 ____ 読みます。",
+    "choices": [
+      "を",
+      "に",
+      "で",
+      "へ"
+    ],
+    "answer": "を",
+    "explanation": "を는 동작의 대상을 나타냅니다.",
+    "id": "jp-basic-022",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\n学校 ____ 行きます。",
+    "choices": [
+      "へ",
+      "を",
+      "が",
+      "と"
+    ],
+    "answer": "へ",
+    "explanation": "へ는 이동의 방향을 나타냅니다.",
+    "id": "jp-basic-023",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\n7時 ____ 起きます。",
+    "choices": [
+      "に",
+      "を",
+      "で",
+      "が"
+    ],
+    "answer": "に",
+    "explanation": "に는 특정 시간을 나타낼 때 씁니다.",
+    "id": "jp-basic-024",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\n図書館 ____ 勉強します。",
+    "choices": [
+      "で",
+      "に",
+      "を",
+      "へ"
+    ],
+    "answer": "で",
+    "explanation": "で는 동작이 이루어지는 장소를 나타냅니다.",
+    "id": "jp-basic-025",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\n友だち ____ 映画を見ます。",
+    "choices": [
+      "と",
+      "を",
+      "が",
+      "に"
+    ],
+    "answer": "と",
+    "explanation": "と는 '~와/과 함께'라는 뜻입니다.",
+    "id": "jp-basic-026",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\n机の上 ____ ねこがいます。",
+    "choices": [
+      "に",
+      "で",
+      "を",
+      "へ"
+    ],
+    "answer": "に",
+    "explanation": "존재 장소에는 に를 씁니다.",
+    "id": "jp-basic-027",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\n日本語 ____ 少し わかります。",
+    "choices": [
+      "が",
+      "を",
+      "に",
+      "で"
+    ],
+    "answer": "が",
+    "explanation": "わかる와 함께 능력·대상을 나타낼 때 が를 자주 씁니다.",
+    "id": "jp-basic-028",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\nバス ____ 会社へ行きます。",
+    "choices": [
+      "で",
+      "に",
+      "を",
+      "が"
+    ],
+    "answer": "で",
+    "explanation": "교통수단에는 で를 씁니다.",
+    "id": "jp-basic-029",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\nこれは わたし ____ かばんです。",
+    "choices": [
+      "の",
+      "に",
+      "で",
+      "を"
+    ],
+    "answer": "の",
+    "explanation": "の는 소유나 수식을 나타냅니다.",
+    "id": "jp-basic-030",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\nわたしは 学生 ____ です。",
+    "choices": [
+      "が",
+      "を",
+      "に",
+      "は"
+    ],
+    "answer": "は",
+    "explanation": "は는 문장의 주제를 나타내는 조사입니다.",
+    "id": "jp-basic-031",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\n本 ____ 読みます。",
+    "choices": [
+      "を",
+      "に",
+      "で",
+      "へ"
+    ],
+    "answer": "を",
+    "explanation": "を는 동작의 대상을 나타냅니다.",
+    "id": "jp-basic-032",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\n学校 ____ 行きます。",
+    "choices": [
+      "へ",
+      "を",
+      "が",
+      "と"
+    ],
+    "answer": "へ",
+    "explanation": "へ는 이동의 방향을 나타냅니다.",
+    "id": "jp-basic-033",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\n7時 ____ 起きます。",
+    "choices": [
+      "に",
+      "を",
+      "で",
+      "が"
+    ],
+    "answer": "に",
+    "explanation": "に는 특정 시간을 나타낼 때 씁니다.",
+    "id": "jp-basic-034",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\n図書館 ____ 勉強します。",
+    "choices": [
+      "で",
+      "に",
+      "を",
+      "へ"
+    ],
+    "answer": "で",
+    "explanation": "で는 동작이 이루어지는 장소를 나타냅니다.",
+    "id": "jp-basic-035",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\n友だち ____ 映画を見ます。",
+    "choices": [
+      "と",
+      "を",
+      "が",
+      "に"
+    ],
+    "answer": "と",
+    "explanation": "と는 '~와/과 함께'라는 뜻입니다.",
+    "id": "jp-basic-036",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\n机の上 ____ ねこがいます。",
+    "choices": [
+      "に",
+      "で",
+      "を",
+      "へ"
+    ],
+    "answer": "に",
+    "explanation": "존재 장소에는 に를 씁니다.",
+    "id": "jp-basic-037",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\n日本語 ____ 少し わかります。",
+    "choices": [
+      "が",
+      "を",
+      "に",
+      "で"
+    ],
+    "answer": "が",
+    "explanation": "わかる와 함께 능력·대상을 나타낼 때 が를 자주 씁니다.",
+    "id": "jp-basic-038",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\nバス ____ 会社へ行きます。",
+    "choices": [
+      "で",
+      "に",
+      "を",
+      "が"
+    ],
+    "answer": "で",
+    "explanation": "교통수단에는 で를 씁니다.",
+    "id": "jp-basic-039",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\nこれは わたし ____ かばんです。",
+    "choices": [
+      "の",
+      "に",
+      "で",
+      "を"
+    ],
+    "answer": "の",
+    "explanation": "の는 소유나 수식을 나타냅니다.",
+    "id": "jp-basic-040",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\nわたしは 学生 ____ です。",
+    "choices": [
+      "が",
+      "を",
+      "に",
+      "は"
+    ],
+    "answer": "は",
+    "explanation": "は는 문장의 주제를 나타내는 조사입니다.",
+    "id": "jp-basic-041",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\n本 ____ 読みます。",
+    "choices": [
+      "を",
+      "に",
+      "で",
+      "へ"
+    ],
+    "answer": "を",
+    "explanation": "を는 동작의 대상을 나타냅니다.",
+    "id": "jp-basic-042",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\n学校 ____ 行きます。",
+    "choices": [
+      "へ",
+      "を",
+      "が",
+      "と"
+    ],
+    "answer": "へ",
+    "explanation": "へ는 이동의 방향을 나타냅니다.",
+    "id": "jp-basic-043",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\n7時 ____ 起きます。",
+    "choices": [
+      "に",
+      "を",
+      "で",
+      "が"
+    ],
+    "answer": "に",
+    "explanation": "に는 특정 시간을 나타낼 때 씁니다.",
+    "id": "jp-basic-044",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\n図書館 ____ 勉強します。",
+    "choices": [
+      "で",
+      "に",
+      "を",
+      "へ"
+    ],
+    "answer": "で",
+    "explanation": "で는 동작이 이루어지는 장소를 나타냅니다.",
+    "id": "jp-basic-045",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\n友だち ____ 映画を見ます。",
+    "choices": [
+      "と",
+      "を",
+      "が",
+      "に"
+    ],
+    "answer": "と",
+    "explanation": "と는 '~와/과 함께'라는 뜻입니다.",
+    "id": "jp-basic-046",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\n机の上 ____ ねこがいます。",
+    "choices": [
+      "に",
+      "で",
+      "を",
+      "へ"
+    ],
+    "answer": "に",
+    "explanation": "존재 장소에는 に를 씁니다.",
+    "id": "jp-basic-047",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\n日本語 ____ 少し わかります。",
+    "choices": [
+      "が",
+      "を",
+      "に",
+      "で"
+    ],
+    "answer": "が",
+    "explanation": "わかる와 함께 능력·대상을 나타낼 때 が를 자주 씁니다.",
+    "id": "jp-basic-048",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\nバス ____ 会社へ行きます。",
+    "choices": [
+      "で",
+      "に",
+      "を",
+      "が"
+    ],
+    "answer": "で",
+    "explanation": "교통수단에는 で를 씁니다.",
+    "id": "jp-basic-049",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "조사",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 조사를 고르세요.\nこれは わたし ____ かばんです。",
+    "choices": [
+      "の",
+      "に",
+      "で",
+      "を"
+    ],
+    "answer": "の",
+    "explanation": "の는 소유나 수식을 나타냅니다.",
+    "id": "jp-basic-050",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "食べます의 て형은?",
+    "choices": [
+      "食べて",
+      "食べって",
+      "食べんで",
+      "食べいて"
+    ],
+    "answer": "食べて",
+    "explanation": "る동사 食べる의 て형은 食べて입니다.",
+    "id": "jp-basic-051",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "行きます의 て형은?",
+    "choices": [
+      "行って",
+      "行いて",
+      "行んで",
+      "行して"
+    ],
+    "answer": "行って",
+    "explanation": "行く의 て형은 예외적으로 行って입니다.",
+    "id": "jp-basic-052",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "飲みます의 て형은?",
+    "choices": [
+      "飲んで",
+      "飲みて",
+      "飲って",
+      "飲いて"
+    ],
+    "answer": "飲んで",
+    "explanation": "む로 끝나는 동사의 て형은 んで가 됩니다.",
+    "id": "jp-basic-053",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "書きます의 て형은?",
+    "choices": [
+      "書いて",
+      "書って",
+      "書んで",
+      "書して"
+    ],
+    "answer": "書いて",
+    "explanation": "く로 끝나는 동사는 보통 いて가 됩니다.",
+    "id": "jp-basic-054",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "話します의 て형은?",
+    "choices": [
+      "話して",
+      "話って",
+      "話んで",
+      "話いて"
+    ],
+    "answer": "話して",
+    "explanation": "す로 끝나는 동사의 て형은 して입니다.",
+    "id": "jp-basic-055",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "見ます의 ない형은?",
+    "choices": [
+      "見ない",
+      "見らない",
+      "見くない",
+      "見しない"
+    ],
+    "answer": "見ない",
+    "explanation": "見る는 る동사이므로 ない형은 見ない입니다.",
+    "id": "jp-basic-056",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "高い의 과거형은?",
+    "choices": [
+      "高かったです",
+      "高いでした",
+      "高くでした",
+      "高かったでした"
+    ],
+    "answer": "高かったです",
+    "explanation": "い형용사의 과거형은 어미 い를 かった로 바꿉니다.",
+    "id": "jp-basic-057",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "静かです의 과거형은?",
+    "choices": [
+      "静かでした",
+      "静かったです",
+      "静かいでした",
+      "静かくでした"
+    ],
+    "answer": "静かでした",
+    "explanation": "な형용사/명사의 정중 과거형은 でした를 씁니다.",
+    "id": "jp-basic-058",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "読みたいです의 뜻은?",
+    "choices": [
+      "읽고 싶습니다",
+      "읽지 않습니다",
+      "읽었습니다",
+      "읽을 수 없습니다"
+    ],
+    "answer": "읽고 싶습니다",
+    "explanation": "동사의 ます형 어간 + たいです는 '~하고 싶습니다'입니다.",
+    "id": "jp-basic-059",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "食べてもいいです의 뜻은?",
+    "choices": [
+      "먹어도 됩니다",
+      "먹으면 안 됩니다",
+      "먹고 싶습니다",
+      "먹지 않았습니다"
+    ],
+    "answer": "먹어도 됩니다",
+    "explanation": "て형 + もいいです는 '~해도 됩니다'입니다.",
+    "id": "jp-basic-060",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "食べます의 て형은?",
+    "choices": [
+      "食べて",
+      "食べって",
+      "食べんで",
+      "食べいて"
+    ],
+    "answer": "食べて",
+    "explanation": "る동사 食べる의 て형은 食べて입니다.",
+    "id": "jp-basic-061",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "行きます의 て형은?",
+    "choices": [
+      "行って",
+      "行いて",
+      "行んで",
+      "行して"
+    ],
+    "answer": "行って",
+    "explanation": "行く의 て형은 예외적으로 行って입니다.",
+    "id": "jp-basic-062",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "飲みます의 て형은?",
+    "choices": [
+      "飲んで",
+      "飲みて",
+      "飲って",
+      "飲いて"
+    ],
+    "answer": "飲んで",
+    "explanation": "む로 끝나는 동사의 て형은 んで가 됩니다.",
+    "id": "jp-basic-063",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "書きます의 て형은?",
+    "choices": [
+      "書いて",
+      "書って",
+      "書んで",
+      "書して"
+    ],
+    "answer": "書いて",
+    "explanation": "く로 끝나는 동사는 보통 いて가 됩니다.",
+    "id": "jp-basic-064",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "話します의 て형은?",
+    "choices": [
+      "話して",
+      "話って",
+      "話んで",
+      "話いて"
+    ],
+    "answer": "話して",
+    "explanation": "す로 끝나는 동사의 て형은 して입니다.",
+    "id": "jp-basic-065",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "見ます의 ない형은?",
+    "choices": [
+      "見ない",
+      "見らない",
+      "見くない",
+      "見しない"
+    ],
+    "answer": "見ない",
+    "explanation": "見る는 る동사이므로 ない형은 見ない입니다.",
+    "id": "jp-basic-066",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "高い의 과거형은?",
+    "choices": [
+      "高かったです",
+      "高いでした",
+      "高くでした",
+      "高かったでした"
+    ],
+    "answer": "高かったです",
+    "explanation": "い형용사의 과거형은 어미 い를 かった로 바꿉니다.",
+    "id": "jp-basic-067",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "静かです의 과거형은?",
+    "choices": [
+      "静かでした",
+      "静かったです",
+      "静かいでした",
+      "静かくでした"
+    ],
+    "answer": "静かでした",
+    "explanation": "な형용사/명사의 정중 과거형은 でした를 씁니다.",
+    "id": "jp-basic-068",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "読みたいです의 뜻은?",
+    "choices": [
+      "읽고 싶습니다",
+      "읽지 않습니다",
+      "읽었습니다",
+      "읽을 수 없습니다"
+    ],
+    "answer": "읽고 싶습니다",
+    "explanation": "동사의 ます형 어간 + たいです는 '~하고 싶습니다'입니다.",
+    "id": "jp-basic-069",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "食べてもいいです의 뜻은?",
+    "choices": [
+      "먹어도 됩니다",
+      "먹으면 안 됩니다",
+      "먹고 싶습니다",
+      "먹지 않았습니다"
+    ],
+    "answer": "먹어도 됩니다",
+    "explanation": "て형 + もいいです는 '~해도 됩니다'입니다.",
+    "id": "jp-basic-070",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "食べます의 て형은?",
+    "choices": [
+      "食べて",
+      "食べって",
+      "食べんで",
+      "食べいて"
+    ],
+    "answer": "食べて",
+    "explanation": "る동사 食べる의 て형은 食べて입니다.",
+    "id": "jp-basic-071",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "行きます의 て형은?",
+    "choices": [
+      "行って",
+      "行いて",
+      "行んで",
+      "行して"
+    ],
+    "answer": "行って",
+    "explanation": "行く의 て형은 예외적으로 行って입니다.",
+    "id": "jp-basic-072",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "飲みます의 て형은?",
+    "choices": [
+      "飲んで",
+      "飲みて",
+      "飲って",
+      "飲いて"
+    ],
+    "answer": "飲んで",
+    "explanation": "む로 끝나는 동사의 て형은 んで가 됩니다.",
+    "id": "jp-basic-073",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "書きます의 て형은?",
+    "choices": [
+      "書いて",
+      "書って",
+      "書んで",
+      "書して"
+    ],
+    "answer": "書いて",
+    "explanation": "く로 끝나는 동사는 보통 いて가 됩니다.",
+    "id": "jp-basic-074",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "話します의 て형은?",
+    "choices": [
+      "話して",
+      "話って",
+      "話んで",
+      "話いて"
+    ],
+    "answer": "話して",
+    "explanation": "す로 끝나는 동사의 て형은 して입니다.",
+    "id": "jp-basic-075",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "見ます의 ない형은?",
+    "choices": [
+      "見ない",
+      "見らない",
+      "見くない",
+      "見しない"
+    ],
+    "answer": "見ない",
+    "explanation": "見る는 る동사이므로 ない형은 見ない입니다.",
+    "id": "jp-basic-076",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "高い의 과거형은?",
+    "choices": [
+      "高かったです",
+      "高いでした",
+      "高くでした",
+      "高かったでした"
+    ],
+    "answer": "高かったです",
+    "explanation": "い형용사의 과거형은 어미 い를 かった로 바꿉니다.",
+    "id": "jp-basic-077",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "静かです의 과거형은?",
+    "choices": [
+      "静かでした",
+      "静かったです",
+      "静かいでした",
+      "静かくでした"
+    ],
+    "answer": "静かでした",
+    "explanation": "な형용사/명사의 정중 과거형은 でした를 씁니다.",
+    "id": "jp-basic-078",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "読みたいです의 뜻은?",
+    "choices": [
+      "읽고 싶습니다",
+      "읽지 않습니다",
+      "읽었습니다",
+      "읽을 수 없습니다"
+    ],
+    "answer": "읽고 싶습니다",
+    "explanation": "동사의 ます형 어간 + たいです는 '~하고 싶습니다'입니다.",
+    "id": "jp-basic-079",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "食べてもいいです의 뜻은?",
+    "choices": [
+      "먹어도 됩니다",
+      "먹으면 안 됩니다",
+      "먹고 싶습니다",
+      "먹지 않았습니다"
+    ],
+    "answer": "먹어도 됩니다",
+    "explanation": "て형 + もいいです는 '~해도 됩니다'입니다.",
+    "id": "jp-basic-080",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "食べます의 て형은?",
+    "choices": [
+      "食べて",
+      "食べって",
+      "食べんで",
+      "食べいて"
+    ],
+    "answer": "食べて",
+    "explanation": "る동사 食べる의 て형은 食べて입니다.",
+    "id": "jp-basic-081",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "行きます의 て형은?",
+    "choices": [
+      "行って",
+      "行いて",
+      "行んで",
+      "行して"
+    ],
+    "answer": "行って",
+    "explanation": "行く의 て형은 예외적으로 行って입니다.",
+    "id": "jp-basic-082",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "飲みます의 て형은?",
+    "choices": [
+      "飲んで",
+      "飲みて",
+      "飲って",
+      "飲いて"
+    ],
+    "answer": "飲んで",
+    "explanation": "む로 끝나는 동사의 て형은 んで가 됩니다.",
+    "id": "jp-basic-083",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "書きます의 て형은?",
+    "choices": [
+      "書いて",
+      "書って",
+      "書んで",
+      "書して"
+    ],
+    "answer": "書いて",
+    "explanation": "く로 끝나는 동사는 보통 いて가 됩니다.",
+    "id": "jp-basic-084",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "話します의 て형은?",
+    "choices": [
+      "話して",
+      "話って",
+      "話んで",
+      "話いて"
+    ],
+    "answer": "話して",
+    "explanation": "す로 끝나는 동사의 て형은 して입니다.",
+    "id": "jp-basic-085",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "見ます의 ない형은?",
+    "choices": [
+      "見ない",
+      "見らない",
+      "見くない",
+      "見しない"
+    ],
+    "answer": "見ない",
+    "explanation": "見る는 る동사이므로 ない형은 見ない입니다.",
+    "id": "jp-basic-086",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "高い의 과거형은?",
+    "choices": [
+      "高かったです",
+      "高いでした",
+      "高くでした",
+      "高かったでした"
+    ],
+    "answer": "高かったです",
+    "explanation": "い형용사의 과거형은 어미 い를 かった로 바꿉니다.",
+    "id": "jp-basic-087",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "静かです의 과거형은?",
+    "choices": [
+      "静かでした",
+      "静かったです",
+      "静かいでした",
+      "静かくでした"
+    ],
+    "answer": "静かでした",
+    "explanation": "な형용사/명사의 정중 과거형은 でした를 씁니다.",
+    "id": "jp-basic-088",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "読みたいです의 뜻은?",
+    "choices": [
+      "읽고 싶습니다",
+      "읽지 않습니다",
+      "읽었습니다",
+      "읽을 수 없습니다"
+    ],
+    "answer": "읽고 싶습니다",
+    "explanation": "동사의 ます형 어간 + たいです는 '~하고 싶습니다'입니다.",
+    "id": "jp-basic-089",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "食べてもいいです의 뜻은?",
+    "choices": [
+      "먹어도 됩니다",
+      "먹으면 안 됩니다",
+      "먹고 싶습니다",
+      "먹지 않았습니다"
+    ],
+    "answer": "먹어도 됩니다",
+    "explanation": "て형 + もいいです는 '~해도 됩니다'입니다.",
+    "id": "jp-basic-090",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "食べます의 て형은?",
+    "choices": [
+      "食べて",
+      "食べって",
+      "食べんで",
+      "食べいて"
+    ],
+    "answer": "食べて",
+    "explanation": "る동사 食べる의 て형은 食べて입니다.",
+    "id": "jp-basic-091",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "行きます의 て형은?",
+    "choices": [
+      "行って",
+      "行いて",
+      "行んで",
+      "行して"
+    ],
+    "answer": "行って",
+    "explanation": "行く의 て형은 예외적으로 行って입니다.",
+    "id": "jp-basic-092",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "飲みます의 て형은?",
+    "choices": [
+      "飲んで",
+      "飲みて",
+      "飲って",
+      "飲いて"
+    ],
+    "answer": "飲んで",
+    "explanation": "む로 끝나는 동사의 て형은 んで가 됩니다.",
+    "id": "jp-basic-093",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "書きます의 て형은?",
+    "choices": [
+      "書いて",
+      "書って",
+      "書んで",
+      "書して"
+    ],
+    "answer": "書いて",
+    "explanation": "く로 끝나는 동사는 보통 いて가 됩니다.",
+    "id": "jp-basic-094",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "話します의 て형은?",
+    "choices": [
+      "話して",
+      "話って",
+      "話んで",
+      "話いて"
+    ],
+    "answer": "話して",
+    "explanation": "す로 끝나는 동사의 て형은 して입니다.",
+    "id": "jp-basic-095",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "見ます의 ない형은?",
+    "choices": [
+      "見ない",
+      "見らない",
+      "見くない",
+      "見しない"
+    ],
+    "answer": "見ない",
+    "explanation": "見る는 る동사이므로 ない형은 見ない입니다.",
+    "id": "jp-basic-096",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "高い의 과거형은?",
+    "choices": [
+      "高かったです",
+      "高いでした",
+      "高くでした",
+      "高かったでした"
+    ],
+    "answer": "高かったです",
+    "explanation": "い형용사의 과거형은 어미 い를 かった로 바꿉니다.",
+    "id": "jp-basic-097",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "静かです의 과거형은?",
+    "choices": [
+      "静かでした",
+      "静かったです",
+      "静かいでした",
+      "静かくでした"
+    ],
+    "answer": "静かでした",
+    "explanation": "な형용사/명사의 정중 과거형은 でした를 씁니다.",
+    "id": "jp-basic-098",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "読みたいです의 뜻은?",
+    "choices": [
+      "읽고 싶습니다",
+      "읽지 않습니다",
+      "읽었습니다",
+      "읽을 수 없습니다"
+    ],
+    "answer": "읽고 싶습니다",
+    "explanation": "동사의 ます형 어간 + たいです는 '~하고 싶습니다'입니다.",
+    "id": "jp-basic-099",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "동사·형용사 활용",
+    "type": "multiple",
+    "question": "食べてもいいです의 뜻은?",
+    "choices": [
+      "먹어도 됩니다",
+      "먹으면 안 됩니다",
+      "먹고 싶습니다",
+      "먹지 않았습니다"
+    ],
+    "answer": "먹어도 됩니다",
+    "explanation": "て형 + もいいです는 '~해도 됩니다'입니다.",
+    "id": "jp-basic-100",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n駅",
+    "choices": [
+      "역",
+      "학교",
+      "회사",
+      "공원"
+    ],
+    "answer": "역",
+    "explanation": "駅는 역이라는 뜻입니다.",
+    "id": "jp-basic-101",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n会社",
+    "choices": [
+      "회사",
+      "도서관",
+      "가게",
+      "병원"
+    ],
+    "answer": "회사",
+    "explanation": "会社는 회사라는 뜻입니다.",
+    "id": "jp-basic-102",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n図書館",
+    "choices": [
+      "도서관",
+      "은행",
+      "공항",
+      "방"
+    ],
+    "answer": "도서관",
+    "explanation": "図書館은 도서관이라는 뜻입니다.",
+    "id": "jp-basic-103",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n病院",
+    "choices": [
+      "병원",
+      "식당",
+      "학교",
+      "서점"
+    ],
+    "answer": "병원",
+    "explanation": "病院은 병원이라는 뜻입니다.",
+    "id": "jp-basic-104",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n新聞",
+    "choices": [
+      "신문",
+      "잡지",
+      "책상",
+      "편지"
+    ],
+    "answer": "신문",
+    "explanation": "新聞은 신문이라는 뜻입니다.",
+    "id": "jp-basic-105",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n手紙",
+    "choices": [
+      "편지",
+      "전화",
+      "사진",
+      "시계"
+    ],
+    "answer": "편지",
+    "explanation": "手紙는 편지라는 뜻입니다.",
+    "id": "jp-basic-106",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n写真",
+    "choices": [
+      "사진",
+      "의자",
+      "버스",
+      "음악"
+    ],
+    "answer": "사진",
+    "explanation": "写真은 사진이라는 뜻입니다.",
+    "id": "jp-basic-107",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n電車",
+    "choices": [
+      "전철",
+      "비행기",
+      "자전거",
+      "택시"
+    ],
+    "answer": "전철",
+    "explanation": "電車는 전철이라는 뜻입니다.",
+    "id": "jp-basic-108",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n暑い",
+    "choices": [
+      "덥다",
+      "춥다",
+      "넓다",
+      "좁다"
+    ],
+    "answer": "덥다",
+    "explanation": "暑い는 날씨가 덥다는 뜻입니다.",
+    "id": "jp-basic-109",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n寒い",
+    "choices": [
+      "춥다",
+      "덥다",
+      "뜨겁다",
+      "차갑다"
+    ],
+    "answer": "춥다",
+    "explanation": "寒い는 날씨가 춥다는 뜻입니다.",
+    "id": "jp-basic-110",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n高い",
+    "choices": [
+      "비싸다, 높다",
+      "싸다",
+      "낮다",
+      "멀다"
+    ],
+    "answer": "비싸다, 높다",
+    "explanation": "高い는 비싸다 또는 높다라는 뜻입니다.",
+    "id": "jp-basic-111",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n安い",
+    "choices": [
+      "싸다",
+      "비싸다",
+      "무겁다",
+      "가볍다"
+    ],
+    "answer": "싸다",
+    "explanation": "安い는 싸다라는 뜻입니다.",
+    "id": "jp-basic-112",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n忙しい",
+    "choices": [
+      "바쁘다",
+      "한가하다",
+      "조용하다",
+      "편리하다"
+    ],
+    "answer": "바쁘다",
+    "explanation": "忙しい는 바쁘다는 뜻입니다.",
+    "id": "jp-basic-113",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n便利",
+    "choices": [
+      "편리함",
+      "불편함",
+      "조용함",
+      "유명함"
+    ],
+    "answer": "편리함",
+    "explanation": "便利는 편리하다는 뜻의 な형용사입니다.",
+    "id": "jp-basic-114",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n好き",
+    "choices": [
+      "좋아함",
+      "싫어함",
+      "잘함",
+      "서툼"
+    ],
+    "answer": "좋아함",
+    "explanation": "好き는 좋아한다는 뜻입니다.",
+    "id": "jp-basic-115",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n駅",
+    "choices": [
+      "역",
+      "학교",
+      "회사",
+      "공원"
+    ],
+    "answer": "역",
+    "explanation": "駅는 역이라는 뜻입니다.",
+    "id": "jp-basic-116",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n会社",
+    "choices": [
+      "회사",
+      "도서관",
+      "가게",
+      "병원"
+    ],
+    "answer": "회사",
+    "explanation": "会社는 회사라는 뜻입니다.",
+    "id": "jp-basic-117",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n図書館",
+    "choices": [
+      "도서관",
+      "은행",
+      "공항",
+      "방"
+    ],
+    "answer": "도서관",
+    "explanation": "図書館은 도서관이라는 뜻입니다.",
+    "id": "jp-basic-118",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n病院",
+    "choices": [
+      "병원",
+      "식당",
+      "학교",
+      "서점"
+    ],
+    "answer": "병원",
+    "explanation": "病院은 병원이라는 뜻입니다.",
+    "id": "jp-basic-119",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n新聞",
+    "choices": [
+      "신문",
+      "잡지",
+      "책상",
+      "편지"
+    ],
+    "answer": "신문",
+    "explanation": "新聞은 신문이라는 뜻입니다.",
+    "id": "jp-basic-120",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n手紙",
+    "choices": [
+      "편지",
+      "전화",
+      "사진",
+      "시계"
+    ],
+    "answer": "편지",
+    "explanation": "手紙는 편지라는 뜻입니다.",
+    "id": "jp-basic-121",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n写真",
+    "choices": [
+      "사진",
+      "의자",
+      "버스",
+      "음악"
+    ],
+    "answer": "사진",
+    "explanation": "写真은 사진이라는 뜻입니다.",
+    "id": "jp-basic-122",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n電車",
+    "choices": [
+      "전철",
+      "비행기",
+      "자전거",
+      "택시"
+    ],
+    "answer": "전철",
+    "explanation": "電車는 전철이라는 뜻입니다.",
+    "id": "jp-basic-123",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n暑い",
+    "choices": [
+      "덥다",
+      "춥다",
+      "넓다",
+      "좁다"
+    ],
+    "answer": "덥다",
+    "explanation": "暑い는 날씨가 덥다는 뜻입니다.",
+    "id": "jp-basic-124",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n寒い",
+    "choices": [
+      "춥다",
+      "덥다",
+      "뜨겁다",
+      "차갑다"
+    ],
+    "answer": "춥다",
+    "explanation": "寒い는 날씨가 춥다는 뜻입니다.",
+    "id": "jp-basic-125",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n高い",
+    "choices": [
+      "비싸다, 높다",
+      "싸다",
+      "낮다",
+      "멀다"
+    ],
+    "answer": "비싸다, 높다",
+    "explanation": "高い는 비싸다 또는 높다라는 뜻입니다.",
+    "id": "jp-basic-126",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n安い",
+    "choices": [
+      "싸다",
+      "비싸다",
+      "무겁다",
+      "가볍다"
+    ],
+    "answer": "싸다",
+    "explanation": "安い는 싸다라는 뜻입니다.",
+    "id": "jp-basic-127",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n忙しい",
+    "choices": [
+      "바쁘다",
+      "한가하다",
+      "조용하다",
+      "편리하다"
+    ],
+    "answer": "바쁘다",
+    "explanation": "忙しい는 바쁘다는 뜻입니다.",
+    "id": "jp-basic-128",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n便利",
+    "choices": [
+      "편리함",
+      "불편함",
+      "조용함",
+      "유명함"
+    ],
+    "answer": "편리함",
+    "explanation": "便利는 편리하다는 뜻의 な형용사입니다.",
+    "id": "jp-basic-129",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n好き",
+    "choices": [
+      "좋아함",
+      "싫어함",
+      "잘함",
+      "서툼"
+    ],
+    "answer": "좋아함",
+    "explanation": "好き는 좋아한다는 뜻입니다.",
+    "id": "jp-basic-130",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n駅",
+    "choices": [
+      "역",
+      "학교",
+      "회사",
+      "공원"
+    ],
+    "answer": "역",
+    "explanation": "駅는 역이라는 뜻입니다.",
+    "id": "jp-basic-131",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n会社",
+    "choices": [
+      "회사",
+      "도서관",
+      "가게",
+      "병원"
+    ],
+    "answer": "회사",
+    "explanation": "会社는 회사라는 뜻입니다.",
+    "id": "jp-basic-132",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n図書館",
+    "choices": [
+      "도서관",
+      "은행",
+      "공항",
+      "방"
+    ],
+    "answer": "도서관",
+    "explanation": "図書館은 도서관이라는 뜻입니다.",
+    "id": "jp-basic-133",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n病院",
+    "choices": [
+      "병원",
+      "식당",
+      "학교",
+      "서점"
+    ],
+    "answer": "병원",
+    "explanation": "病院은 병원이라는 뜻입니다.",
+    "id": "jp-basic-134",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n新聞",
+    "choices": [
+      "신문",
+      "잡지",
+      "책상",
+      "편지"
+    ],
+    "answer": "신문",
+    "explanation": "新聞은 신문이라는 뜻입니다.",
+    "id": "jp-basic-135",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n手紙",
+    "choices": [
+      "편지",
+      "전화",
+      "사진",
+      "시계"
+    ],
+    "answer": "편지",
+    "explanation": "手紙는 편지라는 뜻입니다.",
+    "id": "jp-basic-136",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n写真",
+    "choices": [
+      "사진",
+      "의자",
+      "버스",
+      "음악"
+    ],
+    "answer": "사진",
+    "explanation": "写真은 사진이라는 뜻입니다.",
+    "id": "jp-basic-137",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n電車",
+    "choices": [
+      "전철",
+      "비행기",
+      "자전거",
+      "택시"
+    ],
+    "answer": "전철",
+    "explanation": "電車는 전철이라는 뜻입니다.",
+    "id": "jp-basic-138",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n暑い",
+    "choices": [
+      "덥다",
+      "춥다",
+      "넓다",
+      "좁다"
+    ],
+    "answer": "덥다",
+    "explanation": "暑い는 날씨가 덥다는 뜻입니다.",
+    "id": "jp-basic-139",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n寒い",
+    "choices": [
+      "춥다",
+      "덥다",
+      "뜨겁다",
+      "차갑다"
+    ],
+    "answer": "춥다",
+    "explanation": "寒い는 날씨가 춥다는 뜻입니다.",
+    "id": "jp-basic-140",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n高い",
+    "choices": [
+      "비싸다, 높다",
+      "싸다",
+      "낮다",
+      "멀다"
+    ],
+    "answer": "비싸다, 높다",
+    "explanation": "高い는 비싸다 또는 높다라는 뜻입니다.",
+    "id": "jp-basic-141",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n安い",
+    "choices": [
+      "싸다",
+      "비싸다",
+      "무겁다",
+      "가볍다"
+    ],
+    "answer": "싸다",
+    "explanation": "安い는 싸다라는 뜻입니다.",
+    "id": "jp-basic-142",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n忙しい",
+    "choices": [
+      "바쁘다",
+      "한가하다",
+      "조용하다",
+      "편리하다"
+    ],
+    "answer": "바쁘다",
+    "explanation": "忙しい는 바쁘다는 뜻입니다.",
+    "id": "jp-basic-143",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n便利",
+    "choices": [
+      "편리함",
+      "불편함",
+      "조용함",
+      "유명함"
+    ],
+    "answer": "편리함",
+    "explanation": "便利는 편리하다는 뜻의 な형용사입니다.",
+    "id": "jp-basic-144",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n好き",
+    "choices": [
+      "좋아함",
+      "싫어함",
+      "잘함",
+      "서툼"
+    ],
+    "answer": "좋아함",
+    "explanation": "好き는 좋아한다는 뜻입니다.",
+    "id": "jp-basic-145",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n駅",
+    "choices": [
+      "역",
+      "학교",
+      "회사",
+      "공원"
+    ],
+    "answer": "역",
+    "explanation": "駅는 역이라는 뜻입니다.",
+    "id": "jp-basic-146",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n会社",
+    "choices": [
+      "회사",
+      "도서관",
+      "가게",
+      "병원"
+    ],
+    "answer": "회사",
+    "explanation": "会社는 회사라는 뜻입니다.",
+    "id": "jp-basic-147",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n図書館",
+    "choices": [
+      "도서관",
+      "은행",
+      "공항",
+      "방"
+    ],
+    "answer": "도서관",
+    "explanation": "図書館은 도서관이라는 뜻입니다.",
+    "id": "jp-basic-148",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n病院",
+    "choices": [
+      "병원",
+      "식당",
+      "학교",
+      "서점"
+    ],
+    "answer": "병원",
+    "explanation": "病院은 병원이라는 뜻입니다.",
+    "id": "jp-basic-149",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "어휘",
+    "type": "multiple",
+    "question": "다음 일본어의 뜻으로 알맞은 것은?\n新聞",
+    "choices": [
+      "신문",
+      "잡지",
+      "책상",
+      "편지"
+    ],
+    "answer": "신문",
+    "explanation": "新聞은 신문이라는 뜻입니다.",
+    "id": "jp-basic-150",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n私は 毎日 コーヒーを 飲みます。",
+    "choices": [
+      "나는 매일 커피를 마십니다.",
+      "나는 어제 커피를 마셨습니다.",
+      "나는 커피를 마시지 않습니다.",
+      "나는 커피를 사고 싶습니다."
+    ],
+    "answer": "나는 매일 커피를 마십니다.",
+    "explanation": "私は는 나는, 毎日는 매일, 飲みます는 마십니다입니다.",
+    "id": "jp-basic-151",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\nきのう 友だちと 映画を 見ました。",
+    "choices": [
+      "어제 친구와 영화를 봤습니다.",
+      "내일 친구와 영화를 봅니다.",
+      "친구가 영화를 좋아합니다.",
+      "어제 혼자 영화를 봅니다."
+    ],
+    "answer": "어제 친구와 영화를 봤습니다.",
+    "explanation": "きのう는 어제, 友だちとは 친구와, 見ました는 봤습니다입니다.",
+    "id": "jp-basic-152",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\nこの店は とても 有名です。",
+    "choices": [
+      "이 가게는 매우 유명합니다.",
+      "이 가게는 매우 조용합니다.",
+      "이 가게는 멀리 있습니다.",
+      "이 가게는 비쌉니다."
+    ],
+    "answer": "이 가게는 매우 유명합니다.",
+    "explanation": "この店은 이 가게, とても는 매우, 有名です는 유명합니다입니다.",
+    "id": "jp-basic-153",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n部屋に だれも いません。",
+    "choices": [
+      "방에 아무도 없습니다.",
+      "방에 누군가 있습니다.",
+      "방에서 공부합니다.",
+      "방이 넓습니다."
+    ],
+    "answer": "방에 아무도 없습니다.",
+    "explanation": "だれもいません은 아무도 없습니다라는 뜻입니다.",
+    "id": "jp-basic-154",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n日本へ 行ったことが あります。",
+    "choices": [
+      "일본에 가 본 적이 있습니다.",
+      "일본에 가지 않았습니다.",
+      "일본에 가면 안 됩니다.",
+      "일본에 가고 싶지 않습니다."
+    ],
+    "answer": "일본에 가 본 적이 있습니다.",
+    "explanation": "たことがあります는 경험을 나타냅니다.",
+    "id": "jp-basic-155",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\nここで 写真を 撮ってもいいですか。",
+    "choices": [
+      "여기서 사진을 찍어도 됩니까?",
+      "여기서 사진을 찍으면 안 됩니다.",
+      "여기서 사진을 찍고 싶지 않습니다.",
+      "여기서 사진을 찍었습니다."
+    ],
+    "answer": "여기서 사진을 찍어도 됩니까?",
+    "explanation": "て形 + もいいですか는 '~해도 됩니까?'입니다.",
+    "id": "jp-basic-156",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\nこの漢字は 読めません。",
+    "choices": [
+      "이 한자는 읽을 수 없습니다.",
+      "이 한자는 읽었습니다.",
+      "이 한자는 읽고 싶습니다.",
+      "이 한자는 읽어야 합니다."
+    ],
+    "answer": "이 한자는 읽을 수 없습니다.",
+    "explanation": "読めません은 読む의 가능 부정형입니다.",
+    "id": "jp-basic-157",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n明日までに 宿題を しなければなりません。",
+    "choices": [
+      "내일까지 숙제를 해야 합니다.",
+      "내일 숙제를 하지 않아도 됩니다.",
+      "내일 숙제를 하고 싶습니다.",
+      "내일 숙제를 했습니다."
+    ],
+    "answer": "내일까지 숙제를 해야 합니다.",
+    "explanation": "しなければなりません은 해야 합니다라는 뜻입니다.",
+    "id": "jp-basic-158",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\nこの料理は 辛くないです。",
+    "choices": [
+      "이 요리는 맵지 않습니다.",
+      "이 요리는 매웠습니다.",
+      "이 요리는 맵습니다.",
+      "이 요리는 맛있습니다."
+    ],
+    "answer": "이 요리는 맵지 않습니다.",
+    "explanation": "辛い의 부정형은 辛くない입니다.",
+    "id": "jp-basic-159",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n駅まで 歩いて 10分です。",
+    "choices": [
+      "역까지 걸어서 10분입니다.",
+      "역에서 10분 기다립니다.",
+      "역까지 전철로 갑니다.",
+      "역은 10시에 닫습니다."
+    ],
+    "answer": "역까지 걸어서 10분입니다.",
+    "explanation": "歩いて는 걸어서, 10分です는 10분입니다라는 뜻입니다.",
+    "id": "jp-basic-160",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n私は 毎日 コーヒーを 飲みます。",
+    "choices": [
+      "나는 매일 커피를 마십니다.",
+      "나는 어제 커피를 마셨습니다.",
+      "나는 커피를 마시지 않습니다.",
+      "나는 커피를 사고 싶습니다."
+    ],
+    "answer": "나는 매일 커피를 마십니다.",
+    "explanation": "私は는 나는, 毎日는 매일, 飲みます는 마십니다입니다.",
+    "id": "jp-basic-161",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\nきのう 友だちと 映画を 見ました。",
+    "choices": [
+      "어제 친구와 영화를 봤습니다.",
+      "내일 친구와 영화를 봅니다.",
+      "친구가 영화를 좋아합니다.",
+      "어제 혼자 영화를 봅니다."
+    ],
+    "answer": "어제 친구와 영화를 봤습니다.",
+    "explanation": "きのう는 어제, 友だちとは 친구와, 見ました는 봤습니다입니다.",
+    "id": "jp-basic-162",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\nこの店は とても 有名です。",
+    "choices": [
+      "이 가게는 매우 유명합니다.",
+      "이 가게는 매우 조용합니다.",
+      "이 가게는 멀리 있습니다.",
+      "이 가게는 비쌉니다."
+    ],
+    "answer": "이 가게는 매우 유명합니다.",
+    "explanation": "この店은 이 가게, とても는 매우, 有名です는 유명합니다입니다.",
+    "id": "jp-basic-163",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n部屋に だれも いません。",
+    "choices": [
+      "방에 아무도 없습니다.",
+      "방에 누군가 있습니다.",
+      "방에서 공부합니다.",
+      "방이 넓습니다."
+    ],
+    "answer": "방에 아무도 없습니다.",
+    "explanation": "だれもいません은 아무도 없습니다라는 뜻입니다.",
+    "id": "jp-basic-164",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n日本へ 行ったことが あります。",
+    "choices": [
+      "일본에 가 본 적이 있습니다.",
+      "일본에 가지 않았습니다.",
+      "일본에 가면 안 됩니다.",
+      "일본에 가고 싶지 않습니다."
+    ],
+    "answer": "일본에 가 본 적이 있습니다.",
+    "explanation": "たことがあります는 경험을 나타냅니다.",
+    "id": "jp-basic-165",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\nここで 写真を 撮ってもいいですか。",
+    "choices": [
+      "여기서 사진을 찍어도 됩니까?",
+      "여기서 사진을 찍으면 안 됩니다.",
+      "여기서 사진을 찍고 싶지 않습니다.",
+      "여기서 사진을 찍었습니다."
+    ],
+    "answer": "여기서 사진을 찍어도 됩니까?",
+    "explanation": "て形 + もいいですか는 '~해도 됩니까?'입니다.",
+    "id": "jp-basic-166",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\nこの漢字は 読めません。",
+    "choices": [
+      "이 한자는 읽을 수 없습니다.",
+      "이 한자는 읽었습니다.",
+      "이 한자는 읽고 싶습니다.",
+      "이 한자는 읽어야 합니다."
+    ],
+    "answer": "이 한자는 읽을 수 없습니다.",
+    "explanation": "読めません은 読む의 가능 부정형입니다.",
+    "id": "jp-basic-167",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n明日までに 宿題を しなければなりません。",
+    "choices": [
+      "내일까지 숙제를 해야 합니다.",
+      "내일 숙제를 하지 않아도 됩니다.",
+      "내일 숙제를 하고 싶습니다.",
+      "내일 숙제를 했습니다."
+    ],
+    "answer": "내일까지 숙제를 해야 합니다.",
+    "explanation": "しなければなりません은 해야 합니다라는 뜻입니다.",
+    "id": "jp-basic-168",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\nこの料理は 辛くないです。",
+    "choices": [
+      "이 요리는 맵지 않습니다.",
+      "이 요리는 매웠습니다.",
+      "이 요리는 맵습니다.",
+      "이 요리는 맛있습니다."
+    ],
+    "answer": "이 요리는 맵지 않습니다.",
+    "explanation": "辛い의 부정형은 辛くない입니다.",
+    "id": "jp-basic-169",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n駅まで 歩いて 10分です。",
+    "choices": [
+      "역까지 걸어서 10분입니다.",
+      "역에서 10분 기다립니다.",
+      "역까지 전철로 갑니다.",
+      "역은 10시에 닫습니다."
+    ],
+    "answer": "역까지 걸어서 10분입니다.",
+    "explanation": "歩いて는 걸어서, 10分です는 10분입니다라는 뜻입니다.",
+    "id": "jp-basic-170",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n私は 毎日 コーヒーを 飲みます。",
+    "choices": [
+      "나는 매일 커피를 마십니다.",
+      "나는 어제 커피를 마셨습니다.",
+      "나는 커피를 마시지 않습니다.",
+      "나는 커피를 사고 싶습니다."
+    ],
+    "answer": "나는 매일 커피를 마십니다.",
+    "explanation": "私は는 나는, 毎日는 매일, 飲みます는 마십니다입니다.",
+    "id": "jp-basic-171",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\nきのう 友だちと 映画を 見ました。",
+    "choices": [
+      "어제 친구와 영화를 봤습니다.",
+      "내일 친구와 영화를 봅니다.",
+      "친구가 영화를 좋아합니다.",
+      "어제 혼자 영화를 봅니다."
+    ],
+    "answer": "어제 친구와 영화를 봤습니다.",
+    "explanation": "きのう는 어제, 友だちとは 친구와, 見ました는 봤습니다입니다.",
+    "id": "jp-basic-172",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\nこの店は とても 有名です。",
+    "choices": [
+      "이 가게는 매우 유명합니다.",
+      "이 가게는 매우 조용합니다.",
+      "이 가게는 멀리 있습니다.",
+      "이 가게는 비쌉니다."
+    ],
+    "answer": "이 가게는 매우 유명합니다.",
+    "explanation": "この店은 이 가게, とても는 매우, 有名です는 유명합니다입니다.",
+    "id": "jp-basic-173",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n部屋に だれも いません。",
+    "choices": [
+      "방에 아무도 없습니다.",
+      "방에 누군가 있습니다.",
+      "방에서 공부합니다.",
+      "방이 넓습니다."
+    ],
+    "answer": "방에 아무도 없습니다.",
+    "explanation": "だれもいません은 아무도 없습니다라는 뜻입니다.",
+    "id": "jp-basic-174",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n日本へ 行ったことが あります。",
+    "choices": [
+      "일본에 가 본 적이 있습니다.",
+      "일본에 가지 않았습니다.",
+      "일본에 가면 안 됩니다.",
+      "일본에 가고 싶지 않습니다."
+    ],
+    "answer": "일본에 가 본 적이 있습니다.",
+    "explanation": "たことがあります는 경험을 나타냅니다.",
+    "id": "jp-basic-175",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\nここで 写真を 撮ってもいいですか。",
+    "choices": [
+      "여기서 사진을 찍어도 됩니까?",
+      "여기서 사진을 찍으면 안 됩니다.",
+      "여기서 사진을 찍고 싶지 않습니다.",
+      "여기서 사진을 찍었습니다."
+    ],
+    "answer": "여기서 사진을 찍어도 됩니까?",
+    "explanation": "て形 + もいいですか는 '~해도 됩니까?'입니다.",
+    "id": "jp-basic-176",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\nこの漢字は 読めません。",
+    "choices": [
+      "이 한자는 읽을 수 없습니다.",
+      "이 한자는 읽었습니다.",
+      "이 한자는 읽고 싶습니다.",
+      "이 한자는 읽어야 합니다."
+    ],
+    "answer": "이 한자는 읽을 수 없습니다.",
+    "explanation": "読めません은 読む의 가능 부정형입니다.",
+    "id": "jp-basic-177",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n明日までに 宿題を しなければなりません。",
+    "choices": [
+      "내일까지 숙제를 해야 합니다.",
+      "내일 숙제를 하지 않아도 됩니다.",
+      "내일 숙제를 하고 싶습니다.",
+      "내일 숙제를 했습니다."
+    ],
+    "answer": "내일까지 숙제를 해야 합니다.",
+    "explanation": "しなければなりません은 해야 합니다라는 뜻입니다.",
+    "id": "jp-basic-178",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\nこの料理は 辛くないです。",
+    "choices": [
+      "이 요리는 맵지 않습니다.",
+      "이 요리는 매웠습니다.",
+      "이 요리는 맵습니다.",
+      "이 요리는 맛있습니다."
+    ],
+    "answer": "이 요리는 맵지 않습니다.",
+    "explanation": "辛い의 부정형은 辛くない입니다.",
+    "id": "jp-basic-179",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n駅まで 歩いて 10分です。",
+    "choices": [
+      "역까지 걸어서 10분입니다.",
+      "역에서 10분 기다립니다.",
+      "역까지 전철로 갑니다.",
+      "역은 10시에 닫습니다."
+    ],
+    "answer": "역까지 걸어서 10분입니다.",
+    "explanation": "歩いて는 걸어서, 10分です는 10분입니다라는 뜻입니다.",
+    "id": "jp-basic-180",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n私は 毎日 コーヒーを 飲みます。",
+    "choices": [
+      "나는 매일 커피를 마십니다.",
+      "나는 어제 커피를 마셨습니다.",
+      "나는 커피를 마시지 않습니다.",
+      "나는 커피를 사고 싶습니다."
+    ],
+    "answer": "나는 매일 커피를 마십니다.",
+    "explanation": "私は는 나는, 毎日는 매일, 飲みます는 마십니다입니다.",
+    "id": "jp-basic-181",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\nきのう 友だちと 映画を 見ました。",
+    "choices": [
+      "어제 친구와 영화를 봤습니다.",
+      "내일 친구와 영화를 봅니다.",
+      "친구가 영화를 좋아합니다.",
+      "어제 혼자 영화를 봅니다."
+    ],
+    "answer": "어제 친구와 영화를 봤습니다.",
+    "explanation": "きのう는 어제, 友だちとは 친구와, 見ました는 봤습니다입니다.",
+    "id": "jp-basic-182",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\nこの店は とても 有名です。",
+    "choices": [
+      "이 가게는 매우 유명합니다.",
+      "이 가게는 매우 조용합니다.",
+      "이 가게는 멀리 있습니다.",
+      "이 가게는 비쌉니다."
+    ],
+    "answer": "이 가게는 매우 유명합니다.",
+    "explanation": "この店은 이 가게, とても는 매우, 有名です는 유명합니다입니다.",
+    "id": "jp-basic-183",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n部屋に だれも いません。",
+    "choices": [
+      "방에 아무도 없습니다.",
+      "방에 누군가 있습니다.",
+      "방에서 공부합니다.",
+      "방이 넓습니다."
+    ],
+    "answer": "방에 아무도 없습니다.",
+    "explanation": "だれもいません은 아무도 없습니다라는 뜻입니다.",
+    "id": "jp-basic-184",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n日本へ 行ったことが あります。",
+    "choices": [
+      "일본에 가 본 적이 있습니다.",
+      "일본에 가지 않았습니다.",
+      "일본에 가면 안 됩니다.",
+      "일본에 가고 싶지 않습니다."
+    ],
+    "answer": "일본에 가 본 적이 있습니다.",
+    "explanation": "たことがあります는 경험을 나타냅니다.",
+    "id": "jp-basic-185",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\nここで 写真を 撮ってもいいですか。",
+    "choices": [
+      "여기서 사진을 찍어도 됩니까?",
+      "여기서 사진을 찍으면 안 됩니다.",
+      "여기서 사진을 찍고 싶지 않습니다.",
+      "여기서 사진을 찍었습니다."
+    ],
+    "answer": "여기서 사진을 찍어도 됩니까?",
+    "explanation": "て形 + もいいですか는 '~해도 됩니까?'입니다.",
+    "id": "jp-basic-186",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\nこの漢字は 読めません。",
+    "choices": [
+      "이 한자는 읽을 수 없습니다.",
+      "이 한자는 읽었습니다.",
+      "이 한자는 읽고 싶습니다.",
+      "이 한자는 읽어야 합니다."
+    ],
+    "answer": "이 한자는 읽을 수 없습니다.",
+    "explanation": "読めません은 読む의 가능 부정형입니다.",
+    "id": "jp-basic-187",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n明日までに 宿題を しなければなりません。",
+    "choices": [
+      "내일까지 숙제를 해야 합니다.",
+      "내일 숙제를 하지 않아도 됩니다.",
+      "내일 숙제를 하고 싶습니다.",
+      "내일 숙제를 했습니다."
+    ],
+    "answer": "내일까지 숙제를 해야 합니다.",
+    "explanation": "しなければなりません은 해야 합니다라는 뜻입니다.",
+    "id": "jp-basic-188",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\nこの料理は 辛くないです。",
+    "choices": [
+      "이 요리는 맵지 않습니다.",
+      "이 요리는 매웠습니다.",
+      "이 요리는 맵습니다.",
+      "이 요리는 맛있습니다."
+    ],
+    "answer": "이 요리는 맵지 않습니다.",
+    "explanation": "辛い의 부정형은 辛くない입니다.",
+    "id": "jp-basic-189",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 알맞은 것은?\n駅まで 歩いて 10分です。",
+    "choices": [
+      "역까지 걸어서 10분입니다.",
+      "역에서 10분 기다립니다.",
+      "역까지 전철로 갑니다.",
+      "역은 10시에 닫습니다."
+    ],
+    "answer": "역까지 걸어서 10분입니다.",
+    "explanation": "歩いて는 걸어서, 10分です는 10분입니다라는 뜻입니다.",
+    "id": "jp-basic-190",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "일본어 OX",
+    "type": "ox",
+    "question": "を는 동작의 대상을 나타낼 때 사용할 수 있습니다.",
+    "answer": "O",
+    "explanation": "本を読む처럼 동작의 대상에 を를 씁니다.",
+    "id": "jp-basic-191",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "일본어 OX",
+    "type": "ox",
+    "question": "で는 동작이 이루어지는 장소를 나타낼 수 있습니다.",
+    "answer": "O",
+    "explanation": "図書館で勉強します처럼 장소에 で를 씁니다.",
+    "id": "jp-basic-192",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "일본어 OX",
+    "type": "ox",
+    "question": "に는 특정 시간을 나타낼 때 사용할 수 있습니다.",
+    "answer": "O",
+    "explanation": "7時に起きます처럼 특정 시간에 に를 씁니다.",
+    "id": "jp-basic-193",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "일본어 OX",
+    "type": "ox",
+    "question": "へ는 이동의 방향을 나타낼 수 있습니다.",
+    "answer": "O",
+    "explanation": "学校へ行きます처럼 이동 방향에 へ를 씁니다.",
+    "id": "jp-basic-194",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "일본어 OX",
+    "type": "ox",
+    "question": "食べます의 て형은 食べって입니다.",
+    "answer": "X",
+    "explanation": "食べる의 て형은 食べて입니다.",
+    "id": "jp-basic-195",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "일본어 OX",
+    "type": "ox",
+    "question": "行きます의 て형은 行って입니다.",
+    "answer": "O",
+    "explanation": "行く의 て형은 예외적으로 行って입니다.",
+    "id": "jp-basic-196",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "일본어 OX",
+    "type": "ox",
+    "question": "い형용사의 과거형은 보통 かった를 사용합니다.",
+    "answer": "O",
+    "explanation": "高い → 高かった처럼 바뀝니다.",
+    "id": "jp-basic-197",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "일본어 OX",
+    "type": "ox",
+    "question": "な형용사의 정중 부정은 ではありません을 사용할 수 있습니다.",
+    "answer": "O",
+    "explanation": "静かではありません처럼 씁니다.",
+    "id": "jp-basic-198",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "일본어 OX",
+    "type": "ox",
+    "question": "たことがあります는 경험을 나타낼 수 있습니다.",
+    "answer": "O",
+    "explanation": "行ったことがあります는 가 본 적이 있습니다라는 뜻입니다.",
+    "id": "jp-basic-199",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  },
+  {
+    "topic": "일본어 OX",
+    "type": "ox",
+    "question": "てはいけません은 허가를 나타내는 표현입니다.",
+    "answer": "X",
+    "explanation": "てはいけません은 금지를 나타내며, 허가는 てもいいです를 씁니다.",
+    "id": "jp-basic-200",
+    "subject": "일본어 초급",
+    "sourceLabel": "JLPT N5~N4",
+    "examStyle": "jlpt-basic",
+    "difficulty": 2
+  }
+]

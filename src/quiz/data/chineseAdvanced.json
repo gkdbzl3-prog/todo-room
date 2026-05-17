@@ -1,0 +1,3022 @@
+[
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n这份报告需要在明天上午之前 ____ 给经理。",
+        "choices": [
+            "提交",
+            "提高",
+            "提醒",
+            "提前"
+        ],
+        "answer": "提交",
+        "explanation": "提交는 문서나 보고서를 제출한다는 뜻입니다.",
+        "id": "zh-advanced-001",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n经过一段时间的练习，他的发音 ____ 变得自然了。",
+        "choices": [
+            "逐渐",
+            "偶然",
+            "临时",
+            "顺便"
+        ],
+        "answer": "逐渐",
+        "explanation": "逐渐은 ‘점차, 차츰’이라는 뜻입니다.",
+        "id": "zh-advanced-002",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n要解决这个问题，首先要 ____ 原因。",
+        "choices": [
+            "分析",
+            "交换",
+            "适应",
+            "证明"
+        ],
+        "answer": "分析",
+        "explanation": "分析原因은 ‘원인을 분석하다’라는 자연스러운 표현입니다.",
+        "id": "zh-advanced-003",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n为了 ____ 错误，提交之前应该再检查一遍。",
+        "choices": [
+            "避免",
+            "满足",
+            "缺乏",
+            "忽视"
+        ],
+        "answer": "避免",
+        "explanation": "避免는 ‘피하다, 방지하다’라는 뜻입니다.",
+        "id": "zh-advanced-004",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n他必须 ____ 这个项目的结果。",
+        "choices": [
+            "承担",
+            "打扰",
+            "观察",
+            "登记"
+        ],
+        "answer": "承担",
+        "explanation": "承担责任은 ‘책임을 지다’라는 뜻입니다.",
+        "id": "zh-advanced-005",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n他的说明 ____ 很专业。",
+        "choices": [
+            "显得",
+            "显然",
+            "显示",
+            "出现"
+        ],
+        "answer": "显得",
+        "explanation": "显得는 ‘~해 보이다’라는 뜻입니다.",
+        "id": "zh-advanced-006",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n上大学以后，他开始 ____ 地生活。",
+        "choices": [
+            "独立",
+            "单纯",
+            "孤单",
+            "唯一"
+        ],
+        "answer": "独立",
+        "explanation": "独立地生活는 ‘독립적으로 생활하다’라는 뜻입니다.",
+        "id": "zh-advanced-007",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n改变方法以后，工作 ____ 明显提高了。",
+        "choices": [
+            "效率",
+            "情绪",
+            "态度",
+            "材料"
+        ],
+        "answer": "效率",
+        "explanation": "效率는 ‘효율’이라는 뜻입니다.",
+        "id": "zh-advanced-008",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n这个问题不在我们讨论的 ____ 之内。",
+        "choices": [
+            "范围",
+            "程度",
+            "速度",
+            "距离"
+        ],
+        "answer": "范围",
+        "explanation": "范围는 ‘범위’라는 뜻입니다.",
+        "id": "zh-advanced-009",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n我不完全同意他的 ____。",
+        "choices": [
+            "观点",
+            "光线",
+            "外表",
+            "资格"
+        ],
+        "answer": "观点",
+        "explanation": "观点는 ‘관점, 견해’라는 뜻입니다.",
+        "id": "zh-advanced-010",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n我们需要制定一个更 ____ 的计划。",
+        "choices": [
+            "具体",
+            "孤立",
+            "普通",
+            "巨大"
+        ],
+        "answer": "具体",
+        "explanation": "具体는 ‘구체적인’이라는 뜻입니다.",
+        "id": "zh-advanced-011",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n即使是小问题，也不能 ____。",
+        "choices": [
+            "忽视",
+            "尊重",
+            "保持",
+            "改善"
+        ],
+        "answer": "忽视",
+        "explanation": "忽视는 ‘무시하다, 소홀히 하다’라는 뜻입니다.",
+        "id": "zh-advanced-012",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n开始运动以后，他的睡眠状况有所 ____。",
+        "choices": [
+            "改善",
+            "扩大",
+            "推迟",
+            "下降"
+        ],
+        "answer": "改善",
+        "explanation": "改善는 ‘개선하다’라는 뜻입니다.",
+        "id": "zh-advanced-013",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n这个应用可以 ____ 每天的使用时间。",
+        "choices": [
+            "限制",
+            "联系",
+            "训练",
+            "安排"
+        ],
+        "answer": "限制",
+        "explanation": "限制는 ‘제한하다’라는 뜻입니다.",
+        "id": "zh-advanced-014",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n如果有问题，请随时和我 ____。",
+        "choices": [
+            "联系",
+            "联想",
+            "联合",
+            "练习"
+        ],
+        "answer": "联系",
+        "explanation": "联系는 ‘연락하다’라는 뜻입니다.",
+        "id": "zh-advanced-015",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n这个计划还没有得到领导的 ____。",
+        "choices": [
+            "批准",
+            "批评",
+            "批判",
+            "批发"
+        ],
+        "answer": "批准",
+        "explanation": "批准은 ‘승인하다, 승인’이라는 뜻입니다.",
+        "id": "zh-advanced-016",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n由于暴雨，会议被 ____ 到下周。",
+        "choices": [
+            "推迟",
+            "推广",
+            "推动",
+            "推荐"
+        ],
+        "answer": "推迟",
+        "explanation": "推迟는 ‘연기하다, 미루다’라는 뜻입니다.",
+        "id": "zh-advanced-017",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n他详细 ____ 了自己的选择。",
+        "choices": [
+            "解释",
+            "解放",
+            "解决",
+            "解除"
+        ],
+        "answer": "解释",
+        "explanation": "解释는 ‘설명하다’라는 뜻입니다.",
+        "id": "zh-advanced-018",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n要 ____ 健康，就要有规律地生活。",
+        "choices": [
+            "保持",
+            "保护",
+            "保留",
+            "保证"
+        ],
+        "answer": "保持",
+        "explanation": "保持健康는 ‘건강을 유지하다’라는 뜻입니다.",
+        "id": "zh-advanced-019",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n____ 别人的意见很重要。",
+        "choices": [
+            "尊重",
+            "严重",
+            "慎重",
+            "珍惜"
+        ],
+        "answer": "尊重",
+        "explanation": "尊重는 ‘존중하다’라는 뜻입니다.",
+        "id": "zh-advanced-020",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n老师 ____ 了复习的重要性。",
+        "choices": [
+            "强调",
+            "强迫",
+            "强烈",
+            "坚强"
+        ],
+        "answer": "强调",
+        "explanation": "强调는 ‘강조하다’라는 뜻입니다.",
+        "id": "zh-advanced-021",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n这份材料可以 ____ 他说的是事实。",
+        "choices": [
+            "证明",
+            "声明",
+            "表明",
+            "说明"
+        ],
+        "answer": "证明",
+        "explanation": "证明은 ‘증명하다’라는 뜻입니다.",
+        "id": "zh-advanced-022",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n时间也是一种重要的 ____。",
+        "choices": [
+            "资源",
+            "资格",
+            "资本",
+            "资料"
+        ],
+        "answer": "资源",
+        "explanation": "资源은 ‘자원’이라는 뜻입니다.",
+        "id": "zh-advanced-023",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n为了准备考试，我整理了相关 ____。",
+        "choices": [
+            "资料",
+            "资源",
+            "资本",
+            "资格"
+        ],
+        "answer": "资料",
+        "explanation": "资料는 ‘자료’라는 뜻입니다.",
+        "id": "zh-advanced-024",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n他有参加这次比赛的 ____。",
+        "choices": [
+            "资格",
+            "资料",
+            "资源",
+            "资金"
+        ],
+        "answer": "资格",
+        "explanation": "资格는 ‘자격’이라는 뜻입니다.",
+        "id": "zh-advanced-025",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n他的 ____ 比以前积极多了。",
+        "choices": [
+            "态度",
+            "温度",
+            "速度",
+            "制度"
+        ],
+        "answer": "态度",
+        "explanation": "态度는 ‘태도’라는 뜻입니다.",
+        "id": "zh-advanced-026",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n有压力的时候，控制 ____ 很重要。",
+        "choices": [
+            "情绪",
+            "情况",
+            "情节",
+            "情景"
+        ],
+        "answer": "情绪",
+        "explanation": "情绪는 ‘감정, 정서’라는 뜻입니다.",
+        "id": "zh-advanced-027",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n工作变多以后，他感到很大的 ____。",
+        "choices": [
+            "压力",
+            "能力",
+            "动力",
+            "活力"
+        ],
+        "answer": "压力",
+        "explanation": "压力는 ‘압박, 스트레스’라는 뜻입니다.",
+        "id": "zh-advanced-028",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n表扬可以给孩子学习的 ____。",
+        "choices": [
+            "动力",
+            "压力",
+            "能力",
+            "权利"
+        ],
+        "answer": "动力",
+        "explanation": "动力는 ‘동기, 추진력’이라는 뜻입니다.",
+        "id": "zh-advanced-029",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n解决问题的 ____ 可以通过练习提高。",
+        "choices": [
+            "能力",
+            "权利",
+            "动力",
+            "魅力"
+        ],
+        "answer": "能力",
+        "explanation": "能力는 ‘능력’이라는 뜻입니다.",
+        "id": "zh-advanced-030",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n每个人都应该保护自己的 ____。",
+        "choices": [
+            "权利",
+            "权力",
+            "全力",
+            "权益"
+        ],
+        "answer": "权利",
+        "explanation": "权利는 ‘권리’이고, 权力는 ‘권력’에 가깝습니다.",
+        "id": "zh-advanced-031",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n____ 应该受到法律的限制。",
+        "choices": [
+            "权力",
+            "权利",
+            "全力",
+            "权益"
+        ],
+        "answer": "权力",
+        "explanation": "权力는 ‘권력’이라는 뜻입니다.",
+        "id": "zh-advanced-032",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n这件事不是我的 ____。",
+        "choices": [
+            "责任",
+            "任务",
+            "义务",
+            "职位"
+        ],
+        "answer": "责任",
+        "explanation": "责任은 ‘책임’이라는 뜻입니다.",
+        "id": "zh-advanced-033",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n今天的 ____ 是整理资料。",
+        "choices": [
+            "任务",
+            "责任",
+            "义务",
+            "职务"
+        ],
+        "answer": "任务",
+        "explanation": "任务는 ‘임무, 과제’라는 뜻입니다.",
+        "id": "zh-advanced-034",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n纳税是公民的一项 ____。",
+        "choices": [
+            "义务",
+            "任务",
+            "责任",
+            "服务"
+        ],
+        "answer": "义务",
+        "explanation": "义务는 ‘의무’라는 뜻입니다.",
+        "id": "zh-advanced-035",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n应该考虑公共 ____。",
+        "choices": [
+            "利益",
+            "利润",
+            "利息",
+            "便利"
+        ],
+        "answer": "利益",
+        "explanation": "利益는 ‘이익, 이해관계’라는 뜻입니다.",
+        "id": "zh-advanced-036",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n这家公司的 ____ 比去年增加了。",
+        "choices": [
+            "利润",
+            "利益",
+            "利息",
+            "便利"
+        ],
+        "answer": "利润",
+        "explanation": "利润은 ‘이윤’이라는 뜻입니다.",
+        "id": "zh-advanced-037",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n互联网给我们的生活带来了很多 ____。",
+        "choices": [
+            "便利",
+            "利润",
+            "利益",
+            "顺利"
+        ],
+        "answer": "便利",
+        "explanation": "便利는 ‘편리함’이라는 뜻입니다.",
+        "id": "zh-advanced-038",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n会议 ____ 结束了。",
+        "choices": [
+            "顺利",
+            "便利",
+            "锋利",
+            "有利"
+        ],
+        "answer": "顺利",
+        "explanation": "顺利는 ‘순조롭다’라는 뜻입니다.",
+        "id": "zh-advanced-039",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n____ 新环境需要时间。",
+        "choices": [
+            "适应",
+            "适合",
+            "适当",
+            "合适"
+        ],
+        "answer": "适应",
+        "explanation": "适应은 ‘적응하다’라는 뜻입니다.",
+        "id": "zh-advanced-040",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n这种方法并不 ____ 所有人。",
+        "choices": [
+            "适合",
+            "适应",
+            "合适",
+            "符合"
+        ],
+        "answer": "适合",
+        "explanation": "适合는 ‘적합하다, 잘 맞다’라는 뜻입니다.",
+        "id": "zh-advanced-041",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n他的说明 ____ 实际情况。",
+        "choices": [
+            "符合",
+            "适合",
+            "配合",
+            "联合"
+        ],
+        "answer": "符合",
+        "explanation": "符合는 ‘부합하다, 일치하다’라는 뜻입니다.",
+        "id": "zh-advanced-042",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n要成功，需要团队成员之间的 ____。",
+        "choices": [
+            "配合",
+            "符合",
+            "联合",
+            "组合"
+        ],
+        "answer": "配合",
+        "explanation": "配合는 ‘협력, 협조’라는 뜻입니다.",
+        "id": "zh-advanced-043",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n两家公司 ____ 开发了新产品。",
+        "choices": [
+            "联合",
+            "联系",
+            "结合",
+            "组合"
+        ],
+        "answer": "联合",
+        "explanation": "联合는 ‘연합하다, 공동으로 하다’라는 뜻입니다.",
+        "id": "zh-advanced-044",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n应该把理论和实践 ____ 起来。",
+        "choices": [
+            "结合",
+            "联合",
+            "组合",
+            "配合"
+        ],
+        "answer": "结合",
+        "explanation": "结合은 ‘결합하다’라는 뜻입니다.",
+        "id": "zh-advanced-045",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n政府 ____ 了新的措施。",
+        "choices": [
+            "采取",
+            "采用",
+            "采集",
+            "采访"
+        ],
+        "answer": "采取",
+        "explanation": "采取措施는 ‘조치를 취하다’라는 뜻입니다.",
+        "id": "zh-advanced-046",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n这家公司 ____ 了新技术。",
+        "choices": [
+            "采用",
+            "采取",
+            "采集",
+            "采访"
+        ],
+        "answer": "采用",
+        "explanation": "采用은 ‘채택하다, 사용하다’라는 뜻입니다.",
+        "id": "zh-advanced-047",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n需要采取 ____ 来解决问题。",
+        "choices": [
+            "措施",
+            "设备",
+            "设施",
+            "工具"
+        ],
+        "answer": "措施",
+        "explanation": "措施는 ‘조치’라는 뜻입니다.",
+        "id": "zh-advanced-048",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n实验室里有最新的 ____。",
+        "choices": [
+            "设备",
+            "措施",
+            "设施",
+            "工具"
+        ],
+        "answer": "设备",
+        "explanation": "设备는 ‘장비, 설비’라는 뜻입니다.",
+        "id": "zh-advanced-049",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n公园里的运动 ____ 很完善。",
+        "choices": [
+            "设施",
+            "设备",
+            "措施",
+            "工具"
+        ],
+        "answer": "设施",
+        "explanation": "设施는 ‘시설’이라는 뜻입니다.",
+        "id": "zh-advanced-050",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n这个制度还需要进一步 ____。",
+        "choices": [
+            "完善",
+            "完美",
+            "完整",
+            "完成"
+        ],
+        "answer": "完善",
+        "explanation": "完善은 ‘보완하다, 완비하다’라는 뜻입니다.",
+        "id": "zh-advanced-051",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n他说明了事件的 ____ 过程。",
+        "choices": [
+            "完整",
+            "完善",
+            "完美",
+            "完成"
+        ],
+        "answer": "完整",
+        "explanation": "完整는 ‘완전한, 빠짐없는’이라는 뜻입니다.",
+        "id": "zh-advanced-052",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n这个问题比想象中更 ____。",
+        "choices": [
+            "复杂",
+            "负责",
+            "丰富",
+            "反复"
+        ],
+        "answer": "复杂",
+        "explanation": "复杂는 ‘복잡하다’라는 뜻입니다.",
+        "id": "zh-advanced-053",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n他 ____ 这个部门的管理工作。",
+        "choices": [
+            "负责",
+            "复杂",
+            "负担",
+            "支付"
+        ],
+        "answer": "负责",
+        "explanation": "负责는 ‘책임지다, 담당하다’라는 뜻입니다.",
+        "id": "zh-advanced-054",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n旅行可以 ____ 一个人的经历。",
+        "choices": [
+            "丰富",
+            "复杂",
+            "增加",
+            "扩大"
+        ],
+        "answer": "丰富",
+        "explanation": "丰富는 ‘풍부하게 하다, 풍부한’이라는 뜻입니다.",
+        "id": "zh-advanced-055",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n最近选择网课的学生 ____ 了。",
+        "choices": [
+            "增加",
+            "增长",
+            "上涨",
+            "提高"
+        ],
+        "answer": "增加",
+        "explanation": "增加는 ‘수량이 늘어나다, 늘리다’라는 뜻입니다.",
+        "id": "zh-advanced-056",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n他的知识通过阅读不断 ____。",
+        "choices": [
+            "增长",
+            "增加",
+            "上涨",
+            "提高"
+        ],
+        "answer": "增长",
+        "explanation": "增长은 지식, 경험, 수치 등이 성장하거나 증가한다는 뜻입니다.",
+        "id": "zh-advanced-057",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n练习可以 ____ 听力能力。",
+        "choices": [
+            "提高",
+            "提交",
+            "提醒",
+            "提前"
+        ],
+        "answer": "提高",
+        "explanation": "提高는 ‘향상시키다’라는 뜻입니다.",
+        "id": "zh-advanced-058",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n气温突然 ____ 了。",
+        "choices": [
+            "下降",
+            "降低",
+            "减少",
+            "掉下"
+        ],
+        "answer": "下降",
+        "explanation": "下降은 수치가 하락한다는 뜻입니다.",
+        "id": "zh-advanced-059",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n为了 ____ 成本，公司改变了方法。",
+        "choices": [
+            "降低",
+            "下降",
+            "减少",
+            "低落"
+        ],
+        "answer": "降低",
+        "explanation": "降低成本은 ‘비용을 낮추다’라는 뜻입니다.",
+        "id": "zh-advanced-060",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n为了 ____ 垃圾，每个人都应该努力。",
+        "choices": [
+            "减少",
+            "降低",
+            "下降",
+            "缩小"
+        ],
+        "answer": "减少",
+        "explanation": "减少는 ‘줄이다, 감소하다’라는 뜻입니다.",
+        "id": "zh-advanced-061",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n公司正在 ____ 海外市场。",
+        "choices": [
+            "扩大",
+            "增加",
+            "增长",
+            "广泛"
+        ],
+        "answer": "扩大",
+        "explanation": "扩大市场은 ‘시장을 확대하다’라는 뜻입니다.",
+        "id": "zh-advanced-062",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n这项技术被 ____ 应用于多个领域。",
+        "choices": [
+            "广泛",
+            "广大",
+            "宽广",
+            "扩大"
+        ],
+        "answer": "广泛",
+        "explanation": "广泛应用은 ‘널리 응용되다’라는 뜻입니다.",
+        "id": "zh-advanced-063",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n人工智能会影响许多 ____。",
+        "choices": [
+            "领域",
+            "地区",
+            "范围",
+            "位置"
+        ],
+        "answer": "领域",
+        "explanation": "领域는 ‘분야, 영역’이라는 뜻입니다.",
+        "id": "zh-advanced-064",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n这个 ____ 冬天经常下雪。",
+        "choices": [
+            "地区",
+            "领域",
+            "范围",
+            "地方"
+        ],
+        "answer": "地区",
+        "explanation": "地区는 ‘지역’이라는 뜻입니다.",
+        "id": "zh-advanced-065",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n请告诉我会议室的 ____。",
+        "choices": [
+            "位置",
+            "地方",
+            "地区",
+            "地点"
+        ],
+        "answer": "位置",
+        "explanation": "位置는 ‘위치’라는 뜻입니다.",
+        "id": "zh-advanced-066",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n____ 明确，行动就会更容易。",
+        "choices": [
+            "目标",
+            "标准",
+            "目的",
+            "方向"
+        ],
+        "answer": "目标",
+        "explanation": "目标는 ‘목표’라는 뜻입니다.",
+        "id": "zh-advanced-067",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n应该先确定评价 ____。",
+        "choices": [
+            "标准",
+            "目标",
+            "水平",
+            "条件"
+        ],
+        "answer": "标准",
+        "explanation": "标准는 ‘기준’이라는 뜻입니다.",
+        "id": "zh-advanced-068",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n成功有时不只取决于 ____，还取决于坚持。",
+        "choices": [
+            "条件",
+            "情况",
+            "环境",
+            "状态"
+        ],
+        "answer": "条件",
+        "explanation": "条件은 ‘조건’이라는 뜻입니다.",
+        "id": "zh-advanced-069",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n他最近身体 ____ 不太好。",
+        "choices": [
+            "状态",
+            "情况",
+            "条件",
+            "态度"
+        ],
+        "answer": "状态",
+        "explanation": "状态는 ‘상태’라는 뜻입니다.",
+        "id": "zh-advanced-070",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n本来想节省时间，结果 ____ 花了更多时间。",
+        "choices": [
+            "反而",
+            "因此",
+            "仍然",
+            "逐渐"
+        ],
+        "answer": "反而",
+        "explanation": "反而는 예상과 반대되는 결과를 나타내는 ‘오히려’입니다.",
+        "id": "zh-advanced-071",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n他 ____ 还是个孩子，需要更多鼓励。",
+        "choices": [
+            "毕竟",
+            "逐渐",
+            "临时",
+            "偶尔"
+        ],
+        "answer": "毕竟",
+        "explanation": "毕竟은 여러 상황을 고려해 ‘결국, 아무래도’라고 말할 때 씁니다.",
+        "id": "zh-advanced-072",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n第一次做这件事，出错是 ____ 的。",
+        "choices": [
+            "难免",
+            "偶尔",
+            "始终",
+            "临时"
+        ],
+        "answer": "难免",
+        "explanation": "难免은 ‘피하기 어렵다, 어쩔 수 없이 생기기 쉽다’라는 뜻입니다.",
+        "id": "zh-advanced-073",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n贵的东西 ____ 就一定适合你。",
+        "choices": [
+            "未必",
+            "仍然",
+            "始终",
+            "偶尔"
+        ],
+        "answer": "未必",
+        "explanation": "未必는 ‘반드시 ~인 것은 아니다’라는 뜻입니다.",
+        "id": "zh-advanced-074",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n同学们 ____ 走进教室。",
+        "choices": [
+            "陆续",
+            "连续",
+            "始终",
+            "仍然"
+        ],
+        "answer": "陆续",
+        "explanation": "陆续는 여러 사람이나 일이 차례로 이어지는 것을 나타냅니다.",
+        "id": "zh-advanced-075",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n他 ____ 三天熬夜工作。",
+        "choices": [
+            "连续",
+            "陆续",
+            "偶尔",
+            "临时"
+        ],
+        "answer": "连续",
+        "explanation": "连续는 끊기지 않고 이어지는 ‘연속적’이라는 뜻입니다.",
+        "id": "zh-advanced-076",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n今天的天空 ____ 蓝。",
+        "choices": [
+            "格外",
+            "临时",
+            "逐渐",
+            "始终"
+        ],
+        "answer": "格外",
+        "explanation": "格外는 ‘유난히, 특별히’라는 뜻입니다.",
+        "id": "zh-advanced-077",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n我们应该 ____ 利用现有资源。",
+        "choices": [
+            "充分",
+            "临时",
+            "偶尔",
+            "顺便"
+        ],
+        "answer": "充分",
+        "explanation": "充分은 ‘충분히’라는 뜻입니다.",
+        "id": "zh-advanced-078",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n这篇文章 ____ 难。",
+        "choices": [
+            "相当",
+            "偶尔",
+            "临时",
+            "逐渐"
+        ],
+        "answer": "相当",
+        "explanation": "相当은 정도가 꽤 높음을 나타내는 ‘상당히’입니다.",
+        "id": "zh-advanced-079",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "빈칸에 알맞은 단어를 고르세요.\n价格便宜，____，质量也不错。",
+        "choices": [
+            "此外",
+            "否则",
+            "反而",
+            "一旦"
+        ],
+        "answer": "此外",
+        "explanation": "此外는 ‘이 밖에, 또한’이라는 뜻입니다.",
+        "id": "zh-advanced-080",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "multiple",
+        "question": "알맞은 표현 또는 자연스러운 문장을 고르세요.\n虽然他经验不多，____ 处理问题很冷静。",
+        "choices": [
+            "却",
+            "于是",
+            "由于",
+            "否则"
+        ],
+        "answer": "却",
+        "explanation": "虽然……却……는 ‘비록 ~이지만’이라는 역접 구조입니다.",
+        "id": "zh-advanced-081",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "multiple",
+        "question": "알맞은 표현 또는 자연스러운 문장을 고르세요.\n____ 路很远，他还是决定步行去。",
+        "choices": [
+            "尽管",
+            "由于",
+            "除非",
+            "于是"
+        ],
+        "answer": "尽管",
+        "explanation": "尽管는 양보 표현이고, 뒤의 还是와 잘 어울립니다.",
+        "id": "zh-advanced-082",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "multiple",
+        "question": "알맞은 표현 또는 자연스러운 문장을 고르세요.\n成功 ____ 靠运气，____ 靠长期的努力。",
+        "choices": [
+            "不是 / 而是",
+            "虽然 / 但是",
+            "既然 / 就",
+            "因为 / 所以"
+        ],
+        "answer": "不是 / 而是",
+        "explanation": "不是A而是B는 ‘A가 아니라 B이다’라는 구조입니다.",
+        "id": "zh-advanced-083",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "multiple",
+        "question": "알맞은 표현 또는 자연스러운 문장을 고르세요.\n这本书 ____ 内容丰富，____ 语言也很生动。",
+        "choices": [
+            "不仅 / 而且",
+            "即使 / 也",
+            "不是 / 而是",
+            "无论 / 都"
+        ],
+        "answer": "不仅 / 而且",
+        "explanation": "不仅……而且……는 ‘~뿐만 아니라 또한’이라는 뜻입니다.",
+        "id": "zh-advanced-084",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "multiple",
+        "question": "알맞은 표현 또는 자연스러운 문장을 고르세요.\n____ 遇到什么困难，他 ____ 不会轻易放弃。",
+        "choices": [
+            "无论 / 都",
+            "因为 / 所以",
+            "只有 / 才",
+            "既然 / 就"
+        ],
+        "answer": "无论 / 都",
+        "explanation": "无论……都……는 ‘무엇을 하더라도 모두/언제나’라는 뜻입니다.",
+        "id": "zh-advanced-085",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "multiple",
+        "question": "알맞은 표현 또는 자연스러운 문장을 고르세요.\n____ 找到适合自己的方法，____ 能长期坚持。",
+        "choices": [
+            "只有 / 才",
+            "只要 / 就",
+            "因为 / 所以",
+            "即使 / 也"
+        ],
+        "answer": "只有 / 才",
+        "explanation": "只有……才……는 ‘~해야만 비로소’라는 조건 구조입니다.",
+        "id": "zh-advanced-086",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "multiple",
+        "question": "알맞은 표현 또는 자연스러운 문장을 고르세요.\n____ 你愿意开始，____ 已经成功了一半。",
+        "choices": [
+            "只要 / 就",
+            "只有 / 才",
+            "除非 / 才",
+            "尽管 / 还"
+        ],
+        "answer": "只要 / 就",
+        "explanation": "只要……就……는 ‘~하기만 하면 곧’이라는 조건 표현입니다.",
+        "id": "zh-advanced-087",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "multiple",
+        "question": "알맞은 표현 또는 자연스러운 문장을 고르세요.\n____ 失败了，我们 ____ 可以从中学到经验。",
+        "choices": [
+            "即使 / 也",
+            "因为 / 所以",
+            "只有 / 才",
+            "不但 / 反而"
+        ],
+        "answer": "即使 / 也",
+        "explanation": "即使……也……는 ‘설령 ~하더라도’라는 양보 구조입니다.",
+        "id": "zh-advanced-088",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "multiple",
+        "question": "알맞은 표현 또는 자연스러운 문장을 고르세요.\n____ 已经决定了，____ 不要再犹豫。",
+        "choices": [
+            "既然 / 就",
+            "虽然 / 但是",
+            "无论 / 都",
+            "不仅 / 而且"
+        ],
+        "answer": "既然 / 就",
+        "explanation": "既然……就……는 ‘이미 ~한 이상 ~하자’라는 뜻입니다.",
+        "id": "zh-advanced-089",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "multiple",
+        "question": "알맞은 표현 또는 자연스러운 문장을 고르세요.\n____ 明天下雨，____ 我们按计划出发。",
+        "choices": [
+            "除非 / 否则",
+            "因为 / 所以",
+            "虽然 / 但是",
+            "只要 / 就"
+        ],
+        "answer": "除非 / 否则",
+        "explanation": "除非……否则……는 ‘~하지 않는 한, 그렇지 않으면’이라는 구조입니다.",
+        "id": "zh-advanced-090",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "multiple",
+        "question": "알맞은 표현 또는 자연스러운 문장을 고르세요.\n____ 一直抱怨，____ 现在就行动起来。",
+        "choices": [
+            "与其 / 不如",
+            "不是 / 而是",
+            "因为 / 所以",
+            "尽管 / 还是"
+        ],
+        "answer": "与其 / 不如",
+        "explanation": "与其A不如B는 ‘A하느니 B하는 편이 낫다’라는 표현입니다.",
+        "id": "zh-advanced-091",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "multiple",
+        "question": "알맞은 표현 또는 자연스러운 문장을 고르세요.\n他 ____ 多花一点时间，____ 草草完成任务。",
+        "choices": [
+            "宁可 / 也不",
+            "虽然 / 但是",
+            "只要 / 就",
+            "不但 / 而且"
+        ],
+        "answer": "宁可 / 也不",
+        "explanation": "宁可A也不B는 ‘차라리 A할지언정 B하지 않다’라는 뜻입니다.",
+        "id": "zh-advanced-092",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "multiple",
+        "question": "알맞은 표현 또는 자연스러운 문장을 고르세요.\n她 ____ 听音乐，____ 整理房间。",
+        "choices": [
+            "一边 / 一边",
+            "不是 / 而是",
+            "虽然 / 却",
+            "由于 / 因此"
+        ],
+        "answer": "一边 / 一边",
+        "explanation": "一边……一边……는 두 동작이 동시에 진행됨을 나타냅니다.",
+        "id": "zh-advanced-093",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "multiple",
+        "question": "알맞은 표현 또는 자연스러운 문장을 고르세요.\n经过练习，他的表达变得 ____ 清楚。",
+        "choices": [
+            "越来越",
+            "一下子",
+            "从来",
+            "仍然"
+        ],
+        "answer": "越来越",
+        "explanation": "越来越는 ‘점점 더’라는 뜻입니다.",
+        "id": "zh-advanced-094",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "multiple",
+        "question": "알맞은 표현 또는 자연스러운 문장을 고르세요.\n这本书 ____ 读 ____ 有意思。",
+        "choices": [
+            "越 / 越",
+            "又 / 又",
+            "先 / 再",
+            "只 / 才"
+        ],
+        "answer": "越 / 越",
+        "explanation": "越A越B는 ‘A할수록 B하다’라는 표현입니다.",
+        "id": "zh-advanced-095",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "multiple",
+        "question": "알맞은 표현 또는 자연스러운 문장을 고르세요.\n문장 어순이 자연스러운 것은?",
+        "choices": [
+            "请把这份材料复印一下。",
+            "请这份材料把复印一下。",
+            "把请这份材料复印一下。",
+            "请复印把这份材料一下。"
+        ],
+        "answer": "请把这份材料复印一下。",
+        "explanation": "把자문은 보통 把 + 목적어 + 동사 + 기타 성분 순서입니다.",
+        "id": "zh-advanced-096",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "multiple",
+        "question": "알맞은 표현 또는 자연스러운 문장을 고르세요.\n문장 어순이 자연스러운 것은?",
+        "choices": [
+            "我的手机被他拿走了。",
+            "我的手机被拿走了他。",
+            "被我的手机他拿走了。",
+            "他被我的手机拿走了。"
+        ],
+        "answer": "我的手机被他拿走了。",
+        "explanation": "被자문은 피동을 나타내며 被 + 행위자 + 동사 구조가 가능합니다.",
+        "id": "zh-advanced-097",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "multiple",
+        "question": "알맞은 표현 또는 자연스러운 문장을 고르세요.\n요즘 날씨가 추워졌다.",
+        "choices": [
+            "最近天气变冷了。",
+            "最近天气很冷了。",
+            "最近天气冷得了。",
+            "最近天气了变冷。"
+        ],
+        "answer": "最近天气变冷了。",
+        "explanation": "变冷了는 상태 변화가 발생했음을 나타냅니다.",
+        "id": "zh-advanced-098",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "multiple",
+        "question": "알맞은 표현 또는 자연스러운 문장을 고르세요.\n나는 중국에 가 본 적이 있다.",
+        "choices": [
+            "我去过中国。",
+            "我去了中国过。",
+            "我过去中国。",
+            "我有去中国。"
+        ],
+        "answer": "我去过中国。",
+        "explanation": "동사 + 过는 경험을 나타낼 수 있습니다.",
+        "id": "zh-advanced-099",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "multiple",
+        "question": "알맞은 표현 또는 자연스러운 문장을 고르세요.\n문이 열려 있다.",
+        "choices": [
+            "门开着。",
+            "门开了着。",
+            "门着开。",
+            "门被开着了。"
+        ],
+        "answer": "门开着。",
+        "explanation": "동사 + 着는 상태의 지속을 나타냅니다.",
+        "id": "zh-advanced-100",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어법",
+        "type": "multiple",
+        "question": "다음 중 자연스러운 문장을 고르세요.",
+        "choices": [
+            "他把问题解释得很清楚。",
+            "他把很清楚问题解释。",
+            "他解释把问题很清楚。",
+            "问题把他解释得清楚。"
+        ],
+        "answer": "他把问题解释得很清楚。",
+        "explanation": "把 + 목적어 + 동사 + 得 + 정도보어 구조가 자연스럽습니다.",
+        "id": "zh-advanced-101",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어법",
+        "type": "multiple",
+        "question": "다음 중 자연스러운 문장을 고르세요.",
+        "choices": [
+            "这件事和你没有关系。",
+            "这件事对你没有关系。",
+            "这件事给你没有关系。",
+            "这件事为你没有关系。"
+        ],
+        "answer": "这件事和你没有关系。",
+        "explanation": "和……有/没有关系는 ‘~와 관계가 있다/없다’라는 표현입니다.",
+        "id": "zh-advanced-102",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어법",
+        "type": "multiple",
+        "question": "다음 중 자연스러운 문장을 고르세요.",
+        "choices": [
+            "我对这个问题很感兴趣。",
+            "我对这个问题很兴趣。",
+            "我很感兴趣这个问题。",
+            "我把这个问题感兴趣。"
+        ],
+        "answer": "我对这个问题很感兴趣。",
+        "explanation": "对……感兴趣 구조가 자연스럽습니다.",
+        "id": "zh-advanced-103",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어법",
+        "type": "multiple",
+        "question": "다음 중 자연스러운 문장을 고르세요.",
+        "choices": [
+            "他不仅会说中文，而且会说日文。",
+            "他不仅会说中文，反而会说日文。",
+            "他会说不仅中文，而且日文。",
+            "不仅他会说中文，而且会说日文。"
+        ],
+        "answer": "他不仅会说中文，而且会说日文。",
+        "explanation": "不仅……而且……는 같은 방향의 추가 정보를 나타냅니다.",
+        "id": "zh-advanced-104",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어법",
+        "type": "multiple",
+        "question": "다음 중 자연스러운 문장을 고르세요.",
+        "choices": [
+            "这本书越读越有意思。",
+            "这本书越有意思越读。",
+            "这本书读越越有意思。",
+            "越这本书读越有意思。"
+        ],
+        "answer": "这本书越读越有意思。",
+        "explanation": "越A越B 구조는 ‘A할수록 B하다’입니다.",
+        "id": "zh-advanced-105",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어법",
+        "type": "multiple",
+        "question": "다음 중 자연스러운 문장을 고르세요.",
+        "choices": [
+            "由于时间有限，我们只能讨论重点。",
+            "由于时间有限，所以只能讨论重点了因为。",
+            "由于时间有限，但是只能讨论重点。",
+            "由于时间有限，虽然只能讨论重点。"
+        ],
+        "answer": "由于时间有限，我们只能讨论重点。",
+        "explanation": "由于는 원인을 나타내며 뒤에 결과를 이어 줍니다.",
+        "id": "zh-advanced-106",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어법",
+        "type": "multiple",
+        "question": "다음 중 자연스러운 문장을 고르세요.",
+        "choices": [
+            "为了提高效率，他改变了学习方法。",
+            "为了效率提高，他改变了学习方法。",
+            "为了提高，他效率改变了学习方法。",
+            "他为了改变效率提高学习方法。"
+        ],
+        "answer": "为了提高效率，他改变了学习方法。",
+        "explanation": "为了 + 목적/동작 구조가 자연스럽습니다.",
+        "id": "zh-advanced-107",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어법",
+        "type": "multiple",
+        "question": "다음 중 자연스러운 문장을 고르세요.",
+        "choices": [
+            "他宁可失败，也不愿意放弃原则。",
+            "他宁可失败，而且不愿意放弃原则。",
+            "他失败宁可，也不放弃原则。",
+            "宁可他失败，也不愿意原则放弃。"
+        ],
+        "answer": "他宁可失败，也不愿意放弃原则。",
+        "explanation": "宁可……也不……는 차라리 A할지언정 B하지 않겠다는 뜻입니다.",
+        "id": "zh-advanced-108",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어법",
+        "type": "multiple",
+        "question": "다음 중 자연스러운 문장을 고르세요.",
+        "choices": [
+            "只要你坚持练习，就会有进步。",
+            "只有你坚持练习，就会有进步。",
+            "只要你坚持练习，才会有进步。",
+            "你只要坚持练习，才会有进步。"
+        ],
+        "answer": "只要你坚持练习，就会有进步。",
+        "explanation": "只要……就……가 자연스러운 충분조건 표현입니다.",
+        "id": "zh-advanced-109",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어법",
+        "type": "multiple",
+        "question": "다음 중 자연스러운 문장을 고르세요.",
+        "choices": [
+            "只有认真准备，才能取得好成绩。",
+            "只要认真准备，才能取得好成绩。",
+            "只有认真准备，就能取得好成绩。",
+            "认真准备只有，才能取得好成绩。"
+        ],
+        "answer": "只有认真准备，才能取得好成绩。",
+        "explanation": "只有……才……는 강한 조건을 나타냅니다.",
+        "id": "zh-advanced-110",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어법",
+        "type": "multiple",
+        "question": "다음 중 자연스러운 문장을 고르세요.",
+        "choices": [
+            "即使遇到困难，也不要轻易放弃。",
+            "即使遇到困难，所以不要轻易放弃。",
+            "虽然遇到困难，也不要轻易放弃了因为。",
+            "因为遇到困难，也不要轻易放弃。"
+        ],
+        "answer": "即使遇到困难，也不要轻易放弃。",
+        "explanation": "即使……也……는 양보 구조입니다.",
+        "id": "zh-advanced-111",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어법",
+        "type": "multiple",
+        "question": "다음 중 자연스러운 문장을 고르세요.",
+        "choices": [
+            "既然你已经知道了，就不用再解释了。",
+            "虽然你已经知道了，就不用再解释了。",
+            "既然你已经知道了，但是不用再解释了。",
+            "你既然已经知道了，才不用解释。"
+        ],
+        "answer": "既然你已经知道了，就不用再解释了。",
+        "explanation": "既然……就……는 이미 그런 이상이라는 의미입니다.",
+        "id": "zh-advanced-112",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어법",
+        "type": "multiple",
+        "question": "다음 중 자연스러운 문장을 고르세요.",
+        "choices": [
+            "除非你有更好的理由，否则我不同意。",
+            "除非你有更好的理由，所以我不同意。",
+            "如果你有更好的理由，否则我不同意。",
+            "虽然你有更好的理由，否则我同意。"
+        ],
+        "answer": "除非你有更好的理由，否则我不同意。",
+        "explanation": "除非……否则……는 ‘~하지 않는 한, 그렇지 않으면’입니다.",
+        "id": "zh-advanced-113",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어법",
+        "type": "multiple",
+        "question": "다음 중 자연스러운 문장을 고르세요.",
+        "choices": [
+            "与其担心结果，不如先开始行动。",
+            "与其担心结果，而是先开始行动。",
+            "不是担心结果，不如先开始行动。",
+            "因为担心结果，不如先开始行动。"
+        ],
+        "answer": "与其担心结果，不如先开始行动。",
+        "explanation": "与其A不如B는 A보다 B가 낫다는 표현입니다.",
+        "id": "zh-advanced-114",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어법",
+        "type": "multiple",
+        "question": "다음 중 자연스러운 문장을 고르세요.",
+        "choices": [
+            "他一边做饭，一边听新闻。",
+            "他一边做饭，但是听新闻。",
+            "他做饭一边，一边新闻听。",
+            "他一边做饭，所以一边听新闻。"
+        ],
+        "answer": "他一边做饭，一边听新闻。",
+        "explanation": "一边……一边……는 동시 동작을 나타냅니다.",
+        "id": "zh-advanced-115",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어법",
+        "type": "multiple",
+        "question": "다음 중 자연스러운 문장을 고르세요.",
+        "choices": [
+            "这项政策的影响十分广泛。",
+            "这项政策的影响十分扩大。",
+            "这项政策十分范围影响。",
+            "这项政策影响十分领域。"
+        ],
+        "answer": "这项政策的影响十分广泛。",
+        "explanation": "影响广泛은 영향이 넓게 미친다는 뜻입니다.",
+        "id": "zh-advanced-116",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어법",
+        "type": "multiple",
+        "question": "다음 중 자연스러운 문장을 고르세요.",
+        "choices": [
+            "这个问题值得进一步讨论。",
+            "这个问题值得讨论进一步。",
+            "这个问题值得进一步地。",
+            "这个问题进一步值得讨论。"
+        ],
+        "answer": "这个问题值得进一步讨论。",
+        "explanation": "值得 + 동사는 ‘~할 가치가 있다’라는 뜻입니다.",
+        "id": "zh-advanced-117",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어법",
+        "type": "multiple",
+        "question": "다음 중 자연스러운 문장을 고르세요.",
+        "choices": [
+            "他的态度让我感到很意外。",
+            "他的态度让我感到很偶尔。",
+            "他的态度让我感到很临时。",
+            "他的态度让我感到很顺便。"
+        ],
+        "answer": "他的态度让我感到很意外。",
+        "explanation": "感到意外는 뜻밖이라고 느끼다는 표현입니다.",
+        "id": "zh-advanced-118",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어법",
+        "type": "multiple",
+        "question": "다음 중 자연스러운 문장을 고르세요.",
+        "choices": [
+            "这个办法不一定适合所有人。",
+            "这个办法不一定适应所有人。",
+            "这个办法不一定符合所有人。",
+            "这个办法不一定配合所有人。"
+        ],
+        "answer": "这个办法不一定适合所有人。",
+        "explanation": "方法/办法 + 适合 + 사람/상황 구조가 자연스럽습니다.",
+        "id": "zh-advanced-119",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어법",
+        "type": "multiple",
+        "question": "다음 중 자연스러운 문장을 고르세요.",
+        "choices": [
+            "我们应该充分利用现有资源。",
+            "我们应该充分使用现有资格。",
+            "我们应该充分提高现有资源。",
+            "我们应该充分减少现有资源。"
+        ],
+        "answer": "我们应该充分利用现有资源。",
+        "explanation": "充分利用资源는 자원을 충분히 활용하다라는 자연스러운 표현입니다.",
+        "id": "zh-advanced-120",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어법",
+        "type": "multiple",
+        "question": "다음 중 자연스러운 문장을 고르세요.",
+        "choices": [
+            "这个决定会影响公司的长期发展。",
+            "这个决定会影响公司长期的发展了过。",
+            "这个决定会影响发展公司的长期。",
+            "这个决定影响会公司的长期发展。"
+        ],
+        "answer": "这个决定会影响公司的长期发展。",
+        "explanation": "影响 + 대상 구조가 자연스럽고, 长期发展는 장기 발전이라는 뜻입니다.",
+        "id": "zh-advanced-121",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어법",
+        "type": "multiple",
+        "question": "다음 중 자연스러운 문장을 고르세요.",
+        "choices": [
+            "他对自己的要求相当严格。",
+            "他对自己的要求相当复杂。",
+            "他对自己的要求相当负责。",
+            "他对自己的要求相当丰富。"
+        ],
+        "answer": "他对自己的要求相当严格。",
+        "explanation": "要求严格는 요구가 엄격하다는 자연스러운 결합입니다.",
+        "id": "zh-advanced-122",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어법",
+        "type": "multiple",
+        "question": "다음 중 자연스러운 문장을 고르세요.",
+        "choices": [
+            "难怪他这么累，原来昨晚只睡了三个小时。",
+            "难免他这么累，原来昨晚只睡了三个小时。",
+            "未必他这么累，原来昨晚只睡了三个小时。",
+            "况且他这么累，原来昨晚只睡了三个小时。"
+        ],
+        "answer": "难怪他这么累，原来昨晚只睡了三个小时。",
+        "explanation": "难怪는 이유를 알고 ‘어쩐지’라고 할 때 씁니다.",
+        "id": "zh-advanced-123",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어법",
+        "type": "multiple",
+        "question": "다음 중 자연스러운 문장을 고르세요.",
+        "choices": [
+            "这件事未必像你想的那么简单。",
+            "这件事难怪像你想的那么简单。",
+            "这件事总算像你想的那么简单。",
+            "这件事居然像你想的那么简单未必。"
+        ],
+        "answer": "这件事未必像你想的那么简单。",
+        "explanation": "未必는 반드시 그렇지는 않다는 뜻입니다.",
+        "id": "zh-advanced-124",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어법",
+        "type": "multiple",
+        "question": "다음 중 자연스러운 문장을 고르세요.",
+        "choices": [
+            "请尽快把结果告诉我。",
+            "请尽量快把结果告诉我了着。",
+            "请结果尽快告诉把我。",
+            "请把尽快结果告诉我。"
+        ],
+        "answer": "请尽快把结果告诉我。",
+        "explanation": "尽快는 가능한 한 빨리라는 뜻이고, 把结果告诉我가 자연스럽습니다.",
+        "id": "zh-advanced-125",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어법",
+        "type": "multiple",
+        "question": "다음 중 자연스러운 문장을 고르세요.",
+        "choices": [
+            "这次活动由学生会负责组织。",
+            "这次活动被学生会负责组织由。",
+            "这次活动负责由学生会组织。",
+            "学生会由负责这次活动组织。"
+        ],
+        "answer": "这次活动由学生会负责组织。",
+        "explanation": "由는 행위 주체를 나타낼 수 있고, 负责组织는 조직을 담당하다는 뜻입니다.",
+        "id": "zh-advanced-126",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어법",
+        "type": "multiple",
+        "question": "다음 중 자연스러운 문장을 고르세요.",
+        "choices": [
+            "他把自己的观点表达得很清楚。",
+            "他表达得自己的观点很清楚。",
+            "他把很清楚表达自己的观点。",
+            "自己的观点把他表达清楚。"
+        ],
+        "answer": "他把自己的观点表达得很清楚。",
+        "explanation": "把 + 목적어 + 동사 + 得 + 정도보어가 자연스럽습니다.",
+        "id": "zh-advanced-127",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어법",
+        "type": "multiple",
+        "question": "다음 중 자연스러운 문장을 고르세요.",
+        "choices": [
+            "这篇文章主要强调环保的重要性。",
+            "这篇文章主要强迫环保的重要性。",
+            "这篇文章主要严格环保的重要性。",
+            "这篇文章重要性强调主要环保。"
+        ],
+        "answer": "这篇文章主要强调环保的重要性。",
+        "explanation": "强调重要性은 중요성을 강조하다는 뜻입니다.",
+        "id": "zh-advanced-128",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어법",
+        "type": "multiple",
+        "question": "다음 중 자연스러운 문장을 고르세요.",
+        "choices": [
+            "他似乎不太满意这个结果。",
+            "他所谓不太满意这个结果。",
+            "他总之不太满意这个结果。",
+            "他此外不太满意这个结果。"
+        ],
+        "answer": "他似乎不太满意这个结果。",
+        "explanation": "似乎는 ‘~인 듯하다’라는 추측 표현입니다.",
+        "id": "zh-advanced-129",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어법",
+        "type": "multiple",
+        "question": "다음 중 자연스러운 문장을 고르세요.",
+        "choices": [
+            "一旦开始，就不要轻易放弃。",
+            "一旦开始，所以不要轻易放弃。",
+            "一旦开始，但是不要轻易放弃。",
+            "一旦开始，否则不要轻易放弃。"
+        ],
+        "answer": "一旦开始，就不要轻易放弃。",
+        "explanation": "一旦……就……는 ‘일단 ~하면 곧/그 뒤’라는 구조입니다.",
+        "id": "zh-advanced-130",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "ox",
+        "question": "不是不想은 ‘하고 싶지 않은 것이 아니다’라는 이중부정으로, 실제로는 하고 싶은 마음이 있음을 나타낼 수 있다.",
+        "answer": "O",
+        "explanation": "不是不想은 이중부정이므로 ‘하고 싶지 않은 게 아니다’라는 뜻입니다.",
+        "id": "zh-advanced-131",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "ox",
+        "question": "尽管天气不好，比赛还是按时开始了。는 날씨가 좋아서 경기가 제시간에 시작했다는 뜻이다.",
+        "answer": "X",
+        "explanation": "尽管는 ‘비록 ~이지만’이므로 날씨가 좋지 않아도 경기가 시작되었다는 뜻입니다.",
+        "id": "zh-advanced-132",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "ox",
+        "question": "只有……才……는 조건이 비교적 강하고, ‘~해야만 비로소’라는 느낌을 준다.",
+        "answer": "O",
+        "explanation": "只有……才……는 필요조건을 강조할 때 자주 씁니다.",
+        "id": "zh-advanced-133",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "ox",
+        "question": "只要……就……는 ‘~하기만 하면 곧’이라는 충분조건을 나타낼 수 있다.",
+        "answer": "O",
+        "explanation": "只要……就……는 조건이 충족되면 결과가 생김을 나타냅니다.",
+        "id": "zh-advanced-134",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "ox",
+        "question": "与其一直抱怨，不如马上行动。는 계속 불평하기보다 바로 행동하는 편이 낫다는 뜻이다.",
+        "answer": "O",
+        "explanation": "与其A不如B는 A보다 B가 낫다는 뜻입니다.",
+        "id": "zh-advanced-135",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "ox",
+        "question": "即使失败了，也没有关系。에서 即使……也……는 원인을 나타낸다.",
+        "answer": "X",
+        "explanation": "即使……也……는 원인이 아니라 양보 표현입니다.",
+        "id": "zh-advanced-136",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "ox",
+        "question": "越来越는 시간이 지나면서 정도가 점점 커짐을 나타낸다.",
+        "answer": "O",
+        "explanation": "越来越는 ‘점점 더’라는 뜻입니다.",
+        "id": "zh-advanced-137",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "ox",
+        "question": "越学越有意思。는 배울수록 더 재미있다는 뜻이다.",
+        "answer": "O",
+        "explanation": "越A越B는 A할수록 B하다는 구조입니다.",
+        "id": "zh-advanced-138",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "ox",
+        "question": "我对中国文化很感兴趣了。는 매우 자연스러운 문장이다.",
+        "answer": "X",
+        "explanation": "感兴趣는 상태를 나타내므로 보통 很感兴趣라고 하며 了와 결합하면 어색할 수 있습니다.",
+        "id": "zh-advanced-139",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "ox",
+        "question": "为了避免迟到，他提前出门了半个小时。는 늦지 않기 위해 30분 일찍 나갔다는 뜻이다.",
+        "answer": "O",
+        "explanation": "避免迟到는 지각을 피하다, 提前는 미리/앞당겨라는 뜻입니다.",
+        "id": "zh-advanced-140",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "ox",
+        "question": "既然已经答应了，就应该做到。는 이미 약속한 이상 지켜야 한다는 뜻이다.",
+        "answer": "O",
+        "explanation": "既然……就……는 이미 그러한 이상 뒤의 행동을 해야 함을 나타냅니다.",
+        "id": "zh-advanced-141",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "ox",
+        "question": "除非你同意，否则我不会开始。는 네가 동의하지 않는 한 시작하지 않겠다는 뜻이다.",
+        "answer": "O",
+        "explanation": "除非……否则……는 ‘~하지 않는 한, 그렇지 않으면’이라는 뜻입니다.",
+        "id": "zh-advanced-142",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "ox",
+        "question": "他把作业写完了。에서 把는 목적어를 동사 뒤로 보내는 역할만 한다.",
+        "answer": "X",
+        "explanation": "把자문은 목적어를 동사 앞에 두고 처리 결과를 강조하는 구조입니다.",
+        "id": "zh-advanced-143",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "ox",
+        "question": "手机被我弄丢了。는 휴대폰을 내가 잃어버렸다는 피동 표현이다.",
+        "answer": "O",
+        "explanation": "被자문은 피해나 결과를 받는 대상을 주어로 세우는 경우가 많습니다.",
+        "id": "zh-advanced-144",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "ox",
+        "question": "门开着。의 着는 동작이 이미 끝났다는 완료만 나타낸다.",
+        "answer": "X",
+        "explanation": "着는 주로 상태의 지속을 나타내고, 완료는 了가 더 전형적입니다.",
+        "id": "zh-advanced-145",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "ox",
+        "question": "我去过北京。의 过는 경험을 나타낼 수 있다.",
+        "answer": "O",
+        "explanation": "동사 + 过는 ‘~해 본 적이 있다’를 나타낼 수 있습니다.",
+        "id": "zh-advanced-146",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "ox",
+        "question": "不但……反而……는 보통 앞뒤가 모두 같은 방향으로 증가하는 병렬 표현이다.",
+        "answer": "X",
+        "explanation": "反而는 오히려라는 뜻으로 예상과 반대되는 결과를 나타냅니다.",
+        "id": "zh-advanced-147",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "ox",
+        "question": "由于下雨，活动取消了。에서 由于는 원인을 나타낸다.",
+        "answer": "O",
+        "explanation": "由于는 ‘~때문에’라는 비교적 문어적인 원인 표현입니다.",
+        "id": "zh-advanced-148",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "ox",
+        "question": "因此는 결과를 나타내는 접속 표현이다.",
+        "answer": "O",
+        "explanation": "因此는 ‘그러므로, 따라서’라는 뜻입니다.",
+        "id": "zh-advanced-149",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "ox",
+        "question": "否则는 ‘그렇지 않으면’이라는 뜻이다.",
+        "answer": "O",
+        "explanation": "否则는 앞 조건이 충족되지 않을 때의 결과를 이어 줍니다.",
+        "id": "zh-advanced-150",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "ox",
+        "question": "难免은 ‘피하기 쉽다’라는 뜻이다.",
+        "answer": "X",
+        "explanation": "难免은 ‘피하기 어렵다, 어쩔 수 없이 생기기 쉽다’라는 뜻입니다.",
+        "id": "zh-advanced-151",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "ox",
+        "question": "未必는 ‘반드시 그렇다’라는 뜻이다.",
+        "answer": "X",
+        "explanation": "未必는 ‘반드시 그런 것은 아니다’라는 뜻입니다.",
+        "id": "zh-advanced-152",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "ox",
+        "question": "毕竟은 여러 상황을 고려했을 때 ‘결국, 아무래도’라는 뜻으로 쓸 수 있다.",
+        "answer": "O",
+        "explanation": "毕竟은 결론이나 판단을 부드럽게 강조할 때 씁니다.",
+        "id": "zh-advanced-153",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "ox",
+        "question": "反而는 예상과 반대되는 결과를 나타낼 수 있다.",
+        "answer": "O",
+        "explanation": "反而는 ‘오히려’라는 뜻입니다.",
+        "id": "zh-advanced-154",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "ox",
+        "question": "陆续는 여러 사람이나 일이 차례로 이어지는 것을 나타낸다.",
+        "answer": "O",
+        "explanation": "陆续는 ‘잇달아, 차례차례’라는 뜻입니다.",
+        "id": "zh-advanced-155",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "ox",
+        "question": "连续는 중간에 끊김 없이 이어지는 것을 나타낸다.",
+        "answer": "O",
+        "explanation": "连续는 ‘연속적으로’라는 뜻입니다.",
+        "id": "zh-advanced-156",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "ox",
+        "question": "所谓는 ‘소위, 이른바’라는 뜻이다.",
+        "answer": "O",
+        "explanation": "所谓는 어떤 개념이나 표현을 소개할 때 씁니다.",
+        "id": "zh-advanced-157",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "ox",
+        "question": "况且는 앞 내용에 이유를 더할 때 쓸 수 있다.",
+        "answer": "O",
+        "explanation": "况且는 ‘더구나’라는 뜻입니다.",
+        "id": "zh-advanced-158",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "ox",
+        "question": "以免은 나쁜 결과를 피하기 위해라는 뜻을 나타낸다.",
+        "answer": "O",
+        "explanation": "以免은 ‘~하지 않도록’이라는 뜻입니다.",
+        "id": "zh-advanced-159",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 문법",
+        "type": "ox",
+        "question": "何必는 꼭 해야 한다는 강한 명령을 나타낸다.",
+        "answer": "X",
+        "explanation": "何必는 ‘무엇 때문에 굳이’라는 반문 표현입니다.",
+        "id": "zh-advanced-160",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "다음 단어의 뜻으로 가장 알맞은 것을 고르세요.\n逐渐",
+        "choices": [
+            "점차, 차츰",
+            "갑자기",
+            "가끔",
+            "끝내"
+        ],
+        "answer": "점차, 차츰",
+        "explanation": "逐渐은 시간이 지나면서 서서히 변하는 것을 말합니다.",
+        "id": "zh-advanced-161",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "다음 단어의 뜻으로 가장 알맞은 것을 고르세요.\n偶尔",
+        "choices": [
+            "가끔",
+            "반드시",
+            "점차",
+            "영원히"
+        ],
+        "answer": "가끔",
+        "explanation": "偶尔는 ‘가끔’이라는 뜻입니다.",
+        "id": "zh-advanced-162",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "다음 단어의 뜻으로 가장 알맞은 것을 고르세요.\n始终",
+        "choices": [
+            "시종일관",
+            "갑자기",
+            "대략",
+            "우연히"
+        ],
+        "answer": "시종일관",
+        "explanation": "始终은 처음부터 끝까지 변함없음을 뜻합니다.",
+        "id": "zh-advanced-163",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "다음 단어의 뜻으로 가장 알맞은 것을 고르세요.\n临时",
+        "choices": [
+            "임시",
+            "영구",
+            "정확",
+            "충분"
+        ],
+        "answer": "임시",
+        "explanation": "临时는 ‘임시적’이라는 뜻입니다.",
+        "id": "zh-advanced-164",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "다음 단어의 뜻으로 가장 알맞은 것을 고르세요.\n顺便",
+        "choices": [
+            "겸사겸사",
+            "일부러",
+            "갑자기",
+            "반드시"
+        ],
+        "answer": "겸사겸사",
+        "explanation": "顺便은 다른 일을 하는 김에 한다는 뜻입니다.",
+        "id": "zh-advanced-165",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "다음 단어의 뜻으로 가장 알맞은 것을 고르세요.\n仍然",
+        "choices": [
+            "여전히",
+            "드디어",
+            "방금",
+            "전혀"
+        ],
+        "answer": "여전히",
+        "explanation": "仍然은 ‘여전히’라는 뜻입니다.",
+        "id": "zh-advanced-166",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "다음 단어의 뜻으로 가장 알맞은 것을 고르세요.\n显然",
+        "choices": [
+            "명백히",
+            "우연히",
+            "천천히",
+            "조용히"
+        ],
+        "answer": "명백히",
+        "explanation": "显然은 ‘분명히, 명백히’라는 뜻입니다.",
+        "id": "zh-advanced-167",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "다음 단어의 뜻으로 가장 알맞은 것을 고르세요.\n究竟",
+        "choices": [
+            "도대체, 결국",
+            "방금",
+            "가끔",
+            "잠시"
+        ],
+        "answer": "도대체, 결국",
+        "explanation": "究竟은 의문문에서 ‘도대체’, 또는 ‘결국’이라는 뜻을 가질 수 있습니다.",
+        "id": "zh-advanced-168",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "다음 단어의 뜻으로 가장 알맞은 것을 고르세요.\n难怪",
+        "choices": [
+            "어쩐지",
+            "뜻밖에",
+            "혹시",
+            "반드시"
+        ],
+        "answer": "어쩐지",
+        "explanation": "难怪는 이유를 알고 나서 ‘어쩐지’라고 할 때 씁니다.",
+        "id": "zh-advanced-169",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "다음 단어의 뜻으로 가장 알맞은 것을 고르세요.\n总之",
+        "choices": [
+            "총괄하면",
+            "예를 들면",
+            "반대로",
+            "그 사이에"
+        ],
+        "answer": "총괄하면",
+        "explanation": "总之는 앞 내용을 요약할 때 쓰는 표현입니다.",
+        "id": "zh-advanced-170",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "다음 단어의 뜻으로 가장 알맞은 것을 고르세요.\n总算",
+        "choices": [
+            "마침내, 가까스로",
+            "반드시",
+            "자주",
+            "전혀"
+        ],
+        "answer": "마침내, 가까스로",
+        "explanation": "总算은 어렵게 어떤 결과에 도달했다는 느낌이 있습니다.",
+        "id": "zh-advanced-171",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "다음 단어의 뜻으로 가장 알맞은 것을 고르세요.\n居然",
+        "choices": [
+            "뜻밖에도",
+            "반드시",
+            "가끔",
+            "천천히"
+        ],
+        "answer": "뜻밖에도",
+        "explanation": "居然은 예상 밖이라는 놀라움을 나타냅니다.",
+        "id": "zh-advanced-172",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "다음 단어의 뜻으로 가장 알맞은 것을 고르세요.\n依然",
+        "choices": [
+            "여전히",
+            "드디어",
+            "뜻밖에",
+            "절대"
+        ],
+        "answer": "여전히",
+        "explanation": "依然은 ‘여전히’라는 뜻으로 仍然과 비슷합니다.",
+        "id": "zh-advanced-173",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "다음 단어의 뜻으로 가장 알맞은 것을 고르세요.\n所谓",
+        "choices": [
+            "소위, 이른바",
+            "아무튼",
+            "반드시",
+            "대신"
+        ],
+        "answer": "소위, 이른바",
+        "explanation": "所谓는 ‘이른바, 소위’라는 뜻입니다.",
+        "id": "zh-advanced-174",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "다음 단어의 뜻으로 가장 알맞은 것을 고르세요.\n况且",
+        "choices": [
+            "더구나",
+            "만약",
+            "아마",
+            "즉시"
+        ],
+        "answer": "더구나",
+        "explanation": "况且는 앞 내용에 이유를 더할 때 쓰는 표현입니다.",
+        "id": "zh-advanced-175",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "다음 단어의 뜻으로 가장 알맞은 것을 고르세요.\n从而",
+        "choices": [
+            "그리하여",
+            "그럼에도",
+            "만약",
+            "오히려"
+        ],
+        "answer": "그리하여",
+        "explanation": "从而는 앞 원인에 따른 결과를 이어주는 문어적 표현입니다.",
+        "id": "zh-advanced-176",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "다음 단어의 뜻으로 가장 알맞은 것을 고르세요.\n进而",
+        "choices": [
+            "나아가",
+            "마침내",
+            "가끔",
+            "전혀"
+        ],
+        "answer": "나아가",
+        "explanation": "进而는 한 단계 더 나아감을 나타냅니다.",
+        "id": "zh-advanced-177",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "다음 단어의 뜻으로 가장 알맞은 것을 고르세요.\n一旦",
+        "choices": [
+            "일단 ~하면",
+            "가끔 ~하면",
+            "절대 ~하지 않으면",
+            "아직 ~하지 않으면"
+        ],
+        "answer": "일단 ~하면",
+        "explanation": "一旦은 어떤 일이 발생하면 그 뒤 결과가 이어짐을 나타냅니다.",
+        "id": "zh-advanced-178",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "다음 단어의 뜻으로 가장 알맞은 것을 고르세요.\n尽快",
+        "choices": [
+            "되도록 빨리",
+            "천천히",
+            "가끔",
+            "일부러"
+        ],
+        "answer": "되도록 빨리",
+        "explanation": "尽快는 가능한 한 빨리라는 뜻입니다.",
+        "id": "zh-advanced-179",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 어휘",
+        "type": "multiple",
+        "question": "다음 단어의 뜻으로 가장 알맞은 것을 고르세요.\n尽量",
+        "choices": [
+            "가능한 한",
+            "반드시",
+            "아마도",
+            "전혀"
+        ],
+        "answer": "가능한 한",
+        "explanation": "尽量은 가능한 범위 안에서 최대로 한다는 뜻입니다.",
+        "id": "zh-advanced-180",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 독해",
+        "type": "multiple",
+        "question": "다음 글을 읽고 답하세요.\n很多人以为学习语言最重要的是记住大量单词。其实，单词当然重要，但如果不把它们放进句子和真实场景中使用，很快就会忘记。真正有效的方法，是在理解意思的基础上反复接触，并尝试自己表达。\n\n이 글의 중심 내용은 무엇인가요?",
+        "choices": [
+            "단어는 외울 필요가 없다.",
+            "언어 학습에는 실제 사용과 반복 접촉이 중요하다.",
+            "문법만 공부하면 된다.",
+            "단어를 많이 외우면 반드시 유창해진다."
+        ],
+        "answer": "언어 학습에는 실제 사용과 반복 접촉이 중요하다.",
+        "explanation": "글은 단어 암기만으로는 부족하고 문장과 상황 속 반복 사용이 중요하다고 말합니다.",
+        "id": "zh-advanced-181",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 독해",
+        "type": "multiple",
+        "question": "다음 글을 읽고 답하세요.\n城市生活方便，但也带来一些问题，例如交通拥堵、生活成本高以及邻里关系疏远。相比之下，小城市节奏较慢，人们的压力可能小一些。不过，每个人适合的生活方式不同，不能简单地说哪一种更好。\n\n글쓴이의 태도로 알맞은 것은?",
+        "choices": [
+            "대도시 생활이 무조건 좋다.",
+            "소도시 생활은 장점이 없다.",
+            "생활 방식은 사람마다 다르게 선택할 수 있다.",
+            "모든 사람은 도시를 떠나야 한다."
+        ],
+        "answer": "생활 방식은 사람마다 다르게 선택할 수 있다.",
+        "explanation": "글쓴이는 도시와 소도시의 장단점을 모두 말하며 개인 차이를 인정하고 있습니다.",
+        "id": "zh-advanced-182",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 독해",
+        "type": "multiple",
+        "question": "다음 글을 읽고 답하세요.\n有些人一遇到困难就怀疑自己的能力。可是，困难并不一定说明你不适合做这件事，它也可能只是提醒你需要换一种方法，或者需要更多时间。坚持不是盲目重复，而是在调整中继续前进。\n\n이 글에서 말하는 坚持에 가까운 것은?",
+        "choices": [
+            "방법을 바꾸지 않고 무조건 반복하기",
+            "어려우면 바로 포기하기",
+            "조정하면서 계속 나아가기",
+            "능력이 없다고 판단하기"
+        ],
+        "answer": "조정하면서 계속 나아가기",
+        "explanation": "마지막 문장에 在调整中继续前进이라고 되어 있습니다.",
+        "id": "zh-advanced-183",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 독해",
+        "type": "multiple",
+        "question": "다음 글을 읽고 답하세요.\n随着互联网的发展，获取信息变得越来越容易。然而，信息多并不等于判断力强。面对大量消息，我们更需要学会分辨来源、比较观点，而不是看到什么就相信什么。\n\n글의 중심 내용은?",
+        "choices": [
+            "인터넷 정보는 모두 믿을 수 있다.",
+            "정보가 많을수록 판단이 필요 없다.",
+            "정보를 접할 때 비판적으로 판단해야 한다.",
+            "정보를 적게 보는 것이 가장 좋다."
+        ],
+        "answer": "정보를 접할 때 비판적으로 판단해야 한다.",
+        "explanation": "글은 정보의 양보다 출처와 관점을 분별하는 능력이 중요하다고 말합니다.",
+        "id": "zh-advanced-184",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 독해",
+        "type": "multiple",
+        "question": "다음 글을 읽고 답하세요.\n真正的休息不只是停止工作。如果一个人虽然躺在床上，却一直担心明天的任务，他的身心可能并没有得到放松。有效的休息需要暂时放下压力，让注意力从任务中离开。\n\n이 글에서 말하는 효과적인 휴식은?",
+        "choices": [
+            "침대에 오래 누워 있기",
+            "일을 하면서 쉬기",
+            "압박에서 잠시 벗어나 마음을 놓는 것",
+            "내일 할 일을 계속 생각하는 것"
+        ],
+        "answer": "압박에서 잠시 벗어나 마음을 놓는 것",
+        "explanation": "글은 몸만 멈추는 것보다 압박을 내려놓는 것이 중요하다고 말합니다.",
+        "id": "zh-advanced-185",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 독해",
+        "type": "multiple",
+        "question": "다음 글을 읽고 답하세요.\n很多习惯之所以难以坚持，是因为目标设得太大。与其一开始就要求自己每天学习三个小时，不如先从十分钟开始。小目标更容易完成，也更容易带来成就感。\n\n글쓴이가 추천하는 방식은?",
+        "choices": [
+            "처음부터 큰 목표를 세운다.",
+            "작은 목표부터 시작한다.",
+            "목표를 세우지 않는다.",
+            "매일 세 시간 이상 공부한다."
+        ],
+        "answer": "작은 목표부터 시작한다.",
+        "explanation": "글은 작은 목표가 완성하기 쉽고 성취감을 준다고 말합니다.",
+        "id": "zh-advanced-186",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 독해",
+        "type": "multiple",
+        "question": "다음 글을 읽고 답하세요.\n在团队合作中，表达自己的观点很重要，但倾听同样重要。如果每个人都只想证明自己是对的，讨论就很难继续。好的合作不是谁压倒谁，而是一起找到更合适的方案。\n\n이 글의 중심 내용은?",
+        "choices": [
+            "팀에서는 자기 의견만 주장해야 한다.",
+            "토론에서는 이기는 것이 가장 중요하다.",
+            "협력에는 표현과 경청이 모두 필요하다.",
+            "의견 차이는 피해야 한다."
+        ],
+        "answer": "협력에는 표현과 경청이 모두 필요하다.",
+        "explanation": "글은 자신의 의견 표현과 경청이 모두 중요하다고 말합니다.",
+        "id": "zh-advanced-187",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 독해",
+        "type": "multiple",
+        "question": "다음 글을 읽고 답하세요.\n一些人把失败看成结束，另一些人却把失败看成反馈。前者容易停在原地，后者则会分析原因，调整策略。失败本身并不可怕，可怕的是拒绝从中学习。\n\n글쓴이가 가장 강조하는 것은?",
+        "choices": [
+            "실패하면 바로 그만둬야 한다.",
+            "실패를 피하는 것이 가장 중요하다.",
+            "실패에서 배우는 태도가 중요하다.",
+            "실패한 사람은 능력이 없다."
+        ],
+        "answer": "실패에서 배우는 태도가 중요하다.",
+        "explanation": "마지막 문장에서 실패에서 배우기를 거부하는 것이 문제라고 말합니다.",
+        "id": "zh-advanced-188",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 독해",
+        "type": "multiple",
+        "question": "다음 글을 읽고 답하세요.\n消费并不只是花钱，也反映了一个人的价值选择。有人愿意为方便付费，有人更重视环保，还有人会把钱花在学习上。理解自己的需求，才能做出更适合自己的选择。\n\n글의 중심 내용은?",
+        "choices": [
+            "돈은 모두 저축해야 한다.",
+            "소비는 개인의 가치와 필요를 반영한다.",
+            "편리한 상품은 항상 좋다.",
+            "공부에 쓰는 돈만 가치 있다."
+        ],
+        "answer": "소비는 개인의 가치와 필요를 반영한다.",
+        "explanation": "글은 소비가 가치 선택과 필요를 반영한다고 말합니다.",
+        "id": "zh-advanced-189",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 독해",
+        "type": "multiple",
+        "question": "다음 글을 읽고 답하세요.\n公共规则看起来限制了个人自由，但它们的目的并不一定是让人不方便。比如交通规则限制了司机的行为，却保护了所有人的安全。没有规则，自由反而可能变得不稳定。\n\n이 글의 중심 내용은?",
+        "choices": [
+            "규칙은 언제나 자유를 방해한다.",
+            "교통규칙은 필요 없다.",
+            "규칙은 자유와 안전을 보호할 수 있다.",
+            "자유는 규칙 없이만 가능하다."
+        ],
+        "answer": "규칙은 자유와 안전을 보호할 수 있다.",
+        "explanation": "글은 규칙이 제한처럼 보이지만 안전과 안정된 자유를 보호한다고 설명합니다.",
+        "id": "zh-advanced-190",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 독해",
+        "type": "multiple",
+        "question": "다음 글을 읽고 답하세요.\n学习计划不是越详细越好。如果计划太复杂，执行起来反而困难。一个好的计划应该清楚、具体，并且能够根据实际情况调整。\n\n좋은 계획의 조건으로 알맞은 것은?",
+        "choices": [
+            "복잡하고 자세할수록 좋다.",
+            "한 번 정하면 절대 바꾸지 않는다.",
+            "명확하고 구체적이며 조정 가능해야 한다.",
+            "계획 없이 시작하는 것이 가장 좋다."
+        ],
+        "answer": "명확하고 구체적이며 조정 가능해야 한다.",
+        "explanation": "글은 좋은 계획은 분명하고 구체적이며 현실에 맞게 조정 가능해야 한다고 말합니다.",
+        "id": "zh-advanced-191",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 독해",
+        "type": "multiple",
+        "question": "다음 글을 읽고 답하세요.\n现代社会鼓励效率，但效率不等于一直忙。如果一个人不停地做事，却没有思考方向，可能只是更快地走向错误的地方。提高效率之前，先确认目标同样重要。\n\n글쓴이가 말하는 핵심은?",
+        "choices": [
+            "바쁘면 무조건 효율적이다.",
+            "효율보다 목표 확인이 중요할 수 있다.",
+            "방향은 중요하지 않다.",
+            "생각보다 행동이 항상 우선이다."
+        ],
+        "answer": "효율보다 목표 확인이 중요할 수 있다.",
+        "explanation": "글은 효율을 높이기 전에 목표와 방향을 확인해야 한다고 말합니다.",
+        "id": "zh-advanced-192",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 독해",
+        "type": "multiple",
+        "question": "다음 글을 읽고 답하세요.\n很多冲突并不是因为问题本身很大，而是因为双方没有把真正的需求说清楚。一个人抱怨对方迟到，可能真正需要的是被尊重。沟通时，理解表面话语背后的需求很重要。\n\n글의 중심 내용은?",
+        "choices": [
+            "갈등은 언제나 큰 문제에서 생긴다.",
+            "표면적인 말보다 숨은 요구를 이해해야 한다.",
+            "지각은 항상 용서해야 한다.",
+            "불만은 말하지 않는 것이 좋다."
+        ],
+        "answer": "표면적인 말보다 숨은 요구를 이해해야 한다.",
+        "explanation": "글은 갈등 해결에 진짜 요구를 이해하는 것이 중요하다고 말합니다.",
+        "id": "zh-advanced-193",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 독해",
+        "type": "multiple",
+        "question": "다음 글을 읽고 답하세요.\n技术的发展给生活带来了便利，也改变了人与人之间的联系。我们可以随时发送消息，却未必真正理解对方。因此，工具越方便，越需要有意识地保持深度交流。\n\n글쓴이의 의견은?",
+        "choices": [
+            "기술은 인간관계를 완전히 해친다.",
+            "메시지를 많이 보내면 반드시 친해진다.",
+            "편리한 도구와 깊은 소통은 별개일 수 있다.",
+            "소통에는 도구가 필요 없다."
+        ],
+        "answer": "편리한 도구와 깊은 소통은 별개일 수 있다.",
+        "explanation": "글은 연락이 쉬워졌지만 이해와 깊은 소통은 별개의 문제라고 말합니다.",
+        "id": "zh-advanced-194",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 독해",
+        "type": "multiple",
+        "question": "다음 글을 읽고 답하세요.\n选择职业时，收入当然是一个重要因素，但它不应该是唯一标准。工作内容、成长机会、生活平衡也会影响一个人的长期满意度。\n\n직업 선택 기준으로 글에서 언급하지 않은 것은?",
+        "choices": [
+            "수입",
+            "업무 내용",
+            "성장 기회",
+            "출퇴근 거리"
+        ],
+        "answer": "출퇴근 거리",
+        "explanation": "글은 수입, 업무 내용, 성장 기회, 생활 균형을 말했지만 출퇴근 거리는 언급하지 않았습니다.",
+        "id": "zh-advanced-195",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 독해",
+        "type": "multiple",
+        "question": "다음 글을 읽고 답하세요.\n当一个人习惯把所有问题都归因于外部环境时，他可能会失去改变自己的机会。承认环境的影响很重要，但看到自己能控制的部分也同样重要。\n\n글쓴이가 강조하는 것은?",
+        "choices": [
+            "모든 문제는 환경 탓이다.",
+            "환경의 영향은 전혀 없다.",
+            "자신이 통제할 수 있는 부분도 보아야 한다.",
+            "문제를 분석할 필요가 없다."
+        ],
+        "answer": "자신이 통제할 수 있는 부분도 보아야 한다.",
+        "explanation": "글은 환경의 영향과 함께 자기 통제 가능 영역을 보는 것이 중요하다고 말합니다.",
+        "id": "zh-advanced-196",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 독해",
+        "type": "multiple",
+        "question": "다음 글을 읽고 답하세요.\n阅读不仅能提供知识，也能训练人的注意力。短视频让人习惯快速刺激，而阅读要求我们在较长时间里跟随作者的思路。这种能力在学习和工作中都很重要。\n\n읽기의 장점으로 알맞은 것은?",
+        "choices": [
+            "즉각적 자극만 제공한다.",
+            "주의력과 사고 흐름을 따라가는 능력을 기른다.",
+            "공부와 일에는 도움이 되지 않는다.",
+            "영상보다 항상 쉽다."
+        ],
+        "answer": "주의력과 사고 흐름을 따라가는 능력을 기른다.",
+        "explanation": "글은 독서가 지식뿐 아니라 주의력과 사고 추적 능력을 훈련한다고 말합니다.",
+        "id": "zh-advanced-197",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 독해",
+        "type": "multiple",
+        "question": "다음 글을 읽고 답하세요.\n面对选择时，人们常常害怕选错。但没有选择也意味着放弃可能性。与其追求绝对正确的答案，不如在充分了解信息后做出决定，并愿意承担结果。\n\n글쓴이가 권하는 태도는?",
+        "choices": [
+            "선택을 최대한 피한다.",
+            "완벽한 답이 나올 때까지 기다린다.",
+            "정보를 확인한 뒤 결정하고 결과를 책임진다.",
+            "다른 사람이 대신 결정하게 한다."
+        ],
+        "answer": "정보를 확인한 뒤 결정하고 결과를 책임진다.",
+        "explanation": "글은 완벽한 답보다 충분히 알아보고 결정하고 책임지는 태도를 말합니다.",
+        "id": "zh-advanced-198",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 독해",
+        "type": "multiple",
+        "question": "다음 글을 읽고 답하세요.\n环保并不一定意味着牺牲生活质量。很多时候，减少浪费、重复使用物品、选择耐用产品，既能保护环境，也能节省开支。\n\n이 글의 중심 내용은?",
+        "choices": [
+            "환경 보호는 반드시 불편하다.",
+            "환경 보호와 비용 절약이 함께 가능하다.",
+            "내구성 있는 제품은 항상 비싸다.",
+            "낭비는 개인 선택일 뿐이다."
+        ],
+        "answer": "환경 보호와 비용 절약이 함께 가능하다.",
+        "explanation": "글은 환경 보호가 생활의 질 희생만이 아니며 절약과도 연결될 수 있다고 말합니다.",
+        "id": "zh-advanced-199",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    },
+    {
+        "topic": "HSK5~6 독해",
+        "type": "multiple",
+        "question": "다음 글을 읽고 답하세요.\n真正的自律不是把自己逼到极限，而是了解自己的状态，安排合适的任务和休息。能长期持续的节奏，比短时间的爆发更有价值。\n\n글쓴이가 말하는 자율에 가까운 것은?",
+        "choices": [
+            "무조건 한계까지 몰아붙이기",
+            "상태를 고려해 지속 가능한 리듬 만들기",
+            "쉬지 않고 일하기",
+            "계획을 자주 포기하기"
+        ],
+        "answer": "상태를 고려해 지속 가능한 리듬 만들기",
+        "explanation": "글은 지속 가능한 리듬과 적절한 휴식을 강조합니다.",
+        "id": "zh-advanced-200",
+        "subject": "중국어",
+        "sourceLabel": "HSK5~6"
+    }
+]

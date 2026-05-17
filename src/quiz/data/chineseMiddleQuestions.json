@@ -1,0 +1,3482 @@
+[
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n安排",
+    "choices": [
+      "배치하다, 안배하다",
+      "축하하다",
+      "거절하다",
+      "오해하다"
+    ],
+    "answer": "배치하다, 안배하다",
+    "explanation": "安排(ānpái)는 일정을 배치하거나 일을 안배한다는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-001"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n保护",
+    "choices": [
+      "보호하다",
+      "비교하다",
+      "발견하다",
+      "설명하다"
+    ],
+    "answer": "보호하다",
+    "explanation": "保护(bǎohù)는 보호하다라는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-002"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n保证",
+    "choices": [
+      "보장하다, 보증하다",
+      "방문하다",
+      "반대하다",
+      "바꾸다"
+    ],
+    "answer": "보장하다, 보증하다",
+    "explanation": "保证(bǎozhèng)는 보장하다, 보증하다라는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-003"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n报名",
+    "choices": [
+      "신청하다, 등록하다",
+      "졸업하다",
+      "실패하다",
+      "이사하다"
+    ],
+    "answer": "신청하다, 등록하다",
+    "explanation": "报名(bàomíng)은 시험이나 활동에 신청·등록하다입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-004"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n比较",
+    "choices": [
+      "비교적, 비교하다",
+      "갑자기",
+      "반드시",
+      "전혀"
+    ],
+    "answer": "비교적, 비교하다",
+    "explanation": "比较(bǐjiào)는 비교하다 또는 비교적이라는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-005"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n标准",
+    "choices": [
+      "표준, 기준",
+      "습관",
+      "장점",
+      "문제"
+    ],
+    "answer": "표준, 기준",
+    "explanation": "标准(biāozhǔn)은 표준이나 기준입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-006"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n表示",
+    "choices": [
+      "나타내다, 표시하다",
+      "허락하다",
+      "연습하다",
+      "출발하다"
+    ],
+    "answer": "나타내다, 표시하다",
+    "explanation": "表示(biǎoshì)는 표현하거나 나타낸다는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-007"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n参观",
+    "choices": [
+      "참관하다, 견학하다",
+      "선택하다",
+      "연기하다",
+      "정리하다"
+    ],
+    "answer": "참관하다, 견학하다",
+    "explanation": "参观(cānguān)은 장소를 방문해 둘러보다입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-008"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n成功",
+    "choices": [
+      "성공하다, 성공",
+      "실패하다",
+      "위험하다",
+      "엄격하다"
+    ],
+    "answer": "성공하다, 성공",
+    "explanation": "成功(chénggōng)은 성공 또는 성공하다입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-009"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n成为",
+    "choices": [
+      "~이 되다",
+      "떠나다",
+      "중시하다",
+      "끝내다"
+    ],
+    "answer": "~이 되다",
+    "explanation": "成为(chéngwéi)는 어떤 신분이나 상태가 되다는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-010"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n诚实",
+    "choices": [
+      "정직하다",
+      "시끄럽다",
+      "편리하다",
+      "복잡하다"
+    ],
+    "answer": "정직하다",
+    "explanation": "诚实(chéngshí)은 정직하다는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-011"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n吃惊",
+    "choices": [
+      "놀라다",
+      "기뻐하다",
+      "동의하다",
+      "필요하다"
+    ],
+    "answer": "놀라다",
+    "explanation": "吃惊(chījīng)은 놀라다는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-012"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n重新",
+    "choices": [
+      "다시, 새로",
+      "즉시",
+      "전혀",
+      "아마"
+    ],
+    "answer": "다시, 새로",
+    "explanation": "重新(chóngxīn)은 다시, 새롭게라는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-013"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n出发",
+    "choices": [
+      "출발하다",
+      "도착하다",
+      "취소하다",
+      "초대하다"
+    ],
+    "answer": "출발하다",
+    "explanation": "出发(chūfā)는 출발하다입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-014"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n出现",
+    "choices": [
+      "나타나다, 출현하다",
+      "사라지다",
+      "연습하다",
+      "선택하다"
+    ],
+    "answer": "나타나다, 출현하다",
+    "explanation": "出现(chūxiàn)은 나타나다입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-015"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n打扰",
+    "choices": [
+      "방해하다, 폐를 끼치다",
+      "도와주다",
+      "이해하다",
+      "기억하다"
+    ],
+    "answer": "방해하다, 폐를 끼치다",
+    "explanation": "打扰(dǎrǎo)는 방해하다, 폐를 끼치다입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-016"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n打算",
+    "choices": [
+      "계획하다, 생각이다",
+      "반대하다",
+      "경험하다",
+      "절약하다"
+    ],
+    "answer": "계획하다, 생각이다",
+    "explanation": "打算(dǎsuàn)은 ~할 계획이라는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-017"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n大概",
+    "choices": [
+      "아마, 대략",
+      "반드시",
+      "전혀",
+      "곧장"
+    ],
+    "answer": "아마, 대략",
+    "explanation": "大概(dàgài)는 아마, 대략입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-018"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n代表",
+    "choices": [
+      "대표하다, 대표",
+      "기록하다",
+      "졸업하다",
+      "오해하다"
+    ],
+    "answer": "대표하다, 대표",
+    "explanation": "代表(dàibiǎo)는 대표하다 또는 대표입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-019"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n担心",
+    "choices": [
+      "걱정하다",
+      "동의하다",
+      "출발하다",
+      "성공하다"
+    ],
+    "answer": "걱정하다",
+    "explanation": "担心(dānxīn)은 걱정하다입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-020"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n低",
+    "choices": [
+      "낮다",
+      "높다",
+      "두껍다",
+      "얇다"
+    ],
+    "answer": "낮다",
+    "explanation": "低(dī)는 낮다는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-021"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n调查",
+    "choices": [
+      "조사하다",
+      "축하하다",
+      "보호하다",
+      "거절하다"
+    ],
+    "answer": "조사하다",
+    "explanation": "调查(diàochá)는 조사하다입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-022"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n发展",
+    "choices": [
+      "발전하다",
+      "낭비하다",
+      "사과하다",
+      "반복하다"
+    ],
+    "answer": "발전하다",
+    "explanation": "发展(fāzhǎn)은 발전하다입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-023"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n发现",
+    "choices": [
+      "발견하다",
+      "발전하다",
+      "설명하다",
+      "정리하다"
+    ],
+    "answer": "발견하다",
+    "explanation": "发现(fāxiàn)은 발견하다입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-024"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n放弃",
+    "choices": [
+      "포기하다",
+      "보호하다",
+      "초대하다",
+      "신청하다"
+    ],
+    "answer": "포기하다",
+    "explanation": "放弃(fàngqì)는 포기하다입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-025"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n丰富",
+    "choices": [
+      "풍부하다",
+      "간단하다",
+      "위험하다",
+      "엄격하다"
+    ],
+    "answer": "풍부하다",
+    "explanation": "丰富(fēngfù)는 풍부하다는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-026"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n负责",
+    "choices": [
+      "책임지다",
+      "연습하다",
+      "사라지다",
+      "보증하다"
+    ],
+    "answer": "책임지다",
+    "explanation": "负责(fùzé)는 책임지다입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-027"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n改变",
+    "choices": [
+      "바꾸다, 변화시키다",
+      "축하하다",
+      "빌리다",
+      "방문하다"
+    ],
+    "answer": "바꾸다, 변화시키다",
+    "explanation": "改变(gǎibiàn)은 바꾸다, 변화시키다입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-028"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n敢",
+    "choices": [
+      "감히 ~하다",
+      "반드시 ~하다",
+      "이미 ~했다",
+      "방금 ~했다"
+    ],
+    "answer": "감히 ~하다",
+    "explanation": "敢(gǎn)은 감히 ~하다, 용기가 있다는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-029"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n感动",
+    "choices": [
+      "감동하다",
+      "걱정하다",
+      "출발하다",
+      "필요하다"
+    ],
+    "answer": "감동하다",
+    "explanation": "感动(gǎndòng)은 감동하다입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-030"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n感谢",
+    "choices": [
+      "감사하다",
+      "축하하다",
+      "반대하다",
+      "확인하다"
+    ],
+    "answer": "감사하다",
+    "explanation": "感谢(gǎnxiè)는 감사하다입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-031"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n干净",
+    "choices": [
+      "깨끗하다",
+      "복잡하다",
+      "시끄럽다",
+      "유명하다"
+    ],
+    "answer": "깨끗하다",
+    "explanation": "干净(gānjìng)은 깨끗하다는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-032"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n高速公路",
+    "choices": [
+      "고속도로",
+      "지하철",
+      "공항",
+      "교실"
+    ],
+    "answer": "고속도로",
+    "explanation": "高速公路(gāosù gōnglù)는 고속도로입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-033"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n工具",
+    "choices": [
+      "도구",
+      "습관",
+      "가격",
+      "소식"
+    ],
+    "answer": "도구",
+    "explanation": "工具(gōngjù)는 도구입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-034"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n工资",
+    "choices": [
+      "월급",
+      "가격",
+      "비용",
+      "현금"
+    ],
+    "answer": "월급",
+    "explanation": "工资(gōngzī)는 월급입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-035"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n共同",
+    "choices": [
+      "공동의, 함께",
+      "갑작스러운",
+      "개인적인",
+      "위험한"
+    ],
+    "answer": "공동의, 함께",
+    "explanation": "共同(gòngtóng)은 공동의, 함께라는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-036"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n故意",
+    "choices": [
+      "고의로",
+      "아마",
+      "대략",
+      "전혀"
+    ],
+    "answer": "고의로",
+    "explanation": "故意(gùyì)는 일부러, 고의로라는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-037"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n管理",
+    "choices": [
+      "관리하다",
+      "축하하다",
+      "방해하다",
+      "설명하다"
+    ],
+    "answer": "관리하다",
+    "explanation": "管理(guǎnlǐ)는 관리하다입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-038"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n广播",
+    "choices": [
+      "방송",
+      "광고",
+      "회의",
+      "기사"
+    ],
+    "answer": "방송",
+    "explanation": "广播(guǎngbō)는 방송입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-039"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n广告",
+    "choices": [
+      "광고",
+      "방송",
+      "뉴스",
+      "방법"
+    ],
+    "answer": "광고",
+    "explanation": "广告(guǎnggào)는 광고입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-040"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n国际",
+    "choices": [
+      "국제",
+      "국내",
+      "개인",
+      "임시"
+    ],
+    "answer": "국제",
+    "explanation": "国际(guójì)는 국제입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-041"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n过程",
+    "choices": [
+      "과정",
+      "결과",
+      "이유",
+      "습관"
+    ],
+    "answer": "과정",
+    "explanation": "过程(guòchéng)은 과정입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-042"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n结果",
+    "choices": [
+      "결과",
+      "과정",
+      "원인",
+      "기준"
+    ],
+    "answer": "결과",
+    "explanation": "结果(jiéguǒ)는 결과입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-043"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n继续",
+    "choices": [
+      "계속하다",
+      "멈추다",
+      "거절하다",
+      "실패하다"
+    ],
+    "answer": "계속하다",
+    "explanation": "继续(jìxù)는 계속하다입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-044"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n计划",
+    "choices": [
+      "계획",
+      "경험",
+      "장점",
+      "문제"
+    ],
+    "answer": "계획",
+    "explanation": "计划(jìhuà)는 계획입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-045"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n减少",
+    "choices": [
+      "감소하다, 줄이다",
+      "증가하다",
+      "반복하다",
+      "초대하다"
+    ],
+    "answer": "감소하다, 줄이다",
+    "explanation": "减少(jiǎnshǎo)는 감소하다, 줄이다입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-046"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n将来",
+    "choices": [
+      "장래, 미래",
+      "과거",
+      "현재",
+      "방금"
+    ],
+    "answer": "장래, 미래",
+    "explanation": "将来(jiānglái)는 장래, 미래입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-047"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n交流",
+    "choices": [
+      "교류하다",
+      "포기하다",
+      "졸업하다",
+      "낭비하다"
+    ],
+    "answer": "교류하다",
+    "explanation": "交流(jiāoliú)는 교류하다입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-048"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n解决",
+    "choices": [
+      "해결하다",
+      "방해하다",
+      "확인하다",
+      "비교하다"
+    ],
+    "answer": "해결하다",
+    "explanation": "解决(jiějué)는 해결하다입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-049"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n经历",
+    "choices": [
+      "경험하다, 겪다",
+      "빌리다",
+      "준비하다",
+      "거절하다"
+    ],
+    "answer": "경험하다, 겪다",
+    "explanation": "经历(jīnglì)는 경험하다, 겪다입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-050"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n经验",
+    "choices": [
+      "경험",
+      "계획",
+      "방법",
+      "결과"
+    ],
+    "answer": "경험",
+    "explanation": "经验(jīngyàn)은 경험입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-051"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n竞争",
+    "choices": [
+      "경쟁하다",
+      "협력하다",
+      "방문하다",
+      "이해하다"
+    ],
+    "answer": "경쟁하다",
+    "explanation": "竞争(jìngzhēng)은 경쟁하다입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-052"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n开玩笑",
+    "choices": [
+      "농담하다",
+      "출발하다",
+      "포기하다",
+      "조사하다"
+    ],
+    "answer": "농담하다",
+    "explanation": "开玩笑(kāi wánxiào)는 농담하다입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-053"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n考虑",
+    "choices": [
+      "고려하다",
+      "결정하다",
+      "축하하다",
+      "놓치다"
+    ],
+    "answer": "고려하다",
+    "explanation": "考虑(kǎolǜ)는 고려하다입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-054"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n科学",
+    "choices": [
+      "과학",
+      "역사",
+      "예술",
+      "문화"
+    ],
+    "answer": "과학",
+    "explanation": "科学(kēxué)은 과학입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-055"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n可惜",
+    "choices": [
+      "아쉽다",
+      "유명하다",
+      "적합하다",
+      "시끄럽다"
+    ],
+    "answer": "아쉽다",
+    "explanation": "可惜(kěxī)는 아쉽다입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-056"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n困难",
+    "choices": [
+      "어렵다, 어려움",
+      "간단하다",
+      "편리하다",
+      "신선하다"
+    ],
+    "answer": "어렵다, 어려움",
+    "explanation": "困难(kùnnan)은 어려움 또는 어렵다는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-057"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n浪费",
+    "choices": [
+      "낭비하다",
+      "절약하다",
+      "보호하다",
+      "완성하다"
+    ],
+    "answer": "낭비하다",
+    "explanation": "浪费(làngfèi)는 낭비하다입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-058"
+  },
+  {
+    "topic": "HSK 3~4 어휘",
+    "type": "multiple",
+    "question": "다음 중국어의 뜻으로 가장 알맞은 것은?\n了解",
+    "choices": [
+      "이해하다, 알아보다",
+      "거절하다",
+      "축하하다",
+      "사라지다"
+    ],
+    "answer": "이해하다, 알아보다",
+    "explanation": "了解(liǎojiě)는 이해하다, 알아보다입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-059"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n这件事 ____ 我来说很重要。",
+    "choices": [
+      "对",
+      "把",
+      "被",
+      "比"
+    ],
+    "answer": "对",
+    "explanation": "对……来说는 '~에게 있어'라는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-060"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n他 ____ 作业做完了。",
+    "choices": [
+      "把",
+      "被",
+      "比",
+      "对"
+    ],
+    "answer": "把",
+    "explanation": "把문은 목적어를 앞에 두고 처리 결과를 강조합니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-061"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我的手机 ____ 他拿走了。",
+    "choices": [
+      "被",
+      "把",
+      "比",
+      "对"
+    ],
+    "answer": "被",
+    "explanation": "被는 수동 표현에 사용됩니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-062"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n今天 ____ 昨天冷。",
+    "choices": [
+      "比",
+      "把",
+      "被",
+      "对"
+    ],
+    "answer": "比",
+    "explanation": "A比B+형용사는 비교 표현입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-063"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n他 ____ 高 ____ 瘦。",
+    "choices": [
+      "又, 又",
+      "一边, 一边",
+      "因为, 所以",
+      "虽然, 但是"
+    ],
+    "answer": "又, 又",
+    "explanation": "又A又B는 두 성질을 함께 나타냅니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-064"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 听音乐 ____ 做作业。",
+    "choices": [
+      "一边, 一边",
+      "又, 又",
+      "先, 再",
+      "不是, 而是"
+    ],
+    "answer": "一边, 一边",
+    "explanation": "一边A一边B는 두 동작을 동시에 함을 나타냅니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-065"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n____ 下雨，____ 我们还去。",
+    "choices": [
+      "虽然, 但是",
+      "因为, 所以",
+      "一边, 一边",
+      "又, 又"
+    ],
+    "answer": "虽然, 但是",
+    "explanation": "虽然……但是……는 양보와 역접을 나타냅니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-066"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n____ 他生病了，____ 没来上课。",
+    "choices": [
+      "因为, 所以",
+      "虽然, 但是",
+      "一边, 一边",
+      "不但, 而且"
+    ],
+    "answer": "因为, 所以",
+    "explanation": "因为는 원인, 所以는 결과를 나타냅니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-067"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n他 ____ 会说中文，____ 会说英文。",
+    "choices": [
+      "不但, 而且",
+      "因为, 所以",
+      "虽然, 但是",
+      "一边, 一边"
+    ],
+    "answer": "不但, 而且",
+    "explanation": "不但……而且……는 '~뿐만 아니라 또한'입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-068"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n这 ____ 我的错，____ 你的错。",
+    "choices": [
+      "不是, 而是",
+      "一边, 一边",
+      "因为, 所以",
+      "又, 又"
+    ],
+    "answer": "不是, 而是",
+    "explanation": "不是A而是B는 A가 아니라 B라는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-069"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 去过北京。",
+    "choices": [
+      "已经",
+      "正在",
+      "从来",
+      "马上"
+    ],
+    "answer": "已经",
+    "explanation": "已经는 이미라는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-070"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 没去过上海。",
+    "choices": [
+      "从来",
+      "已经",
+      "马上",
+      "正在"
+    ],
+    "answer": "从来",
+    "explanation": "从来没은 지금까지 한 번도 ~한 적 없다는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-071"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n他 ____ 看书呢。",
+    "choices": [
+      "正在",
+      "已经",
+      "从来",
+      "终于"
+    ],
+    "answer": "正在",
+    "explanation": "正在은 동작의 진행을 나타냅니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-072"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n火车 ____ 要开了。",
+    "choices": [
+      "马上",
+      "从来",
+      "已经",
+      "正在"
+    ],
+    "answer": "马上",
+    "explanation": "马上은 곧, 즉시라는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-073"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 完成了任务。",
+    "choices": [
+      "终于",
+      "从来",
+      "正在",
+      "互相"
+    ],
+    "answer": "终于",
+    "explanation": "终于는 마침내라는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-074"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我们应该 ____ 帮助。",
+    "choices": [
+      "互相",
+      "马上",
+      "已经",
+      "终于"
+    ],
+    "answer": "互相",
+    "explanation": "互相은 서로라는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-075"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n请你 ____ 说一遍。",
+    "choices": [
+      "再",
+      "又",
+      "才",
+      "就"
+    ],
+    "answer": "再",
+    "explanation": "再는 앞으로 다시 할 동작에 씁니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-076"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n他昨天 ____ 来了。",
+    "choices": [
+      "又",
+      "再",
+      "才",
+      "就"
+    ],
+    "answer": "又",
+    "explanation": "又는 이미 반복된 동작에 씁니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-077"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我八点 ____ 到公司。",
+    "choices": [
+      "才",
+      "再",
+      "又",
+      "正在"
+    ],
+    "answer": "才",
+    "explanation": "才는 예상보다 늦거나 겨우라는 느낌을 줄 수 있습니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-078"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n他五分钟 ____ 做完了。",
+    "choices": [
+      "就",
+      "才",
+      "再",
+      "又"
+    ],
+    "answer": "就",
+    "explanation": "就는 예상보다 빠름을 나타낼 수 있습니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-079"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n这本书我看 ____ 三遍。",
+    "choices": [
+      "过",
+      "着",
+      "得",
+      "把"
+    ],
+    "answer": "过",
+    "explanation": "동사 + 过는 경험을 나타냅니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-080"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n门开 ____ 呢。",
+    "choices": [
+      "着",
+      "过",
+      "了",
+      "得"
+    ],
+    "answer": "着",
+    "explanation": "着는 상태의 지속을 나타낼 수 있습니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-081"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n他说中文说 ____ 很好。",
+    "choices": [
+      "得",
+      "地",
+      "的",
+      "了"
+    ],
+    "answer": "得",
+    "explanation": "동사 뒤 보어 앞에는 得를 씁니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-082"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n他高兴 ____ 跳了起来。",
+    "choices": [
+      "得",
+      "地",
+      "的",
+      "着"
+    ],
+    "answer": "得",
+    "explanation": "정도보어에서 得를 사용합니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-083"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n请慢慢 ____ 说。",
+    "choices": [
+      "地",
+      "得",
+      "的",
+      "了"
+    ],
+    "answer": "地",
+    "explanation": "부사어와 동사 사이에는 地를 씁니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-084"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n这是我买 ____ 书。",
+    "choices": [
+      "的",
+      "地",
+      "得",
+      "着"
+    ],
+    "answer": "的",
+    "explanation": "수식어와 명사 사이에는 的를 씁니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-085"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 他一样高。",
+    "choices": [
+      "跟",
+      "把",
+      "被",
+      "向"
+    ],
+    "answer": "跟",
+    "explanation": "跟……一样는 '~와 같다'라는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-086"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n他 ____ 我借了一本书。",
+    "choices": [
+      "向",
+      "被",
+      "把",
+      "比"
+    ],
+    "answer": "向",
+    "explanation": "向 + 사람 + 동사는 '~에게 ~하다'입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-087"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n你应该 ____ 父母商量一下。",
+    "choices": [
+      "跟",
+      "被",
+      "把",
+      "比"
+    ],
+    "answer": "跟",
+    "explanation": "跟……商量은 ~와 상의하다입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-088"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n这件事 ____ 你有关系。",
+    "choices": [
+      "跟",
+      "把",
+      "被",
+      "比"
+    ],
+    "answer": "跟",
+    "explanation": "跟……有关系는 ~와 관련이 있다는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-089"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 起床 ____ 吃早饭。",
+    "choices": [
+      "先, 再",
+      "又, 又",
+      "越, 越",
+      "不但, 而且"
+    ],
+    "answer": "先, 再",
+    "explanation": "先……再……는 먼저 ~하고 그다음 ~하다는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-090"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n天气 ____ 来 ____ 冷了。",
+    "choices": [
+      "越, 越",
+      "先, 再",
+      "又, 又",
+      "因为, 所以"
+    ],
+    "answer": "越, 越",
+    "explanation": "越来越는 점점 ~해지다입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-091"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n你学得 ____ 多，懂得 ____ 多。",
+    "choices": [
+      "越, 越",
+      "一边, 一边",
+      "又, 又",
+      "先, 再"
+    ],
+    "answer": "越, 越",
+    "explanation": "越A越B는 A할수록 B하다입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-092"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n他忙 ____ 没时间吃饭。",
+    "choices": [
+      "得",
+      "地",
+      "的",
+      "着"
+    ],
+    "answer": "得",
+    "explanation": "忙得没时间은 바빠서 시간이 없다는 정도보어 구조입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-093"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n这道题 ____ 容易 ____ 我以为。",
+    "choices": [
+      "没有, 那么",
+      "不是, 而是",
+      "虽然, 但是",
+      "越, 越"
+    ],
+    "answer": "没有, 那么",
+    "explanation": "没有……那么……는 ~만큼 그렇게 ~하지 않다는 비교 표현입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-094"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n他跑 ____ 比我快。",
+    "choices": [
+      "得",
+      "地",
+      "的",
+      "过"
+    ],
+    "answer": "得",
+    "explanation": "跑得比我快는 나보다 빨리 달린다는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-095"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n这件衣服 ____ 贵 ____ 好看。",
+    "choices": [
+      "又, 又",
+      "越, 越",
+      "先, 再",
+      "被, 把"
+    ],
+    "answer": "又, 又",
+    "explanation": "又贵又好看은 비싸기도 하고 예쁘기도 하다는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-096"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n你 ____ 想去，____ 去吧。",
+    "choices": [
+      "既然, 就",
+      "虽然, 但是",
+      "不但, 而且",
+      "一边, 一边"
+    ],
+    "answer": "既然, 就",
+    "explanation": "既然……就……는 이미 ~인 이상 ~하다는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-097"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n他 ____ 没来，____ 打电话说明了原因。",
+    "choices": [
+      "虽然, 但是",
+      "因为, 所以",
+      "不是, 而是",
+      "越, 越"
+    ],
+    "answer": "虽然, 但是",
+    "explanation": "오지는 않았지만 전화로 이유를 설명했다는 역접입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-098"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n这个问题 ____ 难，我也要试试。",
+    "choices": [
+      "再",
+      "又",
+      "才",
+      "就"
+    ],
+    "answer": "再",
+    "explanation": "再 + 형용사 + 也는 아무리 ~해도라는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-099"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n你 ____ 不喜欢，也应该试一试。",
+    "choices": [
+      "即使",
+      "因为",
+      "所以",
+      "然后"
+    ],
+    "answer": "即使",
+    "explanation": "即使……也……는 설령 ~하더라도라는 양보 표현입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-100"
+  },
+  {
+    "topic": "HSK 3~4 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\n虽然今天很忙，但是我还是去参加了会议。",
+    "choices": [
+      "오늘은 매우 바빴지만 그래도 나는 회의에 참석했습니다.",
+      "오늘은 바빠서 회의에 참석하지 않았습니다.",
+      "오늘 회의가 취소되어 집에 갔습니다.",
+      "나는 회의가 있어서 바쁘지 않았습니다."
+    ],
+    "answer": "오늘은 매우 바빴지만 그래도 나는 회의에 참석했습니다.",
+    "explanation": "虽然……但是……는 양보와 역접을 나타냅니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-101"
+  },
+  {
+    "topic": "HSK 3~4 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\n他把房间打扫得很干净。",
+    "choices": [
+      "그는 방을 매우 깨끗하게 청소했습니다.",
+      "그는 깨끗한 방에서 일했습니다.",
+      "그는 방을 청소하지 않았습니다.",
+      "그 방은 원래 깨끗했습니다."
+    ],
+    "answer": "그는 방을 매우 깨끗하게 청소했습니다.",
+    "explanation": "把문과 정도보어 得가 함께 쓰였습니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-102"
+  },
+  {
+    "topic": "HSK 3~4 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\n我的手机被弟弟拿走了。",
+    "choices": [
+      "내 휴대폰은 남동생에게 가져가졌습니다.",
+      "나는 남동생의 휴대폰을 가져갔습니다.",
+      "남동생은 휴대폰을 사지 않았습니다.",
+      "휴대폰은 책상 위에 있습니다."
+    ],
+    "answer": "내 휴대폰은 남동생에게 가져가졌습니다.",
+    "explanation": "被는 수동 표현을 만듭니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-103"
+  },
+  {
+    "topic": "HSK 3~4 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\n这本书我已经看过三遍了。",
+    "choices": [
+      "이 책은 내가 이미 세 번 읽어 본 적이 있습니다.",
+      "이 책은 내가 세 번 살 예정입니다.",
+      "나는 이 책을 아직 읽지 않았습니다.",
+      "나는 이 책을 세 권 가지고 있습니다."
+    ],
+    "answer": "이 책은 내가 이미 세 번 읽어 본 적이 있습니다.",
+    "explanation": "看过는 읽어 본 경험, 三遍은 세 번입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-104"
+  },
+  {
+    "topic": "HSK 3~4 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\n他一边听音乐，一边做作业。",
+    "choices": [
+      "그는 음악을 들으면서 숙제를 합니다.",
+      "그는 음악을 듣고 나서 숙제를 합니다.",
+      "그는 음악도 숙제도 싫어합니다.",
+      "그는 숙제를 끝내고 음악을 들었습니다."
+    ],
+    "answer": "그는 음악을 들으면서 숙제를 합니다.",
+    "explanation": "一边……一边……는 동시 동작을 나타냅니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-105"
+  },
+  {
+    "topic": "HSK 3~4 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\n只要努力，就一定会有进步。",
+    "choices": [
+      "노력하기만 하면 반드시 발전이 있을 것입니다.",
+      "노력해도 발전할 수 없습니다.",
+      "발전하려면 쉬어야 합니다.",
+      "노력은 중요하지 않습니다."
+    ],
+    "answer": "노력하기만 하면 반드시 발전이 있을 것입니다.",
+    "explanation": "只要……就……는 조건과 결과를 나타냅니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-106"
+  },
+  {
+    "topic": "HSK 3~4 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\n无论遇到什么困难，他都不会放弃。",
+    "choices": [
+      "어떤 어려움을 만나더라도 그는 포기하지 않을 것입니다.",
+      "어려움이 없으면 그는 포기합니다.",
+      "그는 어려움을 피하기만 합니다.",
+      "그는 이미 포기했습니다."
+    ],
+    "answer": "어떤 어려움을 만나더라도 그는 포기하지 않을 것입니다.",
+    "explanation": "无论……都……는 어떤 경우에도라는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-107"
+  },
+  {
+    "topic": "HSK 3~4 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\n这个问题没有你想的那么简单。",
+    "choices": [
+      "이 문제는 네가 생각한 것만큼 그렇게 간단하지 않습니다.",
+      "이 문제는 네가 생각한 것보다 쉽습니다.",
+      "너는 이 문제를 생각하지 않았습니다.",
+      "이 문제는 이미 해결되었습니다."
+    ],
+    "answer": "이 문제는 네가 생각한 것만큼 그렇게 간단하지 않습니다.",
+    "explanation": "没有……那么……는 ~만큼 그렇게 ~하지 않다입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-108"
+  },
+  {
+    "topic": "HSK 3~4 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\n经理要求我们明天以前完成报告。",
+    "choices": [
+      "매니저는 우리가 내일 전까지 보고서를 완성할 것을 요구했습니다.",
+      "매니저는 내일 보고서를 읽을 것입니다.",
+      "우리는 내일 회의를 취소했습니다.",
+      "보고서는 어제 완성되었습니다."
+    ],
+    "answer": "매니저는 우리가 내일 전까지 보고서를 완성할 것을 요구했습니다.",
+    "explanation": "要求는 요구하다, 明天以前은 내일 전까지입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-109"
+  },
+  {
+    "topic": "HSK 3~4 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\n随着经济的发展，人们的生活水平提高了。",
+    "choices": [
+      "경제가 발전함에 따라 사람들의 생활 수준이 향상되었습니다.",
+      "경제가 나빠져 생활 수준이 낮아졌습니다.",
+      "사람들은 경제 발전에 관심이 없습니다.",
+      "생활 수준은 경제와 관계가 없습니다."
+    ],
+    "answer": "경제가 발전함에 따라 사람들의 생활 수준이 향상되었습니다.",
+    "explanation": "随着는 ~에 따라라는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-110"
+  },
+  {
+    "topic": "HSK 3~4 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\n为了保护环境，我们应该减少浪费。",
+    "choices": [
+      "환경을 보호하기 위해 우리는 낭비를 줄여야 합니다.",
+      "환경을 보호하기 위해 낭비를 늘려야 합니다.",
+      "환경은 낭비와 관계가 없습니다.",
+      "우리는 환경 문제를 이미 해결했습니다."
+    ],
+    "answer": "환경을 보호하기 위해 우리는 낭비를 줄여야 합니다.",
+    "explanation": "为了는 목적, 减少浪费는 낭비를 줄이다입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-111"
+  },
+  {
+    "topic": "HSK 3~4 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\n他不仅会说中文，而且会说英文。",
+    "choices": [
+      "그는 중국어를 할 줄 알 뿐만 아니라 영어도 할 줄 압니다.",
+      "그는 중국어만 할 줄 압니다.",
+      "그는 영어를 배우고 싶어합니다.",
+      "그는 외국어를 전혀 모릅니다."
+    ],
+    "answer": "그는 중국어를 할 줄 알 뿐만 아니라 영어도 할 줄 압니다.",
+    "explanation": "不仅……而且……는 ~뿐만 아니라 또한입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-112"
+  },
+  {
+    "topic": "HSK 3~4 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\n这次旅行给我留下了深刻的印象。",
+    "choices": [
+      "이번 여행은 나에게 깊은 인상을 남겼습니다.",
+      "이번 여행은 매우 짧았습니다.",
+      "나는 이번 여행을 취소했습니다.",
+      "나는 여행 계획을 잊었습니다."
+    ],
+    "answer": "이번 여행은 나에게 깊은 인상을 남겼습니다.",
+    "explanation": "留下印象은 인상을 남기다라는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-113"
+  },
+  {
+    "topic": "HSK 3~4 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\n如果你有时间，就来我家玩儿吧。",
+    "choices": [
+      "시간이 있으면 우리 집에 놀러 오세요.",
+      "시간이 없으면 집에 오세요.",
+      "나는 네 집에 가지 않습니다.",
+      "시간이 있어서 집에 있었습니다."
+    ],
+    "answer": "시간이 있으면 우리 집에 놀러 오세요.",
+    "explanation": "如果……就……는 조건과 결과를 나타냅니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-114"
+  },
+  {
+    "topic": "HSK 3~4 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\n他终于通过了考试。",
+    "choices": [
+      "그는 마침내 시험에 합격했습니다.",
+      "그는 시험을 포기했습니다.",
+      "그는 시험을 준비하지 않았습니다.",
+      "시험은 취소되었습니다."
+    ],
+    "answer": "그는 마침내 시험에 합격했습니다.",
+    "explanation": "终于는 마침내라는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-115"
+  },
+  {
+    "topic": "HSK 3~4 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\n这件事跟我没有关系。",
+    "choices": [
+      "이 일은 나와 관계가 없습니다.",
+      "이 일은 내가 책임집니다.",
+      "나는 이 일을 좋아합니다.",
+      "이 일은 나에게 매우 중요합니다."
+    ],
+    "answer": "이 일은 나와 관계가 없습니다.",
+    "explanation": "跟……有关系는 ~와 관계가 있다는 뜻이고 没有关系는 관계없다는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-116"
+  },
+  {
+    "topic": "HSK 3~4 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\n请你把门关上。",
+    "choices": [
+      "문을 닫아 주세요.",
+      "문을 열어 주세요.",
+      "문 앞에 서 주세요.",
+      "문을 사 주세요."
+    ],
+    "answer": "문을 닫아 주세요.",
+    "explanation": "把门关上은 문을 닫아 결과 상태를 만들라는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-117"
+  },
+  {
+    "topic": "HSK 3~4 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\n她说得太快，我没听懂。",
+    "choices": [
+      "그녀가 너무 빨리 말해서 나는 알아듣지 못했습니다.",
+      "그녀는 천천히 말했습니다.",
+      "나는 그녀의 말을 모두 이해했습니다.",
+      "그녀는 말하지 않았습니다."
+    ],
+    "answer": "그녀가 너무 빨리 말해서 나는 알아듣지 못했습니다.",
+    "explanation": "说得太快는 너무 빨리 말하다입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-118"
+  },
+  {
+    "topic": "HSK 3~4 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\n这个城市越来越漂亮了。",
+    "choices": [
+      "이 도시는 점점 더 예뻐졌습니다.",
+      "이 도시는 점점 작아졌습니다.",
+      "이 도시는 예쁘지 않습니다.",
+      "이 도시는 예전과 같습니다."
+    ],
+    "answer": "이 도시는 점점 더 예뻐졌습니다.",
+    "explanation": "越来越는 점점 ~해지다입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-119"
+  },
+  {
+    "topic": "HSK 3~4 문장 해석",
+    "type": "multiple",
+    "question": "다음 문장의 뜻으로 가장 알맞은 것은?\n我打算毕业以后去中国工作。",
+    "choices": [
+      "나는 졸업 후 중국에 가서 일할 계획입니다.",
+      "나는 중국에서 이미 졸업했습니다.",
+      "나는 중국어 공부를 포기했습니다.",
+      "나는 중국에 가 본 적이 없습니다."
+    ],
+    "answer": "나는 졸업 후 중국에 가서 일할 계획입니다.",
+    "explanation": "打算은 계획하다, 毕业以后는 졸업 후입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-120"
+  },
+  {
+    "topic": "HSK 3~4 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n小李最近工作很忙，但他每天晚上都坚持学习中文。他觉得，只要每天进步一点儿，时间长了就会有明显的变化。\n\n小李为什么每天学习中文？",
+    "choices": [
+      "他相信每天进步一点会带来变化",
+      "他每天晚上都没有工作",
+      "他觉得中文非常简单",
+      "他不喜欢现在的工作"
+    ],
+    "answer": "他相信每天进步一点会带来变化",
+    "explanation": "지문에서 매일 조금씩 발전하면 시간이 지나 큰 변화가 있다고 생각한다고 했습니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-121"
+  },
+  {
+    "topic": "HSK 3~4 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n为了减少浪费，公司决定从下个月开始不再提供一次性杯子。员工可以自己带杯子，也可以使用办公室准备的公共杯子。\n\n公司为什么不再提供一次性杯子？",
+    "choices": [
+      "为了减少浪费",
+      "为了提高工资",
+      "为了增加会议",
+      "为了改变工作时间"
+    ],
+    "answer": "为了减少浪费",
+    "explanation": "첫 문장에 为了减少浪费라고 목적이 제시되어 있습니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-122"
+  },
+  {
+    "topic": "HSK 3~4 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n王老师通知大家，明天的考试因为天气原因改到下周一。考试地点不变，还是在三楼的301教室。\n\n考试什么时候举行？",
+    "choices": [
+      "下周一",
+      "明天",
+      "今天下午",
+      "下个月"
+    ],
+    "answer": "下周一",
+    "explanation": "明天的考试改到下周一라고 되어 있습니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-123"
+  },
+  {
+    "topic": "HSK 3~4 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n这家饭店虽然不大，但是服务很好，而且菜也很有特色，所以附近的居民都喜欢去那里吃饭。\n\n附近的居民为什么喜欢这家饭店？",
+    "choices": [
+      "服务好，菜有特色",
+      "饭店非常大",
+      "价格最高",
+      "离城市很远"
+    ],
+    "answer": "服务好，菜有特色",
+    "explanation": "服务很好와 菜很有特色가 이유입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-124"
+  },
+  {
+    "topic": "HSK 3~4 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n很多人觉得运动需要花很多时间。其实，每天走路半个小时，也能帮助我们保持健康。重要的是坚持，而不是一次做很多。\n\n文章主要想说明什么？",
+    "choices": [
+      "坚持适量运动很重要",
+      "运动必须一次做很多",
+      "走路没有帮助",
+      "健康只和饮食有关"
+    ],
+    "answer": "坚持适量运动很重要",
+    "explanation": "핵심은 많이 한 번에 하는 것보다 꾸준함이 중요하다는 것입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-125"
+  },
+  {
+    "topic": "HSK 3~4 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n张先生原来不太会使用电脑。后来，他参加了公司安排的培训，现在已经可以自己完成大部分网上办公任务了。\n\n张先生发生了什么变化？",
+    "choices": [
+      "电脑使用能力提高了",
+      "换了新的工作",
+      "不再上班了",
+      "离开了公司"
+    ],
+    "answer": "电脑使用能力提高了",
+    "explanation": "培训 후 대부분의 온라인 업무를 스스로 할 수 있게 되었다고 했습니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-126"
+  },
+  {
+    "topic": "HSK 3~4 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n这次活动报名的人比我们想的多得多。为了保证活动效果，我们决定增加一位老师，并把参加者分成两个小组。\n\n为什么要增加一位老师？",
+    "choices": [
+      "报名人数很多",
+      "老师迟到了",
+      "活动取消了",
+      "参加者太少"
+    ],
+    "answer": "报名人数很多",
+    "explanation": "报名的人이 예상보다 많아 활동 효과를 보장하기 위해 선생님을 늘린다고 했습니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-127"
+  },
+  {
+    "topic": "HSK 3~4 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n李经理认为，解决问题以前，先要了解问题真正的原因。如果原因找错了，再努力也可能得不到好的结果。\n\n李经理认为解决问题前应该先做什么？",
+    "choices": [
+      "了解真正的原因",
+      "马上开始行动",
+      "放弃计划",
+      "减少人员"
+    ],
+    "answer": "了解真正的原因",
+    "explanation": "문제 해결 전 진짜 원인을 알아야 한다고 했습니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-128"
+  },
+  {
+    "topic": "HSK 3~4 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n这个城市的交通越来越方便。除了地铁以外，很多地方还开通了新的公共汽车线路。\n\n这个城市的交通怎么样？",
+    "choices": [
+      "越来越方便",
+      "越来越困难",
+      "没有公共汽车",
+      "只有出租车"
+    ],
+    "answer": "越来越方便",
+    "explanation": "첫 문장에 交通越来越方便이라고 되어 있습니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-129"
+  },
+  {
+    "topic": "HSK 3~4 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n为了让外国学生更好地了解中国文化，学校每个月都会安排一次文化活动，比如书法、剪纸和中国菜体验。\n\n学校安排文化活动的目的是什么？",
+    "choices": [
+      "让外国学生了解中国文化",
+      "提高考试成绩",
+      "减少学生人数",
+      "改变上课时间"
+    ],
+    "answer": "让外国学生了解中国文化",
+    "explanation": "为了让外国学生更好地了解中国文化가 목적입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-130"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n____ 他生病了，____ 没来上课。",
+    "choices": [
+      "因为, 所以",
+      "虽然, 但是",
+      "一边, 一边",
+      "不但, 而且"
+    ],
+    "answer": "因为, 所以",
+    "explanation": "因为는 원인, 所以는 결과를 나타냅니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-131"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n他 ____ 会说中文，____ 会说英文。",
+    "choices": [
+      "不但, 而且",
+      "因为, 所以",
+      "虽然, 但是",
+      "一边, 一边"
+    ],
+    "answer": "不但, 而且",
+    "explanation": "不但……而且……는 '~뿐만 아니라 또한'입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-132"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n这 ____ 我的错，____ 你的错。",
+    "choices": [
+      "不是, 而是",
+      "一边, 一边",
+      "因为, 所以",
+      "又, 又"
+    ],
+    "answer": "不是, 而是",
+    "explanation": "不是A而是B는 A가 아니라 B라는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-133"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 去过北京。",
+    "choices": [
+      "已经",
+      "正在",
+      "从来",
+      "马上"
+    ],
+    "answer": "已经",
+    "explanation": "已经는 이미라는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-134"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 没去过上海。",
+    "choices": [
+      "从来",
+      "已经",
+      "马上",
+      "正在"
+    ],
+    "answer": "从来",
+    "explanation": "从来没은 지금까지 한 번도 ~한 적 없다는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-135"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n他 ____ 看书呢。",
+    "choices": [
+      "正在",
+      "已经",
+      "从来",
+      "终于"
+    ],
+    "answer": "正在",
+    "explanation": "正在은 동작의 진행을 나타냅니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-136"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n火车 ____ 要开了。",
+    "choices": [
+      "马上",
+      "从来",
+      "已经",
+      "正在"
+    ],
+    "answer": "马上",
+    "explanation": "马上은 곧, 즉시라는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-137"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 完成了任务。",
+    "choices": [
+      "终于",
+      "从来",
+      "正在",
+      "互相"
+    ],
+    "answer": "终于",
+    "explanation": "终于는 마침내라는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-138"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我们应该 ____ 帮助。",
+    "choices": [
+      "互相",
+      "马上",
+      "已经",
+      "终于"
+    ],
+    "answer": "互相",
+    "explanation": "互相은 서로라는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-139"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n请你 ____ 说一遍。",
+    "choices": [
+      "再",
+      "又",
+      "才",
+      "就"
+    ],
+    "answer": "再",
+    "explanation": "再는 앞으로 다시 할 동작에 씁니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-140"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n他昨天 ____ 来了。",
+    "choices": [
+      "又",
+      "再",
+      "才",
+      "就"
+    ],
+    "answer": "又",
+    "explanation": "又는 이미 반복된 동작에 씁니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-141"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我八点 ____ 到公司。",
+    "choices": [
+      "才",
+      "再",
+      "又",
+      "正在"
+    ],
+    "answer": "才",
+    "explanation": "才는 예상보다 늦거나 겨우라는 느낌을 줄 수 있습니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-142"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n他五分钟 ____ 做完了。",
+    "choices": [
+      "就",
+      "才",
+      "再",
+      "又"
+    ],
+    "answer": "就",
+    "explanation": "就는 예상보다 빠름을 나타낼 수 있습니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-143"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n这本书我看 ____ 三遍。",
+    "choices": [
+      "过",
+      "着",
+      "得",
+      "把"
+    ],
+    "answer": "过",
+    "explanation": "동사 + 过는 경험을 나타냅니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-144"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n门开 ____ 呢。",
+    "choices": [
+      "着",
+      "过",
+      "了",
+      "得"
+    ],
+    "answer": "着",
+    "explanation": "着는 상태의 지속을 나타낼 수 있습니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-145"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n他说中文说 ____ 很好。",
+    "choices": [
+      "得",
+      "地",
+      "的",
+      "了"
+    ],
+    "answer": "得",
+    "explanation": "동사 뒤 보어 앞에는 得를 씁니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-146"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n他高兴 ____ 跳了起来。",
+    "choices": [
+      "得",
+      "地",
+      "的",
+      "着"
+    ],
+    "answer": "得",
+    "explanation": "정도보어에서 得를 사용합니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-147"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n请慢慢 ____ 说。",
+    "choices": [
+      "地",
+      "得",
+      "的",
+      "了"
+    ],
+    "answer": "地",
+    "explanation": "부사어와 동사 사이에는 地를 씁니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-148"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n这是我买 ____ 书。",
+    "choices": [
+      "的",
+      "地",
+      "得",
+      "着"
+    ],
+    "answer": "的",
+    "explanation": "수식어와 명사 사이에는 的를 씁니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-149"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 他一样高。",
+    "choices": [
+      "跟",
+      "把",
+      "被",
+      "向"
+    ],
+    "answer": "跟",
+    "explanation": "跟……一样는 '~와 같다'라는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-150"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n他 ____ 我借了一本书。",
+    "choices": [
+      "向",
+      "被",
+      "把",
+      "比"
+    ],
+    "answer": "向",
+    "explanation": "向 + 사람 + 동사는 '~에게 ~하다'입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-151"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n你应该 ____ 父母商量一下。",
+    "choices": [
+      "跟",
+      "被",
+      "把",
+      "比"
+    ],
+    "answer": "跟",
+    "explanation": "跟……商量은 ~와 상의하다입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-152"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n这件事 ____ 你有关系。",
+    "choices": [
+      "跟",
+      "把",
+      "被",
+      "比"
+    ],
+    "answer": "跟",
+    "explanation": "跟……有关系는 ~와 관련이 있다는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-153"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 起床 ____ 吃早饭。",
+    "choices": [
+      "先, 再",
+      "又, 又",
+      "越, 越",
+      "不但, 而且"
+    ],
+    "answer": "先, 再",
+    "explanation": "先……再……는 먼저 ~하고 그다음 ~하다는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-154"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n天气 ____ 来 ____ 冷了。",
+    "choices": [
+      "越, 越",
+      "先, 再",
+      "又, 又",
+      "因为, 所以"
+    ],
+    "answer": "越, 越",
+    "explanation": "越来越는 점점 ~해지다입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-155"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n你学得 ____ 多，懂得 ____ 多。",
+    "choices": [
+      "越, 越",
+      "一边, 一边",
+      "又, 又",
+      "先, 再"
+    ],
+    "answer": "越, 越",
+    "explanation": "越A越B는 A할수록 B하다입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-156"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n他忙 ____ 没时间吃饭。",
+    "choices": [
+      "得",
+      "地",
+      "的",
+      "着"
+    ],
+    "answer": "得",
+    "explanation": "忙得没时间은 바빠서 시간이 없다는 정도보어 구조입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-157"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n这道题 ____ 容易 ____ 我以为。",
+    "choices": [
+      "没有, 那么",
+      "不是, 而是",
+      "虽然, 但是",
+      "越, 越"
+    ],
+    "answer": "没有, 那么",
+    "explanation": "没有……那么……는 ~만큼 그렇게 ~하지 않다는 비교 표현입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-158"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n他跑 ____ 比我快。",
+    "choices": [
+      "得",
+      "地",
+      "的",
+      "过"
+    ],
+    "answer": "得",
+    "explanation": "跑得比我快는 나보다 빨리 달린다는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-159"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n这件衣服 ____ 贵 ____ 好看。",
+    "choices": [
+      "又, 又",
+      "越, 越",
+      "先, 再",
+      "被, 把"
+    ],
+    "answer": "又, 又",
+    "explanation": "又贵又好看은 비싸기도 하고 예쁘기도 하다는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-160"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n你 ____ 想去，____ 去吧。",
+    "choices": [
+      "既然, 就",
+      "虽然, 但是",
+      "不但, 而且",
+      "一边, 一边"
+    ],
+    "answer": "既然, 就",
+    "explanation": "既然……就……는 이미 ~인 이상 ~하다는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-161"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n他 ____ 没来，____ 打电话说明了原因。",
+    "choices": [
+      "虽然, 但是",
+      "因为, 所以",
+      "不是, 而是",
+      "越, 越"
+    ],
+    "answer": "虽然, 但是",
+    "explanation": "오지는 않았지만 전화로 이유를 설명했다는 역접입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-162"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n这个问题 ____ 难，我也要试试。",
+    "choices": [
+      "再",
+      "又",
+      "才",
+      "就"
+    ],
+    "answer": "再",
+    "explanation": "再 + 형용사 + 也는 아무리 ~해도라는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-163"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n你 ____ 不喜欢，也应该试一试。",
+    "choices": [
+      "即使",
+      "因为",
+      "所以",
+      "然后"
+    ],
+    "answer": "即使",
+    "explanation": "即使……也……는 설령 ~하더라도라는 양보 표현입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-164"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n这件事 ____ 我来说很重要。",
+    "choices": [
+      "对",
+      "把",
+      "被",
+      "比"
+    ],
+    "answer": "对",
+    "explanation": "对……来说는 '~에게 있어'라는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-165"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n他 ____ 作业做完了。",
+    "choices": [
+      "把",
+      "被",
+      "比",
+      "对"
+    ],
+    "answer": "把",
+    "explanation": "把문은 목적어를 앞에 두고 처리 결과를 강조합니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-166"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我的手机 ____ 他拿走了。",
+    "choices": [
+      "被",
+      "把",
+      "比",
+      "对"
+    ],
+    "answer": "被",
+    "explanation": "被는 수동 표현에 사용됩니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-167"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n今天 ____ 昨天冷。",
+    "choices": [
+      "比",
+      "把",
+      "被",
+      "对"
+    ],
+    "answer": "比",
+    "explanation": "A比B+형용사는 비교 표현입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-168"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n他 ____ 高 ____ 瘦。",
+    "choices": [
+      "又, 又",
+      "一边, 一边",
+      "因为, 所以",
+      "虽然, 但是"
+    ],
+    "answer": "又, 又",
+    "explanation": "又A又B는 두 성질을 함께 나타냅니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-169"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 听音乐 ____ 做作业。",
+    "choices": [
+      "一边, 一边",
+      "又, 又",
+      "先, 再",
+      "不是, 而是"
+    ],
+    "answer": "一边, 一边",
+    "explanation": "一边A一边B는 두 동작을 동시에 함을 나타냅니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-170"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n____ 下雨，____ 我们还去。",
+    "choices": [
+      "虽然, 但是",
+      "因为, 所以",
+      "一边, 一边",
+      "又, 又"
+    ],
+    "answer": "虽然, 但是",
+    "explanation": "虽然……但是……는 양보와 역접을 나타냅니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-171"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n____ 他生病了，____ 没来上课。",
+    "choices": [
+      "因为, 所以",
+      "虽然, 但是",
+      "一边, 一边",
+      "不但, 而且"
+    ],
+    "answer": "因为, 所以",
+    "explanation": "因为는 원인, 所以는 결과를 나타냅니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-172"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n他 ____ 会说中文，____ 会说英文。",
+    "choices": [
+      "不但, 而且",
+      "因为, 所以",
+      "虽然, 但是",
+      "一边, 一边"
+    ],
+    "answer": "不但, 而且",
+    "explanation": "不但……而且……는 '~뿐만 아니라 또한'입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-173"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n这 ____ 我的错，____ 你的错。",
+    "choices": [
+      "不是, 而是",
+      "一边, 一边",
+      "因为, 所以",
+      "又, 又"
+    ],
+    "answer": "不是, 而是",
+    "explanation": "不是A而是B는 A가 아니라 B라는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-174"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 去过北京。",
+    "choices": [
+      "已经",
+      "正在",
+      "从来",
+      "马上"
+    ],
+    "answer": "已经",
+    "explanation": "已经는 이미라는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-175"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 没去过上海。",
+    "choices": [
+      "从来",
+      "已经",
+      "马上",
+      "正在"
+    ],
+    "answer": "从来",
+    "explanation": "从来没은 지금까지 한 번도 ~한 적 없다는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-176"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n他 ____ 看书呢。",
+    "choices": [
+      "正在",
+      "已经",
+      "从来",
+      "终于"
+    ],
+    "answer": "正在",
+    "explanation": "正在은 동작의 진행을 나타냅니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-177"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n火车 ____ 要开了。",
+    "choices": [
+      "马上",
+      "从来",
+      "已经",
+      "正在"
+    ],
+    "answer": "马上",
+    "explanation": "马上은 곧, 즉시라는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-178"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我 ____ 完成了任务。",
+    "choices": [
+      "终于",
+      "从来",
+      "正在",
+      "互相"
+    ],
+    "answer": "终于",
+    "explanation": "终于는 마침내라는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-179"
+  },
+  {
+    "topic": "HSK 3~4 문법",
+    "type": "multiple",
+    "question": "빈칸에 알맞은 표현을 고르세요.\n我们应该 ____ 帮助。",
+    "choices": [
+      "互相",
+      "马上",
+      "已经",
+      "终于"
+    ],
+    "answer": "互相",
+    "explanation": "互相은 서로라는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-180"
+  },
+  {
+    "topic": "HSK 3~4 OX",
+    "type": "ox",
+    "question": "把문은 목적어를 앞에 두고 처리 결과를 강조할 때 자주 사용됩니다.",
+    "answer": "O",
+    "explanation": "他把作业做完了처럼 씁니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-181"
+  },
+  {
+    "topic": "HSK 3~4 OX",
+    "type": "ox",
+    "question": "被는 수동 표현을 만들 때 사용할 수 있습니다.",
+    "answer": "O",
+    "explanation": "手机被他拿走了처럼 씁니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-182"
+  },
+  {
+    "topic": "HSK 3~4 OX",
+    "type": "ox",
+    "question": "虽然……但是……는 원인과 결과를 나타냅니다.",
+    "answer": "X",
+    "explanation": "虽然……但是……는 양보와 역접을 나타냅니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-183"
+  },
+  {
+    "topic": "HSK 3~4 OX",
+    "type": "ox",
+    "question": "因为……所以……는 원인과 결과를 나타냅니다.",
+    "answer": "O",
+    "explanation": "因为下雨，所以不去처럼 씁니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-184"
+  },
+  {
+    "topic": "HSK 3~4 OX",
+    "type": "ox",
+    "question": "一边……一边……는 두 동작이 동시에 일어남을 나타냅니다.",
+    "answer": "O",
+    "explanation": "一边听音乐一边做作业처럼 씁니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-185"
+  },
+  {
+    "topic": "HSK 3~4 OX",
+    "type": "ox",
+    "question": "不但……而且……는 '~뿐만 아니라 또한'이라는 뜻입니다.",
+    "answer": "O",
+    "explanation": "不但会中文，而且会英文처럼 씁니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-186"
+  },
+  {
+    "topic": "HSK 3~4 OX",
+    "type": "ox",
+    "question": "不是……而是……는 A가 아니라 B라는 뜻입니다.",
+    "answer": "O",
+    "explanation": "不是我的错，而是你的错처럼 씁니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-187"
+  },
+  {
+    "topic": "HSK 3~4 OX",
+    "type": "ox",
+    "question": "再는 이미 반복된 과거 동작에만 사용합니다.",
+    "answer": "X",
+    "explanation": "앞으로 다시 할 동작에는 再를, 이미 반복된 동작에는 又를 주로 씁니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-188"
+  },
+  {
+    "topic": "HSK 3~4 OX",
+    "type": "ox",
+    "question": "又는 이미 반복된 동작에 쓸 수 있습니다.",
+    "answer": "O",
+    "explanation": "他昨天又来了처럼 씁니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-189"
+  },
+  {
+    "topic": "HSK 3~4 OX",
+    "type": "ox",
+    "question": "才는 예상보다 빠름만 나타냅니다.",
+    "answer": "X",
+    "explanation": "才는 예상보다 늦거나 겨우라는 느낌을 줄 수 있습니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-190"
+  },
+  {
+    "topic": "HSK 3~4 OX",
+    "type": "ox",
+    "question": "就는 예상보다 빠름을 나타낼 수 있습니다.",
+    "answer": "O",
+    "explanation": "五分钟就做完了처럼 씁니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-191"
+  },
+  {
+    "topic": "HSK 3~4 OX",
+    "type": "ox",
+    "question": "着는 상태의 지속을 나타낼 수 있습니다.",
+    "answer": "O",
+    "explanation": "门开着처럼 씁니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-192"
+  },
+  {
+    "topic": "HSK 3~4 OX",
+    "type": "ox",
+    "question": "得는 정도보어에서 사용할 수 있습니다.",
+    "answer": "O",
+    "explanation": "说得很好처럼 씁니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-193"
+  },
+  {
+    "topic": "HSK 3~4 OX",
+    "type": "ox",
+    "question": "地는 부사어와 동사 사이에 쓸 수 있습니다.",
+    "answer": "O",
+    "explanation": "慢慢地说처럼 씁니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-194"
+  },
+  {
+    "topic": "HSK 3~4 OX",
+    "type": "ox",
+    "question": "越来越는 점점 ~해지다라는 뜻입니다.",
+    "answer": "O",
+    "explanation": "越来越冷처럼 씁니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-195"
+  },
+  {
+    "topic": "HSK 3~4 OX",
+    "type": "ox",
+    "question": "无论……都……는 어떤 경우에도라는 뜻을 나타냅니다.",
+    "answer": "O",
+    "explanation": "无论多难都不放弃처럼 씁니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-196"
+  },
+  {
+    "topic": "HSK 3~4 OX",
+    "type": "ox",
+    "question": "只要……就……는 조건과 결과를 나타냅니다.",
+    "answer": "O",
+    "explanation": "只要努力就会进步처럼 씁니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-197"
+  },
+  {
+    "topic": "HSK 3~4 OX",
+    "type": "ox",
+    "question": "既然……就……는 이미 ~인 이상 ~하다는 뜻입니다.",
+    "answer": "O",
+    "explanation": "既然想去，就去吧처럼 씁니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-198"
+  },
+  {
+    "topic": "HSK 3~4 OX",
+    "type": "ox",
+    "question": "没有……那么……는 ~만큼 그렇게 ~하지 않다는 뜻입니다.",
+    "answer": "O",
+    "explanation": "没有你想的那么简单처럼 씁니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-199"
+  },
+  {
+    "topic": "HSK 3~4 OX",
+    "type": "ox",
+    "question": "跟……一样는 서로 다르다는 뜻입니다.",
+    "answer": "X",
+    "explanation": "跟……一样는 ~와 같다라는 뜻입니다.",
+    "subject": "중국어 중급",
+    "sourceLabel": "HSK 3~4",
+    "examStyle": "hsk-middle",
+    "difficulty": 4,
+    "id": "zh-middle-200"
+  }
+]

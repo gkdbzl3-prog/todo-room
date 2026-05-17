@@ -1,0 +1,3542 @@
+[
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n曖昧",
+    "choices": [
+      "유연함",
+      "신중함",
+      "애매함, 모호함",
+      "교묘함, 능숙함"
+    ],
+    "answer": "애매함, 모호함",
+    "explanation": "曖昧은/는 태도나 의미가 분명하지 않은 상태입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-001"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n著しい",
+    "choices": [
+      "~한 이상",
+      "~을 거쳐",
+      "막다, 저지하다",
+      "현저하다, 두드러지다"
+    ],
+    "answer": "현저하다, 두드러지다",
+    "explanation": "著しい은/는 변화나 차이가 눈에 띄게 크다는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-002"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n煩わしい",
+    "choices": [
+      "부족하다, 빈약하다",
+      "저절로",
+      "번거롭다, 성가시다",
+      "현저하다, 두드러지다"
+    ],
+    "answer": "번거롭다, 성가시다",
+    "explanation": "煩わしい은/는 절차나 관계가 귀찮고 성가신 느낌입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-003"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n滞る",
+    "choices": [
+      "현저하다, 두드러지다",
+      "~에 맞추어, 입각하여",
+      "종사하다, 관여하다",
+      "정체되다, 밀리다"
+    ],
+    "answer": "정체되다, 밀리다",
+    "explanation": "滞る은/는 일이나 흐름이 순조롭게 진행되지 않는다는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-004"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n促す",
+    "choices": [
+      "~에 다름 아니다",
+      "번거롭다, 성가시다",
+      "촉구하다, 재촉하다",
+      "즉시"
+    ],
+    "answer": "촉구하다, 재촉하다",
+    "explanation": "促す은/는 상대가 행동하도록 재촉하거나 유도하는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-005"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n携わる",
+    "choices": [
+      "정체되다, 밀리다",
+      "유연함",
+      "종사하다, 관여하다",
+      "~이면서도"
+    ],
+    "answer": "종사하다, 관여하다",
+    "explanation": "携わる은/는 일이나 활동에 관계하여 참여한다는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-006"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n顧みる",
+    "choices": [
+      "정체되다, 밀리다",
+      "~에 맞추어, 입각하여",
+      "노골적임",
+      "돌아보다, 반성하다"
+    ],
+    "answer": "돌아보다, 반성하다",
+    "explanation": "顧みる은/는 과거를 되돌아보거나 신경 쓰는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-007"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n阻む",
+    "choices": [
+      "~할 가치가 있다",
+      "막다, 저지하다",
+      "촉구하다, 재촉하다",
+      "부족하다, 빈약하다"
+    ],
+    "answer": "막다, 저지하다",
+    "explanation": "阻む은/는 진행이나 실현을 방해한다는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-008"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n紛らわしい",
+    "choices": [
+      "헷갈리기 쉽다",
+      "미리",
+      "~을 어쩔 수 없이 하게 되다",
+      "굳이, 감히"
+    ],
+    "answer": "헷갈리기 쉽다",
+    "explanation": "紛らわしい은/는 서로 비슷해서 혼동하기 쉽다는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-009"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n乏しい",
+    "choices": [
+      "저절로",
+      "~라고 해서",
+      "~인 만큼 과연",
+      "부족하다, 빈약하다"
+    ],
+    "answer": "부족하다, 빈약하다",
+    "explanation": "乏しい은/는 양이나 능력이 충분하지 않다는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-010"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n巧み",
+    "choices": [
+      "~을 거쳐",
+      "교묘함, 능숙함",
+      "~인 만큼 과연",
+      "~에 반하여"
+    ],
+    "answer": "교묘함, 능숙함",
+    "explanation": "巧み은/는 기술이나 표현이 능숙하다는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-011"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n緻密",
+    "choices": [
+      "~을 어쩔 수 없이 하게 되다",
+      "~에 반하여",
+      "치밀함",
+      "모조리, 전부"
+    ],
+    "answer": "치밀함",
+    "explanation": "緻密은/는 세부까지 빈틈없이 정교한 상태입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-012"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n膨大",
+    "choices": [
+      "즉시",
+      "~라고 해서",
+      "~에 반하여",
+      "방대함"
+    ],
+    "answer": "방대함",
+    "explanation": "膨大은/는 양이나 규모가 매우 크다는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-013"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n軽率",
+    "choices": [
+      "간신히",
+      "~한 이상",
+      "경솔함",
+      "~인 만큼 과연"
+    ],
+    "answer": "경솔함",
+    "explanation": "軽率은/는 깊이 생각하지 않고 행동하는 태도입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-014"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n寛容",
+    "choices": [
+      "노골적임",
+      "~한 이상",
+      "~인 만큼 과연",
+      "관용, 너그러움"
+    ],
+    "answer": "관용, 너그러움",
+    "explanation": "寛容은/는 타인의 생각이나 행동을 너그럽게 받아들이는 태도입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-015"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n妥当",
+    "choices": [
+      "~에 반하여",
+      "막다, 저지하다",
+      "타당함",
+      "~인 만큼 과연"
+    ],
+    "answer": "타당함",
+    "explanation": "妥当은/는 상황이나 기준에 비추어 적절하다는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-016"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n露骨",
+    "choices": [
+      "즉시",
+      "노골적임",
+      "저절로",
+      "종사하다, 관여하다"
+    ],
+    "answer": "노골적임",
+    "explanation": "露骨은/는 숨김없이 노골적으로 드러내는 모습입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-017"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n慎重",
+    "choices": [
+      "신중함",
+      "함부로, 마구",
+      "막다, 저지하다",
+      "치밀함"
+    ],
+    "answer": "신중함",
+    "explanation": "慎重은/는 조심스럽고 깊이 생각하는 태도입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-018"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n柔軟",
+    "choices": [
+      "~을 개의치 않고",
+      "유연함",
+      "어쩔 수 없이",
+      "간신히"
+    ],
+    "answer": "유연함",
+    "explanation": "柔軟은/는 사고나 태도가 부드럽고 융통성 있다는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-019"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 부사",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n即座に",
+    "choices": [
+      "~에 반하여",
+      "종사하다, 관여하다",
+      "즉시",
+      "신중함"
+    ],
+    "answer": "즉시",
+    "explanation": "即座に은/는 그 자리에서 바로라는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-020"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 부사",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nあらかじめ",
+    "choices": [
+      "현저하다, 두드러지다",
+      "미리",
+      "종사하다, 관여하다",
+      "간신히"
+    ],
+    "answer": "미리",
+    "explanation": "あらかじめ은/는 일이 일어나기 전에 준비한다는 의미입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-021"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 부사",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nかろうじて",
+    "choices": [
+      "모조리, 전부",
+      "간신히",
+      "~라고 해서",
+      "유연함"
+    ],
+    "answer": "간신히",
+    "explanation": "かろうじて은/는 겨우, 간신히라는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-022"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 부사",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nおのずと",
+    "choices": [
+      "부족하다, 빈약하다",
+      "~에 반하여",
+      "저절로",
+      "~을 개의치 않고"
+    ],
+    "answer": "저절로",
+    "explanation": "おのずと은/는 자연스럽게, 저절로라는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-023"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 부사",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nことごとく",
+    "choices": [
+      "모조리, 전부",
+      "돌아보다, 반성하다",
+      "~을 불문하고",
+      "~인 만큼 과연"
+    ],
+    "answer": "모조리, 전부",
+    "explanation": "ことごとく은/는 하나도 빠짐없이 전부라는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-024"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 부사",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nむやみに",
+    "choices": [
+      "~이면서도",
+      "미리",
+      "번거롭다, 성가시다",
+      "함부로, 마구"
+    ],
+    "answer": "함부로, 마구",
+    "explanation": "むやみに은/는 깊이 생각하지 않고 함부로라는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-025"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 부사",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nやむを得ず",
+    "choices": [
+      "방대함",
+      "번거롭다, 성가시다",
+      "어쩔 수 없이",
+      "치밀함"
+    ],
+    "answer": "어쩔 수 없이",
+    "explanation": "やむを得ず은/는 다른 방법이 없어 어쩔 수 없다는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-026"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 부사",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nあえて",
+    "choices": [
+      "즉시",
+      "~할 가치가 있다",
+      "촉구하다, 재촉하다",
+      "굳이, 감히"
+    ],
+    "answer": "굳이, 감히",
+    "explanation": "あえて은/는 일부러 어려운 선택을 한다는 뉘앙스가 있습니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-027"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nからには",
+    "choices": [
+      "~한 이상",
+      "~에 맞추어, 입각하여",
+      "관용, 너그러움",
+      "방대함"
+    ],
+    "answer": "~한 이상",
+    "explanation": "からには은/는 어떤 사실을 전제로 책임이나 결심을 나타냅니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-028"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nながらも",
+    "choices": [
+      "~이면서도",
+      "타당함",
+      "치밀함",
+      "~에 반하여"
+    ],
+    "answer": "~이면서도",
+    "explanation": "ながらも은/는 앞 내용과 반대되는 뒷내용을 연결하는 역접 표현입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-029"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nからといって",
+    "choices": [
+      "돌아보다, 반성하다",
+      "~라고 해서",
+      "교묘함, 능숙함",
+      "종사하다, 관여하다"
+    ],
+    "answer": "~라고 해서",
+    "explanation": "からといって은/는 그 이유만으로 반드시 그렇지는 않음을 나타냅니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-030"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nだけあって",
+    "choices": [
+      "모조리, 전부",
+      "정체되다, 밀리다",
+      "교묘함, 능숙함",
+      "~인 만큼 과연"
+    ],
+    "answer": "~인 만큼 과연",
+    "explanation": "だけあって은/는 자격이나 배경에 걸맞은 결과를 나타냅니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-031"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nにほかならない",
+    "choices": [
+      "~에 다름 아니다",
+      "현저하다, 두드러지다",
+      "애매함, 모호함",
+      "헷갈리기 쉽다"
+    ],
+    "answer": "~에 다름 아니다",
+    "explanation": "にほかならない은/는 바로 그것임을 강하게 단정하는 표현입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-032"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nを余儀なくされる",
+    "choices": [
+      "즉시",
+      "모조리, 전부",
+      "~을 어쩔 수 없이 하게 되다",
+      "~을 거쳐"
+    ],
+    "answer": "~을 어쩔 수 없이 하게 되다",
+    "explanation": "を余儀なくされる은/는 외부 상황 때문에 선택을 강요받음을 나타냅니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-033"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nに値する",
+    "choices": [
+      "~할 가치가 있다",
+      "번거롭다, 성가시다",
+      "현저하다, 두드러지다",
+      "방대함"
+    ],
+    "answer": "~할 가치가 있다",
+    "explanation": "に値する은/는 평가나 행위의 가치가 있음을 나타냅니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-034"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nに反して",
+    "choices": [
+      "노골적임",
+      "~을 불문하고",
+      "~에 반하여",
+      "~라고 해서"
+    ],
+    "answer": "~에 반하여",
+    "explanation": "に反して은/는 예상, 규칙, 기대와 반대됨을 나타냅니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-035"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nに即して",
+    "choices": [
+      "교묘함, 능숙함",
+      "저절로",
+      "신중함",
+      "~에 맞추어, 입각하여"
+    ],
+    "answer": "~에 맞추어, 입각하여",
+    "explanation": "に即して은/는 상황이나 기준에 맞게 따른다는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-036"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nを問わず",
+    "choices": [
+      "~을 불문하고",
+      "굳이, 감히",
+      "~을 어쩔 수 없이 하게 되다",
+      "막다, 저지하다"
+    ],
+    "answer": "~을 불문하고",
+    "explanation": "を問わず은/는 조건이나 차이를 문제 삼지 않음을 나타냅니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-037"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nをものともせず",
+    "choices": [
+      "~한 이상",
+      "신중함",
+      "~을 개의치 않고",
+      "방대함"
+    ],
+    "answer": "~을 개의치 않고",
+    "explanation": "をものともせず은/는 어려움을 신경 쓰지 않고 행동함을 나타냅니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-038"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nをめぐって",
+    "choices": [
+      "정체되다, 밀리다",
+      "모조리, 전부",
+      "현저하다, 두드러지다",
+      "~을 둘러싸고"
+    ],
+    "answer": "~을 둘러싸고",
+    "explanation": "をめぐって은/는 논의나 대립의 중심 주제를 나타냅니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-039"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nを経て",
+    "choices": [
+      "~을 거쳐",
+      "부족하다, 빈약하다",
+      "미리",
+      "치밀함"
+    ],
+    "answer": "~을 거쳐",
+    "explanation": "を経て은/는 과정이나 경로를 거쳤음을 나타냅니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-040"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n曖昧",
+    "choices": [
+      "굳이, 감히",
+      "~에 반하여",
+      "애매함, 모호함",
+      "~을 어쩔 수 없이 하게 되다"
+    ],
+    "answer": "애매함, 모호함",
+    "explanation": "曖昧은/는 태도나 의미가 분명하지 않은 상태입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-041"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n著しい",
+    "choices": [
+      "굳이, 감히",
+      "종사하다, 관여하다",
+      "교묘함, 능숙함",
+      "현저하다, 두드러지다"
+    ],
+    "answer": "현저하다, 두드러지다",
+    "explanation": "著しい은/는 변화나 차이가 눈에 띄게 크다는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-042"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n煩わしい",
+    "choices": [
+      "종사하다, 관여하다",
+      "~에 반하여",
+      "노골적임",
+      "번거롭다, 성가시다"
+    ],
+    "answer": "번거롭다, 성가시다",
+    "explanation": "煩わしい은/는 절차나 관계가 귀찮고 성가신 느낌입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-043"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n滞る",
+    "choices": [
+      "~에 다름 아니다",
+      "저절로",
+      "막다, 저지하다",
+      "정체되다, 밀리다"
+    ],
+    "answer": "정체되다, 밀리다",
+    "explanation": "滞る은/는 일이나 흐름이 순조롭게 진행되지 않는다는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-044"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n促す",
+    "choices": [
+      "신중함",
+      "촉구하다, 재촉하다",
+      "돌아보다, 반성하다",
+      "현저하다, 두드러지다"
+    ],
+    "answer": "촉구하다, 재촉하다",
+    "explanation": "促す은/는 상대가 행동하도록 재촉하거나 유도하는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-045"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n携わる",
+    "choices": [
+      "종사하다, 관여하다",
+      "~을 개의치 않고",
+      "신중함",
+      "저절로"
+    ],
+    "answer": "종사하다, 관여하다",
+    "explanation": "携わる은/는 일이나 활동에 관계하여 참여한다는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-046"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n顧みる",
+    "choices": [
+      "돌아보다, 반성하다",
+      "교묘함, 능숙함",
+      "노골적임",
+      "헷갈리기 쉽다"
+    ],
+    "answer": "돌아보다, 반성하다",
+    "explanation": "顧みる은/는 과거를 되돌아보거나 신경 쓰는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-047"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n阻む",
+    "choices": [
+      "~을 거쳐",
+      "막다, 저지하다",
+      "관용, 너그러움",
+      "~이면서도"
+    ],
+    "answer": "막다, 저지하다",
+    "explanation": "阻む은/는 진행이나 실현을 방해한다는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-048"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n紛らわしい",
+    "choices": [
+      "헷갈리기 쉽다",
+      "~이면서도",
+      "굳이, 감히",
+      "촉구하다, 재촉하다"
+    ],
+    "answer": "헷갈리기 쉽다",
+    "explanation": "紛らわしい은/는 서로 비슷해서 혼동하기 쉽다는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-049"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n乏しい",
+    "choices": [
+      "부족하다, 빈약하다",
+      "애매함, 모호함",
+      "저절로",
+      "노골적임"
+    ],
+    "answer": "부족하다, 빈약하다",
+    "explanation": "乏しい은/는 양이나 능력이 충분하지 않다는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-050"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n巧み",
+    "choices": [
+      "어쩔 수 없이",
+      "관용, 너그러움",
+      "~라고 해서",
+      "교묘함, 능숙함"
+    ],
+    "answer": "교묘함, 능숙함",
+    "explanation": "巧み은/는 기술이나 표현이 능숙하다는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-051"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n緻密",
+    "choices": [
+      "부족하다, 빈약하다",
+      "치밀함",
+      "헷갈리기 쉽다",
+      "~을 불문하고"
+    ],
+    "answer": "치밀함",
+    "explanation": "緻密은/는 세부까지 빈틈없이 정교한 상태입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-052"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n膨大",
+    "choices": [
+      "방대함",
+      "돌아보다, 반성하다",
+      "미리",
+      "~이면서도"
+    ],
+    "answer": "방대함",
+    "explanation": "膨大은/는 양이나 규모가 매우 크다는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-053"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n軽率",
+    "choices": [
+      "~을 거쳐",
+      "막다, 저지하다",
+      "애매함, 모호함",
+      "경솔함"
+    ],
+    "answer": "경솔함",
+    "explanation": "軽率은/는 깊이 생각하지 않고 행동하는 태도입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-054"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n寛容",
+    "choices": [
+      "촉구하다, 재촉하다",
+      "관용, 너그러움",
+      "~을 둘러싸고",
+      "부족하다, 빈약하다"
+    ],
+    "answer": "관용, 너그러움",
+    "explanation": "寛容은/는 타인의 생각이나 행동을 너그럽게 받아들이는 태도입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-055"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n妥当",
+    "choices": [
+      "함부로, 마구",
+      "타당함",
+      "돌아보다, 반성하다",
+      "촉구하다, 재촉하다"
+    ],
+    "answer": "타당함",
+    "explanation": "妥当은/는 상황이나 기준에 비추어 적절하다는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-056"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n露骨",
+    "choices": [
+      "어쩔 수 없이",
+      "노골적임",
+      "간신히",
+      "애매함, 모호함"
+    ],
+    "answer": "노골적임",
+    "explanation": "露骨은/는 숨김없이 노골적으로 드러내는 모습입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-057"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n慎重",
+    "choices": [
+      "돌아보다, 반성하다",
+      "신중함",
+      "타당함",
+      "~인 만큼 과연"
+    ],
+    "answer": "신중함",
+    "explanation": "慎重은/는 조심스럽고 깊이 생각하는 태도입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-058"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n柔軟",
+    "choices": [
+      "굳이, 감히",
+      "신중함",
+      "유연함",
+      "~을 불문하고"
+    ],
+    "answer": "유연함",
+    "explanation": "柔軟은/는 사고나 태도가 부드럽고 융통성 있다는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-059"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 부사",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n即座に",
+    "choices": [
+      "즉시",
+      "모조리, 전부",
+      "~라고 해서",
+      "번거롭다, 성가시다"
+    ],
+    "answer": "즉시",
+    "explanation": "即座に은/는 그 자리에서 바로라는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-060"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 부사",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nあらかじめ",
+    "choices": [
+      "~에 맞추어, 입각하여",
+      "미리",
+      "~을 둘러싸고",
+      "~에 반하여"
+    ],
+    "answer": "미리",
+    "explanation": "あらかじめ은/는 일이 일어나기 전에 준비한다는 의미입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-061"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 부사",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nかろうじて",
+    "choices": [
+      "부족하다, 빈약하다",
+      "저절로",
+      "~을 거쳐",
+      "간신히"
+    ],
+    "answer": "간신히",
+    "explanation": "かろうじて은/는 겨우, 간신히라는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-062"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 부사",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nおのずと",
+    "choices": [
+      "정체되다, 밀리다",
+      "유연함",
+      "어쩔 수 없이",
+      "저절로"
+    ],
+    "answer": "저절로",
+    "explanation": "おのずと은/는 자연스럽게, 저절로라는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-063"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 부사",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nことごとく",
+    "choices": [
+      "현저하다, 두드러지다",
+      "모조리, 전부",
+      "치밀함",
+      "정체되다, 밀리다"
+    ],
+    "answer": "모조리, 전부",
+    "explanation": "ことごとく은/는 하나도 빠짐없이 전부라는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-064"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 부사",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nむやみに",
+    "choices": [
+      "애매함, 모호함",
+      "함부로, 마구",
+      "번거롭다, 성가시다",
+      "촉구하다, 재촉하다"
+    ],
+    "answer": "함부로, 마구",
+    "explanation": "むやみに은/는 깊이 생각하지 않고 함부로라는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-065"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 부사",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nやむを得ず",
+    "choices": [
+      "어쩔 수 없이",
+      "~에 다름 아니다",
+      "~할 가치가 있다",
+      "~한 이상"
+    ],
+    "answer": "어쩔 수 없이",
+    "explanation": "やむを得ず은/는 다른 방법이 없어 어쩔 수 없다는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-066"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 부사",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nあえて",
+    "choices": [
+      "~에 반하여",
+      "굳이, 감히",
+      "막다, 저지하다",
+      "교묘함, 능숙함"
+    ],
+    "answer": "굳이, 감히",
+    "explanation": "あえて은/는 일부러 어려운 선택을 한다는 뉘앙스가 있습니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-067"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nからには",
+    "choices": [
+      "저절로",
+      "~을 어쩔 수 없이 하게 되다",
+      "~한 이상",
+      "타당함"
+    ],
+    "answer": "~한 이상",
+    "explanation": "からには은/는 어떤 사실을 전제로 책임이나 결심을 나타냅니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-068"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nながらも",
+    "choices": [
+      "치밀함",
+      "~이면서도",
+      "즉시",
+      "번거롭다, 성가시다"
+    ],
+    "answer": "~이면서도",
+    "explanation": "ながらも은/는 앞 내용과 반대되는 뒷내용을 연결하는 역접 표현입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-069"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nからといって",
+    "choices": [
+      "돌아보다, 반성하다",
+      "즉시",
+      "애매함, 모호함",
+      "~라고 해서"
+    ],
+    "answer": "~라고 해서",
+    "explanation": "からといって은/는 그 이유만으로 반드시 그렇지는 않음을 나타냅니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-070"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nだけあって",
+    "choices": [
+      "막다, 저지하다",
+      "~인 만큼 과연",
+      "촉구하다, 재촉하다",
+      "~을 개의치 않고"
+    ],
+    "answer": "~인 만큼 과연",
+    "explanation": "だけあって은/는 자격이나 배경에 걸맞은 결과를 나타냅니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-071"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nにほかならない",
+    "choices": [
+      "촉구하다, 재촉하다",
+      "미리",
+      "~에 다름 아니다",
+      "노골적임"
+    ],
+    "answer": "~에 다름 아니다",
+    "explanation": "にほかならない은/는 바로 그것임을 강하게 단정하는 표현입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-072"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nを余儀なくされる",
+    "choices": [
+      "~을 개의치 않고",
+      "굳이, 감히",
+      "~을 어쩔 수 없이 하게 되다",
+      "치밀함"
+    ],
+    "answer": "~을 어쩔 수 없이 하게 되다",
+    "explanation": "を余儀なくされる은/는 외부 상황 때문에 선택을 강요받음을 나타냅니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-073"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nに値する",
+    "choices": [
+      "~을 둘러싸고",
+      "방대함",
+      "~할 가치가 있다",
+      "~을 불문하고"
+    ],
+    "answer": "~할 가치가 있다",
+    "explanation": "に値する은/는 평가나 행위의 가치가 있음을 나타냅니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-074"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nに反して",
+    "choices": [
+      "현저하다, 두드러지다",
+      "타당함",
+      "~에 반하여",
+      "함부로, 마구"
+    ],
+    "answer": "~에 반하여",
+    "explanation": "に反して은/는 예상, 규칙, 기대와 반대됨을 나타냅니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-075"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nに即して",
+    "choices": [
+      "~에 맞추어, 입각하여",
+      "~한 이상",
+      "관용, 너그러움",
+      "~을 어쩔 수 없이 하게 되다"
+    ],
+    "answer": "~에 맞추어, 입각하여",
+    "explanation": "に即して은/는 상황이나 기준에 맞게 따른다는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-076"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nを問わず",
+    "choices": [
+      "~을 불문하고",
+      "~한 이상",
+      "~라고 해서",
+      "방대함"
+    ],
+    "answer": "~을 불문하고",
+    "explanation": "を問わず은/는 조건이나 차이를 문제 삼지 않음을 나타냅니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-077"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nをものともせず",
+    "choices": [
+      "현저하다, 두드러지다",
+      "방대함",
+      "~을 개의치 않고",
+      "간신히"
+    ],
+    "answer": "~을 개의치 않고",
+    "explanation": "をものともせず은/는 어려움을 신경 쓰지 않고 행동함을 나타냅니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-078"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nをめぐって",
+    "choices": [
+      "헷갈리기 쉽다",
+      "~을 둘러싸고",
+      "~을 어쩔 수 없이 하게 되다",
+      "방대함"
+    ],
+    "answer": "~을 둘러싸고",
+    "explanation": "をめぐって은/는 논의나 대립의 중심 주제를 나타냅니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-079"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nを経て",
+    "choices": [
+      "~한 이상",
+      "굳이, 감히",
+      "노골적임",
+      "~을 거쳐"
+    ],
+    "answer": "~을 거쳐",
+    "explanation": "を経て은/는 과정이나 경로를 거쳤음을 나타냅니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-080"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n曖昧",
+    "choices": [
+      "방대함",
+      "~라고 해서",
+      "애매함, 모호함",
+      "부족하다, 빈약하다"
+    ],
+    "answer": "애매함, 모호함",
+    "explanation": "曖昧은/는 태도나 의미가 분명하지 않은 상태입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-081"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n著しい",
+    "choices": [
+      "애매함, 모호함",
+      "막다, 저지하다",
+      "종사하다, 관여하다",
+      "현저하다, 두드러지다"
+    ],
+    "answer": "현저하다, 두드러지다",
+    "explanation": "著しい은/는 변화나 차이가 눈에 띄게 크다는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-082"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n煩わしい",
+    "choices": [
+      "~을 둘러싸고",
+      "헷갈리기 쉽다",
+      "번거롭다, 성가시다",
+      "~에 반하여"
+    ],
+    "answer": "번거롭다, 성가시다",
+    "explanation": "煩わしい은/는 절차나 관계가 귀찮고 성가신 느낌입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-083"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n滞る",
+    "choices": [
+      "정체되다, 밀리다",
+      "애매함, 모호함",
+      "부족하다, 빈약하다",
+      "돌아보다, 반성하다"
+    ],
+    "answer": "정체되다, 밀리다",
+    "explanation": "滞る은/는 일이나 흐름이 순조롭게 진행되지 않는다는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-084"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n促す",
+    "choices": [
+      "~인 만큼 과연",
+      "~을 둘러싸고",
+      "저절로",
+      "촉구하다, 재촉하다"
+    ],
+    "answer": "촉구하다, 재촉하다",
+    "explanation": "促す은/는 상대가 행동하도록 재촉하거나 유도하는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-085"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n携わる",
+    "choices": [
+      "~할 가치가 있다",
+      "어쩔 수 없이",
+      "종사하다, 관여하다",
+      "저절로"
+    ],
+    "answer": "종사하다, 관여하다",
+    "explanation": "携わる은/는 일이나 활동에 관계하여 참여한다는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-086"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n顧みる",
+    "choices": [
+      "부족하다, 빈약하다",
+      "돌아보다, 반성하다",
+      "치밀함",
+      "~에 반하여"
+    ],
+    "answer": "돌아보다, 반성하다",
+    "explanation": "顧みる은/는 과거를 되돌아보거나 신경 쓰는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-087"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n阻む",
+    "choices": [
+      "노골적임",
+      "막다, 저지하다",
+      "즉시",
+      "촉구하다, 재촉하다"
+    ],
+    "answer": "막다, 저지하다",
+    "explanation": "阻む은/는 진행이나 실현을 방해한다는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-088"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n紛らわしい",
+    "choices": [
+      "~에 맞추어, 입각하여",
+      "방대함",
+      "~에 다름 아니다",
+      "헷갈리기 쉽다"
+    ],
+    "answer": "헷갈리기 쉽다",
+    "explanation": "紛らわしい은/는 서로 비슷해서 혼동하기 쉽다는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-089"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n乏しい",
+    "choices": [
+      "치밀함",
+      "~이면서도",
+      "즉시",
+      "부족하다, 빈약하다"
+    ],
+    "answer": "부족하다, 빈약하다",
+    "explanation": "乏しい은/는 양이나 능력이 충분하지 않다는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-090"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n巧み",
+    "choices": [
+      "~을 어쩔 수 없이 하게 되다",
+      "타당함",
+      "~에 반하여",
+      "교묘함, 능숙함"
+    ],
+    "answer": "교묘함, 능숙함",
+    "explanation": "巧み은/는 기술이나 표현이 능숙하다는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-091"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n緻密",
+    "choices": [
+      "~을 개의치 않고",
+      "종사하다, 관여하다",
+      "치밀함",
+      "~을 둘러싸고"
+    ],
+    "answer": "치밀함",
+    "explanation": "緻密은/는 세부까지 빈틈없이 정교한 상태입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-092"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n膨大",
+    "choices": [
+      "방대함",
+      "~을 개의치 않고",
+      "노골적임",
+      "~을 어쩔 수 없이 하게 되다"
+    ],
+    "answer": "방대함",
+    "explanation": "膨大은/는 양이나 규모가 매우 크다는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-093"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n軽率",
+    "choices": [
+      "정체되다, 밀리다",
+      "경솔함",
+      "저절로",
+      "~인 만큼 과연"
+    ],
+    "answer": "경솔함",
+    "explanation": "軽率은/는 깊이 생각하지 않고 행동하는 태도입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-094"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n寛容",
+    "choices": [
+      "모조리, 전부",
+      "타당함",
+      "~을 어쩔 수 없이 하게 되다",
+      "관용, 너그러움"
+    ],
+    "answer": "관용, 너그러움",
+    "explanation": "寛容은/는 타인의 생각이나 행동을 너그럽게 받아들이는 태도입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-095"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n妥当",
+    "choices": [
+      "신중함",
+      "타당함",
+      "유연함",
+      "~에 반하여"
+    ],
+    "answer": "타당함",
+    "explanation": "妥当은/는 상황이나 기준에 비추어 적절하다는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-096"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n露骨",
+    "choices": [
+      "어쩔 수 없이",
+      "노골적임",
+      "애매함, 모호함",
+      "함부로, 마구"
+    ],
+    "answer": "노골적임",
+    "explanation": "露骨은/는 숨김없이 노골적으로 드러내는 모습입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-097"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n慎重",
+    "choices": [
+      "즉시",
+      "치밀함",
+      "함부로, 마구",
+      "신중함"
+    ],
+    "answer": "신중함",
+    "explanation": "慎重은/는 조심스럽고 깊이 생각하는 태도입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-098"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n柔軟",
+    "choices": [
+      "돌아보다, 반성하다",
+      "유연함",
+      "~을 어쩔 수 없이 하게 되다",
+      "굳이, 감히"
+    ],
+    "answer": "유연함",
+    "explanation": "柔軟은/는 사고나 태도가 부드럽고 융통성 있다는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-099"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 부사",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\n即座に",
+    "choices": [
+      "즉시",
+      "~을 거쳐",
+      "촉구하다, 재촉하다",
+      "~한 이상"
+    ],
+    "answer": "즉시",
+    "explanation": "即座に은/는 그 자리에서 바로라는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-100"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 부사",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nあらかじめ",
+    "choices": [
+      "미리",
+      "현저하다, 두드러지다",
+      "간신히",
+      "~할 가치가 있다"
+    ],
+    "answer": "미리",
+    "explanation": "あらかじめ은/는 일이 일어나기 전에 준비한다는 의미입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-101"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 부사",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nかろうじて",
+    "choices": [
+      "관용, 너그러움",
+      "종사하다, 관여하다",
+      "간신히",
+      "막다, 저지하다"
+    ],
+    "answer": "간신히",
+    "explanation": "かろうじて은/는 겨우, 간신히라는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-102"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 부사",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nおのずと",
+    "choices": [
+      "~을 어쩔 수 없이 하게 되다",
+      "치밀함",
+      "헷갈리기 쉽다",
+      "저절로"
+    ],
+    "answer": "저절로",
+    "explanation": "おのずと은/는 자연스럽게, 저절로라는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-103"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 부사",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nことごとく",
+    "choices": [
+      "현저하다, 두드러지다",
+      "종사하다, 관여하다",
+      "미리",
+      "모조리, 전부"
+    ],
+    "answer": "모조리, 전부",
+    "explanation": "ことごとく은/는 하나도 빠짐없이 전부라는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-104"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 부사",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nむやみに",
+    "choices": [
+      "굳이, 감히",
+      "관용, 너그러움",
+      "함부로, 마구",
+      "~한 이상"
+    ],
+    "answer": "함부로, 마구",
+    "explanation": "むやみに은/는 깊이 생각하지 않고 함부로라는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-105"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 부사",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nやむを得ず",
+    "choices": [
+      "어쩔 수 없이",
+      "모조리, 전부",
+      "~에 반하여",
+      "~할 가치가 있다"
+    ],
+    "answer": "어쩔 수 없이",
+    "explanation": "やむを得ず은/는 다른 방법이 없어 어쩔 수 없다는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-106"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 부사",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nあえて",
+    "choices": [
+      "관용, 너그러움",
+      "굳이, 감히",
+      "현저하다, 두드러지다",
+      "방대함"
+    ],
+    "answer": "굳이, 감히",
+    "explanation": "あえて은/는 일부러 어려운 선택을 한다는 뉘앙스가 있습니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-107"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nからには",
+    "choices": [
+      "미리",
+      "애매함, 모호함",
+      "~한 이상",
+      "신중함"
+    ],
+    "answer": "~한 이상",
+    "explanation": "からには은/는 어떤 사실을 전제로 책임이나 결심을 나타냅니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-108"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nながらも",
+    "choices": [
+      "~이면서도",
+      "신중함",
+      "~을 둘러싸고",
+      "굳이, 감히"
+    ],
+    "answer": "~이면서도",
+    "explanation": "ながらも은/는 앞 내용과 반대되는 뒷내용을 연결하는 역접 표현입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-109"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nからといって",
+    "choices": [
+      "~에 반하여",
+      "애매함, 모호함",
+      "~라고 해서",
+      "관용, 너그러움"
+    ],
+    "answer": "~라고 해서",
+    "explanation": "からといって은/는 그 이유만으로 반드시 그렇지는 않음을 나타냅니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-110"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nだけあって",
+    "choices": [
+      "헷갈리기 쉽다",
+      "~인 만큼 과연",
+      "~을 불문하고",
+      "~에 다름 아니다"
+    ],
+    "answer": "~인 만큼 과연",
+    "explanation": "だけあって은/는 자격이나 배경에 걸맞은 결과를 나타냅니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-111"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nにほかならない",
+    "choices": [
+      "~할 가치가 있다",
+      "막다, 저지하다",
+      "~을 둘러싸고",
+      "~에 다름 아니다"
+    ],
+    "answer": "~에 다름 아니다",
+    "explanation": "にほかならない은/는 바로 그것임을 강하게 단정하는 표현입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-112"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nを余儀なくされる",
+    "choices": [
+      "~에 반하여",
+      "~을 어쩔 수 없이 하게 되다",
+      "~을 거쳐",
+      "~을 불문하고"
+    ],
+    "answer": "~을 어쩔 수 없이 하게 되다",
+    "explanation": "を余儀なくされる은/는 외부 상황 때문에 선택을 강요받음을 나타냅니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-113"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nに値する",
+    "choices": [
+      "~할 가치가 있다",
+      "정체되다, 밀리다",
+      "번거롭다, 성가시다",
+      "~에 맞추어, 입각하여"
+    ],
+    "answer": "~할 가치가 있다",
+    "explanation": "に値する은/는 평가나 행위의 가치가 있음을 나타냅니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-114"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nに反して",
+    "choices": [
+      "현저하다, 두드러지다",
+      "굳이, 감히",
+      "교묘함, 능숙함",
+      "~에 반하여"
+    ],
+    "answer": "~에 반하여",
+    "explanation": "に反して은/는 예상, 규칙, 기대와 반대됨을 나타냅니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-115"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nに即して",
+    "choices": [
+      "경솔함",
+      "~에 맞추어, 입각하여",
+      "저절로",
+      "노골적임"
+    ],
+    "answer": "~에 맞추어, 입각하여",
+    "explanation": "に即して은/는 상황이나 기준에 맞게 따른다는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-116"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nを問わず",
+    "choices": [
+      "어쩔 수 없이",
+      "노골적임",
+      "~을 불문하고",
+      "치밀함"
+    ],
+    "answer": "~을 불문하고",
+    "explanation": "を問わず은/는 조건이나 차이를 문제 삼지 않음을 나타냅니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-117"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nをものともせず",
+    "choices": [
+      "현저하다, 두드러지다",
+      "간신히",
+      "~을 개의치 않고",
+      "~을 거쳐"
+    ],
+    "answer": "~을 개의치 않고",
+    "explanation": "をものともせず은/는 어려움을 신경 쓰지 않고 행동함을 나타냅니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-118"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nをめぐって",
+    "choices": [
+      "~한 이상",
+      "~을 둘러싸고",
+      "~에 다름 아니다",
+      "애매함, 모호함"
+    ],
+    "answer": "~을 둘러싸고",
+    "explanation": "をめぐって은/는 논의나 대립의 중심 주제를 나타냅니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-119"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 일본어 표현의 뜻으로 가장 알맞은 것은?\nを経て",
+    "choices": [
+      "간신히",
+      "~한 이상",
+      "~을 거쳐",
+      "저절로"
+    ],
+    "answer": "~을 거쳐",
+    "explanation": "を経て은/는 과정이나 경로를 거쳤음을 나타냅니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-120"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n태도나 의미가 분명하지 않은 상태입니다.",
+    "choices": [
+      "即座に",
+      "おのずと",
+      "曖昧",
+      "に反して"
+    ],
+    "answer": "曖昧",
+    "explanation": "해당 설명은 曖昧에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-121"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n변화나 차이가 눈에 띄게 크다는 뜻입니다.",
+    "choices": [
+      "曖昧",
+      "滞る",
+      "著しい",
+      "にほかならない"
+    ],
+    "answer": "著しい",
+    "explanation": "해당 설명은 著しい에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-122"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n절차나 관계가 귀찮고 성가신 느낌입니다.",
+    "choices": [
+      "煩わしい",
+      "滞る",
+      "をめぐって",
+      "だけあって"
+    ],
+    "answer": "煩わしい",
+    "explanation": "해당 설명은 煩わしい에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-123"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n일이나 흐름이 순조롭게 진행되지 않는다는 뜻입니다.",
+    "choices": [
+      "滞る",
+      "即座に",
+      "柔軟",
+      "曖昧"
+    ],
+    "answer": "滞る",
+    "explanation": "해당 설명은 滞る에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-124"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n상대가 행동하도록 재촉하거나 유도하는 뜻입니다.",
+    "choices": [
+      "に即して",
+      "露骨",
+      "かろうじて",
+      "促す"
+    ],
+    "answer": "促す",
+    "explanation": "해당 설명은 促す에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-125"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n일이나 활동에 관계하여 참여한다는 뜻입니다.",
+    "choices": [
+      "ながらも",
+      "携わる",
+      "あえて",
+      "慎重"
+    ],
+    "answer": "携わる",
+    "explanation": "해당 설명은 携わる에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-126"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n과거를 되돌아보거나 신경 쓰는 뜻입니다.",
+    "choices": [
+      "曖昧",
+      "顧みる",
+      "を余儀なくされる",
+      "慎重"
+    ],
+    "answer": "顧みる",
+    "explanation": "해당 설명은 顧みる에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-127"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n진행이나 실현을 방해한다는 뜻입니다.",
+    "choices": [
+      "に反して",
+      "阻む",
+      "に即して",
+      "ことごとく"
+    ],
+    "answer": "阻む",
+    "explanation": "해당 설명은 阻む에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-128"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n서로 비슷해서 혼동하기 쉽다는 뜻입니다.",
+    "choices": [
+      "あえて",
+      "紛らわしい",
+      "顧みる",
+      "あらかじめ"
+    ],
+    "answer": "紛らわしい",
+    "explanation": "해당 설명은 紛らわしい에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-129"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n양이나 능력이 충분하지 않다는 뜻입니다.",
+    "choices": [
+      "に即して",
+      "乏しい",
+      "膨大",
+      "携わる"
+    ],
+    "answer": "乏しい",
+    "explanation": "해당 설명은 乏しい에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-130"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n기술이나 표현이 능숙하다는 뜻입니다.",
+    "choices": [
+      "に反して",
+      "巧み",
+      "あえて",
+      "乏しい"
+    ],
+    "answer": "巧み",
+    "explanation": "해당 설명은 巧み에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-131"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n세부까지 빈틈없이 정교한 상태입니다.",
+    "choices": [
+      "にほかならない",
+      "妥当",
+      "柔軟",
+      "緻密"
+    ],
+    "answer": "緻密",
+    "explanation": "해당 설명은 緻密에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-132"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n양이나 규모가 매우 크다는 뜻입니다.",
+    "choices": [
+      "膨大",
+      "軽率",
+      "乏しい",
+      "柔軟"
+    ],
+    "answer": "膨大",
+    "explanation": "해당 설명은 膨大에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-133"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n깊이 생각하지 않고 행동하는 태도입니다.",
+    "choices": [
+      "軽率",
+      "阻む",
+      "にほかならない",
+      "からには"
+    ],
+    "answer": "軽率",
+    "explanation": "해당 설명은 軽率에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-134"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n타인의 생각이나 행동을 너그럽게 받아들이는 태도입니다.",
+    "choices": [
+      "寛容",
+      "柔軟",
+      "をめぐって",
+      "妥当"
+    ],
+    "answer": "寛容",
+    "explanation": "해당 설명은 寛容에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-135"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n상황이나 기준에 비추어 적절하다는 뜻입니다.",
+    "choices": [
+      "曖昧",
+      "妥当",
+      "ながらも",
+      "を問わず"
+    ],
+    "answer": "妥当",
+    "explanation": "해당 설명은 妥当에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-136"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n숨김없이 노골적으로 드러내는 모습입니다.",
+    "choices": [
+      "妥当",
+      "に値する",
+      "露骨",
+      "煩わしい"
+    ],
+    "answer": "露骨",
+    "explanation": "해당 설명은 露骨에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-137"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n조심스럽고 깊이 생각하는 태도입니다.",
+    "choices": [
+      "滞る",
+      "煩わしい",
+      "即座に",
+      "慎重"
+    ],
+    "answer": "慎重",
+    "explanation": "해당 설명은 慎重에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-138"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 어휘",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n사고나 태도가 부드럽고 융통성 있다는 뜻입니다.",
+    "choices": [
+      "著しい",
+      "即座に",
+      "だけあって",
+      "柔軟"
+    ],
+    "answer": "柔軟",
+    "explanation": "해당 설명은 柔軟에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-139"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 부사",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n그 자리에서 바로라는 뜻입니다.",
+    "choices": [
+      "を経て",
+      "曖昧",
+      "紛らわしい",
+      "即座に"
+    ],
+    "answer": "即座に",
+    "explanation": "해당 설명은 即座に에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-140"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 부사",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n일이 일어나기 전에 준비한다는 의미입니다.",
+    "choices": [
+      "に即して",
+      "に反して",
+      "あらかじめ",
+      "紛らわしい"
+    ],
+    "answer": "あらかじめ",
+    "explanation": "해당 설명은 あらかじめ에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-141"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 부사",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n겨우, 간신히라는 뜻입니다.",
+    "choices": [
+      "かろうじて",
+      "滞る",
+      "あらかじめ",
+      "に反して"
+    ],
+    "answer": "かろうじて",
+    "explanation": "해당 설명은 かろうじて에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-142"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 부사",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n자연스럽게, 저절로라는 뜻입니다.",
+    "choices": [
+      "緻密",
+      "軽率",
+      "ことごとく",
+      "おのずと"
+    ],
+    "answer": "おのずと",
+    "explanation": "해당 설명은 おのずと에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-143"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 부사",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n하나도 빠짐없이 전부라는 뜻입니다.",
+    "choices": [
+      "に値する",
+      "ことごとく",
+      "巧み",
+      "著しい"
+    ],
+    "answer": "ことごとく",
+    "explanation": "해당 설명은 ことごとく에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-144"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 부사",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n깊이 생각하지 않고 함부로라는 뜻입니다.",
+    "choices": [
+      "に値する",
+      "からには",
+      "むやみに",
+      "阻む"
+    ],
+    "answer": "むやみに",
+    "explanation": "해당 설명은 むやみに에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-145"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 부사",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n다른 방법이 없어 어쩔 수 없다는 뜻입니다.",
+    "choices": [
+      "あらかじめ",
+      "即座に",
+      "を余儀なくされる",
+      "やむを得ず"
+    ],
+    "answer": "やむを得ず",
+    "explanation": "해당 설명은 やむを得ず에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-146"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 부사",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n일부러 어려운 선택을 한다는 뉘앙스가 있습니다.",
+    "choices": [
+      "おのずと",
+      "即座に",
+      "あえて",
+      "に即して"
+    ],
+    "answer": "あえて",
+    "explanation": "해당 설명은 あえて에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-147"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n어떤 사실을 전제로 책임이나 결심을 나타냅니다.",
+    "choices": [
+      "携わる",
+      "かろうじて",
+      "からには",
+      "をものともせず"
+    ],
+    "answer": "からには",
+    "explanation": "해당 설명은 からには에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-148"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n앞 내용과 반대되는 뒷내용을 연결하는 역접 표현입니다.",
+    "choices": [
+      "ながらも",
+      "かろうじて",
+      "膨大",
+      "促す"
+    ],
+    "answer": "ながらも",
+    "explanation": "해당 설명은 ながらも에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-149"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n그 이유만으로 반드시 그렇지는 않음을 나타냅니다.",
+    "choices": [
+      "膨大",
+      "からには",
+      "携わる",
+      "からといって"
+    ],
+    "answer": "からといって",
+    "explanation": "해당 설명은 からといって에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-150"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n자격이나 배경에 걸맞은 결과를 나타냅니다.",
+    "choices": [
+      "ことごとく",
+      "だけあって",
+      "滞る",
+      "ながらも"
+    ],
+    "answer": "だけあって",
+    "explanation": "해당 설명은 だけあって에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-151"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n바로 그것임을 강하게 단정하는 표현입니다.",
+    "choices": [
+      "にほかならない",
+      "をものともせず",
+      "妥当",
+      "即座に"
+    ],
+    "answer": "にほかならない",
+    "explanation": "해당 설명은 にほかならない에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-152"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n외부 상황 때문에 선택을 강요받음을 나타냅니다.",
+    "choices": [
+      "を余儀なくされる",
+      "滞る",
+      "に反して",
+      "にほかならない"
+    ],
+    "answer": "を余儀なくされる",
+    "explanation": "해당 설명은 を余儀なくされる에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-153"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n평가나 행위의 가치가 있음을 나타냅니다.",
+    "choices": [
+      "をめぐって",
+      "に値する",
+      "からといって",
+      "巧み"
+    ],
+    "answer": "に値する",
+    "explanation": "해당 설명은 に値する에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-154"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n예상, 규칙, 기대와 반대됨을 나타냅니다.",
+    "choices": [
+      "滞る",
+      "妥当",
+      "に反して",
+      "乏しい"
+    ],
+    "answer": "に反して",
+    "explanation": "해당 설명은 に反して에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-155"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n상황이나 기준에 맞게 따른다는 뜻입니다.",
+    "choices": [
+      "に反して",
+      "ことごとく",
+      "を経て",
+      "に即して"
+    ],
+    "answer": "に即して",
+    "explanation": "해당 설명은 に即して에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-156"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n조건이나 차이를 문제 삼지 않음을 나타냅니다.",
+    "choices": [
+      "を問わず",
+      "かろうじて",
+      "曖昧",
+      "ことごとく"
+    ],
+    "answer": "を問わず",
+    "explanation": "해당 설명은 を問わず에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-157"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n어려움을 신경 쓰지 않고 행동함을 나타냅니다.",
+    "choices": [
+      "をものともせず",
+      "に即して",
+      "軽率",
+      "ながらも"
+    ],
+    "answer": "をものともせず",
+    "explanation": "해당 설명은 をものともせず에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-158"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n논의나 대립의 중심 주제를 나타냅니다.",
+    "choices": [
+      "顧みる",
+      "むやみに",
+      "にほかならない",
+      "をめぐって"
+    ],
+    "answer": "をめぐって",
+    "explanation": "해당 설명은 をめぐって에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-159"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 문법",
+    "type": "multiple",
+    "question": "다음 설명에 해당하는 일본어 표현은?\n과정이나 경로를 거쳤음을 나타냅니다.",
+    "choices": [
+      "を経て",
+      "阻む",
+      "むやみに",
+      "寛容"
+    ],
+    "answer": "を経て",
+    "explanation": "해당 설명은 を経て에 대한 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-160"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n現代社会では、情報量の多さは必ずしも理解の深さを意味しない。むしろ、何を選び、どう解釈するかが問われている。\n\n筆者が最も強調していることは何ですか。",
+    "choices": [
+      "情報を選び解釈する力が重要だということ",
+      "情報は多いほどよいということ",
+      "情報を得ることは不可能だということ",
+      "理解は量だけで決まるということ"
+    ],
+    "answer": "情報を選び解釈する力が重要だということ",
+    "explanation": "정보량 자체보다 선택과 해석이 중요하다는 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-161"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n失敗を単なる結果として見るか、次の行動の材料として見るかで、その後の成長は大きく変わる。\n\nこの文章の主旨は何ですか。",
+    "choices": [
+      "失敗を学びの材料として捉えるべきだ",
+      "失敗は必ず避けるべきだ",
+      "挑戦は成長を妨げる",
+      "結果だけを見れば十分だ"
+    ],
+    "answer": "失敗を学びの材料として捉えるべきだ",
+    "explanation": "실패를 다음 행동의 재료로 보는 태도를 강조합니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-162"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n便利な道具に頼りすぎると、自分で考える機会が少なくなることもある。便利さを享受しつつ、使い方を意識する姿勢が求められる。\n\n筆者の考えに近いものはどれですか。",
+    "choices": [
+      "便利さを利用しながらも使い方を意識すべきだ",
+      "便利な道具はすべて避けるべきだ",
+      "道具に頼れば考える必要はない",
+      "不便な生活こそ理想である"
+    ],
+    "answer": "便利さを利用しながらも使い方を意識すべきだ",
+    "explanation": "편리함을 누리되 사용 태도를 의식해야 한다는 글입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-163"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n現代社会では、情報量の多さは必ずしも理解の深さを意味しない。むしろ、何を選び、どう解釈するかが問われている。\n\n筆者が最も強調していることは何ですか。",
+    "choices": [
+      "情報を選び解釈する力が重要だということ",
+      "情報は多いほどよいということ",
+      "情報を得ることは不可能だということ",
+      "理解は量だけで決まるということ"
+    ],
+    "answer": "情報を選び解釈する力が重要だということ",
+    "explanation": "정보량 자체보다 선택과 해석이 중요하다는 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-164"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n失敗を単なる結果として見るか、次の行動の材料として見るかで、その後の成長は大きく変わる。\n\nこの文章の主旨は何ですか。",
+    "choices": [
+      "失敗を学びの材料として捉えるべきだ",
+      "失敗は必ず避けるべきだ",
+      "挑戦は成長を妨げる",
+      "結果だけを見れば十分だ"
+    ],
+    "answer": "失敗を学びの材料として捉えるべきだ",
+    "explanation": "실패를 다음 행동의 재료로 보는 태도를 강조합니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-165"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n便利な道具に頼りすぎると、自分で考える機会が少なくなることもある。便利さを享受しつつ、使い方を意識する姿勢が求められる。\n\n筆者の考えに近いものはどれですか。",
+    "choices": [
+      "便利さを利用しながらも使い方を意識すべきだ",
+      "便利な道具はすべて避けるべきだ",
+      "道具に頼れば考える必要はない",
+      "不便な生活こそ理想である"
+    ],
+    "answer": "便利さを利用しながらも使い方を意識すべきだ",
+    "explanation": "편리함을 누리되 사용 태도를 의식해야 한다는 글입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-166"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n現代社会では、情報量の多さは必ずしも理解の深さを意味しない。むしろ、何を選び、どう解釈するかが問われている。\n\n筆者が最も強調していることは何ですか。",
+    "choices": [
+      "情報を選び解釈する力が重要だということ",
+      "情報は多いほどよいということ",
+      "情報を得ることは不可能だということ",
+      "理解は量だけで決まるということ"
+    ],
+    "answer": "情報を選び解釈する力が重要だということ",
+    "explanation": "정보량 자체보다 선택과 해석이 중요하다는 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-167"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n失敗を単なる結果として見るか、次の行動の材料として見るかで、その後の成長は大きく変わる。\n\nこの文章の主旨は何ですか。",
+    "choices": [
+      "失敗を学びの材料として捉えるべきだ",
+      "失敗は必ず避けるべきだ",
+      "挑戦は成長を妨げる",
+      "結果だけを見れば十分だ"
+    ],
+    "answer": "失敗を学びの材料として捉えるべきだ",
+    "explanation": "실패를 다음 행동의 재료로 보는 태도를 강조합니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-168"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n便利な道具に頼りすぎると、自分で考える機会が少なくなることもある。便利さを享受しつつ、使い方を意識する姿勢が求められる。\n\n筆者の考えに近いものはどれですか。",
+    "choices": [
+      "便利さを利用しながらも使い方を意識すべきだ",
+      "便利な道具はすべて避けるべきだ",
+      "道具に頼れば考える必要はない",
+      "不便な生活こそ理想である"
+    ],
+    "answer": "便利さを利用しながらも使い方を意識すべきだ",
+    "explanation": "편리함을 누리되 사용 태도를 의식해야 한다는 글입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-169"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n現代社会では、情報量の多さは必ずしも理解の深さを意味しない。むしろ、何を選び、どう解釈するかが問われている。\n\n筆者が最も強調していることは何ですか。",
+    "choices": [
+      "情報を選び解釈する力が重要だということ",
+      "情報は多いほどよいということ",
+      "情報を得ることは不可能だということ",
+      "理解は量だけで決まるということ"
+    ],
+    "answer": "情報を選び解釈する力が重要だということ",
+    "explanation": "정보량 자체보다 선택과 해석이 중요하다는 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-170"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n失敗を単なる結果として見るか、次の行動の材料として見るかで、その後の成長は大きく変わる。\n\nこの文章の主旨は何ですか。",
+    "choices": [
+      "失敗を学びの材料として捉えるべきだ",
+      "失敗は必ず避けるべきだ",
+      "挑戦は成長を妨げる",
+      "結果だけを見れば十分だ"
+    ],
+    "answer": "失敗を学びの材料として捉えるべきだ",
+    "explanation": "실패를 다음 행동의 재료로 보는 태도를 강조합니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-171"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n便利な道具に頼りすぎると、自分で考える機会が少なくなることもある。便利さを享受しつつ、使い方を意識する姿勢が求められる。\n\n筆者の考えに近いものはどれですか。",
+    "choices": [
+      "便利さを利用しながらも使い方を意識すべきだ",
+      "便利な道具はすべて避けるべきだ",
+      "道具に頼れば考える必要はない",
+      "不便な生活こそ理想である"
+    ],
+    "answer": "便利さを利用しながらも使い方を意識すべきだ",
+    "explanation": "편리함을 누리되 사용 태도를 의식해야 한다는 글입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-172"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n現代社会では、情報量の多さは必ずしも理解の深さを意味しない。むしろ、何を選び、どう解釈するかが問われている。\n\n筆者が最も強調していることは何ですか。",
+    "choices": [
+      "情報を選び解釈する力が重要だということ",
+      "情報は多いほどよいということ",
+      "情報を得ることは不可能だということ",
+      "理解は量だけで決まるということ"
+    ],
+    "answer": "情報を選び解釈する力が重要だということ",
+    "explanation": "정보량 자체보다 선택과 해석이 중요하다는 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-173"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n失敗を単なる結果として見るか、次の行動の材料として見るかで、その後の成長は大きく変わる。\n\nこの文章の主旨は何ですか。",
+    "choices": [
+      "失敗を学びの材料として捉えるべきだ",
+      "失敗は必ず避けるべきだ",
+      "挑戦は成長を妨げる",
+      "結果だけを見れば十分だ"
+    ],
+    "answer": "失敗を学びの材料として捉えるべきだ",
+    "explanation": "실패를 다음 행동의 재료로 보는 태도를 강조합니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-174"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n便利な道具に頼りすぎると、自分で考える機会が少なくなることもある。便利さを享受しつつ、使い方を意識する姿勢が求められる。\n\n筆者の考えに近いものはどれですか。",
+    "choices": [
+      "便利さを利用しながらも使い方を意識すべきだ",
+      "便利な道具はすべて避けるべきだ",
+      "道具に頼れば考える必要はない",
+      "不便な生活こそ理想である"
+    ],
+    "answer": "便利さを利用しながらも使い方を意識すべきだ",
+    "explanation": "편리함을 누리되 사용 태도를 의식해야 한다는 글입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-175"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n現代社会では、情報量の多さは必ずしも理解の深さを意味しない。むしろ、何を選び、どう解釈するかが問われている。\n\n筆者が最も強調していることは何ですか。",
+    "choices": [
+      "情報を選び解釈する力が重要だということ",
+      "情報は多いほどよいということ",
+      "情報を得ることは不可能だということ",
+      "理解は量だけで決まるということ"
+    ],
+    "answer": "情報を選び解釈する力が重要だということ",
+    "explanation": "정보량 자체보다 선택과 해석이 중요하다는 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-176"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n失敗を単なる結果として見るか、次の行動の材料として見るかで、その後の成長は大きく変わる。\n\nこの文章の主旨は何ですか。",
+    "choices": [
+      "失敗を学びの材料として捉えるべきだ",
+      "失敗は必ず避けるべきだ",
+      "挑戦は成長を妨げる",
+      "結果だけを見れば十分だ"
+    ],
+    "answer": "失敗を学びの材料として捉えるべきだ",
+    "explanation": "실패를 다음 행동의 재료로 보는 태도를 강조합니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-177"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n便利な道具に頼りすぎると、自分で考える機会が少なくなることもある。便利さを享受しつつ、使い方を意識する姿勢が求められる。\n\n筆者の考えに近いものはどれですか。",
+    "choices": [
+      "便利さを利用しながらも使い方を意識すべきだ",
+      "便利な道具はすべて避けるべきだ",
+      "道具に頼れば考える必要はない",
+      "不便な生活こそ理想である"
+    ],
+    "answer": "便利さを利用しながらも使い方を意識すべきだ",
+    "explanation": "편리함을 누리되 사용 태도를 의식해야 한다는 글입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-178"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n現代社会では、情報量の多さは必ずしも理解の深さを意味しない。むしろ、何を選び、どう解釈するかが問われている。\n\n筆者が最も強調していることは何ですか。",
+    "choices": [
+      "情報を選び解釈する力が重要だということ",
+      "情報は多いほどよいということ",
+      "情報を得ることは不可能だということ",
+      "理解は量だけで決まるということ"
+    ],
+    "answer": "情報を選び解釈する力が重要だということ",
+    "explanation": "정보량 자체보다 선택과 해석이 중요하다는 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-179"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n失敗を単なる結果として見るか、次の行動の材料として見るかで、その後の成長は大きく変わる。\n\nこの文章の主旨は何ですか。",
+    "choices": [
+      "失敗を学びの材料として捉えるべきだ",
+      "失敗は必ず避けるべきだ",
+      "挑戦は成長を妨げる",
+      "結果だけを見れば十分だ"
+    ],
+    "answer": "失敗を学びの材料として捉えるべきだ",
+    "explanation": "실패를 다음 행동의 재료로 보는 태도를 강조합니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-180"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n便利な道具に頼りすぎると、自分で考える機会が少なくなることもある。便利さを享受しつつ、使い方を意識する姿勢が求められる。\n\n筆者の考えに近いものはどれですか。",
+    "choices": [
+      "便利さを利用しながらも使い方を意識すべきだ",
+      "便利な道具はすべて避けるべきだ",
+      "道具に頼れば考える必要はない",
+      "不便な生活こそ理想である"
+    ],
+    "answer": "便利さを利用しながらも使い方を意識すべきだ",
+    "explanation": "편리함을 누리되 사용 태도를 의식해야 한다는 글입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-181"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n現代社会では、情報量の多さは必ずしも理解の深さを意味しない。むしろ、何を選び、どう解釈するかが問われている。\n\n筆者が最も強調していることは何ですか。",
+    "choices": [
+      "情報を選び解釈する力が重要だということ",
+      "情報は多いほどよいということ",
+      "情報を得ることは不可能だということ",
+      "理解は量だけで決まるということ"
+    ],
+    "answer": "情報を選び解釈する力が重要だということ",
+    "explanation": "정보량 자체보다 선택과 해석이 중요하다는 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-182"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n失敗を単なる結果として見るか、次の行動の材料として見るかで、その後の成長は大きく変わる。\n\nこの文章の主旨は何ですか。",
+    "choices": [
+      "失敗を学びの材料として捉えるべきだ",
+      "失敗は必ず避けるべきだ",
+      "挑戦は成長を妨げる",
+      "結果だけを見れば十分だ"
+    ],
+    "answer": "失敗を学びの材料として捉えるべきだ",
+    "explanation": "실패를 다음 행동의 재료로 보는 태도를 강조합니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-183"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n便利な道具に頼りすぎると、自分で考える機会が少なくなることもある。便利さを享受しつつ、使い方を意識する姿勢が求められる。\n\n筆者の考えに近いものはどれですか。",
+    "choices": [
+      "便利さを利用しながらも使い方を意識すべきだ",
+      "便利な道具はすべて避けるべきだ",
+      "道具に頼れば考える必要はない",
+      "不便な生活こそ理想である"
+    ],
+    "answer": "便利さを利用しながらも使い方を意識すべきだ",
+    "explanation": "편리함을 누리되 사용 태도를 의식해야 한다는 글입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-184"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n現代社会では、情報量の多さは必ずしも理解の深さを意味しない。むしろ、何を選び、どう解釈するかが問われている。\n\n筆者が最も強調していることは何ですか。",
+    "choices": [
+      "情報を選び解釈する力が重要だということ",
+      "情報は多いほどよいということ",
+      "情報を得ることは不可能だということ",
+      "理解は量だけで決まるということ"
+    ],
+    "answer": "情報を選び解釈する力が重要だということ",
+    "explanation": "정보량 자체보다 선택과 해석이 중요하다는 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-185"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n失敗を単なる結果として見るか、次の行動の材料として見るかで、その後の成長は大きく変わる。\n\nこの文章の主旨は何ですか。",
+    "choices": [
+      "失敗を学びの材料として捉えるべきだ",
+      "失敗は必ず避けるべきだ",
+      "挑戦は成長を妨げる",
+      "結果だけを見れば十分だ"
+    ],
+    "answer": "失敗を学びの材料として捉えるべきだ",
+    "explanation": "실패를 다음 행동의 재료로 보는 태도를 강조합니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-186"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n便利な道具に頼りすぎると、自分で考える機会が少なくなることもある。便利さを享受しつつ、使い方を意識する姿勢が求められる。\n\n筆者の考えに近いものはどれですか。",
+    "choices": [
+      "便利さを利用しながらも使い方を意識すべきだ",
+      "便利な道具はすべて避けるべきだ",
+      "道具に頼れば考える必要はない",
+      "不便な生活こそ理想である"
+    ],
+    "answer": "便利さを利用しながらも使い方を意識すべきだ",
+    "explanation": "편리함을 누리되 사용 태도를 의식해야 한다는 글입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-187"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n現代社会では、情報量の多さは必ずしも理解の深さを意味しない。むしろ、何を選び、どう解釈するかが問われている。\n\n筆者が最も強調していることは何ですか。",
+    "choices": [
+      "情報を選び解釈する力が重要だということ",
+      "情報は多いほどよいということ",
+      "情報を得ることは不可能だということ",
+      "理解は量だけで決まるということ"
+    ],
+    "answer": "情報を選び解釈する力が重要だということ",
+    "explanation": "정보량 자체보다 선택과 해석이 중요하다는 내용입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-188"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n失敗を単なる結果として見るか、次の行動の材料として見るかで、その後の成長は大きく変わる。\n\nこの文章の主旨は何ですか。",
+    "choices": [
+      "失敗を学びの材料として捉えるべきだ",
+      "失敗は必ず避けるべきだ",
+      "挑戦は成長を妨げる",
+      "結果だけを見れば十分だ"
+    ],
+    "answer": "失敗を学びの材料として捉えるべきだ",
+    "explanation": "실패를 다음 행동의 재료로 보는 태도를 강조합니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-189"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 독해",
+    "type": "multiple",
+    "question": "다음 글을 읽고 답하세요.\n便利な道具に頼りすぎると、自分で考える機会が少なくなることもある。便利さを享受しつつ、使い方を意識する姿勢が求められる。\n\n筆者の考えに近いものはどれですか。",
+    "choices": [
+      "便利さを利用しながらも使い方を意識すべきだ",
+      "便利な道具はすべて避けるべきだ",
+      "道具に頼れば考える必要はない",
+      "不便な生活こそ理想である"
+    ],
+    "answer": "便利さを利用しながらも使い方を意識すべきだ",
+    "explanation": "편리함을 누리되 사용 태도를 의식해야 한다는 글입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-190"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 OX",
+    "type": "ox",
+    "question": "からには는 '~한 이상'이라는 뜻으로 책임이나 결심을 나타낼 때 자주 사용됩니다.",
+    "answer": "O",
+    "explanation": "約束したからには守るべきだ처럼 씁니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-191"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 OX",
+    "type": "ox",
+    "question": "ながらも는 순접 원인을 나타내는 표현입니다.",
+    "answer": "X",
+    "explanation": "ながらも는 '~이면서도'라는 역접 표현입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-192"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 OX",
+    "type": "ox",
+    "question": "にほかならない는 '~에 다름 아니다'라는 강조 표현입니다.",
+    "answer": "O",
+    "explanation": "原因は不注意にほかならない처럼 씁니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-193"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 OX",
+    "type": "ox",
+    "question": "を問わず는 '~을 불문하고'라는 뜻입니다.",
+    "answer": "O",
+    "explanation": "年齢を問わず처럼 사용합니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-194"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 OX",
+    "type": "ox",
+    "question": "を余儀なくされる는 자발적으로 즐겁게 선택한다는 뜻입니다.",
+    "answer": "X",
+    "explanation": "어쩔 수 없이 하게 된다는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-195"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 OX",
+    "type": "ox",
+    "question": "あえて는 저절로라는 뜻입니다.",
+    "answer": "X",
+    "explanation": "あえて는 굳이, 감히라는 뜻입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-196"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 OX",
+    "type": "ox",
+    "question": "からには는 '~한 이상'이라는 뜻으로 책임이나 결심을 나타낼 때 자주 사용됩니다.",
+    "answer": "O",
+    "explanation": "約束したからには守るべきだ처럼 씁니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-197"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 OX",
+    "type": "ox",
+    "question": "ながらも는 순접 원인을 나타내는 표현입니다.",
+    "answer": "X",
+    "explanation": "ながらも는 '~이면서도'라는 역접 표현입니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-198"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 OX",
+    "type": "ox",
+    "question": "にほかならない는 '~에 다름 아니다'라는 강조 표현입니다.",
+    "answer": "O",
+    "explanation": "原因は不注意にほかならない처럼 씁니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-199"
+  },
+  {
+    "subject": "일본어 N1",
+    "topic": "N1 OX",
+    "type": "ox",
+    "question": "を問わず는 '~을 불문하고'라는 뜻입니다.",
+    "answer": "O",
+    "explanation": "年齢を問わず처럼 사용합니다.",
+    "sourceLabel": "JLPT N1",
+    "examStyle": "jlpt-n1",
+    "difficulty": 5,
+    "id": "jp-n1-200"
+  }
+]
