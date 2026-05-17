@@ -487,26 +487,6 @@ input:focus {
   font-weight: 400;
 }
 
-/* ─── 완료 접기 토글 ─── */
-.done-toggle {
-  width: 100%;
-  border: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  background: transparent;
-  color: rgba(255, 255, 255, 0.4);
-  padding: 8px 0 4px;
-  font-size: 12px;
-  font-weight: 600;
-  cursor: pointer;
-  text-align: left;
-  letter-spacing: 0.03em;
-  transition: color 0.15s;
-}
-
-.done-toggle:active {
-  color: rgba(255, 255, 255, 0.7);
-}
-
 /* ─── 위클리 패널 ─── */
 .todo-panel.weekly {
   border-color: rgba(129, 140, 248, 0.25);
@@ -631,6 +611,8 @@ input:focus {
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.08);
   transition: border-color 0.2s;
+  max-height: 220px;
+  overflow-y: auto;
 }
 
 .member-card.is-me {
