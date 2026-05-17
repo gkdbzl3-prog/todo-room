@@ -116,7 +116,7 @@ export default function QuizPlayer({ subject, level, onExit, uid, nickname }) {
             <section className="quiz-panel">
                 <div className="quiz-result">
                     <div className="quiz-kicker">RESULT</div>
-                    <h2>행정법 미니 퀴즈 완료 🎉</h2>
+                    <h2>{displayTitle} 완료 🎉</h2>
                     <p>
                         {questions.length}문제 중{" "}
                         <strong>{correctCount}</strong>개 맞추셨네요!
