@@ -1626,7 +1626,7 @@ function MemberCard({ member }) {
           </div>
         </div>
         <div className="member-count">
-          {dailyDone}/{(member.todos || []).length}
+          {totalDone}/{(member.todos || []).length + visibleWeeklyTodos.length}
         </div>
       </div>
 
