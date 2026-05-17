@@ -534,6 +534,8 @@ export default function App() {
   const [historyWeeklyData, setHistoryWeeklyData] = useState(null);
   const [selectedDate, setSelectedDate] = useState(null);
   const [showIdleMembers, setShowIdleMembers] = useState(false);
+  const [dailyDoneOpen, setDailyDoneOpen] = useState(false);
+  const [weeklyDoneOpen, setWeeklyDoneOpen] = useState(false);
   const [membersReadyKey, setMembersReadyKey] = useState("");
   const skipDailyStorageSaveRef = useRef(false);
   const skipWeeklyStorageSaveRef = useRef(false);
@@ -1295,8 +1297,8 @@ export default function App() {
   /* ── 합산 ── */
   const visibleWeekly = myWeekly;
   const dailyDoneCount = myDaily.filter((t) => t.done).length;
-  const totalDoneCount =
-    dailyDoneCount + visibleWeekly.filter((t) => t.done).length;
+  const weeklyDoneCount = visibleWeekly.filter((t) => t.done).length;
+  const totalDoneCount = dailyDoneCount + weeklyDoneCount;
   const badge = getBadge(totalDoneCount);
 
   // 전체 멤버 (나 포함) 카드 데이터
@@ -1505,13 +1507,16 @@ export default function App() {
                 <div className="empty">아직 투두가 없어요.</div>
               ) : (
                 <div className="todo-list">
-                  {myDaily.map((todo) => (
-                    <TodoItem
-                      key={todo.id}
-                      todo={todo}
-                      onCycle={cycleDaily}
-                      onDelete={deleteDaily}
-                    />
+                  {myDaily.filter((t) => !t.done).map((todo) => (
+                    <TodoItem key={todo.id} todo={todo} onCycle={cycleDaily} onDelete={deleteDaily} />
+                  ))}
+                  {dailyDoneCount > 0 && (
+                    <button className="done-toggle" onClick={() => setDailyDoneOpen((o) => !o)}>
+                      완료 {dailyDoneCount}개 {dailyDoneOpen ? "▲" : "▼"}
+                    </button>
+                  )}
+                  {dailyDoneOpen && myDaily.filter((t) => t.done).map((todo) => (
+                    <TodoItem key={todo.id} todo={todo} onCycle={cycleDaily} onDelete={deleteDaily} />
                   ))}
                 </div>
               )}
@@ -1545,13 +1550,16 @@ export default function App() {
                 <div className="empty">주간 투두가 없어요.</div>
               ) : (
                 <div className="todo-list">
-                  {visibleWeekly.map((todo) => (
-                    <TodoItem
-                      key={todo.id}
-                      todo={todo}
-                      onCycle={cycleWeekly}
-                      onDelete={deleteWeekly}
-                    />
+                  {visibleWeekly.filter((t) => !t.done).map((todo) => (
+                    <TodoItem key={todo.id} todo={todo} onCycle={cycleWeekly} onDelete={deleteWeekly} />
+                  ))}
+                  {weeklyDoneCount > 0 && (
+                    <button className="done-toggle" onClick={() => setWeeklyDoneOpen((o) => !o)}>
+                      완료 {weeklyDoneCount}개 {weeklyDoneOpen ? "▲" : "▼"}
+                    </button>
+                  )}
+                  {weeklyDoneOpen && visibleWeekly.filter((t) => t.done).map((todo) => (
+                    <TodoItem key={todo.id} todo={todo} onCycle={cycleWeekly} onDelete={deleteWeekly} />
                   ))}
                 </div>
               )}
