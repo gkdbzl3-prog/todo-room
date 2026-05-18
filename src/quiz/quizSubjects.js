@@ -26,6 +26,7 @@ export const quizSubjects = [
         levels: [
             { id: "history-mixed", label: "통합전 범위 랜덤", desc: "전 범위 랜덤" },
             { id: "history-hangeom", label: "한능검형", desc: "사료·키워드·시대 흐름" },
+            { id: "history-hangeom-advanced", label: "한능검 심화", desc: "헷갈리는 선지·세부 사료" },
             { id: "history-civil", label: "공무원형", desc: "9급 공무원 한국사 스타일" },
         ],
     },

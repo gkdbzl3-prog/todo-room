@@ -1,0 +1,3602 @@
+[
+  {
+    "topic": "한능검 심화 선사",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n주먹도끼·찍개를 사용하고 이동 생활을 하며 동굴이나 막집에 거주하였다.",
+    "choices": [
+      "신석기 시대",
+      "철기 시대",
+      "구석기 시대",
+      "청동기 시대"
+    ],
+    "answer": "구석기 시대",
+    "explanation": "주먹도끼, 찍개, 이동 생활은 구석기 시대의 핵심 키워드입니다.",
+    "id": "history-hangeom-advanced-001",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 선사",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n빗살무늬 토기와 간석기를 사용하고 농경과 목축을 시작하였다.",
+    "choices": [
+      "구석기 시대",
+      "신석기 시대",
+      "철기 시대",
+      "청동기 시대"
+    ],
+    "answer": "신석기 시대",
+    "explanation": "빗살무늬 토기, 간석기, 농경 시작은 신석기 시대의 대표 특징입니다.",
+    "id": "history-hangeom-advanced-002",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 선사",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n고인돌과 비파형 동검이 나타나고 계급이 발생하였다.",
+    "choices": [
+      "철기 시대",
+      "구석기 시대",
+      "신석기 시대",
+      "청동기 시대"
+    ],
+    "answer": "청동기 시대",
+    "explanation": "고인돌, 비파형 동검, 계급 발생은 청동기 시대의 핵심입니다.",
+    "id": "history-hangeom-advanced-003",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 초기 국가",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n8조법을 통해 사유 재산과 계급 사회의 성립을 파악할 수 있다.",
+    "choices": [
+      "부여",
+      "고구려",
+      "고조선",
+      "삼한"
+    ],
+    "answer": "고조선",
+    "explanation": "고조선의 8조법은 사회 질서와 계급 발생을 보여 주는 사료입니다.",
+    "id": "history-hangeom-advanced-004",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 초기 국가",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n영고라는 제천 행사를 열었고, 1책 12법과 사출도가 있었다.",
+    "choices": [
+      "고구려",
+      "부여",
+      "동예",
+      "옥저"
+    ],
+    "answer": "부여",
+    "explanation": "영고, 1책 12법, 사출도는 부여의 대표 키워드입니다.",
+    "id": "history-hangeom-advanced-005",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 초기 국가",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n동맹이라는 제천 행사를 열었고, 혼인 풍습으로 서옥제가 있었다.",
+    "choices": [
+      "옥저",
+      "동예",
+      "고구려",
+      "부여"
+    ],
+    "answer": "고구려",
+    "explanation": "동맹과 서옥제는 고구려의 특징입니다.",
+    "id": "history-hangeom-advanced-006",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 초기 국가",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n민며느리제와 가족 공동 무덤 풍습이 있었다.",
+    "choices": [
+      "동예",
+      "부여",
+      "고구려",
+      "옥저"
+    ],
+    "answer": "옥저",
+    "explanation": "민며느리제와 가족 공동 무덤은 옥저의 특징입니다.",
+    "id": "history-hangeom-advanced-007",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 초기 국가",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n무천이라는 제천 행사와 책화 풍습이 있었다.",
+    "choices": [
+      "부여",
+      "동예",
+      "고구려",
+      "옥저"
+    ],
+    "answer": "동예",
+    "explanation": "무천과 책화는 동예의 대표 특징입니다.",
+    "id": "history-hangeom-advanced-008",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 초기 국가",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n천군이 소도를 다스렸고 정치와 제사가 분리되어 있었다.",
+    "choices": [
+      "삼한",
+      "옥저",
+      "고구려",
+      "부여"
+    ],
+    "answer": "삼한",
+    "explanation": "천군과 소도, 제정 분리는 삼한의 특징입니다.",
+    "id": "history-hangeom-advanced-009",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고대",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n옥저를 복속하고 계루부 고씨의 왕위 세습 기반을 마련하였다.",
+    "choices": [
+      "고구려 태조왕",
+      "고구려 소수림왕",
+      "고구려 장수왕",
+      "백제 근초고왕"
+    ],
+    "answer": "고구려 태조왕",
+    "explanation": "태조왕은 옥저 복속과 왕위 세습 기반 마련이 핵심입니다.",
+    "id": "history-hangeom-advanced-010",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고대",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n진대법을 실시하여 흉년이나 춘궁기에 백성을 구제하였다.",
+    "choices": [
+      "고구려 고국천왕",
+      "고구려 태조왕",
+      "고구려 소수림왕",
+      "신라 법흥왕"
+    ],
+    "answer": "고구려 고국천왕",
+    "explanation": "진대법은 고구려 고국천왕 때 실시되었습니다.",
+    "id": "history-hangeom-advanced-011",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고대",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n불교를 수용하고 태학을 설립하였으며 율령을 반포하였다.",
+    "choices": [
+      "고구려 장수왕",
+      "백제 성왕",
+      "고구려 광개토 대왕",
+      "고구려 소수림왕"
+    ],
+    "answer": "고구려 소수림왕",
+    "explanation": "소수림왕의 체제 정비 정책은 한능검 단골입니다.",
+    "id": "history-hangeom-advanced-012",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고대",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n영락이라는 연호를 사용하고 신라에 침입한 왜를 격퇴하였다.",
+    "choices": [
+      "신라 진흥왕",
+      "고구려 장수왕",
+      "백제 근초고왕",
+      "고구려 광개토 대왕"
+    ],
+    "answer": "고구려 광개토 대왕",
+    "explanation": "영락 연호와 신라 구원, 광개토 대왕릉비는 광개토 대왕의 핵심입니다.",
+    "id": "history-hangeom-advanced-013",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고대",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n평양으로 천도하고 남진 정책을 추진하여 한성을 함락하였다.",
+    "choices": [
+      "백제 성왕",
+      "고구려 장수왕",
+      "고구려 소수림왕",
+      "고구려 광개토 대왕"
+    ],
+    "answer": "고구려 장수왕",
+    "explanation": "장수왕은 평양 천도와 남진 정책이 핵심입니다.",
+    "id": "history-hangeom-advanced-014",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고대",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n율령을 반포하고 6좌평제를 정비하였다.",
+    "choices": [
+      "백제 근초고왕",
+      "백제 고이왕",
+      "백제 무령왕",
+      "백제 성왕"
+    ],
+    "answer": "백제 고이왕",
+    "explanation": "고이왕은 백제의 고대 국가 체제 정비와 관련됩니다.",
+    "id": "history-hangeom-advanced-015",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고대",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n마한을 정복하고 요서·규슈 방면으로 진출하였으며 고흥이 서기를 편찬하였다.",
+    "choices": [
+      "고구려 장수왕",
+      "백제 근초고왕",
+      "백제 성왕",
+      "백제 무령왕"
+    ],
+    "answer": "백제 근초고왕",
+    "explanation": "근초고왕은 백제의 전성기를 이끈 왕입니다.",
+    "id": "history-hangeom-advanced-016",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고대",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n동진에서 불교를 수용하였다.",
+    "choices": [
+      "백제 침류왕",
+      "백제 성왕",
+      "백제 고이왕",
+      "백제 무령왕"
+    ],
+    "answer": "백제 침류왕",
+    "explanation": "백제의 불교 수용은 침류왕 때입니다.",
+    "id": "history-hangeom-advanced-017",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고대",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n지방 22담로에 왕족을 파견하고 중국 남조 양과 교류하였다.",
+    "choices": [
+      "백제 근초고왕",
+      "백제 성왕",
+      "신라 진흥왕",
+      "백제 무령왕"
+    ],
+    "answer": "백제 무령왕",
+    "explanation": "무령왕은 22담로와 무령왕릉 지석으로 자주 출제됩니다.",
+    "id": "history-hangeom-advanced-018",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고대",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n사비로 천도하고 국호를 남부여로 고쳤으며 관산성 전투에서 전사하였다.",
+    "choices": [
+      "신라 법흥왕",
+      "백제 성왕",
+      "백제 근초고왕",
+      "백제 무령왕"
+    ],
+    "answer": "백제 성왕",
+    "explanation": "성왕은 사비 천도, 남부여, 관산성 전투가 핵심입니다.",
+    "id": "history-hangeom-advanced-019",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고대",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n김씨 왕위 세습권을 확립하고 마립간 칭호를 사용하였다.",
+    "choices": [
+      "신라 지증왕",
+      "신라 내물왕",
+      "신라 진흥왕",
+      "신라 법흥왕"
+    ],
+    "answer": "신라 내물왕",
+    "explanation": "내물왕은 김씨 왕위 세습과 마립간 칭호가 핵심입니다.",
+    "id": "history-hangeom-advanced-020",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고대",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n국호를 신라로 확정하고 왕 칭호를 사용하였으며 우산국을 복속하였다.",
+    "choices": [
+      "신라 진흥왕",
+      "신라 신문왕",
+      "신라 지증왕",
+      "신라 법흥왕"
+    ],
+    "answer": "신라 지증왕",
+    "explanation": "지증왕은 신라 국호, 왕 칭호, 우산국 복속으로 구분합니다.",
+    "id": "history-hangeom-advanced-021",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고대",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n율령을 반포하고 불교를 공인하였으며 금관가야를 병합하였다.",
+    "choices": [
+      "신라 신문왕",
+      "신라 진흥왕",
+      "신라 법흥왕",
+      "신라 지증왕"
+    ],
+    "answer": "신라 법흥왕",
+    "explanation": "법흥왕은 율령 반포, 불교 공인, 금관가야 병합입니다.",
+    "id": "history-hangeom-advanced-022",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고대",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n한강 유역을 차지하고 대가야를 정복하였으며 순수비를 세웠다.",
+    "choices": [
+      "신라 신문왕",
+      "신라 문무왕",
+      "신라 진흥왕",
+      "신라 법흥왕"
+    ],
+    "answer": "신라 진흥왕",
+    "explanation": "진흥왕은 한강 유역 확보, 대가야 정복, 순수비가 핵심입니다.",
+    "id": "history-hangeom-advanced-023",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 남북국",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n나당 전쟁을 거쳐 삼국 통일을 완성하였다.",
+    "choices": [
+      "신라 문무왕",
+      "발해 무왕",
+      "신라 진흥왕",
+      "신라 신문왕"
+    ],
+    "answer": "신라 문무왕",
+    "explanation": "문무왕은 삼국 통일 완성과 관련됩니다.",
+    "id": "history-hangeom-advanced-024",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 남북국",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n김흠돌의 난을 진압하고 관료전을 지급하였으며 녹읍을 폐지하였다.",
+    "choices": [
+      "신라 문무왕",
+      "신라 원성왕",
+      "발해 문왕",
+      "신라 신문왕"
+    ],
+    "answer": "신라 신문왕",
+    "explanation": "신문왕은 왕권 강화 정책과 국학 설립이 핵심입니다.",
+    "id": "history-hangeom-advanced-025",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 남북국",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n인안 연호를 사용하고 장문휴를 보내 당의 산둥 지방을 공격하였다.",
+    "choices": [
+      "발해 선왕",
+      "발해 무왕",
+      "발해 문왕",
+      "발해 고왕"
+    ],
+    "answer": "발해 무왕",
+    "explanation": "발해 무왕은 당과 대립하고 일본과 교류했습니다.",
+    "id": "history-hangeom-advanced-026",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 남북국",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n대흥 연호를 사용하고 3성 6부를 정비하였으며 상경으로 천도하였다.",
+    "choices": [
+      "신라 신문왕",
+      "발해 문왕",
+      "발해 무왕",
+      "발해 선왕"
+    ],
+    "answer": "발해 문왕",
+    "explanation": "발해 문왕은 당 문물 수용과 제도 정비가 핵심입니다.",
+    "id": "history-hangeom-advanced-027",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 남북국",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n지방 제도를 5경 15부 62주로 정비하고 해동성국이라 불릴 정도의 전성기를 이루었다.",
+    "choices": [
+      "발해 선왕",
+      "발해 문왕",
+      "신라 문무왕",
+      "발해 무왕"
+    ],
+    "answer": "발해 선왕",
+    "explanation": "발해 선왕은 해동성국과 전성기가 핵심입니다.",
+    "id": "history-hangeom-advanced-028",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고려",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n훈요 10조를 남기고 혼인 정책과 사성 정책으로 호족을 통합하였다.",
+    "choices": [
+      "고려 태조 왕건",
+      "고려 광종",
+      "고려 성종",
+      "고려 공민왕"
+    ],
+    "answer": "고려 태조 왕건",
+    "explanation": "태조 왕건은 호족 통합과 훈요 10조가 핵심입니다.",
+    "id": "history-hangeom-advanced-029",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고려",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n노비안검법을 시행하고 과거제를 실시하여 왕권을 강화하였다.",
+    "choices": [
+      "고려 광종",
+      "고려 성종",
+      "고려 공민왕",
+      "고려 태조"
+    ],
+    "answer": "고려 광종",
+    "explanation": "광종은 노비안검법과 과거제가 핵심입니다.",
+    "id": "history-hangeom-advanced-030",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고려",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n최승로의 시무 28조를 수용하고 12목에 지방관을 파견하였다.",
+    "choices": [
+      "고려 성종",
+      "고려 광종",
+      "고려 태조",
+      "고려 공민왕"
+    ],
+    "answer": "고려 성종",
+    "explanation": "성종은 유교 정치 질서와 지방 제도 정비가 핵심입니다.",
+    "id": "history-hangeom-advanced-031",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고려",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n관직과 인품을 기준으로 관리에게 수조권을 지급한 고려의 토지 제도이다.",
+    "choices": [
+      "대동법",
+      "과전법",
+      "녹읍",
+      "전시과"
+    ],
+    "answer": "전시과",
+    "explanation": "전시과는 고려의 토지 지급 제도입니다.",
+    "id": "history-hangeom-advanced-032",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고려",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n공신이나 고위 관료의 자손이 과거를 거치지 않고 관직에 나아갈 수 있었던 제도이다.",
+    "choices": [
+      "전시과",
+      "녹읍",
+      "과거제",
+      "음서"
+    ],
+    "answer": "음서",
+    "explanation": "음서는 고려 귀족 사회의 성격을 보여 줍니다.",
+    "id": "history-hangeom-advanced-033",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고려",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n고려의 재신과 추밀이 모여 국방과 군사 문제를 논의한 회의 기구이다.",
+    "choices": [
+      "도병마사",
+      "중추원",
+      "삼사",
+      "식목도감"
+    ],
+    "answer": "도병마사",
+    "explanation": "도병마사는 고려의 귀족 합의 기구입니다.",
+    "id": "history-hangeom-advanced-034",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고려",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n고려의 법제와 격식을 논의하던 회의 기구이다.",
+    "choices": [
+      "식목도감",
+      "중추원",
+      "도병마사",
+      "어사대"
+    ],
+    "answer": "식목도감",
+    "explanation": "식목도감은 법제와 격식 논의 기구입니다.",
+    "id": "history-hangeom-advanced-035",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고려",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n서경 천도, 금국 정벌, 칭제건원을 주장하였다.",
+    "choices": [
+      "묘청의 서경 천도 운동",
+      "이자겸의 난",
+      "무신 정변",
+      "위화도 회군"
+    ],
+    "answer": "묘청의 서경 천도 운동",
+    "explanation": "묘청의 서경 천도 운동은 서경 세력과 개경 문벌 귀족의 대립으로 이해합니다.",
+    "id": "history-hangeom-advanced-036",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고려",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n정중부·이의방 등이 정변을 일으켜 문신 중심의 정치 질서를 무너뜨렸다.",
+    "choices": [
+      "무신 정변",
+      "묘청의 난",
+      "위화도 회군",
+      "홍건적 침입"
+    ],
+    "answer": "무신 정변",
+    "explanation": "1170년 무신 정변 이후 무신 정권이 성립했습니다.",
+    "id": "history-hangeom-advanced-037",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고려",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n최충헌 집권기에 개경의 사노비들이 신분 해방을 도모하였다.",
+    "choices": [
+      "망이·망소이의 난",
+      "만적의 난",
+      "묘청의 난",
+      "김사미·효심의 난"
+    ],
+    "answer": "만적의 난",
+    "explanation": "만적의 난은 신분 해방 운동의 성격을 보입니다.",
+    "id": "history-hangeom-advanced-038",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고려",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n강화도에서 진도, 제주도로 옮겨 가며 몽골과 개경 정부에 저항하였다.",
+    "choices": [
+      "홍건적 격퇴",
+      "묘청의 서경 천도 운동",
+      "삼별초의 항쟁",
+      "만적의 난"
+    ],
+    "answer": "삼별초의 항쟁",
+    "explanation": "삼별초는 몽골과 강화에 반대하여 항쟁했습니다.",
+    "id": "history-hangeom-advanced-039",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고려",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n쌍성총관부를 공격하고 전민변정도감을 설치하였으며 정동행성 이문소를 폐지하였다.",
+    "choices": [
+      "고려 성종",
+      "고려 충렬왕",
+      "공민왕",
+      "고려 광종"
+    ],
+    "answer": "공민왕",
+    "explanation": "공민왕은 반원 자주 정책과 권문세족 견제를 추진했습니다.",
+    "id": "history-hangeom-advanced-040",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고려 문화",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n김부식이 편찬한 현존 최고 역사서로 유교적 합리주의 사관이 반영되었다.",
+    "choices": [
+      "삼국사기",
+      "제왕운기",
+      "동국통감",
+      "삼국유사"
+    ],
+    "answer": "삼국사기",
+    "explanation": "삼국사기는 고려 인종 때 김부식이 편찬했습니다.",
+    "id": "history-hangeom-advanced-041",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고려 문화",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n일연이 저술하였고 단군 신화 등 민간 설화와 불교 관련 내용이 수록되었다.",
+    "choices": [
+      "삼국사기",
+      "동국사략",
+      "삼국유사",
+      "고려사"
+    ],
+    "answer": "삼국유사",
+    "explanation": "삼국유사는 불교적·민간적 성격이 강합니다.",
+    "id": "history-hangeom-advanced-042",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고려 문화",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n청주 흥덕사에서 금속 활자로 인쇄된 현존 세계 최고 금속 활자본이다.",
+    "choices": [
+      "직지심체요절",
+      "상정고금예문",
+      "무구정광대다라니경",
+      "팔만대장경"
+    ],
+    "answer": "직지심체요절",
+    "explanation": "직지는 고려 말 금속 활자 인쇄물입니다.",
+    "id": "history-hangeom-advanced-043",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고려 문화",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n몽골 침입기에 부처의 힘으로 국난을 극복하고자 조판되었다.",
+    "choices": [
+      "월인천강지곡",
+      "초조대장경",
+      "팔만대장경",
+      "직지심체요절"
+    ],
+    "answer": "팔만대장경",
+    "explanation": "팔만대장경은 해인사 장경판전에 보관되어 있습니다.",
+    "id": "history-hangeom-advanced-044",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 조선 전기",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n6조 직계제를 실시하고 사병을 혁파하였으며 호패법을 시행하였다.",
+    "choices": [
+      "조선 세종",
+      "조선 성종",
+      "조선 태종",
+      "조선 태조"
+    ],
+    "answer": "조선 태종",
+    "explanation": "태종은 왕권 강화 정책으로 자주 출제됩니다.",
+    "id": "history-hangeom-advanced-045",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 조선 전기",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n집현전을 육성하고 훈민정음을 창제하였으며 4군 6진을 개척하였다.",
+    "choices": [
+      "조선 태종",
+      "조선 성종",
+      "조선 세종",
+      "조선 세조"
+    ],
+    "answer": "조선 세종",
+    "explanation": "세종은 민족 문화 발전과 북방 개척이 핵심입니다.",
+    "id": "history-hangeom-advanced-046",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 조선 전기",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n계유정난으로 집권하고 6조 직계제를 부활시켰으며 직전법을 실시하였다.",
+    "choices": [
+      "조선 세조",
+      "조선 정조",
+      "조선 태종",
+      "조선 성종"
+    ],
+    "answer": "조선 세조",
+    "explanation": "세조는 계유정난, 6조 직계제 부활, 직전법이 핵심입니다.",
+    "id": "history-hangeom-advanced-047",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 조선 전기",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n경국대전을 완성하고 홍문관을 설치하였으며 사림을 등용하였다.",
+    "choices": [
+      "조선 세조",
+      "조선 정조",
+      "조선 성종",
+      "조선 세종"
+    ],
+    "answer": "조선 성종",
+    "explanation": "성종은 경국대전 완성과 사림 등용이 핵심입니다.",
+    "id": "history-hangeom-advanced-048",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 조선 전기",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n성종 때 중앙 정계에 진출하여 3사의 언론 기능을 중시하였다.",
+    "choices": [
+      "권문세족",
+      "훈구",
+      "사림",
+      "신진 사대부"
+    ],
+    "answer": "사림",
+    "explanation": "사림은 훈구와 대립하고 사화를 겪었습니다.",
+    "id": "history-hangeom-advanced-049",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 조선 전기",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n현량과 실시와 소격서 폐지, 위훈 삭제를 주장하였다.",
+    "choices": [
+      "이황",
+      "조광조",
+      "정도전",
+      "정약용"
+    ],
+    "answer": "조광조",
+    "explanation": "조광조는 중종 때 급진적 개혁 정치를 추진했습니다.",
+    "id": "history-hangeom-advanced-050",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 조선 후기",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n임진왜란을 거치며 기능이 확대되어 국정 전반을 총괄하였다.",
+    "choices": [
+      "홍문관",
+      "의정부",
+      "비변사",
+      "승정원"
+    ],
+    "answer": "비변사",
+    "explanation": "비변사는 조선 후기 정치 운영의 핵심 기구로 기능이 확대되었습니다.",
+    "id": "history-hangeom-advanced-051",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 조선 후기",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n공납의 폐단을 줄이고자 공물을 쌀·포·동전 등으로 납부하게 한 제도이다.",
+    "choices": [
+      "대동법",
+      "영정법",
+      "과전법",
+      "균역법"
+    ],
+    "answer": "대동법",
+    "explanation": "대동법은 광해군 때 경기도에서 처음 시행되어 점차 확대되었습니다.",
+    "id": "history-hangeom-advanced-052",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 조선 후기",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n풍흉에 관계없이 전세를 토지 1결당 4두로 고정하였다.",
+    "choices": [
+      "균역법",
+      "대동법",
+      "영정법",
+      "호포법"
+    ],
+    "answer": "영정법",
+    "explanation": "영정법은 인조 때 시행된 전세 제도입니다.",
+    "id": "history-hangeom-advanced-053",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 조선 후기",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n군포를 1년에 2필에서 1필로 줄여 양인의 군역 부담을 완화하였다.",
+    "choices": [
+      "영정법",
+      "대동법",
+      "균역법",
+      "직전법"
+    ],
+    "answer": "균역법",
+    "explanation": "균역법은 영조 때 시행되었습니다.",
+    "id": "history-hangeom-advanced-054",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 조선 후기",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n탕평비를 세우고 균역법을 시행하였으며 속대전을 편찬하였다.",
+    "choices": [
+      "정조",
+      "영조",
+      "숙종",
+      "광해군"
+    ],
+    "answer": "영조",
+    "explanation": "영조는 탕평 정치와 균역법이 핵심입니다.",
+    "id": "history-hangeom-advanced-055",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 조선 후기",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n규장각을 육성하고 초계문신제를 실시하였으며 수원 화성을 건설하였다.",
+    "choices": [
+      "영조",
+      "숙종",
+      "정조",
+      "세종"
+    ],
+    "answer": "정조",
+    "explanation": "정조는 왕권 강화와 개혁 정치가 핵심입니다.",
+    "id": "history-hangeom-advanced-056",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 조선 후기",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n성호사설을 저술하고 한전론을 주장하였다.",
+    "choices": [
+      "박지원",
+      "이익",
+      "정약용",
+      "유형원"
+    ],
+    "answer": "이익",
+    "explanation": "이익은 성호사설과 한전론으로 구분합니다.",
+    "id": "history-hangeom-advanced-057",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 조선 후기",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n목민심서·경세유표·흠흠신서를 저술하고 여전론을 주장하였다.",
+    "choices": [
+      "정약용",
+      "유형원",
+      "박지원",
+      "홍대용"
+    ],
+    "answer": "정약용",
+    "explanation": "정약용은 실학을 집대성한 인물입니다.",
+    "id": "history-hangeom-advanced-058",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 조선 후기",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n열하일기를 저술하고 청 문물 수용을 주장하였다.",
+    "choices": [
+      "정약용",
+      "박지원",
+      "유형원",
+      "이익"
+    ],
+    "answer": "박지원",
+    "explanation": "박지원은 북학파 실학자입니다.",
+    "id": "history-hangeom-advanced-059",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 조선 후기",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n대동여지도를 제작하였다.",
+    "choices": [
+      "김정호",
+      "박지원",
+      "유득공",
+      "정약용"
+    ],
+    "answer": "김정호",
+    "explanation": "김정호는 대동여지도로 자주 출제됩니다.",
+    "id": "history-hangeom-advanced-060",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 근대",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n비변사를 축소·폐지하고 서원을 정리하였으며 경복궁을 중건하였다.",
+    "choices": [
+      "흥선 대원군",
+      "민영환",
+      "고종",
+      "김홍집"
+    ],
+    "answer": "흥선 대원군",
+    "explanation": "흥선 대원군은 왕권 강화와 통상 수교 거부 정책이 핵심입니다.",
+    "id": "history-hangeom-advanced-061",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 근대",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n운요호 사건을 계기로 체결된 조선 최초의 근대적 조약이다.",
+    "choices": [
+      "한성 조약",
+      "조미 수호 통상 조약",
+      "제물포 조약",
+      "강화도 조약"
+    ],
+    "answer": "강화도 조약",
+    "explanation": "강화도 조약은 1876년 일본과 체결되었습니다.",
+    "id": "history-hangeom-advanced-062",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 근대",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n구식 군인에 대한 차별 대우가 원인이 되어 발생하였다.",
+    "choices": [
+      "을미의병",
+      "임오군란",
+      "동학 농민 운동",
+      "갑신정변"
+    ],
+    "answer": "임오군란",
+    "explanation": "임오군란은 1882년에 일어났습니다.",
+    "id": "history-hangeom-advanced-063",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 근대",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n김옥균 등 급진 개화파가 우정총국 개국 축하연을 이용하여 정변을 일으켰다.",
+    "choices": [
+      "임오군란",
+      "갑신정변",
+      "독립협회 운동",
+      "갑오개혁"
+    ],
+    "answer": "갑신정변",
+    "explanation": "갑신정변은 1884년의 3일 천하입니다.",
+    "id": "history-hangeom-advanced-064",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 근대",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n보국안민과 제폭구민을 내세웠고 전주 화약 이후 집강소를 설치하였다.",
+    "choices": [
+      "동학 농민 운동",
+      "국채 보상 운동",
+      "임오군란",
+      "갑신정변"
+    ],
+    "answer": "동학 농민 운동",
+    "explanation": "동학 농민 운동은 1894년 반봉건·반외세 운동입니다.",
+    "id": "history-hangeom-advanced-065",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 근대",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n군국기무처를 중심으로 신분제와 과거제를 폐지하였다.",
+    "choices": [
+      "갑신정변",
+      "광무개혁",
+      "갑오개혁",
+      "을미개혁"
+    ],
+    "answer": "갑오개혁",
+    "explanation": "갑오개혁은 1894년에 추진된 근대적 개혁입니다.",
+    "id": "history-hangeom-advanced-066",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 근대",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n단발령을 실시하고 태양력 사용을 추진하였다.",
+    "choices": [
+      "갑오개혁",
+      "독립협회 운동",
+      "광무개혁",
+      "을미개혁"
+    ],
+    "answer": "을미개혁",
+    "explanation": "을미개혁의 대표 키워드는 단발령입니다.",
+    "id": "history-hangeom-advanced-067",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 근대",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n독립문 건립을 추진하고 만민 공동회와 관민 공동회를 개최하였다.",
+    "choices": [
+      "독립협회",
+      "신간회",
+      "대한 광복회",
+      "신민회"
+    ],
+    "answer": "독립협회",
+    "explanation": "독립협회는 자주 국권과 자유 민권을 추구했습니다.",
+    "id": "history-hangeom-advanced-068",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 근대",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n구본신참을 원칙으로 대한국 국제를 반포하고 황제권 강화를 추구하였다.",
+    "choices": [
+      "광무개혁",
+      "을미개혁",
+      "갑신정변",
+      "갑오개혁"
+    ],
+    "answer": "광무개혁",
+    "explanation": "광무개혁은 대한제국 시기의 개혁입니다.",
+    "id": "history-hangeom-advanced-069",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 근대",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n대한제국의 외교권을 박탈하고 통감부 설치의 계기가 되었다.",
+    "choices": [
+      "한일 신협약",
+      "한일 병합 조약",
+      "을사늑약",
+      "제1차 한일 협약"
+    ],
+    "answer": "을사늑약",
+    "explanation": "을사늑약은 1905년에 강제로 체결되었습니다.",
+    "id": "history-hangeom-advanced-070",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 근대",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n대구에서 시작되어 대한매일신보 등의 지원을 받으며 전개되었다.",
+    "choices": [
+      "민립 대학 설립 운동",
+      "브나로드 운동",
+      "국채 보상 운동",
+      "물산 장려 운동"
+    ],
+    "answer": "국채 보상 운동",
+    "explanation": "국채 보상 운동은 1907년 대구에서 시작되었습니다.",
+    "id": "history-hangeom-advanced-071",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 근대",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n비밀 결사로 공화정 수립을 목표로 하고 대성 학교와 오산 학교 설립을 지원하였다.",
+    "choices": [
+      "신간회",
+      "독립협회",
+      "의열단",
+      "신민회"
+    ],
+    "answer": "신민회",
+    "explanation": "신민회는 1907년에 조직되었습니다.",
+    "id": "history-hangeom-advanced-072",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 일제",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n헌병 경찰제를 바탕으로 1910년대 일제가 실시한 통치 방식이다.",
+    "choices": [
+      "문화 통치",
+      "민족 말살 통치",
+      "무단 통치",
+      "광무개혁"
+    ],
+    "answer": "무단 통치",
+    "explanation": "1910년대 일제의 통치는 무단 통치입니다.",
+    "id": "history-hangeom-advanced-073",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 일제",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n토지 소유권을 확정한다는 명분으로 실시되어 기한부 신고주의가 적용되었다.",
+    "choices": [
+      "산미 증식 계획",
+      "토지 조사 사업",
+      "회사령",
+      "국가 총동원법"
+    ],
+    "answer": "토지 조사 사업",
+    "explanation": "토지 조사 사업은 1910년대 일제의 경제 수탈 정책입니다.",
+    "id": "history-hangeom-advanced-074",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 일제",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n회사를 설립할 때 조선 총독의 허가를 받도록 하였다.",
+    "choices": [
+      "물산 장려 운동",
+      "산미 증식 계획",
+      "회사령",
+      "토지 조사 사업"
+    ],
+    "answer": "회사령",
+    "explanation": "회사령은 1910년대 민족 자본 성장을 억제했습니다.",
+    "id": "history-hangeom-advanced-075",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 일제",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n고종의 인산일을 계기로 민족 대표 33인이 독립 선언서를 발표하였다.",
+    "choices": [
+      "광주 학생 항일 운동",
+      "6·10 만세 운동",
+      "3·1 운동",
+      "신간회 운동"
+    ],
+    "answer": "3·1 운동",
+    "explanation": "3·1 운동은 대한민국 임시정부 수립의 계기가 되었습니다.",
+    "id": "history-hangeom-advanced-076",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 일제",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n상하이에 수립되어 연통제와 교통국을 운영하였다.",
+    "choices": [
+      "신민회",
+      "조선어 학회",
+      "대한민국 임시정부",
+      "독립협회"
+    ],
+    "answer": "대한민국 임시정부",
+    "explanation": "대한민국 임시정부는 3·1 운동 이후 수립되었습니다.",
+    "id": "history-hangeom-advanced-077",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 일제",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n3·1 운동 이후 일제가 내세운 이른바 유화적 통치 방식이다.",
+    "choices": [
+      "문화 통치",
+      "무단 통치",
+      "민족 말살 통치",
+      "황국 신민화 정책"
+    ],
+    "answer": "문화 통치",
+    "explanation": "1920년대 일제는 문화 통치를 표방했습니다.",
+    "id": "history-hangeom-advanced-078",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 일제",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n일본의 식량 부족을 해결하기 위해 조선에서 쌀 증산과 반출을 추진하였다.",
+    "choices": [
+      "남면북양 정책",
+      "산미 증식 계획",
+      "회사령",
+      "토지 조사 사업"
+    ],
+    "answer": "산미 증식 계획",
+    "explanation": "산미 증식 계획은 1920년대 경제 수탈 정책입니다.",
+    "id": "history-hangeom-advanced-079",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 일제",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n내 살림 내 것으로라는 구호를 내세워 민족 산업 육성을 추구하였다.",
+    "choices": [
+      "브나로드 운동",
+      "국채 보상 운동",
+      "민립 대학 설립 운동",
+      "물산 장려 운동"
+    ],
+    "answer": "물산 장려 운동",
+    "explanation": "물산 장려 운동은 1920년대 민족 실력 양성 운동입니다.",
+    "id": "history-hangeom-advanced-080",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 일제",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n조선인의 힘으로 대학을 세우자는 취지에서 전개되었다.",
+    "choices": [
+      "국채 보상 운동",
+      "물산 장려 운동",
+      "민립 대학 설립 운동",
+      "브나로드 운동"
+    ],
+    "answer": "민립 대학 설립 운동",
+    "explanation": "민립 대학 설립 운동은 교육 분야 실력 양성 운동입니다.",
+    "id": "history-hangeom-advanced-081",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 일제",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n김원봉이 조직하고 신채호의 조선 혁명 선언을 활동 지침으로 삼았다.",
+    "choices": [
+      "신민회",
+      "의열단",
+      "한인 애국단",
+      "신간회"
+    ],
+    "answer": "의열단",
+    "explanation": "의열단은 의열 투쟁을 전개했습니다.",
+    "id": "history-hangeom-advanced-082",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 일제",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n김구가 조직하였고 이봉창·윤봉길 의거와 관련된다.",
+    "choices": [
+      "조선어 학회",
+      "한인 애국단",
+      "의열단",
+      "신간회"
+    ],
+    "answer": "한인 애국단",
+    "explanation": "한인 애국단은 대한민국 임시정부의 침체를 극복하는 데 기여했습니다.",
+    "id": "history-hangeom-advanced-083",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 일제",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n홍범도 부대가 일본군을 격파한 1920년의 전투이다.",
+    "choices": [
+      "대전자령 전투",
+      "쌍성보 전투",
+      "청산리 대첩",
+      "봉오동 전투"
+    ],
+    "answer": "봉오동 전투",
+    "explanation": "봉오동 전투는 홍범도 부대가 핵심입니다.",
+    "id": "history-hangeom-advanced-084",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 일제",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n김좌진의 북로 군정서군과 홍범도 부대 등이 일본군을 크게 격파하였다.",
+    "choices": [
+      "청산리 대첩",
+      "대전자령 전투",
+      "영릉가 전투",
+      "봉오동 전투"
+    ],
+    "answer": "청산리 대첩",
+    "explanation": "청산리 대첩은 1920년 10월의 독립군 승리입니다.",
+    "id": "history-hangeom-advanced-085",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 일제",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n좌우 합작으로 조직된 합법적 민족 운동 단체이다.",
+    "choices": [
+      "신민회",
+      "독립협회",
+      "신간회",
+      "의열단"
+    ],
+    "answer": "신간회",
+    "explanation": "신간회는 1927년 창립되었습니다.",
+    "id": "history-hangeom-advanced-086",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 일제",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n여성 운동의 통합 단체로 조직되었다.",
+    "choices": [
+      "신간회",
+      "근우회",
+      "조선어 학회",
+      "의열단"
+    ],
+    "answer": "근우회",
+    "explanation": "근우회는 1927년 조직된 여성 운동 단체입니다.",
+    "id": "history-hangeom-advanced-087",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 일제",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n한일 학생 간 충돌을 계기로 전국적으로 확산된 학생 항일 운동이다.",
+    "choices": [
+      "광주 학생 항일 운동",
+      "브나로드 운동",
+      "6·10 만세 운동",
+      "3·1 운동"
+    ],
+    "answer": "광주 학생 항일 운동",
+    "explanation": "광주 학생 항일 운동은 1929년에 일어났습니다.",
+    "id": "history-hangeom-advanced-088",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 일제",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n우리말 큰사전 편찬을 추진하다가 일제에 탄압받았다.",
+    "choices": [
+      "신간회",
+      "조선어 학회",
+      "의열단",
+      "근우회"
+    ],
+    "answer": "조선어 학회",
+    "explanation": "조선어 학회는 민족 문화 수호 운동의 대표 사례입니다.",
+    "id": "history-hangeom-advanced-089",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 일제",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n황국 신민 서사 암송, 창씨개명, 신사 참배 강요 등이 추진되었다.",
+    "choices": [
+      "광무개혁",
+      "무단 통치",
+      "문화 통치",
+      "민족 말살 통치"
+    ],
+    "answer": "민족 말살 통치",
+    "explanation": "1930년대 후반 이후 일제는 민족 말살 통치를 강화했습니다.",
+    "id": "history-hangeom-advanced-090",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 현대",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n남한만의 단독 선거에 반대하는 움직임을 배경으로 제주도에서 발생하였다.",
+    "choices": [
+      "제주 4·3 사건",
+      "여수·순천 10·19 사건",
+      "부마 민주 항쟁",
+      "4·19 혁명"
+    ],
+    "answer": "제주 4·3 사건",
+    "explanation": "제주 4·3 사건은 1948년 5·10 총선거 전후의 상황과 관련됩니다.",
+    "id": "history-hangeom-advanced-091",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 현대",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n제헌 국회가 친일파 청산을 위해 설치하였다.",
+    "choices": [
+      "국가 재건 최고 회의",
+      "통일 주체 국민 회의",
+      "비상 계엄 확대",
+      "반민족 행위 특별 조사 위원회"
+    ],
+    "answer": "반민족 행위 특별 조사 위원회",
+    "explanation": "반민특위는 친일파 청산 시도와 관련됩니다.",
+    "id": "history-hangeom-advanced-092",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 현대",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n유상 매수·유상 분배 원칙으로 지주제를 약화시켰다.",
+    "choices": [
+      "농지 개혁",
+      "경제 개발 5개년 계획",
+      "산미 증식 계획",
+      "토지 조사 사업"
+    ],
+    "answer": "농지 개혁",
+    "explanation": "농지 개혁은 이승만 정부 시기의 중요한 개혁입니다.",
+    "id": "history-hangeom-advanced-093",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 현대",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n3·15 부정 선거에 대한 저항으로 일어나 이승만 대통령의 하야로 이어졌다.",
+    "choices": [
+      "4·19 혁명",
+      "5·18 민주화 운동",
+      "6월 민주 항쟁",
+      "5·16 군사 정변"
+    ],
+    "answer": "4·19 혁명",
+    "explanation": "4·19 혁명은 1960년 민주화 운동입니다.",
+    "id": "history-hangeom-advanced-094",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 현대",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n군부 세력이 정변을 일으켜 권력을 장악하였다.",
+    "choices": [
+      "4·19 혁명",
+      "5·16 군사 정변",
+      "6월 민주 항쟁",
+      "10월 유신"
+    ],
+    "answer": "5·16 군사 정변",
+    "explanation": "5·16 군사 정변은 1961년에 일어났습니다.",
+    "id": "history-hangeom-advanced-095",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 현대",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n박정희 정부 시기 국가 주도의 경제 성장 정책으로 추진되었다.",
+    "choices": [
+      "농지 개혁",
+      "토지 조사 사업",
+      "경제 개발 5개년 계획",
+      "금융 실명제"
+    ],
+    "answer": "경제 개발 5개년 계획",
+    "explanation": "경제 개발 5개년 계획은 박정희 정부의 핵심 정책입니다.",
+    "id": "history-hangeom-advanced-096",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 현대",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n대통령 간선제와 긴급 조치 등을 통해 장기 집권 체제를 강화하였다.",
+    "choices": [
+      "10월 유신",
+      "6·29 선언",
+      "3선 개헌",
+      "7·4 남북 공동 성명"
+    ],
+    "answer": "10월 유신",
+    "explanation": "10월 유신은 1972년에 단행되었습니다.",
+    "id": "history-hangeom-advanced-097",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 현대",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n신군부의 비상계엄 확대에 저항하여 광주에서 전개되었다.",
+    "choices": [
+      "6월 민주 항쟁",
+      "5·18 민주화 운동",
+      "4·19 혁명",
+      "부마 민주 항쟁"
+    ],
+    "answer": "5·18 민주화 운동",
+    "explanation": "5·18 민주화 운동은 1980년에 광주에서 전개되었습니다.",
+    "id": "history-hangeom-advanced-098",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 현대",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n박종철 고문치사 사건과 4·13 호헌 조치 등을 배경으로 대통령 직선제 개헌 요구가 확산되었다.",
+    "choices": [
+      "6월 민주 항쟁",
+      "부마 민주 항쟁",
+      "5·18 민주화 운동",
+      "4·19 혁명"
+    ],
+    "answer": "6월 민주 항쟁",
+    "explanation": "6월 민주 항쟁의 결과 6·29 민주화 선언이 발표되었습니다.",
+    "id": "history-hangeom-advanced-099",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 현대",
+    "type": "multiple",
+    "question": "다음 자료와 가장 관련 깊은 것은?\n자주·평화·민족 대단결의 통일 3대 원칙을 밝혔다.",
+    "choices": [
+      "10·4 남북 공동 선언",
+      "6·15 남북 공동 선언",
+      "7·4 남북 공동 성명",
+      "남북 기본 합의서"
+    ],
+    "answer": "7·4 남북 공동 성명",
+    "explanation": "7·4 남북 공동 성명은 1972년에 발표되었습니다.",
+    "id": "history-hangeom-advanced-100",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 선사",
+    "type": "multiple",
+    "question": "다음 중 '구석기 시대'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "회사를 설립할 때 조선 총독의 허가를 받도록 하였다.",
+      "대통령 간선제와 긴급 조치 등을 통해 장기 집권 체제를 강화하였다.",
+      "주먹도끼·찍개를 사용하고 이동 생활을 하며 동굴이나 막집에 거주하였다.",
+      "집현전을 육성하고 훈민정음을 창제하였으며 4군 6진을 개척하였다."
+    ],
+    "answer": "주먹도끼·찍개를 사용하고 이동 생활을 하며 동굴이나 막집에 거주하였다.",
+    "explanation": "주먹도끼, 찍개, 이동 생활은 구석기 시대의 핵심 키워드입니다.",
+    "id": "history-hangeom-advanced-101",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 선사",
+    "type": "multiple",
+    "question": "다음 중 '신석기 시대'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "빗살무늬 토기와 간석기를 사용하고 농경과 목축을 시작하였다.",
+      "6조 직계제를 실시하고 사병을 혁파하였으며 호패법을 시행하였다.",
+      "여성 운동의 통합 단체로 조직되었다.",
+      "국호를 신라로 확정하고 왕 칭호를 사용하였으며 우산국을 복속하였다."
+    ],
+    "answer": "빗살무늬 토기와 간석기를 사용하고 농경과 목축을 시작하였다.",
+    "explanation": "빗살무늬 토기, 간석기, 농경 시작은 신석기 시대의 대표 특징입니다.",
+    "id": "history-hangeom-advanced-102",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 선사",
+    "type": "multiple",
+    "question": "다음 중 '청동기 시대'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "최승로의 시무 28조를 수용하고 12목에 지방관을 파견하였다.",
+      "내 살림 내 것으로라는 구호를 내세워 민족 산업 육성을 추구하였다.",
+      "고인돌과 비파형 동검이 나타나고 계급이 발생하였다.",
+      "지방 22담로에 왕족을 파견하고 중국 남조 양과 교류하였다."
+    ],
+    "answer": "고인돌과 비파형 동검이 나타나고 계급이 발생하였다.",
+    "explanation": "고인돌, 비파형 동검, 계급 발생은 청동기 시대의 핵심입니다.",
+    "id": "history-hangeom-advanced-103",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 초기 국가",
+    "type": "multiple",
+    "question": "다음 중 '고조선'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "영고라는 제천 행사를 열었고, 1책 12법과 사출도가 있었다.",
+      "천군이 소도를 다스렸고 정치와 제사가 분리되어 있었다.",
+      "동맹이라는 제천 행사를 열었고, 혼인 풍습으로 서옥제가 있었다.",
+      "8조법을 통해 사유 재산과 계급 사회의 성립을 파악할 수 있다."
+    ],
+    "answer": "8조법을 통해 사유 재산과 계급 사회의 성립을 파악할 수 있다.",
+    "explanation": "고조선의 8조법은 사회 질서와 계급 발생을 보여 주는 사료입니다.",
+    "id": "history-hangeom-advanced-104",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 초기 국가",
+    "type": "multiple",
+    "question": "다음 중 '부여'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "천군이 소도를 다스렸고 정치와 제사가 분리되어 있었다.",
+      "영고라는 제천 행사를 열었고, 1책 12법과 사출도가 있었다.",
+      "민며느리제와 가족 공동 무덤 풍습이 있었다.",
+      "무천이라는 제천 행사와 책화 풍습이 있었다."
+    ],
+    "answer": "영고라는 제천 행사를 열었고, 1책 12법과 사출도가 있었다.",
+    "explanation": "영고, 1책 12법, 사출도는 부여의 대표 키워드입니다.",
+    "id": "history-hangeom-advanced-105",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 초기 국가",
+    "type": "multiple",
+    "question": "다음 중 '고구려'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "8조법을 통해 사유 재산과 계급 사회의 성립을 파악할 수 있다.",
+      "천군이 소도를 다스렸고 정치와 제사가 분리되어 있었다.",
+      "동맹이라는 제천 행사를 열었고, 혼인 풍습으로 서옥제가 있었다.",
+      "민며느리제와 가족 공동 무덤 풍습이 있었다."
+    ],
+    "answer": "동맹이라는 제천 행사를 열었고, 혼인 풍습으로 서옥제가 있었다.",
+    "explanation": "동맹과 서옥제는 고구려의 특징입니다.",
+    "id": "history-hangeom-advanced-106",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 초기 국가",
+    "type": "multiple",
+    "question": "다음 중 '옥저'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "민며느리제와 가족 공동 무덤 풍습이 있었다.",
+      "8조법을 통해 사유 재산과 계급 사회의 성립을 파악할 수 있다.",
+      "무천이라는 제천 행사와 책화 풍습이 있었다.",
+      "천군이 소도를 다스렸고 정치와 제사가 분리되어 있었다."
+    ],
+    "answer": "민며느리제와 가족 공동 무덤 풍습이 있었다.",
+    "explanation": "민며느리제와 가족 공동 무덤은 옥저의 특징입니다.",
+    "id": "history-hangeom-advanced-107",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 초기 국가",
+    "type": "multiple",
+    "question": "다음 중 '동예'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "영고라는 제천 행사를 열었고, 1책 12법과 사출도가 있었다.",
+      "무천이라는 제천 행사와 책화 풍습이 있었다.",
+      "동맹이라는 제천 행사를 열었고, 혼인 풍습으로 서옥제가 있었다.",
+      "천군이 소도를 다스렸고 정치와 제사가 분리되어 있었다."
+    ],
+    "answer": "무천이라는 제천 행사와 책화 풍습이 있었다.",
+    "explanation": "무천과 책화는 동예의 대표 특징입니다.",
+    "id": "history-hangeom-advanced-108",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 초기 국가",
+    "type": "multiple",
+    "question": "다음 중 '삼한'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "무천이라는 제천 행사와 책화 풍습이 있었다.",
+      "민며느리제와 가족 공동 무덤 풍습이 있었다.",
+      "천군이 소도를 다스렸고 정치와 제사가 분리되어 있었다.",
+      "영고라는 제천 행사를 열었고, 1책 12법과 사출도가 있었다."
+    ],
+    "answer": "천군이 소도를 다스렸고 정치와 제사가 분리되어 있었다.",
+    "explanation": "천군과 소도, 제정 분리는 삼한의 특징입니다.",
+    "id": "history-hangeom-advanced-109",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고대",
+    "type": "multiple",
+    "question": "다음 중 '고구려 태조왕'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "김씨 왕위 세습권을 확립하고 마립간 칭호를 사용하였다.",
+      "영락이라는 연호를 사용하고 신라에 침입한 왜를 격퇴하였다.",
+      "국호를 신라로 확정하고 왕 칭호를 사용하였으며 우산국을 복속하였다.",
+      "옥저를 복속하고 계루부 고씨의 왕위 세습 기반을 마련하였다."
+    ],
+    "answer": "옥저를 복속하고 계루부 고씨의 왕위 세습 기반을 마련하였다.",
+    "explanation": "태조왕은 옥저 복속과 왕위 세습 기반 마련이 핵심입니다.",
+    "id": "history-hangeom-advanced-110",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고대",
+    "type": "multiple",
+    "question": "다음 중 '고구려 고국천왕'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "진대법을 실시하여 흉년이나 춘궁기에 백성을 구제하였다.",
+      "불교를 수용하고 태학을 설립하였으며 율령을 반포하였다.",
+      "사비로 천도하고 국호를 남부여로 고쳤으며 관산성 전투에서 전사하였다.",
+      "마한을 정복하고 요서·규슈 방면으로 진출하였으며 고흥이 서기를 편찬하였다."
+    ],
+    "answer": "진대법을 실시하여 흉년이나 춘궁기에 백성을 구제하였다.",
+    "explanation": "진대법은 고구려 고국천왕 때 실시되었습니다.",
+    "id": "history-hangeom-advanced-111",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고대",
+    "type": "multiple",
+    "question": "다음 중 '고구려 소수림왕'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "동진에서 불교를 수용하였다.",
+      "불교를 수용하고 태학을 설립하였으며 율령을 반포하였다.",
+      "국호를 신라로 확정하고 왕 칭호를 사용하였으며 우산국을 복속하였다.",
+      "율령을 반포하고 불교를 공인하였으며 금관가야를 병합하였다."
+    ],
+    "answer": "불교를 수용하고 태학을 설립하였으며 율령을 반포하였다.",
+    "explanation": "소수림왕의 체제 정비 정책은 한능검 단골입니다.",
+    "id": "history-hangeom-advanced-112",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고대",
+    "type": "multiple",
+    "question": "다음 중 '고구려 광개토 대왕'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "김씨 왕위 세습권을 확립하고 마립간 칭호를 사용하였다.",
+      "옥저를 복속하고 계루부 고씨의 왕위 세습 기반을 마련하였다.",
+      "진대법을 실시하여 흉년이나 춘궁기에 백성을 구제하였다.",
+      "영락이라는 연호를 사용하고 신라에 침입한 왜를 격퇴하였다."
+    ],
+    "answer": "영락이라는 연호를 사용하고 신라에 침입한 왜를 격퇴하였다.",
+    "explanation": "영락 연호와 신라 구원, 광개토 대왕릉비는 광개토 대왕의 핵심입니다.",
+    "id": "history-hangeom-advanced-113",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고대",
+    "type": "multiple",
+    "question": "다음 중 '고구려 장수왕'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "김씨 왕위 세습권을 확립하고 마립간 칭호를 사용하였다.",
+      "평양으로 천도하고 남진 정책을 추진하여 한성을 함락하였다.",
+      "마한을 정복하고 요서·규슈 방면으로 진출하였으며 고흥이 서기를 편찬하였다.",
+      "진대법을 실시하여 흉년이나 춘궁기에 백성을 구제하였다."
+    ],
+    "answer": "평양으로 천도하고 남진 정책을 추진하여 한성을 함락하였다.",
+    "explanation": "장수왕은 평양 천도와 남진 정책이 핵심입니다.",
+    "id": "history-hangeom-advanced-114",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고대",
+    "type": "multiple",
+    "question": "다음 중 '백제 고이왕'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "김씨 왕위 세습권을 확립하고 마립간 칭호를 사용하였다.",
+      "한강 유역을 차지하고 대가야를 정복하였으며 순수비를 세웠다.",
+      "율령을 반포하고 6좌평제를 정비하였다.",
+      "마한을 정복하고 요서·규슈 방면으로 진출하였으며 고흥이 서기를 편찬하였다."
+    ],
+    "answer": "율령을 반포하고 6좌평제를 정비하였다.",
+    "explanation": "고이왕은 백제의 고대 국가 체제 정비와 관련됩니다.",
+    "id": "history-hangeom-advanced-115",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고대",
+    "type": "multiple",
+    "question": "다음 중 '백제 근초고왕'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "영락이라는 연호를 사용하고 신라에 침입한 왜를 격퇴하였다.",
+      "한강 유역을 차지하고 대가야를 정복하였으며 순수비를 세웠다.",
+      "율령을 반포하고 불교를 공인하였으며 금관가야를 병합하였다.",
+      "마한을 정복하고 요서·규슈 방면으로 진출하였으며 고흥이 서기를 편찬하였다."
+    ],
+    "answer": "마한을 정복하고 요서·규슈 방면으로 진출하였으며 고흥이 서기를 편찬하였다.",
+    "explanation": "근초고왕은 백제의 전성기를 이끈 왕입니다.",
+    "id": "history-hangeom-advanced-116",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고대",
+    "type": "multiple",
+    "question": "다음 중 '백제 침류왕'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "동진에서 불교를 수용하였다.",
+      "사비로 천도하고 국호를 남부여로 고쳤으며 관산성 전투에서 전사하였다.",
+      "영락이라는 연호를 사용하고 신라에 침입한 왜를 격퇴하였다.",
+      "김씨 왕위 세습권을 확립하고 마립간 칭호를 사용하였다."
+    ],
+    "answer": "동진에서 불교를 수용하였다.",
+    "explanation": "백제의 불교 수용은 침류왕 때입니다.",
+    "id": "history-hangeom-advanced-117",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고대",
+    "type": "multiple",
+    "question": "다음 중 '백제 무령왕'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "김씨 왕위 세습권을 확립하고 마립간 칭호를 사용하였다.",
+      "지방 22담로에 왕족을 파견하고 중국 남조 양과 교류하였다.",
+      "사비로 천도하고 국호를 남부여로 고쳤으며 관산성 전투에서 전사하였다.",
+      "한강 유역을 차지하고 대가야를 정복하였으며 순수비를 세웠다."
+    ],
+    "answer": "지방 22담로에 왕족을 파견하고 중국 남조 양과 교류하였다.",
+    "explanation": "무령왕은 22담로와 무령왕릉 지석으로 자주 출제됩니다.",
+    "id": "history-hangeom-advanced-118",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고대",
+    "type": "multiple",
+    "question": "다음 중 '백제 성왕'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "불교를 수용하고 태학을 설립하였으며 율령을 반포하였다.",
+      "국호를 신라로 확정하고 왕 칭호를 사용하였으며 우산국을 복속하였다.",
+      "율령을 반포하고 6좌평제를 정비하였다.",
+      "사비로 천도하고 국호를 남부여로 고쳤으며 관산성 전투에서 전사하였다."
+    ],
+    "answer": "사비로 천도하고 국호를 남부여로 고쳤으며 관산성 전투에서 전사하였다.",
+    "explanation": "성왕은 사비 천도, 남부여, 관산성 전투가 핵심입니다.",
+    "id": "history-hangeom-advanced-119",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고대",
+    "type": "multiple",
+    "question": "다음 중 '신라 내물왕'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "옥저를 복속하고 계루부 고씨의 왕위 세습 기반을 마련하였다.",
+      "김씨 왕위 세습권을 확립하고 마립간 칭호를 사용하였다.",
+      "불교를 수용하고 태학을 설립하였으며 율령을 반포하였다.",
+      "평양으로 천도하고 남진 정책을 추진하여 한성을 함락하였다."
+    ],
+    "answer": "김씨 왕위 세습권을 확립하고 마립간 칭호를 사용하였다.",
+    "explanation": "내물왕은 김씨 왕위 세습과 마립간 칭호가 핵심입니다.",
+    "id": "history-hangeom-advanced-120",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고대",
+    "type": "multiple",
+    "question": "다음 중 '신라 지증왕'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "김씨 왕위 세습권을 확립하고 마립간 칭호를 사용하였다.",
+      "국호를 신라로 확정하고 왕 칭호를 사용하였으며 우산국을 복속하였다.",
+      "지방 22담로에 왕족을 파견하고 중국 남조 양과 교류하였다.",
+      "동진에서 불교를 수용하였다."
+    ],
+    "answer": "국호를 신라로 확정하고 왕 칭호를 사용하였으며 우산국을 복속하였다.",
+    "explanation": "지증왕은 신라 국호, 왕 칭호, 우산국 복속으로 구분합니다.",
+    "id": "history-hangeom-advanced-121",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고대",
+    "type": "multiple",
+    "question": "다음 중 '신라 법흥왕'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "율령을 반포하고 불교를 공인하였으며 금관가야를 병합하였다.",
+      "김씨 왕위 세습권을 확립하고 마립간 칭호를 사용하였다.",
+      "한강 유역을 차지하고 대가야를 정복하였으며 순수비를 세웠다.",
+      "불교를 수용하고 태학을 설립하였으며 율령을 반포하였다."
+    ],
+    "answer": "율령을 반포하고 불교를 공인하였으며 금관가야를 병합하였다.",
+    "explanation": "법흥왕은 율령 반포, 불교 공인, 금관가야 병합입니다.",
+    "id": "history-hangeom-advanced-122",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고대",
+    "type": "multiple",
+    "question": "다음 중 '신라 진흥왕'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "마한을 정복하고 요서·규슈 방면으로 진출하였으며 고흥이 서기를 편찬하였다.",
+      "한강 유역을 차지하고 대가야를 정복하였으며 순수비를 세웠다.",
+      "국호를 신라로 확정하고 왕 칭호를 사용하였으며 우산국을 복속하였다.",
+      "김씨 왕위 세습권을 확립하고 마립간 칭호를 사용하였다."
+    ],
+    "answer": "한강 유역을 차지하고 대가야를 정복하였으며 순수비를 세웠다.",
+    "explanation": "진흥왕은 한강 유역 확보, 대가야 정복, 순수비가 핵심입니다.",
+    "id": "history-hangeom-advanced-123",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 남북국",
+    "type": "multiple",
+    "question": "다음 중 '신라 문무왕'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "김흠돌의 난을 진압하고 관료전을 지급하였으며 녹읍을 폐지하였다.",
+      "인안 연호를 사용하고 장문휴를 보내 당의 산둥 지방을 공격하였다.",
+      "나당 전쟁을 거쳐 삼국 통일을 완성하였다.",
+      "대흥 연호를 사용하고 3성 6부를 정비하였으며 상경으로 천도하였다."
+    ],
+    "answer": "나당 전쟁을 거쳐 삼국 통일을 완성하였다.",
+    "explanation": "문무왕은 삼국 통일 완성과 관련됩니다.",
+    "id": "history-hangeom-advanced-124",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 남북국",
+    "type": "multiple",
+    "question": "다음 중 '신라 신문왕'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "대흥 연호를 사용하고 3성 6부를 정비하였으며 상경으로 천도하였다.",
+      "김흠돌의 난을 진압하고 관료전을 지급하였으며 녹읍을 폐지하였다.",
+      "인안 연호를 사용하고 장문휴를 보내 당의 산둥 지방을 공격하였다.",
+      "나당 전쟁을 거쳐 삼국 통일을 완성하였다."
+    ],
+    "answer": "김흠돌의 난을 진압하고 관료전을 지급하였으며 녹읍을 폐지하였다.",
+    "explanation": "신문왕은 왕권 강화 정책과 국학 설립이 핵심입니다.",
+    "id": "history-hangeom-advanced-125",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 남북국",
+    "type": "multiple",
+    "question": "다음 중 '발해 무왕'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "인안 연호를 사용하고 장문휴를 보내 당의 산둥 지방을 공격하였다.",
+      "지방 제도를 5경 15부 62주로 정비하고 해동성국이라 불릴 정도의 전성기를 이루었다.",
+      "나당 전쟁을 거쳐 삼국 통일을 완성하였다.",
+      "김흠돌의 난을 진압하고 관료전을 지급하였으며 녹읍을 폐지하였다."
+    ],
+    "answer": "인안 연호를 사용하고 장문휴를 보내 당의 산둥 지방을 공격하였다.",
+    "explanation": "발해 무왕은 당과 대립하고 일본과 교류했습니다.",
+    "id": "history-hangeom-advanced-126",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 남북국",
+    "type": "multiple",
+    "question": "다음 중 '발해 문왕'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "나당 전쟁을 거쳐 삼국 통일을 완성하였다.",
+      "대흥 연호를 사용하고 3성 6부를 정비하였으며 상경으로 천도하였다.",
+      "김흠돌의 난을 진압하고 관료전을 지급하였으며 녹읍을 폐지하였다.",
+      "지방 제도를 5경 15부 62주로 정비하고 해동성국이라 불릴 정도의 전성기를 이루었다."
+    ],
+    "answer": "대흥 연호를 사용하고 3성 6부를 정비하였으며 상경으로 천도하였다.",
+    "explanation": "발해 문왕은 당 문물 수용과 제도 정비가 핵심입니다.",
+    "id": "history-hangeom-advanced-127",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 남북국",
+    "type": "multiple",
+    "question": "다음 중 '발해 선왕'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "인안 연호를 사용하고 장문휴를 보내 당의 산둥 지방을 공격하였다.",
+      "지방 제도를 5경 15부 62주로 정비하고 해동성국이라 불릴 정도의 전성기를 이루었다.",
+      "대흥 연호를 사용하고 3성 6부를 정비하였으며 상경으로 천도하였다.",
+      "김흠돌의 난을 진압하고 관료전을 지급하였으며 녹읍을 폐지하였다."
+    ],
+    "answer": "지방 제도를 5경 15부 62주로 정비하고 해동성국이라 불릴 정도의 전성기를 이루었다.",
+    "explanation": "발해 선왕은 해동성국과 전성기가 핵심입니다.",
+    "id": "history-hangeom-advanced-128",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고려",
+    "type": "multiple",
+    "question": "다음 중 '고려 태조 왕건'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "강화도에서 진도, 제주도로 옮겨 가며 몽골과 개경 정부에 저항하였다.",
+      "고려의 법제와 격식을 논의하던 회의 기구이다.",
+      "공신이나 고위 관료의 자손이 과거를 거치지 않고 관직에 나아갈 수 있었던 제도이다.",
+      "훈요 10조를 남기고 혼인 정책과 사성 정책으로 호족을 통합하였다."
+    ],
+    "answer": "훈요 10조를 남기고 혼인 정책과 사성 정책으로 호족을 통합하였다.",
+    "explanation": "태조 왕건은 호족 통합과 훈요 10조가 핵심입니다.",
+    "id": "history-hangeom-advanced-129",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고려",
+    "type": "multiple",
+    "question": "다음 중 '고려 광종'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "관직과 인품을 기준으로 관리에게 수조권을 지급한 고려의 토지 제도이다.",
+      "노비안검법을 시행하고 과거제를 실시하여 왕권을 강화하였다.",
+      "최승로의 시무 28조를 수용하고 12목에 지방관을 파견하였다.",
+      "강화도에서 진도, 제주도로 옮겨 가며 몽골과 개경 정부에 저항하였다."
+    ],
+    "answer": "노비안검법을 시행하고 과거제를 실시하여 왕권을 강화하였다.",
+    "explanation": "광종은 노비안검법과 과거제가 핵심입니다.",
+    "id": "history-hangeom-advanced-130",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고려",
+    "type": "multiple",
+    "question": "다음 중 '고려 성종'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "서경 천도, 금국 정벌, 칭제건원을 주장하였다.",
+      "강화도에서 진도, 제주도로 옮겨 가며 몽골과 개경 정부에 저항하였다.",
+      "최승로의 시무 28조를 수용하고 12목에 지방관을 파견하였다.",
+      "고려의 법제와 격식을 논의하던 회의 기구이다."
+    ],
+    "answer": "최승로의 시무 28조를 수용하고 12목에 지방관을 파견하였다.",
+    "explanation": "성종은 유교 정치 질서와 지방 제도 정비가 핵심입니다.",
+    "id": "history-hangeom-advanced-131",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고려",
+    "type": "multiple",
+    "question": "다음 중 '전시과'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "관직과 인품을 기준으로 관리에게 수조권을 지급한 고려의 토지 제도이다.",
+      "서경 천도, 금국 정벌, 칭제건원을 주장하였다.",
+      "고려의 재신과 추밀이 모여 국방과 군사 문제를 논의한 회의 기구이다.",
+      "강화도에서 진도, 제주도로 옮겨 가며 몽골과 개경 정부에 저항하였다."
+    ],
+    "answer": "관직과 인품을 기준으로 관리에게 수조권을 지급한 고려의 토지 제도이다.",
+    "explanation": "전시과는 고려의 토지 지급 제도입니다.",
+    "id": "history-hangeom-advanced-132",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고려",
+    "type": "multiple",
+    "question": "다음 중 '음서'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "강화도에서 진도, 제주도로 옮겨 가며 몽골과 개경 정부에 저항하였다.",
+      "공신이나 고위 관료의 자손이 과거를 거치지 않고 관직에 나아갈 수 있었던 제도이다.",
+      "정중부·이의방 등이 정변을 일으켜 문신 중심의 정치 질서를 무너뜨렸다.",
+      "고려의 재신과 추밀이 모여 국방과 군사 문제를 논의한 회의 기구이다."
+    ],
+    "answer": "공신이나 고위 관료의 자손이 과거를 거치지 않고 관직에 나아갈 수 있었던 제도이다.",
+    "explanation": "음서는 고려 귀족 사회의 성격을 보여 줍니다.",
+    "id": "history-hangeom-advanced-133",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고려",
+    "type": "multiple",
+    "question": "다음 중 '도병마사'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "강화도에서 진도, 제주도로 옮겨 가며 몽골과 개경 정부에 저항하였다.",
+      "정중부·이의방 등이 정변을 일으켜 문신 중심의 정치 질서를 무너뜨렸다.",
+      "고려의 재신과 추밀이 모여 국방과 군사 문제를 논의한 회의 기구이다.",
+      "서경 천도, 금국 정벌, 칭제건원을 주장하였다."
+    ],
+    "answer": "고려의 재신과 추밀이 모여 국방과 군사 문제를 논의한 회의 기구이다.",
+    "explanation": "도병마사는 고려의 귀족 합의 기구입니다.",
+    "id": "history-hangeom-advanced-134",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고려",
+    "type": "multiple",
+    "question": "다음 중 '식목도감'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "노비안검법을 시행하고 과거제를 실시하여 왕권을 강화하였다.",
+      "고려의 법제와 격식을 논의하던 회의 기구이다.",
+      "정중부·이의방 등이 정변을 일으켜 문신 중심의 정치 질서를 무너뜨렸다.",
+      "공신이나 고위 관료의 자손이 과거를 거치지 않고 관직에 나아갈 수 있었던 제도이다."
+    ],
+    "answer": "고려의 법제와 격식을 논의하던 회의 기구이다.",
+    "explanation": "식목도감은 법제와 격식 논의 기구입니다.",
+    "id": "history-hangeom-advanced-135",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고려",
+    "type": "multiple",
+    "question": "다음 중 '묘청의 서경 천도 운동'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "노비안검법을 시행하고 과거제를 실시하여 왕권을 강화하였다.",
+      "정중부·이의방 등이 정변을 일으켜 문신 중심의 정치 질서를 무너뜨렸다.",
+      "고려의 재신과 추밀이 모여 국방과 군사 문제를 논의한 회의 기구이다.",
+      "서경 천도, 금국 정벌, 칭제건원을 주장하였다."
+    ],
+    "answer": "서경 천도, 금국 정벌, 칭제건원을 주장하였다.",
+    "explanation": "묘청의 서경 천도 운동은 서경 세력과 개경 문벌 귀족의 대립으로 이해합니다.",
+    "id": "history-hangeom-advanced-136",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고려",
+    "type": "multiple",
+    "question": "다음 중 '무신 정변'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "최승로의 시무 28조를 수용하고 12목에 지방관을 파견하였다.",
+      "노비안검법을 시행하고 과거제를 실시하여 왕권을 강화하였다.",
+      "정중부·이의방 등이 정변을 일으켜 문신 중심의 정치 질서를 무너뜨렸다.",
+      "서경 천도, 금국 정벌, 칭제건원을 주장하였다."
+    ],
+    "answer": "정중부·이의방 등이 정변을 일으켜 문신 중심의 정치 질서를 무너뜨렸다.",
+    "explanation": "1170년 무신 정변 이후 무신 정권이 성립했습니다.",
+    "id": "history-hangeom-advanced-137",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고려",
+    "type": "multiple",
+    "question": "다음 중 '만적의 난'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "노비안검법을 시행하고 과거제를 실시하여 왕권을 강화하였다.",
+      "서경 천도, 금국 정벌, 칭제건원을 주장하였다.",
+      "정중부·이의방 등이 정변을 일으켜 문신 중심의 정치 질서를 무너뜨렸다.",
+      "최충헌 집권기에 개경의 사노비들이 신분 해방을 도모하였다."
+    ],
+    "answer": "최충헌 집권기에 개경의 사노비들이 신분 해방을 도모하였다.",
+    "explanation": "만적의 난은 신분 해방 운동의 성격을 보입니다.",
+    "id": "history-hangeom-advanced-138",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고려",
+    "type": "multiple",
+    "question": "다음 중 '삼별초의 항쟁'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "강화도에서 진도, 제주도로 옮겨 가며 몽골과 개경 정부에 저항하였다.",
+      "노비안검법을 시행하고 과거제를 실시하여 왕권을 강화하였다.",
+      "훈요 10조를 남기고 혼인 정책과 사성 정책으로 호족을 통합하였다.",
+      "정중부·이의방 등이 정변을 일으켜 문신 중심의 정치 질서를 무너뜨렸다."
+    ],
+    "answer": "강화도에서 진도, 제주도로 옮겨 가며 몽골과 개경 정부에 저항하였다.",
+    "explanation": "삼별초는 몽골과 강화에 반대하여 항쟁했습니다.",
+    "id": "history-hangeom-advanced-139",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고려",
+    "type": "multiple",
+    "question": "다음 중 '공민왕'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "강화도에서 진도, 제주도로 옮겨 가며 몽골과 개경 정부에 저항하였다.",
+      "고려의 재신과 추밀이 모여 국방과 군사 문제를 논의한 회의 기구이다.",
+      "노비안검법을 시행하고 과거제를 실시하여 왕권을 강화하였다.",
+      "쌍성총관부를 공격하고 전민변정도감을 설치하였으며 정동행성 이문소를 폐지하였다."
+    ],
+    "answer": "쌍성총관부를 공격하고 전민변정도감을 설치하였으며 정동행성 이문소를 폐지하였다.",
+    "explanation": "공민왕은 반원 자주 정책과 권문세족 견제를 추진했습니다.",
+    "id": "history-hangeom-advanced-140",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고려 문화",
+    "type": "multiple",
+    "question": "다음 중 '삼국사기'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "몽골 침입기에 부처의 힘으로 국난을 극복하고자 조판되었다.",
+      "김부식이 편찬한 현존 최고 역사서로 유교적 합리주의 사관이 반영되었다.",
+      "일연이 저술하였고 단군 신화 등 민간 설화와 불교 관련 내용이 수록되었다.",
+      "청주 흥덕사에서 금속 활자로 인쇄된 현존 세계 최고 금속 활자본이다."
+    ],
+    "answer": "김부식이 편찬한 현존 최고 역사서로 유교적 합리주의 사관이 반영되었다.",
+    "explanation": "삼국사기는 고려 인종 때 김부식이 편찬했습니다.",
+    "id": "history-hangeom-advanced-141",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고려 문화",
+    "type": "multiple",
+    "question": "다음 중 '삼국유사'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "김부식이 편찬한 현존 최고 역사서로 유교적 합리주의 사관이 반영되었다.",
+      "몽골 침입기에 부처의 힘으로 국난을 극복하고자 조판되었다.",
+      "청주 흥덕사에서 금속 활자로 인쇄된 현존 세계 최고 금속 활자본이다.",
+      "일연이 저술하였고 단군 신화 등 민간 설화와 불교 관련 내용이 수록되었다."
+    ],
+    "answer": "일연이 저술하였고 단군 신화 등 민간 설화와 불교 관련 내용이 수록되었다.",
+    "explanation": "삼국유사는 불교적·민간적 성격이 강합니다.",
+    "id": "history-hangeom-advanced-142",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고려 문화",
+    "type": "multiple",
+    "question": "다음 중 '직지심체요절'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "김부식이 편찬한 현존 최고 역사서로 유교적 합리주의 사관이 반영되었다.",
+      "일연이 저술하였고 단군 신화 등 민간 설화와 불교 관련 내용이 수록되었다.",
+      "청주 흥덕사에서 금속 활자로 인쇄된 현존 세계 최고 금속 활자본이다.",
+      "몽골 침입기에 부처의 힘으로 국난을 극복하고자 조판되었다."
+    ],
+    "answer": "청주 흥덕사에서 금속 활자로 인쇄된 현존 세계 최고 금속 활자본이다.",
+    "explanation": "직지는 고려 말 금속 활자 인쇄물입니다.",
+    "id": "history-hangeom-advanced-143",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 고려 문화",
+    "type": "multiple",
+    "question": "다음 중 '팔만대장경'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "김부식이 편찬한 현존 최고 역사서로 유교적 합리주의 사관이 반영되었다.",
+      "몽골 침입기에 부처의 힘으로 국난을 극복하고자 조판되었다.",
+      "청주 흥덕사에서 금속 활자로 인쇄된 현존 세계 최고 금속 활자본이다.",
+      "일연이 저술하였고 단군 신화 등 민간 설화와 불교 관련 내용이 수록되었다."
+    ],
+    "answer": "몽골 침입기에 부처의 힘으로 국난을 극복하고자 조판되었다.",
+    "explanation": "팔만대장경은 해인사 장경판전에 보관되어 있습니다.",
+    "id": "history-hangeom-advanced-144",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 조선 전기",
+    "type": "multiple",
+    "question": "다음 중 '조선 태종'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "집현전을 육성하고 훈민정음을 창제하였으며 4군 6진을 개척하였다.",
+      "6조 직계제를 실시하고 사병을 혁파하였으며 호패법을 시행하였다.",
+      "계유정난으로 집권하고 6조 직계제를 부활시켰으며 직전법을 실시하였다.",
+      "성종 때 중앙 정계에 진출하여 3사의 언론 기능을 중시하였다."
+    ],
+    "answer": "6조 직계제를 실시하고 사병을 혁파하였으며 호패법을 시행하였다.",
+    "explanation": "태종은 왕권 강화 정책으로 자주 출제됩니다.",
+    "id": "history-hangeom-advanced-145",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 조선 전기",
+    "type": "multiple",
+    "question": "다음 중 '조선 세종'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "경국대전을 완성하고 홍문관을 설치하였으며 사림을 등용하였다.",
+      "집현전을 육성하고 훈민정음을 창제하였으며 4군 6진을 개척하였다.",
+      "현량과 실시와 소격서 폐지, 위훈 삭제를 주장하였다.",
+      "6조 직계제를 실시하고 사병을 혁파하였으며 호패법을 시행하였다."
+    ],
+    "answer": "집현전을 육성하고 훈민정음을 창제하였으며 4군 6진을 개척하였다.",
+    "explanation": "세종은 민족 문화 발전과 북방 개척이 핵심입니다.",
+    "id": "history-hangeom-advanced-146",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 조선 전기",
+    "type": "multiple",
+    "question": "다음 중 '조선 세조'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "6조 직계제를 실시하고 사병을 혁파하였으며 호패법을 시행하였다.",
+      "경국대전을 완성하고 홍문관을 설치하였으며 사림을 등용하였다.",
+      "계유정난으로 집권하고 6조 직계제를 부활시켰으며 직전법을 실시하였다.",
+      "집현전을 육성하고 훈민정음을 창제하였으며 4군 6진을 개척하였다."
+    ],
+    "answer": "계유정난으로 집권하고 6조 직계제를 부활시켰으며 직전법을 실시하였다.",
+    "explanation": "세조는 계유정난, 6조 직계제 부활, 직전법이 핵심입니다.",
+    "id": "history-hangeom-advanced-147",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 조선 전기",
+    "type": "multiple",
+    "question": "다음 중 '조선 성종'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "경국대전을 완성하고 홍문관을 설치하였으며 사림을 등용하였다.",
+      "집현전을 육성하고 훈민정음을 창제하였으며 4군 6진을 개척하였다.",
+      "6조 직계제를 실시하고 사병을 혁파하였으며 호패법을 시행하였다.",
+      "계유정난으로 집권하고 6조 직계제를 부활시켰으며 직전법을 실시하였다."
+    ],
+    "answer": "경국대전을 완성하고 홍문관을 설치하였으며 사림을 등용하였다.",
+    "explanation": "성종은 경국대전 완성과 사림 등용이 핵심입니다.",
+    "id": "history-hangeom-advanced-148",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 조선 전기",
+    "type": "multiple",
+    "question": "다음 중 '사림'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "집현전을 육성하고 훈민정음을 창제하였으며 4군 6진을 개척하였다.",
+      "계유정난으로 집권하고 6조 직계제를 부활시켰으며 직전법을 실시하였다.",
+      "성종 때 중앙 정계에 진출하여 3사의 언론 기능을 중시하였다.",
+      "현량과 실시와 소격서 폐지, 위훈 삭제를 주장하였다."
+    ],
+    "answer": "성종 때 중앙 정계에 진출하여 3사의 언론 기능을 중시하였다.",
+    "explanation": "사림은 훈구와 대립하고 사화를 겪었습니다.",
+    "id": "history-hangeom-advanced-149",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 조선 전기",
+    "type": "multiple",
+    "question": "다음 중 '조광조'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "집현전을 육성하고 훈민정음을 창제하였으며 4군 6진을 개척하였다.",
+      "현량과 실시와 소격서 폐지, 위훈 삭제를 주장하였다.",
+      "6조 직계제를 실시하고 사병을 혁파하였으며 호패법을 시행하였다.",
+      "경국대전을 완성하고 홍문관을 설치하였으며 사림을 등용하였다."
+    ],
+    "answer": "현량과 실시와 소격서 폐지, 위훈 삭제를 주장하였다.",
+    "explanation": "조광조는 중종 때 급진적 개혁 정치를 추진했습니다.",
+    "id": "history-hangeom-advanced-150",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 조선 후기",
+    "type": "multiple",
+    "question": "다음 중 '비변사'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "임진왜란을 거치며 기능이 확대되어 국정 전반을 총괄하였다.",
+      "군포를 1년에 2필에서 1필로 줄여 양인의 군역 부담을 완화하였다.",
+      "목민심서·경세유표·흠흠신서를 저술하고 여전론을 주장하였다.",
+      "열하일기를 저술하고 청 문물 수용을 주장하였다."
+    ],
+    "answer": "임진왜란을 거치며 기능이 확대되어 국정 전반을 총괄하였다.",
+    "explanation": "비변사는 조선 후기 정치 운영의 핵심 기구로 기능이 확대되었습니다.",
+    "id": "history-hangeom-advanced-151",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 조선 후기",
+    "type": "multiple",
+    "question": "다음 중 '대동법'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "목민심서·경세유표·흠흠신서를 저술하고 여전론을 주장하였다.",
+      "규장각을 육성하고 초계문신제를 실시하였으며 수원 화성을 건설하였다.",
+      "공납의 폐단을 줄이고자 공물을 쌀·포·동전 등으로 납부하게 한 제도이다.",
+      "풍흉에 관계없이 전세를 토지 1결당 4두로 고정하였다."
+    ],
+    "answer": "공납의 폐단을 줄이고자 공물을 쌀·포·동전 등으로 납부하게 한 제도이다.",
+    "explanation": "대동법은 광해군 때 경기도에서 처음 시행되어 점차 확대되었습니다.",
+    "id": "history-hangeom-advanced-152",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 조선 후기",
+    "type": "multiple",
+    "question": "다음 중 '영정법'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "풍흉에 관계없이 전세를 토지 1결당 4두로 고정하였다.",
+      "공납의 폐단을 줄이고자 공물을 쌀·포·동전 등으로 납부하게 한 제도이다.",
+      "열하일기를 저술하고 청 문물 수용을 주장하였다.",
+      "탕평비를 세우고 균역법을 시행하였으며 속대전을 편찬하였다."
+    ],
+    "answer": "풍흉에 관계없이 전세를 토지 1결당 4두로 고정하였다.",
+    "explanation": "영정법은 인조 때 시행된 전세 제도입니다.",
+    "id": "history-hangeom-advanced-153",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 조선 후기",
+    "type": "multiple",
+    "question": "다음 중 '균역법'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "목민심서·경세유표·흠흠신서를 저술하고 여전론을 주장하였다.",
+      "대동여지도를 제작하였다.",
+      "풍흉에 관계없이 전세를 토지 1결당 4두로 고정하였다.",
+      "군포를 1년에 2필에서 1필로 줄여 양인의 군역 부담을 완화하였다."
+    ],
+    "answer": "군포를 1년에 2필에서 1필로 줄여 양인의 군역 부담을 완화하였다.",
+    "explanation": "균역법은 영조 때 시행되었습니다.",
+    "id": "history-hangeom-advanced-154",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 조선 후기",
+    "type": "multiple",
+    "question": "다음 중 '영조'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "풍흉에 관계없이 전세를 토지 1결당 4두로 고정하였다.",
+      "군포를 1년에 2필에서 1필로 줄여 양인의 군역 부담을 완화하였다.",
+      "탕평비를 세우고 균역법을 시행하였으며 속대전을 편찬하였다.",
+      "대동여지도를 제작하였다."
+    ],
+    "answer": "탕평비를 세우고 균역법을 시행하였으며 속대전을 편찬하였다.",
+    "explanation": "영조는 탕평 정치와 균역법이 핵심입니다.",
+    "id": "history-hangeom-advanced-155",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 조선 후기",
+    "type": "multiple",
+    "question": "다음 중 '정조'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "탕평비를 세우고 균역법을 시행하였으며 속대전을 편찬하였다.",
+      "임진왜란을 거치며 기능이 확대되어 국정 전반을 총괄하였다.",
+      "대동여지도를 제작하였다.",
+      "규장각을 육성하고 초계문신제를 실시하였으며 수원 화성을 건설하였다."
+    ],
+    "answer": "규장각을 육성하고 초계문신제를 실시하였으며 수원 화성을 건설하였다.",
+    "explanation": "정조는 왕권 강화와 개혁 정치가 핵심입니다.",
+    "id": "history-hangeom-advanced-156",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 조선 후기",
+    "type": "multiple",
+    "question": "다음 중 '이익'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "군포를 1년에 2필에서 1필로 줄여 양인의 군역 부담을 완화하였다.",
+      "성호사설을 저술하고 한전론을 주장하였다.",
+      "목민심서·경세유표·흠흠신서를 저술하고 여전론을 주장하였다.",
+      "열하일기를 저술하고 청 문물 수용을 주장하였다."
+    ],
+    "answer": "성호사설을 저술하고 한전론을 주장하였다.",
+    "explanation": "이익은 성호사설과 한전론으로 구분합니다.",
+    "id": "history-hangeom-advanced-157",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 조선 후기",
+    "type": "multiple",
+    "question": "다음 중 '정약용'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "풍흉에 관계없이 전세를 토지 1결당 4두로 고정하였다.",
+      "규장각을 육성하고 초계문신제를 실시하였으며 수원 화성을 건설하였다.",
+      "군포를 1년에 2필에서 1필로 줄여 양인의 군역 부담을 완화하였다.",
+      "목민심서·경세유표·흠흠신서를 저술하고 여전론을 주장하였다."
+    ],
+    "answer": "목민심서·경세유표·흠흠신서를 저술하고 여전론을 주장하였다.",
+    "explanation": "정약용은 실학을 집대성한 인물입니다.",
+    "id": "history-hangeom-advanced-158",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 조선 후기",
+    "type": "multiple",
+    "question": "다음 중 '박지원'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "열하일기를 저술하고 청 문물 수용을 주장하였다.",
+      "성호사설을 저술하고 한전론을 주장하였다.",
+      "임진왜란을 거치며 기능이 확대되어 국정 전반을 총괄하였다.",
+      "규장각을 육성하고 초계문신제를 실시하였으며 수원 화성을 건설하였다."
+    ],
+    "answer": "열하일기를 저술하고 청 문물 수용을 주장하였다.",
+    "explanation": "박지원은 북학파 실학자입니다.",
+    "id": "history-hangeom-advanced-159",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 조선 후기",
+    "type": "multiple",
+    "question": "다음 중 '김정호'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "대동여지도를 제작하였다.",
+      "목민심서·경세유표·흠흠신서를 저술하고 여전론을 주장하였다.",
+      "규장각을 육성하고 초계문신제를 실시하였으며 수원 화성을 건설하였다.",
+      "탕평비를 세우고 균역법을 시행하였으며 속대전을 편찬하였다."
+    ],
+    "answer": "대동여지도를 제작하였다.",
+    "explanation": "김정호는 대동여지도로 자주 출제됩니다.",
+    "id": "history-hangeom-advanced-160",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 근대",
+    "type": "multiple",
+    "question": "다음 중 '흥선 대원군'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "보국안민과 제폭구민을 내세웠고 전주 화약 이후 집강소를 설치하였다.",
+      "운요호 사건을 계기로 체결된 조선 최초의 근대적 조약이다.",
+      "대한제국의 외교권을 박탈하고 통감부 설치의 계기가 되었다.",
+      "비변사를 축소·폐지하고 서원을 정리하였으며 경복궁을 중건하였다."
+    ],
+    "answer": "비변사를 축소·폐지하고 서원을 정리하였으며 경복궁을 중건하였다.",
+    "explanation": "흥선 대원군은 왕권 강화와 통상 수교 거부 정책이 핵심입니다.",
+    "id": "history-hangeom-advanced-161",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 근대",
+    "type": "multiple",
+    "question": "다음 중 '강화도 조약'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "구본신참을 원칙으로 대한국 국제를 반포하고 황제권 강화를 추구하였다.",
+      "대한제국의 외교권을 박탈하고 통감부 설치의 계기가 되었다.",
+      "운요호 사건을 계기로 체결된 조선 최초의 근대적 조약이다.",
+      "비밀 결사로 공화정 수립을 목표로 하고 대성 학교와 오산 학교 설립을 지원하였다."
+    ],
+    "answer": "운요호 사건을 계기로 체결된 조선 최초의 근대적 조약이다.",
+    "explanation": "강화도 조약은 1876년 일본과 체결되었습니다.",
+    "id": "history-hangeom-advanced-162",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 근대",
+    "type": "multiple",
+    "question": "다음 중 '임오군란'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "구식 군인에 대한 차별 대우가 원인이 되어 발생하였다.",
+      "대한제국의 외교권을 박탈하고 통감부 설치의 계기가 되었다.",
+      "김옥균 등 급진 개화파가 우정총국 개국 축하연을 이용하여 정변을 일으켰다.",
+      "군국기무처를 중심으로 신분제와 과거제를 폐지하였다."
+    ],
+    "answer": "구식 군인에 대한 차별 대우가 원인이 되어 발생하였다.",
+    "explanation": "임오군란은 1882년에 일어났습니다.",
+    "id": "history-hangeom-advanced-163",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 근대",
+    "type": "multiple",
+    "question": "다음 중 '갑신정변'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "비변사를 축소·폐지하고 서원을 정리하였으며 경복궁을 중건하였다.",
+      "김옥균 등 급진 개화파가 우정총국 개국 축하연을 이용하여 정변을 일으켰다.",
+      "독립문 건립을 추진하고 만민 공동회와 관민 공동회를 개최하였다.",
+      "운요호 사건을 계기로 체결된 조선 최초의 근대적 조약이다."
+    ],
+    "answer": "김옥균 등 급진 개화파가 우정총국 개국 축하연을 이용하여 정변을 일으켰다.",
+    "explanation": "갑신정변은 1884년의 3일 천하입니다.",
+    "id": "history-hangeom-advanced-164",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 근대",
+    "type": "multiple",
+    "question": "다음 중 '동학 농민 운동'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "단발령을 실시하고 태양력 사용을 추진하였다.",
+      "보국안민과 제폭구민을 내세웠고 전주 화약 이후 집강소를 설치하였다.",
+      "구본신참을 원칙으로 대한국 국제를 반포하고 황제권 강화를 추구하였다.",
+      "군국기무처를 중심으로 신분제와 과거제를 폐지하였다."
+    ],
+    "answer": "보국안민과 제폭구민을 내세웠고 전주 화약 이후 집강소를 설치하였다.",
+    "explanation": "동학 농민 운동은 1894년 반봉건·반외세 운동입니다.",
+    "id": "history-hangeom-advanced-165",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 근대",
+    "type": "multiple",
+    "question": "다음 중 '갑오개혁'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "군국기무처를 중심으로 신분제와 과거제를 폐지하였다.",
+      "독립문 건립을 추진하고 만민 공동회와 관민 공동회를 개최하였다.",
+      "구본신참을 원칙으로 대한국 국제를 반포하고 황제권 강화를 추구하였다.",
+      "비변사를 축소·폐지하고 서원을 정리하였으며 경복궁을 중건하였다."
+    ],
+    "answer": "군국기무처를 중심으로 신분제와 과거제를 폐지하였다.",
+    "explanation": "갑오개혁은 1894년에 추진된 근대적 개혁입니다.",
+    "id": "history-hangeom-advanced-166",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 근대",
+    "type": "multiple",
+    "question": "다음 중 '을미개혁'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "단발령을 실시하고 태양력 사용을 추진하였다.",
+      "군국기무처를 중심으로 신분제와 과거제를 폐지하였다.",
+      "비밀 결사로 공화정 수립을 목표로 하고 대성 학교와 오산 학교 설립을 지원하였다.",
+      "운요호 사건을 계기로 체결된 조선 최초의 근대적 조약이다."
+    ],
+    "answer": "단발령을 실시하고 태양력 사용을 추진하였다.",
+    "explanation": "을미개혁의 대표 키워드는 단발령입니다.",
+    "id": "history-hangeom-advanced-167",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 근대",
+    "type": "multiple",
+    "question": "다음 중 '독립협회'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "비변사를 축소·폐지하고 서원을 정리하였으며 경복궁을 중건하였다.",
+      "운요호 사건을 계기로 체결된 조선 최초의 근대적 조약이다.",
+      "대한제국의 외교권을 박탈하고 통감부 설치의 계기가 되었다.",
+      "독립문 건립을 추진하고 만민 공동회와 관민 공동회를 개최하였다."
+    ],
+    "answer": "독립문 건립을 추진하고 만민 공동회와 관민 공동회를 개최하였다.",
+    "explanation": "독립협회는 자주 국권과 자유 민권을 추구했습니다.",
+    "id": "history-hangeom-advanced-168",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 근대",
+    "type": "multiple",
+    "question": "다음 중 '광무개혁'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "대한제국의 외교권을 박탈하고 통감부 설치의 계기가 되었다.",
+      "구본신참을 원칙으로 대한국 국제를 반포하고 황제권 강화를 추구하였다.",
+      "독립문 건립을 추진하고 만민 공동회와 관민 공동회를 개최하였다.",
+      "대구에서 시작되어 대한매일신보 등의 지원을 받으며 전개되었다."
+    ],
+    "answer": "구본신참을 원칙으로 대한국 국제를 반포하고 황제권 강화를 추구하였다.",
+    "explanation": "광무개혁은 대한제국 시기의 개혁입니다.",
+    "id": "history-hangeom-advanced-169",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 근대",
+    "type": "multiple",
+    "question": "다음 중 '을사늑약'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "보국안민과 제폭구민을 내세웠고 전주 화약 이후 집강소를 설치하였다.",
+      "구식 군인에 대한 차별 대우가 원인이 되어 발생하였다.",
+      "대한제국의 외교권을 박탈하고 통감부 설치의 계기가 되었다.",
+      "비변사를 축소·폐지하고 서원을 정리하였으며 경복궁을 중건하였다."
+    ],
+    "answer": "대한제국의 외교권을 박탈하고 통감부 설치의 계기가 되었다.",
+    "explanation": "을사늑약은 1905년에 강제로 체결되었습니다.",
+    "id": "history-hangeom-advanced-170",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 근대",
+    "type": "multiple",
+    "question": "다음 중 '국채 보상 운동'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "보국안민과 제폭구민을 내세웠고 전주 화약 이후 집강소를 설치하였다.",
+      "운요호 사건을 계기로 체결된 조선 최초의 근대적 조약이다.",
+      "대구에서 시작되어 대한매일신보 등의 지원을 받으며 전개되었다.",
+      "독립문 건립을 추진하고 만민 공동회와 관민 공동회를 개최하였다."
+    ],
+    "answer": "대구에서 시작되어 대한매일신보 등의 지원을 받으며 전개되었다.",
+    "explanation": "국채 보상 운동은 1907년 대구에서 시작되었습니다.",
+    "id": "history-hangeom-advanced-171",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 근대",
+    "type": "multiple",
+    "question": "다음 중 '신민회'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "대한제국의 외교권을 박탈하고 통감부 설치의 계기가 되었다.",
+      "비밀 결사로 공화정 수립을 목표로 하고 대성 학교와 오산 학교 설립을 지원하였다.",
+      "구본신참을 원칙으로 대한국 국제를 반포하고 황제권 강화를 추구하였다.",
+      "구식 군인에 대한 차별 대우가 원인이 되어 발생하였다."
+    ],
+    "answer": "비밀 결사로 공화정 수립을 목표로 하고 대성 학교와 오산 학교 설립을 지원하였다.",
+    "explanation": "신민회는 1907년에 조직되었습니다.",
+    "id": "history-hangeom-advanced-172",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 일제",
+    "type": "multiple",
+    "question": "다음 중 '무단 통치'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "회사를 설립할 때 조선 총독의 허가를 받도록 하였다.",
+      "김원봉이 조직하고 신채호의 조선 혁명 선언을 활동 지침으로 삼았다.",
+      "3·1 운동 이후 일제가 내세운 이른바 유화적 통치 방식이다.",
+      "헌병 경찰제를 바탕으로 1910년대 일제가 실시한 통치 방식이다."
+    ],
+    "answer": "헌병 경찰제를 바탕으로 1910년대 일제가 실시한 통치 방식이다.",
+    "explanation": "1910년대 일제의 통치는 무단 통치입니다.",
+    "id": "history-hangeom-advanced-173",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 일제",
+    "type": "multiple",
+    "question": "다음 중 '토지 조사 사업'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "토지 소유권을 확정한다는 명분으로 실시되어 기한부 신고주의가 적용되었다.",
+      "여성 운동의 통합 단체로 조직되었다.",
+      "조선인의 힘으로 대학을 세우자는 취지에서 전개되었다.",
+      "우리말 큰사전 편찬을 추진하다가 일제에 탄압받았다."
+    ],
+    "answer": "토지 소유권을 확정한다는 명분으로 실시되어 기한부 신고주의가 적용되었다.",
+    "explanation": "토지 조사 사업은 1910년대 일제의 경제 수탈 정책입니다.",
+    "id": "history-hangeom-advanced-174",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 일제",
+    "type": "multiple",
+    "question": "다음 중 '회사령'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "홍범도 부대가 일본군을 격파한 1920년의 전투이다.",
+      "상하이에 수립되어 연통제와 교통국을 운영하였다.",
+      "회사를 설립할 때 조선 총독의 허가를 받도록 하였다.",
+      "여성 운동의 통합 단체로 조직되었다."
+    ],
+    "answer": "회사를 설립할 때 조선 총독의 허가를 받도록 하였다.",
+    "explanation": "회사령은 1910년대 민족 자본 성장을 억제했습니다.",
+    "id": "history-hangeom-advanced-175",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 일제",
+    "type": "multiple",
+    "question": "다음 중 '3·1 운동'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "여성 운동의 통합 단체로 조직되었다.",
+      "헌병 경찰제를 바탕으로 1910년대 일제가 실시한 통치 방식이다.",
+      "좌우 합작으로 조직된 합법적 민족 운동 단체이다.",
+      "고종의 인산일을 계기로 민족 대표 33인이 독립 선언서를 발표하였다."
+    ],
+    "answer": "고종의 인산일을 계기로 민족 대표 33인이 독립 선언서를 발표하였다.",
+    "explanation": "3·1 운동은 대한민국 임시정부 수립의 계기가 되었습니다.",
+    "id": "history-hangeom-advanced-176",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 일제",
+    "type": "multiple",
+    "question": "다음 중 '대한민국 임시정부'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "고종의 인산일을 계기로 민족 대표 33인이 독립 선언서를 발표하였다.",
+      "김원봉이 조직하고 신채호의 조선 혁명 선언을 활동 지침으로 삼았다.",
+      "상하이에 수립되어 연통제와 교통국을 운영하였다.",
+      "한일 학생 간 충돌을 계기로 전국적으로 확산된 학생 항일 운동이다."
+    ],
+    "answer": "상하이에 수립되어 연통제와 교통국을 운영하였다.",
+    "explanation": "대한민국 임시정부는 3·1 운동 이후 수립되었습니다.",
+    "id": "history-hangeom-advanced-177",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 일제",
+    "type": "multiple",
+    "question": "다음 중 '문화 통치'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "한일 학생 간 충돌을 계기로 전국적으로 확산된 학생 항일 운동이다.",
+      "3·1 운동 이후 일제가 내세운 이른바 유화적 통치 방식이다.",
+      "황국 신민 서사 암송, 창씨개명, 신사 참배 강요 등이 추진되었다.",
+      "우리말 큰사전 편찬을 추진하다가 일제에 탄압받았다."
+    ],
+    "answer": "3·1 운동 이후 일제가 내세운 이른바 유화적 통치 방식이다.",
+    "explanation": "1920년대 일제는 문화 통치를 표방했습니다.",
+    "id": "history-hangeom-advanced-178",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 일제",
+    "type": "multiple",
+    "question": "다음 중 '산미 증식 계획'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "좌우 합작으로 조직된 합법적 민족 운동 단체이다.",
+      "우리말 큰사전 편찬을 추진하다가 일제에 탄압받았다.",
+      "일본의 식량 부족을 해결하기 위해 조선에서 쌀 증산과 반출을 추진하였다.",
+      "홍범도 부대가 일본군을 격파한 1920년의 전투이다."
+    ],
+    "answer": "일본의 식량 부족을 해결하기 위해 조선에서 쌀 증산과 반출을 추진하였다.",
+    "explanation": "산미 증식 계획은 1920년대 경제 수탈 정책입니다.",
+    "id": "history-hangeom-advanced-179",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 일제",
+    "type": "multiple",
+    "question": "다음 중 '물산 장려 운동'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "내 살림 내 것으로라는 구호를 내세워 민족 산업 육성을 추구하였다.",
+      "회사를 설립할 때 조선 총독의 허가를 받도록 하였다.",
+      "한일 학생 간 충돌을 계기로 전국적으로 확산된 학생 항일 운동이다.",
+      "김원봉이 조직하고 신채호의 조선 혁명 선언을 활동 지침으로 삼았다."
+    ],
+    "answer": "내 살림 내 것으로라는 구호를 내세워 민족 산업 육성을 추구하였다.",
+    "explanation": "물산 장려 운동은 1920년대 민족 실력 양성 운동입니다.",
+    "id": "history-hangeom-advanced-180",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 일제",
+    "type": "multiple",
+    "question": "다음 중 '민립 대학 설립 운동'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "고종의 인산일을 계기로 민족 대표 33인이 독립 선언서를 발표하였다.",
+      "조선인의 힘으로 대학을 세우자는 취지에서 전개되었다.",
+      "내 살림 내 것으로라는 구호를 내세워 민족 산업 육성을 추구하였다.",
+      "토지 소유권을 확정한다는 명분으로 실시되어 기한부 신고주의가 적용되었다."
+    ],
+    "answer": "조선인의 힘으로 대학을 세우자는 취지에서 전개되었다.",
+    "explanation": "민립 대학 설립 운동은 교육 분야 실력 양성 운동입니다.",
+    "id": "history-hangeom-advanced-181",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 일제",
+    "type": "multiple",
+    "question": "다음 중 '의열단'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "고종의 인산일을 계기로 민족 대표 33인이 독립 선언서를 발표하였다.",
+      "홍범도 부대가 일본군을 격파한 1920년의 전투이다.",
+      "토지 소유권을 확정한다는 명분으로 실시되어 기한부 신고주의가 적용되었다.",
+      "김원봉이 조직하고 신채호의 조선 혁명 선언을 활동 지침으로 삼았다."
+    ],
+    "answer": "김원봉이 조직하고 신채호의 조선 혁명 선언을 활동 지침으로 삼았다.",
+    "explanation": "의열단은 의열 투쟁을 전개했습니다.",
+    "id": "history-hangeom-advanced-182",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 일제",
+    "type": "multiple",
+    "question": "다음 중 '한인 애국단'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "고종의 인산일을 계기로 민족 대표 33인이 독립 선언서를 발표하였다.",
+      "한일 학생 간 충돌을 계기로 전국적으로 확산된 학생 항일 운동이다.",
+      "김구가 조직하였고 이봉창·윤봉길 의거와 관련된다.",
+      "황국 신민 서사 암송, 창씨개명, 신사 참배 강요 등이 추진되었다."
+    ],
+    "answer": "김구가 조직하였고 이봉창·윤봉길 의거와 관련된다.",
+    "explanation": "한인 애국단은 대한민국 임시정부의 침체를 극복하는 데 기여했습니다.",
+    "id": "history-hangeom-advanced-183",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 일제",
+    "type": "multiple",
+    "question": "다음 중 '봉오동 전투'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "고종의 인산일을 계기로 민족 대표 33인이 독립 선언서를 발표하였다.",
+      "한일 학생 간 충돌을 계기로 전국적으로 확산된 학생 항일 운동이다.",
+      "홍범도 부대가 일본군을 격파한 1920년의 전투이다.",
+      "헌병 경찰제를 바탕으로 1910년대 일제가 실시한 통치 방식이다."
+    ],
+    "answer": "홍범도 부대가 일본군을 격파한 1920년의 전투이다.",
+    "explanation": "봉오동 전투는 홍범도 부대가 핵심입니다.",
+    "id": "history-hangeom-advanced-184",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 일제",
+    "type": "multiple",
+    "question": "다음 중 '청산리 대첩'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "고종의 인산일을 계기로 민족 대표 33인이 독립 선언서를 발표하였다.",
+      "김원봉이 조직하고 신채호의 조선 혁명 선언을 활동 지침으로 삼았다.",
+      "김좌진의 북로 군정서군과 홍범도 부대 등이 일본군을 크게 격파하였다.",
+      "헌병 경찰제를 바탕으로 1910년대 일제가 실시한 통치 방식이다."
+    ],
+    "answer": "김좌진의 북로 군정서군과 홍범도 부대 등이 일본군을 크게 격파하였다.",
+    "explanation": "청산리 대첩은 1920년 10월의 독립군 승리입니다.",
+    "id": "history-hangeom-advanced-185",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 일제",
+    "type": "multiple",
+    "question": "다음 중 '신간회'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "상하이에 수립되어 연통제와 교통국을 운영하였다.",
+      "내 살림 내 것으로라는 구호를 내세워 민족 산업 육성을 추구하였다.",
+      "좌우 합작으로 조직된 합법적 민족 운동 단체이다.",
+      "황국 신민 서사 암송, 창씨개명, 신사 참배 강요 등이 추진되었다."
+    ],
+    "answer": "좌우 합작으로 조직된 합법적 민족 운동 단체이다.",
+    "explanation": "신간회는 1927년 창립되었습니다.",
+    "id": "history-hangeom-advanced-186",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 일제",
+    "type": "multiple",
+    "question": "다음 중 '근우회'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "토지 소유권을 확정한다는 명분으로 실시되어 기한부 신고주의가 적용되었다.",
+      "여성 운동의 통합 단체로 조직되었다.",
+      "3·1 운동 이후 일제가 내세운 이른바 유화적 통치 방식이다.",
+      "김원봉이 조직하고 신채호의 조선 혁명 선언을 활동 지침으로 삼았다."
+    ],
+    "answer": "여성 운동의 통합 단체로 조직되었다.",
+    "explanation": "근우회는 1927년 조직된 여성 운동 단체입니다.",
+    "id": "history-hangeom-advanced-187",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 일제",
+    "type": "multiple",
+    "question": "다음 중 '광주 학생 항일 운동'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "김원봉이 조직하고 신채호의 조선 혁명 선언을 활동 지침으로 삼았다.",
+      "한일 학생 간 충돌을 계기로 전국적으로 확산된 학생 항일 운동이다.",
+      "김구가 조직하였고 이봉창·윤봉길 의거와 관련된다.",
+      "상하이에 수립되어 연통제와 교통국을 운영하였다."
+    ],
+    "answer": "한일 학생 간 충돌을 계기로 전국적으로 확산된 학생 항일 운동이다.",
+    "explanation": "광주 학생 항일 운동은 1929년에 일어났습니다.",
+    "id": "history-hangeom-advanced-188",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 일제",
+    "type": "multiple",
+    "question": "다음 중 '조선어 학회'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "조선인의 힘으로 대학을 세우자는 취지에서 전개되었다.",
+      "여성 운동의 통합 단체로 조직되었다.",
+      "우리말 큰사전 편찬을 추진하다가 일제에 탄압받았다.",
+      "고종의 인산일을 계기로 민족 대표 33인이 독립 선언서를 발표하였다."
+    ],
+    "answer": "우리말 큰사전 편찬을 추진하다가 일제에 탄압받았다.",
+    "explanation": "조선어 학회는 민족 문화 수호 운동의 대표 사례입니다.",
+    "id": "history-hangeom-advanced-189",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 일제",
+    "type": "multiple",
+    "question": "다음 중 '민족 말살 통치'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "황국 신민 서사 암송, 창씨개명, 신사 참배 강요 등이 추진되었다.",
+      "3·1 운동 이후 일제가 내세운 이른바 유화적 통치 방식이다.",
+      "내 살림 내 것으로라는 구호를 내세워 민족 산업 육성을 추구하였다.",
+      "고종의 인산일을 계기로 민족 대표 33인이 독립 선언서를 발표하였다."
+    ],
+    "answer": "황국 신민 서사 암송, 창씨개명, 신사 참배 강요 등이 추진되었다.",
+    "explanation": "1930년대 후반 이후 일제는 민족 말살 통치를 강화했습니다.",
+    "id": "history-hangeom-advanced-190",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 현대",
+    "type": "multiple",
+    "question": "다음 중 '제주 4·3 사건'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "남한만의 단독 선거에 반대하는 움직임을 배경으로 제주도에서 발생하였다.",
+      "대통령 간선제와 긴급 조치 등을 통해 장기 집권 체제를 강화하였다.",
+      "신군부의 비상계엄 확대에 저항하여 광주에서 전개되었다.",
+      "군부 세력이 정변을 일으켜 권력을 장악하였다."
+    ],
+    "answer": "남한만의 단독 선거에 반대하는 움직임을 배경으로 제주도에서 발생하였다.",
+    "explanation": "제주 4·3 사건은 1948년 5·10 총선거 전후의 상황과 관련됩니다.",
+    "id": "history-hangeom-advanced-191",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 현대",
+    "type": "multiple",
+    "question": "다음 중 '반민족 행위 특별 조사 위원회'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "3·15 부정 선거에 대한 저항으로 일어나 이승만 대통령의 하야로 이어졌다.",
+      "박정희 정부 시기 국가 주도의 경제 성장 정책으로 추진되었다.",
+      "제헌 국회가 친일파 청산을 위해 설치하였다.",
+      "대통령 간선제와 긴급 조치 등을 통해 장기 집권 체제를 강화하였다."
+    ],
+    "answer": "제헌 국회가 친일파 청산을 위해 설치하였다.",
+    "explanation": "반민특위는 친일파 청산 시도와 관련됩니다.",
+    "id": "history-hangeom-advanced-192",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 현대",
+    "type": "multiple",
+    "question": "다음 중 '농지 개혁'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "군부 세력이 정변을 일으켜 권력을 장악하였다.",
+      "3·15 부정 선거에 대한 저항으로 일어나 이승만 대통령의 하야로 이어졌다.",
+      "박정희 정부 시기 국가 주도의 경제 성장 정책으로 추진되었다.",
+      "유상 매수·유상 분배 원칙으로 지주제를 약화시켰다."
+    ],
+    "answer": "유상 매수·유상 분배 원칙으로 지주제를 약화시켰다.",
+    "explanation": "농지 개혁은 이승만 정부 시기의 중요한 개혁입니다.",
+    "id": "history-hangeom-advanced-193",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 현대",
+    "type": "multiple",
+    "question": "다음 중 '4·19 혁명'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "자주·평화·민족 대단결의 통일 3대 원칙을 밝혔다.",
+      "제헌 국회가 친일파 청산을 위해 설치하였다.",
+      "3·15 부정 선거에 대한 저항으로 일어나 이승만 대통령의 하야로 이어졌다.",
+      "유상 매수·유상 분배 원칙으로 지주제를 약화시켰다."
+    ],
+    "answer": "3·15 부정 선거에 대한 저항으로 일어나 이승만 대통령의 하야로 이어졌다.",
+    "explanation": "4·19 혁명은 1960년 민주화 운동입니다.",
+    "id": "history-hangeom-advanced-194",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 현대",
+    "type": "multiple",
+    "question": "다음 중 '5·16 군사 정변'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "신군부의 비상계엄 확대에 저항하여 광주에서 전개되었다.",
+      "유상 매수·유상 분배 원칙으로 지주제를 약화시켰다.",
+      "군부 세력이 정변을 일으켜 권력을 장악하였다.",
+      "박정희 정부 시기 국가 주도의 경제 성장 정책으로 추진되었다."
+    ],
+    "answer": "군부 세력이 정변을 일으켜 권력을 장악하였다.",
+    "explanation": "5·16 군사 정변은 1961년에 일어났습니다.",
+    "id": "history-hangeom-advanced-195",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 현대",
+    "type": "multiple",
+    "question": "다음 중 '경제 개발 5개년 계획'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "신군부의 비상계엄 확대에 저항하여 광주에서 전개되었다.",
+      "박정희 정부 시기 국가 주도의 경제 성장 정책으로 추진되었다.",
+      "제헌 국회가 친일파 청산을 위해 설치하였다.",
+      "남한만의 단독 선거에 반대하는 움직임을 배경으로 제주도에서 발생하였다."
+    ],
+    "answer": "박정희 정부 시기 국가 주도의 경제 성장 정책으로 추진되었다.",
+    "explanation": "경제 개발 5개년 계획은 박정희 정부의 핵심 정책입니다.",
+    "id": "history-hangeom-advanced-196",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 현대",
+    "type": "multiple",
+    "question": "다음 중 '10월 유신'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "3·15 부정 선거에 대한 저항으로 일어나 이승만 대통령의 하야로 이어졌다.",
+      "유상 매수·유상 분배 원칙으로 지주제를 약화시켰다.",
+      "신군부의 비상계엄 확대에 저항하여 광주에서 전개되었다.",
+      "대통령 간선제와 긴급 조치 등을 통해 장기 집권 체제를 강화하였다."
+    ],
+    "answer": "대통령 간선제와 긴급 조치 등을 통해 장기 집권 체제를 강화하였다.",
+    "explanation": "10월 유신은 1972년에 단행되었습니다.",
+    "id": "history-hangeom-advanced-197",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 현대",
+    "type": "multiple",
+    "question": "다음 중 '5·18 민주화 운동'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "신군부의 비상계엄 확대에 저항하여 광주에서 전개되었다.",
+      "제헌 국회가 친일파 청산을 위해 설치하였다.",
+      "남한만의 단독 선거에 반대하는 움직임을 배경으로 제주도에서 발생하였다.",
+      "박정희 정부 시기 국가 주도의 경제 성장 정책으로 추진되었다."
+    ],
+    "answer": "신군부의 비상계엄 확대에 저항하여 광주에서 전개되었다.",
+    "explanation": "5·18 민주화 운동은 1980년에 광주에서 전개되었습니다.",
+    "id": "history-hangeom-advanced-198",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 현대",
+    "type": "multiple",
+    "question": "다음 중 '6월 민주 항쟁'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "남한만의 단독 선거에 반대하는 움직임을 배경으로 제주도에서 발생하였다.",
+      "유상 매수·유상 분배 원칙으로 지주제를 약화시켰다.",
+      "3·15 부정 선거에 대한 저항으로 일어나 이승만 대통령의 하야로 이어졌다.",
+      "박종철 고문치사 사건과 4·13 호헌 조치 등을 배경으로 대통령 직선제 개헌 요구가 확산되었다."
+    ],
+    "answer": "박종철 고문치사 사건과 4·13 호헌 조치 등을 배경으로 대통령 직선제 개헌 요구가 확산되었다.",
+    "explanation": "6월 민주 항쟁의 결과 6·29 민주화 선언이 발표되었습니다.",
+    "id": "history-hangeom-advanced-199",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  },
+  {
+    "topic": "한능검 심화 현대",
+    "type": "multiple",
+    "question": "다음 중 '7·4 남북 공동 성명'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "대통령 간선제와 긴급 조치 등을 통해 장기 집권 체제를 강화하였다.",
+      "자주·평화·민족 대단결의 통일 3대 원칙을 밝혔다.",
+      "박정희 정부 시기 국가 주도의 경제 성장 정책으로 추진되었다.",
+      "신군부의 비상계엄 확대에 저항하여 광주에서 전개되었다."
+    ],
+    "answer": "자주·평화·민족 대단결의 통일 3대 원칙을 밝혔다.",
+    "explanation": "7·4 남북 공동 성명은 1972년에 발표되었습니다.",
+    "id": "history-hangeom-advanced-200",
+    "subject": "한국사 한능검 심화",
+    "sourceLabel": "한능검 심화",
+    "examStyle": "history-hangeom-advanced",
+    "difficulty": 5
+  }
+]

@@ -12,6 +12,7 @@ import chineseMiddleQuestions from "./data/chineseMiddleQuestions.json";
 import chineseAdvancedQuestions from "./data/chineseAdvanced.json";
 import japaneseMiddleQuestions from "./data/japaneseMiddleQuestions.json";
 import koreanHistoryHangeomQuestions from "./data/koreanHistoryHangeomQuestions.json";
+import koreanHistoryHangeomAdvancedQuestions from "./data/koreanHistoryHangeomAdvancedQuestions.json";
 
 const sampleQuestions = [
     {
@@ -62,6 +63,7 @@ export const questionBank = {
 
     "history-mixed": koreanHistoryMixedQuestions,
     "history-hangeom": koreanHistoryHangeomQuestions,
+    "history-hangeom-advanced": koreanHistoryHangeomAdvancedQuestions,
     "history-civil": koreanHistoryCivilServiceQuestions,
 
     "zh-basic": chineseBasicQuestions,
