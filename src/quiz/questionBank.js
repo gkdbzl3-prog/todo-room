@@ -11,6 +11,7 @@ import chineseBasicQuestions from "./data/chineseBasicQuestions.json";
 import chineseMiddleQuestions from "./data/chineseMiddleQuestions.json";
 import chineseAdvancedQuestions from "./data/chineseAdvanced.json";
 import japaneseMiddleQuestions from "./data/japaneseMiddleQuestions.json";
+import koreanHistoryHangeomQuestions from "./data/koreanHistoryHangeomQuestions.json";
 
 const sampleQuestions = [
     {
@@ -60,6 +61,7 @@ export const questionBank = {
     "toeic-rc": toeicRcQuestions,
 
     "history-mixed": koreanHistoryMixedQuestions,
+    "history-hangeom": koreanHistoryHangeomQuestions,
     "history-civil": koreanHistoryCivilServiceQuestions,
 
     "zh-basic": chineseBasicQuestions,

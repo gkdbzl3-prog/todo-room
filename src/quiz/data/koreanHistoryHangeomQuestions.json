@@ -1,0 +1,3362 @@
+[
+  {
+    "topic": "한능검 선사",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n주먹도끼·찍개·이동 생활",
+    "choices": [
+      "신석기 시대",
+      "철기 시대",
+      "구석기 시대",
+      "청동기 시대"
+    ],
+    "answer": "구석기 시대",
+    "explanation": "주먹도끼와 이동 생활은 구석기 시대의 특징이야.",
+    "id": "history-hangeom-001",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 선사",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n간석기·빗살무늬 토기·농경 시작",
+    "choices": [
+      "구석기 시대",
+      "신석기 시대",
+      "철기 시대",
+      "청동기 시대"
+    ],
+    "answer": "신석기 시대",
+    "explanation": "간석기와 빗살무늬 토기는 신석기 시대의 특징이야.",
+    "id": "history-hangeom-002",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 선사",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n비파형 동검·고인돌·계급 발생",
+    "choices": [
+      "철기 시대",
+      "구석기 시대",
+      "신석기 시대",
+      "청동기 시대"
+    ],
+    "answer": "청동기 시대",
+    "explanation": "비파형 동검과 고인돌은 청동기 시대를 대표해.",
+    "id": "history-hangeom-003",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 초기 국가",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n영고·1책 12법",
+    "choices": [
+      "고구려",
+      "옥저",
+      "부여",
+      "동예"
+    ],
+    "answer": "부여",
+    "explanation": "영고와 1책 12법은 부여의 핵심 키워드야.",
+    "id": "history-hangeom-004",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 초기 국가",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n동맹·서옥제",
+    "choices": [
+      "부여",
+      "고구려",
+      "동예",
+      "옥저"
+    ],
+    "answer": "고구려",
+    "explanation": "동맹과 서옥제는 고구려의 특징이야.",
+    "id": "history-hangeom-005",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 초기 국가",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n민며느리제·가족 공동 무덤",
+    "choices": [
+      "고구려",
+      "동예",
+      "옥저",
+      "부여"
+    ],
+    "answer": "옥저",
+    "explanation": "민며느리제와 가족 공동 무덤은 옥저의 특징이야.",
+    "id": "history-hangeom-006",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 초기 국가",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n무천·책화",
+    "choices": [
+      "옥저",
+      "부여",
+      "고구려",
+      "동예"
+    ],
+    "answer": "동예",
+    "explanation": "무천과 책화는 동예의 특징이야.",
+    "id": "history-hangeom-007",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 초기 국가",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n천군·소도·제정 분리",
+    "choices": [
+      "부여",
+      "삼한",
+      "고구려",
+      "옥저"
+    ],
+    "answer": "삼한",
+    "explanation": "소도와 천군은 삼한의 특징이야.",
+    "id": "history-hangeom-008",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 고대",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n불교 수용·태학 설립·율령 반포",
+    "choices": [
+      "고구려 소수림왕",
+      "신라 법흥왕",
+      "백제 성왕",
+      "고구려 장수왕"
+    ],
+    "answer": "고구려 소수림왕",
+    "explanation": "소수림왕은 고구려 체제를 정비했어.",
+    "id": "history-hangeom-009",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 고대",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n영락 연호·대왕릉비",
+    "choices": [
+      "고구려 광개토 대왕",
+      "고구려 장수왕",
+      "백제 근초고왕",
+      "신라 진흥왕"
+    ],
+    "answer": "고구려 광개토 대왕",
+    "explanation": "광개토 대왕은 영락 연호와 대왕릉비가 핵심이야.",
+    "id": "history-hangeom-010",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 고대",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n평양 천도·남진 정책",
+    "choices": [
+      "고구려 장수왕",
+      "고구려 소수림왕",
+      "백제 성왕",
+      "신라 진흥왕"
+    ],
+    "answer": "고구려 장수왕",
+    "explanation": "장수왕은 평양으로 천도하고 남진 정책을 추진했어.",
+    "id": "history-hangeom-011",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 고대",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n무령왕릉·지석·22담로",
+    "choices": [
+      "백제 근초고왕",
+      "신라 법흥왕",
+      "백제 성왕",
+      "백제 무령왕"
+    ],
+    "answer": "백제 무령왕",
+    "explanation": "무령왕릉 지석은 한능검 단골 키워드야.",
+    "id": "history-hangeom-012",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 고대",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n사비 천도·남부여",
+    "choices": [
+      "고구려 장수왕",
+      "백제 무령왕",
+      "백제 의자왕",
+      "백제 성왕"
+    ],
+    "answer": "백제 성왕",
+    "explanation": "성왕은 사비 천도와 남부여 국호 사용으로 유명해.",
+    "id": "history-hangeom-013",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 고대",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n율령 반포·불교 공인",
+    "choices": [
+      "신라 신문왕",
+      "신라 법흥왕",
+      "신라 지증왕",
+      "신라 진흥왕"
+    ],
+    "answer": "신라 법흥왕",
+    "explanation": "법흥왕은 신라 체제를 정비했어.",
+    "id": "history-hangeom-014",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 고대",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n한강 유역 확보·순수비",
+    "choices": [
+      "신라 법흥왕",
+      "신라 진흥왕",
+      "신라 지증왕",
+      "신라 문무왕"
+    ],
+    "answer": "신라 진흥왕",
+    "explanation": "진흥왕은 한강 유역 확보와 순수비가 핵심이야.",
+    "id": "history-hangeom-015",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 남북국",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n관료전 지급·녹읍 폐지·국학 설립",
+    "choices": [
+      "발해 문왕",
+      "신라 신문왕",
+      "신라 원성왕",
+      "신라 문무왕"
+    ],
+    "answer": "신라 신문왕",
+    "explanation": "신문왕은 왕권 강화 정책으로 자주 나와.",
+    "id": "history-hangeom-016",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 남북국",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n대조영 건국·고구려 계승",
+    "choices": [
+      "발해",
+      "태봉",
+      "통일 신라",
+      "후백제"
+    ],
+    "answer": "발해",
+    "explanation": "발해는 대조영이 건국했어.",
+    "id": "history-hangeom-017",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 남북국",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n해동성국·발해 전성기",
+    "choices": [
+      "발해 무왕",
+      "발해 문왕",
+      "신라 신문왕",
+      "발해 선왕"
+    ],
+    "answer": "발해 선왕",
+    "explanation": "발해는 선왕 때 전성기를 맞았어.",
+    "id": "history-hangeom-018",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 고려",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n훈요 10조·북진 정책·호족 통합",
+    "choices": [
+      "고려 공민왕",
+      "고려 태조 왕건",
+      "고려 성종",
+      "고려 광종"
+    ],
+    "answer": "고려 태조 왕건",
+    "explanation": "태조 왕건은 훈요 10조를 남겼어.",
+    "id": "history-hangeom-019",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 고려",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n노비안검법·과거제",
+    "choices": [
+      "고려 태조",
+      "고려 광종",
+      "고려 공민왕",
+      "고려 성종"
+    ],
+    "answer": "고려 광종",
+    "explanation": "광종은 왕권 강화를 위해 노비안검법과 과거제를 실시했어.",
+    "id": "history-hangeom-020",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 고려",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n최승로 시무 28조·12목 지방관",
+    "choices": [
+      "고려 태조",
+      "고려 공민왕",
+      "고려 성종",
+      "고려 광종"
+    ],
+    "answer": "고려 성종",
+    "explanation": "성종은 유교적 통치 체제를 정비했어.",
+    "id": "history-hangeom-021",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 고려",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n서경 천도·금국 정벌·칭제건원",
+    "choices": [
+      "이자겸의 난",
+      "위화도 회군",
+      "묘청의 서경 천도 운동",
+      "무신 정변"
+    ],
+    "answer": "묘청의 서경 천도 운동",
+    "explanation": "묘청은 서경 천도와 금국 정벌을 주장했어.",
+    "id": "history-hangeom-022",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 고려",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n쌍성총관부 공격·전민변정도감",
+    "choices": [
+      "고려 충렬왕",
+      "고려 성종",
+      "고려 공민왕",
+      "고려 광종"
+    ],
+    "answer": "고려 공민왕",
+    "explanation": "공민왕은 반원 자주 정책을 추진했어.",
+    "id": "history-hangeom-023",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 고려 문화",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n현존 최고 금속 활자본",
+    "choices": [
+      "직지심체요절",
+      "훈민정음",
+      "팔만대장경",
+      "삼국사기"
+    ],
+    "answer": "직지심체요절",
+    "explanation": "직지는 고려 말 금속 활자 인쇄물이야.",
+    "id": "history-hangeom-024",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 고려 문화",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n몽골 침입기 조판·해인사 보관",
+    "choices": [
+      "직지심체요절",
+      "삼국유사",
+      "동국통감",
+      "팔만대장경"
+    ],
+    "answer": "팔만대장경",
+    "explanation": "팔만대장경은 몽골 침입기에 조판되었어.",
+    "id": "history-hangeom-025",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 조선 전기",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n훈민정음·집현전·4군 6진",
+    "choices": [
+      "조선 성종",
+      "조선 세종",
+      "조선 세조",
+      "조선 태종"
+    ],
+    "answer": "조선 세종",
+    "explanation": "세종은 훈민정음 창제와 4군 6진 개척이 핵심이야.",
+    "id": "history-hangeom-026",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 조선 전기",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n경국대전 완성·홍문관 설치",
+    "choices": [
+      "조선 정조",
+      "조선 성종",
+      "조선 세종",
+      "조선 세조"
+    ],
+    "answer": "조선 성종",
+    "explanation": "경국대전은 성종 때 완성되었어.",
+    "id": "history-hangeom-027",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 조선 후기",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n공납 폐단 시정·쌀/포/동전 납부",
+    "choices": [
+      "대동법",
+      "영정법",
+      "과전법",
+      "균역법"
+    ],
+    "answer": "대동법",
+    "explanation": "대동법은 공납의 폐단을 줄이기 위한 제도야.",
+    "id": "history-hangeom-028",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 조선 후기",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n군포 2필을 1필로 감소",
+    "choices": [
+      "균역법",
+      "대동법",
+      "영정법",
+      "호포법"
+    ],
+    "answer": "균역법",
+    "explanation": "균역법은 영조 때 군포 부담을 줄인 제도야.",
+    "id": "history-hangeom-029",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 조선 후기",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n규장각·초계문신제·수원 화성",
+    "choices": [
+      "조선 정조",
+      "조선 숙종",
+      "조선 세종",
+      "조선 영조"
+    ],
+    "answer": "조선 정조",
+    "explanation": "정조는 규장각과 수원 화성으로 자주 출제돼.",
+    "id": "history-hangeom-030",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 근대",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n운요호 사건·조선 최초 근대적 조약",
+    "choices": [
+      "강화도 조약",
+      "조미 수호 통상 조약",
+      "제물포 조약",
+      "한성 조약"
+    ],
+    "answer": "강화도 조약",
+    "explanation": "강화도 조약은 1876년 체결되었어.",
+    "id": "history-hangeom-031",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 근대",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n우정총국·급진 개화파",
+    "choices": [
+      "독립협회",
+      "임오군란",
+      "갑오개혁",
+      "갑신정변"
+    ],
+    "answer": "갑신정변",
+    "explanation": "갑신정변은 급진 개화파가 일으켰어.",
+    "id": "history-hangeom-032",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 근대",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n보국안민·제폭구민·집강소",
+    "choices": [
+      "임오군란",
+      "독립협회 운동",
+      "갑신정변",
+      "동학 농민 운동"
+    ],
+    "answer": "동학 농민 운동",
+    "explanation": "동학 농민 운동은 1894년에 전개되었어.",
+    "id": "history-hangeom-033",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 근대",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n군국기무처·신분제 폐지·과거제 폐지",
+    "choices": [
+      "갑오개혁",
+      "광무개혁",
+      "갑신정변",
+      "을미개혁"
+    ],
+    "answer": "갑오개혁",
+    "explanation": "갑오개혁은 군국기무처 중심으로 추진됐어.",
+    "id": "history-hangeom-034",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 일제",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n민족 대표 33인·독립 선언서",
+    "choices": [
+      "3·1 운동",
+      "광주 학생 항일 운동",
+      "6·10 만세 운동",
+      "국채 보상 운동"
+    ],
+    "answer": "3·1 운동",
+    "explanation": "3·1 운동은 1919년에 전개되었어.",
+    "id": "history-hangeom-035",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 일제",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n김원봉·조선 혁명 선언",
+    "choices": [
+      "의열단",
+      "신간회",
+      "신민회",
+      "조선어 학회"
+    ],
+    "answer": "의열단",
+    "explanation": "의열단은 김원봉이 조직했어.",
+    "id": "history-hangeom-036",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 일제",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n홍범도 부대·1920년 6월",
+    "choices": [
+      "봉오동 전투",
+      "청산리 대첩",
+      "대전자령 전투",
+      "쌍성보 전투"
+    ],
+    "answer": "봉오동 전투",
+    "explanation": "봉오동 전투는 홍범도 부대가 활약했어.",
+    "id": "history-hangeom-037",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 일제",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n김좌진·북로 군정서·1920년 10월",
+    "choices": [
+      "봉오동 전투",
+      "청산리 대첩",
+      "쌍성보 전투",
+      "대전자령 전투"
+    ],
+    "answer": "청산리 대첩",
+    "explanation": "청산리 대첩은 김좌진 등이 활약했어.",
+    "id": "history-hangeom-038",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 일제",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n좌우 합작·합법적 민족 운동 단체",
+    "choices": [
+      "의열단",
+      "신민회",
+      "신간회",
+      "독립협회"
+    ],
+    "answer": "신간회",
+    "explanation": "신간회는 1927년 조직된 좌우 합작 단체야.",
+    "id": "history-hangeom-039",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 현대",
+    "type": "multiple",
+    "question": "다음 키워드와 가장 관련 깊은 것은?\n3·15 부정 선거·이승만 하야",
+    "choices": [
+      "6월 민주 항쟁",
+      "5·18 민주화 운동",
+      "4·19 혁명",
+      "5·16 군사 정변"
+    ],
+    "answer": "4·19 혁명",
+    "explanation": "4·19 혁명은 1960년에 일어났어.",
+    "id": "history-hangeom-040",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 선사",
+    "type": "multiple",
+    "question": "다음 중 '구석기 시대'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "몽골 침입기 조판·해인사 보관",
+      "홍범도 부대·1920년 6월",
+      "평양 천도·남진 정책",
+      "주먹도끼·찍개·이동 생활"
+    ],
+    "answer": "주먹도끼·찍개·이동 생활",
+    "explanation": "주먹도끼와 이동 생활은 구석기 시대의 특징이야.",
+    "id": "history-hangeom-041",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 선사",
+    "type": "multiple",
+    "question": "다음 중 '신석기 시대'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "대조영 건국·고구려 계승",
+      "관료전 지급·녹읍 폐지·국학 설립",
+      "불교 수용·태학 설립·율령 반포",
+      "간석기·빗살무늬 토기·농경 시작"
+    ],
+    "answer": "간석기·빗살무늬 토기·농경 시작",
+    "explanation": "간석기와 빗살무늬 토기는 신석기 시대의 특징이야.",
+    "id": "history-hangeom-042",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 선사",
+    "type": "multiple",
+    "question": "다음 중 '청동기 시대'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "불교 수용·태학 설립·율령 반포",
+      "영락 연호·대왕릉비",
+      "비파형 동검·고인돌·계급 발생",
+      "주먹도끼·찍개·이동 생활"
+    ],
+    "answer": "비파형 동검·고인돌·계급 발생",
+    "explanation": "비파형 동검과 고인돌은 청동기 시대를 대표해.",
+    "id": "history-hangeom-043",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 초기 국가",
+    "type": "multiple",
+    "question": "다음 중 '부여'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "현존 최고 금속 활자본",
+      "군포 2필을 1필로 감소",
+      "군국기무처·신분제 폐지·과거제 폐지",
+      "영고·1책 12법"
+    ],
+    "answer": "영고·1책 12법",
+    "explanation": "영고와 1책 12법은 부여의 핵심 키워드야.",
+    "id": "history-hangeom-044",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 초기 국가",
+    "type": "multiple",
+    "question": "다음 중 '고구려'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "최승로 시무 28조·12목 지방관",
+      "동맹·서옥제",
+      "홍범도 부대·1920년 6월",
+      "노비안검법·과거제"
+    ],
+    "answer": "동맹·서옥제",
+    "explanation": "동맹과 서옥제는 고구려의 특징이야.",
+    "id": "history-hangeom-045",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 초기 국가",
+    "type": "multiple",
+    "question": "다음 중 '옥저'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "민며느리제·가족 공동 무덤",
+      "비파형 동검·고인돌·계급 발생",
+      "우정총국·급진 개화파",
+      "사비 천도·남부여"
+    ],
+    "answer": "민며느리제·가족 공동 무덤",
+    "explanation": "민며느리제와 가족 공동 무덤은 옥저의 특징이야.",
+    "id": "history-hangeom-046",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 초기 국가",
+    "type": "multiple",
+    "question": "다음 중 '동예'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "운요호 사건·조선 최초 근대적 조약",
+      "군국기무처·신분제 폐지·과거제 폐지",
+      "몽골 침입기 조판·해인사 보관",
+      "무천·책화"
+    ],
+    "answer": "무천·책화",
+    "explanation": "무천과 책화는 동예의 특징이야.",
+    "id": "history-hangeom-047",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 초기 국가",
+    "type": "multiple",
+    "question": "다음 중 '삼한'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "서경 천도·금국 정벌·칭제건원",
+      "천군·소도·제정 분리",
+      "동맹·서옥제",
+      "영락 연호·대왕릉비"
+    ],
+    "answer": "천군·소도·제정 분리",
+    "explanation": "소도와 천군은 삼한의 특징이야.",
+    "id": "history-hangeom-048",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 고대",
+    "type": "multiple",
+    "question": "다음 중 '고구려 소수림왕'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "불교 수용·태학 설립·율령 반포",
+      "노비안검법·과거제",
+      "몽골 침입기 조판·해인사 보관",
+      "영고·1책 12법"
+    ],
+    "answer": "불교 수용·태학 설립·율령 반포",
+    "explanation": "소수림왕은 고구려 체제를 정비했어.",
+    "id": "history-hangeom-049",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 고대",
+    "type": "multiple",
+    "question": "다음 중 '고구려 광개토 대왕'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "대조영 건국·고구려 계승",
+      "관료전 지급·녹읍 폐지·국학 설립",
+      "영락 연호·대왕릉비",
+      "불교 수용·태학 설립·율령 반포"
+    ],
+    "answer": "영락 연호·대왕릉비",
+    "explanation": "광개토 대왕은 영락 연호와 대왕릉비가 핵심이야.",
+    "id": "history-hangeom-050",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 고대",
+    "type": "multiple",
+    "question": "다음 중 '고구려 장수왕'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "훈요 10조·북진 정책·호족 통합",
+      "좌우 합작·합법적 민족 운동 단체",
+      "홍범도 부대·1920년 6월",
+      "평양 천도·남진 정책"
+    ],
+    "answer": "평양 천도·남진 정책",
+    "explanation": "장수왕은 평양으로 천도하고 남진 정책을 추진했어.",
+    "id": "history-hangeom-051",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 고대",
+    "type": "multiple",
+    "question": "다음 중 '백제 무령왕'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "천군·소도·제정 분리",
+      "홍범도 부대·1920년 6월",
+      "불교 수용·태학 설립·율령 반포",
+      "무령왕릉·지석·22담로"
+    ],
+    "answer": "무령왕릉·지석·22담로",
+    "explanation": "무령왕릉 지석은 한능검 단골 키워드야.",
+    "id": "history-hangeom-052",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 고대",
+    "type": "multiple",
+    "question": "다음 중 '백제 성왕'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "김좌진·북로 군정서·1920년 10월",
+      "사비 천도·남부여",
+      "동맹·서옥제",
+      "운요호 사건·조선 최초 근대적 조약"
+    ],
+    "answer": "사비 천도·남부여",
+    "explanation": "성왕은 사비 천도와 남부여 국호 사용으로 유명해.",
+    "id": "history-hangeom-053",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 고대",
+    "type": "multiple",
+    "question": "다음 중 '신라 법흥왕'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "공납 폐단 시정·쌀/포/동전 납부",
+      "율령 반포·불교 공인",
+      "민며느리제·가족 공동 무덤",
+      "노비안검법·과거제"
+    ],
+    "answer": "율령 반포·불교 공인",
+    "explanation": "법흥왕은 신라 체제를 정비했어.",
+    "id": "history-hangeom-054",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 고대",
+    "type": "multiple",
+    "question": "다음 중 '신라 진흥왕'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "좌우 합작·합법적 민족 운동 단체",
+      "한강 유역 확보·순수비",
+      "서경 천도·금국 정벌·칭제건원",
+      "훈민정음·집현전·4군 6진"
+    ],
+    "answer": "한강 유역 확보·순수비",
+    "explanation": "진흥왕은 한강 유역 확보와 순수비가 핵심이야.",
+    "id": "history-hangeom-055",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 남북국",
+    "type": "multiple",
+    "question": "다음 중 '신라 신문왕'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "쌍성총관부 공격·전민변정도감",
+      "관료전 지급·녹읍 폐지·국학 설립",
+      "홍범도 부대·1920년 6월",
+      "사비 천도·남부여"
+    ],
+    "answer": "관료전 지급·녹읍 폐지·국학 설립",
+    "explanation": "신문왕은 왕권 강화 정책으로 자주 나와.",
+    "id": "history-hangeom-056",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 남북국",
+    "type": "multiple",
+    "question": "다음 중 '발해'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "공납 폐단 시정·쌀/포/동전 납부",
+      "영락 연호·대왕릉비",
+      "대조영 건국·고구려 계승",
+      "운요호 사건·조선 최초 근대적 조약"
+    ],
+    "answer": "대조영 건국·고구려 계승",
+    "explanation": "발해는 대조영이 건국했어.",
+    "id": "history-hangeom-057",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 남북국",
+    "type": "multiple",
+    "question": "다음 중 '발해 선왕'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "해동성국·발해 전성기",
+      "몽골 침입기 조판·해인사 보관",
+      "3·15 부정 선거·이승만 하야",
+      "쌍성총관부 공격·전민변정도감"
+    ],
+    "answer": "해동성국·발해 전성기",
+    "explanation": "발해는 선왕 때 전성기를 맞았어.",
+    "id": "history-hangeom-058",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 고려",
+    "type": "multiple",
+    "question": "다음 중 '고려 태조 왕건'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "훈요 10조·북진 정책·호족 통합",
+      "쌍성총관부 공격·전민변정도감",
+      "공납 폐단 시정·쌀/포/동전 납부",
+      "좌우 합작·합법적 민족 운동 단체"
+    ],
+    "answer": "훈요 10조·북진 정책·호족 통합",
+    "explanation": "태조 왕건은 훈요 10조를 남겼어.",
+    "id": "history-hangeom-059",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 고려",
+    "type": "multiple",
+    "question": "다음 중 '고려 광종'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "노비안검법·과거제",
+      "홍범도 부대·1920년 6월",
+      "군포 2필을 1필로 감소",
+      "공납 폐단 시정·쌀/포/동전 납부"
+    ],
+    "answer": "노비안검법·과거제",
+    "explanation": "광종은 왕권 강화를 위해 노비안검법과 과거제를 실시했어.",
+    "id": "history-hangeom-060",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 고려",
+    "type": "multiple",
+    "question": "다음 중 '고려 성종'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "최승로 시무 28조·12목 지방관",
+      "운요호 사건·조선 최초 근대적 조약",
+      "경국대전 완성·홍문관 설치",
+      "훈요 10조·북진 정책·호족 통합"
+    ],
+    "answer": "최승로 시무 28조·12목 지방관",
+    "explanation": "성종은 유교적 통치 체제를 정비했어.",
+    "id": "history-hangeom-061",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 고려",
+    "type": "multiple",
+    "question": "다음 중 '묘청의 서경 천도 운동'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "운요호 사건·조선 최초 근대적 조약",
+      "서경 천도·금국 정벌·칭제건원",
+      "김좌진·북로 군정서·1920년 10월",
+      "천군·소도·제정 분리"
+    ],
+    "answer": "서경 천도·금국 정벌·칭제건원",
+    "explanation": "묘청은 서경 천도와 금국 정벌을 주장했어.",
+    "id": "history-hangeom-062",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 고려",
+    "type": "multiple",
+    "question": "다음 중 '고려 공민왕'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "무령왕릉·지석·22담로",
+      "민족 대표 33인·독립 선언서",
+      "몽골 침입기 조판·해인사 보관",
+      "쌍성총관부 공격·전민변정도감"
+    ],
+    "answer": "쌍성총관부 공격·전민변정도감",
+    "explanation": "공민왕은 반원 자주 정책을 추진했어.",
+    "id": "history-hangeom-063",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 고려 문화",
+    "type": "multiple",
+    "question": "다음 중 '직지심체요절'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "김좌진·북로 군정서·1920년 10월",
+      "군포 2필을 1필로 감소",
+      "홍범도 부대·1920년 6월",
+      "현존 최고 금속 활자본"
+    ],
+    "answer": "현존 최고 금속 활자본",
+    "explanation": "직지는 고려 말 금속 활자 인쇄물이야.",
+    "id": "history-hangeom-064",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 고려 문화",
+    "type": "multiple",
+    "question": "다음 중 '팔만대장경'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "몽골 침입기 조판·해인사 보관",
+      "한강 유역 확보·순수비",
+      "사비 천도·남부여",
+      "최승로 시무 28조·12목 지방관"
+    ],
+    "answer": "몽골 침입기 조판·해인사 보관",
+    "explanation": "팔만대장경은 몽골 침입기에 조판되었어.",
+    "id": "history-hangeom-065",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 조선 전기",
+    "type": "multiple",
+    "question": "다음 중 '조선 세종'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "홍범도 부대·1920년 6월",
+      "훈요 10조·북진 정책·호족 통합",
+      "율령 반포·불교 공인",
+      "훈민정음·집현전·4군 6진"
+    ],
+    "answer": "훈민정음·집현전·4군 6진",
+    "explanation": "세종은 훈민정음 창제와 4군 6진 개척이 핵심이야.",
+    "id": "history-hangeom-066",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 조선 전기",
+    "type": "multiple",
+    "question": "다음 중 '조선 성종'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "운요호 사건·조선 최초 근대적 조약",
+      "천군·소도·제정 분리",
+      "최승로 시무 28조·12목 지방관",
+      "경국대전 완성·홍문관 설치"
+    ],
+    "answer": "경국대전 완성·홍문관 설치",
+    "explanation": "경국대전은 성종 때 완성되었어.",
+    "id": "history-hangeom-067",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 조선 후기",
+    "type": "multiple",
+    "question": "다음 중 '대동법'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "간석기·빗살무늬 토기·농경 시작",
+      "대조영 건국·고구려 계승",
+      "관료전 지급·녹읍 폐지·국학 설립",
+      "공납 폐단 시정·쌀/포/동전 납부"
+    ],
+    "answer": "공납 폐단 시정·쌀/포/동전 납부",
+    "explanation": "대동법은 공납의 폐단을 줄이기 위한 제도야.",
+    "id": "history-hangeom-068",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 조선 후기",
+    "type": "multiple",
+    "question": "다음 중 '균역법'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "군포 2필을 1필로 감소",
+      "해동성국·발해 전성기",
+      "대조영 건국·고구려 계승",
+      "김좌진·북로 군정서·1920년 10월"
+    ],
+    "answer": "군포 2필을 1필로 감소",
+    "explanation": "균역법은 영조 때 군포 부담을 줄인 제도야.",
+    "id": "history-hangeom-069",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 조선 후기",
+    "type": "multiple",
+    "question": "다음 중 '조선 정조'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "규장각·초계문신제·수원 화성",
+      "좌우 합작·합법적 민족 운동 단체",
+      "영락 연호·대왕릉비",
+      "주먹도끼·찍개·이동 생활"
+    ],
+    "answer": "규장각·초계문신제·수원 화성",
+    "explanation": "정조는 규장각과 수원 화성으로 자주 출제돼.",
+    "id": "history-hangeom-070",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 근대",
+    "type": "multiple",
+    "question": "다음 중 '강화도 조약'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "운요호 사건·조선 최초 근대적 조약",
+      "군포 2필을 1필로 감소",
+      "불교 수용·태학 설립·율령 반포",
+      "김원봉·조선 혁명 선언"
+    ],
+    "answer": "운요호 사건·조선 최초 근대적 조약",
+    "explanation": "강화도 조약은 1876년 체결되었어.",
+    "id": "history-hangeom-071",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 근대",
+    "type": "multiple",
+    "question": "다음 중 '갑신정변'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "대조영 건국·고구려 계승",
+      "쌍성총관부 공격·전민변정도감",
+      "우정총국·급진 개화파",
+      "영고·1책 12법"
+    ],
+    "answer": "우정총국·급진 개화파",
+    "explanation": "갑신정변은 급진 개화파가 일으켰어.",
+    "id": "history-hangeom-072",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 근대",
+    "type": "multiple",
+    "question": "다음 중 '동학 농민 운동'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "보국안민·제폭구민·집강소",
+      "서경 천도·금국 정벌·칭제건원",
+      "군국기무처·신분제 폐지·과거제 폐지",
+      "몽골 침입기 조판·해인사 보관"
+    ],
+    "answer": "보국안민·제폭구민·집강소",
+    "explanation": "동학 농민 운동은 1894년에 전개되었어.",
+    "id": "history-hangeom-073",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 근대",
+    "type": "multiple",
+    "question": "다음 중 '갑오개혁'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "군국기무처·신분제 폐지·과거제 폐지",
+      "민며느리제·가족 공동 무덤",
+      "홍범도 부대·1920년 6월",
+      "민족 대표 33인·독립 선언서"
+    ],
+    "answer": "군국기무처·신분제 폐지·과거제 폐지",
+    "explanation": "갑오개혁은 군국기무처 중심으로 추진됐어.",
+    "id": "history-hangeom-074",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 일제",
+    "type": "multiple",
+    "question": "다음 중 '3·1 운동'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "비파형 동검·고인돌·계급 발생",
+      "천군·소도·제정 분리",
+      "민족 대표 33인·독립 선언서",
+      "쌍성총관부 공격·전민변정도감"
+    ],
+    "answer": "민족 대표 33인·독립 선언서",
+    "explanation": "3·1 운동은 1919년에 전개되었어.",
+    "id": "history-hangeom-075",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 일제",
+    "type": "multiple",
+    "question": "다음 중 '의열단'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "무령왕릉·지석·22담로",
+      "군포 2필을 1필로 감소",
+      "몽골 침입기 조판·해인사 보관",
+      "김원봉·조선 혁명 선언"
+    ],
+    "answer": "김원봉·조선 혁명 선언",
+    "explanation": "의열단은 김원봉이 조직했어.",
+    "id": "history-hangeom-076",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 일제",
+    "type": "multiple",
+    "question": "다음 중 '봉오동 전투'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "홍범도 부대·1920년 6월",
+      "좌우 합작·합법적 민족 운동 단체",
+      "규장각·초계문신제·수원 화성",
+      "군포 2필을 1필로 감소"
+    ],
+    "answer": "홍범도 부대·1920년 6월",
+    "explanation": "봉오동 전투는 홍범도 부대가 활약했어.",
+    "id": "history-hangeom-077",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 일제",
+    "type": "multiple",
+    "question": "다음 중 '청산리 대첩'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "군국기무처·신분제 폐지·과거제 폐지",
+      "영락 연호·대왕릉비",
+      "민며느리제·가족 공동 무덤",
+      "김좌진·북로 군정서·1920년 10월"
+    ],
+    "answer": "김좌진·북로 군정서·1920년 10월",
+    "explanation": "청산리 대첩은 김좌진 등이 활약했어.",
+    "id": "history-hangeom-078",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 일제",
+    "type": "multiple",
+    "question": "다음 중 '신간회'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "좌우 합작·합법적 민족 운동 단체",
+      "비파형 동검·고인돌·계급 발생",
+      "노비안검법·과거제",
+      "훈요 10조·북진 정책·호족 통합"
+    ],
+    "answer": "좌우 합작·합법적 민족 운동 단체",
+    "explanation": "신간회는 1927년 조직된 좌우 합작 단체야.",
+    "id": "history-hangeom-079",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 현대",
+    "type": "multiple",
+    "question": "다음 중 '4·19 혁명'에 대한 설명으로 가장 알맞은 것은?",
+    "choices": [
+      "김원봉·조선 혁명 선언",
+      "3·15 부정 선거·이승만 하야",
+      "서경 천도·금국 정벌·칭제건원",
+      "영락 연호·대왕릉비"
+    ],
+    "answer": "3·15 부정 선거·이승만 하야",
+    "explanation": "4·19 혁명은 1960년에 일어났어.",
+    "id": "history-hangeom-080",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“주먹도끼·찍개·이동 생활”",
+    "choices": [
+      "청동기 시대",
+      "철기 시대",
+      "신석기 시대",
+      "구석기 시대"
+    ],
+    "answer": "구석기 시대",
+    "explanation": "주먹도끼와 이동 생활은 구석기 시대의 특징이야.",
+    "id": "history-hangeom-081",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“간석기·빗살무늬 토기·농경 시작”",
+    "choices": [
+      "구석기 시대",
+      "청동기 시대",
+      "신석기 시대",
+      "철기 시대"
+    ],
+    "answer": "신석기 시대",
+    "explanation": "간석기와 빗살무늬 토기는 신석기 시대의 특징이야.",
+    "id": "history-hangeom-082",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“비파형 동검·고인돌·계급 발생”",
+    "choices": [
+      "신석기 시대",
+      "철기 시대",
+      "청동기 시대",
+      "구석기 시대"
+    ],
+    "answer": "청동기 시대",
+    "explanation": "비파형 동검과 고인돌은 청동기 시대를 대표해.",
+    "id": "history-hangeom-083",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“영고·1책 12법”",
+    "choices": [
+      "옥저",
+      "고구려",
+      "부여",
+      "동예"
+    ],
+    "answer": "부여",
+    "explanation": "영고와 1책 12법은 부여의 핵심 키워드야.",
+    "id": "history-hangeom-084",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“동맹·서옥제”",
+    "choices": [
+      "부여",
+      "옥저",
+      "고구려",
+      "동예"
+    ],
+    "answer": "고구려",
+    "explanation": "동맹과 서옥제는 고구려의 특징이야.",
+    "id": "history-hangeom-085",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“민며느리제·가족 공동 무덤”",
+    "choices": [
+      "부여",
+      "고구려",
+      "옥저",
+      "동예"
+    ],
+    "answer": "옥저",
+    "explanation": "민며느리제와 가족 공동 무덤은 옥저의 특징이야.",
+    "id": "history-hangeom-086",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“무천·책화”",
+    "choices": [
+      "동예",
+      "고구려",
+      "부여",
+      "옥저"
+    ],
+    "answer": "동예",
+    "explanation": "무천과 책화는 동예의 특징이야.",
+    "id": "history-hangeom-087",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“천군·소도·제정 분리”",
+    "choices": [
+      "옥저",
+      "부여",
+      "삼한",
+      "고구려"
+    ],
+    "answer": "삼한",
+    "explanation": "소도와 천군은 삼한의 특징이야.",
+    "id": "history-hangeom-088",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“불교 수용·태학 설립·율령 반포”",
+    "choices": [
+      "고구려 장수왕",
+      "신라 법흥왕",
+      "백제 성왕",
+      "고구려 소수림왕"
+    ],
+    "answer": "고구려 소수림왕",
+    "explanation": "소수림왕은 고구려 체제를 정비했어.",
+    "id": "history-hangeom-089",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“영락 연호·대왕릉비”",
+    "choices": [
+      "백제 근초고왕",
+      "신라 진흥왕",
+      "고구려 장수왕",
+      "고구려 광개토 대왕"
+    ],
+    "answer": "고구려 광개토 대왕",
+    "explanation": "광개토 대왕은 영락 연호와 대왕릉비가 핵심이야.",
+    "id": "history-hangeom-090",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“평양 천도·남진 정책”",
+    "choices": [
+      "고구려 장수왕",
+      "백제 성왕",
+      "신라 진흥왕",
+      "고구려 소수림왕"
+    ],
+    "answer": "고구려 장수왕",
+    "explanation": "장수왕은 평양으로 천도하고 남진 정책을 추진했어.",
+    "id": "history-hangeom-091",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“무령왕릉·지석·22담로”",
+    "choices": [
+      "백제 성왕",
+      "신라 법흥왕",
+      "백제 무령왕",
+      "백제 근초고왕"
+    ],
+    "answer": "백제 무령왕",
+    "explanation": "무령왕릉 지석은 한능검 단골 키워드야.",
+    "id": "history-hangeom-092",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“사비 천도·남부여”",
+    "choices": [
+      "고구려 장수왕",
+      "백제 의자왕",
+      "백제 성왕",
+      "백제 무령왕"
+    ],
+    "answer": "백제 성왕",
+    "explanation": "성왕은 사비 천도와 남부여 국호 사용으로 유명해.",
+    "id": "history-hangeom-093",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“율령 반포·불교 공인”",
+    "choices": [
+      "신라 신문왕",
+      "신라 지증왕",
+      "신라 진흥왕",
+      "신라 법흥왕"
+    ],
+    "answer": "신라 법흥왕",
+    "explanation": "법흥왕은 신라 체제를 정비했어.",
+    "id": "history-hangeom-094",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“한강 유역 확보·순수비”",
+    "choices": [
+      "신라 문무왕",
+      "신라 법흥왕",
+      "신라 진흥왕",
+      "신라 지증왕"
+    ],
+    "answer": "신라 진흥왕",
+    "explanation": "진흥왕은 한강 유역 확보와 순수비가 핵심이야.",
+    "id": "history-hangeom-095",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“관료전 지급·녹읍 폐지·국학 설립”",
+    "choices": [
+      "신라 문무왕",
+      "발해 문왕",
+      "신라 원성왕",
+      "신라 신문왕"
+    ],
+    "answer": "신라 신문왕",
+    "explanation": "신문왕은 왕권 강화 정책으로 자주 나와.",
+    "id": "history-hangeom-096",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“대조영 건국·고구려 계승”",
+    "choices": [
+      "발해",
+      "통일 신라",
+      "후백제",
+      "태봉"
+    ],
+    "answer": "발해",
+    "explanation": "발해는 대조영이 건국했어.",
+    "id": "history-hangeom-097",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“해동성국·발해 전성기”",
+    "choices": [
+      "발해 문왕",
+      "발해 선왕",
+      "신라 신문왕",
+      "발해 무왕"
+    ],
+    "answer": "발해 선왕",
+    "explanation": "발해는 선왕 때 전성기를 맞았어.",
+    "id": "history-hangeom-098",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“훈요 10조·북진 정책·호족 통합”",
+    "choices": [
+      "고려 성종",
+      "고려 공민왕",
+      "고려 태조 왕건",
+      "고려 광종"
+    ],
+    "answer": "고려 태조 왕건",
+    "explanation": "태조 왕건은 훈요 10조를 남겼어.",
+    "id": "history-hangeom-099",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“노비안검법·과거제”",
+    "choices": [
+      "고려 태조",
+      "고려 성종",
+      "고려 광종",
+      "고려 공민왕"
+    ],
+    "answer": "고려 광종",
+    "explanation": "광종은 왕권 강화를 위해 노비안검법과 과거제를 실시했어.",
+    "id": "history-hangeom-100",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“최승로 시무 28조·12목 지방관”",
+    "choices": [
+      "고려 태조",
+      "고려 공민왕",
+      "고려 성종",
+      "고려 광종"
+    ],
+    "answer": "고려 성종",
+    "explanation": "성종은 유교적 통치 체제를 정비했어.",
+    "id": "history-hangeom-101",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“서경 천도·금국 정벌·칭제건원”",
+    "choices": [
+      "이자겸의 난",
+      "무신 정변",
+      "위화도 회군",
+      "묘청의 서경 천도 운동"
+    ],
+    "answer": "묘청의 서경 천도 운동",
+    "explanation": "묘청은 서경 천도와 금국 정벌을 주장했어.",
+    "id": "history-hangeom-102",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“쌍성총관부 공격·전민변정도감”",
+    "choices": [
+      "고려 성종",
+      "고려 충렬왕",
+      "고려 광종",
+      "고려 공민왕"
+    ],
+    "answer": "고려 공민왕",
+    "explanation": "공민왕은 반원 자주 정책을 추진했어.",
+    "id": "history-hangeom-103",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“현존 최고 금속 활자본”",
+    "choices": [
+      "직지심체요절",
+      "훈민정음",
+      "팔만대장경",
+      "삼국사기"
+    ],
+    "answer": "직지심체요절",
+    "explanation": "직지는 고려 말 금속 활자 인쇄물이야.",
+    "id": "history-hangeom-104",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“몽골 침입기 조판·해인사 보관”",
+    "choices": [
+      "동국통감",
+      "팔만대장경",
+      "삼국유사",
+      "직지심체요절"
+    ],
+    "answer": "팔만대장경",
+    "explanation": "팔만대장경은 몽골 침입기에 조판되었어.",
+    "id": "history-hangeom-105",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“훈민정음·집현전·4군 6진”",
+    "choices": [
+      "조선 태종",
+      "조선 세조",
+      "조선 세종",
+      "조선 성종"
+    ],
+    "answer": "조선 세종",
+    "explanation": "세종은 훈민정음 창제와 4군 6진 개척이 핵심이야.",
+    "id": "history-hangeom-106",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“경국대전 완성·홍문관 설치”",
+    "choices": [
+      "조선 성종",
+      "조선 정조",
+      "조선 세조",
+      "조선 세종"
+    ],
+    "answer": "조선 성종",
+    "explanation": "경국대전은 성종 때 완성되었어.",
+    "id": "history-hangeom-107",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“공납 폐단 시정·쌀/포/동전 납부”",
+    "choices": [
+      "과전법",
+      "균역법",
+      "영정법",
+      "대동법"
+    ],
+    "answer": "대동법",
+    "explanation": "대동법은 공납의 폐단을 줄이기 위한 제도야.",
+    "id": "history-hangeom-108",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“군포 2필을 1필로 감소”",
+    "choices": [
+      "호포법",
+      "대동법",
+      "영정법",
+      "균역법"
+    ],
+    "answer": "균역법",
+    "explanation": "균역법은 영조 때 군포 부담을 줄인 제도야.",
+    "id": "history-hangeom-109",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“규장각·초계문신제·수원 화성”",
+    "choices": [
+      "조선 숙종",
+      "조선 정조",
+      "조선 영조",
+      "조선 세종"
+    ],
+    "answer": "조선 정조",
+    "explanation": "정조는 규장각과 수원 화성으로 자주 출제돼.",
+    "id": "history-hangeom-110",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“운요호 사건·조선 최초 근대적 조약”",
+    "choices": [
+      "한성 조약",
+      "강화도 조약",
+      "조미 수호 통상 조약",
+      "제물포 조약"
+    ],
+    "answer": "강화도 조약",
+    "explanation": "강화도 조약은 1876년 체결되었어.",
+    "id": "history-hangeom-111",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“우정총국·급진 개화파”",
+    "choices": [
+      "독립협회",
+      "갑신정변",
+      "갑오개혁",
+      "임오군란"
+    ],
+    "answer": "갑신정변",
+    "explanation": "갑신정변은 급진 개화파가 일으켰어.",
+    "id": "history-hangeom-112",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“보국안민·제폭구민·집강소”",
+    "choices": [
+      "갑신정변",
+      "동학 농민 운동",
+      "독립협회 운동",
+      "임오군란"
+    ],
+    "answer": "동학 농민 운동",
+    "explanation": "동학 농민 운동은 1894년에 전개되었어.",
+    "id": "history-hangeom-113",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“군국기무처·신분제 폐지·과거제 폐지”",
+    "choices": [
+      "광무개혁",
+      "갑신정변",
+      "을미개혁",
+      "갑오개혁"
+    ],
+    "answer": "갑오개혁",
+    "explanation": "갑오개혁은 군국기무처 중심으로 추진됐어.",
+    "id": "history-hangeom-114",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“민족 대표 33인·독립 선언서”",
+    "choices": [
+      "6·10 만세 운동",
+      "3·1 운동",
+      "광주 학생 항일 운동",
+      "국채 보상 운동"
+    ],
+    "answer": "3·1 운동",
+    "explanation": "3·1 운동은 1919년에 전개되었어.",
+    "id": "history-hangeom-115",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“김원봉·조선 혁명 선언”",
+    "choices": [
+      "신간회",
+      "의열단",
+      "신민회",
+      "조선어 학회"
+    ],
+    "answer": "의열단",
+    "explanation": "의열단은 김원봉이 조직했어.",
+    "id": "history-hangeom-116",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“홍범도 부대·1920년 6월”",
+    "choices": [
+      "청산리 대첩",
+      "봉오동 전투",
+      "쌍성보 전투",
+      "대전자령 전투"
+    ],
+    "answer": "봉오동 전투",
+    "explanation": "봉오동 전투는 홍범도 부대가 활약했어.",
+    "id": "history-hangeom-117",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“김좌진·북로 군정서·1920년 10월”",
+    "choices": [
+      "쌍성보 전투",
+      "청산리 대첩",
+      "대전자령 전투",
+      "봉오동 전투"
+    ],
+    "answer": "청산리 대첩",
+    "explanation": "청산리 대첩은 김좌진 등이 활약했어.",
+    "id": "history-hangeom-118",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“좌우 합작·합법적 민족 운동 단체”",
+    "choices": [
+      "신간회",
+      "의열단",
+      "신민회",
+      "독립협회"
+    ],
+    "answer": "신간회",
+    "explanation": "신간회는 1927년 조직된 좌우 합작 단체야.",
+    "id": "history-hangeom-119",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 사료형",
+    "type": "multiple",
+    "question": "다음 자료의 밑줄 친 시기/대상으로 알맞은 것은?\n“3·15 부정 선거·이승만 하야”",
+    "choices": [
+      "6월 민주 항쟁",
+      "5·16 군사 정변",
+      "5·18 민주화 운동",
+      "4·19 혁명"
+    ],
+    "answer": "4·19 혁명",
+    "explanation": "4·19 혁명은 1960년에 일어났어.",
+    "id": "history-hangeom-120",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom",
+    "difficulty": 4
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "고구려 평양 천도 → 백제 사비 천도 → 신라 한강 유역 확보",
+      "백제 사비 천도 → 고구려 평양 천도 → 신라 한강 유역 확보",
+      "신라 한강 유역 확보 → 고구려 평양 천도 → 백제 사비 천도",
+      "고구려 평양 천도 → 신라 한강 유역 확보 → 백제 사비 천도"
+    ],
+    "answer": "고구려 평양 천도 → 백제 사비 천도 → 신라 한강 유역 확보",
+    "explanation": "고대 주요 사건의 순서야.",
+    "difficulty": 5,
+    "id": "history-hangeom-121",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "과거제 실시 → 시무 28조 수용 → 묘청의 서경 천도 운동",
+      "시무 28조 수용 → 과거제 실시 → 묘청의 서경 천도 운동",
+      "묘청의 서경 천도 운동 → 과거제 실시 → 시무 28조 수용",
+      "과거제 실시 → 묘청의 서경 천도 운동 → 시무 28조 수용"
+    ],
+    "answer": "과거제 실시 → 시무 28조 수용 → 묘청의 서경 천도 운동",
+    "explanation": "고려 광종 → 성종 → 인종 흐름이야.",
+    "difficulty": 5,
+    "id": "history-hangeom-122",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "강화도 조약 → 갑신정변 → 동학 농민 운동",
+      "갑신정변 → 강화도 조약 → 동학 농민 운동",
+      "동학 농민 운동 → 강화도 조약 → 갑신정변",
+      "강화도 조약 → 동학 농민 운동 → 갑신정변"
+    ],
+    "answer": "강화도 조약 → 갑신정변 → 동학 농민 운동",
+    "explanation": "1876 → 1884 → 1894 흐름이야.",
+    "difficulty": 5,
+    "id": "history-hangeom-123",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "3·1 운동 → 봉오동 전투 → 청산리 대첩",
+      "봉오동 전투 → 3·1 운동 → 청산리 대첩",
+      "청산리 대첩 → 3·1 운동 → 봉오동 전투",
+      "3·1 운동 → 청산리 대첩 → 봉오동 전투"
+    ],
+    "answer": "3·1 운동 → 봉오동 전투 → 청산리 대첩",
+    "explanation": "1919년 뒤 1920년 전투들이 이어져.",
+    "difficulty": 5,
+    "id": "history-hangeom-124",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "4·19 혁명 → 5·16 군사 정변 → 6월 민주 항쟁",
+      "5·16 군사 정변 → 4·19 혁명 → 6월 민주 항쟁",
+      "6월 민주 항쟁 → 4·19 혁명 → 5·16 군사 정변",
+      "4·19 혁명 → 6월 민주 항쟁 → 5·16 군사 정변"
+    ],
+    "answer": "4·19 혁명 → 5·16 군사 정변 → 6월 민주 항쟁",
+    "explanation": "1960 → 1961 → 1987 흐름이야.",
+    "difficulty": 5,
+    "id": "history-hangeom-125",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "고구려 평양 천도 → 백제 사비 천도 → 신라 한강 유역 확보",
+      "백제 사비 천도 → 고구려 평양 천도 → 신라 한강 유역 확보",
+      "신라 한강 유역 확보 → 고구려 평양 천도 → 백제 사비 천도",
+      "고구려 평양 천도 → 신라 한강 유역 확보 → 백제 사비 천도"
+    ],
+    "answer": "고구려 평양 천도 → 백제 사비 천도 → 신라 한강 유역 확보",
+    "explanation": "고대 주요 사건의 순서야.",
+    "difficulty": 5,
+    "id": "history-hangeom-126",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "과거제 실시 → 시무 28조 수용 → 묘청의 서경 천도 운동",
+      "시무 28조 수용 → 과거제 실시 → 묘청의 서경 천도 운동",
+      "묘청의 서경 천도 운동 → 과거제 실시 → 시무 28조 수용",
+      "과거제 실시 → 묘청의 서경 천도 운동 → 시무 28조 수용"
+    ],
+    "answer": "과거제 실시 → 시무 28조 수용 → 묘청의 서경 천도 운동",
+    "explanation": "고려 광종 → 성종 → 인종 흐름이야.",
+    "difficulty": 5,
+    "id": "history-hangeom-127",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "강화도 조약 → 갑신정변 → 동학 농민 운동",
+      "갑신정변 → 강화도 조약 → 동학 농민 운동",
+      "동학 농민 운동 → 강화도 조약 → 갑신정변",
+      "강화도 조약 → 동학 농민 운동 → 갑신정변"
+    ],
+    "answer": "강화도 조약 → 갑신정변 → 동학 농민 운동",
+    "explanation": "1876 → 1884 → 1894 흐름이야.",
+    "difficulty": 5,
+    "id": "history-hangeom-128",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "3·1 운동 → 봉오동 전투 → 청산리 대첩",
+      "봉오동 전투 → 3·1 운동 → 청산리 대첩",
+      "청산리 대첩 → 3·1 운동 → 봉오동 전투",
+      "3·1 운동 → 청산리 대첩 → 봉오동 전투"
+    ],
+    "answer": "3·1 운동 → 봉오동 전투 → 청산리 대첩",
+    "explanation": "1919년 뒤 1920년 전투들이 이어져.",
+    "difficulty": 5,
+    "id": "history-hangeom-129",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "4·19 혁명 → 5·16 군사 정변 → 6월 민주 항쟁",
+      "5·16 군사 정변 → 4·19 혁명 → 6월 민주 항쟁",
+      "6월 민주 항쟁 → 4·19 혁명 → 5·16 군사 정변",
+      "4·19 혁명 → 6월 민주 항쟁 → 5·16 군사 정변"
+    ],
+    "answer": "4·19 혁명 → 5·16 군사 정변 → 6월 민주 항쟁",
+    "explanation": "1960 → 1961 → 1987 흐름이야.",
+    "difficulty": 5,
+    "id": "history-hangeom-130",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "고구려 평양 천도 → 백제 사비 천도 → 신라 한강 유역 확보",
+      "백제 사비 천도 → 고구려 평양 천도 → 신라 한강 유역 확보",
+      "신라 한강 유역 확보 → 고구려 평양 천도 → 백제 사비 천도",
+      "고구려 평양 천도 → 신라 한강 유역 확보 → 백제 사비 천도"
+    ],
+    "answer": "고구려 평양 천도 → 백제 사비 천도 → 신라 한강 유역 확보",
+    "explanation": "고대 주요 사건의 순서야.",
+    "difficulty": 5,
+    "id": "history-hangeom-131",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "과거제 실시 → 시무 28조 수용 → 묘청의 서경 천도 운동",
+      "시무 28조 수용 → 과거제 실시 → 묘청의 서경 천도 운동",
+      "묘청의 서경 천도 운동 → 과거제 실시 → 시무 28조 수용",
+      "과거제 실시 → 묘청의 서경 천도 운동 → 시무 28조 수용"
+    ],
+    "answer": "과거제 실시 → 시무 28조 수용 → 묘청의 서경 천도 운동",
+    "explanation": "고려 광종 → 성종 → 인종 흐름이야.",
+    "difficulty": 5,
+    "id": "history-hangeom-132",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "강화도 조약 → 갑신정변 → 동학 농민 운동",
+      "갑신정변 → 강화도 조약 → 동학 농민 운동",
+      "동학 농민 운동 → 강화도 조약 → 갑신정변",
+      "강화도 조약 → 동학 농민 운동 → 갑신정변"
+    ],
+    "answer": "강화도 조약 → 갑신정변 → 동학 농민 운동",
+    "explanation": "1876 → 1884 → 1894 흐름이야.",
+    "difficulty": 5,
+    "id": "history-hangeom-133",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "3·1 운동 → 봉오동 전투 → 청산리 대첩",
+      "봉오동 전투 → 3·1 운동 → 청산리 대첩",
+      "청산리 대첩 → 3·1 운동 → 봉오동 전투",
+      "3·1 운동 → 청산리 대첩 → 봉오동 전투"
+    ],
+    "answer": "3·1 운동 → 봉오동 전투 → 청산리 대첩",
+    "explanation": "1919년 뒤 1920년 전투들이 이어져.",
+    "difficulty": 5,
+    "id": "history-hangeom-134",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "4·19 혁명 → 5·16 군사 정변 → 6월 민주 항쟁",
+      "5·16 군사 정변 → 4·19 혁명 → 6월 민주 항쟁",
+      "6월 민주 항쟁 → 4·19 혁명 → 5·16 군사 정변",
+      "4·19 혁명 → 6월 민주 항쟁 → 5·16 군사 정변"
+    ],
+    "answer": "4·19 혁명 → 5·16 군사 정변 → 6월 민주 항쟁",
+    "explanation": "1960 → 1961 → 1987 흐름이야.",
+    "difficulty": 5,
+    "id": "history-hangeom-135",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "고구려 평양 천도 → 백제 사비 천도 → 신라 한강 유역 확보",
+      "백제 사비 천도 → 고구려 평양 천도 → 신라 한강 유역 확보",
+      "신라 한강 유역 확보 → 고구려 평양 천도 → 백제 사비 천도",
+      "고구려 평양 천도 → 신라 한강 유역 확보 → 백제 사비 천도"
+    ],
+    "answer": "고구려 평양 천도 → 백제 사비 천도 → 신라 한강 유역 확보",
+    "explanation": "고대 주요 사건의 순서야.",
+    "difficulty": 5,
+    "id": "history-hangeom-136",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "과거제 실시 → 시무 28조 수용 → 묘청의 서경 천도 운동",
+      "시무 28조 수용 → 과거제 실시 → 묘청의 서경 천도 운동",
+      "묘청의 서경 천도 운동 → 과거제 실시 → 시무 28조 수용",
+      "과거제 실시 → 묘청의 서경 천도 운동 → 시무 28조 수용"
+    ],
+    "answer": "과거제 실시 → 시무 28조 수용 → 묘청의 서경 천도 운동",
+    "explanation": "고려 광종 → 성종 → 인종 흐름이야.",
+    "difficulty": 5,
+    "id": "history-hangeom-137",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "강화도 조약 → 갑신정변 → 동학 농민 운동",
+      "갑신정변 → 강화도 조약 → 동학 농민 운동",
+      "동학 농민 운동 → 강화도 조약 → 갑신정변",
+      "강화도 조약 → 동학 농민 운동 → 갑신정변"
+    ],
+    "answer": "강화도 조약 → 갑신정변 → 동학 농민 운동",
+    "explanation": "1876 → 1884 → 1894 흐름이야.",
+    "difficulty": 5,
+    "id": "history-hangeom-138",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "3·1 운동 → 봉오동 전투 → 청산리 대첩",
+      "봉오동 전투 → 3·1 운동 → 청산리 대첩",
+      "청산리 대첩 → 3·1 운동 → 봉오동 전투",
+      "3·1 운동 → 청산리 대첩 → 봉오동 전투"
+    ],
+    "answer": "3·1 운동 → 봉오동 전투 → 청산리 대첩",
+    "explanation": "1919년 뒤 1920년 전투들이 이어져.",
+    "difficulty": 5,
+    "id": "history-hangeom-139",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "4·19 혁명 → 5·16 군사 정변 → 6월 민주 항쟁",
+      "5·16 군사 정변 → 4·19 혁명 → 6월 민주 항쟁",
+      "6월 민주 항쟁 → 4·19 혁명 → 5·16 군사 정변",
+      "4·19 혁명 → 6월 민주 항쟁 → 5·16 군사 정변"
+    ],
+    "answer": "4·19 혁명 → 5·16 군사 정변 → 6월 민주 항쟁",
+    "explanation": "1960 → 1961 → 1987 흐름이야.",
+    "difficulty": 5,
+    "id": "history-hangeom-140",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "고구려 평양 천도 → 백제 사비 천도 → 신라 한강 유역 확보",
+      "백제 사비 천도 → 고구려 평양 천도 → 신라 한강 유역 확보",
+      "신라 한강 유역 확보 → 고구려 평양 천도 → 백제 사비 천도",
+      "고구려 평양 천도 → 신라 한강 유역 확보 → 백제 사비 천도"
+    ],
+    "answer": "고구려 평양 천도 → 백제 사비 천도 → 신라 한강 유역 확보",
+    "explanation": "고대 주요 사건의 순서야.",
+    "difficulty": 5,
+    "id": "history-hangeom-141",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "과거제 실시 → 시무 28조 수용 → 묘청의 서경 천도 운동",
+      "시무 28조 수용 → 과거제 실시 → 묘청의 서경 천도 운동",
+      "묘청의 서경 천도 운동 → 과거제 실시 → 시무 28조 수용",
+      "과거제 실시 → 묘청의 서경 천도 운동 → 시무 28조 수용"
+    ],
+    "answer": "과거제 실시 → 시무 28조 수용 → 묘청의 서경 천도 운동",
+    "explanation": "고려 광종 → 성종 → 인종 흐름이야.",
+    "difficulty": 5,
+    "id": "history-hangeom-142",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "강화도 조약 → 갑신정변 → 동학 농민 운동",
+      "갑신정변 → 강화도 조약 → 동학 농민 운동",
+      "동학 농민 운동 → 강화도 조약 → 갑신정변",
+      "강화도 조약 → 동학 농민 운동 → 갑신정변"
+    ],
+    "answer": "강화도 조약 → 갑신정변 → 동학 농민 운동",
+    "explanation": "1876 → 1884 → 1894 흐름이야.",
+    "difficulty": 5,
+    "id": "history-hangeom-143",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "3·1 운동 → 봉오동 전투 → 청산리 대첩",
+      "봉오동 전투 → 3·1 운동 → 청산리 대첩",
+      "청산리 대첩 → 3·1 운동 → 봉오동 전투",
+      "3·1 운동 → 청산리 대첩 → 봉오동 전투"
+    ],
+    "answer": "3·1 운동 → 봉오동 전투 → 청산리 대첩",
+    "explanation": "1919년 뒤 1920년 전투들이 이어져.",
+    "difficulty": 5,
+    "id": "history-hangeom-144",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "4·19 혁명 → 5·16 군사 정변 → 6월 민주 항쟁",
+      "5·16 군사 정변 → 4·19 혁명 → 6월 민주 항쟁",
+      "6월 민주 항쟁 → 4·19 혁명 → 5·16 군사 정변",
+      "4·19 혁명 → 6월 민주 항쟁 → 5·16 군사 정변"
+    ],
+    "answer": "4·19 혁명 → 5·16 군사 정변 → 6월 민주 항쟁",
+    "explanation": "1960 → 1961 → 1987 흐름이야.",
+    "difficulty": 5,
+    "id": "history-hangeom-145",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "고구려 평양 천도 → 백제 사비 천도 → 신라 한강 유역 확보",
+      "백제 사비 천도 → 고구려 평양 천도 → 신라 한강 유역 확보",
+      "신라 한강 유역 확보 → 고구려 평양 천도 → 백제 사비 천도",
+      "고구려 평양 천도 → 신라 한강 유역 확보 → 백제 사비 천도"
+    ],
+    "answer": "고구려 평양 천도 → 백제 사비 천도 → 신라 한강 유역 확보",
+    "explanation": "고대 주요 사건의 순서야.",
+    "difficulty": 5,
+    "id": "history-hangeom-146",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "과거제 실시 → 시무 28조 수용 → 묘청의 서경 천도 운동",
+      "시무 28조 수용 → 과거제 실시 → 묘청의 서경 천도 운동",
+      "묘청의 서경 천도 운동 → 과거제 실시 → 시무 28조 수용",
+      "과거제 실시 → 묘청의 서경 천도 운동 → 시무 28조 수용"
+    ],
+    "answer": "과거제 실시 → 시무 28조 수용 → 묘청의 서경 천도 운동",
+    "explanation": "고려 광종 → 성종 → 인종 흐름이야.",
+    "difficulty": 5,
+    "id": "history-hangeom-147",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "강화도 조약 → 갑신정변 → 동학 농민 운동",
+      "갑신정변 → 강화도 조약 → 동학 농민 운동",
+      "동학 농민 운동 → 강화도 조약 → 갑신정변",
+      "강화도 조약 → 동학 농민 운동 → 갑신정변"
+    ],
+    "answer": "강화도 조약 → 갑신정변 → 동학 농민 운동",
+    "explanation": "1876 → 1884 → 1894 흐름이야.",
+    "difficulty": 5,
+    "id": "history-hangeom-148",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "3·1 운동 → 봉오동 전투 → 청산리 대첩",
+      "봉오동 전투 → 3·1 운동 → 청산리 대첩",
+      "청산리 대첩 → 3·1 운동 → 봉오동 전투",
+      "3·1 운동 → 청산리 대첩 → 봉오동 전투"
+    ],
+    "answer": "3·1 운동 → 봉오동 전투 → 청산리 대첩",
+    "explanation": "1919년 뒤 1920년 전투들이 이어져.",
+    "difficulty": 5,
+    "id": "history-hangeom-149",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "4·19 혁명 → 5·16 군사 정변 → 6월 민주 항쟁",
+      "5·16 군사 정변 → 4·19 혁명 → 6월 민주 항쟁",
+      "6월 민주 항쟁 → 4·19 혁명 → 5·16 군사 정변",
+      "4·19 혁명 → 6월 민주 항쟁 → 5·16 군사 정변"
+    ],
+    "answer": "4·19 혁명 → 5·16 군사 정변 → 6월 민주 항쟁",
+    "explanation": "1960 → 1961 → 1987 흐름이야.",
+    "difficulty": 5,
+    "id": "history-hangeom-150",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "고구려 평양 천도 → 백제 사비 천도 → 신라 한강 유역 확보",
+      "백제 사비 천도 → 고구려 평양 천도 → 신라 한강 유역 확보",
+      "신라 한강 유역 확보 → 고구려 평양 천도 → 백제 사비 천도",
+      "고구려 평양 천도 → 신라 한강 유역 확보 → 백제 사비 천도"
+    ],
+    "answer": "고구려 평양 천도 → 백제 사비 천도 → 신라 한강 유역 확보",
+    "explanation": "고대 주요 사건의 순서야.",
+    "difficulty": 5,
+    "id": "history-hangeom-151",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "과거제 실시 → 시무 28조 수용 → 묘청의 서경 천도 운동",
+      "시무 28조 수용 → 과거제 실시 → 묘청의 서경 천도 운동",
+      "묘청의 서경 천도 운동 → 과거제 실시 → 시무 28조 수용",
+      "과거제 실시 → 묘청의 서경 천도 운동 → 시무 28조 수용"
+    ],
+    "answer": "과거제 실시 → 시무 28조 수용 → 묘청의 서경 천도 운동",
+    "explanation": "고려 광종 → 성종 → 인종 흐름이야.",
+    "difficulty": 5,
+    "id": "history-hangeom-152",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "강화도 조약 → 갑신정변 → 동학 농민 운동",
+      "갑신정변 → 강화도 조약 → 동학 농민 운동",
+      "동학 농민 운동 → 강화도 조약 → 갑신정변",
+      "강화도 조약 → 동학 농민 운동 → 갑신정변"
+    ],
+    "answer": "강화도 조약 → 갑신정변 → 동학 농민 운동",
+    "explanation": "1876 → 1884 → 1894 흐름이야.",
+    "difficulty": 5,
+    "id": "history-hangeom-153",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "3·1 운동 → 봉오동 전투 → 청산리 대첩",
+      "봉오동 전투 → 3·1 운동 → 청산리 대첩",
+      "청산리 대첩 → 3·1 운동 → 봉오동 전투",
+      "3·1 운동 → 청산리 대첩 → 봉오동 전투"
+    ],
+    "answer": "3·1 운동 → 봉오동 전투 → 청산리 대첩",
+    "explanation": "1919년 뒤 1920년 전투들이 이어져.",
+    "difficulty": 5,
+    "id": "history-hangeom-154",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "4·19 혁명 → 5·16 군사 정변 → 6월 민주 항쟁",
+      "5·16 군사 정변 → 4·19 혁명 → 6월 민주 항쟁",
+      "6월 민주 항쟁 → 4·19 혁명 → 5·16 군사 정변",
+      "4·19 혁명 → 6월 민주 항쟁 → 5·16 군사 정변"
+    ],
+    "answer": "4·19 혁명 → 5·16 군사 정변 → 6월 민주 항쟁",
+    "explanation": "1960 → 1961 → 1987 흐름이야.",
+    "difficulty": 5,
+    "id": "history-hangeom-155",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "고구려 평양 천도 → 백제 사비 천도 → 신라 한강 유역 확보",
+      "백제 사비 천도 → 고구려 평양 천도 → 신라 한강 유역 확보",
+      "신라 한강 유역 확보 → 고구려 평양 천도 → 백제 사비 천도",
+      "고구려 평양 천도 → 신라 한강 유역 확보 → 백제 사비 천도"
+    ],
+    "answer": "고구려 평양 천도 → 백제 사비 천도 → 신라 한강 유역 확보",
+    "explanation": "고대 주요 사건의 순서야.",
+    "difficulty": 5,
+    "id": "history-hangeom-156",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "과거제 실시 → 시무 28조 수용 → 묘청의 서경 천도 운동",
+      "시무 28조 수용 → 과거제 실시 → 묘청의 서경 천도 운동",
+      "묘청의 서경 천도 운동 → 과거제 실시 → 시무 28조 수용",
+      "과거제 실시 → 묘청의 서경 천도 운동 → 시무 28조 수용"
+    ],
+    "answer": "과거제 실시 → 시무 28조 수용 → 묘청의 서경 천도 운동",
+    "explanation": "고려 광종 → 성종 → 인종 흐름이야.",
+    "difficulty": 5,
+    "id": "history-hangeom-157",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "강화도 조약 → 갑신정변 → 동학 농민 운동",
+      "갑신정변 → 강화도 조약 → 동학 농민 운동",
+      "동학 농민 운동 → 강화도 조약 → 갑신정변",
+      "강화도 조약 → 동학 농민 운동 → 갑신정변"
+    ],
+    "answer": "강화도 조약 → 갑신정변 → 동학 농민 운동",
+    "explanation": "1876 → 1884 → 1894 흐름이야.",
+    "difficulty": 5,
+    "id": "history-hangeom-158",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "3·1 운동 → 봉오동 전투 → 청산리 대첩",
+      "봉오동 전투 → 3·1 운동 → 청산리 대첩",
+      "청산리 대첩 → 3·1 운동 → 봉오동 전투",
+      "3·1 운동 → 청산리 대첩 → 봉오동 전투"
+    ],
+    "answer": "3·1 운동 → 봉오동 전투 → 청산리 대첩",
+    "explanation": "1919년 뒤 1920년 전투들이 이어져.",
+    "difficulty": 5,
+    "id": "history-hangeom-159",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 순서 배열",
+    "type": "multiple",
+    "question": "다음 사건을 시기순으로 바르게 나열한 것은?",
+    "choices": [
+      "4·19 혁명 → 5·16 군사 정변 → 6월 민주 항쟁",
+      "5·16 군사 정변 → 4·19 혁명 → 6월 민주 항쟁",
+      "6월 민주 항쟁 → 4·19 혁명 → 5·16 군사 정변",
+      "4·19 혁명 → 6월 민주 항쟁 → 5·16 군사 정변"
+    ],
+    "answer": "4·19 혁명 → 5·16 군사 정변 → 6월 민주 항쟁",
+    "explanation": "1960 → 1961 → 1987 흐름이야.",
+    "difficulty": 5,
+    "id": "history-hangeom-160",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "구석기 시대에는 주로 이동 생활을 하며 동굴이나 막집에서 살았다.",
+    "answer": "O",
+    "explanation": "구석기 시대 사람들은 이동 생활을 했어.",
+    "difficulty": 3,
+    "id": "history-hangeom-161",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "신석기 시대에는 빗살무늬 토기와 간석기가 사용되었다.",
+    "answer": "O",
+    "explanation": "빗살무늬 토기와 간석기는 신석기 시대 특징이야.",
+    "difficulty": 3,
+    "id": "history-hangeom-162",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "부여의 제천 행사는 무천이었다.",
+    "answer": "X",
+    "explanation": "부여는 영고, 동예가 무천이야.",
+    "difficulty": 3,
+    "id": "history-hangeom-163",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "고구려에는 서옥제 풍습이 있었다.",
+    "answer": "O",
+    "explanation": "서옥제는 고구려의 혼인 풍습이야.",
+    "difficulty": 3,
+    "id": "history-hangeom-164",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "삼한에는 소도라는 신성 지역이 있었다.",
+    "answer": "O",
+    "explanation": "삼한은 천군과 소도가 핵심이야.",
+    "difficulty": 3,
+    "id": "history-hangeom-165",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "소수림왕은 불교 수용, 태학 설립, 율령 반포를 추진하였다.",
+    "answer": "O",
+    "explanation": "소수림왕의 체제 정비 정책이야.",
+    "difficulty": 3,
+    "id": "history-hangeom-166",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "장수왕은 평양 천도와 남진 정책을 추진하였다.",
+    "answer": "O",
+    "explanation": "장수왕은 평양으로 천도했어.",
+    "difficulty": 3,
+    "id": "history-hangeom-167",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "백제 성왕은 사비로 천도하였다.",
+    "answer": "O",
+    "explanation": "성왕은 사비 천도와 남부여 국호 사용이 핵심이야.",
+    "difficulty": 3,
+    "id": "history-hangeom-168",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "신라 법흥왕은 불교를 공인하고 율령을 반포하였다.",
+    "answer": "O",
+    "explanation": "법흥왕의 대표 업적이야.",
+    "difficulty": 3,
+    "id": "history-hangeom-169",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "발해는 대조영이 건국하였다.",
+    "answer": "O",
+    "explanation": "발해는 대조영이 건국했어.",
+    "difficulty": 3,
+    "id": "history-hangeom-170",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "고려 광종은 노비안검법을 시행하고 과거제를 실시하였다.",
+    "answer": "O",
+    "explanation": "광종의 왕권 강화 정책이야.",
+    "difficulty": 3,
+    "id": "history-hangeom-171",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "고려 성종은 최승로의 시무 28조를 수용하였다.",
+    "answer": "O",
+    "explanation": "성종은 유교적 통치 체제를 정비했어.",
+    "difficulty": 3,
+    "id": "history-hangeom-172",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "묘청은 서경 천도를 주장하였다.",
+    "answer": "O",
+    "explanation": "묘청은 서경 천도와 칭제건원을 주장했어.",
+    "difficulty": 3,
+    "id": "history-hangeom-173",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "공민왕은 전민변정도감을 설치하였다.",
+    "answer": "O",
+    "explanation": "공민왕의 개혁 정치와 관련돼.",
+    "difficulty": 3,
+    "id": "history-hangeom-174",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "조선 세종은 훈민정음을 창제하였다.",
+    "answer": "O",
+    "explanation": "훈민정음은 세종 때 창제됐어.",
+    "difficulty": 3,
+    "id": "history-hangeom-175",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "경국대전은 조선 성종 때 완성되었다.",
+    "answer": "O",
+    "explanation": "경국대전은 성종 때 완성·반포되었어.",
+    "difficulty": 3,
+    "id": "history-hangeom-176",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "대동법은 공납의 폐단을 줄이기 위해 시행되었다.",
+    "answer": "O",
+    "explanation": "공물을 쌀·포·동전 등으로 내게 했어.",
+    "difficulty": 3,
+    "id": "history-hangeom-177",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "균역법은 군포 부담을 줄였다.",
+    "answer": "O",
+    "explanation": "영조 때 군포 2필을 1필로 줄였어.",
+    "difficulty": 3,
+    "id": "history-hangeom-178",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "강화도 조약은 조선 최초의 근대적 조약이다.",
+    "answer": "O",
+    "explanation": "1876년 강화도 조약이야.",
+    "difficulty": 3,
+    "id": "history-hangeom-179",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "갑신정변은 급진 개화파가 일으켰다.",
+    "answer": "O",
+    "explanation": "김옥균 등 급진 개화파가 주도했어.",
+    "difficulty": 3,
+    "id": "history-hangeom-180",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "동학 농민 운동은 보국안민과 제폭구민을 내세웠다.",
+    "answer": "O",
+    "explanation": "동학 농민군의 대표 구호야.",
+    "difficulty": 3,
+    "id": "history-hangeom-181",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "갑오개혁 때 신분제와 과거제가 폐지되었다.",
+    "answer": "O",
+    "explanation": "갑오개혁의 대표 내용이야.",
+    "difficulty": 3,
+    "id": "history-hangeom-182",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "독립협회는 만민 공동회를 개최하였다.",
+    "answer": "O",
+    "explanation": "독립협회는 만민 공동회와 관민 공동회를 열었어.",
+    "difficulty": 3,
+    "id": "history-hangeom-183",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "3·1 운동 이후 대한민국 임시정부가 수립되었다.",
+    "answer": "O",
+    "explanation": "3·1 운동은 임시정부 수립의 계기가 되었어.",
+    "difficulty": 3,
+    "id": "history-hangeom-184",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "의열단은 김원봉이 조직하였다.",
+    "answer": "O",
+    "explanation": "김원봉이 1919년에 조직했어.",
+    "difficulty": 3,
+    "id": "history-hangeom-185",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "봉오동 전투에서는 홍범도 부대가 활약하였다.",
+    "answer": "O",
+    "explanation": "봉오동 전투는 홍범도 부대의 승리로 유명해.",
+    "difficulty": 3,
+    "id": "history-hangeom-186",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "청산리 대첩에서는 김좌진의 북로 군정서군 등이 활약하였다.",
+    "answer": "O",
+    "explanation": "청산리 대첩은 김좌진·홍범도 등이 활약했어.",
+    "difficulty": 3,
+    "id": "history-hangeom-187",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "조선어 학회는 우리말 큰사전 편찬을 추진하였다.",
+    "answer": "O",
+    "explanation": "조선어 학회는 우리말 큰사전 편찬을 추진했어.",
+    "difficulty": 3,
+    "id": "history-hangeom-188",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "물산 장려 운동은 일본 상품 애용을 목표로 하였다.",
+    "answer": "X",
+    "explanation": "물산 장려 운동은 국산품 애용과 민족 산업 육성이 목표였어.",
+    "difficulty": 3,
+    "id": "history-hangeom-189",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "신간회는 좌우 합작으로 조직된 합법적 민족 운동 단체였다.",
+    "answer": "O",
+    "explanation": "신간회는 1927년 조직됐어.",
+    "difficulty": 3,
+    "id": "history-hangeom-190",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "4·19 혁명은 3·15 부정 선거에 대한 저항으로 일어났다.",
+    "answer": "O",
+    "explanation": "4·19 혁명은 이승만 정부의 부정 선거에 저항했어.",
+    "difficulty": 3,
+    "id": "history-hangeom-191",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "5·18 민주화 운동은 광주에서 전개되었다.",
+    "answer": "O",
+    "explanation": "5·18은 광주를 중심으로 전개됐어.",
+    "difficulty": 3,
+    "id": "history-hangeom-192",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "6월 민주 항쟁의 결과 6·29 민주화 선언이 발표되었다.",
+    "answer": "O",
+    "explanation": "대통령 직선제 개헌 요구가 수용됐어.",
+    "difficulty": 3,
+    "id": "history-hangeom-193",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "7·4 남북 공동 성명은 자주, 평화, 민족 대단결 원칙을 밝혔다.",
+    "answer": "O",
+    "explanation": "7·4 남북 공동 성명의 3대 원칙이야.",
+    "difficulty": 3,
+    "id": "history-hangeom-194",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "직지심체요절은 조선 후기 목판 인쇄물이다.",
+    "answer": "X",
+    "explanation": "직지는 고려 말 금속 활자 인쇄물이야.",
+    "difficulty": 3,
+    "id": "history-hangeom-195",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "무령왕릉에서는 무덤 주인을 알려 주는 지석이 발견되었다.",
+    "answer": "O",
+    "explanation": "무령왕릉 지석은 한능검 단골 포인트야.",
+    "difficulty": 3,
+    "id": "history-hangeom-196",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "팔만대장경은 몽골 침입기에 조판되었다.",
+    "answer": "O",
+    "explanation": "몽골 침입기 고려에서 조판되었어.",
+    "difficulty": 3,
+    "id": "history-hangeom-197",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "정조는 규장각을 육성하고 수원 화성을 건설하였다.",
+    "answer": "O",
+    "explanation": "정조의 대표 업적이야.",
+    "difficulty": 3,
+    "id": "history-hangeom-198",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "신민회는 비밀 결사로 공화정 수립을 목표로 하였다.",
+    "answer": "O",
+    "explanation": "신민회는 비밀 결사였어.",
+    "difficulty": 3,
+    "id": "history-hangeom-199",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  },
+  {
+    "topic": "한능검 OX",
+    "type": "ox",
+    "question": "근우회는 여성 운동의 통합 단체였다.",
+    "answer": "O",
+    "explanation": "근우회는 1927년에 조직된 여성 운동 통합 단체야.",
+    "difficulty": 3,
+    "id": "history-hangeom-200",
+    "subject": "한국사 한능검형",
+    "sourceLabel": "한능검",
+    "examStyle": "history-hangeom"
+  }
+]
