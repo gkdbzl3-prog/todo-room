@@ -409,7 +409,7 @@ function buildFallbackDailyRecords(currentRecords, previousRecords) {
 
 async function findRecentDailyFallbackRecords(currentDateKey) {
   const historySnap = await getDocs(
-    query(collection(db, historyDatesCol()), orderBy("date", "desc"))
+    query(collection(db, historyDatesCol()), orderBy("date", "desc"), limit(7))
   );
 
   const fallbackRecordsByKey = new Map();
@@ -999,7 +999,6 @@ export default function App() {
       if (cancelled) return;
       if (
         dailyLoaded &&
-        fallbackLoaded &&
         weeklyLoadedKeys.size === weeklyKeys.length
       ) {
         setMembersReadyKey(currentMembersReadyKey);

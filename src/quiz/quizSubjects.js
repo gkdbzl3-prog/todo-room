@@ -1,7 +1,7 @@
 export const quizSubjects = [
     {
         id: "japanese",
-        emoji: "📚",
+        emoji: "🍥",
         title: "일본어",
         levels: [
             { id: "jp-basic", label: "초급", desc: "듀오링고 수준 · JLPT N5~N4" },
@@ -11,7 +11,7 @@ export const quizSubjects = [
     },
     {
         id: "chinese",
-        emoji: "🇨🇳",
+        emoji: "🧧",
         title: "중국어",
         levels: [
             { id: "zh-basic", label: "초급", desc: "HSK 1~2" },
@@ -21,7 +21,7 @@ export const quizSubjects = [
     },
     {
         id: "history",
-        emoji: "🇰🇷",
+        emoji: "🛖",
         title: "한국사",
         levels: [
             { id: "history-mixed", label: "통합전 범위 랜덤", desc: "전 범위 랜덤" },
@@ -32,7 +32,7 @@ export const quizSubjects = [
     },
     {
         id: "english",
-        emoji: "🇬🇧",
+        emoji: "🔤",
         title: "영어",
         levels: [
             { id: "toeic-rc", label: "토익 RC", desc: "어휘·문법·독해" }
