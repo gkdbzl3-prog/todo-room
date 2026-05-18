@@ -1,7 +1,7 @@
 export const quizSubjects = [
     {
         id: "japanese",
-        emoji: "🍥",
+        emoji: "🍙",
         title: "일본어",
         levels: [
             { id: "jp-basic", label: "초급", desc: "듀오링고 수준 · JLPT N5~N4" },

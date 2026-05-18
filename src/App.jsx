@@ -409,7 +409,7 @@ function buildFallbackDailyRecords(currentRecords, previousRecords) {
 
 async function findRecentDailyFallbackRecords(currentDateKey) {
   const historySnap = await getDocs(
-    query(collection(db, historyDatesCol()), orderBy("date", "desc"), limit(7))
+    query(collection(db, historyDatesCol()), orderBy("date", "desc"))
   );
 
   const fallbackRecordsByKey = new Map();
