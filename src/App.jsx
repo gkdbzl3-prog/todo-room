@@ -766,7 +766,7 @@ export default function App() {
         ? [currentWeekKey]
         : [currentWeekKey, legacyWeekKeyValue];
 
-    const [dailyMatches, weeklyMatchGroups, recentMatch] = await Promise.all([
+    const [dailyMatches, weeklyMatchGroups] = await Promise.all([
       getDocs(
         query(
           collection(db, dailyCol(currentDayKey)),
@@ -783,7 +783,6 @@ export default function App() {
           )
         )
       ),
-      findRecentDailyMatchByNickname(normalizedNickname),
     ]);
 
     const dailyRecords = dailyMatches.docs.map((docSnap) => ({
@@ -797,7 +796,7 @@ export default function App() {
       }))
     );
 
-    return collectNicknameMatches(dailyRecords, weeklyRecords, recentMatch);
+    return collectNicknameMatches(dailyRecords, weeklyRecords, null);
   }, [currentDayKey, currentWeekKey, legacyWeekKeyValue]);
 
   const resolveNicknameSession = useCallback(
@@ -1222,16 +1221,9 @@ export default function App() {
         }
 
         const prevSnap = await getDoc(doc(db, dailyCol(previousDayKeyFrom(today)), uid));
-        let sourceData = prevSnap.exists() ? prevSnap.data() : null;
+        const sourceData = prevSnap.exists() ? prevSnap.data() : null;
 
         if (cancelled) return;
-
-        if (!sourceData && nickname.trim()) {
-          const recentMatch = await findRecentDailyMatchByNickname(nickname.trim());
-          if (!cancelled && recentMatch) {
-            sourceData = recentMatch.data;
-          }
-        }
 
         if (!sourceData) return;
 
