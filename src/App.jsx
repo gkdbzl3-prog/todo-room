@@ -1745,6 +1745,7 @@ export default function App() {
     { id: uid, nickname, avatar, todos: myDaily, weeklyTodos: myWeekly, isMe: true },
     ...otherMembers,
   ].sort((a, b) => {
+    if (a.isMe !== b.isMe) return a.isMe ? -1 : 1;
     // 투두 있는 멤버 우선
     const aTodos = getMemberTodoTotal(a);
     const bTodos = getMemberTodoTotal(b);
