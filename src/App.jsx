@@ -86,11 +86,47 @@ function legacyWeekKeyForDate(dateKey) {
   return formatUtcDateKey(d);
 }
 
+function isValidUid(uid) {
+  return (
+    typeof uid === "string" &&
+    /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(uid)
+  );
+}
+
+function migrateStoredUidKeys(oldUid, nextUid) {
+  if (!oldUid || oldUid === nextUid) return;
+
+  const keyPairs = [];
+  for (let i = 0; i < localStorage.length; i += 1) {
+    const key = localStorage.key(i);
+    if (!key) continue;
+
+    let nextKey = "";
+    if (key.startsWith(`todoRoom_daily_${oldUid}_`)) {
+      nextKey = key.replace(`todoRoom_daily_${oldUid}_`, `todoRoom_daily_${nextUid}_`);
+    } else if (key.startsWith(`todoRoom_weekly_${oldUid}_`)) {
+      nextKey = key.replace(`todoRoom_weekly_${oldUid}_`, `todoRoom_weekly_${nextUid}_`);
+    } else if (key === `todoRoom:routine:${oldUid}`) {
+      nextKey = `todoRoom:routine:${nextUid}`;
+    }
+
+    if (nextKey) keyPairs.push([key, nextKey]);
+  }
+
+  keyPairs.forEach(([oldKey, nextKey]) => {
+    if (!localStorage.getItem(nextKey)) {
+      localStorage.setItem(nextKey, localStorage.getItem(oldKey) || "");
+    }
+  });
+}
+
 function getUid() {
   let uid = localStorage.getItem("todoRoom_uid");
-  if (!uid) {
-    uid = crypto.randomUUID();
-    localStorage.setItem("todoRoom_uid", uid);
+  if (!isValidUid(uid)) {
+    const nextUid = crypto.randomUUID();
+    migrateStoredUidKeys(uid, nextUid);
+    uid = nextUid;
+    localStorage.setItem("todoRoom_uid", nextUid);
   }
   return uid;
 }
@@ -341,6 +377,7 @@ function collectNicknameMatches(dailyRecords, weeklyRecords, recentMatch) {
   };
 
   dailyRecords.forEach((record) => {
+    if (!isValidUid(record.id)) return;
     const match = ensureMatch(record.id);
     match.nickname = record.nickname || match.nickname;
     match.avatar = match.avatar || record.avatar || "";
@@ -350,6 +387,7 @@ function collectNicknameMatches(dailyRecords, weeklyRecords, recentMatch) {
   });
 
   weeklyRecords.forEach((record) => {
+    if (!isValidUid(record.id)) return;
     const match = ensureMatch(record.id);
     const nextWeeklyTodos = Array.isArray(record.todos) ? record.todos : [];
 
@@ -381,7 +419,7 @@ function collectNicknameMatches(dailyRecords, weeklyRecords, recentMatch) {
     }
   });
 
-  if (recentMatch?.id) {
+  if (recentMatch?.id && isValidUid(recentMatch.id)) {
     const match = ensureMatch(recentMatch.id);
     const recentData = recentMatch.data || {};
     match.nickname = recentData.nickname || match.nickname;
@@ -477,8 +515,10 @@ async function findRecentDailyMatchByNickname(targetNickname) {
       )
     );
 
-    if (!matchSnap.empty) {
-      const bestDoc = matchSnap.docs.reduce((best, current) => {
+    const validDocs = matchSnap.docs.filter((docSnap) => isValidUid(docSnap.id));
+
+    if (validDocs.length) {
+      const bestDoc = validDocs.reduce((best, current) => {
         if (!best) return current;
         const bestData = best.data();
         const currentData = current.data();
@@ -662,7 +702,7 @@ export default function App() {
 
       await Promise.all(
         sameNicknameSnap.docs
-          .filter((docSnap) => docSnap.id !== uid)
+          .filter((docSnap) => docSnap.id !== uid && isValidUid(docSnap.id))
           .map((docSnap) => setDoc(doc(db, collectionPath, docSnap.id), payload))
       );
     },
