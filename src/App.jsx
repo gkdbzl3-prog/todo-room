@@ -1899,21 +1899,6 @@ export default function App() {
             ) : (
               <>
                 <div className="member-list">
-                  {nicknameConfirmed && uid && (
-                    <MemberCard
-                      key={`self-${uid}`}
-                      member={{
-                        id: uid,
-                        nickname,
-                        avatar,
-                        todos: myDaily,
-                        weeklyTodos: myWeekly,
-                        routineItems: (myRoutine.items || []).map((it) => ({ ...it })),
-                        routineDoneDate: myRoutine.doneDate || currentDayKey,
-                        isMe: true,
-                      }}
-                    />
-                  )}
                   {visibleMembers.map((m) => (
                     <MemberCard key={m.id} member={m} />
                   ))}
