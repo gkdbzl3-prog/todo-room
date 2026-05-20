@@ -588,6 +588,55 @@ function saveStoredRoutine(key, value) {
   if (!key) return;
   try { localStorage.setItem(key, JSON.stringify(value)); } catch { }
 }
+
+function clearTodoRoomBrowserStorage() {
+  const prefixes = ["todoRoom_", "todoRoom:"];
+  const removed = [];
+
+  [localStorage, sessionStorage].forEach((storage) => {
+    const keys = [];
+    for (let i = 0; i < storage.length; i += 1) {
+      const key = storage.key(i);
+      if (key && prefixes.some((prefix) => key.startsWith(prefix))) {
+        keys.push(key);
+      }
+    }
+
+    keys.forEach((key) => {
+      storage.removeItem(key);
+      removed.push(key);
+    });
+  });
+
+  return removed;
+}
+
+async function clearTodoRoomIndexedDb() {
+  if (!window.indexedDB || typeof window.indexedDB.databases !== "function") {
+    return [];
+  }
+
+  const databases = await window.indexedDB.databases();
+  const names = databases
+    .map((database) => database.name)
+    .filter(Boolean)
+    .filter((name) => /firebase|firestore|todo-room|todoRoom/i.test(name));
+
+  await Promise.all(
+    names.map(
+      (name) =>
+        new Promise((resolve) => {
+          const request = window.indexedDB.deleteDatabase(name);
+          request.onsuccess = () => resolve();
+          request.onerror = () => resolve();
+          request.onblocked = () => resolve();
+        })
+    )
+  );
+
+  return names;
+}
+
 // Reset all `done` flags if the date has changed since they were last set.
 function rolloverRoutineDone(items, doneDate, todayKey) {
   if (doneDate === todayKey) return { items, changed: false };
@@ -1640,6 +1689,16 @@ export default function App() {
         }
       }
       return result;
+    };
+    window.__resetTodoRoomLocal = async () => {
+      const removedStorageKeys = clearTodoRoomBrowserStorage();
+      const removedDatabases = await clearTodoRoomIndexedDb();
+      console.table({
+        removedStorageKeys: removedStorageKeys.length,
+        removedDatabases: removedDatabases.join(", ") || "(none)",
+      });
+      alert("todo-room 로컬 데이터 삭제 완료. 새로고침합니다.");
+      location.reload();
     };
   }, [uid, nickname, currentDayKey, currentWeekKey]);
 
