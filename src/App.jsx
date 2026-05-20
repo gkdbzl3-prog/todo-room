@@ -1043,6 +1043,9 @@ export default function App() {
   };
 
   const toggleRoutine = (id) => {
+    const completedItem = (myRoutine.items || []).find(
+      (it) => it.id === id && !it.done
+    );
     const next = {
       ...myRoutine,
       doneDate: currentDayKey,
@@ -1050,6 +1053,12 @@ export default function App() {
         it.id === id ? { ...it, done: !it.done } : it
       ),
     };
+    if (completedItem) {
+      writeAddDoc(collection(db, notiCol(currentDayKey)), {
+        message: `${nickname}님이 '${completedItem.text}'을(를) 완수하였습니다!`,
+        createdAt: serverTimestamp(),
+      });
+    }
     setMyRoutine(next);
     syncMyRoutine(next);
   };
@@ -1742,7 +1751,16 @@ export default function App() {
     currentDayKey
   );
   const allMembers = [
-    { id: uid, nickname, avatar, todos: myDaily, weeklyTodos: myWeekly, isMe: true },
+    {
+      id: uid,
+      nickname,
+      avatar,
+      todos: myDaily,
+      weeklyTodos: myWeekly,
+      routineItems: (myRoutine.items || []).map((it) => ({ ...it })),
+      routineDoneDate: myRoutine.doneDate || currentDayKey,
+      isMe: true,
+    },
     ...otherMembers,
   ].sort((a, b) => {
     if (a.isMe !== b.isMe) return a.isMe ? -1 : 1;

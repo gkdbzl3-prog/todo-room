@@ -1658,6 +1658,11 @@ input:focus {
   width: 100px;
 }
 
+.routine-section-select option {
+  color: #21151f;
+  background: #f8f4fa;
+}
+
 .routine-input-row input {
   flex: 1 1 0;
   min-width: 0;
