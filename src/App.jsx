@@ -1603,14 +1603,15 @@ export default function App() {
     };
   }, [uid, nickname, currentDayKey, currentWeekKey]);
 
-  // Strip out any "ghost" member whose nickname matches mine — happens when an old uid
-  // with the same nickname is still on the server. The self card already shows my data.
+  // Strip out anything that represents me — either my uid directly, or a "ghost" member
+  // sharing my nickname. The self card injection above is the single source of truth for self.
   const myNicknameKey = normalizeNickname(nickname);
+  const isSelfMember = (m) =>
+    (uid && m.id === uid) ||
+    (myNicknameKey && normalizeNickname(m.nickname) === myNicknameKey);
   const otherMembers = attachRoutines(
-    mergeDisplayMembers(members, weeklyMembers).filter(
-      (m) => !myNicknameKey || normalizeNickname(m.nickname) !== myNicknameKey
-    ),
-    routineMembers.filter((m) => !myNicknameKey || normalizeNickname(m.nickname) !== myNicknameKey),
+    mergeDisplayMembers(members, weeklyMembers).filter((m) => !isSelfMember(m)),
+    routineMembers.filter((m) => !isSelfMember(m)),
     currentDayKey
   );
   const allMembers = [
