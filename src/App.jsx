@@ -5,6 +5,7 @@ import {
   doc,
   getDoc,
   setDoc,
+  deleteDoc,
   onSnapshot,
   query,
   orderBy,
@@ -1501,6 +1502,76 @@ export default function App() {
   const badge = getBadge(totalDoneCount);
 
   // 전체 멤버 (나 포함) 카드 데이터
+  // Expose admin helpers on window so you can list/delete ghost users from the dev console.
+  // Usage:
+  //   __listGhosts()                         → 같은 닉네임 가진 다른 uid 문서 모두 출력
+  //   __deleteGhost('UID')                   → 해당 uid의 daily/weekly/routine 문서 삭제
+  //   __deleteAllGhosts()                    → 본인 제외 같은 닉네임 모두 삭제 (확인 prompt 포함)
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (!uid || !nickname) return;
+    const myKey = normalizeNickname(nickname);
+    const collectGhosts = async () => {
+      const cols = [
+        ["daily", dailyCol(currentDayKey)],
+        ["weekly", weeklyCol(currentWeekKey)],
+        ["routines", routineCol()],
+      ];
+      const map = new Map();
+      await Promise.all(
+        cols.map(async ([tag, path]) => {
+          try {
+            const snap = await getDocs(collection(db, path));
+            snap.forEach((d) => {
+              const data = d.data() || {};
+              if (d.id === uid) return;
+              if (normalizeNickname(data.nickname) !== myKey) return;
+              const entry = map.get(d.id) || { id: d.id, nickname: data.nickname, in: [] };
+              entry.in.push(tag);
+              map.set(d.id, entry);
+            });
+          } catch (err) {
+            console.warn("listGhosts read failed", path, err);
+          }
+        })
+      );
+      return Array.from(map.values());
+    };
+    window.__listGhosts = async () => {
+      const list = await collectGhosts();
+      console.table(list.map((g) => ({ uid: g.id, nickname: g.nickname, in: g.in.join(",") })));
+      return list;
+    };
+    window.__deleteGhost = async (ghostUid) => {
+      if (!ghostUid) return console.error("ghostUid 필요");
+      if (ghostUid === uid) return console.error("자신은 못 지움");
+      const paths = [
+        dailyCol(currentDayKey),
+        weeklyCol(currentWeekKey),
+        routineCol(),
+      ];
+      for (const path of paths) {
+        try {
+          await deleteDoc(doc(db, path, ghostUid));
+          console.log("deleted", path, ghostUid);
+        } catch (err) {
+          console.warn("delete failed", path, err);
+        }
+      }
+    };
+    window.__deleteAllGhosts = async () => {
+      const list = await collectGhosts();
+      if (!list.length) return console.log("지울 ghost 없음");
+      console.table(list.map((g) => ({ uid: g.id, nickname: g.nickname, in: g.in.join(",") })));
+      if (!confirm(`${list.length}개 ghost uid 삭제할까요?`)) return;
+      for (const g of list) {
+        await window.__deleteGhost(g.id);
+      }
+      alert("완료. 새로고침");
+      location.reload();
+    };
+  }, [uid, nickname, currentDayKey, currentWeekKey]);
+
   // Strip out any "ghost" member whose nickname matches mine — happens when an old uid
   // with the same nickname is still on the server. The self card already shows my data.
   const myNicknameKey = normalizeNickname(nickname);
