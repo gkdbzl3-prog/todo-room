@@ -198,6 +198,32 @@ function getRecordIdentityKey(record) {
   return nicknameKey ? `nick:${nicknameKey}` : `id:${record?.id}`;
 }
 
+// Attach routine data to display members by matching nickname.
+// `todayKey` is used to know whether the friend's done flags are still valid today.
+function attachRoutines(displayMembers, routineMembers, todayKey) {
+  if (!routineMembers || !routineMembers.length) return displayMembers;
+  const routineMap = new Map();
+  routineMembers.forEach((rm) => {
+    const key = normalizeNickname(rm.nickname);
+    if (key) routineMap.set(key, rm);
+  });
+  return displayMembers.map((m) => {
+    const key = normalizeNickname(m.nickname);
+    const r = key ? routineMap.get(key) : null;
+    if (!r) return m;
+    const stale = (r.doneDate || "") !== todayKey;
+    const items = (r.items || []).map((it) => ({
+      ...it,
+      done: stale ? false : !!it.done,
+    }));
+    return {
+      ...m,
+      routineItems: items,
+      routineDoneDate: stale ? "" : (r.doneDate || ""),
+    };
+  });
+}
+
 function mergeDisplayMembers(dailyMembers, weeklyMembers) {
   const merged = new Map();
 
@@ -492,6 +518,41 @@ const dailyCol = (date) => `daily/${date}/users`;
 const weeklyCol = (wk) => `weekly/${wk}/users`;
 const notiCol = (date) => `daily/${date}/notifications`;
 const historyDatesCol = () => "historyDates";
+const routineCol = () => "routines";
+
+/* ── 루틴 상수 ── */
+const ROUTINE_SECTIONS = [
+  { id: "morning", label: "아침", emoji: "🌅" },
+  { id: "lunch", label: "점심", emoji: "🌞" },
+  { id: "evening", label: "저녁", emoji: "🌙" },
+  { id: "anytime", label: "아무때나", emoji: "⏰" },
+];
+
+const routineStorageKeyFor = (uid) => (uid ? `todoRoom:routine:${uid}` : "");
+function loadStoredRoutine(key) {
+  if (!key) return { items: [], doneDate: "" };
+  try {
+    const raw = localStorage.getItem(key);
+    if (!raw) return { items: [], doneDate: "" };
+    const parsed = JSON.parse(raw);
+    return {
+      items: Array.isArray(parsed.items) ? parsed.items : [],
+      doneDate: parsed.doneDate || "",
+    };
+  } catch {
+    return { items: [], doneDate: "" };
+  }
+}
+function saveStoredRoutine(key, value) {
+  if (!key) return;
+  try { localStorage.setItem(key, JSON.stringify(value)); } catch { }
+}
+// Reset all `done` flags if the date has changed since they were last set.
+function rolloverRoutineDone(items, doneDate, todayKey) {
+  if (doneDate === todayKey) return { items, changed: false };
+  const next = items.map((it) => ({ ...it, done: false }));
+  return { items: next, changed: true };
+}
 
 /* ─────────────────────────────── App ─────────────────────────────── */
 export default function App() {
@@ -509,6 +570,7 @@ export default function App() {
 
   const dailyStorageKey = `todoRoom_daily_${uid}_${currentDayKey}`;
   const weeklyStorageKey = `todoRoom_weekly_${uid}_${currentWeekKey}`;
+  const routineStorageKey = routineStorageKeyFor(uid);
   const [profileRecoveryChecked, setProfileRecoveryChecked] = useState(
     !!getSavedNickname()
   );
@@ -521,9 +583,16 @@ export default function App() {
   const [myDaily, setMyDaily] = useState(() => loadStoredTodos(dailyStorageKey));
   const [myWeekly, setMyWeekly] = useState(() => loadStoredTodos(weeklyStorageKey));
 
+  // 루틴 (반복되는 매일 습관 — 매일 자정에 done만 리셋, 항목은 영구)
+  const [myRoutine, setMyRoutine] = useState({ items: [], doneDate: "" });
+  const [routineText, setRoutineText] = useState("");
+  const [routineSection, setRoutineSection] = useState("morning");
+  const [routineCelebrated, setRoutineCelebrated] = useState(false);
+
   // 다른 멤버
   const [members, setMembers] = useState([]);
   const [weeklyMembers, setWeeklyMembers] = useState([]);
+  const [routineMembers, setRoutineMembers] = useState([]);
 
   // 알림
   const [toasts, setToasts] = useState([]);
@@ -756,6 +825,137 @@ export default function App() {
       syncDuplicateNicknameDocs,
     ]
   );
+
+  /* ── Firestore 루틴 동기화 ── */
+  const syncMyRoutine = useCallback(
+    (next) => {
+      if (!nicknameConfirmed || !uid) return;
+      const payload = {
+        nickname,
+        avatar,
+        items: next.items || [],
+        doneDate: next.doneDate || currentDayKey,
+        updatedAt: serverTimestamp(),
+      };
+      void setDoc(doc(db, routineCol(), uid), payload).catch((error) => {
+        console.error("Failed to sync routine", error);
+      });
+    },
+    [uid, nickname, avatar, nicknameConfirmed, currentDayKey]
+  );
+
+  // Load own routine from localStorage on uid change, with daily rollover applied
+  useEffect(() => {
+    if (!routineStorageKey) return;
+    const stored = loadStoredRoutine(routineStorageKey);
+    const { items, changed } = rolloverRoutineDone(stored.items, stored.doneDate, currentDayKey);
+    const next = { items, doneDate: currentDayKey };
+    setMyRoutine(next);
+    setRoutineCelebrated(false);
+    if (changed) {
+      saveStoredRoutine(routineStorageKey, next);
+      syncMyRoutine(next);
+    }
+  }, [routineStorageKey, currentDayKey, syncMyRoutine]);
+
+  // Subscribe to ALL routine docs (other members) so we can show their summaries
+  useEffect(() => {
+    if (!nicknameConfirmed) return;
+    const unsub = onSnapshot(collection(db, routineCol()), (snap) => {
+      const all = [];
+      snap.forEach((d) => {
+        const data = d.data() || {};
+        all.push({
+          id: d.id,
+          nickname: data.nickname || "",
+          avatar: data.avatar || "",
+          items: Array.isArray(data.items) ? data.items : [],
+          doneDate: data.doneDate || "",
+        });
+      });
+      setRoutineMembers(all.filter((m) => m.id !== uid));
+    }, (error) => {
+      console.error("Failed to subscribe routine members", error);
+    });
+    return () => unsub();
+  }, [uid, nicknameConfirmed]);
+
+  // Subscribe to own routine doc in Firestore (so multi-device stays in sync)
+  useEffect(() => {
+    if (!nicknameConfirmed || !uid) return;
+    const unsub = onSnapshot(doc(db, routineCol(), uid), (snap) => {
+      if (!snap.exists()) return;
+      const data = snap.data() || {};
+      const items = Array.isArray(data.items) ? data.items : [];
+      const { items: rolled, changed } = rolloverRoutineDone(items, data.doneDate || "", currentDayKey);
+      const next = { items: rolled, doneDate: currentDayKey };
+      setMyRoutine(next);
+      setRoutineCelebrated(false);
+      if (changed) {
+        saveStoredRoutine(routineStorageKey, next);
+        syncMyRoutine(next);
+      } else {
+        saveStoredRoutine(routineStorageKey, next);
+      }
+    });
+    return () => unsub();
+  }, [uid, nicknameConfirmed, currentDayKey, routineStorageKey, syncMyRoutine]);
+
+  useEffect(() => {
+    if (!routineStorageKey) return;
+    saveStoredRoutine(routineStorageKey, myRoutine);
+  }, [routineStorageKey, myRoutine]);
+
+  const addRoutine = () => {
+    const text = routineText.trim();
+    if (!text) return;
+    const next = {
+      items: [
+        ...(myRoutine.items || []),
+        {
+          id: Date.now(),
+          text,
+          section: routineSection,
+          done: false,
+          createdAt: Date.now(),
+        },
+      ],
+      doneDate: currentDayKey,
+    };
+    setMyRoutine(next);
+    syncMyRoutine(next);
+    setRoutineText("");
+  };
+
+  const toggleRoutine = (id) => {
+    const next = {
+      ...myRoutine,
+      doneDate: currentDayKey,
+      items: (myRoutine.items || []).map((it) =>
+        it.id === id ? { ...it, done: !it.done } : it
+      ),
+    };
+    setMyRoutine(next);
+    syncMyRoutine(next);
+  };
+
+  const deleteRoutine = (id) => {
+    const next = {
+      ...myRoutine,
+      items: (myRoutine.items || []).filter((it) => it.id !== id),
+    };
+    setMyRoutine(next);
+    syncMyRoutine(next);
+  };
+
+  // Celebration pulse fires once when the LAST item is checked off
+  const routineDoneCount = (myRoutine.items || []).filter((i) => i.done).length;
+  const routineTotalCount = (myRoutine.items || []).length;
+  const routineAllDone = routineTotalCount > 0 && routineDoneCount === routineTotalCount;
+  useEffect(() => {
+    if (routineAllDone) setRoutineCelebrated(true);
+    else setRoutineCelebrated(false);
+  }, [routineAllDone]);
 
   useEffect(() => {
     if (!dailyStorageKey) return;
@@ -1301,7 +1501,11 @@ export default function App() {
   const badge = getBadge(totalDoneCount);
 
   // 전체 멤버 (나 포함) 카드 데이터
-  const otherMembers = mergeDisplayMembers(members, weeklyMembers);
+  const otherMembers = attachRoutines(
+    mergeDisplayMembers(members, weeklyMembers),
+    routineMembers,
+    currentDayKey
+  );
   const allMembers = [
     { id: uid, nickname, avatar, todos: myDaily, weeklyTodos: myWeekly, isMe: true },
     ...otherMembers,
@@ -1460,6 +1664,21 @@ export default function App() {
             ) : (
               <>
                 <div className="member-list">
+                  {nicknameConfirmed && uid && (
+                    <MemberCard
+                      key={`self-${uid}`}
+                      member={{
+                        id: uid,
+                        nickname,
+                        avatar,
+                        todos: myDaily,
+                        weeklyTodos: myWeekly,
+                        routineItems: (myRoutine.items || []).map((it) => ({ ...it })),
+                        routineDoneDate: myRoutine.doneDate || currentDayKey,
+                        isMe: true,
+                      }}
+                    />
+                  )}
                   {visibleMembers.map((m) => (
                     <MemberCard key={m.id} member={m} />
                   ))}
@@ -1566,6 +1785,19 @@ export default function App() {
                 </div>
               )}
             </div>
+
+            {/* 루틴 (매일 자정에 체크 풀림) */}
+            <RoutineCard
+              routine={myRoutine}
+              routineText={routineText}
+              routineSection={routineSection}
+              setRoutineText={setRoutineText}
+              setRoutineSection={setRoutineSection}
+              addRoutine={addRoutine}
+              toggleRoutine={toggleRoutine}
+              deleteRoutine={deleteRoutine}
+              celebrated={routineCelebrated}
+            />
           </section>
         </div>
       ) : tab === "quiz" ? (
@@ -1598,6 +1830,144 @@ export default function App() {
   );
 }
 
+/* ─────────────── RoutineDonut ─────────────── */
+function RoutineDonut({ done, total, isComplete }) {
+  const radius = 14;
+  const circumference = 2 * Math.PI * radius;
+  const progress = total ? done / total : 0;
+  const offset = circumference * (1 - progress);
+  return (
+    <svg
+      className={`routine-donut${isComplete ? " complete" : ""}`}
+      viewBox="0 0 36 36"
+      width="32"
+      height="32"
+      aria-label={`${done}/${total}`}
+    >
+      <circle cx="18" cy="18" r={radius} fill="none" stroke="var(--routine-track, #e8eadf)" strokeWidth="3.5" />
+      <circle
+        cx="18"
+        cy="18"
+        r={radius}
+        fill="none"
+        stroke="var(--routine-fill, #6bb38a)"
+        strokeWidth="3.5"
+        strokeLinecap="round"
+        strokeDasharray={circumference}
+        strokeDashoffset={offset}
+        transform="rotate(-90 18 18)"
+        style={{ transition: "stroke-dashoffset 0.4s ease" }}
+      />
+      <text x="18" y="21" textAnchor="middle" fontSize="8.5" fontWeight="700" fill="currentColor">
+        {isComplete ? "✓" : `${done}/${total}`}
+      </text>
+    </svg>
+  );
+}
+
+/* ─────────────── RoutineItem ─────────────── */
+function RoutineItem({ item, onToggle, onDelete }) {
+  // 체크 스타일/크기를 TodoItem(todo-cycle-btn)과 통일 — done 색만 다른 게 의도(루틴=초록)
+  const stateClass = item.done ? "done" : "ready";
+  return (
+    <div className={`routine-item ${stateClass}`}>
+      <button
+        type="button"
+        className={`todo-cycle-btn routine-cycle ${stateClass}`}
+        onClick={() => onToggle(item.id)}
+        aria-label={item.done ? "되돌리기" : "완료"}
+      />
+      <span className="routine-text">{item.text}</span>
+      <button
+        type="button"
+        className="routine-del"
+        onClick={() => onDelete(item.id)}
+        aria-label="삭제"
+      >
+        ×
+      </button>
+    </div>
+  );
+}
+
+/* ─────────────── RoutineCard ─────────────── */
+function RoutineCard({
+  routine,
+  routineText,
+  routineSection,
+  setRoutineText,
+  setRoutineSection,
+  addRoutine,
+  toggleRoutine,
+  deleteRoutine,
+  celebrated,
+}) {
+  const items = routine.items || [];
+  const done = items.filter((i) => i.done).length;
+  const total = items.length;
+  const isComplete = total > 0 && done === total;
+  return (
+    <div className={`todo-panel routine${celebrated ? " celebrated" : ""}`}>
+      <div className="routine-donut-anchor">
+        <RoutineDonut done={done} total={total} isComplete={isComplete} />
+      </div>
+      <h2>
+        루틴
+        {isComplete && <span className="routine-finish-badge">🌿 완료!</span>}
+      </h2>
+      <p className="reset-notice">매일 자정에 체크가 자동으로 풀려요.</p>
+
+      <div className="routine-input-row">
+        <select
+          className="routine-section-select"
+          value={routineSection}
+          onChange={(e) => setRoutineSection(e.target.value)}
+          aria-label="시간대"
+        >
+          {ROUTINE_SECTIONS.map((s) => (
+            <option key={s.id} value={s.id}>
+              {s.emoji} {s.label}
+            </option>
+          ))}
+        </select>
+        <input
+          value={routineText}
+          onChange={(e) => setRoutineText(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && addRoutine()}
+          placeholder="반복할 습관 입력"
+        />
+        <button className="btn-add" onClick={addRoutine}>추가</button>
+      </div>
+
+      {total === 0 ? (
+        <div className="empty">아직 등록한 루틴이 없어요.</div>
+      ) : (
+        ROUTINE_SECTIONS.map((s) => {
+          const sectionItems = items.filter((i) => i.section === s.id);
+          if (sectionItems.length === 0) return null;
+          return (
+            <div key={s.id} className="routine-section">
+              <div className="routine-section-divider">
+                <span>{s.emoji} {s.label}</span>
+              </div>
+              <div className="routine-list">
+                {sectionItems.map((item) => (
+                  <RoutineItem
+                    key={item.id}
+                    item={item}
+                    onToggle={toggleRoutine}
+                    onDelete={deleteRoutine}
+                  />
+                ))}
+              </div>
+            </div>
+          );
+        })
+      )}
+    </div>
+  );
+}
+
 /* ─────────────── TodoItem ─────────────── */
 function TodoItem({ todo, onCycle, onDelete }) {
   // 상태: 진행 전 → 진행중 → 완료
@@ -1627,10 +1997,26 @@ function TodoItem({ todo, onCycle, onDelete }) {
 /* ─────────────── MemberCard ─────────────── */
 function MemberCard({ member }) {
   const visibleWeeklyTodos = member.weeklyTodos || [];
+  const routineItems = member.routineItems || [];
   const dailyDone = (member.todos || []).filter((t) => t.done).length;
   const weeklyDone = visibleWeeklyTodos.filter((t) => t.done).length;
   const totalDone = dailyDone + weeklyDone;
   const badge = getBadge(totalDone);
+  const [routineExpanded, setRoutineExpanded] = useState(false);
+
+  // Per-section counts for routine summary
+  const routineCounts = ROUTINE_SECTIONS.reduce((acc, s) => {
+    acc[s.id] = { done: 0, total: 0 };
+    return acc;
+  }, {});
+  routineItems.forEach((it) => {
+    const s = routineCounts[it.section] ? it.section : "anytime";
+    routineCounts[s].total += 1;
+    if (it.done) routineCounts[s].done += 1;
+  });
+  const routineTotal = routineItems.length;
+  const routineDoneSum = routineItems.filter((it) => it.done).length;
+  const routineAllDone = routineTotal > 0 && routineDoneSum === routineTotal;
 
   return (
     <div className={`member-card ${member.isMe ? "is-me" : ""}`}>
@@ -1663,6 +2049,60 @@ function MemberCard({ member }) {
         <>
           <div className="member-todo-title">WEEKLY</div>
           <MiniTodoList todos={visibleWeeklyTodos} />
+        </>
+      )}
+
+      {routineTotal > 0 && (
+        <>
+          <div className="member-todo-title member-routine-title">
+            ROUTINE
+            {routineAllDone && <span className="member-routine-complete"> · 🌿 완료</span>}
+          </div>
+          <button
+            type="button"
+            className={`member-routine-summary${routineExpanded ? " expanded" : ""}`}
+            onClick={() => setRoutineExpanded((v) => !v)}
+            aria-label={routineExpanded ? "루틴 접기" : "루틴 펼치기"}
+          >
+            <span className="member-routine-counts">
+              {ROUTINE_SECTIONS.map((s) => {
+                const c = routineCounts[s.id];
+                if (c.total === 0) return null;
+                return (
+                  <span key={s.id} className="member-routine-chip">
+                    {s.emoji} {c.done}/{c.total}
+                  </span>
+                );
+              })}
+            </span>
+            <span className="member-routine-toggle">{routineExpanded ? "▴" : "▾"}</span>
+          </button>
+          {routineExpanded && (
+            <div className="member-routine-list">
+              {ROUTINE_SECTIONS.map((s) => {
+                const sItems = routineItems.filter((i) => (i.section || "anytime") === s.id);
+                if (!sItems.length) return null;
+                return (
+                  <div key={s.id} className="member-routine-group">
+                    <div className="member-routine-group-label">
+                      {s.emoji} {s.label}
+                    </div>
+                    {sItems.map((it) => (
+                      <div
+                        key={it.id}
+                        className={`mini-todo${it.done ? " done" : ""}`}
+                      >
+                        <span className={`todo-dot ${it.done ? "done" : "ready"}`} />
+                        <span className={it.done ? "mini-text done" : "mini-text"}>
+                          {it.text}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                );
+              })}
+            </div>
+          )}
         </>
       )}
     </div>

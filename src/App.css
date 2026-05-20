@@ -1580,3 +1580,208 @@ input:focus {
   font-weight: 700;
   opacity: 0.7;
 }
+/* ─── 루틴 카드 ─── */
+:root {
+  --routine-track: rgba(255, 255, 255, 0.12);
+  --routine-fill: #6bd0a6;
+}
+.todo-panel.routine {
+  position: relative;
+}
+.todo-panel.routine h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-right: 44px; /* reserve space for the donut in the top-right */
+}
+.todo-panel.routine h2 .routine-finish-badge {
+  font-size: 0.78rem;
+  color: var(--routine-fill);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.routine-donut-anchor {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  line-height: 0;
+}
+.routine-donut {
+  color: var(--text, #f3f4f6);
+}
+.routine-donut.complete circle:nth-child(2) {
+  filter: drop-shadow(0 0 5px rgba(107, 208, 166, 0.4));
+}
+@keyframes routinePulse {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+.todo-panel.routine.celebrated .routine-donut {
+  animation: routinePulse 0.6s ease;
+}
+
+.routine-input-row {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+.routine-section-select {
+  flex: 0 0 auto;
+  padding: 9px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text, #f3f4f6);
+  font-family: inherit;
+  font-size: 0.88rem;
+}
+.routine-input-row input {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.routine-section {
+  margin-bottom: 14px;
+}
+.routine-section:last-child {
+  margin-bottom: 0;
+}
+.routine-section-divider {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0 6px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.routine-section-divider::before,
+.routine-section-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.routine-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.routine-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: opacity 0.15s;
+}
+.routine-item:last-child { border-bottom: none; }
+.routine-item.done {
+  opacity: 0.55;
+}
+.routine-item.done .routine-text {
+  text-decoration: line-through;
+  text-decoration-color: rgba(255, 255, 255, 0.35);
+}
+/* RoutineItem reuses .todo-cycle-btn for visual consistency with TODAY/WEEKLY.
+   .routine-cycle.done overrides the default green to use the calmer mint routine color. */
+.routine-cycle.done {
+  border-color: var(--routine-fill);
+  background: var(--routine-fill);
+  box-shadow: 0 0 5px rgba(107, 208, 166, 0.35);
+}
+.routine-text {
+  flex: 1 1 auto;
+  font-size: 0.92rem;
+  color: var(--text, #f3f4f6);
+  word-break: break-word;
+}
+.routine-del {
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+.routine-del:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 200, 200, 0.7);
+}
+
+/* ─── 멤버카드 루틴 요약 ─── */
+.member-routine-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.member-routine-complete {
+  font-size: 0.72rem;
+  color: var(--routine-fill);
+  font-weight: 600;
+}
+.member-routine-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 10px;
+  margin-top: 4px;
+  background: rgba(255, 255, 255, 0.04);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: inherit;
+  color: var(--text, #f3f4f6);
+  text-align: left;
+  transition: background 0.15s;
+}
+.member-routine-summary:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+.member-routine-summary.expanded {
+  background: rgba(107, 208, 166, 0.08);
+}
+.member-routine-counts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  font-size: 0.76rem;
+  font-variant-numeric: tabular-nums;
+}
+.member-routine-chip {
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.7);
+}
+.member-routine-toggle {
+  flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.78rem;
+}
+
+.member-routine-list {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.member-routine-group-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.04em;
+  margin-bottom: 3px;
+}
+.member-routine-group .mini-todo {
+  padding: 3px 6px;
+}
