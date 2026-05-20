@@ -1570,6 +1570,37 @@ export default function App() {
       alert("완료. 새로고침");
       location.reload();
     };
+    // List every member document so you can spot ghosts even when nickname spelling differs.
+    window.__listAll = async () => {
+      console.log("내 uid:", uid, "/ 내 닉네임:", JSON.stringify(nickname));
+      const cols = [
+        ["daily", dailyCol(currentDayKey)],
+        ["weekly", weeklyCol(currentWeekKey)],
+        ["routines", routineCol()],
+      ];
+      const result = {};
+      for (const [tag, path] of cols) {
+        try {
+          const snap = await getDocs(collection(db, path));
+          const rows = [];
+          snap.forEach((d) => {
+            const data = d.data() || {};
+            rows.push({
+              uid: d.id,
+              nickname: JSON.stringify(data.nickname || ""),
+              isMe: d.id === uid ? "✓" : "",
+              count: Array.isArray(data.todos) ? data.todos.length : (Array.isArray(data.items) ? data.items.length : 0),
+            });
+          });
+          result[tag] = rows;
+          console.log(`\n=== ${tag} (${rows.length}) ===`);
+          console.table(rows);
+        } catch (err) {
+          console.warn(tag, "read failed", err);
+        }
+      }
+      return result;
+    };
   }, [uid, nickname, currentDayKey, currentWeekKey]);
 
   // Strip out any "ghost" member whose nickname matches mine — happens when an old uid
