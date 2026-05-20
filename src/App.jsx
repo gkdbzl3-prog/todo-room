@@ -131,6 +131,30 @@ function getUid() {
   return uid;
 }
 
+function isLocalDevHost() {
+  if (typeof window === "undefined") return false;
+  return ["localhost", "127.0.0.1", "0.0.0.0"].includes(window.location.hostname);
+}
+
+function canWriteRemote() {
+  return !isLocalDevHost();
+}
+
+function writeSetDoc(...args) {
+  if (!canWriteRemote()) return Promise.resolve(false);
+  return setDoc(...args);
+}
+
+function writeAddDoc(...args) {
+  if (!canWriteRemote()) return Promise.resolve(false);
+  return addDoc(...args);
+}
+
+function writeDeleteDoc(...args) {
+  if (!canWriteRemote()) return Promise.resolve(false);
+  return deleteDoc(...args);
+}
+
 function getSavedNickname() {
   return localStorage.getItem("todoRoom_nickname") || "";
 }
@@ -752,7 +776,7 @@ export default function App() {
       await Promise.all(
         sameNicknameSnap.docs
           .filter((docSnap) => docSnap.id !== uid && isValidUid(docSnap.id))
-          .map((docSnap) => setDoc(doc(db, collectionPath, docSnap.id), payload))
+          .map((docSnap) => writeSetDoc(doc(db, collectionPath, docSnap.id), payload))
       );
     },
     [uid]
@@ -761,6 +785,7 @@ export default function App() {
   const loadNicknameMatches = useCallback(async (rawNickname) => {
     const normalizedNickname = normalizeNickname(rawNickname);
     if (!normalizedNickname) return [];
+    if (isLocalDevHost()) return [];
     const weeklyKeys =
       currentWeekKey === legacyWeekKeyValue
         ? [currentWeekKey]
@@ -870,14 +895,14 @@ export default function App() {
         updatedAt: serverTimestamp(),
       };
 
-      void setDoc(doc(db, dailyCol(date), uid), payload).catch((error) => {
+      void writeSetDoc(doc(db, dailyCol(date), uid), payload).catch((error) => {
         console.error("Failed to sync daily todos", error);
       });
       void syncDuplicateNicknameDocs(dailyCol(date), nickname, payload).catch((error) => {
         console.error("Failed to sync duplicate daily todos", error);
       });
       // 날짜 기록
-      void setDoc(doc(db, historyDatesCol(), date), { date }).catch((error) => {
+      void writeSetDoc(doc(db, historyDatesCol(), date), { date }).catch((error) => {
         console.error("Failed to sync history date", error);
       });
     },
@@ -896,7 +921,7 @@ export default function App() {
       };
 
       weeklyKeys.forEach((wk) => {
-        void setDoc(doc(db, weeklyCol(wk), uid), payload).catch((error) => {
+        void writeSetDoc(doc(db, weeklyCol(wk), uid), payload).catch((error) => {
           console.error("Failed to sync weekly todos", error);
         });
         void syncDuplicateNicknameDocs(weeklyCol(wk), nickname, payload).catch((error) => {
@@ -926,7 +951,7 @@ export default function App() {
         doneDate: next.doneDate || currentDayKey,
         updatedAt: serverTimestamp(),
       };
-      void setDoc(doc(db, routineCol(), uid), payload).catch((error) => {
+      void writeSetDoc(doc(db, routineCol(), uid), payload).catch((error) => {
         console.error("Failed to sync routine", error);
       });
     },
@@ -972,6 +997,7 @@ export default function App() {
   // Subscribe to own routine doc in Firestore (so multi-device stays in sync)
   useEffect(() => {
     if (!nicknameConfirmed || !uid) return;
+    if (isLocalDevHost()) return;
     const unsub = onSnapshot(doc(db, routineCol(), uid), (snap) => {
       if (!snap.exists()) return;
       const data = snap.data() || {};
@@ -1067,6 +1093,10 @@ export default function App() {
   /* ── 로컬 프로필이 비었을 때 기존 uuid로 Firestore 복구 ── */
   useEffect(() => {
     if (nicknameConfirmed) return;
+    if (isLocalDevHost()) {
+      setProfileRecoveryChecked(true);
+      return;
+    }
 
     const oldUid = uid;
     if (!oldUid) return;
@@ -1148,6 +1178,7 @@ export default function App() {
   /* ── 같은 닉네임의 더 좋은 문서가 있으면 그 uid로 재연결 ── */
   useEffect(() => {
     if (!nicknameConfirmed || !nickname.trim()) return;
+    if (isLocalDevHost()) return;
 
     let cancelled = false;
 
@@ -1202,6 +1233,7 @@ export default function App() {
   /* ── 새 날짜 첫 진입 시 어제 미완료 투두 이어받기 ── */
   useEffect(() => {
     if (!nicknameConfirmed || !uid) return;
+    if (isLocalDevHost()) return;
 
     const carryKey = `todoRoom_dailyCarry_${uid}_${currentDayKey}`;
 
@@ -1240,13 +1272,13 @@ export default function App() {
         }
 
         setMyDaily(carryTodos);
-        await setDoc(todayRef, {
+        await writeSetDoc(todayRef, {
           nickname: sourceData.nickname || nickname,
           avatar: nextAvatar,
           todos: carryTodos,
           updatedAt: serverTimestamp(),
         });
-        await setDoc(doc(db, historyDatesCol(), today), { date: today });
+        await writeSetDoc(doc(db, historyDatesCol(), today), { date: today });
         localStorage.setItem(carryKey, "done");
       } catch (error) {
         console.error("Failed to carry over daily todos", error);
@@ -1263,6 +1295,10 @@ export default function App() {
   /* ── 실시간 리스너 ── */
   useEffect(() => {
     if (!nicknameConfirmed || !uid) return;
+    if (isLocalDevHost()) {
+      setMembersReadyKey(currentMembersReadyKey);
+      return;
+    }
 
     const date = currentDayKey;
     const weeklyKeys =
@@ -1509,7 +1545,7 @@ export default function App() {
       if (!t.started && !t.done) return { ...t, started: true };
       // 진행중 → 완료
       if (t.started && !t.done) {
-        addDoc(collection(db, notiCol(currentDayKey)), {
+        writeAddDoc(collection(db, notiCol(currentDayKey)), {
           message: `${nickname}님이 '${t.text}'을(를) 완수하였습니다!`,
           createdAt: serverTimestamp(),
         });
@@ -1533,7 +1569,7 @@ export default function App() {
       if (t.id !== id) return t;
       if (!t.started && !t.done) return { ...t, started: true };
       if (t.started && !t.done) {
-        addDoc(collection(db, notiCol(currentDayKey)), {
+        writeAddDoc(collection(db, notiCol(currentDayKey)), {
           message: `${nickname}님이 '${t.text}'을(를) 완수하였습니다! (주간)`,
           createdAt: serverTimestamp(),
         });
@@ -1633,7 +1669,7 @@ export default function App() {
       ];
       for (const path of paths) {
         try {
-          await deleteDoc(doc(db, path, ghostUid));
+          await writeDeleteDoc(doc(db, path, ghostUid));
           console.log("deleted", path, ghostUid);
         } catch (err) {
           console.warn("delete failed", path, err);
