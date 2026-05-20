@@ -1501,9 +1501,14 @@ export default function App() {
   const badge = getBadge(totalDoneCount);
 
   // 전체 멤버 (나 포함) 카드 데이터
+  // Strip out any "ghost" member whose nickname matches mine — happens when an old uid
+  // with the same nickname is still on the server. The self card already shows my data.
+  const myNicknameKey = normalizeNickname(nickname);
   const otherMembers = attachRoutines(
-    mergeDisplayMembers(members, weeklyMembers),
-    routineMembers,
+    mergeDisplayMembers(members, weeklyMembers).filter(
+      (m) => !myNicknameKey || normalizeNickname(m.nickname) !== myNicknameKey
+    ),
+    routineMembers.filter((m) => !myNicknameKey || normalizeNickname(m.nickname) !== myNicknameKey),
     currentDayKey
   );
   const allMembers = [
