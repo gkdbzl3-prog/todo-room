@@ -1741,6 +1741,58 @@ export default function App() {
       alert("todo-room 로컬 데이터 삭제 완료. 새로고침합니다.");
       location.reload();
     };
+
+    // --- 멤버 루틴 직접 편집 (복구용 admin) ---
+    // __viewMemberRoutine('UID')                   → 해당 uid의 현재 루틴 상태 출력
+    // __addMemberRoutine('UID', '텍스트', 'morning')→ 새 루틴 항목 추가
+    // __setMemberRoutine('UID', [items배열])       → items 통째로 교체
+    // __clearMemberRoutine('UID')                  → 그 멤버 루틴 비우기
+    window.__viewMemberRoutine = async (targetUid) => {
+      if (!targetUid) return console.error("uid 필요");
+      const snap = await getDoc(doc(db, routineCol(), targetUid));
+      if (!snap.exists()) { console.log("문서 없음"); return null; }
+      const data = snap.data();
+      console.log("nickname:", data.nickname, "doneDate:", data.doneDate);
+      console.table((data.items || []).map((it, i) => ({
+        i, text: it.text, section: it.section, done: !!it.done, started: !!it.started,
+      })));
+      return data;
+    };
+    window.__setMemberRoutine = async (targetUid, items, opts = {}) => {
+      if (!targetUid) return console.error("uid 필요");
+      const snap = await getDoc(doc(db, routineCol(), targetUid));
+      const current = snap.exists() ? snap.data() : {};
+      const payload = {
+        nickname: opts.nickname || current.nickname || "",
+        avatar: opts.avatar || current.avatar || "",
+        items: Array.isArray(items) ? items : [],
+        doneDate: opts.doneDate || current.doneDate || currentDayKey,
+        updatedAt: serverTimestamp(),
+      };
+      await setDoc(doc(db, routineCol(), targetUid), payload);
+      console.log("✓ updated", targetUid, "items:", payload.items.length);
+      return payload;
+    };
+    window.__addMemberRoutine = async (targetUid, text, section = "anytime") => {
+      if (!targetUid || !text) return console.error("uid 와 text 필요");
+      const snap = await getDoc(doc(db, routineCol(), targetUid));
+      const current = snap.exists() ? snap.data() : {};
+      const items = Array.isArray(current.items) ? current.items.slice() : [];
+      items.push({
+        id: Date.now() + Math.floor(Math.random() * 1000),
+        text,
+        section,
+        done: false,
+        started: false,
+        createdAt: Date.now(),
+      });
+      await window.__setMemberRoutine(targetUid, items, current);
+    };
+    window.__clearMemberRoutine = async (targetUid) => {
+      if (!targetUid) return console.error("uid 필요");
+      if (!confirm(`${targetUid} 루틴 다 지울까요?`)) return;
+      await window.__setMemberRoutine(targetUid, []);
+    };
   }, [uid, nickname, currentDayKey, currentWeekKey]);
 
   // Strip out anything that represents me — either my uid directly, or a "ghost" member
