@@ -955,6 +955,7 @@ export default function App() {
       void writeSetDoc(doc(db, routineCol(), uid), payload).catch((error) => {
         console.error("Failed to sync routine", error);
       });
+<<<<<<< HEAD
       // Only mirror to other nickname-matched docs when this came from a user-initiated change
       // AND we have non-empty items (so a fresh device load can't wipe other devices).
       if (!opts.skipMirror && items.length > 0) {
@@ -962,6 +963,12 @@ export default function App() {
           console.error("Failed to sync duplicate routine docs", error);
         });
       }
+=======
+      // Mirror to any other uid that uses the same nickname, so PC/mobile stay in sync
+      void syncDuplicateNicknameDocs(routineCol(), nickname, payload).catch((error) => {
+        console.error("Failed to sync duplicate routine docs", error);
+      });
+>>>>>>> origin/main
     },
     [uid, nickname, avatar, nicknameConfirmed, currentDayKey, syncDuplicateNicknameDocs]
   );
@@ -1015,7 +1022,11 @@ export default function App() {
       setMyRoutine(next);
       setRoutineCelebrated(false);
       saveStoredRoutine(routineStorageKey, next);
+<<<<<<< HEAD
       if (changed) syncMyRoutine(next, { skipMirror: true });
+=======
+      if (changed) syncMyRoutine(next);
+>>>>>>> origin/main
     };
 
     // 1) own uid doc
