@@ -942,20 +942,28 @@ export default function App() {
 
   /* ── Firestore 루틴 동기화 ── */
   const syncMyRoutine = useCallback(
-    (next) => {
+    (next, opts = {}) => {
       if (!nicknameConfirmed || !uid) return;
+      const items = next.items || [];
       const payload = {
         nickname,
         avatar,
-        items: next.items || [],
+        items,
         doneDate: next.doneDate || currentDayKey,
         updatedAt: serverTimestamp(),
       };
       void writeSetDoc(doc(db, routineCol(), uid), payload).catch((error) => {
         console.error("Failed to sync routine", error);
       });
+      // Only mirror to other nickname-matched docs when this came from a user-initiated change
+      // AND we have non-empty items (so a fresh device load can't wipe other devices).
+      if (!opts.skipMirror && items.length > 0) {
+        void syncDuplicateNicknameDocs(routineCol(), nickname, payload).catch((error) => {
+          console.error("Failed to sync duplicate routine docs", error);
+        });
+      }
     },
-    [uid, nickname, avatar, nicknameConfirmed, currentDayKey]
+    [uid, nickname, avatar, nicknameConfirmed, currentDayKey, syncDuplicateNicknameDocs]
   );
 
   // Load own routine from localStorage on uid change, with daily rollover applied
@@ -968,7 +976,7 @@ export default function App() {
     setRoutineCelebrated(false);
     if (changed) {
       saveStoredRoutine(routineStorageKey, next);
-      syncMyRoutine(next);
+      syncMyRoutine(next, { skipMirror: true });
     }
   }, [routineStorageKey, currentDayKey, syncMyRoutine]);
 
@@ -994,27 +1002,49 @@ export default function App() {
     return () => unsub();
   }, [uid, nicknameConfirmed]);
 
-  // Subscribe to own routine doc in Firestore (so multi-device stays in sync)
+  // Subscribe to own routine doc in Firestore + watch for nickname-matched docs
+  // (PC and mobile may have different uids; resolve to whichever doc matches my nickname)
   useEffect(() => {
     if (!nicknameConfirmed || !uid) return;
     if (isLocalDevHost()) return;
-    const unsub = onSnapshot(doc(db, routineCol(), uid), (snap) => {
-      if (!snap.exists()) return;
-      const data = snap.data() || {};
-      const items = Array.isArray(data.items) ? data.items : [];
-      const { items: rolled, changed } = rolloverRoutineDone(items, data.doneDate || "", currentDayKey);
+    const myKey = normalizeNickname(nickname);
+    const applyData = (data) => {
+      const items = Array.isArray(data?.items) ? data.items : [];
+      const { items: rolled, changed } = rolloverRoutineDone(items, data?.doneDate || "", currentDayKey);
       const next = { items: rolled, doneDate: currentDayKey };
       setMyRoutine(next);
       setRoutineCelebrated(false);
-      if (changed) {
-        saveStoredRoutine(routineStorageKey, next);
-        syncMyRoutine(next);
-      } else {
-        saveStoredRoutine(routineStorageKey, next);
-      }
+      saveStoredRoutine(routineStorageKey, next);
+      if (changed) syncMyRoutine(next, { skipMirror: true });
+    };
+
+    // 1) own uid doc
+    const unsubOwn = onSnapshot(doc(db, routineCol(), uid), (snap) => {
+      if (snap.exists()) applyData(snap.data() || {});
     });
-    return () => unsub();
-  }, [uid, nicknameConfirmed, currentDayKey, routineStorageKey, syncMyRoutine]);
+
+    // 2) any other doc matching my nickname (covers PC ↔ mobile with different uids)
+    let unsubNick = () => {};
+    if (myKey) {
+      unsubNick = onSnapshot(
+        query(collection(db, routineCol()), where("nickname", "==", myKey)),
+        (snap) => {
+          let best = null;
+          snap.forEach((docSnap) => {
+            const data = docSnap.data() || {};
+            const ts = Number(data.updatedAt?.seconds || data.updatedAt) || 0;
+            if (docSnap.id === uid) return;          // own doc handled above
+            if (!best || ts > best._ts) {
+              best = { ...data, _ts: ts };
+            }
+          });
+          if (best) applyData(best);
+        }
+      );
+    }
+
+    return () => { unsubOwn(); unsubNick(); };
+  }, [uid, nickname, nicknameConfirmed, currentDayKey, routineStorageKey, syncMyRoutine]);
 
   useEffect(() => {
     if (!routineStorageKey) return;
