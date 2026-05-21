@@ -661,10 +661,10 @@ async function clearTodoRoomIndexedDb() {
   return names;
 }
 
-// Reset all `done` flags if the date has changed since they were last set.
+// Reset both `started` and `done` flags if the date has changed since they were last set.
 function rolloverRoutineDone(items, doneDate, todayKey) {
   if (doneDate === todayKey) return { items, changed: false };
-  const next = items.map((it) => ({ ...it, done: false }));
+  const next = items.map((it) => ({ ...it, started: false, done: false }));
   return { items: next, changed: true };
 }
 
@@ -1042,20 +1042,28 @@ export default function App() {
     setRoutineText("");
   };
 
-  const toggleRoutine = (id) => {
-    const completedItem = (myRoutine.items || []).find(
-      (it) => it.id === id && !it.done
-    );
+  // 3-state cycle (matches TodoItem): 진행 전 → 진행중 → 완료 → (다시 진행 전)
+  const cycleRoutine = (id) => {
+    let completedItem = null;
     const next = {
       ...myRoutine,
       doneDate: currentDayKey,
-      items: (myRoutine.items || []).map((it) =>
-        it.id === id ? { ...it, done: !it.done } : it
-      ),
+      items: (myRoutine.items || []).map((it) => {
+        if (it.id !== id) return it;
+        // 진행 전 → 진행중
+        if (!it.started && !it.done) return { ...it, started: true };
+        // 진행중 → 완료
+        if (it.started && !it.done) {
+          completedItem = it;
+          return { ...it, done: true, completedAt: Date.now() };
+        }
+        // 완료 → 진행 전 (되돌리기)
+        return { ...it, started: false, done: false, completedAt: null };
+      }),
     };
     if (completedItem) {
       writeAddDoc(collection(db, notiCol(currentDayKey)), {
-        message: `${nickname}님이 '${completedItem.text}'을(를) 완수하였습니다!`,
+        message: `${nickname}님이 '${completedItem.text}'을(를) 완수하였습니다! (루틴)`,
         createdAt: serverTimestamp(),
       });
     }
@@ -2033,7 +2041,7 @@ export default function App() {
               setRoutineText={setRoutineText}
               setRoutineSection={setRoutineSection}
               addRoutine={addRoutine}
-              toggleRoutine={toggleRoutine}
+              cycleRoutine={cycleRoutine}
               deleteRoutine={deleteRoutine}
               celebrated={routineCelebrated}
             />
@@ -2105,18 +2113,20 @@ function RoutineDonut({ done, total, isComplete }) {
 }
 
 /* ─────────────── RoutineItem ─────────────── */
-function RoutineItem({ item, onToggle, onDelete }) {
-  // 체크 스타일/크기를 TodoItem(todo-cycle-btn)과 통일 — done 색만 다른 게 의도(루틴=초록)
-  const stateClass = item.done ? "done" : "ready";
+function RoutineItem({ item, onCycle, onDelete }) {
+  // 3-state cycle: 진행 전 → 진행중 → 완료 (TodoItem과 동일)
+  const status = item.done ? "done" : item.started ? "doing" : "ready";
+  const statusLabel = { ready: "진행 전", doing: "진행중", done: "완료" };
   return (
-    <div className={`routine-item ${stateClass}`}>
+    <div className={`routine-item ${status}`}>
       <button
         type="button"
-        className={`todo-cycle-btn routine-cycle ${stateClass}`}
-        onClick={() => onToggle(item.id)}
-        aria-label={item.done ? "되돌리기" : "완료"}
+        className={`todo-cycle-btn routine-cycle ${status}`}
+        onClick={() => onCycle(item.id)}
+        aria-label={statusLabel[status]}
       />
       <span className="routine-text">{item.text}</span>
+      <span className={`todo-status-label ${status}`}>{statusLabel[status]}</span>
       <button
         type="button"
         className="routine-del"
@@ -2137,7 +2147,7 @@ function RoutineCard({
   setRoutineText,
   setRoutineSection,
   addRoutine,
-  toggleRoutine,
+  cycleRoutine,
   deleteRoutine,
   celebrated,
 }) {
@@ -2194,7 +2204,7 @@ function RoutineCard({
                   <RoutineItem
                     key={item.id}
                     item={item}
-                    onToggle={toggleRoutine}
+                    onCycle={cycleRoutine}
                     onDelete={deleteRoutine}
                   />
                 ))}
@@ -2326,17 +2336,17 @@ function MemberCard({ member }) {
                     <div className="member-routine-group-label">
                       {s.emoji} {s.label}
                     </div>
-                    {sItems.map((it) => (
-                      <div
-                        key={it.id}
-                        className={`mini-todo${it.done ? " done" : ""}`}
-                      >
-                        <span className={`todo-dot ${it.done ? "done" : "ready"}`} />
-                        <span className={it.done ? "mini-text done" : "mini-text"}>
-                          {it.text}
-                        </span>
-                      </div>
-                    ))}
+                    {sItems.map((it) => {
+                      const st = it.done ? "done" : it.started ? "doing" : "ready";
+                      return (
+                        <div key={it.id} className={`mini-todo ${st}`}>
+                          <span className={`todo-dot ${st}`} />
+                          <span className={st === "done" ? "mini-text done" : "mini-text"}>
+                            {it.text}
+                          </span>
+                        </div>
+                      );
+                    })}
                   </div>
                 );
               })}
