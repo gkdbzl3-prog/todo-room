@@ -668,6 +668,42 @@ function rolloverRoutineDone(items, doneDate, todayKey) {
   return { items: next, changed: true };
 }
 
+/* ── 자동 백업 (localStorage 기반 안전망) ── */
+const BACKUP_KEY = "todoRoom_backups_v1";
+const BACKUP_INTERVAL_MS = 24 * 60 * 60 * 1000; // 24h
+const MAX_BACKUPS = 7;
+
+function loadBackups() {
+  try {
+    const raw = localStorage.getItem(BACKUP_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch { return {}; }
+}
+function saveBackups(backups) {
+  try { localStorage.setItem(BACKUP_KEY, JSON.stringify(backups)); }
+  catch (err) { console.warn("backup save failed (storage full?)", err); }
+}
+async function captureBackupSnapshot(currentDayKey, currentWeekKey) {
+  const cols = [
+    ["routines", routineCol()],
+    ["daily", dailyCol(currentDayKey)],
+    ["weekly", weeklyCol(currentWeekKey)],
+  ];
+  const data = {};
+  for (const [tag, path] of cols) {
+    try {
+      const snap = await getDocs(collection(db, path));
+      const rows = [];
+      snap.forEach((d) => rows.push({ id: d.id, ...d.data() }));
+      data[tag] = rows;
+    } catch (err) {
+      console.warn("backup read failed:", path, err);
+      data[tag] = [];
+    }
+  }
+  return { timestamp: Date.now(), iso: new Date().toISOString(), data };
+}
+
 /* ─────────────────────────────── App ─────────────────────────────── */
 export default function App() {
   const profileRef = useRef({
@@ -1731,6 +1767,74 @@ export default function App() {
       }
       return result;
     };
+    // --- 자동 백업 helpers (anyone can run from console) ---
+    window.__listBackups = () => {
+      const backups = loadBackups();
+      const rows = Object.entries(backups).map(([key, b]) => ({
+        date: key,
+        savedAt: b.iso,
+        routines: (b.data?.routines || []).length,
+        daily: (b.data?.daily || []).length,
+        weekly: (b.data?.weekly || []).length,
+      }));
+      console.table(rows);
+      return rows;
+    };
+    window.__viewBackup = (key) => {
+      const backups = loadBackups();
+      const b = backups[key];
+      if (!b) return console.error("백업 없음:", key);
+      console.log(b);
+      return b;
+    };
+    window.__backupNow = async () => {
+      const snapshot = await captureBackupSnapshot(currentDayKey, currentWeekKey);
+      const backups = loadBackups();
+      const key = snapshot.iso.slice(0, 10);
+      backups[key] = snapshot;
+      const keys = Object.keys(backups).sort();
+      while (keys.length > MAX_BACKUPS) { delete backups[keys.shift()]; }
+      saveBackups(backups);
+      console.log("✓ 백업 저장됨:", key, "(routines:", snapshot.data.routines.length, ")");
+      return snapshot;
+    };
+    window.__downloadBackup = (key) => {
+      const backups = loadBackups();
+      const b = key ? backups[key] : Object.values(backups).sort((a, b) => b.timestamp - a.timestamp)[0];
+      if (!b) return console.error("백업 없음");
+      const blob = new Blob([JSON.stringify(b, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `todoRoom-backup-${b.iso.slice(0, 10)}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+    };
+    window.__restoreBackup = async (key) => {
+      const backups = loadBackups();
+      const b = backups[key];
+      if (!b) return console.error("백업 없음:", key);
+      if (!confirm(`${key} 백업으로 모든 멤버 데이터를 복원할까요? (현재 Firestore 데이터 덮어씀)`)) return;
+      const cols = {
+        routines: routineCol(),
+        daily: dailyCol(currentDayKey),
+        weekly: weeklyCol(currentWeekKey),
+      };
+      let restored = 0;
+      for (const [tag, path] of Object.entries(cols)) {
+        const rows = b.data[tag] || [];
+        for (const row of rows) {
+          const { id, ...payload } = row;
+          try {
+            await setDoc(doc(db, path, id), payload);
+            restored++;
+          } catch (err) { console.warn("restore failed:", tag, id, err); }
+        }
+      }
+      alert(`복원 완료 (${restored}개 문서). 새로고침합니다.`);
+      location.reload();
+    };
+
     window.__resetTodoRoomLocal = async () => {
       const removedStorageKeys = clearTodoRoomBrowserStorage();
       const removedDatabases = await clearTodoRoomIndexedDb();
@@ -1794,6 +1898,34 @@ export default function App() {
       await window.__setMemberRoutine(targetUid, []);
     };
   }, [uid, nickname, currentDayKey, currentWeekKey]);
+
+  // 앱 로드시 자동 백업 — 마지막 백업이 24시간보다 오래되면 새 스냅샷 저장
+  useEffect(() => {
+    if (!nicknameConfirmed || !uid) return;
+    if (typeof window === "undefined") return;
+    const tryAutoBackup = async () => {
+      const backups = loadBackups();
+      const lastTs = Math.max(0, ...Object.values(backups).map((b) => b.timestamp || 0));
+      if (Date.now() - lastTs < BACKUP_INTERVAL_MS) return;
+      console.log("[auto-backup] 24h 경과 → 새 스냅샷 저장 중...");
+      try {
+        const snapshot = await captureBackupSnapshot(currentDayKey, currentWeekKey);
+        const key = snapshot.iso.slice(0, 10);
+        backups[key] = snapshot;
+        const keys = Object.keys(backups).sort();
+        while (keys.length > MAX_BACKUPS) { delete backups[keys.shift()]; }
+        saveBackups(backups);
+        console.log(
+          `[auto-backup] ✓ ${key} 저장 (routines: ${snapshot.data.routines.length}, daily: ${snapshot.data.daily.length}, weekly: ${snapshot.data.weekly.length})`
+        );
+      } catch (err) {
+        console.warn("[auto-backup] failed:", err);
+      }
+    };
+    // 페이지 로드 직후엔 다른 구독들 정착 후 살짝 늦게 실행
+    const t = setTimeout(tryAutoBackup, 3000);
+    return () => clearTimeout(t);
+  }, [uid, nicknameConfirmed, currentDayKey, currentWeekKey]);
 
   // Strip out anything that represents me — either my uid directly, or a "ghost" member
   // sharing my nickname. The self card injection above is the single source of truth for self.
