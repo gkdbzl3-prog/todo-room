@@ -56,7 +56,7 @@ export const quizSubjects = [
             { id: "adminlaw-core-ox", label: "핵심집약 OX", desc: "지방직 대비" },
             { id: "adminlaw-unexpected-ox", label: "불의타 OX", desc: "지방직 대비" },
         ],
-    }
+    },
     {
         id: "sqld",
         emoji: "🗄️",
