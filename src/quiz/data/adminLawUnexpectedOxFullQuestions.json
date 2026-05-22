@@ -12,7 +12,8 @@
     "difficulty": 5,
     "sourcePage": 1,
     "sourceNo": "001",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-002",
@@ -27,7 +28,8 @@
     "difficulty": 5,
     "sourcePage": 1,
     "sourceNo": "002",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-003",
@@ -42,7 +44,8 @@
     "difficulty": 5,
     "sourcePage": 1,
     "sourceNo": "003",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-unexpected-004",
@@ -57,7 +60,8 @@
     "difficulty": 5,
     "sourcePage": 2,
     "sourceNo": "004",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-005",
@@ -72,7 +76,8 @@
     "difficulty": 5,
     "sourcePage": 2,
     "sourceNo": "005",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-006",
@@ -87,7 +92,8 @@
     "difficulty": 5,
     "sourcePage": 2,
     "sourceNo": "006",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-007",
@@ -102,7 +108,8 @@
     "difficulty": 5,
     "sourcePage": 3,
     "sourceNo": "007",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-unexpected-008",
@@ -117,7 +124,8 @@
     "difficulty": 5,
     "sourcePage": 3,
     "sourceNo": "008",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-unexpected-009",
@@ -132,7 +140,8 @@
     "difficulty": 5,
     "sourcePage": 3,
     "sourceNo": "009",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-010",
@@ -147,7 +156,8 @@
     "difficulty": 5,
     "sourcePage": 3,
     "sourceNo": "010",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-011",
@@ -162,7 +172,8 @@
     "difficulty": 5,
     "sourcePage": 3,
     "sourceNo": "011",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-012",
@@ -177,7 +188,8 @@
     "difficulty": 5,
     "sourcePage": 4,
     "sourceNo": "012",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-013",
@@ -192,7 +204,8 @@
     "difficulty": 5,
     "sourcePage": 4,
     "sourceNo": "013",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-014",
@@ -207,7 +220,8 @@
     "difficulty": 5,
     "sourcePage": 4,
     "sourceNo": "014",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-unexpected-015",
@@ -222,7 +236,8 @@
     "difficulty": 5,
     "sourcePage": 4,
     "sourceNo": "015",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-016",
@@ -237,7 +252,8 @@
     "difficulty": 5,
     "sourcePage": 5,
     "sourceNo": "016",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-017",
@@ -252,7 +268,8 @@
     "difficulty": 5,
     "sourcePage": 5,
     "sourceNo": "017",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-unexpected-018",
@@ -267,7 +284,8 @@
     "difficulty": 5,
     "sourcePage": 5,
     "sourceNo": "018",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-019",
@@ -282,7 +300,8 @@
     "difficulty": 5,
     "sourcePage": 5,
     "sourceNo": "019",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-020",
@@ -297,7 +316,8 @@
     "difficulty": 5,
     "sourcePage": 6,
     "sourceNo": "020",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-021",
@@ -312,7 +332,8 @@
     "difficulty": 5,
     "sourcePage": 6,
     "sourceNo": "021",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-022",
@@ -327,7 +348,8 @@
     "difficulty": 5,
     "sourcePage": 6,
     "sourceNo": "022",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-023",
@@ -342,7 +364,8 @@
     "difficulty": 5,
     "sourcePage": 6,
     "sourceNo": "023",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-024",
@@ -357,7 +380,8 @@
     "difficulty": 5,
     "sourcePage": 6,
     "sourceNo": "024",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-unexpected-025",
@@ -372,7 +396,8 @@
     "difficulty": 5,
     "sourcePage": 6,
     "sourceNo": "025",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-026",
@@ -387,7 +412,8 @@
     "difficulty": 5,
     "sourcePage": 6,
     "sourceNo": "026",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-027",
@@ -403,7 +429,7 @@
     "sourcePage": 7,
     "sourceNo": "027",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-028",
@@ -419,7 +445,7 @@
     "sourcePage": 7,
     "sourceNo": "028",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-029",
@@ -435,7 +461,7 @@
     "sourcePage": 7,
     "sourceNo": "029",
     "needsReview": true,
-    "reviewNote": "OCR로 정답을 확정하지 못해 임시값 O를 넣었습니다. 원문 PDF sourcePage/sourceNo를 확인해 주세요."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-030",
@@ -451,7 +477,7 @@
     "sourcePage": 7,
     "sourceNo": "030",
     "needsReview": true,
-    "reviewNote": "OCR로 정답을 확정하지 못해 임시값 O를 넣었습니다. 원문 PDF sourcePage/sourceNo를 확인해 주세요."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-031",
@@ -466,7 +492,8 @@
     "difficulty": 5,
     "sourcePage": 8,
     "sourceNo": "031",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-032",
@@ -481,7 +508,8 @@
     "difficulty": 5,
     "sourcePage": 8,
     "sourceNo": "032",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-033",
@@ -496,7 +524,8 @@
     "difficulty": 5,
     "sourcePage": 8,
     "sourceNo": "033",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-034",
@@ -512,7 +541,7 @@
     "sourcePage": 9,
     "sourceNo": "034",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-035",
@@ -528,7 +557,7 @@
     "sourcePage": 9,
     "sourceNo": "035",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-036",
@@ -544,7 +573,7 @@
     "sourcePage": 9,
     "sourceNo": "036",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-037",
@@ -560,7 +589,7 @@
     "sourcePage": 9,
     "sourceNo": "037",
     "needsReview": true,
-    "reviewNote": "OCR로 정답을 확정하지 못해 임시값 O를 넣었습니다. 원문 PDF sourcePage/sourceNo를 확인해 주세요."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-038",
@@ -576,7 +605,7 @@
     "sourcePage": 9,
     "sourceNo": "038",
     "needsReview": true,
-    "reviewNote": "OCR로 정답을 확정하지 못해 임시값 O를 넣었습니다. 원문 PDF sourcePage/sourceNo를 확인해 주세요."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-039",
@@ -591,7 +620,8 @@
     "difficulty": 5,
     "sourcePage": 10,
     "sourceNo": "039",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-040",
@@ -606,7 +636,8 @@
     "difficulty": 5,
     "sourcePage": 10,
     "sourceNo": "040",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-041",
@@ -621,7 +652,8 @@
     "difficulty": 5,
     "sourcePage": 10,
     "sourceNo": "041",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-unexpected-042",
@@ -636,7 +668,8 @@
     "difficulty": 5,
     "sourcePage": 10,
     "sourceNo": "042",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-043",
@@ -651,7 +684,8 @@
     "difficulty": 5,
     "sourcePage": 11,
     "sourceNo": "043",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-044",
@@ -666,7 +700,8 @@
     "difficulty": 5,
     "sourcePage": 11,
     "sourceNo": "044",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-045",
@@ -681,7 +716,8 @@
     "difficulty": 5,
     "sourcePage": 11,
     "sourceNo": "045",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-046",
@@ -696,7 +732,8 @@
     "difficulty": 5,
     "sourcePage": 11,
     "sourceNo": "046",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-unexpected-047",
@@ -711,7 +748,8 @@
     "difficulty": 5,
     "sourcePage": 12,
     "sourceNo": "047",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-048",
@@ -726,7 +764,8 @@
     "difficulty": 5,
     "sourcePage": 12,
     "sourceNo": "048",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-049",
@@ -741,7 +780,8 @@
     "difficulty": 5,
     "sourcePage": 12,
     "sourceNo": "049",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-050",
@@ -756,7 +796,8 @@
     "difficulty": 5,
     "sourcePage": 12,
     "sourceNo": "050",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-unexpected-051",
@@ -771,7 +812,8 @@
     "difficulty": 5,
     "sourcePage": 12,
     "sourceNo": "051",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-052",
@@ -786,7 +828,8 @@
     "difficulty": 5,
     "sourcePage": 12,
     "sourceNo": "052",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-053",
@@ -801,7 +844,8 @@
     "difficulty": 5,
     "sourcePage": 13,
     "sourceNo": "053",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-054",
@@ -816,7 +860,8 @@
     "difficulty": 5,
     "sourcePage": 13,
     "sourceNo": "054",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-055",
@@ -831,7 +876,8 @@
     "difficulty": 5,
     "sourcePage": 13,
     "sourceNo": "055",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-056",
@@ -846,7 +892,8 @@
     "difficulty": 5,
     "sourcePage": 14,
     "sourceNo": "056",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-057",
@@ -861,7 +908,8 @@
     "difficulty": 5,
     "sourcePage": 14,
     "sourceNo": "057",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-058",
@@ -876,7 +924,8 @@
     "difficulty": 5,
     "sourcePage": 14,
     "sourceNo": "058",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-059",
@@ -891,7 +940,8 @@
     "difficulty": 5,
     "sourcePage": 14,
     "sourceNo": "059",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-unexpected-060",
@@ -906,7 +956,8 @@
     "difficulty": 5,
     "sourcePage": 14,
     "sourceNo": "060",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-061",
@@ -921,7 +972,8 @@
     "difficulty": 5,
     "sourcePage": 15,
     "sourceNo": "061",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-062",
@@ -936,7 +988,8 @@
     "difficulty": 5,
     "sourcePage": 15,
     "sourceNo": "062",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-063",
@@ -951,7 +1004,8 @@
     "difficulty": 5,
     "sourcePage": 15,
     "sourceNo": "063",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-unexpected-064",
@@ -966,7 +1020,8 @@
     "difficulty": 5,
     "sourcePage": 15,
     "sourceNo": "064",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-065",
@@ -981,7 +1036,8 @@
     "difficulty": 5,
     "sourcePage": 15,
     "sourceNo": "065",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-066",
@@ -996,7 +1052,8 @@
     "difficulty": 5,
     "sourcePage": 16,
     "sourceNo": "066",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-067",
@@ -1011,7 +1068,8 @@
     "difficulty": 5,
     "sourcePage": 16,
     "sourceNo": "067",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-068",
@@ -1026,7 +1084,8 @@
     "difficulty": 5,
     "sourcePage": 16,
     "sourceNo": "068",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-069",
@@ -1041,7 +1100,8 @@
     "difficulty": 5,
     "sourcePage": 17,
     "sourceNo": "069",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-070",
@@ -1056,7 +1116,8 @@
     "difficulty": 5,
     "sourcePage": 17,
     "sourceNo": "070",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-071",
@@ -1071,7 +1132,8 @@
     "difficulty": 5,
     "sourcePage": 17,
     "sourceNo": "071",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-072",
@@ -1086,7 +1148,8 @@
     "difficulty": 5,
     "sourcePage": 17,
     "sourceNo": "072",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-073",
@@ -1101,7 +1164,8 @@
     "difficulty": 5,
     "sourcePage": 17,
     "sourceNo": "073",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-unexpected-074",
@@ -1116,7 +1180,8 @@
     "difficulty": 5,
     "sourcePage": 18,
     "sourceNo": "074",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-unexpected-075",
@@ -1131,7 +1196,8 @@
     "difficulty": 5,
     "sourcePage": 18,
     "sourceNo": "075",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-076",
@@ -1146,7 +1212,8 @@
     "difficulty": 5,
     "sourcePage": 18,
     "sourceNo": "076",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-unexpected-077",
@@ -1161,7 +1228,8 @@
     "difficulty": 5,
     "sourcePage": 18,
     "sourceNo": "077",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-078",
@@ -1176,7 +1244,8 @@
     "difficulty": 5,
     "sourcePage": 19,
     "sourceNo": "078",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-079",
@@ -1191,7 +1260,8 @@
     "difficulty": 5,
     "sourcePage": 19,
     "sourceNo": "079",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-080",
@@ -1206,7 +1276,8 @@
     "difficulty": 5,
     "sourcePage": 19,
     "sourceNo": "080",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-081",
@@ -1221,7 +1292,8 @@
     "difficulty": 5,
     "sourcePage": 20,
     "sourceNo": "081",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-unexpected-082",
@@ -1236,7 +1308,8 @@
     "difficulty": 5,
     "sourcePage": 20,
     "sourceNo": "082",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-083",
@@ -1251,7 +1324,8 @@
     "difficulty": 5,
     "sourcePage": 20,
     "sourceNo": "083",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-084",
@@ -1266,7 +1340,8 @@
     "difficulty": 5,
     "sourcePage": 20,
     "sourceNo": "084",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-085",
@@ -1281,7 +1356,8 @@
     "difficulty": 5,
     "sourcePage": 20,
     "sourceNo": "085",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-unexpected-086",
@@ -1296,7 +1372,8 @@
     "difficulty": 5,
     "sourcePage": 21,
     "sourceNo": "086",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-087",
@@ -1311,7 +1388,8 @@
     "difficulty": 5,
     "sourcePage": 21,
     "sourceNo": "087",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-088",
@@ -1326,7 +1404,8 @@
     "difficulty": 5,
     "sourcePage": 21,
     "sourceNo": "088",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-089",
@@ -1341,7 +1420,8 @@
     "difficulty": 5,
     "sourcePage": 21,
     "sourceNo": "089",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-090",
@@ -1357,7 +1437,7 @@
     "sourcePage": 22,
     "sourceNo": "090",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-091",
@@ -1373,7 +1453,7 @@
     "sourcePage": 22,
     "sourceNo": "091",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-092",
@@ -1389,7 +1469,7 @@
     "sourcePage": 22,
     "sourceNo": "092",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-093",
@@ -1405,7 +1485,7 @@
     "sourcePage": 22,
     "sourceNo": "093",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-094",
@@ -1420,7 +1500,8 @@
     "difficulty": 5,
     "sourcePage": 23,
     "sourceNo": "094",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-095",
@@ -1435,7 +1516,8 @@
     "difficulty": 5,
     "sourcePage": 23,
     "sourceNo": "095",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-unexpected-096",
@@ -1450,7 +1532,8 @@
     "difficulty": 5,
     "sourcePage": 24,
     "sourceNo": "096",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-097",
@@ -1465,7 +1548,8 @@
     "difficulty": 5,
     "sourcePage": 24,
     "sourceNo": "097",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-098",
@@ -1480,7 +1564,8 @@
     "difficulty": 5,
     "sourcePage": 24,
     "sourceNo": "098",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-099",
@@ -1495,7 +1580,8 @@
     "difficulty": 5,
     "sourcePage": 25,
     "sourceNo": "099",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-100",
@@ -1510,7 +1596,8 @@
     "difficulty": 5,
     "sourcePage": 25,
     "sourceNo": "100",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-101",
@@ -1525,7 +1612,8 @@
     "difficulty": 5,
     "sourcePage": 25,
     "sourceNo": "101",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-102",
@@ -1540,7 +1628,8 @@
     "difficulty": 5,
     "sourcePage": 25,
     "sourceNo": "102",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-103",
@@ -1555,7 +1644,8 @@
     "difficulty": 5,
     "sourcePage": 26,
     "sourceNo": "103",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-104",
@@ -1570,7 +1660,8 @@
     "difficulty": 5,
     "sourcePage": 26,
     "sourceNo": "104",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-105",
@@ -1585,7 +1676,8 @@
     "difficulty": 5,
     "sourcePage": 27,
     "sourceNo": "105",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-106",
@@ -1600,7 +1692,8 @@
     "difficulty": 5,
     "sourcePage": 27,
     "sourceNo": "106",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-107",
@@ -1615,7 +1708,8 @@
     "difficulty": 5,
     "sourcePage": 27,
     "sourceNo": "107",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-108",
@@ -1630,7 +1724,8 @@
     "difficulty": 5,
     "sourcePage": 28,
     "sourceNo": "108",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-unexpected-109",
@@ -1645,7 +1740,8 @@
     "difficulty": 5,
     "sourcePage": 28,
     "sourceNo": "109",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-110",
@@ -1660,7 +1756,8 @@
     "difficulty": 5,
     "sourcePage": 28,
     "sourceNo": "110",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-111",
@@ -1675,7 +1772,8 @@
     "difficulty": 5,
     "sourcePage": 28,
     "sourceNo": "111",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-112",
@@ -1691,7 +1789,7 @@
     "sourcePage": 29,
     "sourceNo": "112",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-113",
@@ -1707,7 +1805,7 @@
     "sourcePage": 29,
     "sourceNo": "113",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-114",
@@ -1723,7 +1821,7 @@
     "sourcePage": 29,
     "sourceNo": "114",
     "needsReview": true,
-    "reviewNote": "OCR로 정답을 확정하지 못해 임시값 O를 넣었습니다. 원문 PDF sourcePage/sourceNo를 확인해 주세요."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-115",
@@ -1739,7 +1837,7 @@
     "sourcePage": 29,
     "sourceNo": "115",
     "needsReview": true,
-    "reviewNote": "OCR로 정답을 확정하지 못해 임시값 O를 넣었습니다. 원문 PDF sourcePage/sourceNo를 확인해 주세요."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-116",
@@ -1754,7 +1852,8 @@
     "difficulty": 5,
     "sourcePage": 30,
     "sourceNo": "116",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-117",
@@ -1769,7 +1868,8 @@
     "difficulty": 5,
     "sourcePage": 30,
     "sourceNo": "117",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-118",
@@ -1784,7 +1884,8 @@
     "difficulty": 5,
     "sourcePage": 30,
     "sourceNo": "118",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-119",
@@ -1799,7 +1900,8 @@
     "difficulty": 5,
     "sourcePage": 31,
     "sourceNo": "119",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-unexpected-120",
@@ -1814,6 +1916,7 @@
     "difficulty": 5,
     "sourcePage": 31,
     "sourceNo": "120",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   }
 ]

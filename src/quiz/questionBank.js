@@ -13,8 +13,8 @@ import chineseAdvancedQuestions from "./data/chineseAdvanced.json";
 import japaneseMiddleQuestions from "./data/japaneseMiddleQuestions.json";
 import koreanHistoryHangeomQuestions from "./data/koreanHistoryHangeomQuestions.json";
 import koreanHistoryHangeomAdvancedQuestions from "./data/koreanHistoryHangeomAdvancedQuestions.json";
-import adminLawCoreOxQuestions from "./data/adminLawCoreOxQuestionsRaw.json";
-import adminLawUnexpectedOxQuestions from "./data/adminLawUnexpectedOxQuestionsRaw.json";
+import adminLawCoreOxFullQuestions from "./data/adminLawCoreOxFullQuestions.json";
+import adminLawUnexpectedOxFullQuestions from "./data/adminLawUnexpectedOxFullQuestions.json";
 
 const sampleQuestions = [
     {
@@ -58,8 +58,9 @@ export const questionBank = {
     "adminlaw-multiple": adminlawQuestions,
     "adminlaw-mixed": adminlawQuestions,
 
-    "adminlaw-core-ox": adminLawCoreOxQuestions,
-    "adminlaw-unexpected-ox": adminLawUnexpectedOxQuestions,
+    "adminlaw-core-ox": adminLawCoreOxFullQuestions,
+    "adminlaw-unexpected-ox": adminLawUnexpectedOxFullQuestions,
+
     "admin-basic": publicAdministrationQuestions,
 
     "admin-mixed": publicAdministrationQuestions,

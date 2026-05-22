@@ -53,8 +53,8 @@ export const quizSubjects = [
         title: "행정법",
         levels: [
             { id: "adminlaw-ox", label: "기존 OX", desc: "옳은 지문 기반" },
-            { id: "adminlaw-core-ox", label: "핵심집약 OX", desc: "지방직 대비" },
-            { id: "adminlaw-unexpected-ox", label: "불의타 OX", desc: "지방직 대비" },
+            { id: "adminlaw-core-ox", label: "핵심집약 OX", desc: "원본 192문항 · OCR 검수중" },
+            { id: "adminlaw-unexpected-ox", label: "불의타 OX", desc: "원본 120문항 · OCR 검수중" },
         ],
     },
     {

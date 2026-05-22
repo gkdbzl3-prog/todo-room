@@ -12,7 +12,8 @@
     "difficulty": 5,
     "sourcePage": 1,
     "sourceNo": "001",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-002",
@@ -27,7 +28,8 @@
     "difficulty": 5,
     "sourcePage": 1,
     "sourceNo": "002",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-003",
@@ -42,7 +44,8 @@
     "difficulty": 5,
     "sourcePage": 1,
     "sourceNo": "003",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-004",
@@ -57,7 +60,8 @@
     "difficulty": 5,
     "sourcePage": 1,
     "sourceNo": "004",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-005",
@@ -72,7 +76,8 @@
     "difficulty": 5,
     "sourcePage": 1,
     "sourceNo": "005",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-006",
@@ -87,7 +92,8 @@
     "difficulty": 5,
     "sourcePage": 1,
     "sourceNo": "006",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-007",
@@ -102,7 +108,8 @@
     "difficulty": 5,
     "sourcePage": 1,
     "sourceNo": "007",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-core-008",
@@ -118,7 +125,24 @@
     "sourcePage": 2,
     "sourceNo": "008",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
+  },
+  {
+    "id": "adminlaw-core-009",
+    "subject": "행정법 핵심집약 OX",
+    "topic": "2026 써니행정법 지방직 대비 OX 문제 배포자료(핵심집약)",
+    "type": "ox",
+    "question": "한국자산관리공사가 국유재산 중 일반재산에 관하여 그 처분을 위임받아 매도하는 것은 행정청이 공권력의 주체라는 우월적 지위에서 행하는 공법상의 행정처분이 아니라 사경제주체로서 행하는 사법상의 법률행위에 해당하여 헌법소원심판의 대상이 되는 공권력의 행사에 해당하지 않는다.",
+    "answer": "O",
+    "explanation": "국유재산 중 일반재산의 매각 및 매각신청반려행위는 사법상의 행위에 불과하다는 취지입니다.",
+    "sourceLabel": "2026 써니행정법 지방직 대비 OX 문제 배포자료(핵심집약)",
+    "examStyle": "adminlaw-core-ox",
+    "difficulty": 5,
+    "sourcePage": 2,
+    "sourceNo": "009",
+    "needsReview": false,
+    "manualFromImage": true,
+    "reviewNote": "PDF 이미지에서 수동 보완"
   },
   {
     "id": "adminlaw-core-010",
@@ -134,7 +158,7 @@
     "sourcePage": 2,
     "sourceNo": "010",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-011",
@@ -150,7 +174,7 @@
     "sourcePage": 2,
     "sourceNo": "011",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-012",
@@ -166,7 +190,7 @@
     "sourcePage": 2,
     "sourceNo": "012",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-013",
@@ -182,7 +206,7 @@
     "sourcePage": 2,
     "sourceNo": "013",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-014",
@@ -198,7 +222,7 @@
     "sourcePage": 2,
     "sourceNo": "014",
     "needsReview": true,
-    "reviewNote": "OCR로 정답을 확정하지 못해 임시값 O를 넣었습니다. 원문 PDF sourcePage/sourceNo를 확인해 주세요."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-015",
@@ -214,7 +238,7 @@
     "sourcePage": 3,
     "sourceNo": "015",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-016",
@@ -230,7 +254,7 @@
     "sourcePage": 3,
     "sourceNo": "016",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-017",
@@ -246,7 +270,7 @@
     "sourcePage": 3,
     "sourceNo": "017",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-018",
@@ -262,7 +286,24 @@
     "sourcePage": 3,
     "sourceNo": "018",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
+  },
+  {
+    "id": "adminlaw-core-019",
+    "subject": "행정법 핵심집약 OX",
+    "topic": "2026 써니행정법 지방직 대비 OX 문제 배포자료(핵심집약)",
+    "type": "ox",
+    "question": "대법원에 따르면 구청장과 동장의 관계는 공법상 특별권력관계로 인정될 수 없다.",
+    "answer": "X",
+    "explanation": "구청장과 동장의 관계는 이른바 특별권력관계로서, 이러한 특별권력관계의 행위에 의해 권리를 침해당한 자는 행정소송법에 따라 취소소송을 제기할 수 있다는 취지입니다.",
+    "sourceLabel": "2026 써니행정법 지방직 대비 OX 문제 배포자료(핵심집약)",
+    "examStyle": "adminlaw-core-ox",
+    "difficulty": 5,
+    "sourcePage": 3,
+    "sourceNo": "019",
+    "needsReview": false,
+    "manualFromImage": true,
+    "reviewNote": "PDF 이미지에서 수동 보완"
   },
   {
     "id": "adminlaw-core-020",
@@ -278,7 +319,7 @@
     "sourcePage": 3,
     "sourceNo": "020",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-021",
@@ -293,7 +334,8 @@
     "difficulty": 5,
     "sourcePage": 4,
     "sourceNo": "021",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-022",
@@ -308,7 +350,8 @@
     "difficulty": 5,
     "sourcePage": 4,
     "sourceNo": "022",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-core-023",
@@ -323,7 +366,8 @@
     "difficulty": 5,
     "sourcePage": 4,
     "sourceNo": "023",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-024",
@@ -338,7 +382,8 @@
     "difficulty": 5,
     "sourcePage": 4,
     "sourceNo": "024",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-025",
@@ -354,7 +399,7 @@
     "sourcePage": 5,
     "sourceNo": "025",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-026",
@@ -370,7 +415,7 @@
     "sourcePage": 5,
     "sourceNo": "026",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-027",
@@ -386,7 +431,7 @@
     "sourcePage": 5,
     "sourceNo": "027",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-028",
@@ -402,7 +447,7 @@
     "sourcePage": 5,
     "sourceNo": "028",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-029",
@@ -418,7 +463,7 @@
     "sourcePage": 5,
     "sourceNo": "029",
     "needsReview": true,
-    "reviewNote": "OCR로 정답을 확정하지 못해 임시값 O를 넣었습니다. 원문 PDF sourcePage/sourceNo를 확인해 주세요."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-030",
@@ -433,7 +478,8 @@
     "difficulty": 5,
     "sourcePage": 6,
     "sourceNo": "030",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-031",
@@ -448,7 +494,8 @@
     "difficulty": 5,
     "sourcePage": 6,
     "sourceNo": "031",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-032",
@@ -463,7 +510,8 @@
     "difficulty": 5,
     "sourcePage": 6,
     "sourceNo": "032",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-core-033",
@@ -478,7 +526,8 @@
     "difficulty": 5,
     "sourcePage": 6,
     "sourceNo": "033",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-core-034",
@@ -493,7 +542,8 @@
     "difficulty": 5,
     "sourcePage": 6,
     "sourceNo": "034",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-035",
@@ -508,7 +558,8 @@
     "difficulty": 5,
     "sourcePage": 6,
     "sourceNo": "035",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-core-036",
@@ -523,7 +574,8 @@
     "difficulty": 5,
     "sourcePage": 6,
     "sourceNo": "036",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-core-037",
@@ -538,7 +590,8 @@
     "difficulty": 5,
     "sourcePage": 7,
     "sourceNo": "037",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-038",
@@ -553,7 +606,8 @@
     "difficulty": 5,
     "sourcePage": 7,
     "sourceNo": "038",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-core-039",
@@ -568,7 +622,8 @@
     "difficulty": 5,
     "sourcePage": 7,
     "sourceNo": "039",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-040",
@@ -583,7 +638,8 @@
     "difficulty": 5,
     "sourcePage": 7,
     "sourceNo": "040",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-041",
@@ -598,7 +654,8 @@
     "difficulty": 5,
     "sourcePage": 7,
     "sourceNo": "041",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-core-042",
@@ -613,7 +670,8 @@
     "difficulty": 5,
     "sourcePage": 8,
     "sourceNo": "042",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-core-043",
@@ -628,7 +686,8 @@
     "difficulty": 5,
     "sourcePage": 8,
     "sourceNo": "043",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-core-044",
@@ -643,7 +702,8 @@
     "difficulty": 5,
     "sourcePage": 8,
     "sourceNo": "044",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-045",
@@ -658,7 +718,8 @@
     "difficulty": 5,
     "sourcePage": 8,
     "sourceNo": "045",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-046",
@@ -673,7 +734,8 @@
     "difficulty": 5,
     "sourcePage": 8,
     "sourceNo": "046",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-047",
@@ -688,7 +750,8 @@
     "difficulty": 5,
     "sourcePage": 8,
     "sourceNo": "047",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-048",
@@ -704,7 +767,7 @@
     "sourcePage": 9,
     "sourceNo": "048",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-049",
@@ -720,7 +783,7 @@
     "sourcePage": 9,
     "sourceNo": "049",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-050",
@@ -736,7 +799,7 @@
     "sourcePage": 9,
     "sourceNo": "050",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-051",
@@ -752,7 +815,7 @@
     "sourcePage": 9,
     "sourceNo": "051",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-052",
@@ -768,7 +831,7 @@
     "sourcePage": 9,
     "sourceNo": "052",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-053",
@@ -784,7 +847,7 @@
     "sourcePage": 9,
     "sourceNo": "053",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-054",
@@ -800,7 +863,7 @@
     "sourcePage": 9,
     "sourceNo": "054",
     "needsReview": true,
-    "reviewNote": "OCR로 정답을 확정하지 못해 임시값 O를 넣었습니다. 원문 PDF sourcePage/sourceNo를 확인해 주세요."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-055",
@@ -816,7 +879,7 @@
     "sourcePage": 9,
     "sourceNo": "055",
     "needsReview": true,
-    "reviewNote": "OCR로 정답을 확정하지 못해 임시값 O를 넣었습니다. 원문 PDF sourcePage/sourceNo를 확인해 주세요."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-056",
@@ -832,7 +895,7 @@
     "sourcePage": 10,
     "sourceNo": "056",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-057",
@@ -848,7 +911,7 @@
     "sourcePage": 10,
     "sourceNo": "057",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-058",
@@ -864,7 +927,7 @@
     "sourcePage": 10,
     "sourceNo": "058",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-059",
@@ -880,7 +943,7 @@
     "sourcePage": 10,
     "sourceNo": "059",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-060",
@@ -896,7 +959,7 @@
     "sourcePage": 10,
     "sourceNo": "060",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-061",
@@ -912,7 +975,7 @@
     "sourcePage": 10,
     "sourceNo": "061",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-062",
@@ -928,7 +991,7 @@
     "sourcePage": 10,
     "sourceNo": "062",
     "needsReview": true,
-    "reviewNote": "OCR로 정답을 확정하지 못해 임시값 O를 넣었습니다. 원문 PDF sourcePage/sourceNo를 확인해 주세요."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-063",
@@ -944,7 +1007,7 @@
     "sourcePage": 10,
     "sourceNo": "063",
     "needsReview": true,
-    "reviewNote": "OCR로 정답을 확정하지 못해 임시값 O를 넣었습니다. 원문 PDF sourcePage/sourceNo를 확인해 주세요."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-064",
@@ -960,7 +1023,7 @@
     "sourcePage": 11,
     "sourceNo": "064",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-065",
@@ -976,7 +1039,7 @@
     "sourcePage": 11,
     "sourceNo": "065",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-066",
@@ -992,7 +1055,7 @@
     "sourcePage": 11,
     "sourceNo": "066",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-067",
@@ -1008,7 +1071,7 @@
     "sourcePage": 11,
     "sourceNo": "067",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-068",
@@ -1024,7 +1087,7 @@
     "sourcePage": 11,
     "sourceNo": "068",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-069",
@@ -1040,7 +1103,7 @@
     "sourcePage": 11,
     "sourceNo": "069",
     "needsReview": true,
-    "reviewNote": "OCR로 정답을 확정하지 못해 임시값 O를 넣었습니다. 원문 PDF sourcePage/sourceNo를 확인해 주세요."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-070",
@@ -1056,7 +1119,7 @@
     "sourcePage": 11,
     "sourceNo": "070",
     "needsReview": true,
-    "reviewNote": "OCR로 정답을 확정하지 못해 임시값 O를 넣었습니다. 원문 PDF sourcePage/sourceNo를 확인해 주세요."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-071",
@@ -1071,7 +1134,8 @@
     "difficulty": 5,
     "sourcePage": 12,
     "sourceNo": "071",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-core-072",
@@ -1086,7 +1150,8 @@
     "difficulty": 5,
     "sourcePage": 12,
     "sourceNo": "072",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-core-073",
@@ -1101,7 +1166,8 @@
     "difficulty": 5,
     "sourcePage": 12,
     "sourceNo": "073",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-core-074",
@@ -1116,7 +1182,8 @@
     "difficulty": 5,
     "sourcePage": 12,
     "sourceNo": "074",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-core-075",
@@ -1131,7 +1198,8 @@
     "difficulty": 5,
     "sourcePage": 12,
     "sourceNo": "075",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-076",
@@ -1146,7 +1214,8 @@
     "difficulty": 5,
     "sourcePage": 12,
     "sourceNo": "076",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-077",
@@ -1161,7 +1230,8 @@
     "difficulty": 5,
     "sourcePage": 13,
     "sourceNo": "077",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-core-078",
@@ -1176,7 +1246,8 @@
     "difficulty": 5,
     "sourcePage": 13,
     "sourceNo": "078",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-079",
@@ -1191,7 +1262,8 @@
     "difficulty": 5,
     "sourcePage": 13,
     "sourceNo": "079",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-core-080",
@@ -1206,7 +1278,8 @@
     "difficulty": 5,
     "sourcePage": 13,
     "sourceNo": "080",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-core-081",
@@ -1221,7 +1294,8 @@
     "difficulty": 5,
     "sourcePage": 13,
     "sourceNo": "081",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-082",
@@ -1236,7 +1310,8 @@
     "difficulty": 5,
     "sourcePage": 13,
     "sourceNo": "082",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-core-083",
@@ -1251,7 +1326,8 @@
     "difficulty": 5,
     "sourcePage": 13,
     "sourceNo": "083",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-084",
@@ -1266,7 +1342,8 @@
     "difficulty": 5,
     "sourcePage": 14,
     "sourceNo": "084",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-085",
@@ -1281,7 +1358,8 @@
     "difficulty": 5,
     "sourcePage": 14,
     "sourceNo": "085",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-086",
@@ -1296,7 +1374,8 @@
     "difficulty": 5,
     "sourcePage": 14,
     "sourceNo": "086",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-087",
@@ -1311,7 +1390,8 @@
     "difficulty": 5,
     "sourcePage": 14,
     "sourceNo": "087",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-core-088",
@@ -1326,7 +1406,8 @@
     "difficulty": 5,
     "sourcePage": 14,
     "sourceNo": "088",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-089",
@@ -1342,7 +1423,7 @@
     "sourcePage": 15,
     "sourceNo": "089",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-090",
@@ -1358,7 +1439,7 @@
     "sourcePage": 15,
     "sourceNo": "090",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-091",
@@ -1374,7 +1455,7 @@
     "sourcePage": 15,
     "sourceNo": "091",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-092",
@@ -1390,7 +1471,7 @@
     "sourcePage": 15,
     "sourceNo": "092",
     "needsReview": true,
-    "reviewNote": "OCR로 정답을 확정하지 못해 임시값 O를 넣었습니다. 원문 PDF sourcePage/sourceNo를 확인해 주세요."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-093",
@@ -1406,7 +1487,7 @@
     "sourcePage": 15,
     "sourceNo": "093",
     "needsReview": true,
-    "reviewNote": "OCR로 정답을 확정하지 못해 임시값 O를 넣었습니다. 원문 PDF sourcePage/sourceNo를 확인해 주세요."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-094",
@@ -1421,7 +1502,8 @@
     "difficulty": 5,
     "sourcePage": 16,
     "sourceNo": "094",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-095",
@@ -1436,7 +1518,8 @@
     "difficulty": 5,
     "sourcePage": 16,
     "sourceNo": "095",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-096",
@@ -1451,7 +1534,8 @@
     "difficulty": 5,
     "sourcePage": 16,
     "sourceNo": "096",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-097",
@@ -1466,7 +1550,8 @@
     "difficulty": 5,
     "sourcePage": 16,
     "sourceNo": "097",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-core-098",
@@ -1481,7 +1566,8 @@
     "difficulty": 5,
     "sourcePage": 16,
     "sourceNo": "098",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-core-099",
@@ -1496,7 +1582,8 @@
     "difficulty": 5,
     "sourcePage": 17,
     "sourceNo": "099",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-100",
@@ -1511,7 +1598,8 @@
     "difficulty": 5,
     "sourcePage": 17,
     "sourceNo": "100",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-101",
@@ -1526,7 +1614,8 @@
     "difficulty": 5,
     "sourcePage": 17,
     "sourceNo": "101",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-102",
@@ -1541,7 +1630,8 @@
     "difficulty": 5,
     "sourcePage": 18,
     "sourceNo": "102",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-core-103",
@@ -1556,7 +1646,8 @@
     "difficulty": 5,
     "sourcePage": 18,
     "sourceNo": "103",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-104",
@@ -1571,7 +1662,8 @@
     "difficulty": 5,
     "sourcePage": 18,
     "sourceNo": "104",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-core-105",
@@ -1586,7 +1678,8 @@
     "difficulty": 5,
     "sourcePage": 18,
     "sourceNo": "105",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-106",
@@ -1601,7 +1694,8 @@
     "difficulty": 5,
     "sourcePage": 18,
     "sourceNo": "106",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-107",
@@ -1617,7 +1711,7 @@
     "sourcePage": 19,
     "sourceNo": "107",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-108",
@@ -1633,7 +1727,7 @@
     "sourcePage": 19,
     "sourceNo": "108",
     "needsReview": true,
-    "reviewNote": "OCR로 정답을 확정하지 못해 임시값 O를 넣었습니다. 원문 PDF sourcePage/sourceNo를 확인해 주세요."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-109",
@@ -1649,7 +1743,7 @@
     "sourcePage": 19,
     "sourceNo": "109",
     "needsReview": true,
-    "reviewNote": "OCR로 정답을 확정하지 못해 임시값 O를 넣었습니다. 원문 PDF sourcePage/sourceNo를 확인해 주세요."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-110",
@@ -1665,7 +1759,7 @@
     "sourcePage": 19,
     "sourceNo": "110",
     "needsReview": true,
-    "reviewNote": "OCR로 정답을 확정하지 못해 임시값 O를 넣었습니다. 원문 PDF sourcePage/sourceNo를 확인해 주세요."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-111",
@@ -1681,7 +1775,7 @@
     "sourcePage": 20,
     "sourceNo": "111",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-112",
@@ -1697,7 +1791,7 @@
     "sourcePage": 20,
     "sourceNo": "112",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-113",
@@ -1713,7 +1807,7 @@
     "sourcePage": 20,
     "sourceNo": "113",
     "needsReview": true,
-    "reviewNote": "OCR로 정답을 확정하지 못해 임시값 O를 넣었습니다. 원문 PDF sourcePage/sourceNo를 확인해 주세요."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-114",
@@ -1729,7 +1823,7 @@
     "sourcePage": 20,
     "sourceNo": "114",
     "needsReview": true,
-    "reviewNote": "OCR로 정답을 확정하지 못해 임시값 O를 넣었습니다. 원문 PDF sourcePage/sourceNo를 확인해 주세요."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-115",
@@ -1745,7 +1839,7 @@
     "sourcePage": 20,
     "sourceNo": "115",
     "needsReview": true,
-    "reviewNote": "OCR로 정답을 확정하지 못해 임시값 O를 넣었습니다. 원문 PDF sourcePage/sourceNo를 확인해 주세요."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-116",
@@ -1761,7 +1855,7 @@
     "sourcePage": 20,
     "sourceNo": "116",
     "needsReview": true,
-    "reviewNote": "OCR로 정답을 확정하지 못해 임시값 O를 넣었습니다. 원문 PDF sourcePage/sourceNo를 확인해 주세요."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-117",
@@ -1777,7 +1871,7 @@
     "sourcePage": 20,
     "sourceNo": "117",
     "needsReview": true,
-    "reviewNote": "OCR로 정답을 확정하지 못해 임시값 O를 넣었습니다. 원문 PDF sourcePage/sourceNo를 확인해 주세요."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-118",
@@ -1793,7 +1887,7 @@
     "sourcePage": 21,
     "sourceNo": "118",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-119",
@@ -1809,7 +1903,7 @@
     "sourcePage": 21,
     "sourceNo": "119",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-120",
@@ -1825,7 +1919,7 @@
     "sourcePage": 21,
     "sourceNo": "120",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-121",
@@ -1841,7 +1935,7 @@
     "sourcePage": 21,
     "sourceNo": "121",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-122",
@@ -1857,7 +1951,7 @@
     "sourcePage": 21,
     "sourceNo": "122",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-123",
@@ -1873,7 +1967,7 @@
     "sourcePage": 21,
     "sourceNo": "123",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-124",
@@ -1889,7 +1983,7 @@
     "sourcePage": 21,
     "sourceNo": "124",
     "needsReview": true,
-    "reviewNote": "OCR로 정답을 확정하지 못해 임시값 O를 넣었습니다. 원문 PDF sourcePage/sourceNo를 확인해 주세요."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-125",
@@ -1904,7 +1998,8 @@
     "difficulty": 5,
     "sourcePage": 22,
     "sourceNo": "125",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-core-126",
@@ -1919,7 +2014,8 @@
     "difficulty": 5,
     "sourcePage": 22,
     "sourceNo": "126",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-127",
@@ -1934,7 +2030,8 @@
     "difficulty": 5,
     "sourcePage": 22,
     "sourceNo": "127",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-128",
@@ -1949,7 +2046,8 @@
     "difficulty": 5,
     "sourcePage": 22,
     "sourceNo": "128",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-core-129",
@@ -1964,7 +2062,8 @@
     "difficulty": 5,
     "sourcePage": 22,
     "sourceNo": "129",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-130",
@@ -1980,7 +2079,7 @@
     "sourcePage": 23,
     "sourceNo": "130",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-131",
@@ -1996,7 +2095,24 @@
     "sourcePage": 23,
     "sourceNo": "131",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
+  },
+  {
+    "id": "adminlaw-core-132",
+    "subject": "행정법 핵심집약 OX",
+    "topic": "2026 써니행정법 지방직 대비 OX 문제 배포자료(핵심집약)",
+    "type": "ox",
+    "question": "구 「문화재보호법」상의 도지정문화재 지정처분으로 인하여 어느 개인이나 그 선조의 명예 내지 명예감정이 손상되었다면 그러한 명예 내지 명예감정은 그 지정처분의 취소를 구할 법률상 이익에 해당한다.",
+    "answer": "X",
+    "explanation": "도지정문화재 지정처분으로 침해될 수 있는 특정 개인의 명예 내지 명예감정은 지정처분의 취소를 구할 법률상 이익에 해당하지 않는다는 취지입니다.",
+    "sourceLabel": "2026 써니행정법 지방직 대비 OX 문제 배포자료(핵심집약)",
+    "examStyle": "adminlaw-core-ox",
+    "difficulty": 5,
+    "sourcePage": 23,
+    "sourceNo": "132",
+    "needsReview": false,
+    "manualFromImage": true,
+    "reviewNote": "PDF 이미지에서 수동 보완"
   },
   {
     "id": "adminlaw-core-133",
@@ -2012,7 +2128,7 @@
     "sourcePage": 23,
     "sourceNo": "133",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-134",
@@ -2028,7 +2144,7 @@
     "sourcePage": 23,
     "sourceNo": "134",
     "needsReview": true,
-    "reviewNote": "OCR로 정답을 확정하지 못해 임시값 O를 넣었습니다. 원문 PDF sourcePage/sourceNo를 확인해 주세요."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-135",
@@ -2044,7 +2160,7 @@
     "sourcePage": 24,
     "sourceNo": "135",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-136",
@@ -2060,7 +2176,7 @@
     "sourcePage": 24,
     "sourceNo": "136",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-137",
@@ -2076,7 +2192,7 @@
     "sourcePage": 24,
     "sourceNo": "137",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-138",
@@ -2092,7 +2208,7 @@
     "sourcePage": 24,
     "sourceNo": "138",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-139",
@@ -2108,7 +2224,7 @@
     "sourcePage": 24,
     "sourceNo": "139",
     "needsReview": true,
-    "reviewNote": "OCR로 정답을 확정하지 못해 임시값 O를 넣었습니다. 원문 PDF sourcePage/sourceNo를 확인해 주세요."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-140",
@@ -2123,7 +2239,8 @@
     "difficulty": 5,
     "sourcePage": 25,
     "sourceNo": "140",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-core-141",
@@ -2138,7 +2255,8 @@
     "difficulty": 5,
     "sourcePage": 25,
     "sourceNo": "141",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-142",
@@ -2153,7 +2271,8 @@
     "difficulty": 5,
     "sourcePage": 25,
     "sourceNo": "142",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-143",
@@ -2168,7 +2287,8 @@
     "difficulty": 5,
     "sourcePage": 25,
     "sourceNo": "143",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-144",
@@ -2183,7 +2303,8 @@
     "difficulty": 5,
     "sourcePage": 25,
     "sourceNo": "144",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-145",
@@ -2198,7 +2319,8 @@
     "difficulty": 5,
     "sourcePage": 25,
     "sourceNo": "145",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-146",
@@ -2213,7 +2335,8 @@
     "difficulty": 5,
     "sourcePage": 26,
     "sourceNo": "146",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-147",
@@ -2228,7 +2351,8 @@
     "difficulty": 5,
     "sourcePage": 26,
     "sourceNo": "147",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-148",
@@ -2243,7 +2367,8 @@
     "difficulty": 5,
     "sourcePage": 26,
     "sourceNo": "148",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-149",
@@ -2258,7 +2383,8 @@
     "difficulty": 5,
     "sourcePage": 26,
     "sourceNo": "149",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-core-150",
@@ -2273,7 +2399,8 @@
     "difficulty": 5,
     "sourcePage": 27,
     "sourceNo": "150",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-151",
@@ -2288,7 +2415,8 @@
     "difficulty": 5,
     "sourcePage": 27,
     "sourceNo": "151",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-152",
@@ -2303,7 +2431,8 @@
     "difficulty": 5,
     "sourcePage": 27,
     "sourceNo": "152",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-153",
@@ -2318,7 +2447,8 @@
     "difficulty": 5,
     "sourcePage": 27,
     "sourceNo": "153",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-core-154",
@@ -2333,7 +2463,8 @@
     "difficulty": 5,
     "sourcePage": 27,
     "sourceNo": "154",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-155",
@@ -2348,7 +2479,8 @@
     "difficulty": 5,
     "sourcePage": 27,
     "sourceNo": "155",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-core-156",
@@ -2363,7 +2495,8 @@
     "difficulty": 5,
     "sourcePage": 27,
     "sourceNo": "156",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-157",
@@ -2378,7 +2511,8 @@
     "difficulty": 5,
     "sourcePage": 28,
     "sourceNo": "157",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-158",
@@ -2393,7 +2527,8 @@
     "difficulty": 5,
     "sourcePage": 28,
     "sourceNo": "158",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-159",
@@ -2408,7 +2543,8 @@
     "difficulty": 5,
     "sourcePage": 28,
     "sourceNo": "159",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-160",
@@ -2423,7 +2559,8 @@
     "difficulty": 5,
     "sourcePage": 28,
     "sourceNo": "160",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-161",
@@ -2439,7 +2576,24 @@
     "sourcePage": 29,
     "sourceNo": "161",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
+  },
+  {
+    "id": "adminlaw-core-162",
+    "subject": "행정법 핵심집약 OX",
+    "topic": "2026 써니행정법 지방직 대비 OX 문제 배포자료(핵심집약)",
+    "type": "ox",
+    "question": "선행처분의 내용 중 일부만을 소폭 변경하는 후행처분이 있는 경우 선행처분도 후행처분에 의하여 변경되지 아니한 범위 내에서 존속하고, 후행처분은 선행처분의 내용 중 일부를 변경하는 범위 내에서 효력을 가지지만, 선행처분의 주요 부분을 실질적으로 변경하는 내용으로 후행처분을 한 경우에는 선행처분은 특별한 사정이 없는 한 그 효력을 상실한다.",
+    "answer": "O",
+    "explanation": "후행처분이 선행처분의 주요 부분을 실질적으로 변경하면 특별한 사정이 없는 한 선행처분은 효력을 상실한다는 취지입니다.",
+    "sourceLabel": "2026 써니행정법 지방직 대비 OX 문제 배포자료(핵심집약)",
+    "examStyle": "adminlaw-core-ox",
+    "difficulty": 5,
+    "sourcePage": 29,
+    "sourceNo": "162",
+    "needsReview": false,
+    "manualFromImage": true,
+    "reviewNote": "PDF 이미지에서 수동 보완"
   },
   {
     "id": "adminlaw-core-163",
@@ -2455,7 +2609,7 @@
     "sourcePage": 29,
     "sourceNo": "163",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-164",
@@ -2471,7 +2625,7 @@
     "sourcePage": 29,
     "sourceNo": "164",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-165",
@@ -2487,7 +2641,7 @@
     "sourcePage": 29,
     "sourceNo": "165",
     "needsReview": true,
-    "reviewNote": "OCR로 정답을 확정하지 못해 임시값 O를 넣었습니다. 원문 PDF sourcePage/sourceNo를 확인해 주세요."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-166",
@@ -2503,7 +2657,7 @@
     "sourcePage": 29,
     "sourceNo": "166",
     "needsReview": true,
-    "reviewNote": "OCR로 정답을 확정하지 못해 임시값 O를 넣었습니다. 원문 PDF sourcePage/sourceNo를 확인해 주세요."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-167",
@@ -2518,7 +2672,8 @@
     "difficulty": 5,
     "sourcePage": 30,
     "sourceNo": "167",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-168",
@@ -2533,7 +2688,8 @@
     "difficulty": 5,
     "sourcePage": 30,
     "sourceNo": "168",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-core-169",
@@ -2548,7 +2704,8 @@
     "difficulty": 5,
     "sourcePage": 30,
     "sourceNo": "169",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-170",
@@ -2563,7 +2720,8 @@
     "difficulty": 5,
     "sourcePage": 30,
     "sourceNo": "170",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-171",
@@ -2579,7 +2737,7 @@
     "sourcePage": 31,
     "sourceNo": "171",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-172",
@@ -2595,7 +2753,24 @@
     "sourcePage": 31,
     "sourceNo": "172",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
+  },
+  {
+    "id": "adminlaw-core-173",
+    "subject": "행정법 핵심집약 OX",
+    "topic": "2026 써니행정법 지방직 대비 OX 문제 배포자료(핵심집약)",
+    "type": "ox",
+    "question": "상표권자인 법인에 대한 청산종결등기가 되었음을 이유로 특허청장이 행한 상표권 말소등록행위는 항고소송의 대상으로 인정된다.",
+    "answer": "X",
+    "explanation": "상표권자인 법인에 대한 청산종결등기가 되었음을 이유로 한 상표권 말소등록행위는 항고소송의 대상이 될 수 없다는 취지입니다.",
+    "sourceLabel": "2026 써니행정법 지방직 대비 OX 문제 배포자료(핵심집약)",
+    "examStyle": "adminlaw-core-ox",
+    "difficulty": 5,
+    "sourcePage": 31,
+    "sourceNo": "173",
+    "needsReview": false,
+    "manualFromImage": true,
+    "reviewNote": "PDF 이미지에서 수동 보완"
   },
   {
     "id": "adminlaw-core-174",
@@ -2611,7 +2786,7 @@
     "sourcePage": 31,
     "sourceNo": "174",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-175",
@@ -2627,7 +2802,7 @@
     "sourcePage": 31,
     "sourceNo": "175",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-176",
@@ -2642,7 +2817,8 @@
     "difficulty": 5,
     "sourcePage": 32,
     "sourceNo": "176",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-177",
@@ -2657,7 +2833,8 @@
     "difficulty": 5,
     "sourcePage": 32,
     "sourceNo": "177",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-178",
@@ -2672,7 +2849,8 @@
     "difficulty": 5,
     "sourcePage": 32,
     "sourceNo": "178",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-179",
@@ -2687,7 +2865,8 @@
     "difficulty": 5,
     "sourcePage": 32,
     "sourceNo": "179",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-180",
@@ -2703,7 +2882,7 @@
     "sourcePage": 33,
     "sourceNo": "180",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-181",
@@ -2719,7 +2898,7 @@
     "sourcePage": 33,
     "sourceNo": "181",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-182",
@@ -2735,7 +2914,7 @@
     "sourcePage": 33,
     "sourceNo": "182",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-183",
@@ -2751,7 +2930,7 @@
     "sourcePage": 33,
     "sourceNo": "183",
     "needsReview": true,
-    "reviewNote": "이 페이지는 OCR 문항 수와 정답 수가 맞지 않아 원문 PDF 확인을 권장합니다."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-184",
@@ -2767,7 +2946,7 @@
     "sourcePage": 33,
     "sourceNo": "184",
     "needsReview": true,
-    "reviewNote": "OCR로 정답을 확정하지 못해 임시값 O를 넣었습니다. 원문 PDF sourcePage/sourceNo를 확인해 주세요."
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-185",
@@ -2782,7 +2961,8 @@
     "difficulty": 5,
     "sourcePage": 34,
     "sourceNo": "185",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-186",
@@ -2797,7 +2977,8 @@
     "difficulty": 5,
     "sourcePage": 34,
     "sourceNo": "186",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-187",
@@ -2812,7 +2993,8 @@
     "difficulty": 5,
     "sourcePage": 34,
     "sourceNo": "187",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-core-188",
@@ -2827,7 +3009,8 @@
     "difficulty": 5,
     "sourcePage": 34,
     "sourceNo": "188",
-    "needsReview": false
+    "needsReview": false,
+    "reviewNote": "문항 번호/정답 확인됨"
   },
   {
     "id": "adminlaw-core-189",
@@ -2842,7 +3025,8 @@
     "difficulty": 5,
     "sourcePage": 34,
     "sourceNo": "189",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-190",
@@ -2857,7 +3041,8 @@
     "difficulty": 5,
     "sourcePage": 34,
     "sourceNo": "190",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-191",
@@ -2872,7 +3057,8 @@
     "difficulty": 5,
     "sourcePage": 35,
     "sourceNo": "191",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   },
   {
     "id": "adminlaw-core-192",
@@ -2887,6 +3073,7 @@
     "difficulty": 5,
     "sourcePage": 35,
     "sourceNo": "192",
-    "needsReview": false
+    "needsReview": true,
+    "reviewNote": "OCR 원문 기반이라 앱 투입 전 원문 대조 권장"
   }
 ]
