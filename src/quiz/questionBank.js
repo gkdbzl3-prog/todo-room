@@ -13,6 +13,8 @@ import chineseAdvancedQuestions from "./data/chineseAdvanced.json";
 import japaneseMiddleQuestions from "./data/japaneseMiddleQuestions.json";
 import koreanHistoryHangeomQuestions from "./data/koreanHistoryHangeomQuestions.json";
 import koreanHistoryHangeomAdvancedQuestions from "./data/koreanHistoryHangeomAdvancedQuestions.json";
+import adminLawCoreOxQuestions from "./data/adminLawCoreOxQuestionsChecked.json";
+import adminLawUnexpectedOxQuestions from "./data/adminLawUnexpectedOxQuestionsChecked.json";
 
 const sampleQuestions = [
     {
@@ -56,7 +58,10 @@ export const questionBank = {
     "adminlaw-multiple": adminlawQuestions,
     "adminlaw-mixed": adminlawQuestions,
 
+    "adminlaw-core-ox": adminLawCoreOxQuestions,
+    "adminlaw-unexpected-ox": adminLawUnexpectedOxQuestions,
     "admin-basic": publicAdministrationQuestions,
+
     "admin-mixed": publicAdministrationQuestions,
 
     "toeic-rc": toeicRcQuestions,

@@ -52,9 +52,11 @@ export const quizSubjects = [
         emoji: "⚖️",
         title: "행정법",
         levels: [
-            { id: "adminlaw-ox", label: "OX", desc: "옳은 지문 기반" },
+            { id: "adminlaw-ox", label: "기존 OX", desc: "옳은 지문 기반" },
+            { id: "adminlaw-core-ox", label: "핵심집약 OX", desc: "지방직 대비" },
+            { id: "adminlaw-unexpected-ox", label: "불의타 OX", desc: "지방직 대비" },
         ],
-    },
+    }
     {
         id: "sqld",
         emoji: "🗄️",
