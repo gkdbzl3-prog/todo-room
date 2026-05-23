@@ -1723,13 +1723,8 @@ input:focus {
   text-decoration-color: rgba(255, 255, 255, 0.35);
 }
 
-/* RoutineItem reuses .todo-cycle-btn for visual consistency with TODAY/WEEKLY.
-   .routine-cycle.done overrides the default green to use the calmer mint routine color. */
-.routine-cycle.done {
-  border-color: var(--routine-fill);
-  background: var(--routine-fill);
-  box-shadow: 0 0 5px rgba(107, 208, 166, 0.35);
-}
+/* RoutineItem reuses .todo-cycle-btn for full visual parity with TODAY/WEEKLY,
+   so no extra overrides — done uses the same vibrant green as regular todos. */
 
 .routine-text {
   flex: 1 1 auto;
