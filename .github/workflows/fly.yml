@@ -10,8 +10,12 @@ jobs:
     name: Deploy app
     runs-on: ubuntu-latest
     concurrency: deploy-group
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Validate Firebase build env
         env:
