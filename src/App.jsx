@@ -1004,7 +1004,8 @@ export default function App() {
     setRoutineCelebrated(false);
     if (changed) {
       saveStoredRoutine(routineStorageKey, next);
-      syncMyRoutine(next, { skipMirror: true });
+      // Don't sync an empty payload to Firestore — would wipe items written from another device.
+      if (items.length > 0) syncMyRoutine(next);
     }
   }, [routineStorageKey, currentDayKey, syncMyRoutine]);
 
@@ -1043,7 +1044,8 @@ export default function App() {
       setMyRoutine(next);
       setRoutineCelebrated(false);
       saveStoredRoutine(routineStorageKey, next);
-      if (changed) syncMyRoutine(next);
+      // Never write back an empty payload — would wipe a legit doc that has items elsewhere
+      if (changed && rolled.length > 0) syncMyRoutine(next);
     });
     return () => unsub();
   }, [uid, nicknameConfirmed, currentDayKey, routineStorageKey, syncMyRoutine]);
