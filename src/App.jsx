@@ -18,6 +18,11 @@ import {
 import "./App.css";
 import QuizHome from "./quiz/QuizHome";
 import QuizPlayer from "./quiz/QuizPlayer";
+import {
+  collectNicknameMatches,
+  choosePreferredNicknameMatch,
+  getNicknameMatchCurrentTotal,
+} from "./memberIdentity";
 /* ── 유틸 ── */
 // 새벽 2시 기준: 2시 이전이면 전날로 취급
 function getEffectiveDate() {
@@ -401,128 +406,6 @@ function mergeDisplayMembers(dailyMembers, weeklyMembers) {
   });
 
   return Array.from(merged.values());
-}
-
-function getNicknameMatchCurrentTotal(match) {
-  return getTodoCount(match?.dailyTodos) + getTodoCount(match?.weeklyTodos);
-}
-
-function getNicknameMatchUpdatedAt(match) {
-  return Math.max(
-    getUpdatedAtValue(match?.dailyUpdatedAt),
-    getUpdatedAtValue(match?.weeklyUpdatedAt),
-    getUpdatedAtValue(match?.recentUpdatedAt)
-  );
-}
-
-function choosePreferredNicknameMatch(a, b) {
-  if (!a) return b;
-  if (!b) return a;
-
-  const aCurrentTotal = getNicknameMatchCurrentTotal(a);
-  const bCurrentTotal = getNicknameMatchCurrentTotal(b);
-
-  if (aCurrentTotal !== bCurrentTotal) {
-    return bCurrentTotal > aCurrentTotal ? b : a;
-  }
-
-  const aRecentCount = getTodoCount(a.recentTodos);
-  const bRecentCount = getTodoCount(b.recentTodos);
-
-  if (aRecentCount !== bRecentCount) {
-    return bRecentCount > aRecentCount ? b : a;
-  }
-
-  const aDailyCount = getTodoCount(a.dailyTodos);
-  const bDailyCount = getTodoCount(b.dailyTodos);
-
-  if (aDailyCount !== bDailyCount) {
-    return bDailyCount > aDailyCount ? b : a;
-  }
-
-  if (!!a.avatar !== !!b.avatar) {
-    return b.avatar ? b : a;
-  }
-
-  return getNicknameMatchUpdatedAt(b) > getNicknameMatchUpdatedAt(a) ? b : a;
-}
-
-function collectNicknameMatches(dailyRecords, weeklyRecords, recentMatch) {
-  const matches = new Map();
-
-  const ensureMatch = (id) => {
-    if (!matches.has(id)) {
-      matches.set(id, {
-        id,
-        nickname: "",
-        avatar: "",
-        dailyTodos: [],
-        weeklyTodos: [],
-        recentTodos: [],
-        hasDailyDoc: false,
-        hasWeeklyDoc: false,
-        dailyUpdatedAt: null,
-        weeklyUpdatedAt: null,
-        recentUpdatedAt: null,
-      });
-    }
-
-    return matches.get(id);
-  };
-
-  dailyRecords.forEach((record) => {
-    if (!isValidUid(record.id)) return;
-    const match = ensureMatch(record.id);
-    match.nickname = record.nickname || match.nickname;
-    match.avatar = match.avatar || record.avatar || "";
-    match.dailyTodos = Array.isArray(record.todos) ? record.todos : [];
-    match.hasDailyDoc = true;
-    match.dailyUpdatedAt = record.updatedAt || match.dailyUpdatedAt;
-  });
-
-  weeklyRecords.forEach((record) => {
-    if (!isValidUid(record.id)) return;
-    const match = ensureMatch(record.id);
-    const nextWeeklyTodos = Array.isArray(record.todos) ? record.todos : [];
-
-    if (!match.hasWeeklyDoc) {
-      match.nickname = record.nickname || match.nickname;
-      match.avatar = match.avatar || record.avatar || "";
-      match.weeklyTodos = nextWeeklyTodos;
-      match.hasWeeklyDoc = true;
-      match.weeklyUpdatedAt = record.updatedAt || match.weeklyUpdatedAt;
-      return;
-    }
-
-    const existingWeeklyRecord = {
-      nickname: match.nickname,
-      avatar: match.avatar,
-      todos: match.weeklyTodos,
-      updatedAt: match.weeklyUpdatedAt,
-    };
-    const preferredWeeklyRecord = choosePreferredRecord(
-      existingWeeklyRecord,
-      record
-    );
-
-    if (preferredWeeklyRecord === record) {
-      match.nickname = record.nickname || match.nickname;
-      match.avatar = record.avatar || match.avatar || "";
-      match.weeklyTodos = nextWeeklyTodos;
-      match.weeklyUpdatedAt = record.updatedAt || match.weeklyUpdatedAt;
-    }
-  });
-
-  if (recentMatch?.id && isValidUid(recentMatch.id)) {
-    const match = ensureMatch(recentMatch.id);
-    const recentData = recentMatch.data || {};
-    match.nickname = recentData.nickname || match.nickname;
-    match.avatar = match.avatar || recentData.avatar || "";
-    match.recentTodos = Array.isArray(recentData.todos) ? recentData.todos : [];
-    match.recentUpdatedAt = recentData.updatedAt || match.recentUpdatedAt;
-  }
-
-  return Array.from(matches.values());
 }
 
 function chooseSelfRecord(records, uid, nickname, todoKey = "todos") {
@@ -912,7 +795,7 @@ export default function App() {
         ? [currentWeekKey]
         : [currentWeekKey, legacyWeekKeyValue];
 
-    const [dailyMatches, weeklyMatchGroups] = await Promise.all([
+    const [dailyMatches, weeklyMatchGroups, eventMatches] = await Promise.all([
       getDocs(
         query(
           collection(db, dailyCol(currentDayKey)),
@@ -929,6 +812,12 @@ export default function App() {
           )
         )
       ),
+      getDocs(
+        query(
+          collection(db, eventsCol()),
+          where("nickname", "==", normalizedNickname)
+        )
+      ),
     ]);
 
     const dailyRecords = dailyMatches.docs.map((docSnap) => ({
@@ -941,8 +830,17 @@ export default function App() {
         ...docSnap.data(),
       }))
     );
+    const eventRecords = eventMatches.docs.map((docSnap) => ({
+      id: docSnap.id,
+      ...docSnap.data(),
+    }));
 
-    return collectNicknameMatches(dailyRecords, weeklyRecords, null);
+    return collectNicknameMatches({
+      dailyRecords,
+      weeklyRecords,
+      eventRecords,
+      recentMatch: null,
+    });
   }, [currentDayKey, currentWeekKey, legacyWeekKeyValue]);
 
   const resolveNicknameSession = useCallback(
@@ -969,6 +867,7 @@ export default function App() {
         if (bestMatch) {
           setMyDaily(bestMatch.hasDailyDoc ? bestMatch.dailyTodos : []);
           setMyWeekly(bestMatch.hasWeeklyDoc ? bestMatch.weeklyTodos : []);
+          if (bestMatch.hasEventsDoc) setEvents(bestMatch.events || []);
         }
 
         setNickname(normalizedNickname);
@@ -1074,8 +973,11 @@ export default function App() {
       void writeSetDoc(doc(db, eventsCol(), uid), payload).catch((error) => {
         console.error("Failed to sync events", error);
       });
+      void syncDuplicateNicknameDocs(eventsCol(), nickname, payload).catch((error) => {
+        console.error("Failed to sync duplicate events", error);
+      });
     },
-    [uid, nickname, avatar, nicknameConfirmed]
+    [uid, nickname, avatar, nicknameConfirmed, syncDuplicateNicknameDocs]
   );
 
   useEffect(() => {
@@ -1091,12 +993,46 @@ export default function App() {
           events: Array.isArray(data.events) ? data.events : [],
         });
       });
-      setEventMembers(all.filter((m) => m.id !== uid));
+
+      const selfEventCandidates = all.filter(
+        (m) => m.id === uid || hasSameNickname(m, nickname)
+      );
+      const preferredSelfEvent = selfEventCandidates.reduce((best, candidate) => {
+        if (!best) return candidate;
+        return choosePreferredRecord(best, candidate, "events");
+      }, null);
+
+      if (preferredSelfEvent?.events?.length) {
+        setEvents((current) => {
+          if (JSON.stringify(current) === JSON.stringify(preferredSelfEvent.events)) {
+            return current;
+          }
+          return preferredSelfEvent.events;
+        });
+
+        const currentEventRecord = all.find((m) => m.id === uid);
+        if (
+          preferredSelfEvent.id !== uid &&
+          (!currentEventRecord ||
+            getTodoCount(currentEventRecord.events) < getTodoCount(preferredSelfEvent.events))
+        ) {
+          void writeSetDoc(doc(db, eventsCol(), uid), {
+            nickname,
+            avatar: avatar || preferredSelfEvent.avatar || "",
+            events: preferredSelfEvent.events,
+            updatedAt: serverTimestamp(),
+          }).catch((error) => {
+            console.error("Failed to merge duplicate events", error);
+          });
+        }
+      }
+
+      setEventMembers(all.filter((m) => m.id !== uid && !hasSameNickname(m, nickname)));
     }, (error) => {
       console.error("Failed to subscribe event members", error);
     });
     return () => unsub();
-  }, [uid, nicknameConfirmed]);
+  }, [uid, nickname, avatar, nicknameConfirmed]);
 
   useEffect(() => {
     if (!nicknameConfirmed || !uid) return;
@@ -1393,6 +1329,14 @@ export default function App() {
               getTodoCount(bestMatch.recentTodos) >
               getTodoCount(currentMatch.recentTodos)
             ) ||
+            (
+              getNicknameMatchCurrentTotal(bestMatch) ===
+              getNicknameMatchCurrentTotal(currentMatch) &&
+              getTodoCount(bestMatch.recentTodos) ===
+              getTodoCount(currentMatch.recentTodos) &&
+              getTodoCount(bestMatch.events) >
+              getTodoCount(currentMatch.events)
+            ) ||
             (!avatar && !!bestMatch.avatar)
           );
 
@@ -1408,6 +1352,7 @@ export default function App() {
         setUid(bestMatch.id);
         setMyDaily(bestMatch.hasDailyDoc ? bestMatch.dailyTodos : []);
         setMyWeekly(bestMatch.hasWeeklyDoc ? bestMatch.weeklyTodos : []);
+        if (bestMatch.hasEventsDoc) setEvents(bestMatch.events || []);
       } catch (err) {
         console.error("Nickname reconnect failed:", err);
       }
@@ -1697,7 +1642,18 @@ export default function App() {
     profileRef.current = { nickname, avatar };
     syncMyDaily(myDaily);
     syncMyWeekly(myWeekly);
-  }, [nickname, avatar, nicknameConfirmed, myDaily, myWeekly, syncMyDaily, syncMyWeekly]);
+    syncMyEvents(events);
+  }, [
+    nickname,
+    avatar,
+    nicknameConfirmed,
+    myDaily,
+    myWeekly,
+    events,
+    syncMyDaily,
+    syncMyWeekly,
+    syncMyEvents,
+  ]);
 
   /* ── 투두 추가 ── */
   const addDaily = () => {
