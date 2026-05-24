@@ -28,6 +28,19 @@ import {
   rolloverRoutineDone,
 } from "./routineState";
 import { shouldShowMemberEventName } from "./eventVisibility";
+import {
+  addChallengeGoalOption,
+  getChallengeTitle,
+  normalizeChallengeGoalOptions,
+  removeChallengeGoalOption,
+} from "./challengeGoalOptions";
+import {
+  createCompletedChallengeItem,
+  createPlannedChallengeItems,
+  getChallengeProgress,
+  normalizeChallengeItem,
+  toggleChallengeItemDone,
+} from "./challengeProgress";
 /* ── 유틸 ── */
 // 새벽 2시 기준: 2시 이전이면 전날로 취급
 function getEffectiveDate() {
@@ -211,6 +224,91 @@ function saveStoredEvents(key, events) {
   } catch { }
 }
 
+function loadStoredChallenges(key) {
+  try {
+    const raw = localStorage.getItem(key);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed)) return [];
+    return parsed.map((c) => ({
+      id: c.id,
+      title: typeof c.title === "string" ? c.title : "",
+      goal: typeof c.goal === "number" && c.goal > 0 ? c.goal : null,
+      items: Array.isArray(c.items)
+        ? c.items.map(normalizeChallengeItem)
+        : [],
+      createdAt: typeof c.createdAt === "number" ? c.createdAt : Date.now(),
+    }));
+  } catch {
+    return [];
+  }
+}
+
+function saveStoredChallenges(key, challenges) {
+  try {
+    localStorage.setItem(key, JSON.stringify(challenges));
+  } catch { }
+}
+
+const CHALLENGE_GOAL_OPTIONS_KEY = "todoRoom_challengeGoalOptions";
+
+function loadChallengeGoalOptions() {
+  try {
+    const raw = localStorage.getItem(CHALLENGE_GOAL_OPTIONS_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed)) return [];
+    return normalizeChallengeGoalOptions(parsed);
+  } catch {
+    return [];
+  }
+}
+
+function saveChallengeGoalOptions(options) {
+  try {
+    localStorage.setItem(
+      CHALLENGE_GOAL_OPTIONS_KEY,
+      JSON.stringify(normalizeChallengeGoalOptions(options))
+    );
+  } catch { }
+}
+
+// {큰제목} / (소제목) 마커 파싱 — 괄호는 출력에서 제거.
+function parseChallengeItemText(text) {
+  const regex = /(\{[^}]+\}|\([^)]+\))/g;
+  const parts = [];
+  let last = 0;
+  let m;
+  while ((m = regex.exec(text)) !== null) {
+    if (m.index > last) {
+      const plain = text.slice(last, m.index);
+      if (plain.trim()) parts.push({ type: "plain", text: plain });
+    }
+    const raw = m[0];
+    const inner = raw.slice(1, -1).trim();
+    if (inner) {
+      parts.push({ type: raw.startsWith("{") ? "big" : "small", text: inner });
+    }
+    last = m.index + raw.length;
+  }
+  if (last < text.length) {
+    const tail = text.slice(last);
+    if (tail.trim()) parts.push({ type: "plain", text: tail });
+  }
+  return parts.length ? parts : [{ type: "plain", text }];
+}
+
+function RichChallengeText({ text }) {
+  const parts = parseChallengeItemText(text || "");
+  return (
+    <>
+      {parts.map((p, i) => (
+        <span key={i} className={`ctext-${p.type}`}>{p.text}</span>
+      ))}
+    </>
+  );
+}
+
 function computeDayDiff(dateStr) {
   if (!dateStr) return null;
   const target = new Date(`${dateStr}T00:00:00`);
@@ -346,6 +444,22 @@ function attachRoutines(displayMembers, routineMembers, todayKey) {
       routineItems: items,
       routineDoneDate: stale ? "" : (r.doneDate || ""),
     };
+  });
+}
+
+// Attach challenge data to display members by matching nickname.
+function attachChallenges(displayMembers, challengeMembers) {
+  if (!challengeMembers || !challengeMembers.length) return displayMembers;
+  const map = new Map();
+  challengeMembers.forEach((cm) => {
+    const key = normalizeNickname(cm.nickname);
+    if (key) map.set(key, cm);
+  });
+  return displayMembers.map((m) => {
+    const key = normalizeNickname(m.nickname);
+    const cm = key ? map.get(key) : null;
+    if (!cm) return m;
+    return { ...m, challenges: cm.challenges || [] };
   });
 }
 
@@ -543,6 +657,7 @@ const notiCol = (date) => `daily/${date}/notifications`;
 const historyDatesCol = () => "historyDates";
 const routineCol = () => "routines";
 const eventsCol = () => "events";
+const challengesCol = () => "challenges";
 
 /* ── 루틴 상수 ── */
 const ROUTINE_SECTIONS = [
@@ -674,6 +789,7 @@ export default function App() {
   const weeklyStorageKey = `todoRoom_weekly_${uid}_${currentWeekKey}`;
   const routineStorageKey = routineStorageKeyFor(uid);
   const eventsStorageKey = `todoRoom_events_${uid}`;
+  const challengesStorageKey = `todoRoom_challenges_${uid}`;
   const [profileRecoveryChecked, setProfileRecoveryChecked] = useState(
     !!getSavedNickname()
   );
@@ -690,6 +806,11 @@ export default function App() {
   const [events, setEvents] = useState(() => loadStoredEvents(eventsStorageKey));
   const [eventPopoverOpen, setEventPopoverOpen] = useState(false);
 
+  // 챌린지 (장기 누적 진도)
+  const [challenges, setChallenges] = useState(() =>
+    loadStoredChallenges(challengesStorageKey)
+  );
+
   // 루틴 (반복되는 매일 습관 — 매일 자정에 done만 리셋, 항목은 영구)
   const [myRoutine, setMyRoutine] = useState({ items: [], doneDate: "" });
   const myRoutineRef = useRef(myRoutine);
@@ -703,6 +824,7 @@ export default function App() {
   const [weeklyMembers, setWeeklyMembers] = useState([]);
   const [routineMembers, setRoutineMembers] = useState([]);
   const [eventMembers, setEventMembers] = useState([]);
+  const [challengeMembers, setChallengeMembers] = useState([]);
 
   // 알림
   const [toasts, setToasts] = useState([]);
@@ -771,6 +893,14 @@ export default function App() {
   useEffect(() => {
     saveStoredEvents(eventsStorageKey, events);
   }, [eventsStorageKey, events]);
+
+  useEffect(() => {
+    setChallenges(loadStoredChallenges(challengesStorageKey));
+  }, [challengesStorageKey]);
+
+  useEffect(() => {
+    saveStoredChallenges(challengesStorageKey, challenges);
+  }, [challengesStorageKey, challenges]);
 
   const syncDuplicateNicknameDocs = useCallback(
     async (collectionPath, nextNickname, payload) => {
@@ -1048,6 +1178,57 @@ export default function App() {
       setEvents(remote);
     }, (error) => {
       console.error("Failed to subscribe own events", error);
+    });
+    return () => unsub();
+  }, [uid, nicknameConfirmed]);
+
+  /* ── Firestore 챌린지 동기화 ── */
+  const syncMyChallenges = useCallback(
+    (next) => {
+      if (!nicknameConfirmed || !uid) return;
+      const payload = {
+        nickname,
+        avatar,
+        challenges: next || [],
+        updatedAt: serverTimestamp(),
+      };
+      void writeSetDoc(doc(db, challengesCol(), uid), payload).catch((error) => {
+        console.error("Failed to sync challenges", error);
+      });
+    },
+    [uid, nickname, avatar, nicknameConfirmed]
+  );
+
+  useEffect(() => {
+    if (!nicknameConfirmed || !uid) return;
+    if (isLocalDevHost()) return;
+    const unsub = onSnapshot(doc(db, challengesCol(), uid), (snap) => {
+      if (!snap.exists()) return;
+      const data = snap.data() || {};
+      const remote = Array.isArray(data.challenges) ? data.challenges : [];
+      setChallenges(remote);
+    }, (error) => {
+      console.error("Failed to subscribe own challenges", error);
+    });
+    return () => unsub();
+  }, [uid, nicknameConfirmed]);
+
+  useEffect(() => {
+    if (!nicknameConfirmed) return;
+    const unsub = onSnapshot(collection(db, challengesCol()), (snap) => {
+      const all = [];
+      snap.forEach((d) => {
+        const data = d.data() || {};
+        all.push({
+          id: d.id,
+          nickname: data.nickname || "",
+          avatar: data.avatar || "",
+          challenges: Array.isArray(data.challenges) ? data.challenges : [],
+        });
+      });
+      setChallengeMembers(all.filter((m) => m.id !== uid));
+    }, (error) => {
+      console.error("Failed to subscribe challenge members", error);
     });
     return () => unsub();
   }, [uid, nicknameConfirmed]);
@@ -1746,6 +1927,92 @@ export default function App() {
     syncMyEvents(next);
   };
 
+  /* ── 챌린지(장기 누적 진도) ── */
+  const addChallenge = ({ title, goal }) => {
+    const trimmed = (title || "").trim();
+    if (!trimmed) return;
+    const goalNum = Number.isFinite(goal) && goal > 0 ? Math.floor(goal) : null;
+    const next = [
+      ...challenges,
+      {
+        id: Date.now(),
+        title: trimmed,
+        goal: goalNum,
+        items: [],
+        createdAt: Date.now(),
+      },
+    ];
+    setChallenges(next);
+    syncMyChallenges(next);
+  };
+
+  const deleteChallenge = (id) => {
+    const next = challenges.filter((c) => c.id !== id);
+    setChallenges(next);
+    syncMyChallenges(next);
+  };
+
+  const addChallengeItem = (challengeId, name) => {
+    const trimmed = (name || "").trim();
+    if (!trimmed) return;
+    const now = Date.now();
+    const next = challenges.map((c) =>
+      c.id === challengeId
+        ? {
+            ...c,
+            items: [
+              ...c.items,
+              createCompletedChallengeItem(trimmed, now),
+            ],
+          }
+        : c
+    );
+    setChallenges(next);
+    syncMyChallenges(next);
+  };
+
+  const addChallengeItemsBulk = (challengeId, names) => {
+    const trimmed = (names || [])
+      .map((n) => (n || "").trim())
+      .filter(Boolean);
+    if (trimmed.length === 0) return;
+    const now = Date.now();
+    const newItems = createPlannedChallengeItems(trimmed, now);
+    const next = challenges.map((c) =>
+      c.id === challengeId
+        ? { ...c, items: [...c.items, ...newItems] }
+        : c
+    );
+    setChallenges(next);
+    syncMyChallenges(next);
+  };
+
+  const toggleChallengeItem = (challengeId, itemId) => {
+    const now = Date.now();
+    const next = challenges.map((c) =>
+      c.id === challengeId
+        ? {
+            ...c,
+            items: c.items.map((it) =>
+              it.id === itemId ? toggleChallengeItemDone(it, now) : it
+            ),
+          }
+        : c
+    );
+    setChallenges(next);
+    syncMyChallenges(next);
+  };
+
+  const deleteChallengeItem = (challengeId, itemId) => {
+    const next = challenges.map((c) =>
+      c.id === challengeId
+        ? { ...c, items: c.items.filter((it) => it.id !== itemId) }
+        : c
+    );
+    setChallenges(next);
+    syncMyChallenges(next);
+  };
+
   const cycleWeekly = (id) => {
     const next = myWeekly.map((t) => {
       if (t.id !== id) return t;
@@ -2067,13 +2334,16 @@ export default function App() {
   const isSelfMember = (m) =>
     (uid && m.id === uid) ||
     (myNicknameKey && normalizeNickname(m.nickname) === myNicknameKey);
-  const otherMembers = attachEvents(
-    attachRoutines(
-      mergeDisplayMembers(members, weeklyMembers).filter((m) => !isSelfMember(m)),
-      routineMembers.filter((m) => !isSelfMember(m)),
-      currentDayKey
+  const otherMembers = attachChallenges(
+    attachEvents(
+      attachRoutines(
+        mergeDisplayMembers(members, weeklyMembers).filter((m) => !isSelfMember(m)),
+        routineMembers.filter((m) => !isSelfMember(m)),
+        currentDayKey
+      ),
+      eventMembers.filter((m) => !isSelfMember(m))
     ),
-    eventMembers.filter((m) => !isSelfMember(m))
+    challengeMembers.filter((m) => !isSelfMember(m))
   );
   const allMembers = [
     {
@@ -2085,6 +2355,7 @@ export default function App() {
       routineItems: (myRoutine.items || []).map((it) => ({ ...it })),
       routineDoneDate: myRoutine.doneDate || currentDayKey,
       events,
+      challenges,
       isMe: true,
     },
     ...otherMembers,
@@ -2182,16 +2453,22 @@ export default function App() {
 
 
         <button
-          className={`tab-btn ${tab === "history" ? "active" : ""}`}
-          onClick={() => setTab("history")}
+          className={`tab-btn ${tab === "challenge" ? "active" : ""}`}
+          onClick={() => setTab("challenge")}
         >
-          기록
+          챌린지
         </button>
         <button
           className={`tab-btn ${tab === "quiz" ? "active" : ""}`}
           onClick={() => setTab("quiz")}
         >
           퀴즈
+        </button>
+        <button
+          className={`tab-btn ${tab === "history" ? "active" : ""}`}
+          onClick={() => setTab("history")}
+        >
+          기록
         </button>
       </div>
 
@@ -2390,6 +2667,16 @@ export default function App() {
             />
           </section>
         </div>
+      ) : tab === "challenge" ? (
+        <ChallengePanel
+          challenges={challenges}
+          onAddChallenge={addChallenge}
+          onDeleteChallenge={deleteChallenge}
+          onAddItem={addChallengeItem}
+          onAddItemsBulk={addChallengeItemsBulk}
+          onToggleItem={toggleChallengeItem}
+          onDeleteItem={deleteChallengeItem}
+        />
       ) : tab === "quiz" ? (
         quizConfig ? (
           <QuizPlayer
@@ -2663,6 +2950,338 @@ function EventPopover({
   );
 }
 
+/* ─────────────── ChallengePanel ─────────────── */
+function ChallengePanel({
+  challenges,
+  onAddChallenge,
+  onDeleteChallenge,
+  onAddItem,
+  onAddItemsBulk,
+  onToggleItem,
+  onDeleteItem,
+}) {
+  const [title, setTitle] = useState("");
+  const [goalOptions, setGoalOptions] = useState(loadChallengeGoalOptions);
+  const [selectedGoalId, setSelectedGoalId] = useState(""); // "" = 누적형
+  const [customMode, setCustomMode] = useState(false);
+  const [customGoalName, setCustomGoalName] = useState("");
+  const selectedGoal = goalOptions.find((option) => option.id === selectedGoalId) || null;
+
+  const submit = () => {
+    const challengeTitle = getChallengeTitle(selectedGoal?.label, title);
+    if (!challengeTitle) return;
+    onAddChallenge({
+      title: challengeTitle,
+      goal: null,
+    });
+    setTitle("");
+    setSelectedGoalId("");
+  };
+
+  const confirmCustom = () => {
+    const nextLabel = customGoalName.trim();
+    if (!nextLabel) return;
+    const next = addChallengeGoalOption(goalOptions, nextLabel);
+    const added = next.find((option) => option.label === nextLabel);
+    setGoalOptions(next);
+    saveChallengeGoalOptions(next);
+    setSelectedGoalId(added?.id || "");
+    setCustomMode(false);
+    setCustomGoalName("");
+  };
+
+  const deleteSelectedGoal = () => {
+    if (!selectedGoalId) return;
+    const next = removeChallengeGoalOption(goalOptions, selectedGoalId);
+    setGoalOptions(next);
+    saveChallengeGoalOptions(next);
+    setSelectedGoalId("");
+  };
+
+  const cancelCustom = () => {
+    setCustomMode(false);
+    setCustomGoalName("");
+  };
+
+  return (
+    <div className="challenge-panel">
+      <div className="challenge-add">
+        {customMode ? (
+          <div className="challenge-goal-custom">
+            <input
+              className="challenge-goal-input"
+              placeholder="목표명"
+              value={customGoalName}
+              onChange={(e) => setCustomGoalName(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") confirmCustom();
+                if (e.key === "Escape") cancelCustom();
+              }}
+              autoFocus
+            />
+            <button
+              type="button"
+              className="challenge-goal-ok"
+              onClick={confirmCustom}
+              aria-label="목표 저장"
+            >
+              ✓
+            </button>
+            <button
+              type="button"
+              className="challenge-goal-back"
+              onClick={cancelCustom}
+              aria-label="취소"
+            >
+              ×
+            </button>
+          </div>
+        ) : (
+          <select
+            className={`challenge-goal-select${selectedGoalId ? "" : " placeholder"}`}
+            value={selectedGoalId}
+            onChange={(e) => {
+              const v = e.target.value;
+              if (v === "__new__") {
+                setCustomMode(true);
+              } else {
+                setSelectedGoalId(v);
+              }
+            }}
+            aria-label="목표"
+          >
+            <option value="">목표</option>
+            {goalOptions.map((option) => (
+              <option key={option.id} value={option.id}>
+                {option.label}
+              </option>
+            ))}
+            <option value="__new__">+ 새 목표 추가</option>
+          </select>
+        )}
+        {!customMode && selectedGoalId && (
+          <button
+            type="button"
+            className="challenge-goal-back"
+            onClick={deleteSelectedGoal}
+            aria-label="목표 삭제"
+          >
+            ×
+          </button>
+        )}
+        <input
+          className="challenge-title-input"
+          placeholder={selectedGoal ? "세부 제목을 적거나 바로 +" : "직접 입력 (예: 중국어 교재)"}
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && submit()}
+        />
+        <button
+          className="challenge-add-btn"
+          onClick={submit}
+          aria-label="챌린지 추가"
+        >
+          +
+        </button>
+      </div>
+      <p className="challenge-hint">
+        목표를 안 고르면 누적형으로 만들어져요 (끝없이 쌓임)
+      </p>
+
+      {challenges.length === 0 ? (
+        <div className="empty">아직 챌린지가 없어요.</div>
+      ) : (
+        <div className="challenge-list">
+          {challenges.map((c) => (
+            <ChallengeCard
+              key={c.id}
+              challenge={c}
+              onDelete={() => onDeleteChallenge(c.id)}
+              onAddItem={(name) => onAddItem(c.id, name)}
+              onAddItemsBulk={(names) => onAddItemsBulk(c.id, names)}
+              onToggleItem={(itemId) => onToggleItem(c.id, itemId)}
+              onDeleteItem={(itemId) => onDeleteItem(c.id, itemId)}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ─────────────── ChallengeCard ─────────────── */
+function ChallengeCard({
+  challenge,
+  onDelete,
+  onAddItem,
+  onAddItemsBulk,
+  onToggleItem,
+  onDeleteItem,
+}) {
+  const [text, setText] = useState("");
+  const [bulkOpen, setBulkOpen] = useState(false);
+  const [bulkText, setBulkText] = useState("");
+  const [celebrating, setCelebrating] = useState(false);
+  const items = (challenge.items || []).map(normalizeChallengeItem);
+  const progress = getChallengeProgress(items);
+  const hasChecklist = progress.hasChecklist;
+  const complete = hasChecklist && progress.done >= progress.total;
+  const prevCompleteRef = useRef(complete);
+
+  useEffect(() => {
+    if (!prevCompleteRef.current && complete) {
+      setCelebrating(true);
+      const t = setTimeout(() => setCelebrating(false), 3200);
+      prevCompleteRef.current = complete;
+      return () => clearTimeout(t);
+    }
+    prevCompleteRef.current = complete;
+  }, [complete]);
+
+  const submit = () => {
+    if (!text.trim()) return;
+    onAddItem(text);
+    setText("");
+  };
+
+  const submitBulk = () => {
+    const lines = bulkText.split("\n");
+    onAddItemsBulk(lines);
+    setBulkText("");
+    setBulkOpen(false);
+  };
+
+  const sortedItems = [...items].sort(
+    (a, b) => (b.createdAt || b.doneAt || 0) - (a.createdAt || a.doneAt || 0)
+  );
+
+  return (
+    <div
+      className={`challenge-card${complete ? " complete" : ""}${
+        celebrating ? " celebrating" : ""
+      }`}
+    >
+      {celebrating && (
+        <div className="challenge-celebrate" aria-live="polite">
+          🎉 목표 달성!
+        </div>
+      )}
+      <div className="challenge-card-head">
+        <span className="challenge-card-title">
+          <RichChallengeText text={challenge.title} />
+        </span>
+        <span className="challenge-card-count">
+          {hasChecklist ? `${progress.done}/${progress.total}` : `${progress.done}개`}
+        </span>
+        <button
+          type="button"
+          className="challenge-card-del"
+          onClick={onDelete}
+          aria-label="챌린지 삭제"
+        >
+          ×
+        </button>
+      </div>
+
+      {hasChecklist && (
+        <div className="challenge-progress">
+          <div
+            className="challenge-progress-fill"
+            style={{ width: `${progress.pct}%` }}
+          />
+        </div>
+      )}
+
+      <div className="challenge-item-input-row">
+        <input
+          className="challenge-item-input"
+          placeholder="완료한 항목 (예: 5장 문법)"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && submit()}
+        />
+        <button
+          type="button"
+          className="challenge-add-btn"
+          onClick={submit}
+          aria-label="기록 추가"
+        >
+          +
+        </button>
+      </div>
+
+      <button
+        type="button"
+        className="challenge-bulk-toggle"
+        onClick={() => setBulkOpen((v) => !v)}
+      >
+        {bulkOpen ? "닫기" : "목차 일괄입력"}
+      </button>
+
+      {bulkOpen && (
+        <div className="challenge-bulk">
+          <textarea
+            className="challenge-bulk-input"
+            placeholder={"한 줄에 하나씩\n예)\n챕터 1\n챕터 2\n챕터 3"}
+            value={bulkText}
+            onChange={(e) => setBulkText(e.target.value)}
+            rows={5}
+          />
+          <button
+            type="button"
+            className="challenge-bulk-submit"
+            onClick={submitBulk}
+          >
+            {bulkText.split("\n").filter((l) => l.trim()).length}개 등록
+          </button>
+        </div>
+      )}
+
+      {sortedItems.length > 0 && (
+        <ul className="challenge-item-list">
+          {sortedItems.slice(0, 8).map((it) => (
+            <li key={it.id} className={`challenge-item-row${it.done ? " done" : ""}`}>
+              {hasChecklist && (
+                <input
+                  type="checkbox"
+                  className="challenge-item-check"
+                  checked={!!it.done}
+                  onChange={() => onToggleItem(it.id)}
+                  aria-label="목차 완료"
+                />
+              )}
+              <span className="challenge-item-name">
+                <RichChallengeText text={it.name} />
+              </span>
+              {it.doneAt && (
+                <span className="challenge-item-date">
+                  {new Date(it.doneAt).toLocaleDateString("ko-KR", {
+                    month: "numeric",
+                    day: "numeric",
+                  })}
+                </span>
+              )}
+              <button
+                type="button"
+                className="challenge-item-del"
+                onClick={() => onDeleteItem(it.id)}
+                aria-label="기록 삭제"
+              >
+                ×
+              </button>
+            </li>
+          ))}
+          {sortedItems.length > 8 && (
+            <li className="challenge-item-more">
+              … +{sortedItems.length - 8}개 더
+            </li>
+          )}
+        </ul>
+      )}
+    </div>
+  );
+}
+
 /* ─────────────── TodoItem ─────────────── */
 function TodoItem({ todo, onCycle, onDelete }) {
   // 상태: 진행 전 → 진행중 → 완료
@@ -2693,6 +3312,7 @@ function TodoItem({ todo, onCycle, onDelete }) {
 function MemberCard({ member }) {
   const visibleWeeklyTodos = member.weeklyTodos || [];
   const routineItems = member.routineItems || [];
+  const memberChallenges = member.challenges || [];
   const dailyDone = (member.todos || []).filter((t) => t.done).length;
   const weeklyDone = visibleWeeklyTodos.filter((t) => t.done).length;
   const totalDone = dailyDone + weeklyDone;
@@ -2811,6 +3431,38 @@ function MemberCard({ member }) {
               })}
             </div>
           )}
+        </>
+      )}
+
+      {memberChallenges.length > 0 && (
+        <>
+          <div className="member-todo-title">CHALLENGE</div>
+          <div className="member-challenge-list">
+            {memberChallenges.slice(0, 3).map((c) => {
+              const progress = getChallengeProgress(c.items || []);
+              return (
+                <div key={c.id} className="member-challenge-row">
+                  <span className="member-challenge-title">{c.title}</span>
+                  <span className="member-challenge-count">
+                    {progress.hasChecklist ? `${progress.done}/${progress.total}` : `${progress.done}개`}
+                  </span>
+                  {progress.hasChecklist && (
+                    <div className="member-challenge-bar">
+                      <div
+                        className="member-challenge-bar-fill"
+                        style={{ width: `${progress.pct}%` }}
+                      />
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+            {memberChallenges.length > 3 && (
+              <div className="member-challenge-more">
+                … +{memberChallenges.length - 3}
+              </div>
+            )}
+          </div>
         </>
       )}
     </div>
