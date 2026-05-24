@@ -39,7 +39,6 @@ import {
   createPlannedChallengeItems,
   getChallengeProgress,
   groupChallengeCardsByGoal,
-  groupChallengesByGoal,
   normalizeChallengeItem,
   toggleChallengeItemDone,
 } from "./challengeProgress";
@@ -2672,6 +2671,7 @@ export default function App() {
       ) : tab === "challenge" ? (
         <ChallengePanel
           challenges={challenges}
+          otherMembers={otherMembers}
           onAddChallenge={addChallenge}
           onDeleteChallenge={deleteChallenge}
           onAddItem={addChallengeItem}
@@ -2955,6 +2955,7 @@ function EventPopover({
 /* ─────────────── ChallengePanel ─────────────── */
 function ChallengePanel({
   challenges,
+  otherMembers,
   onAddChallenge,
   onDeleteChallenge,
   onAddItem,
@@ -3129,6 +3130,51 @@ function ChallengePanel({
               ))
             )
           )}
+        </div>
+      )}
+
+      {otherMembers && otherMembers.some((m) => (m.challenges || []).length > 0) && (
+        <div className="challenge-others">
+          <h3 className="challenge-others-title">다른 사람들</h3>
+          <div className="challenge-others-list">
+            {otherMembers
+              .filter((m) => (m.challenges || []).length > 0)
+              .map((m) => (
+                <div key={m.id} className="challenge-other-member">
+                  <div className="challenge-other-member-head">
+                    <span className="member-avatar small">
+                      {m.avatar || m.nickname?.charAt(0)?.toUpperCase() || "?"}
+                    </span>
+                    <strong>{m.nickname}</strong>
+                  </div>
+                  <div className="challenge-other-rows">
+                    {(m.challenges || []).map((c) => {
+                      const progress = getChallengeProgress(c.items || []);
+                      return (
+                        <div key={c.id} className="challenge-other-row">
+                          <span className="challenge-other-title">
+                            <RichChallengeText text={c.title} />
+                          </span>
+                          <span className="challenge-other-count">
+                            {progress.hasChecklist
+                              ? `${progress.done}/${progress.total}`
+                              : `${progress.done}개`}
+                          </span>
+                          {progress.hasChecklist && (
+                            <div className="challenge-other-bar">
+                              <div
+                                className="challenge-other-bar-fill"
+                                style={{ width: `${progress.pct}%` }}
+                              />
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
+          </div>
         </div>
       )}
     </div>
@@ -3339,7 +3385,6 @@ function TodoItem({ todo, onCycle, onDelete }) {
 function MemberCard({ member }) {
   const visibleWeeklyTodos = member.weeklyTodos || [];
   const routineItems = member.routineItems || [];
-  const memberChallenges = groupChallengesByGoal(member.challenges || []);
   const dailyDone = (member.todos || []).filter((t) => t.done).length;
   const weeklyDone = visibleWeeklyTodos.filter((t) => t.done).length;
   const totalDone = dailyDone + weeklyDone;
@@ -3461,37 +3506,6 @@ function MemberCard({ member }) {
         </>
       )}
 
-      {memberChallenges.length > 0 && (
-        <>
-          <div className="member-todo-title">CHALLENGE</div>
-          <div className="member-challenge-list">
-            {memberChallenges.slice(0, 3).map((c) => {
-              const progress = getChallengeProgress(c.items || []);
-              return (
-                <div key={c.id} className="member-challenge-row">
-                  <span className="member-challenge-title">{c.title}</span>
-                  <span className="member-challenge-count">
-                    {progress.hasChecklist ? `${progress.done}/${progress.total}` : `${progress.done}개`}
-                  </span>
-                  {progress.hasChecklist && (
-                    <div className="member-challenge-bar">
-                      <div
-                        className="member-challenge-bar-fill"
-                        style={{ width: `${progress.pct}%` }}
-                      />
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-            {memberChallenges.length > 3 && (
-              <div className="member-challenge-more">
-                … +{memberChallenges.length - 3}
-              </div>
-            )}
-          </div>
-        </>
-      )}
     </div>
   );
 }

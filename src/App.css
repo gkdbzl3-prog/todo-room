@@ -2602,39 +2602,102 @@ input:focus {
   background: rgba(255, 255, 255, 0.18);
 }
 
-/* ─── 멤버카드 챌린지 ─── */
-.member-challenge-list {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+/* ─── 챌린지 탭: 다른 사람들 ─── */
+.challenge-others {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.member-challenge-row {
+.challenge-others-title {
+  margin: 0 0 12px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  opacity: 0.7;
+}
+
+.challenge-others-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.challenge-other-member {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.challenge-other-member-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.challenge-other-member-head strong {
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.challenge-other-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.challenge-other-row {
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 2px 8px;
+  gap: 3px 8px;
   align-items: center;
   font-size: 12px;
 }
 
-.member-challenge-title {
+.challenge-other-title {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 1px;
+}
+
+.challenge-other-title .ctext-big {
+  font-size: 13px;
+  font-weight: 800;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  min-width: 0;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.88);
 }
 
-.member-challenge-count {
-  font-size: 10px;
-  font-weight: 800;
+.challenge-other-title .ctext-small {
+  font-size: 11px;
+  font-weight: 500;
   opacity: 0.7;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.challenge-other-title .ctext-plain {
+  font-size: 12px;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.challenge-other-count {
+  font-size: 11px;
+  font-weight: 800;
+  opacity: 0.75;
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.3px;
+  color: #ffe2d8;
 }
 
-.member-challenge-bar {
+.challenge-other-bar {
   grid-column: 1 / -1;
   height: 4px;
   border-radius: 999px;
@@ -2642,15 +2705,8 @@ input:focus {
   overflow: hidden;
 }
 
-.member-challenge-bar-fill {
+.challenge-other-bar-fill {
   height: 100%;
   background: linear-gradient(90deg, #d89577, #6bd0a6);
   border-radius: 999px;
-}
-
-.member-challenge-more {
-  font-size: 11px;
-  opacity: 0.4;
-  text-align: center;
-  padding: 2px 0;
 }
