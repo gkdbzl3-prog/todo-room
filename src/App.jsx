@@ -27,6 +27,7 @@ import {
   getRoutineForStorageLoad,
   rolloverRoutineDone,
 } from "./routineState";
+import { shouldShowMemberEventName } from "./eventVisibility";
 /* ── 유틸 ── */
 // 새벽 2시 기준: 2시 이전이면 전날로 취급
 function getEffectiveDate() {
@@ -2698,7 +2699,7 @@ function MemberCard({ member }) {
   const badge = getBadge(totalDone);
   const [routineExpanded, setRoutineExpanded] = useState(false);
   const closestEvent = pickClosestEvent(member.events || []);
-  const showEventName = closestEvent && (closestEvent.event.isPublic || member.isMe);
+  const showEventName = closestEvent && shouldShowMemberEventName(closestEvent.event);
 
   // Per-section counts for routine summary
   const routineCounts = ROUTINE_SECTIONS.reduce((acc, s) => {
