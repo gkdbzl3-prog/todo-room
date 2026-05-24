@@ -339,6 +339,22 @@ function attachRoutines(displayMembers, routineMembers, todayKey) {
   });
 }
 
+// Attach event data to display members by matching nickname.
+function attachEvents(displayMembers, eventMembers) {
+  if (!eventMembers || !eventMembers.length) return displayMembers;
+  const map = new Map();
+  eventMembers.forEach((em) => {
+    const key = normalizeNickname(em.nickname);
+    if (key) map.set(key, em);
+  });
+  return displayMembers.map((m) => {
+    const key = normalizeNickname(m.nickname);
+    const em = key ? map.get(key) : null;
+    if (!em) return m;
+    return { ...m, events: em.events || [] };
+  });
+}
+
 function mergeDisplayMembers(dailyMembers, weeklyMembers) {
   const merged = new Map();
 
@@ -638,6 +654,7 @@ const weeklyCol = (wk) => `weekly/${wk}/users`;
 const notiCol = (date) => `daily/${date}/notifications`;
 const historyDatesCol = () => "historyDates";
 const routineCol = () => "routines";
+const eventsCol = () => "events";
 
 /* ── 루틴 상수 ── */
 const ROUTINE_SECTIONS = [
@@ -802,6 +819,7 @@ export default function App() {
   const [members, setMembers] = useState([]);
   const [weeklyMembers, setWeeklyMembers] = useState([]);
   const [routineMembers, setRoutineMembers] = useState([]);
+  const [eventMembers, setEventMembers] = useState([]);
 
   // 알림
   const [toasts, setToasts] = useState([]);
@@ -1042,6 +1060,57 @@ export default function App() {
       syncDuplicateNicknameDocs,
     ]
   );
+
+  /* ── Firestore 이벤트(D-day) 동기화 ── */
+  const syncMyEvents = useCallback(
+    (eventsArr) => {
+      if (!nicknameConfirmed || !uid) return;
+      const payload = {
+        nickname,
+        avatar,
+        events: eventsArr || [],
+        updatedAt: serverTimestamp(),
+      };
+      void writeSetDoc(doc(db, eventsCol(), uid), payload).catch((error) => {
+        console.error("Failed to sync events", error);
+      });
+    },
+    [uid, nickname, avatar, nicknameConfirmed]
+  );
+
+  useEffect(() => {
+    if (!nicknameConfirmed) return;
+    const unsub = onSnapshot(collection(db, eventsCol()), (snap) => {
+      const all = [];
+      snap.forEach((d) => {
+        const data = d.data() || {};
+        all.push({
+          id: d.id,
+          nickname: data.nickname || "",
+          avatar: data.avatar || "",
+          events: Array.isArray(data.events) ? data.events : [],
+        });
+      });
+      setEventMembers(all.filter((m) => m.id !== uid));
+    }, (error) => {
+      console.error("Failed to subscribe event members", error);
+    });
+    return () => unsub();
+  }, [uid, nicknameConfirmed]);
+
+  useEffect(() => {
+    if (!nicknameConfirmed || !uid) return;
+    if (isLocalDevHost()) return;
+    const unsub = onSnapshot(doc(db, eventsCol(), uid), (snap) => {
+      if (!snap.exists()) return;
+      const data = snap.data() || {};
+      const remote = Array.isArray(data.events) ? data.events : [];
+      setEvents(remote);
+    }, (error) => {
+      console.error("Failed to subscribe own events", error);
+    });
+    return () => unsub();
+  }, [uid, nicknameConfirmed]);
 
   /* ── Firestore 루틴 동기화 ── */
   const syncMyRoutine = useCallback(
@@ -1686,18 +1755,24 @@ export default function App() {
   const addEvent = ({ name, date, isPublic }) => {
     const trimmed = (name || "").trim();
     if (!trimmed || !date) return;
-    setEvents((prev) => [
-      ...prev,
+    const next = [
+      ...events,
       { id: Date.now(), name: trimmed, date, isPublic: !!isPublic },
-    ]);
+    ];
+    setEvents(next);
+    syncMyEvents(next);
   };
 
   const updateEvent = (id, patch) => {
-    setEvents((prev) => prev.map((e) => (e.id === id ? { ...e, ...patch } : e)));
+    const next = events.map((e) => (e.id === id ? { ...e, ...patch } : e));
+    setEvents(next);
+    syncMyEvents(next);
   };
 
   const deleteEvent = (id) => {
-    setEvents((prev) => prev.filter((e) => e.id !== id));
+    const next = events.filter((e) => e.id !== id);
+    setEvents(next);
+    syncMyEvents(next);
   };
 
   const cycleWeekly = (id) => {
@@ -2021,10 +2096,13 @@ export default function App() {
   const isSelfMember = (m) =>
     (uid && m.id === uid) ||
     (myNicknameKey && normalizeNickname(m.nickname) === myNicknameKey);
-  const otherMembers = attachRoutines(
-    mergeDisplayMembers(members, weeklyMembers).filter((m) => !isSelfMember(m)),
-    routineMembers.filter((m) => !isSelfMember(m)),
-    currentDayKey
+  const otherMembers = attachEvents(
+    attachRoutines(
+      mergeDisplayMembers(members, weeklyMembers).filter((m) => !isSelfMember(m)),
+      routineMembers.filter((m) => !isSelfMember(m)),
+      currentDayKey
+    ),
+    eventMembers.filter((m) => !isSelfMember(m))
   );
   const allMembers = [
     {
@@ -2035,6 +2113,7 @@ export default function App() {
       weeklyTodos: myWeekly,
       routineItems: (myRoutine.items || []).map((it) => ({ ...it })),
       routineDoneDate: myRoutine.doneDate || currentDayKey,
+      events,
       isMe: true,
     },
     ...otherMembers,
@@ -2648,6 +2727,8 @@ function MemberCard({ member }) {
   const totalDone = dailyDone + weeklyDone;
   const badge = getBadge(totalDone);
   const [routineExpanded, setRoutineExpanded] = useState(false);
+  const closestEvent = pickClosestEvent(member.events || []);
+  const showEventName = closestEvent && (closestEvent.event.isPublic || member.isMe);
 
   // Per-section counts for routine summary
   const routineCounts = ROUTINE_SECTIONS.reduce((acc, s) => {
@@ -2680,12 +2761,23 @@ function MemberCard({ member }) {
                 {badge.emoji} {badge.label}
               </span>
             )}
+
           </div>
         </div>
+
         <div className="member-count">
           {totalDone}/{(member.todos || []).length + visibleWeeklyTodos.length}
         </div>
       </div>
+
+      {closestEvent && (
+        <div className="member-event-line">
+          {showEventName && (
+            <span className="member-event-name">{closestEvent.event.name}</span>
+          )}
+          <span className="member-event-dday">{formatDDay(closestEvent.diff)}</span>
+        </div>
+      )}
 
       <div className="member-todo-title">TODAY</div>
       <MiniTodoList todos={member.todos || []} />
