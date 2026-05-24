@@ -1905,7 +1905,7 @@ input:focus {
   color: var(--text, #f3f4f6);
   font-family: inherit;
   font-size: 14px;
-  width: 102px;
+  width: 120px;
 }
 
 .routine-section-select option {
