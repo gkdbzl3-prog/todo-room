@@ -456,12 +456,30 @@ function attachChallenges(displayMembers, challengeMembers) {
     const key = normalizeNickname(cm.nickname);
     if (key) map.set(key, cm);
   });
-  return displayMembers.map((m) => {
+  const seenKeys = new Set();
+  const attached = displayMembers.map((m) => {
     const key = normalizeNickname(m.nickname);
+    if (key) seenKeys.add(key);
     const cm = key ? map.get(key) : null;
     if (!cm) return m;
     return { ...m, challenges: cm.challenges || [] };
   });
+  // 데일리/위클리 doc이 없어도 챌린지만 가진 멤버는 추가로 합류시킴
+  const extras = challengeMembers
+    .filter((cm) => {
+      const key = normalizeNickname(cm.nickname);
+      return key && !seenKeys.has(key) && (cm.challenges || []).length > 0;
+    })
+    .map((cm) => ({
+      id: cm.id,
+      nickname: cm.nickname,
+      avatar: cm.avatar,
+      todos: [],
+      weeklyTodos: [],
+      challenges: cm.challenges || [],
+      isMe: false,
+    }));
+  return [...attached, ...extras];
 }
 
 // Attach event data to display members by matching nickname.

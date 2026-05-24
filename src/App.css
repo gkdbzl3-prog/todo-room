@@ -2493,7 +2493,7 @@ input:focus {
 }
 
 .challenge-item-row.done .challenge-item-name {
-  text-decoration: line-through;
+  color: #4e080394;
   opacity: 0.58;
 }
 
