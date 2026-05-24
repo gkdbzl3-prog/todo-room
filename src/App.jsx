@@ -38,6 +38,8 @@ import {
   createCompletedChallengeItem,
   createPlannedChallengeItems,
   getChallengeProgress,
+  groupChallengeCardsByGoal,
+  groupChallengesByGoal,
   normalizeChallengeItem,
   toggleChallengeItemDone,
 } from "./challengeProgress";
@@ -2966,6 +2968,7 @@ function ChallengePanel({
   const [customMode, setCustomMode] = useState(false);
   const [customGoalName, setCustomGoalName] = useState("");
   const selectedGoal = goalOptions.find((option) => option.id === selectedGoalId) || null;
+  const challengeGroups = groupChallengeCardsByGoal(challenges);
 
   const submit = () => {
     const challengeTitle = getChallengeTitle(selectedGoal?.label, title);
@@ -3092,17 +3095,40 @@ function ChallengePanel({
         <div className="empty">아직 챌린지가 없어요.</div>
       ) : (
         <div className="challenge-list">
-          {challenges.map((c) => (
-            <ChallengeCard
-              key={c.id}
-              challenge={c}
-              onDelete={() => onDeleteChallenge(c.id)}
-              onAddItem={(name) => onAddItem(c.id, name)}
-              onAddItemsBulk={(names) => onAddItemsBulk(c.id, names)}
-              onToggleItem={(itemId) => onToggleItem(c.id, itemId)}
-              onDeleteItem={(itemId) => onDeleteItem(c.id, itemId)}
-            />
-          ))}
+          {challengeGroups.map((group) =>
+            group.hasGoal ? (
+              <div key={group.id} className="challenge-goal-section">
+                <div className="challenge-goal-heading">{group.title}</div>
+                <div className="challenge-goal-cards">
+                  {group.challenges.map((c) => (
+                    <ChallengeCard
+                      key={c.id}
+                      challenge={c}
+                      displayTitle={c.displayTitle}
+                      onDelete={() => onDeleteChallenge(c.id)}
+                      onAddItem={(name) => onAddItem(c.id, name)}
+                      onAddItemsBulk={(names) => onAddItemsBulk(c.id, names)}
+                      onToggleItem={(itemId) => onToggleItem(c.id, itemId)}
+                      onDeleteItem={(itemId) => onDeleteItem(c.id, itemId)}
+                    />
+                  ))}
+                </div>
+              </div>
+            ) : (
+              group.challenges.map((c) => (
+                <ChallengeCard
+                  key={c.id}
+                  challenge={c}
+                  displayTitle={c.displayTitle}
+                  onDelete={() => onDeleteChallenge(c.id)}
+                  onAddItem={(name) => onAddItem(c.id, name)}
+                  onAddItemsBulk={(names) => onAddItemsBulk(c.id, names)}
+                  onToggleItem={(itemId) => onToggleItem(c.id, itemId)}
+                  onDeleteItem={(itemId) => onDeleteItem(c.id, itemId)}
+                />
+              ))
+            )
+          )}
         </div>
       )}
     </div>
@@ -3112,6 +3138,7 @@ function ChallengePanel({
 /* ─────────────── ChallengeCard ─────────────── */
 function ChallengeCard({
   challenge,
+  displayTitle,
   onDelete,
   onAddItem,
   onAddItemsBulk,
@@ -3168,7 +3195,7 @@ function ChallengeCard({
       )}
       <div className="challenge-card-head">
         <span className="challenge-card-title">
-          <RichChallengeText text={challenge.title} />
+          <RichChallengeText text={displayTitle || challenge.title} />
         </span>
         <span className="challenge-card-count">
           {hasChecklist ? `${progress.done}/${progress.total}` : `${progress.done}개`}
@@ -3312,7 +3339,7 @@ function TodoItem({ todo, onCycle, onDelete }) {
 function MemberCard({ member }) {
   const visibleWeeklyTodos = member.weeklyTodos || [];
   const routineItems = member.routineItems || [];
-  const memberChallenges = member.challenges || [];
+  const memberChallenges = groupChallengesByGoal(member.challenges || []);
   const dailyDone = (member.todos || []).filter((t) => t.done).length;
   const weeklyDone = visibleWeeklyTodos.filter((t) => t.done).length;
   const totalDone = dailyDone + weeklyDone;

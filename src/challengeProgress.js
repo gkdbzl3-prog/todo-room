@@ -60,3 +60,83 @@ export function getChallengeProgress(items) {
     hasChecklist,
   };
 }
+
+export function getChallengeGoalLabel(title) {
+  const text = String(title || "").trim();
+  const match = text.match(/^\{([^}]+)\}/);
+  return (match?.[1] || text).trim();
+}
+
+export function parseChallengeTitle(title) {
+  const text = String(title || "").trim();
+  const match = text.match(/^\{([^}]+)\}(?:\(([^)]+)\))?(.*)$/);
+  if (!match) {
+    return {
+      hasGoal: false,
+      goalLabel: text,
+      detailLabel: text,
+    };
+  }
+
+  const goalLabel = String(match[1] || "").trim();
+  const detailLabel = `${match[2] || ""}${match[3] || ""}`.trim();
+  return {
+    hasGoal: !!goalLabel,
+    goalLabel,
+    detailLabel: detailLabel || goalLabel,
+  };
+}
+
+export function groupChallengesByGoal(challenges) {
+  const groups = new Map();
+
+  (challenges || []).forEach((challenge) => {
+    const label = getChallengeGoalLabel(challenge?.title);
+    if (!label) return;
+    const key = `goal:${label}`;
+    const current = groups.get(key);
+    const items = (challenge?.items || []).map(normalizeChallengeItem);
+
+    if (current) {
+      current.items.push(...items);
+      return;
+    }
+
+    groups.set(key, {
+      id: key,
+      title: label,
+      items: [...items],
+    });
+  });
+
+  return Array.from(groups.values());
+}
+
+export function groupChallengeCardsByGoal(challenges) {
+  const groups = new Map();
+
+  (challenges || []).forEach((challenge) => {
+    const parsed = parseChallengeTitle(challenge?.title);
+    const key = parsed.hasGoal ? `goal:${parsed.goalLabel}` : `single:${challenge?.id}`;
+    const title = parsed.hasGoal ? parsed.goalLabel : parsed.detailLabel;
+    const current = groups.get(key);
+    const challengeWithDisplayTitle = {
+      ...challenge,
+      displayTitle: parsed.detailLabel,
+    };
+
+    if (current) {
+      current.challenges.push(challengeWithDisplayTitle);
+      return;
+    }
+
+    groups.set(key, {
+      id: key,
+      title,
+      hasGoal: parsed.hasGoal,
+      challenges: [challengeWithDisplayTitle],
+    });
+  });
+
+  return Array.from(groups.values());
+}
