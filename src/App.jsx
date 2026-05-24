@@ -178,6 +178,60 @@ function saveStoredTodos(key, todos) {
   localStorage.setItem(key, JSON.stringify(todos));
 }
 
+function loadStoredEvents(key) {
+  try {
+    const raw = localStorage.getItem(key);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed)) return [];
+    return parsed.map((e) => ({
+      id: e.id,
+      name: typeof e.name === "string" ? e.name : "",
+      date: typeof e.date === "string" ? e.date : "",
+      isPublic: !!e.isPublic,
+    }));
+  } catch {
+    return [];
+  }
+}
+
+function saveStoredEvents(key, events) {
+  try {
+    localStorage.setItem(key, JSON.stringify(events));
+  } catch { }
+}
+
+function computeDayDiff(dateStr) {
+  if (!dateStr) return null;
+  const target = new Date(`${dateStr}T00:00:00`);
+  if (Number.isNaN(target.getTime())) return null;
+  const today = getEffectiveDate();
+  today.setHours(0, 0, 0, 0);
+  return Math.round((target - today) / (24 * 60 * 60 * 1000));
+}
+
+function formatDDay(diff) {
+  if (diff === null || diff === undefined) return "";
+  if (diff === 0) return "D-DAY";
+  if (diff > 0) return `D-${diff}`;
+  return `D+${-diff}`;
+}
+
+function pickClosestEvent(events) {
+  let best = null;
+  let bestDiff = Infinity;
+  (events || []).forEach((e) => {
+    const diff = computeDayDiff(e.date);
+    if (diff === null) return;
+    if (diff < 0) return;
+    if (diff < bestDiff) {
+      best = e;
+      bestDiff = diff;
+    }
+  });
+  return best ? { event: best, diff: bestDiff } : null;
+}
+
 function normalizeNickname(nickname) {
   return nickname?.trim() || "";
 }
@@ -721,6 +775,7 @@ export default function App() {
   const dailyStorageKey = `todoRoom_daily_${uid}_${currentDayKey}`;
   const weeklyStorageKey = `todoRoom_weekly_${uid}_${currentWeekKey}`;
   const routineStorageKey = routineStorageKeyFor(uid);
+  const eventsStorageKey = `todoRoom_events_${uid}`;
   const [profileRecoveryChecked, setProfileRecoveryChecked] = useState(
     !!getSavedNickname()
   );
@@ -732,6 +787,10 @@ export default function App() {
   const [weeklyTodoText, setWeeklyTodoText] = useState("");
   const [myDaily, setMyDaily] = useState(() => loadStoredTodos(dailyStorageKey));
   const [myWeekly, setMyWeekly] = useState(() => loadStoredTodos(weeklyStorageKey));
+
+  // 이벤트 (D-day)
+  const [events, setEvents] = useState(() => loadStoredEvents(eventsStorageKey));
+  const [eventPopoverOpen, setEventPopoverOpen] = useState(false);
 
   // 루틴 (반복되는 매일 습관 — 매일 자정에 done만 리셋, 항목은 영구)
   const [myRoutine, setMyRoutine] = useState({ items: [], doneDate: "" });
@@ -799,6 +858,14 @@ export default function App() {
       window.clearTimeout(timer);
     };
   }, [weeklyStorageKey]);
+
+  useEffect(() => {
+    setEvents(loadStoredEvents(eventsStorageKey));
+  }, [eventsStorageKey]);
+
+  useEffect(() => {
+    saveStoredEvents(eventsStorageKey, events);
+  }, [eventsStorageKey, events]);
 
   const syncDuplicateNicknameDocs = useCallback(
     async (collectionPath, nextNickname, payload) => {
@@ -1615,6 +1682,24 @@ export default function App() {
     syncMyDaily(next);
   };
 
+  /* ── 이벤트(D-day) ── */
+  const addEvent = ({ name, date, isPublic }) => {
+    const trimmed = (name || "").trim();
+    if (!trimmed || !date) return;
+    setEvents((prev) => [
+      ...prev,
+      { id: Date.now(), name: trimmed, date, isPublic: !!isPublic },
+    ]);
+  };
+
+  const updateEvent = (id, patch) => {
+    setEvents((prev) => prev.map((e) => (e.id === id ? { ...e, ...patch } : e)));
+  };
+
+  const deleteEvent = (id) => {
+    setEvents((prev) => prev.filter((e) => e.id !== id));
+  };
+
   const cycleWeekly = (id) => {
     const next = myWeekly.map((t) => {
       if (t.id !== id) return t;
@@ -1668,6 +1753,7 @@ export default function App() {
   const totalDoneCount =
     dailyDoneCount + visibleWeekly.filter((t) => t.done).length;
   const badge = getBadge(totalDoneCount);
+  const closestEvent = pickClosestEvent(events);
 
   // 전체 멤버 (나 포함) 카드 데이터
   // Expose admin helpers on window so you can list/delete ghost users from the dev console.
@@ -2150,13 +2236,28 @@ export default function App() {
           {/* 내 투두 목록 */}
           <section className="my-panel my-panel-todos">
             {/* 데일리 투두 */}
-            <div className="todo-panel">
+            <div className="todo-panel todo-panel-daily">
+              <button
+                type="button"
+                className="todo-panel-star"
+                onClick={() => setEventPopoverOpen(true)}
+                aria-label="이벤트 편집"
+              >
+                ✴︎
+              </button>
               <h2>
                 오늘의 TO-DO{" "}
                 <span className="count-badge">
                   {dailyDoneCount}/{myDaily.length}
                 </span>
               </h2>
+              {closestEvent && (
+                <div className="event-dday-line">
+                  <span className="event-dday-name">{closestEvent.event.name}</span>
+                  <span className="event-dday-tag">{formatDDay(closestEvent.diff)}</span>
+                </div>
+              )}
+
               <p className="reset-notice">매일 새벽 2시에 초기화됩니다</p>
 
               {myDaily.length === 0 ? (
@@ -2172,6 +2273,16 @@ export default function App() {
                     />
                   ))}
                 </div>
+              )}
+
+              {eventPopoverOpen && (
+                <EventPopover
+                  events={events}
+                  onAddEvent={addEvent}
+                  onUpdateEvent={updateEvent}
+                  onDeleteEvent={deleteEvent}
+                  onClose={() => setEventPopoverOpen(false)}
+                />
               )}
             </div>
 
@@ -2395,6 +2506,109 @@ function RoutineCard({
           );
         })
       )}
+    </div>
+  );
+}
+
+/* ─────────────── EventPopover ─────────────── */
+function EventPopover({
+  events,
+  onAddEvent,
+  onUpdateEvent,
+  onDeleteEvent,
+  onClose,
+}) {
+  const [name, setName] = useState("");
+  const [date, setDate] = useState("");
+  const [isPublic, setIsPublic] = useState(false);
+
+  const submit = () => {
+    if (!name.trim() || !date) return;
+    onAddEvent({ name: name.trim(), date, isPublic });
+    setName("");
+    setDate("");
+    setIsPublic(false);
+  };
+
+  const sortedEvents = [...events].sort((a, b) => (a.date || "").localeCompare(b.date || ""));
+
+  return (
+    <div className="event-popover-overlay" onClick={onClose}>
+      <div
+        className="event-popover"
+        onClick={(e) => e.stopPropagation()}
+        role="dialog"
+        aria-label="이벤트 편집"
+      >
+        <div className="event-popover-head">
+          <span>이벤트</span>
+          <button className="event-popover-close" onClick={onClose} aria-label="닫기">
+            ×
+          </button>
+        </div>
+
+        <div className="event-form">
+          <label className="event-public-toggle">
+            <input
+              type="checkbox"
+              checked={isPublic}
+              onChange={(e) => setIsPublic(e.target.checked)}
+            />
+            <span>공개</span>
+          </label>
+          <div className="event-form-row">
+            <input
+              className="event-name-input"
+              placeholder="이벤트 이름"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && submit()}
+            />
+            <input
+              type="date"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+            />
+            <button className="event-add-btn" onClick={submit} aria-label="추가">
+              +
+            </button>
+          </div>
+
+        </div>
+
+        {sortedEvents.length === 0 ? (
+          <div className="empty">등록된 이벤트가 없어요.</div>
+        ) : (
+          <div className="event-list">
+            {sortedEvents.map((e) => {
+              const diff = computeDayDiff(e.date);
+              return (
+                <div key={e.id} className="event-row">
+                  <span className="event-row-name">{e.name}</span>
+                  <span className="event-row-date">{e.date}</span>
+                  <span className="event-row-dday">{formatDDay(diff)}</span>
+                  <button
+                    type="button"
+                    className={`event-row-visibility ${e.isPublic ? "public" : "private"}`}
+                    onClick={() => onUpdateEvent(e.id, { isPublic: !e.isPublic })}
+                    aria-label="공개 여부 전환"
+                  >
+                    {e.isPublic ? "공개" : "비공개"}
+                  </button>
+                  <button
+                    type="button"
+                    className="event-row-del"
+                    onClick={() => onDeleteEvent(e.id)}
+                    aria-label="이벤트 삭제"
+                  >
+                    ×
+                  </button>
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

@@ -487,9 +487,256 @@ input:focus {
   font-weight: 400;
 }
 
+/* ─── 데일리 패널 + 이벤트 (D-day) ─── */
+.todo-panel-daily {
+  position: relative;
+  flex-direction: column;
+}
+
+.todo-panel-star {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  z-index: 2;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgb(110 78 35 / 96%);
+  border-radius: 50%;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, transform 0.1s;
+}
+
+.todo-panel-star:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+
+.todo-panel-star:active {
+  transform: scale(0.92);
+}
+
+.event-dday-line {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: -8px 0 6px;
+  font-size: 13px;
+  position: absolute;
+  right: 55px;
+  top: 25px;
+}
+
+.event-dday-name {
+  font-weight: 700;
+  color: #ffffffd6;
+  letter-spacing: 0.3px;
+}
+
+.event-dday-tag {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #ffe2d8;
+  background: rgba(255, 255, 255, 0.14);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+/* ─── 이벤트 팝오버 ─── */
+.event-popover-overlay {
+  position: fixed;
+  inset: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 50;
+  backdrop-filter: blur(4px);
+}
+
+.event-popover {
+  background: #dd7e62f7;
+  border: 1px solid rgba(196, 196, 196, 0.178);
+  border-radius: 18px;
+  padding: 18px;
+  width: 100%;
+  max-width: 420px;
+  max-height: 80vh;
+  overflow-y: auto;
+  color: #fff;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  font-family: inherit;
+}
+
+.event-popover-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  opacity: 0.85;
+  margin-bottom: 14px;
+}
+
+.event-popover-close {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 20px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 4px;
+}
+
+.event-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.event-form-row {
+  display: flex;
+  gap: 6px;
+  align-items: stretch;
+}
+
+.event-form-row .event-name-input {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 9px 12px;
+  font-size: 13px;
+}
+
+.event-form-row input[type="date"] {
+  flex: 0 0 auto;
+  width: 130px;
+  padding: 9px 10px;
+  font-size: 13px;
+  color-scheme: dark;
+}
+
+.event-public-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  opacity: 0.7;
+  cursor: pointer;
+  white-space: nowrap;
+  align-self: flex-start;
+  padding-left: 5px;
+}
+
+.event-public-toggle input {
+  width: auto;
+  margin: 0;
+  accent-color: #d89577;
+}
+
+.event-add-btn {
+  flex: 0 0 auto;
+  width: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffe2d8;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.event-add-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.event-add-btn:active {
+  transform: scale(0.94);
+}
+
+.event-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.event-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.event-row-name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+.event-row-date {
+  opacity: 0.55;
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+
+.event-row-dday {
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #ffd5c4;
+}
+
+.event-row-visibility {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.event-row-visibility.public {
+  background: rgba(216, 149, 119, 0.25);
+  border-color: rgba(216, 149, 119, 0.5);
+  color: #ffe2d8;
+}
+
+.event-row-del {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 16px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 2px;
+}
+
+.event-row-del:hover {
+  color: #f87171;
+}
+
 /* ─── 위클리 패널 ─── */
 .todo-panel.weekly {
   border-color: rgba(129, 140, 248, 0.25);
+  z-index: -10;
 }
 
 .todo-panel.weekly h2 {
@@ -1655,7 +1902,7 @@ input:focus {
   color: var(--text, #f3f4f6);
   font-family: inherit;
   font-size: 14px;
-  width: 100px;
+  width: 102px;
 }
 
 .routine-section-select option {
