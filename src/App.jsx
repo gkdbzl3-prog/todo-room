@@ -23,6 +23,10 @@ import {
   choosePreferredNicknameMatch,
   getNicknameMatchCurrentTotal,
 } from "./memberIdentity";
+import {
+  getRoutineForStorageLoad,
+  rolloverRoutineDone,
+} from "./routineState";
 /* ── 유틸 ── */
 // 새벽 2시 기준: 2시 이전이면 전날로 취급
 function getEffectiveDate() {
@@ -615,13 +619,6 @@ async function clearTodoRoomIndexedDb() {
   return names;
 }
 
-// Reset both `started` and `done` flags if the date has changed since they were last set.
-function rolloverRoutineDone(items, doneDate, todayKey) {
-  if (doneDate === todayKey) return { items, changed: false };
-  const next = items.map((it) => ({ ...it, started: false, done: false }));
-  return { items: next, changed: true };
-}
-
 /* ── 자동 백업 (localStorage 기반 안전망) ── */
 const BACKUP_KEY = "todoRoom_backups_v1";
 const BACKUP_INTERVAL_MS = 24 * 60 * 60 * 1000; // 24h
@@ -694,6 +691,8 @@ export default function App() {
 
   // 루틴 (반복되는 매일 습관 — 매일 자정에 done만 리셋, 항목은 영구)
   const [myRoutine, setMyRoutine] = useState({ items: [], doneDate: "" });
+  const myRoutineRef = useRef(myRoutine);
+  const previousRoutineStorageKeyRef = useRef(routineStorageKey);
   const [routineText, setRoutineText] = useState("");
   const [routineSection, setRoutineSection] = useState("morning");
   const [routineCelebrated, setRoutineCelebrated] = useState(false);
@@ -723,6 +722,10 @@ export default function App() {
   const [quizConfig, setQuizConfig] = useState(null);
 
   // (위클리 항상 표시)
+
+  useEffect(() => {
+    myRoutineRef.current = myRoutine;
+  }, [myRoutine]);
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -1070,14 +1073,25 @@ export default function App() {
   useEffect(() => {
     if (!routineStorageKey) return;
     const stored = loadStoredRoutine(routineStorageKey);
-    const { items, changed } = rolloverRoutineDone(stored.items, stored.doneDate, currentDayKey);
-    const next = { items, doneDate: currentDayKey };
+    const sameStorageKey = previousRoutineStorageKeyRef.current === routineStorageKey;
+    const next = getRoutineForStorageLoad({
+      stored,
+      current: myRoutineRef.current,
+      sameStorageKey,
+      currentDayKey,
+    });
+    previousRoutineStorageKeyRef.current = routineStorageKey;
     setMyRoutine(next);
     setRoutineCelebrated(false);
+    const changed =
+      stored.doneDate !== currentDayKey ||
+      (sameStorageKey &&
+        (!stored.items || stored.items.length === 0) &&
+        (myRoutineRef.current.items || []).length > 0);
     if (changed) {
       saveStoredRoutine(routineStorageKey, next);
       // Don't sync an empty payload to Firestore — would wipe items written from another device.
-      if (items.length > 0) syncMyRoutine(next);
+      if (next.items.length > 0) syncMyRoutine(next);
     }
   }, [routineStorageKey, currentDayKey, syncMyRoutine]);
 
