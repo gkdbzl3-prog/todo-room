@@ -888,6 +888,7 @@ export default function App() {
   const [myRoutine, setMyRoutine] = useState({ items: [], doneDate: "" });
   const myRoutineRef = useRef(myRoutine);
   const previousRoutineStorageKeyRef = useRef(routineStorageKey);
+  const pendingWeeklyTodosRef = useRef(null);
   const [routineText, setRoutineText] = useState("");
   const [routineSection, setRoutineSection] = useState("morning");
   const [routineCelebrated, setRoutineCelebrated] = useState(false);
@@ -1815,7 +1816,15 @@ export default function App() {
         nickname
       );
 
-      setMyWeekly((current) => getOwnWeeklyTodosFromRemote(current, preferredSelf));
+      setMyWeekly((current) => {
+        const next = getOwnWeeklyTodosFromRemote(
+          current,
+          preferredSelf,
+          pendingWeeklyTodosRef.current
+        );
+        pendingWeeklyTodosRef.current = next.pendingTodos;
+        return next.todos;
+      });
 
       setWeeklyMembers(
         mergeRecordsByNickname(
@@ -1946,6 +1955,7 @@ export default function App() {
       ...myWeekly,
       { id: Date.now(), text, done: false, started: false, createdAt: Date.now() },
     ];
+    pendingWeeklyTodosRef.current = next;
     setMyWeekly(next);
     syncMyWeekly(next);
     setWeeklyTodoText("");
@@ -2101,12 +2111,14 @@ export default function App() {
       }
       return { ...t, started: false, done: false, completedAt: null };
     });
+    pendingWeeklyTodosRef.current = next;
     setMyWeekly(next);
     syncMyWeekly(next);
   };
 
   const deleteWeekly = (id) => {
     const next = myWeekly.filter((t) => t.id !== id);
+    pendingWeeklyTodosRef.current = next;
     setMyWeekly(next);
     syncMyWeekly(next);
   };
