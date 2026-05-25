@@ -27,6 +27,7 @@ import {
   getRoutineForStorageLoad,
   rolloverRoutineDone,
 } from "./routineState";
+import { getOwnWeeklyTodosFromRemote } from "./weeklyState";
 import { shouldShowMemberEventName } from "./eventVisibility";
 import {
   addChallengeGoalOption,
@@ -1814,11 +1815,7 @@ export default function App() {
         nickname
       );
 
-      if (preferredSelf) {
-        setMyWeekly(preferredSelf.todos || []);
-      } else {
-        setMyWeekly([]);
-      }
+      setMyWeekly((current) => getOwnWeeklyTodosFromRemote(current, preferredSelf));
 
       setWeeklyMembers(
         mergeRecordsByNickname(
