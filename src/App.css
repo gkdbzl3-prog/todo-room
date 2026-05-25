@@ -1922,7 +1922,8 @@ input:focus {
   color: var(--text, #f3f4f6);
   font-family: inherit;
   font-size: 14px;
-  width: 120px;
+  width: 90px;
+  max-width: 120px;
 }
 
 .routine-section-select option {
@@ -2153,7 +2154,8 @@ input:focus {
 
 .challenge-goal-select {
   flex: 0 0 auto;
-  width: fit-content;
+  width: 90px;
+  max-width: 120px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   background: rgba(255, 255, 255, 0.08);
   color: #fff;
