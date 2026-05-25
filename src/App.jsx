@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback, useRef } from "react";
+import { useEffect, useState, useCallback, useMemo, useRef } from "react";
 import {
   db,
   collection,
@@ -39,6 +39,7 @@ import {
   createPlannedChallengeItems,
   getChallengeProgress,
   groupChallengeCardsByGoal,
+  groupChallengesByGoal,
   normalizeChallengeItem,
   toggleChallengeItemDone,
 } from "./challengeProgress";
@@ -194,6 +195,7 @@ function loadStoredTodos(key) {
     const parsed = JSON.parse(raw);
     return Array.isArray(parsed) ? parsed : [];
   } catch {
+    // Ignore invalid cached snapshots; live Firestore data will replace them.
     return [];
   }
 }
@@ -222,7 +224,9 @@ function loadStoredEvents(key) {
 function saveStoredEvents(key, events) {
   try {
     localStorage.setItem(key, JSON.stringify(events));
-  } catch { }
+  } catch {
+    // Cache is only an optimization; failing to write should not block the app.
+  }
 }
 
 function loadStoredChallenges(key) {
@@ -248,10 +252,13 @@ function loadStoredChallenges(key) {
 function saveStoredChallenges(key, challenges) {
   try {
     localStorage.setItem(key, JSON.stringify(challenges));
-  } catch { }
+  } catch {
+    // Ignore storage write failures.
+  }
 }
 
 const CHALLENGE_GOAL_OPTIONS_KEY = "todoRoom_challengeGoalOptions";
+const MEMBER_SNAPSHOT_CACHE_PREFIX = "todoRoom_memberSnapshot";
 
 function loadChallengeGoalOptions() {
   try {
@@ -271,7 +278,41 @@ function saveChallengeGoalOptions(options) {
       CHALLENGE_GOAL_OPTIONS_KEY,
       JSON.stringify(normalizeChallengeGoalOptions(options))
     );
-  } catch { }
+  } catch {
+    // Ignore storage write failures.
+  }
+}
+
+function loadCachedMemberSnapshot(key) {
+  try {
+    const raw = localStorage.getItem(key);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed)) return [];
+    return parsed;
+  } catch {
+    return [];
+  }
+}
+
+function saveCachedMemberSnapshot(key, members) {
+  try {
+    const snapshot = (members || []).map((member) => ({
+      id: member.id,
+      nickname: member.nickname || "",
+      avatar: member.avatar || "",
+      todos: member.todos || [],
+      weeklyTodos: member.weeklyTodos || [],
+      routineItems: member.routineItems || [],
+      routineDoneDate: member.routineDoneDate || "",
+      events: member.events || [],
+      challenges: member.challenges || [],
+      isMe: false,
+    }));
+    localStorage.setItem(key, JSON.stringify(snapshot));
+  } catch {
+    // Cache is only an optimization; failing to write should not block the app.
+  }
 }
 
 // {큰제목} / (소제목) 마커 파싱 — 괄호는 출력에서 제거.
@@ -453,26 +494,37 @@ function attachChallenges(displayMembers, challengeMembers) {
   if (!challengeMembers || !challengeMembers.length) return displayMembers;
   const map = new Map();
   challengeMembers.forEach((cm) => {
-    const key = normalizeNickname(cm.nickname);
-    if (key) map.set(key, cm);
+    const nicknameKey = normalizeNickname(cm.nickname);
+    if (nicknameKey) map.set(`nick:${nicknameKey}`, cm);
+    if (cm.id) map.set(`id:${cm.id}`, cm);
   });
   const seenKeys = new Set();
   const attached = displayMembers.map((m) => {
-    const key = normalizeNickname(m.nickname);
-    if (key) seenKeys.add(key);
-    const cm = key ? map.get(key) : null;
+    const keys = [];
+    const nicknameKey = normalizeNickname(m.nickname);
+    if (nicknameKey) keys.push(`nick:${nicknameKey}`);
+    if (m.id) keys.push(`id:${m.id}`);
+    keys.forEach((key) => seenKeys.add(key));
+    const cm = keys.map((key) => map.get(key)).find(Boolean) || null;
     if (!cm) return m;
     return { ...m, challenges: cm.challenges || [] };
   });
   // 데일리/위클리 doc이 없어도 챌린지만 가진 멤버는 추가로 합류시킴
   const extras = challengeMembers
     .filter((cm) => {
-      const key = normalizeNickname(cm.nickname);
-      return key && !seenKeys.has(key) && (cm.challenges || []).length > 0;
+      const keys = [];
+      const nicknameKey = normalizeNickname(cm.nickname);
+      if (nicknameKey) keys.push(`nick:${nicknameKey}`);
+      if (cm.id) keys.push(`id:${cm.id}`);
+      return (
+        keys.length > 0 &&
+        keys.every((key) => !seenKeys.has(key)) &&
+        (cm.challenges || []).length > 0
+      );
     })
     .map((cm) => ({
       id: cm.id,
-      nickname: cm.nickname,
+      nickname: cm.nickname || "이름 없음",
       avatar: cm.avatar,
       todos: [],
       weeklyTodos: [],
@@ -858,9 +910,15 @@ export default function App() {
   const [membersReadyKey, setMembersReadyKey] = useState("");
   const skipDailyStorageSaveRef = useRef(false);
   const skipWeeklyStorageSaveRef = useRef(false);
+  const memberSnapshotSavedRef = useRef("");
   const legacyWeekKeyValue = legacyWeekKey();
   const currentMembersReadyKey = `${uid}:${nickname}:${currentDayKey}:${currentWeekKey}:${legacyWeekKeyValue}`;
   const membersReady = membersReadyKey === currentMembersReadyKey;
+  const memberSnapshotCacheKey = `${MEMBER_SNAPSHOT_CACHE_PREFIX}_${currentDayKey}_${currentWeekKey}`;
+  const cachedOtherMembers = useMemo(
+    () => loadCachedMemberSnapshot(memberSnapshotCacheKey),
+    [memberSnapshotCacheKey]
+  );
   const [quizConfig, setQuizConfig] = useState(null);
 
   // (위클리 항상 표시)
@@ -2364,6 +2422,9 @@ export default function App() {
     ),
     challengeMembers.filter((m) => !isSelfMember(m))
   );
+  const cachedVisibleOtherMembers = cachedOtherMembers.filter((m) => !isSelfMember(m));
+  const displayOtherMembers =
+    otherMembers.length > 0 || membersReady ? otherMembers : cachedVisibleOtherMembers;
   const allMembers = [
     {
       id: uid,
@@ -2377,7 +2438,7 @@ export default function App() {
       challenges,
       isMe: true,
     },
-    ...otherMembers,
+    ...displayOtherMembers,
   ].sort((a, b) => {
     if (a.isMe !== b.isMe) return a.isMe ? -1 : 1;
     // 투두 있는 멤버 우선
@@ -2393,6 +2454,24 @@ export default function App() {
   const idleMembers = allMembers.filter(
     (member) => !member.isMe && getMemberTodoTotal(member) === 0
   );
+
+  useEffect(() => {
+    if (!membersReady || otherMembers.length === 0) return;
+    const signature = `${memberSnapshotCacheKey}:${JSON.stringify(
+      otherMembers.map((member) => ({
+        id: member.id,
+        nickname: member.nickname,
+        todos: member.todos,
+        weeklyTodos: member.weeklyTodos,
+        routineItems: member.routineItems,
+        events: member.events,
+        challenges: member.challenges,
+      }))
+    )}`;
+    if (memberSnapshotSavedRef.current === signature) return;
+    memberSnapshotSavedRef.current = signature;
+    saveCachedMemberSnapshot(memberSnapshotCacheKey, otherMembers);
+  }, [memberSnapshotCacheKey, membersReady, otherMembers]);
 
   if (!nicknameConfirmed && !profileRecoveryChecked) {
     return (
@@ -2531,7 +2610,7 @@ export default function App() {
           {/* 멤버 패널 */}
           <section className="member-panel">
             <h2>MEMBERS</h2>
-            {!membersReady ? (
+            {!membersReady && cachedVisibleOtherMembers.length === 0 ? (
               <div className="member-loading">
                 <div className="member-loading-card" />
                 <div className="member-loading-card" />
@@ -2689,7 +2768,7 @@ export default function App() {
       ) : tab === "challenge" ? (
         <ChallengePanel
           challenges={challenges}
-          otherMembers={otherMembers}
+          otherMembers={displayOtherMembers}
           onAddChallenge={addChallenge}
           onDeleteChallenge={deleteChallenge}
           onAddItem={addChallengeItem}
@@ -3166,7 +3245,7 @@ function ChallengePanel({
                     <strong>{m.nickname}</strong>
                   </div>
                   <div className="challenge-other-rows">
-                    {(m.challenges || []).map((c) => {
+                    {groupChallengesByGoal(m.challenges || []).map((c) => {
                       const progress = getChallengeProgress(c.items || []);
                       return (
                         <div key={c.id} className="challenge-other-row">
@@ -3331,7 +3410,10 @@ function ChallengeCard({
       {sortedItems.length > 0 && (
         <ul className="challenge-item-list">
           {sortedItems.slice(0, 8).map((it) => (
-            <li key={it.id} className={`challenge-item-row${it.done ? " done" : ""}`}>
+            <li
+              key={it.id}
+              className={`challenge-item-row ${it.kind}${it.done ? " done" : ""}`}
+            >
               {hasChecklist && (
                 <input
                   type="checkbox"

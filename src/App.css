@@ -2492,9 +2492,21 @@ input:focus {
   font-size: 13px;
 }
 
-.challenge-item-row.done .challenge-item-name {
-  color: #4e080394;
+.challenge-item-row.planned.done .challenge-item-name {
+  text-decoration: line-through;
   opacity: 0.58;
+}
+
+.challenge-item-row.completed.done .challenge-item-name {
+  text-decoration: none;
+  opacity: 1;
+  color: #d2f3e3;
+  font-weight: 800;
+}
+
+.challenge-item-row.completed.done .challenge-item-date {
+  color: #d2f3e3;
+  opacity: 0.72;
 }
 
 .challenge-item-check {
