@@ -41,6 +41,7 @@ import {
   groupChallengeCardsByGoal,
   groupChallengesByGoal,
   normalizeChallengeItem,
+  sortChallengeItemsForDisplay,
   toggleChallengeItemDone,
 } from "./challengeProgress";
 /* ── 유틸 ── */
@@ -3321,9 +3322,7 @@ function ChallengeCard({
     setBulkOpen(false);
   };
 
-  const sortedItems = [...items].sort(
-    (a, b) => (b.createdAt || b.doneAt || 0) - (a.createdAt || a.doneAt || 0)
-  );
+  const sortedItems = sortChallengeItemsForDisplay(items);
 
   return (
     <div

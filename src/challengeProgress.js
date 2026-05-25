@@ -61,6 +61,15 @@ export function getChallengeProgress(items) {
   };
 }
 
+export function sortChallengeItemsForDisplay(items) {
+  return [...(items || [])].map(normalizeChallengeItem).sort((a, b) => {
+    if (a.kind === "planned" || b.kind === "planned") {
+      return (a.createdAt || a.doneAt || 0) - (b.createdAt || b.doneAt || 0);
+    }
+    return (b.createdAt || b.doneAt || 0) - (a.createdAt || a.doneAt || 0);
+  });
+}
+
 export function getChallengeGoalLabel(title) {
   const text = String(title || "").trim();
   const match = text.match(/^\{([^}]+)\}/);

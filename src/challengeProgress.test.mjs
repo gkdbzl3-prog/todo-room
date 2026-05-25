@@ -7,6 +7,7 @@ import {
   groupChallengeCardsByGoal,
   groupChallengesByGoal,
   normalizeChallengeItem,
+  sortChallengeItemsForDisplay,
   toggleChallengeItemDone,
 } from "./challengeProgress.js";
 
@@ -92,5 +93,20 @@ assert.equal(cardGroups[0].challenges[1].displayTitle, "리액트");
 assert.equal(cardGroups[1].title, "영단어");
 assert.equal(cardGroups[1].hasGoal, false);
 assert.equal(cardGroups[1].challenges[0].displayTitle, "영단어");
+
+assert.deepEqual(
+  sortChallengeItemsForDisplay(createPlannedChallengeItems(["첫번째", "두번째", "세번째"], 500)).map(
+    (item) => item.name
+  ),
+  ["첫번째", "두번째", "세번째"]
+);
+
+assert.deepEqual(
+  sortChallengeItemsForDisplay([
+    createCompletedChallengeItem("먼저 기록", 500),
+    createCompletedChallengeItem("나중 기록", 700),
+  ]).map((item) => item.name),
+  ["나중 기록", "먼저 기록"]
+);
 
 console.log("challenge progress tests passed");
