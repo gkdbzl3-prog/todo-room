@@ -715,10 +715,17 @@ const AVATAR_LIST = [
   "🐙", "🦋", "🌸", "🌻", "🍀", "⭐", "🔥", "💎",
 ];
 
-function getBadge(doneCount) {
-  if (doneCount >= 7) return { emoji: "👑", label: "투두 마스터" };
-  if (doneCount >= 5) return { emoji: "🔥", label: "집중 루티너" };
-  if (doneCount >= 3) return { emoji: "🏅", label: "3개 달성 루티너" };
+function getBadge(doneCount, totalCount) {
+  if (!totalCount || totalCount <= 0) return { emoji: "", label: "" };
+  // 항목이 너무 적으면 시동까지만 — 1~2개로 마스터 풀리는 거 방지
+  if (totalCount < 3) {
+    if (doneCount >= 1) return { emoji: "🌱", label: "시동 걸림" };
+    return { emoji: "", label: "" };
+  }
+  const pct = doneCount / totalCount;
+  if (pct >= 1) return { emoji: "👑", label: "완벽한 하루" };
+  if (pct >= 0.9) return { emoji: "✨", label: "거의 다 왔음" };
+  if (pct >= 0.5) return { emoji: "🏅", label: "꾸준한 루티너" };
   if (doneCount >= 1) return { emoji: "🌱", label: "시동 걸림" };
   return { emoji: "", label: "" };
 }
@@ -2044,12 +2051,12 @@ export default function App() {
     const next = challenges.map((c) =>
       c.id === challengeId
         ? {
-            ...c,
-            items: [
-              ...c.items,
-              createCompletedChallengeItem(trimmed, now),
-            ],
-          }
+          ...c,
+          items: [
+            ...c.items,
+            createCompletedChallengeItem(trimmed, now),
+          ],
+        }
         : c
     );
     setChallenges(next);
@@ -2077,11 +2084,11 @@ export default function App() {
     const next = challenges.map((c) =>
       c.id === challengeId
         ? {
-            ...c,
-            items: c.items.map((it) =>
-              it.id === itemId ? toggleChallengeItemDone(it, now) : it
-            ),
-          }
+          ...c,
+          items: c.items.map((it) =>
+            it.id === itemId ? toggleChallengeItemDone(it, now) : it
+          ),
+        }
         : c
     );
     setChallenges(next);
@@ -2150,9 +2157,11 @@ export default function App() {
   /* ── 합산 ── */
   const visibleWeekly = myWeekly;
   const dailyDoneCount = myDaily.filter((t) => t.done).length;
-  const totalDoneCount =
-    dailyDoneCount + visibleWeekly.filter((t) => t.done).length;
-  const badge = getBadge(totalDoneCount);
+  const weeklyDoneCount = visibleWeekly.filter((t) => t.done).length;
+  const totalDoneCount = dailyDoneCount + weeklyDoneCount + routineDoneCount;
+  const totalCount =
+    myDaily.length + visibleWeekly.length + routineTotalCount;
+  const badge = getBadge(totalDoneCount, totalCount);
   const closestEvent = pickClosestEvent(events);
 
   // 전체 멤버 (나 포함) 카드 데이터
@@ -3335,9 +3344,8 @@ function ChallengeCard({
 
   return (
     <div
-      className={`challenge-card${complete ? " complete" : ""}${
-        celebrating ? " celebrating" : ""
-      }`}
+      className={`challenge-card${complete ? " complete" : ""}${celebrating ? " celebrating" : ""
+        }`}
     >
       {celebrating && (
         <div className="challenge-celebrate" aria-live="polite">
@@ -3495,11 +3503,6 @@ function MemberCard({ member }) {
   const routineItems = member.routineItems || [];
   const dailyDone = (member.todos || []).filter((t) => t.done).length;
   const weeklyDone = visibleWeeklyTodos.filter((t) => t.done).length;
-  const totalDone = dailyDone + weeklyDone;
-  const badge = getBadge(totalDone);
-  const [routineExpanded, setRoutineExpanded] = useState(false);
-  const closestEvent = pickClosestEvent(member.events || []);
-  const showEventName = closestEvent && shouldShowMemberEventName(closestEvent.event);
 
   // Per-section counts for routine summary
   const routineCounts = ROUTINE_SECTIONS.reduce((acc, s) => {
@@ -3514,6 +3517,14 @@ function MemberCard({ member }) {
   const routineTotal = routineItems.length;
   const routineDoneSum = routineItems.filter((it) => it.done).length;
   const routineAllDone = routineTotal > 0 && routineDoneSum === routineTotal;
+
+  const totalDone = dailyDone + weeklyDone + routineDoneSum;
+  const totalCount =
+    (member.todos || []).length + visibleWeeklyTodos.length + routineTotal;
+  const badge = getBadge(totalDone, totalCount);
+  const [routineExpanded, setRoutineExpanded] = useState(false);
+  const closestEvent = pickClosestEvent(member.events || []);
+  const showEventName = closestEvent && shouldShowMemberEventName(closestEvent.event);
 
   return (
     <div className={`member-card ${member.isMe ? "is-me" : ""}`}>
@@ -3537,7 +3548,7 @@ function MemberCard({ member }) {
         </div>
 
         <div className="member-count">
-          {totalDone}/{(member.todos || []).length + visibleWeeklyTodos.length}
+          {totalDone}/{totalCount}
         </div>
       </div>
 
