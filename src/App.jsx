@@ -2163,7 +2163,11 @@ export default function App() {
   const totalDoneCount = dailyDoneCount + weeklyDoneCount + routineDoneCount;
   const totalCount =
     myDaily.length + visibleWeekly.length + routineTotalCount;
-  const badge = getBadge(totalDoneCount, totalCount);
+  // 뱃지는 "오늘 단위" 의미라 위클리 제외 — 데일리 + 루틴만
+  const badge = getBadge(
+    dailyDoneCount + routineDoneCount,
+    myDaily.length + routineTotalCount
+  );
   const closestEvent = pickClosestEvent(events);
 
   // 전체 멤버 (나 포함) 카드 데이터
@@ -3523,7 +3527,11 @@ function MemberCard({ member }) {
   const totalDone = dailyDone + weeklyDone + routineDoneSum;
   const totalCount =
     (member.todos || []).length + visibleWeeklyTodos.length + routineTotal;
-  const badge = getBadge(totalDone, totalCount);
+  // 뱃지는 "오늘 단위" 의미라 위클리 제외 — 데일리 + 루틴만
+  const badge = getBadge(
+    dailyDone + routineDoneSum,
+    (member.todos || []).length + routineTotal
+  );
   const [routineExpanded, setRoutineExpanded] = useState(false);
   const closestEvent = pickClosestEvent(member.events || []);
   const showEventName = closestEvent && shouldShowMemberEventName(closestEvent.event);
