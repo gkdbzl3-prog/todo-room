@@ -722,10 +722,12 @@ function getBadge(doneCount, totalCount) {
     if (doneCount >= 1) return { emoji: "🌱", label: "시동 걸림" };
     return { emoji: "", label: "" };
   }
+  // 비율 뱃지가 카운트 뱃지보다 우선 — 위 조건이 맞으면 아래까지 안 내려감
   const pct = doneCount / totalCount;
   if (pct >= 1) return { emoji: "👑", label: "완벽한 하루" };
   if (pct >= 0.9) return { emoji: "✨", label: "거의 다 왔음" };
   if (pct >= 0.5) return { emoji: "🏅", label: "꾸준한 루티너" };
+  if (doneCount >= 3) return { emoji: "🔥", label: "집중 루티너" };
   if (doneCount >= 1) return { emoji: "🌱", label: "시동 걸림" };
   return { emoji: "", label: "" };
 }
