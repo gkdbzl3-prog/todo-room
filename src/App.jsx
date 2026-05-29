@@ -1003,6 +1003,7 @@ export default function App() {
   const [eventMembers, setEventMembers] = useState([]);
   const [challengeMembers, setChallengeMembers] = useState([]);
   const [tomorrowMembers, setTomorrowMembers] = useState([]);
+  const [dailyCarryReady, setDailyCarryReady] = useState(false);
 
   // 알림
   const [toasts, setToasts] = useState([]);
@@ -1801,11 +1802,26 @@ export default function App() {
   /* ── 새 날짜 첫 진입 시 어제 미완료 투두 이어받기 ── */
   useEffect(() => {
     if (!nicknameConfirmed || !uid) return;
-    if (isLocalDevHost()) return;
+
+    setDailyCarryReady(false);
+
+    let cancelled = false;
+
+    if (isLocalDevHost()) {
+      setDailyCarryReady(true);
+      return () => {
+        cancelled = true;
+      };
+    }
 
     const carryKey = `todoRoom_dailyCarry_${uid}_${currentDayKey}`;
 
-    let cancelled = false;
+    if (localStorage.getItem(carryKey) === "done") {
+      setDailyCarryReady(true);
+      return () => {
+        cancelled = true;
+      };
+    }
 
     const carryOverTodos = async () => {
       try {
@@ -1850,6 +1866,8 @@ export default function App() {
         localStorage.setItem(carryKey, "done");
       } catch (error) {
         console.error("Failed to carry over daily todos", error);
+      } finally {
+        if (!cancelled) setDailyCarryReady(true);
       }
     };
 
@@ -1924,10 +1942,12 @@ export default function App() {
   useEffect(() => {
     if (!nicknameConfirmed || !uid) return;
     if (!membersReady) return;
+    if (!dailyCarryReady) return;
 
     const now = Date.now();
     let nextDaily = myDaily;
     let dailyChanged = false;
+    let movedTomorrow = false;
 
     // 1) 내일 투두가 어제 이전에 적힌 거면 오늘로 이동
     const stored = loadStoredTomorrow(tomorrowStorageKey);
@@ -1943,9 +1963,7 @@ export default function App() {
       }));
       nextDaily = [...nextDaily, ...moved];
       dailyChanged = true;
-      setMyTomorrow([]);
-      saveStoredTomorrow(tomorrowStorageKey, { todos: [], setAt: "" });
-      syncMyTomorrow([], "");
+      movedTomorrow = true;
     }
 
     // 2) 하루 1회: 30일 넘은 미완료 항목 제거 (오늘+주간)
@@ -1969,12 +1987,43 @@ export default function App() {
 
     if (dailyChanged) {
       setMyDaily(nextDaily);
-      syncMyDaily(nextDaily);
+      // 내일 → 오늘 이동 시: daily 쓰기 성공 확인 후에야 tomorrow 비움.
+      // 그래야 daily 쓰기가 실패/덮어쓰여도 tomorrow 데이터가 안 사라짐.
+      if (movedTomorrow) {
+        void (async () => {
+          try {
+            const date = currentDayKey;
+            const payload = {
+              nickname,
+              avatar,
+              todos: nextDaily,
+              updatedAt: serverTimestamp(),
+            };
+            await writeSetDoc(doc(db, dailyCol(date), uid), payload);
+            void syncDuplicateNicknameDocs(dailyCol(date), nickname, payload).catch(
+              (error) => console.error("Failed to sync duplicate daily todos", error)
+            );
+            void writeSetDoc(doc(db, historyDatesCol(), date), { date }).catch(
+              (error) => console.error("Failed to sync history date", error)
+            );
+            setMyTomorrow([]);
+            saveStoredTomorrow(tomorrowStorageKey, { todos: [], setAt: "" });
+            syncMyTomorrow([], "");
+          } catch (error) {
+            console.error("Failed to move tomorrow into today", error);
+          }
+        })();
+      } else {
+        syncMyDaily(nextDaily);
+      }
     }
   }, [
     membersReady,
+    dailyCarryReady,
     nicknameConfirmed,
     uid,
+    nickname,
+    avatar,
     currentDayKey,
     tomorrowStorageKey,
     myDaily,
@@ -1983,6 +2032,7 @@ export default function App() {
     syncMyDaily,
     syncMyWeekly,
     syncMyTomorrow,
+    syncDuplicateNicknameDocs,
   ]);
 
   /* ── 실시간 리스너 ── */
