@@ -99,6 +99,12 @@ function previousDayKeyFrom(dateKey) {
   return formatLocalDateKey(d);
 }
 
+function previousWeekKeyFrom(weekKeyValue) {
+  const d = new Date(`${weekKeyValue}T12:00:00`);
+  d.setDate(d.getDate() - 7);
+  return formatLocalDateKey(d);
+}
+
 function weekKeyForDate(dateKey) {
   const d = new Date(`${dateKey}T12:00:00`);
   const day = d.getDay();
@@ -133,6 +139,8 @@ function migrateStoredUidKeys(oldUid, nextUid) {
       nextKey = key.replace(`todoRoom_daily_${oldUid}_`, `todoRoom_daily_${nextUid}_`);
     } else if (key.startsWith(`todoRoom_weekly_${oldUid}_`)) {
       nextKey = key.replace(`todoRoom_weekly_${oldUid}_`, `todoRoom_weekly_${nextUid}_`);
+    } else if (key === `todoRoom_tomorrow_${oldUid}`) {
+      nextKey = `todoRoom_tomorrow_${nextUid}`;
     } else if (key === `todoRoom:routine:${oldUid}`) {
       nextKey = `todoRoom:routine:${nextUid}`;
     }
@@ -204,6 +212,34 @@ function loadStoredTodos(key) {
 
 function saveStoredTodos(key, todos) {
   localStorage.setItem(key, JSON.stringify(todos));
+}
+
+function loadStoredTomorrow(key) {
+  try {
+    const raw = localStorage.getItem(key);
+    if (!raw) return { todos: [], setAt: "" };
+    const parsed = JSON.parse(raw);
+    return {
+      todos: Array.isArray(parsed?.todos) ? parsed.todos : [],
+      setAt: typeof parsed?.setAt === "string" ? parsed.setAt : "",
+    };
+  } catch {
+    return { todos: [], setAt: "" };
+  }
+}
+
+function saveStoredTomorrow(key, data) {
+  try {
+    localStorage.setItem(
+      key,
+      JSON.stringify({
+        todos: Array.isArray(data?.todos) ? data.todos : [],
+        setAt: typeof data?.setAt === "string" ? data.setAt : "",
+      })
+    );
+  } catch {
+    // Cache only; ignore write failures.
+  }
 }
 
 function loadStoredEvents(key) {
@@ -629,6 +665,29 @@ function resetTodosForNewDay(todos) {
     }));
 }
 
+function carryWeeklyForNewWeek(todos) {
+  return (todos || [])
+    .filter((todo) => !todo.done)
+    .map((todo) => ({
+      ...todo,
+      done: false,
+      completedAt: null,
+    }));
+}
+
+const STALE_TODO_DAYS = 30;
+const MS_PER_DAY = 24 * 60 * 60 * 1000;
+
+// 1달(STALE_TODO_DAYS) 넘게 미완료인 항목은 제거. createdAt이 없는 레거시 항목은 now로 채워 새 시계 시작.
+function sweepStaleTodos(todos, now = Date.now()) {
+  const cutoff = now - STALE_TODO_DAYS * MS_PER_DAY;
+  return (todos || [])
+    .map((todo) =>
+      typeof todo?.createdAt === "number" ? todo : { ...todo, createdAt: now }
+    )
+    .filter((todo) => todo.done || todo.createdAt >= cutoff);
+}
+
 function buildFallbackDailyRecords(currentRecords, previousRecords) {
   const mergedCurrentRecords = mergeRecordsByNickname(currentRecords);
   const currentKeys = new Set(mergedCurrentRecords.map(getRecordIdentityKey));
@@ -869,6 +928,7 @@ export default function App() {
 
   const dailyStorageKey = `todoRoom_daily_${uid}_${currentDayKey}`;
   const weeklyStorageKey = `todoRoom_weekly_${uid}_${currentWeekKey}`;
+  const tomorrowStorageKey = `todoRoom_tomorrow_${uid}`;
   const routineStorageKey = routineStorageKeyFor(uid);
   const eventsStorageKey = `todoRoom_events_${uid}`;
   const challengesStorageKey = `todoRoom_challenges_${uid}`;
@@ -881,8 +941,13 @@ export default function App() {
   // 투두
   const [todoText, setTodoText] = useState("");
   const [weeklyTodoText, setWeeklyTodoText] = useState("");
+  const [tomorrowText, setTomorrowText] = useState("");
   const [myDaily, setMyDaily] = useState(() => loadStoredTodos(dailyStorageKey));
   const [myWeekly, setMyWeekly] = useState(() => loadStoredTodos(weeklyStorageKey));
+  const [myTomorrow, setMyTomorrow] = useState(
+    () => loadStoredTomorrow(tomorrowStorageKey).todos
+  );
+  const [tomorrowOpen, setTomorrowOpen] = useState(false);
 
   // 이벤트 (D-day)
   const [events, setEvents] = useState(() => loadStoredEvents(eventsStorageKey));
@@ -1709,6 +1774,128 @@ export default function App() {
     };
   }, [uid, nicknameConfirmed, nickname, avatar, currentDayKey]);
 
+  /* ── 새 주 첫 진입 시 지난주 미완료 주간 투두 이어받기 ── */
+  useEffect(() => {
+    if (!nicknameConfirmed || !uid) return;
+    if (isLocalDevHost()) return;
+
+    const carryKey = `todoRoom_weeklyCarry_${uid}_${currentWeekKey}`;
+    if (localStorage.getItem(carryKey) === "done") return;
+
+    let cancelled = false;
+
+    const carryOverWeekly = async () => {
+      try {
+        const thisWeek = currentWeekKey;
+        const thisRef = doc(db, weeklyCol(thisWeek), uid);
+        const thisSnap = await getDoc(thisRef);
+        const thisTodos = thisSnap.exists() ? thisSnap.data().todos || [] : [];
+
+        if (cancelled) return;
+        if (thisTodos.length > 0) {
+          localStorage.setItem(carryKey, "done");
+          return;
+        }
+
+        const prevWeek = previousWeekKeyFrom(thisWeek);
+        const prevSnap = await getDoc(doc(db, weeklyCol(prevWeek), uid));
+        const sourceData = prevSnap.exists() ? prevSnap.data() : null;
+
+        if (cancelled) return;
+        if (!sourceData) {
+          localStorage.setItem(carryKey, "done");
+          return;
+        }
+
+        const carry = carryWeeklyForNewWeek(sourceData.todos || []);
+        if (!carry.length) {
+          localStorage.setItem(carryKey, "done");
+          return;
+        }
+
+        pendingWeeklyTodosRef.current = carry;
+        setMyWeekly(carry);
+        await writeSetDoc(thisRef, {
+          nickname: sourceData.nickname || nickname,
+          avatar: sourceData.avatar || avatar,
+          todos: carry,
+          updatedAt: serverTimestamp(),
+        });
+        localStorage.setItem(carryKey, "done");
+      } catch (error) {
+        console.error("Failed to carry over weekly todos", error);
+      }
+    };
+
+    void carryOverWeekly();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [uid, nicknameConfirmed, nickname, avatar, currentWeekKey]);
+
+  /* ── 진입 시 1회: 내일 투두 자동 이동 + 30일 지난 미완료 정리 ── */
+  useEffect(() => {
+    if (!nicknameConfirmed || !uid) return;
+    if (!membersReady) return;
+
+    const now = Date.now();
+    let nextDaily = myDaily;
+    let dailyChanged = false;
+
+    // 1) 내일 투두가 어제 이전에 적힌 거면 오늘로 이동
+    const stored = loadStoredTomorrow(tomorrowStorageKey);
+    if (stored.todos.length && stored.setAt && stored.setAt < currentDayKey) {
+      let nextId = now;
+      const moved = stored.todos.map((t) => ({
+        ...t,
+        id: nextId++,
+        done: false,
+        started: false,
+        completedAt: null,
+        createdAt: now,
+      }));
+      nextDaily = [...nextDaily, ...moved];
+      dailyChanged = true;
+      setMyTomorrow([]);
+      saveStoredTomorrow(tomorrowStorageKey, { todos: [], setAt: "" });
+    }
+
+    // 2) 하루 1회: 30일 넘은 미완료 항목 제거 (오늘+주간)
+    const sweepKey = `todoRoom_lastSweep_${uid}`;
+    if (localStorage.getItem(sweepKey) !== currentDayKey) {
+      const sweptDaily = sweepStaleTodos(nextDaily, now);
+      if (sweptDaily.length !== nextDaily.length) {
+        nextDaily = sweptDaily;
+        dailyChanged = true;
+      }
+
+      const sweptWeekly = sweepStaleTodos(myWeekly, now);
+      if (sweptWeekly.length !== myWeekly.length) {
+        pendingWeeklyTodosRef.current = sweptWeekly;
+        setMyWeekly(sweptWeekly);
+        syncMyWeekly(sweptWeekly);
+      }
+
+      localStorage.setItem(sweepKey, currentDayKey);
+    }
+
+    if (dailyChanged) {
+      setMyDaily(nextDaily);
+      syncMyDaily(nextDaily);
+    }
+  }, [
+    membersReady,
+    nicknameConfirmed,
+    uid,
+    currentDayKey,
+    tomorrowStorageKey,
+    myDaily,
+    myWeekly,
+    syncMyDaily,
+    syncMyWeekly,
+  ]);
+
   /* ── 실시간 리스너 ── */
   useEffect(() => {
     if (!nicknameConfirmed || !uid) return;
@@ -1968,6 +2155,28 @@ export default function App() {
     setMyWeekly(next);
     syncMyWeekly(next);
     setWeeklyTodoText("");
+  };
+
+  const addTomorrow = () => {
+    const text = tomorrowText.trim();
+    if (!text) return;
+    const item = {
+      id: Date.now(),
+      text,
+      done: false,
+      started: false,
+      createdAt: Date.now(),
+    };
+    const next = [...myTomorrow, item];
+    setMyTomorrow(next);
+    saveStoredTomorrow(tomorrowStorageKey, { todos: next, setAt: currentDayKey });
+    setTomorrowText("");
+  };
+
+  const deleteTomorrow = (id) => {
+    const next = myTomorrow.filter((t) => t.id !== id);
+    setMyTomorrow(next);
+    saveStoredTomorrow(tomorrowStorageKey, { todos: next, setAt: currentDayKey });
   };
 
   /* ── 투두 3단계 순환: 진행 전 → 진행중 → 완료 ── */
@@ -2724,6 +2933,60 @@ export default function App() {
                   ))}
                 </div>
               )}
+
+              <div className="tomorrow-section">
+                <button
+                  type="button"
+                  className="tomorrow-toggle-btn"
+                  aria-expanded={tomorrowOpen}
+                  onClick={() => setTomorrowOpen((prev) => !prev)}
+                >
+                  <span>
+                    내일 TO-DO
+                    {myTomorrow.length > 0 && (
+                      <span className="tomorrow-count">{myTomorrow.length}</span>
+                    )}
+                  </span>
+                  <span className="tomorrow-chevron">{tomorrowOpen ? "▴" : "▾"}</span>
+                </button>
+                {tomorrowOpen && (
+                  <div className="tomorrow-panel">
+                    <p className="tomorrow-hint">
+                      날짜가 바뀌면 오늘 TO-DO로 자동 이동합니다.
+                    </p>
+                    <div className="todo-input-row">
+                      <input
+                        value={tomorrowText}
+                        onChange={(e) => setTomorrowText(e.target.value)}
+                        onKeyDown={(e) => e.key === "Enter" && addTomorrow()}
+                        placeholder="내일 할일 미리 입력"
+                      />
+                      <button className="btn-add" onClick={addTomorrow}>
+                        추가
+                      </button>
+                    </div>
+                    {myTomorrow.length === 0 ? (
+                      <div className="empty">내일 투두가 없어요.</div>
+                    ) : (
+                      <div className="todo-list tomorrow-list">
+                        {myTomorrow.map((todo) => (
+                          <div key={todo.id} className="todo-item ready tomorrow-item">
+                            <span className="todo-cycle-btn ready tomorrow-disabled" aria-hidden />
+                            <div className="todo-text">{todo.text}</div>
+                            <button
+                              className="todo-delete"
+                              onClick={() => deleteTomorrow(todo.id)}
+                              aria-label="삭제"
+                            >
+                              ×
+                            </button>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
 
               {eventPopoverOpen && (
                 <EventPopover

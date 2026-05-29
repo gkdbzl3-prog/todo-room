@@ -487,6 +487,65 @@ input:focus {
   font-weight: 400;
 }
 
+/* ─── 내일 TO-DO 토글 ─── */
+.tomorrow-section {
+  margin-top: 14px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.18);
+  padding-top: 10px;
+}
+
+.tomorrow-toggle-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  padding: 8px 12px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.tomorrow-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.tomorrow-count {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.tomorrow-chevron {
+  opacity: 0.7;
+  font-size: 11px;
+}
+
+.tomorrow-panel {
+  margin-top: 10px;
+  padding: 10px 2px 2px;
+}
+
+.tomorrow-hint {
+  margin: 0 0 10px;
+  font-size: 11px;
+  opacity: 0.55;
+}
+
+.tomorrow-item .tomorrow-disabled {
+  cursor: default;
+  opacity: 0.45;
+  pointer-events: none;
+}
+
 /* ─── 데일리 패널 + 이벤트 (D-day) ─── */
 .todo-panel-daily {
   position: relative;
