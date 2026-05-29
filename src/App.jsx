@@ -3894,6 +3894,7 @@ function MemberCard({ member }) {
     (member.todos || []).length + routineTotal
   );
   const [routineExpanded, setRoutineExpanded] = useState(false);
+  const [tomorrowExpanded, setTomorrowExpanded] = useState(false);
   const closestEvent = pickClosestEvent(member.events || []);
   const showEventName = closestEvent && shouldShowMemberEventName(closestEvent.event);
 
@@ -3945,7 +3946,24 @@ function MemberCard({ member }) {
       {visibleTomorrowTodos.length > 0 && (
         <>
           <div className="member-todo-title">TOMORROW</div>
-          <MiniTodoList todos={visibleTomorrowTodos} />
+          <button
+            type="button"
+            className={`member-routine-summary${tomorrowExpanded ? " expanded" : ""}`}
+            onClick={() => setTomorrowExpanded((v) => !v)}
+            aria-label={tomorrowExpanded ? "내일 투두 접기" : "내일 투두 펼치기"}
+          >
+            <span className="member-routine-counts">
+              <span className="member-routine-chip">
+                📝 {visibleTomorrowTodos.length}개
+              </span>
+            </span>
+            <span className="member-routine-toggle">{tomorrowExpanded ? "▴" : "▾"}</span>
+          </button>
+          {tomorrowExpanded && (
+            <div className="member-tomorrow-list">
+              <MiniTodoList todos={visibleTomorrowTodos} />
+            </div>
+          )}
         </>
       )}
 
