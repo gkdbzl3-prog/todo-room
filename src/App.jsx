@@ -3689,7 +3689,7 @@ function ChallengePanel({
         </button>
       </div>
       <p className="challenge-hint">
-        목표를 안 고르면 누적형 · 수치 칸을 채우면 프로그레스 바가 생겨요
+        목표를 안 고르면 누적형 · 수치 칸을 채우면 진행률 바가 생겨요
       </p>
 
       {challenges.length === 0 ? (
@@ -3846,7 +3846,7 @@ function ChallengeCard({
         </span>
         <span className="challenge-card-count">
           {hasNumeric
-            ? `${progress.numericMax}/${progress.numericGoal}`
+            ? `${progress.numericMax}p/${progress.numericGoal}p`
             : hasChecklist
               ? `${progress.done}/${progress.total}`
               : `${progress.done}개`}
@@ -3936,7 +3936,11 @@ function ChallengeCard({
                 />
               )}
               <span className="challenge-item-name">
-                <RichChallengeText text={it.name} />
+                {hasNumeric && typeof it.value === "number" ? (
+                  `${it.value}p`
+                ) : (
+                  <RichChallengeText text={it.name} />
+                )}
               </span>
               {it.doneAt && (
                 <span className="challenge-item-date">

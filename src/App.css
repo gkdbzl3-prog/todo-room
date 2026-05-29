@@ -2586,6 +2586,18 @@ input:focus {
   font-size: 13px;
 }
 
+/* number 타입일 때 브라우저 기본 스피너 숨김 — 어두운 배경에서 흰 박스로 튀어서 */
+.challenge-item-input[type="number"],
+.challenge-goalnum-input {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+.challenge-item-input::-webkit-outer-spin-button,
+.challenge-item-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .challenge-item-list {
   list-style: none;
   margin: 0;
