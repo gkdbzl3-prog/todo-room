@@ -429,7 +429,11 @@ function getTodoCount(todos) {
 }
 
 function getMemberTodoTotal(member) {
-  return getTodoCount(member?.todos) + getTodoCount(member?.weeklyTodos);
+  return (
+    getTodoCount(member?.todos) +
+    getTodoCount(member?.weeklyTodos) +
+    getTodoCount(member?.tomorrowTodos)
+  );
 }
 
 function getUpdatedAtValue(updatedAt) {
@@ -570,6 +574,29 @@ function attachChallenges(displayMembers, challengeMembers) {
       isMe: false,
     }));
   return [...attached, ...extras];
+}
+
+// Attach tomorrow todos to display members by matching id/nickname.
+// 멤버 카드에 내일 투두 표시. setAt < todayKey이면 이미 옮겨졌어야 하니 표시하지 않음.
+function attachTomorrows(displayMembers, tomorrowMembers, todayKey) {
+  if (!tomorrowMembers || !tomorrowMembers.length) return displayMembers;
+  const map = new Map();
+  tomorrowMembers.forEach((tm) => {
+    const nicknameKey = normalizeNickname(tm.nickname);
+    if (nicknameKey) map.set(`nick:${nicknameKey}`, tm);
+    if (tm.id) map.set(`id:${tm.id}`, tm);
+  });
+  return displayMembers.map((m) => {
+    const keys = [];
+    const nicknameKey = normalizeNickname(m.nickname);
+    if (nicknameKey) keys.push(`nick:${nicknameKey}`);
+    if (m.id) keys.push(`id:${m.id}`);
+    const tm = keys.map((key) => map.get(key)).find(Boolean) || null;
+    if (!tm) return m;
+    const setAt = typeof tm.setAt === "string" ? tm.setAt : "";
+    if (setAt && todayKey && setAt < todayKey) return m;
+    return { ...m, tomorrowTodos: tm.todos || [] };
+  });
 }
 
 // Attach event data to display members by matching nickname.
@@ -799,6 +826,7 @@ const historyDatesCol = () => "historyDates";
 const routineCol = () => "routines";
 const eventsCol = () => "events";
 const challengesCol = () => "challenges";
+const tomorrowCol = () => "tomorrows";
 
 /* ── 루틴 상수 ── */
 const ROUTINE_SECTIONS = [
@@ -896,6 +924,7 @@ async function captureBackupSnapshot(currentDayKey, currentWeekKey) {
     ["routines", routineCol()],
     ["daily", dailyCol(currentDayKey)],
     ["weekly", weeklyCol(currentWeekKey)],
+    ["tomorrows", tomorrowCol()],
   ];
   const data = {};
   for (const [tag, path] of cols) {
@@ -973,6 +1002,7 @@ export default function App() {
   const [routineMembers, setRoutineMembers] = useState([]);
   const [eventMembers, setEventMembers] = useState([]);
   const [challengeMembers, setChallengeMembers] = useState([]);
+  const [tomorrowMembers, setTomorrowMembers] = useState([]);
 
   // 알림
   const [toasts, setToasts] = useState([]);
@@ -1248,6 +1278,23 @@ export default function App() {
     ]
   );
 
+  const syncMyTomorrow = useCallback(
+    (todos, setAt) => {
+      if (!nicknameConfirmed || !uid) return;
+      const payload = {
+        nickname,
+        avatar,
+        todos: Array.isArray(todos) ? todos : [],
+        setAt: typeof setAt === "string" ? setAt : "",
+        updatedAt: serverTimestamp(),
+      };
+      void writeSetDoc(doc(db, tomorrowCol(), uid), payload).catch((error) => {
+        console.error("Failed to sync tomorrow todos", error);
+      });
+    },
+    [uid, nickname, avatar, nicknameConfirmed]
+  );
+
   /* ── Firestore 이벤트(D-day) 동기화 ── */
   const syncMyEvents = useCallback(
     (eventsArr) => {
@@ -1452,6 +1499,45 @@ export default function App() {
     });
     return () => unsub();
   }, [uid, nicknameConfirmed]);
+
+  // 다른 멤버들의 tomorrow 투두 구독
+  useEffect(() => {
+    if (!nicknameConfirmed) return;
+    const unsub = onSnapshot(collection(db, tomorrowCol()), (snap) => {
+      const all = [];
+      snap.forEach((d) => {
+        const data = d.data() || {};
+        all.push({
+          id: d.id,
+          nickname: data.nickname || "",
+          avatar: data.avatar || "",
+          todos: Array.isArray(data.todos) ? data.todos : [],
+          setAt: typeof data.setAt === "string" ? data.setAt : "",
+        });
+      });
+      setTomorrowMembers(all.filter((m) => m.id !== uid));
+    }, (error) => {
+      console.error("Failed to subscribe tomorrow members", error);
+    });
+    return () => unsub();
+  }, [uid, nicknameConfirmed]);
+
+  // 본인 tomorrow doc 구독 (다른 기기에서 적은 게 흐르도록)
+  useEffect(() => {
+    if (!nicknameConfirmed || !uid) return;
+    if (isLocalDevHost()) return;
+    const unsub = onSnapshot(doc(db, tomorrowCol(), uid), (snap) => {
+      if (!snap.exists()) return;
+      const data = snap.data() || {};
+      const remoteTodos = Array.isArray(data.todos) ? data.todos : [];
+      const remoteSetAt = typeof data.setAt === "string" ? data.setAt : "";
+      setMyTomorrow(remoteTodos);
+      saveStoredTomorrow(tomorrowStorageKey, { todos: remoteTodos, setAt: remoteSetAt });
+    }, (error) => {
+      console.error("Failed to subscribe own tomorrow", error);
+    });
+    return () => unsub();
+  }, [uid, nicknameConfirmed, tomorrowStorageKey]);
 
   // Subscribe to own routine doc in Firestore (so multi-device stays in sync)
   useEffect(() => {
@@ -1859,6 +1945,7 @@ export default function App() {
       dailyChanged = true;
       setMyTomorrow([]);
       saveStoredTomorrow(tomorrowStorageKey, { todos: [], setAt: "" });
+      syncMyTomorrow([], "");
     }
 
     // 2) 하루 1회: 30일 넘은 미완료 항목 제거 (오늘+주간)
@@ -1892,8 +1979,10 @@ export default function App() {
     tomorrowStorageKey,
     myDaily,
     myWeekly,
+    myTomorrow,
     syncMyDaily,
     syncMyWeekly,
+    syncMyTomorrow,
   ]);
 
   /* ── 실시간 리스너 ── */
@@ -2170,6 +2259,7 @@ export default function App() {
     const next = [...myTomorrow, item];
     setMyTomorrow(next);
     saveStoredTomorrow(tomorrowStorageKey, { todos: next, setAt: currentDayKey });
+    syncMyTomorrow(next, currentDayKey);
     setTomorrowText("");
   };
 
@@ -2177,6 +2267,7 @@ export default function App() {
     const next = myTomorrow.filter((t) => t.id !== id);
     setMyTomorrow(next);
     saveStoredTomorrow(tomorrowStorageKey, { todos: next, setAt: currentDayKey });
+    syncMyTomorrow(next, currentDayKey);
   };
 
   /* ── 투두 3단계 순환: 진행 전 → 진행중 → 완료 ── */
@@ -2646,13 +2737,17 @@ export default function App() {
     (uid && m.id === uid) ||
     (myNicknameKey && normalizeNickname(m.nickname) === myNicknameKey);
   const otherMembers = attachChallenges(
-    attachEvents(
-      attachRoutines(
-        mergeDisplayMembers(members, weeklyMembers).filter((m) => !isSelfMember(m)),
-        routineMembers.filter((m) => !isSelfMember(m)),
-        currentDayKey
+    attachTomorrows(
+      attachEvents(
+        attachRoutines(
+          mergeDisplayMembers(members, weeklyMembers).filter((m) => !isSelfMember(m)),
+          routineMembers.filter((m) => !isSelfMember(m)),
+          currentDayKey
+        ),
+        eventMembers.filter((m) => !isSelfMember(m))
       ),
-      eventMembers.filter((m) => !isSelfMember(m))
+      tomorrowMembers.filter((m) => !isSelfMember(m)),
+      currentDayKey
     ),
     challengeMembers.filter((m) => !isSelfMember(m))
   );
@@ -2666,6 +2761,7 @@ export default function App() {
       avatar,
       todos: myDaily,
       weeklyTodos: myWeekly,
+      tomorrowTodos: myTomorrow,
       routineItems: (myRoutine.items || []).map((it) => ({ ...it })),
       routineDoneDate: myRoutine.doneDate || currentDayKey,
       events,
@@ -2697,6 +2793,7 @@ export default function App() {
         nickname: member.nickname,
         todos: member.todos,
         weeklyTodos: member.weeklyTodos,
+        tomorrowTodos: member.tomorrowTodos,
         routineItems: member.routineItems,
         events: member.events,
         challenges: member.challenges,
@@ -3769,6 +3866,7 @@ function TodoItem({ todo, onCycle, onDelete }) {
 /* ─────────────── MemberCard ─────────────── */
 function MemberCard({ member }) {
   const visibleWeeklyTodos = member.weeklyTodos || [];
+  const visibleTomorrowTodos = member.tomorrowTodos || [];
   const routineItems = member.routineItems || [];
   const dailyDone = (member.todos || []).filter((t) => t.done).length;
   const weeklyDone = visibleWeeklyTodos.filter((t) => t.done).length;
@@ -3841,6 +3939,13 @@ function MemberCard({ member }) {
         <>
           <div className="member-todo-title">WEEKLY</div>
           <MiniTodoList todos={visibleWeeklyTodos} />
+        </>
+      )}
+
+      {visibleTomorrowTodos.length > 0 && (
+        <>
+          <div className="member-todo-title">TOMORROW</div>
+          <MiniTodoList todos={visibleTomorrowTodos} />
         </>
       )}
 
