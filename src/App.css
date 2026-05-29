@@ -2253,9 +2253,10 @@ input:focus {
 .challenge-add .challenge-goalnum-input {
   flex: 0 0 auto;
   width: 70px;
-  text-align: right;
+  text-align: center;
   -moz-appearance: textfield;
 }
+
 .challenge-add .challenge-goalnum-input::-webkit-outer-spin-button,
 .challenge-add .challenge-goalnum-input::-webkit-inner-spin-button {
   -webkit-appearance: none;
