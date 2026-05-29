@@ -2942,7 +2942,7 @@ export default function App() {
                   onClick={() => setTomorrowOpen((prev) => !prev)}
                 >
                   <span>
-                    내일 TO-DO
+                    미리 세우는 TO-DO
                     {myTomorrow.length > 0 && (
                       <span className="tomorrow-count">{myTomorrow.length}</span>
                     )}
