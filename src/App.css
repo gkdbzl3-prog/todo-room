@@ -2605,6 +2605,23 @@ input:focus {
   display: flex;
   flex-direction: column;
   gap: 2px;
+  /* 모바일: 길어지면 스크롤. 스크롤바는 투명. */
+  max-height: 280px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.challenge-item-list::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .challenge-item-list {
+    max-height: none;
+    overflow-y: visible;
+  }
 }
 
 .challenge-item-row {

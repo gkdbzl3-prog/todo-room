@@ -3948,7 +3948,7 @@ function ChallengeCard({
 
       {sortedItems.length > 0 && (
         <ul className="challenge-item-list">
-          {sortedItems.slice(0, 8).map((it) => (
+          {sortedItems.map((it) => (
             <li
               key={it.id}
               className={`challenge-item-row ${it.kind}${it.done ? " done" : ""}`}
@@ -3987,11 +3987,6 @@ function ChallengeCard({
               </button>
             </li>
           ))}
-          {sortedItems.length > 8 && (
-            <li className="challenge-item-more">
-              … +{sortedItems.length - 8}개 더
-            </li>
-          )}
         </ul>
       )}
     </div>
