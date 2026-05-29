@@ -1,6 +1,8 @@
 export function normalizeChallengeItem(item) {
   const done = typeof item?.done === "boolean" ? item.done : typeof item?.doneAt === "number";
   const kind = item?.kind === "planned" ? "planned" : "completed";
+  const value =
+    typeof item?.value === "number" && Number.isFinite(item.value) ? item.value : null;
   return {
     id: item?.id,
     name: typeof item?.name === "string" ? item.name : "",
@@ -13,17 +15,28 @@ export function normalizeChallengeItem(item) {
         : typeof item?.doneAt === "number"
           ? item.doneAt
           : Date.now(),
+    value,
   };
 }
 
+const NUMERIC_RE = /^-?\d+(\.\d+)?$/;
+export function parseNumericValue(text) {
+  const trimmed = String(text ?? "").trim();
+  if (!NUMERIC_RE.test(trimmed)) return null;
+  const n = Number(trimmed);
+  return Number.isFinite(n) ? n : null;
+}
+
 export function createCompletedChallengeItem(name, now = Date.now()) {
+  const trimmed = typeof name === "string" ? name : String(name ?? "");
   return {
     id: now,
-    name,
+    name: trimmed,
     kind: "completed",
     done: true,
     doneAt: now,
     createdAt: now,
+    value: parseNumericValue(trimmed),
   };
 }
 
@@ -48,25 +61,39 @@ export function toggleChallengeItemDone(item, now = Date.now()) {
   };
 }
 
-export function getChallengeProgress(items) {
+export function getChallengeProgress(items, goal = null) {
   const normalized = (items || []).map(normalizeChallengeItem);
   const total = normalized.length;
   const done = normalized.filter((item) => item.done).length;
   const hasChecklist = normalized.some((item) => item.kind === "planned");
+  const numericGoal =
+    typeof goal === "number" && Number.isFinite(goal) && goal > 0 ? goal : 0;
+  const values = normalized
+    .map((item) => item.value)
+    .filter((v) => typeof v === "number" && Number.isFinite(v));
+  const numericMax = values.length > 0 ? Math.max(...values) : 0;
+  const hasNumeric = numericGoal > 0;
+  const numericPct = hasNumeric
+    ? Math.min(100, Math.max(0, Math.round((numericMax / numericGoal) * 100)))
+    : 0;
   return {
     done,
     total,
-    pct: total > 0 ? Math.min(100, Math.round((done / total) * 100)) : 0,
+    pct: hasNumeric
+      ? numericPct
+      : total > 0
+        ? Math.min(100, Math.round((done / total) * 100))
+        : 0,
     hasChecklist,
+    hasNumeric,
+    numericMax,
+    numericGoal,
   };
 }
 
 export function sortChallengeItemsForDisplay(items) {
   return [...(items || [])].map(normalizeChallengeItem).sort((a, b) => {
-    if (a.kind === "planned" || b.kind === "planned") {
-      return (a.createdAt || a.doneAt || 0) - (b.createdAt || b.doneAt || 0);
-    }
-    return (b.createdAt || b.doneAt || 0) - (a.createdAt || a.doneAt || 0);
+    return (a.createdAt || a.doneAt || 0) - (b.createdAt || b.doneAt || 0);
   });
 }
 

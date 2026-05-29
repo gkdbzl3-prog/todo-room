@@ -1014,7 +1014,7 @@ export default function App() {
   const [historyData, setHistoryData] = useState(null);
   const [historyWeeklyData, setHistoryWeeklyData] = useState(null);
   const [selectedDate, setSelectedDate] = useState(null);
-  const [showIdleMembers, setShowIdleMembers] = useState(false);
+  const ghostSweepRef = useRef("");
   const [membersReadyKey, setMembersReadyKey] = useState("");
   const skipDailyStorageSaveRef = useRef(false);
   const skipWeeklyStorageSaveRef = useRef(false);
@@ -2828,12 +2828,84 @@ export default function App() {
     if (aTodos === 0 && bTodos > 0) return 1;
     return 0;
   });
+  const hasRoutineItems = (m) => (m?.routineItems?.length || 0) > 0;
   const visibleMembers = allMembers.filter(
-    (member) => member.isMe || getMemberTodoTotal(member) > 0
+    (member) =>
+      member.isMe || getMemberTodoTotal(member) > 0 || hasRoutineItems(member)
   );
-  const idleMembers = allMembers.filter(
-    (member) => !member.isMe && getMemberTodoTotal(member) === 0
+  const ghostCandidates = allMembers.filter(
+    (member) =>
+      !member.isMe &&
+      member.id &&
+      member.id !== uid &&
+      getMemberTodoTotal(member) === 0 &&
+      !hasRoutineItems(member)
   );
+
+  /* ── ghost 멤버 정리 (투두 0 + 루틴 없음): 진입 시 1회 ── */
+  const ghostIdsKey = ghostCandidates.map((m) => m.id).sort().join(",");
+  useEffect(() => {
+    if (!nicknameConfirmed || !uid) return;
+    if (!membersReady) return;
+    if (isLocalDevHost()) return;
+    if (!ghostIdsKey) return;
+
+    const sweepKey = `${uid}:${currentDayKey}:${ghostIdsKey}`;
+    if (ghostSweepRef.current === sweepKey) return;
+    ghostSweepRef.current = sweepKey;
+
+    const ids = ghostIdsKey.split(",");
+    const weekKeys =
+      currentWeekKey === legacyWeekKeyValue
+        ? [currentWeekKey]
+        : [currentWeekKey, legacyWeekKeyValue];
+
+    void (async () => {
+      for (const ghostId of ids) {
+        if (!ghostId || ghostId === uid) continue;
+        try {
+          // 리스너 상태가 늦게 도착했을 수 있어서 routine/tomorrow는 Firestore에서 직접 재확인.
+          const routineSnap = await getDoc(doc(db, routineCol(), ghostId));
+          if (routineSnap.exists()) {
+            const items = routineSnap.data().items || [];
+            if (items.length > 0) continue;
+          }
+          const tomSnap = await getDoc(doc(db, tomorrowCol(), ghostId));
+          if (tomSnap.exists()) {
+            const todos = tomSnap.data().todos || [];
+            if (todos.length > 0) continue;
+          }
+        } catch (err) {
+          console.warn("ghost verify failed", ghostId, err);
+          continue;
+        }
+
+        const paths = [
+          dailyCol(currentDayKey),
+          ...weekKeys.map(weeklyCol),
+          routineCol(),
+          eventsCol(),
+          challengesCol(),
+          tomorrowCol(),
+        ];
+        for (const path of paths) {
+          try {
+            await writeDeleteDoc(doc(db, path, ghostId));
+          } catch (err) {
+            console.warn("ghost delete failed", path, ghostId, err);
+          }
+        }
+      }
+    })();
+  }, [
+    membersReady,
+    nicknameConfirmed,
+    uid,
+    currentDayKey,
+    currentWeekKey,
+    legacyWeekKeyValue,
+    ghostIdsKey,
+  ]);
 
   useEffect(() => {
     if (!membersReady || otherMembers.length === 0) return;
@@ -2998,31 +3070,11 @@ export default function App() {
                 <div className="member-loading-card" />
               </div>
             ) : (
-              <>
-                <div className="member-list">
-                  {visibleMembers.map((m) => (
-                    <MemberCard key={m.id} member={m} />
-                  ))}
-                </div>
-
-                {idleMembers.length > 0 && (
-                  <div className="member-group">
-                    <button
-                      className="member-group-toggle"
-                      onClick={() => setShowIdleMembers((prev) => !prev)}
-                    >
-                      투두 0인 멤버 {idleMembers.length}명 {showIdleMembers ? "접기" : "보기"}
-                    </button>
-                    {showIdleMembers && (
-                      <div className="member-list member-list-idle">
-                        {idleMembers.map((m) => (
-                          <MemberCard key={m.id} member={m} />
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                )}
-              </>
+              <div className="member-list">
+                {visibleMembers.map((m) => (
+                  <MemberCard key={m.id} member={m} />
+                ))}
+              </div>
             )}
 
             {/* 완수 로그 */}
@@ -3500,18 +3552,23 @@ function ChallengePanel({
   const [selectedGoalId, setSelectedGoalId] = useState(""); // "" = 누적형
   const [customMode, setCustomMode] = useState(false);
   const [customGoalName, setCustomGoalName] = useState("");
+  const [goalNumber, setGoalNumber] = useState("");
   const selectedGoal = goalOptions.find((option) => option.id === selectedGoalId) || null;
   const challengeGroups = groupChallengeCardsByGoal(challenges);
 
   const submit = () => {
     const challengeTitle = getChallengeTitle(selectedGoal?.label, title);
     if (!challengeTitle) return;
+    const parsedGoal = Number(goalNumber);
+    const goalValue =
+      Number.isFinite(parsedGoal) && parsedGoal > 0 ? Math.floor(parsedGoal) : null;
     onAddChallenge({
       title: challengeTitle,
-      goal: null,
+      goal: goalValue,
     });
     setTitle("");
     setSelectedGoalId("");
+    setGoalNumber("");
   };
 
   const confirmCustom = () => {
@@ -3612,6 +3669,17 @@ function ChallengePanel({
           onChange={(e) => setTitle(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && submit()}
         />
+        <input
+          className="challenge-goalnum-input"
+          type="number"
+          inputMode="numeric"
+          min="1"
+          placeholder="수치"
+          value={goalNumber}
+          onChange={(e) => setGoalNumber(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && submit()}
+          aria-label="목표 수치 (선택)"
+        />
         <button
           className="challenge-add-btn"
           onClick={submit}
@@ -3621,7 +3689,7 @@ function ChallengePanel({
         </button>
       </div>
       <p className="challenge-hint">
-        목표를 안 고르면 누적형으로 만들어져요 (끝없이 쌓임)
+        목표를 안 고르면 누적형 · 수치 칸을 채우면 프로그레스 바가 생겨요
       </p>
 
       {challenges.length === 0 ? (
@@ -3728,9 +3796,13 @@ function ChallengeCard({
   const [bulkText, setBulkText] = useState("");
   const [celebrating, setCelebrating] = useState(false);
   const items = (challenge.items || []).map(normalizeChallengeItem);
-  const progress = getChallengeProgress(items);
+  const progress = getChallengeProgress(items, challenge.goal);
   const hasChecklist = progress.hasChecklist;
-  const complete = hasChecklist && progress.done >= progress.total;
+  const hasNumeric = progress.hasNumeric;
+  const showProgressBar = hasChecklist || hasNumeric;
+  const complete =
+    (hasChecklist && progress.done >= progress.total) ||
+    (hasNumeric && progress.numericMax >= progress.numericGoal && progress.numericGoal > 0);
   const prevCompleteRef = useRef(complete);
 
   useEffect(() => {
@@ -3773,7 +3845,11 @@ function ChallengeCard({
           <RichChallengeText text={displayTitle || challenge.title} />
         </span>
         <span className="challenge-card-count">
-          {hasChecklist ? `${progress.done}/${progress.total}` : `${progress.done}개`}
+          {hasNumeric
+            ? `${progress.numericMax}/${progress.numericGoal}`
+            : hasChecklist
+              ? `${progress.done}/${progress.total}`
+              : `${progress.done}개`}
         </span>
         <button
           type="button"
@@ -3785,7 +3861,7 @@ function ChallengeCard({
         </button>
       </div>
 
-      {hasChecklist && (
+      {showProgressBar && (
         <div className="challenge-progress">
           <div
             className="challenge-progress-fill"
@@ -3797,7 +3873,9 @@ function ChallengeCard({
       <div className="challenge-item-input-row">
         <input
           className="challenge-item-input"
-          placeholder="완료한 항목 (예: 5장 문법)"
+          type={hasNumeric ? "number" : "text"}
+          inputMode={hasNumeric ? "numeric" : undefined}
+          placeholder={hasNumeric ? "현재 수치 (예: 250)" : "완료한 항목 (예: 5장 문법)"}
           value={text}
           onChange={(e) => setText(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && submit()}
@@ -3812,15 +3890,17 @@ function ChallengeCard({
         </button>
       </div>
 
-      <button
-        type="button"
-        className="challenge-bulk-toggle"
-        onClick={() => setBulkOpen((v) => !v)}
-      >
-        {bulkOpen ? "닫기" : "목차 일괄입력"}
-      </button>
+      {!hasNumeric && (
+        <button
+          type="button"
+          className="challenge-bulk-toggle"
+          onClick={() => setBulkOpen((v) => !v)}
+        >
+          {bulkOpen ? "닫기" : "목차 일괄입력"}
+        </button>
+      )}
 
-      {bulkOpen && (
+      {!hasNumeric && bulkOpen && (
         <div className="challenge-bulk">
           <textarea
             className="challenge-bulk-input"

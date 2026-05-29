@@ -2250,6 +2250,18 @@ input:focus {
   min-width: 0;
 }
 
+.challenge-add .challenge-goalnum-input {
+  flex: 0 0 auto;
+  width: 70px;
+  text-align: right;
+  -moz-appearance: textfield;
+}
+.challenge-add .challenge-goalnum-input::-webkit-outer-spin-button,
+.challenge-add .challenge-goalnum-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .challenge-goal-select {
   flex: 0 0 auto;
   width: 90px;

@@ -7,6 +7,7 @@ import {
   groupChallengeCardsByGoal,
   groupChallengesByGoal,
   normalizeChallengeItem,
+  parseNumericValue,
   sortChallengeItemsForDisplay,
   toggleChallengeItemDone,
 } from "./challengeProgress.js";
@@ -37,6 +38,9 @@ assert.deepEqual(getChallengeProgress([planned[0], toggled]), {
   total: 2,
   pct: 50,
   hasChecklist: true,
+  hasNumeric: false,
+  numericMax: 0,
+  numericGoal: 0,
 });
 
 assert.deepEqual(getChallengeProgress([completed]), {
@@ -44,7 +48,35 @@ assert.deepEqual(getChallengeProgress([completed]), {
   total: 1,
   pct: 100,
   hasChecklist: false,
+  hasNumeric: false,
+  numericMax: 0,
+  numericGoal: 0,
 });
+
+// 수치 모드: goal과 value 기반 진척
+assert.equal(parseNumericValue("150"), 150);
+assert.equal(parseNumericValue("12.5"), 12.5);
+assert.equal(parseNumericValue("150쪽"), null);
+assert.equal(parseNumericValue(" 200 "), 200);
+
+const numItem1 = createCompletedChallengeItem("150", 1000);
+const numItem2 = createCompletedChallengeItem("250", 2000);
+assert.equal(numItem1.value, 150);
+assert.equal(numItem2.value, 250);
+assert.equal(createCompletedChallengeItem("일반 텍스트").value, null);
+
+assert.deepEqual(getChallengeProgress([numItem1, numItem2], 912), {
+  done: 2,
+  total: 2,
+  pct: 27,
+  hasChecklist: false,
+  hasNumeric: true,
+  numericMax: 250,
+  numericGoal: 912,
+});
+
+// goal이 없으면 numeric 모드 비활성
+assert.equal(getChallengeProgress([numItem1, numItem2], null).hasNumeric, false);
 
 assert.equal(getChallengeGoalLabel("{코딩}(1회독)"), "코딩");
 assert.equal(getChallengeGoalLabel("{코딩}(리액트)"), "코딩");
@@ -75,6 +107,9 @@ assert.deepEqual(getChallengeProgress(grouped[0].items), {
   total: 2,
   pct: 50,
   hasChecklist: true,
+  hasNumeric: false,
+  numericMax: 0,
+  numericGoal: 0,
 });
 assert.equal(grouped[1].id, "goal:영단어");
 assert.equal(grouped[1].title, "영단어");
@@ -106,7 +141,7 @@ assert.deepEqual(
     createCompletedChallengeItem("먼저 기록", 500),
     createCompletedChallengeItem("나중 기록", 700),
   ]).map((item) => item.name),
-  ["나중 기록", "먼저 기록"]
+  ["먼저 기록", "나중 기록"]
 );
 
 console.log("challenge progress tests passed");
