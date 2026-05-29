@@ -3945,19 +3945,16 @@ function MemberCard({ member }) {
 
       {visibleTomorrowTodos.length > 0 && (
         <>
-          <div className="member-todo-title">TOMORROW</div>
           <button
             type="button"
-            className={`member-routine-summary${tomorrowExpanded ? " expanded" : ""}`}
+            className="member-tomorrow-toggle"
             onClick={() => setTomorrowExpanded((v) => !v)}
             aria-label={tomorrowExpanded ? "내일 투두 접기" : "내일 투두 펼치기"}
           >
-            <span className="member-routine-counts">
-              <span className="member-routine-chip">
-                📝 {visibleTomorrowTodos.length}개
-              </span>
-            </span>
-            <span className="member-routine-toggle">{tomorrowExpanded ? "▴" : "▾"}</span>
+            <span className="member-tomorrow-chevron">{tomorrowExpanded ? "▴" : "▾"}</span>
+            TOMORROW
+            <span className="member-tomorrow-dot">·</span>
+            <span className="member-tomorrow-num">{visibleTomorrowTodos.length}</span>
           </button>
           {tomorrowExpanded && (
             <div className="member-tomorrow-list">

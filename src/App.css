@@ -2148,6 +2148,41 @@ input:focus {
   background: rgba(107, 208, 166, 0.08);
 }
 
+.member-tomorrow-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 10px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.member-tomorrow-toggle:hover {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.member-tomorrow-chevron {
+  font-size: 9px;
+  opacity: 0.7;
+}
+
+.member-tomorrow-dot {
+  opacity: 0.4;
+  margin: 0 1px;
+}
+
+.member-tomorrow-num {
+  letter-spacing: 0;
+  font-variant-numeric: tabular-nums;
+}
+
 .member-tomorrow-list {
   margin-top: 6px;
 }
