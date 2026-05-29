@@ -704,6 +704,7 @@ function carryWeeklyForNewWeek(todos) {
 
 const STALE_TODO_DAYS = 30;
 const MS_PER_DAY = 24 * 60 * 60 * 1000;
+const GHOST_GRACE_MS = MS_PER_DAY;
 
 // 1달(STALE_TODO_DAYS) 넘게 미완료인 항목은 제거. createdAt이 없는 레거시 항목은 now로 채워 새 시계 시작.
 function sweepStaleTodos(todos, now = Date.now()) {
@@ -2829,9 +2830,22 @@ export default function App() {
     return 0;
   });
   const hasRoutineItems = (m) => (m?.routineItems?.length || 0) > 0;
+  const isRecentlyActive = (m) => {
+    const ts = m?.updatedAt;
+    const millis =
+      typeof ts?.toMillis === "function"
+        ? ts.toMillis()
+        : typeof ts === "number"
+          ? ts
+          : null;
+    return !!millis && Date.now() - millis < GHOST_GRACE_MS;
+  };
   const visibleMembers = allMembers.filter(
     (member) =>
-      member.isMe || getMemberTodoTotal(member) > 0 || hasRoutineItems(member)
+      member.isMe ||
+      getMemberTodoTotal(member) > 0 ||
+      hasRoutineItems(member) ||
+      isRecentlyActive(member)
   );
   const ghostCandidates = allMembers.filter(
     (member) =>
@@ -2839,7 +2853,8 @@ export default function App() {
       member.id &&
       member.id !== uid &&
       getMemberTodoTotal(member) === 0 &&
-      !hasRoutineItems(member)
+      !hasRoutineItems(member) &&
+      !isRecentlyActive(member)
   );
 
   /* ── ghost 멤버 정리 (투두 0 + 루틴 없음): 진입 시 1회 ── */
@@ -2864,17 +2879,29 @@ export default function App() {
       for (const ghostId of ids) {
         if (!ghostId || ghostId === uid) continue;
         try {
-          // 리스너 상태가 늦게 도착했을 수 있어서 routine/tomorrow는 Firestore에서 직접 재확인.
-          const routineSnap = await getDoc(doc(db, routineCol(), ghostId));
-          if (routineSnap.exists()) {
-            const items = routineSnap.data().items || [];
-            if (items.length > 0) continue;
+          // 한 번에 병렬로 모든 doc 읽어서: (1) routine/tomorrow 재확인, (2) 최근 활동 체크.
+          const [dailySnap, tomSnap, evSnap, chSnap, routineSnap, ...weeklySnaps] =
+            await Promise.all([
+              getDoc(doc(db, dailyCol(currentDayKey), ghostId)),
+              getDoc(doc(db, tomorrowCol(), ghostId)),
+              getDoc(doc(db, eventsCol(), ghostId)),
+              getDoc(doc(db, challengesCol(), ghostId)),
+              getDoc(doc(db, routineCol(), ghostId)),
+              ...weekKeys.map((wk) => getDoc(doc(db, weeklyCol(wk), ghostId))),
+            ]);
+
+          if (routineSnap.exists() && (routineSnap.data().items || []).length > 0) continue;
+          if (tomSnap.exists() && (tomSnap.data().todos || []).length > 0) continue;
+
+          // 24h 이내 업데이트된 doc이 하나라도 있으면 막 가입한 유저일 가능성 → skip
+          let lastActivity = 0;
+          for (const snap of [dailySnap, tomSnap, evSnap, chSnap, routineSnap, ...weeklySnaps]) {
+            if (!snap.exists()) continue;
+            const ts = snap.data().updatedAt;
+            const millis = typeof ts?.toMillis === "function" ? ts.toMillis() : null;
+            if (millis && millis > lastActivity) lastActivity = millis;
           }
-          const tomSnap = await getDoc(doc(db, tomorrowCol(), ghostId));
-          if (tomSnap.exists()) {
-            const todos = tomSnap.data().todos || [];
-            if (todos.length > 0) continue;
-          }
+          if (lastActivity && Date.now() - lastActivity < GHOST_GRACE_MS) continue;
         } catch (err) {
           console.warn("ghost verify failed", ghostId, err);
           continue;
