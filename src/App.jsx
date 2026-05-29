@@ -3846,7 +3846,7 @@ function ChallengeCard({
         </span>
         <span className="challenge-card-count">
           {hasNumeric
-            ? `${progress.numericMax}p/${progress.numericGoal}p`
+            ? `${progress.numericMax}/${progress.numericGoal}`
             : hasChecklist
               ? `${progress.done}/${progress.total}`
               : `${progress.done}개`}
