@@ -969,6 +969,23 @@ input:focus {
   vertical-align: middle;
 }
 
+.perfect-day-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 1px;
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(252, 211, 77, 0.35), rgba(245, 158, 11, 0.35));
+  border: 1px solid rgba(252, 211, 77, 0.45);
+  color: #fff8e7;
+  margin-left: 5px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
 .badge {
   display: block;
   margin-top: 2px;
@@ -2041,10 +2058,6 @@ input:focus {
   border-bottom: none;
 }
 
-.routine-item.done {
-  opacity: 0.55;
-}
-
 .routine-item.done .routine-text {
   text-decoration: line-through;
   text-decoration-color: rgba(255, 255, 255, 0.35);
@@ -2592,6 +2605,7 @@ input:focus {
   -moz-appearance: textfield;
   appearance: textfield;
 }
+
 .challenge-item-input::-webkit-outer-spin-button,
 .challenge-item-input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -2611,6 +2625,7 @@ input:focus {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
+
 .challenge-item-list::-webkit-scrollbar {
   width: 0;
   height: 0;

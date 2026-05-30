@@ -14,6 +14,7 @@ import {
   where,
   serverTimestamp,
   limit,
+  arrayUnion,
 } from "./firebase";
 import "./App.css";
 import QuizHome from "./quiz/QuizHome";
@@ -576,6 +577,26 @@ function attachChallenges(displayMembers, challengeMembers) {
   return [...attached, ...extras];
 }
 
+// Attach perfect-day count to display members by matching id/nickname.
+function attachPerfectDays(displayMembers, perfectDayMembers) {
+  if (!perfectDayMembers || !perfectDayMembers.length) return displayMembers;
+  const map = new Map();
+  perfectDayMembers.forEach((pm) => {
+    const nicknameKey = normalizeNickname(pm.nickname);
+    if (nicknameKey) map.set(`nick:${nicknameKey}`, pm);
+    if (pm.id) map.set(`id:${pm.id}`, pm);
+  });
+  return displayMembers.map((m) => {
+    const keys = [];
+    const nicknameKey = normalizeNickname(m.nickname);
+    if (nicknameKey) keys.push(`nick:${nicknameKey}`);
+    if (m.id) keys.push(`id:${m.id}`);
+    const pm = keys.map((key) => map.get(key)).find(Boolean) || null;
+    if (!pm) return m;
+    return { ...m, perfectDayCount: pm.count };
+  });
+}
+
 // Attach tomorrow todos to display members by matching id/nickname.
 // 멤버 카드에 내일 투두 표시. setAt < todayKey이면 이미 옮겨졌어야 하니 표시하지 않음.
 function attachTomorrows(displayMembers, tomorrowMembers, todayKey) {
@@ -828,6 +849,7 @@ const routineCol = () => "routines";
 const eventsCol = () => "events";
 const challengesCol = () => "challenges";
 const tomorrowCol = () => "tomorrows";
+const perfectDaysCol = () => "perfectDays";
 
 /* ── 루틴 상수 ── */
 const ROUTINE_SECTIONS = [
@@ -926,6 +948,7 @@ async function captureBackupSnapshot(currentDayKey, currentWeekKey) {
     ["daily", dailyCol(currentDayKey)],
     ["weekly", weeklyCol(currentWeekKey)],
     ["tomorrows", tomorrowCol()],
+    ["perfectDays", perfectDaysCol()],
   ];
   const data = {};
   for (const [tag, path] of cols) {
@@ -1004,7 +1027,10 @@ export default function App() {
   const [eventMembers, setEventMembers] = useState([]);
   const [challengeMembers, setChallengeMembers] = useState([]);
   const [tomorrowMembers, setTomorrowMembers] = useState([]);
+  const [perfectDayMembers, setPerfectDayMembers] = useState([]);
+  const [myPerfectDates, setMyPerfectDates] = useState([]);
   const [dailyCarryReady, setDailyCarryReady] = useState(false);
+  const perfectRecordedRef = useRef("");
 
   // 알림
   const [toasts, setToasts] = useState([]);
@@ -1520,6 +1546,42 @@ export default function App() {
       setTomorrowMembers(all.filter((m) => m.id !== uid));
     }, (error) => {
       console.error("Failed to subscribe tomorrow members", error);
+    });
+    return () => unsub();
+  }, [uid, nicknameConfirmed]);
+
+  // perfectDays 전체 구독 (다른 멤버 누적 완벽한 하루 회수)
+  useEffect(() => {
+    if (!nicknameConfirmed) return;
+    const unsub = onSnapshot(collection(db, perfectDaysCol()), (snap) => {
+      const all = [];
+      snap.forEach((d) => {
+        const data = d.data() || {};
+        const dates = Array.isArray(data.dates) ? data.dates : [];
+        all.push({
+          id: d.id,
+          nickname: data.nickname || "",
+          avatar: data.avatar || "",
+          count: dates.length,
+        });
+      });
+      setPerfectDayMembers(all.filter((m) => m.id !== uid));
+    }, (error) => {
+      console.error("Failed to subscribe perfect days", error);
+    });
+    return () => unsub();
+  }, [uid, nicknameConfirmed]);
+
+  // 본인 perfectDays doc 구독 (오늘 이미 기록됐는지 체크용 + 카운트)
+  useEffect(() => {
+    if (!nicknameConfirmed || !uid) return;
+    if (isLocalDevHost()) return;
+    const unsub = onSnapshot(doc(db, perfectDaysCol(), uid), (snap) => {
+      const data = snap.exists() ? snap.data() : null;
+      const dates = Array.isArray(data?.dates) ? data.dates : [];
+      setMyPerfectDates(dates);
+    }, (error) => {
+      console.error("Failed to subscribe own perfect days", error);
     });
     return () => unsub();
   }, [uid, nicknameConfirmed]);
@@ -2521,6 +2583,37 @@ export default function App() {
   );
   const closestEvent = pickClosestEvent(events);
 
+  /* ── 완벽한 하루 달성 시 perfectDays/{uid}에 오늘 날짜 기록 (arrayUnion으로 idempotent) ── */
+  const myBadgeDone = dailyDoneCount + routineDoneCount;
+  const myBadgeTotal = myDaily.length + routineTotalCount;
+  const isPerfectToday = myBadgeTotal >= 3 && myBadgeDone >= myBadgeTotal;
+  useEffect(() => {
+    if (!nicknameConfirmed || !uid) return;
+    if (isLocalDevHost()) return;
+    if (!isPerfectToday) return;
+    const sessionKey = `${uid}:${currentDayKey}`;
+    if (perfectRecordedRef.current === sessionKey) return;
+    if (myPerfectDates.includes(currentDayKey)) {
+      perfectRecordedRef.current = sessionKey;
+      return;
+    }
+    perfectRecordedRef.current = sessionKey;
+    void setDoc(
+      doc(db, perfectDaysCol(), uid),
+      {
+        nickname,
+        avatar,
+        dates: arrayUnion(currentDayKey),
+        lastAt: serverTimestamp(),
+        updatedAt: serverTimestamp(),
+      },
+      { merge: true }
+    ).catch((error) => {
+      console.error("Failed to record perfect day", error);
+      perfectRecordedRef.current = ""; // 실패하면 재시도 가능하도록 리셋
+    });
+  }, [isPerfectToday, nicknameConfirmed, uid, nickname, avatar, currentDayKey, myPerfectDates]);
+
   // 전체 멤버 (나 포함) 카드 데이터
   // Expose admin helpers on window so you can list/delete ghost users from the dev console.
   // Usage:
@@ -2787,20 +2880,23 @@ export default function App() {
   const isSelfMember = (m) =>
     (uid && m.id === uid) ||
     (myNicknameKey && normalizeNickname(m.nickname) === myNicknameKey);
-  const otherMembers = attachChallenges(
-    attachTomorrows(
-      attachEvents(
-        attachRoutines(
-          mergeDisplayMembers(members, weeklyMembers).filter((m) => !isSelfMember(m)),
-          routineMembers.filter((m) => !isSelfMember(m)),
-          currentDayKey
+  const otherMembers = attachPerfectDays(
+    attachChallenges(
+      attachTomorrows(
+        attachEvents(
+          attachRoutines(
+            mergeDisplayMembers(members, weeklyMembers).filter((m) => !isSelfMember(m)),
+            routineMembers.filter((m) => !isSelfMember(m)),
+            currentDayKey
+          ),
+          eventMembers.filter((m) => !isSelfMember(m))
         ),
-        eventMembers.filter((m) => !isSelfMember(m))
+        tomorrowMembers.filter((m) => !isSelfMember(m)),
+        currentDayKey
       ),
-      tomorrowMembers.filter((m) => !isSelfMember(m)),
-      currentDayKey
+      challengeMembers.filter((m) => !isSelfMember(m))
     ),
-    challengeMembers.filter((m) => !isSelfMember(m))
+    perfectDayMembers.filter((m) => !isSelfMember(m))
   );
   const cachedVisibleOtherMembers = cachedOtherMembers.filter((m) => !isSelfMember(m));
   const displayOtherMembers =
@@ -2817,6 +2913,7 @@ export default function App() {
       routineDoneDate: myRoutine.doneDate || currentDayKey,
       events,
       challenges,
+      perfectDayCount: myPerfectDates.length,
       isMe: true,
     },
     ...displayOtherMembers,
@@ -2880,13 +2977,14 @@ export default function App() {
         if (!ghostId || ghostId === uid) continue;
         try {
           // 한 번에 병렬로 모든 doc 읽어서: (1) routine/tomorrow 재확인, (2) 최근 활동 체크.
-          const [dailySnap, tomSnap, evSnap, chSnap, routineSnap, ...weeklySnaps] =
+          const [dailySnap, tomSnap, evSnap, chSnap, routineSnap, perfectSnap, ...weeklySnaps] =
             await Promise.all([
               getDoc(doc(db, dailyCol(currentDayKey), ghostId)),
               getDoc(doc(db, tomorrowCol(), ghostId)),
               getDoc(doc(db, eventsCol(), ghostId)),
               getDoc(doc(db, challengesCol(), ghostId)),
               getDoc(doc(db, routineCol(), ghostId)),
+              getDoc(doc(db, perfectDaysCol(), ghostId)),
               ...weekKeys.map((wk) => getDoc(doc(db, weeklyCol(wk), ghostId))),
             ]);
 
@@ -2895,7 +2993,7 @@ export default function App() {
 
           // 24h 이내 업데이트된 doc이 하나라도 있으면 막 가입한 유저일 가능성 → skip
           let lastActivity = 0;
-          for (const snap of [dailySnap, tomSnap, evSnap, chSnap, routineSnap, ...weeklySnaps]) {
+          for (const snap of [dailySnap, tomSnap, evSnap, chSnap, routineSnap, perfectSnap, ...weeklySnaps]) {
             if (!snap.exists()) continue;
             const ts = snap.data().updatedAt;
             const millis = typeof ts?.toMillis === "function" ? ts.toMillis() : null;
@@ -2914,6 +3012,7 @@ export default function App() {
           eventsCol(),
           challengesCol(),
           tomorrowCol(),
+          perfectDaysCol(),
         ];
         for (const path of paths) {
           try {
@@ -2946,6 +3045,7 @@ export default function App() {
         routineItems: member.routineItems,
         events: member.events,
         challenges: member.challenges,
+        perfectDayCount: member.perfectDayCount,
       }))
     )}`;
     if (memberSnapshotSavedRef.current === signature) return;
@@ -4063,6 +4163,14 @@ function MemberCard({ member }) {
             <strong>
               {member.nickname}
               {member.isMe && <span className="me-tag">나</span>}
+              {(member.perfectDayCount || 0) > 0 && (
+                <span
+                  className="perfect-day-chip"
+                  title={`완벽한 하루 ${member.perfectDayCount}회 달성`}
+                >
+                  👑×{member.perfectDayCount}
+                </span>
+              )}
             </strong>
             {badge.emoji && (
               <span className="badge">

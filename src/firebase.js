@@ -14,6 +14,7 @@ import {
   where,
   serverTimestamp,
   limit,
+  arrayUnion,
 } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -44,4 +45,5 @@ export {
   where,
   serverTimestamp,
   limit,
+  arrayUnion,
 };
