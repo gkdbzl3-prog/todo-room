@@ -4025,7 +4025,6 @@ function MemberCard({ member }) {
   const visibleTomorrowTodos = member.tomorrowTodos || [];
   const routineItems = member.routineItems || [];
   const dailyDone = (member.todos || []).filter((t) => t.done).length;
-  const weeklyDone = visibleWeeklyTodos.filter((t) => t.done).length;
 
   // Per-section counts for routine summary
   const routineCounts = ROUTINE_SECTIONS.reduce((acc, s) => {
@@ -4041,9 +4040,8 @@ function MemberCard({ member }) {
   const routineDoneSum = routineItems.filter((it) => it.done).length;
   const routineAllDone = routineTotal > 0 && routineDoneSum === routineTotal;
 
-  const totalDone = dailyDone + weeklyDone + routineDoneSum;
-  const totalCount =
-    (member.todos || []).length + visibleWeeklyTodos.length + routineTotal;
+  const totalDone = dailyDone + routineDoneSum;
+  const totalCount = (member.todos || []).length + routineTotal;
   // 뱃지는 "오늘 단위" 의미라 위클리 제외 — 데일리 + 루틴만
   const badge = getBadge(
     dailyDone + routineDoneSum,
