@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback, useMemo, useRef } from "react";
+import { useEffect, useState, useCallback, useMemo, useRef, Fragment } from "react";
 import {
   db,
   collection,
@@ -42,8 +42,9 @@ import {
   getChallengeProgress,
   groupChallengeCardsByGoal,
   groupChallengesByGoal,
+  groupItemsBySection,
   normalizeChallengeItem,
-  sortChallengeItemsForDisplay,
+  parseBulkChallengeInput,
   toggleChallengeItemDone,
 } from "./challengeProgress";
 /* ── 유틸 ── */
@@ -2483,13 +2484,26 @@ export default function App() {
     syncMyChallenges(next);
   };
 
-  const addChallengeItemsBulk = (challengeId, names) => {
-    const trimmed = (names || [])
-      .map((n) => (n || "").trim())
+  // entries: 문자열 배열 또는 {name, section}[] (parseBulkChallengeInput 결과)
+  const addChallengeItemsBulk = (challengeId, entries) => {
+    const normalized = (entries || [])
+      .map((entry) => {
+        if (typeof entry === "string") {
+          const name = entry.trim();
+          return name ? { name, section: null } : null;
+        }
+        const name = String(entry?.name ?? "").trim();
+        if (!name) return null;
+        const section =
+          typeof entry?.section === "string" && entry.section.trim()
+            ? entry.section.trim()
+            : null;
+        return { name, section };
+      })
       .filter(Boolean);
-    if (trimmed.length === 0) return;
+    if (normalized.length === 0) return;
     const now = Date.now();
-    const newItems = createPlannedChallengeItems(trimmed, now);
+    const newItems = createPlannedChallengeItems(normalized, now);
     const next = challenges.map((c) =>
       c.id === challengeId
         ? { ...c, items: [...c.items, ...newItems] }
@@ -3990,15 +4004,19 @@ function ChallengeCard({
   const [bulkOpen, setBulkOpen] = useState(false);
   const [bulkText, setBulkText] = useState("");
   const [celebrating, setCelebrating] = useState(false);
+  const [listCollapsed, setListCollapsed] = useState(false);
   const items = (challenge.items || []).map(normalizeChallengeItem);
   const progress = getChallengeProgress(items, challenge.goal);
   const hasChecklist = progress.hasChecklist;
   const hasNumeric = progress.hasNumeric;
   const showProgressBar = hasChecklist || hasNumeric;
+  const checklistComplete =
+    hasChecklist && progress.total > 0 && progress.done >= progress.total;
   const complete =
-    (hasChecklist && progress.done >= progress.total) ||
+    checklistComplete ||
     (hasNumeric && progress.numericMax >= progress.numericGoal && progress.numericGoal > 0);
   const prevCompleteRef = useRef(complete);
+  const prevChecklistCompleteRef = useRef(checklistComplete);
 
   useEffect(() => {
     if (!prevCompleteRef.current && complete) {
@@ -4010,20 +4028,33 @@ function ChallengeCard({
     prevCompleteRef.current = complete;
   }, [complete]);
 
+  // 체크리스트가 막 100% 채워진 순간 자동으로 접기. 다시 빈 칸 생기면 펴짐 유지.
+  useEffect(() => {
+    if (!prevChecklistCompleteRef.current && checklistComplete) {
+      setListCollapsed(true);
+    } else if (prevChecklistCompleteRef.current && !checklistComplete) {
+      setListCollapsed(false);
+    }
+    prevChecklistCompleteRef.current = checklistComplete;
+  }, [checklistComplete]);
+
   const submit = () => {
     if (!text.trim()) return;
     onAddItem(text);
     setText("");
   };
 
+  const parsedBulk = parseBulkChallengeInput(bulkText);
+
   const submitBulk = () => {
-    const lines = bulkText.split("\n");
-    onAddItemsBulk(lines);
+    if (parsedBulk.length === 0) return;
+    onAddItemsBulk(parsedBulk);
     setBulkText("");
     setBulkOpen(false);
   };
 
-  const sortedItems = sortChallengeItemsForDisplay(items);
+  const sectionGroups = groupItemsBySection(items);
+  const totalItemCount = sectionGroups.reduce((sum, g) => sum + g.items.length, 0);
 
   return (
     <div
@@ -4099,61 +4130,82 @@ function ChallengeCard({
         <div className="challenge-bulk">
           <textarea
             className="challenge-bulk-input"
-            placeholder={"한 줄에 하나씩\n예)\n챕터 1\n챕터 2\n챕터 3"}
+            placeholder={"한 줄에 하나씩\n[필사] 처럼 적으면 소제목으로 묶임\n\n예)\n[필사]\n1\n2\n[듣기]\n1\n2"}
             value={bulkText}
             onChange={(e) => setBulkText(e.target.value)}
-            rows={5}
+            rows={6}
           />
           <button
             type="button"
             className="challenge-bulk-submit"
             onClick={submitBulk}
           >
-            {bulkText.split("\n").filter((l) => l.trim()).length}개 등록
+            {parsedBulk.length}개 등록
           </button>
         </div>
       )}
 
-      {sortedItems.length > 0 && (
+      {checklistComplete && (
+        <button
+          type="button"
+          className="challenge-list-toggle"
+          onClick={() => setListCollapsed((v) => !v)}
+          aria-label={listCollapsed ? "목차 펼치기" : "목차 접기"}
+        >
+          <span className="challenge-list-chevron">{listCollapsed ? "▾" : "▴"}</span>
+          DONE
+          <span className="challenge-list-dot">·</span>
+          <span className="challenge-list-num">{progress.total}</span>
+        </button>
+      )}
+
+      {totalItemCount > 0 && !(checklistComplete && listCollapsed) && (
         <ul className="challenge-item-list">
-          {sortedItems.map((it) => (
-            <li
-              key={it.id}
-              className={`challenge-item-row ${it.kind}${it.done ? " done" : ""}`}
-            >
-              {hasChecklist && (
-                <input
-                  type="checkbox"
-                  className="challenge-item-check"
-                  checked={!!it.done}
-                  onChange={() => onToggleItem(it.id)}
-                  aria-label="목차 완료"
-                />
+          {sectionGroups.map((group) => (
+            <Fragment key={group.section || "_default"}>
+              {group.section && (
+                <li className="challenge-section-header">{group.section}</li>
               )}
-              <span className="challenge-item-name">
-                {hasNumeric && typeof it.value === "number" ? (
-                  `${it.value}p`
-                ) : (
-                  <RichChallengeText text={it.name} />
-                )}
-              </span>
-              {it.doneAt && (
-                <span className="challenge-item-date">
-                  {new Date(it.doneAt).toLocaleDateString("ko-KR", {
-                    month: "numeric",
-                    day: "numeric",
-                  })}
-                </span>
-              )}
-              <button
-                type="button"
-                className="challenge-item-del"
-                onClick={() => onDeleteItem(it.id)}
-                aria-label="기록 삭제"
-              >
-                ×
-              </button>
-            </li>
+              {group.items.map((it) => (
+                <li
+                  key={it.id}
+                  className={`challenge-item-row ${it.kind}${it.done ? " done" : ""}`}
+                >
+                  {hasChecklist && (
+                    <input
+                      type="checkbox"
+                      className="challenge-item-check"
+                      checked={!!it.done}
+                      onChange={() => onToggleItem(it.id)}
+                      aria-label="목차 완료"
+                    />
+                  )}
+                  <span className="challenge-item-name">
+                    {hasNumeric && typeof it.value === "number" ? (
+                      `${it.value}p`
+                    ) : (
+                      <RichChallengeText text={it.name} />
+                    )}
+                  </span>
+                  {it.doneAt && (
+                    <span className="challenge-item-date">
+                      {new Date(it.doneAt).toLocaleDateString("ko-KR", {
+                        month: "numeric",
+                        day: "numeric",
+                      })}
+                    </span>
+                  )}
+                  <button
+                    type="button"
+                    className="challenge-item-del"
+                    onClick={() => onDeleteItem(it.id)}
+                    aria-label="기록 삭제"
+                  >
+                    ×
+                  </button>
+                </li>
+              ))}
+            </Fragment>
           ))}
         </ul>
       )}

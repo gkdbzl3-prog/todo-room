@@ -3,6 +3,8 @@ export function normalizeChallengeItem(item) {
   const kind = item?.kind === "planned" ? "planned" : "completed";
   const value =
     typeof item?.value === "number" && Number.isFinite(item.value) ? item.value : null;
+  const section =
+    typeof item?.section === "string" && item.section.trim() ? item.section.trim() : null;
   return {
     id: item?.id,
     name: typeof item?.name === "string" ? item.name : "",
@@ -16,6 +18,7 @@ export function normalizeChallengeItem(item) {
           ? item.doneAt
           : Date.now(),
     value,
+    section,
   };
 }
 
@@ -40,14 +43,60 @@ export function createCompletedChallengeItem(name, now = Date.now()) {
   };
 }
 
-export function createPlannedChallengeItems(names, now = Date.now()) {
-  return (names || []).map((name, index) => ({
-    id: now + index,
-    name,
-    kind: "planned",
-    done: false,
-    doneAt: null,
-    createdAt: now + index,
+export function createPlannedChallengeItems(entries, now = Date.now()) {
+  return (entries || []).map((entry, index) => {
+    const name = typeof entry === "string" ? entry : (entry?.name ?? "");
+    const section =
+      typeof entry === "object" && entry !== null && typeof entry.section === "string"
+        ? entry.section
+        : null;
+    return {
+      id: now + index,
+      name,
+      kind: "planned",
+      done: false,
+      doneAt: null,
+      createdAt: now + index,
+      section: section && section.trim() ? section.trim() : null,
+    };
+  });
+}
+
+// `[섹션이름]` 한 줄 헤더 + 그 아래 항목 → {name, section}[]로 파싱.
+// 헤더 없으면 모든 항목 section=null.
+export function parseBulkChallengeInput(text) {
+  const lines = String(text || "").split("\n");
+  const result = [];
+  let currentSection = null;
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (!trimmed) continue;
+    const headerMatch = trimmed.match(/^\[(.+)\]$/);
+    if (headerMatch) {
+      const label = headerMatch[1].trim();
+      currentSection = label || null;
+      continue;
+    }
+    result.push({ name: trimmed, section: currentSection });
+  }
+  return result;
+}
+
+// 표시용: 섹션별로 묶고, 같은 섹션 안에서는 createdAt 오름차순.
+// 섹션 순서는 그 안의 최소 createdAt 기준 (= 입력 순서).
+export function groupItemsBySection(items) {
+  const sorted = [...(items || [])]
+    .map(normalizeChallengeItem)
+    .sort((a, b) => (a.createdAt || a.doneAt || 0) - (b.createdAt || b.doneAt || 0));
+  const groups = new Map();
+  for (const item of sorted) {
+    const key = item.section || "";
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(item);
+  }
+  return Array.from(groups.entries()).map(([section, list]) => ({
+    section: section || null,
+    items: list,
   }));
 }
 

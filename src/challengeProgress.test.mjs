@@ -6,7 +6,9 @@ import {
   getChallengeProgress,
   groupChallengeCardsByGoal,
   groupChallengesByGoal,
+  groupItemsBySection,
   normalizeChallengeItem,
+  parseBulkChallengeInput,
   parseNumericValue,
   sortChallengeItemsForDisplay,
   toggleChallengeItemDone,
@@ -143,5 +145,62 @@ assert.deepEqual(
   ]).map((item) => item.name),
   ["먼저 기록", "나중 기록"]
 );
+
+// 섹션 헤더 파싱
+assert.deepEqual(
+  parseBulkChallengeInput("[필사]\n1\n2\n[듣기]\n1\n2"),
+  [
+    { name: "1", section: "필사" },
+    { name: "2", section: "필사" },
+    { name: "1", section: "듣기" },
+    { name: "2", section: "듣기" },
+  ]
+);
+
+// 헤더 없으면 전부 section=null
+assert.deepEqual(
+  parseBulkChallengeInput("a\nb"),
+  [
+    { name: "a", section: null },
+    { name: "b", section: null },
+  ]
+);
+
+// 헤더 + 헤더 위 항목은 section=null
+assert.deepEqual(
+  parseBulkChallengeInput("intro\n[A]\n1"),
+  [
+    { name: "intro", section: null },
+    { name: "1", section: "A" },
+  ]
+);
+
+// createPlannedChallengeItems가 {name, section} 받기
+const sectioned = createPlannedChallengeItems(
+  [
+    { name: "1", section: "필사" },
+    { name: "2", section: "듣기" },
+  ],
+  10000
+);
+assert.equal(sectioned[0].section, "필사");
+assert.equal(sectioned[1].section, "듣기");
+
+// 문자열도 여전히 받음 (backward compat)
+const plain = createPlannedChallengeItems(["a", "b"], 20000);
+assert.equal(plain[0].section, null);
+
+// 섹션 묶기
+const sectionGrouped = groupItemsBySection([
+  { id: 1, name: "1", section: "필사", createdAt: 100 },
+  { id: 2, name: "2", section: "필사", createdAt: 101 },
+  { id: 3, name: "1", section: "듣기", createdAt: 200 },
+  { id: 4, name: "x", createdAt: 50 }, // section 없음
+]);
+assert.equal(sectionGrouped.length, 3);
+assert.equal(sectionGrouped[0].section, null); // 가장 먼저 (createdAt 50)
+assert.equal(sectionGrouped[1].section, "필사");
+assert.equal(sectionGrouped[2].section, "듣기");
+assert.equal(sectionGrouped[1].items.length, 2);
 
 console.log("challenge progress tests passed");
