@@ -2049,10 +2049,14 @@ export default function App() {
     }
 
     if (dailyChanged) {
-      setMyDaily(nextDaily);
-      // 내일 → 오늘 이동 시: daily 쓰기 성공 확인 후에야 tomorrow 비움.
-      // 그래야 daily 쓰기가 실패/덮어쓰여도 tomorrow 데이터가 안 사라짐.
       if (movedTomorrow) {
+        // 핵심: 로컬(localStorage + state)을 setMyDaily 전에 즉시 비움.
+        // 안 그러면 setMyDaily → 재렌더 → effect 재실행 → loadStoredTomorrow가 같은 데이터 반환 → 무한 중복.
+        // Firestore 쓰기 실패 시 tomorrow 데이터 복구해서 다음 진입에 재시도 가능.
+        const restore = { todos: stored.todos, setAt: stored.setAt };
+        saveStoredTomorrow(tomorrowStorageKey, { todos: [], setAt: "" });
+        setMyTomorrow([]);
+        setMyDaily(nextDaily);
         void (async () => {
           try {
             const date = currentDayKey;
@@ -2069,14 +2073,15 @@ export default function App() {
             void writeSetDoc(doc(db, historyDatesCol(), date), { date }).catch(
               (error) => console.error("Failed to sync history date", error)
             );
-            setMyTomorrow([]);
-            saveStoredTomorrow(tomorrowStorageKey, { todos: [], setAt: "" });
             syncMyTomorrow([], "");
           } catch (error) {
             console.error("Failed to move tomorrow into today", error);
+            saveStoredTomorrow(tomorrowStorageKey, restore);
+            setMyTomorrow(restore.todos);
           }
         })();
       } else {
+        setMyDaily(nextDaily);
         syncMyDaily(nextDaily);
       }
     }
@@ -2682,6 +2687,69 @@ export default function App() {
       }
       alert("완료. 새로고침");
       location.reload();
+    };
+
+    // 오늘 daily 투두 중복 제거. target은 "me" | uid | "@닉네임".
+    // 같은 text는 1개로 합치고 done/started 상태가 있으면 그쪽으로 살림.
+    // dryRun=true면 결과만 보여주고 실제로 안 씀.
+    window.__dedupeDailyTodos = async (target = "me", dryRun = false) => {
+      let targetUid = uid;
+      if (target !== "me") {
+        if (typeof target === "string" && target.startsWith("@")) {
+          const wanted = normalizeNickname(target.slice(1));
+          const snap = await getDocs(collection(db, dailyCol(currentDayKey)));
+          const match = snap.docs.find(
+            (d) => normalizeNickname(d.data().nickname) === wanted
+          );
+          if (!match) return console.error("닉네임 매치 없음:", target.slice(1));
+          targetUid = match.id;
+        } else {
+          targetUid = target;
+        }
+      }
+      const ref = doc(db, dailyCol(currentDayKey), targetUid);
+      const snap = await getDoc(ref);
+      if (!snap.exists()) return console.error("today doc 없음:", targetUid);
+      const data = snap.data();
+      const todos = Array.isArray(data.todos) ? data.todos : [];
+
+      const seen = new Map();
+      for (const t of todos) {
+        const key = t.text;
+        const existing = seen.get(key);
+        if (!existing) {
+          seen.set(key, { ...t });
+          continue;
+        }
+        const merged = { ...existing };
+        if (t.done && !existing.done) {
+          merged.done = true;
+          merged.completedAt = t.completedAt || existing.completedAt || Date.now();
+          merged.started = true;
+        }
+        if (t.started && !existing.started) merged.started = true;
+        if (
+          typeof t.createdAt === "number" &&
+          (!existing.createdAt || t.createdAt < existing.createdAt)
+        ) {
+          merged.createdAt = t.createdAt;
+          merged.id = t.id;
+        }
+        seen.set(key, merged);
+      }
+      const deduped = Array.from(seen.values());
+      console.log(`${targetUid}: ${todos.length} → ${deduped.length}`);
+      if (dryRun) {
+        console.log("DRY RUN — 안 씀. 미리보기:", deduped);
+        return deduped;
+      }
+      await setDoc(
+        ref,
+        { ...data, todos: deduped, updatedAt: serverTimestamp() },
+        { merge: true }
+      );
+      console.log("완료. 새로고침하세요.");
+      return deduped;
     };
     // List every member document so you can spot ghosts even when nickname spelling differs.
     window.__listAll = async () => {
