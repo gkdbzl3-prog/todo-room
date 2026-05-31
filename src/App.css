@@ -306,7 +306,7 @@ body,
 .notice-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -318,7 +318,7 @@ body,
 .notice-modal {
   width: 100%;
   max-width: 360px;
-  background: linear-gradient(135deg, #2a1f3a, #1a1428);
+  background: linear-gradient(135deg, #d24747c7, #fd9870);
   border: 1px solid rgba(252, 211, 77, 0.35);
   border-radius: 18px;
   padding: 22px 22px 18px;
@@ -339,6 +339,7 @@ body,
   font-size: 15px;
   line-height: 1.5;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .notice-modal-close {
