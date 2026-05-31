@@ -730,7 +730,7 @@ const GHOST_GRACE_MS = MS_PER_DAY;
 
 // 공지: 내용/문구 바꿀 땐 NOTICE_VERSION을 v2, v3 등으로 올리면 모두에게 다시 한 번 popup이 떠요.
 const NOTICE_VERSION = "v1";
-const NOTICE_TEXT = "<👑 완벽한 하루> 뱃지 5개 모으면 보상금을 드립니다🌸";
+const NOTICE_TEXT = "{👑 완벽한 하루} 뱃지 5개 모으면 보상금을 드립니다💛";
 const NOTICE_SEEN_KEY = `todoRoom_notice_seen_${NOTICE_VERSION}`;
 
 // 1달(STALE_TODO_DAYS) 넘게 미완료인 항목은 제거. createdAt이 없는 레거시 항목은 now로 채워 새 시계 시작.
