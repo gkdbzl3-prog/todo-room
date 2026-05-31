@@ -2832,7 +2832,107 @@ export default function App() {
       return deduped;
     };
 
-    // 파일 picker 열고 리사이즈된 data URL 반환. __setUserCover와 조합해서 씀.
+    // 닉네임으로 uid 역추적. challenges, routines, tomorrows, events, perfectDays, daily(today) 순으로 뒤짐.
+    window.__findUid = async (target) => {
+      if (!target) return null;
+      if (typeof target !== "string" || !target.startsWith("@")) {
+        return { uid: String(target), nickname: "", avatar: "" };
+      }
+      const wanted = normalizeNickname(target.slice(1));
+      if (!wanted) return null;
+      const sources = [
+        ["challenges", challengesCol()],
+        ["routines", routineCol()],
+        ["tomorrows", tomorrowCol()],
+        ["events", eventsCol()],
+        ["perfectDays", perfectDaysCol()],
+        ["daily(today)", dailyCol(currentDayKey)],
+      ];
+      for (const [tag, path] of sources) {
+        try {
+          const snap = await getDocs(collection(db, path));
+          for (const d of snap.docs) {
+            const data = d.data() || {};
+            if (normalizeNickname(data.nickname) === wanted) {
+              console.log(`찾음 (${tag}): ${data.nickname} / uid: ${d.id}`);
+              return {
+                uid: d.id,
+                nickname: data.nickname,
+                avatar: data.avatar || "",
+              };
+            }
+          }
+        } catch (err) {
+          console.warn(`${tag} 읽기 실패`, err);
+        }
+      }
+      console.error("uid 찾을 수 없음:", target);
+      return null;
+    };
+
+    // 다른 유저에게 새 챌린지 만들기 (표지 포함). 수치형 + markComplete=true (기본) 면
+    // 자동으로 value=goal인 완료 항목 하나 넣어서 카드의 표지 슬롯이 즉시 노출되게 함.
+    // 사용 예:
+    //   const f = await __pickCoverFile()
+    //   await __createUserChallenge("@능솨", { title: "{독서}(蜘蛛の糸)", goal: 230, coverUrl: f })
+    window.__createUserChallenge = async (target, opts = {}) => {
+      const { title, goal, coverUrl, markComplete = true } = opts;
+      if (!target || !title) {
+        return console.error(
+          "사용법: __createUserChallenge('@닉네임', { title, goal, coverUrl })"
+        );
+      }
+      const found = await window.__findUid(target);
+      if (!found) return;
+      const targetUid = found.uid;
+      const ref = doc(db, challengesCol(), targetUid);
+      const snap = await getDoc(ref);
+      const existing = snap.exists() ? snap.data() : {};
+      const list = Array.isArray(existing.challenges) ? existing.challenges : [];
+      const goalNum =
+        Number.isFinite(goal) && goal > 0 ? Math.floor(goal) : null;
+      const now = Date.now();
+      const items = [];
+      if (goalNum && markComplete) {
+        items.push({
+          id: now,
+          name: String(goalNum),
+          kind: "completed",
+          done: true,
+          doneAt: now,
+          createdAt: now,
+          value: goalNum,
+        });
+      }
+      const url =
+        typeof coverUrl === "string" && coverUrl.trim()
+          ? coverUrl.trim()
+          : null;
+      const newChallenge = {
+        id: now,
+        title: String(title).trim(),
+        goal: goalNum,
+        items,
+        createdAt: now,
+        coverUrl: url,
+      };
+      const updated = [...list, newChallenge];
+      await setDoc(
+        ref,
+        {
+          nickname: existing.nickname || found.nickname,
+          avatar: existing.avatar || found.avatar,
+          challenges: updated,
+          updatedAt: serverTimestamp(),
+        },
+        { merge: true }
+      );
+      console.log(
+        `완료: '${newChallenge.title}' 추가됨${url ? " (표지 포함)" : ""}${markComplete && goalNum ? " (자동 완료 처리)" : ""}`
+      );
+    };
+
+    // 파일 picker 열고 리사이즈된 data URL 반환. __setUserCover/__createUserChallenge와 조합해서 씀.
     window.__pickCoverFile = () =>
       new Promise((resolve) => {
         const input = document.createElement("input");
@@ -2863,24 +2963,16 @@ export default function App() {
       if (!target || !titleMatch) {
         return console.error("사용법: __setUserCover('@닉네임', '제목조각', 'URL')");
       }
-      let targetUid = target;
-      if (typeof target === "string" && target.startsWith("@")) {
-        const wanted = normalizeNickname(target.slice(1));
-        const snap = await getDocs(collection(db, challengesCol()));
-        const match = snap.docs.find(
-          (d) => normalizeNickname(d.data().nickname) === wanted
-        );
-        if (!match) {
-          console.error("닉네임 매치 없음:", target);
-          console.log("후보:");
-          snap.forEach((d) => console.log("  -", d.data().nickname, "/ uid:", d.id));
-          return;
-        }
-        targetUid = match.id;
-      }
+      const found = await window.__findUid(target);
+      if (!found) return;
+      const targetUid = found.uid;
       const ref = doc(db, challengesCol(), targetUid);
       const snap = await getDoc(ref);
-      if (!snap.exists()) return console.error("challenges doc 없음:", targetUid);
+      if (!snap.exists()) {
+        return console.error(
+          "challenges doc 없음. 챌린지 먼저 만드세요: __createUserChallenge(target, { title, goal, coverUrl })"
+        );
+      }
       const data = snap.data();
       const list = Array.isArray(data.challenges) ? data.challenges : [];
       const idx = list.findIndex((c) =>
