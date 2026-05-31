@@ -2678,9 +2678,21 @@ input:focus {
 }
 
 /* 챌린지 완주 표지 슬롯 */
+.challenge-cover-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.challenge-cover-frame {
+  position: relative;
+  width: 72px;
+}
+
 .challenge-cover {
   display: block;
-  margin: 0 auto 10px;
   width: 72px;
   padding: 0;
   background: transparent;
@@ -2694,17 +2706,20 @@ input:focus {
 }
 
 .challenge-cover img {
-  width: 100%;
+  width: 150px;
   display: block;
   border-radius: 4px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  margin-left: -30px;
 }
 
 .challenge-cover-empty {
+  flex-direction: column;
   height: 96px;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 3px;
   border: 1.5px dashed rgba(255, 255, 255, 0.25);
   border-radius: 4px;
   color: rgba(255, 255, 255, 0.5);
@@ -2716,6 +2731,52 @@ input:focus {
 .challenge-cover-empty:hover {
   border-color: rgba(255, 255, 255, 0.45);
   color: rgba(255, 255, 255, 0.75);
+}
+
+.challenge-cover-hint {
+  font-size: 8px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  opacity: 0.6;
+}
+
+.challenge-cover-remove {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  font-size: 12px;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.challenge-cover-frame:hover .challenge-cover-remove {
+  opacity: 1;
+}
+
+.challenge-cover-url {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 9px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  padding: 2px 4px;
+  transition: color 0.15s;
+}
+
+.challenge-cover-url:hover {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .challenge-card-count {
@@ -3033,6 +3094,29 @@ input:focus {
 .challenge-other-member-head strong {
   font-size: 13px;
   font-weight: 800;
+}
+
+.challenge-other-covers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 10px;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 8px;
+}
+
+.challenge-other-cover {
+  width: 44px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.15s;
+}
+
+.challenge-other-cover:hover {
+  transform: translateY(-2px) scale(1.05);
 }
 
 .challenge-other-rows {

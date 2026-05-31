@@ -187,6 +187,39 @@ function writeAddDoc(...args) {
   return addDoc(...args);
 }
 
+// 이미지 파일을 캔버스로 리사이즈해서 data URL(base64)로 반환. Firestore doc 부담 줄이기 위해.
+function resizeImageFileToDataUrl(file, maxWidth = 200, maxHeight = 300, quality = 0.8) {
+  return new Promise((resolve, reject) => {
+    if (!file || !file.type?.startsWith("image/")) {
+      reject(new Error("이미지 파일이 아님"));
+      return;
+    }
+    const reader = new FileReader();
+    reader.onerror = () => reject(reader.error || new Error("파일 읽기 실패"));
+    reader.onload = () => {
+      const img = new Image();
+      img.onerror = () => reject(new Error("이미지 디코드 실패"));
+      img.onload = () => {
+        const ratio = Math.min(maxWidth / img.width, maxHeight / img.height, 1);
+        const w = Math.max(1, Math.round(img.width * ratio));
+        const h = Math.max(1, Math.round(img.height * ratio));
+        const canvas = document.createElement("canvas");
+        canvas.width = w;
+        canvas.height = h;
+        const ctx = canvas.getContext("2d");
+        if (!ctx) {
+          reject(new Error("canvas context 생성 실패"));
+          return;
+        }
+        ctx.drawImage(img, 0, 0, w, h);
+        resolve(canvas.toDataURL("image/jpeg", quality));
+      };
+      img.src = String(reader.result);
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
 function writeDeleteDoc(...args) {
   if (!canWriteRemote()) return Promise.resolve(false);
   return deleteDoc(...args);
@@ -4018,7 +4051,17 @@ function ChallengePanel({
           <div className="challenge-others-list">
             {otherMembers
               .filter((m) => (m.challenges || []).length > 0)
-              .map((m) => (
+              .map((m) => {
+                const completedCovers = (m.challenges || []).filter((c) => {
+                  if (!c.coverUrl) return false;
+                  const p = getChallengeProgress(c.items || [], c.goal);
+                  return (
+                    p.hasNumeric &&
+                    p.numericMax >= p.numericGoal &&
+                    p.numericGoal > 0
+                  );
+                });
+                return (
                 <div key={m.id} className="challenge-other-member">
                   <div className="challenge-other-member-head">
                     <span className="member-avatar small">
@@ -4026,6 +4069,20 @@ function ChallengePanel({
                     </span>
                     <strong>{m.nickname}</strong>
                   </div>
+                  {completedCovers.length > 0 && (
+                    <div className="challenge-other-covers">
+                      {completedCovers.map((c) => (
+                        <img
+                          key={c.id}
+                          src={c.coverUrl}
+                          alt=""
+                          className="challenge-other-cover"
+                          title={c.title}
+                          loading="lazy"
+                        />
+                      ))}
+                    </div>
+                  )}
                   <div className="challenge-other-rows">
                     {groupChallengesByGoal(m.challenges || []).map((c) => {
                       const progress = getChallengeProgress(c.items || []);
@@ -4052,7 +4109,8 @@ function ChallengePanel({
                     })}
                   </div>
                 </div>
-              ))}
+                );
+              })}
           </div>
         </div>
       )}
@@ -4101,7 +4159,36 @@ function ChallengeCard({
 
   // 수치형 챌린지 완주 시 책표지(또는 메모리얼 이미지) 슬롯 노출
   const showCoverSlot = hasNumeric && complete;
-  const handleSetCover = () => {
+  const coverFileInputRef = useRef(null);
+
+  const handleCoverFile = async (file) => {
+    if (!onSetCover || !file) return;
+    try {
+      const dataUrl = await resizeImageFileToDataUrl(file);
+      onSetCover(dataUrl);
+    } catch (err) {
+      console.error("표지 업로드 실패", err);
+      alert("이미지 처리 실패 — 다른 파일로 다시 시도해주세요.");
+    }
+  };
+
+  const handleCoverFileChange = (e) => {
+    const file = e.target.files?.[0];
+    if (file) void handleCoverFile(file);
+    e.target.value = "";
+  };
+
+  const handleCoverDrop = (e) => {
+    e.preventDefault();
+    const file = e.dataTransfer?.files?.[0];
+    if (file) void handleCoverFile(file);
+  };
+
+  const handleCoverPickFile = () => {
+    coverFileInputRef.current?.click();
+  };
+
+  const handleCoverPickUrl = () => {
     if (!onSetCover) return;
     const current = challenge.coverUrl || "";
     const input = window.prompt(
@@ -4110,6 +4197,11 @@ function ChallengeCard({
     );
     if (input === null) return;
     onSetCover(input.trim());
+  };
+
+  const handleCoverRemove = () => {
+    if (!onSetCover) return;
+    onSetCover(null);
   };
 
   // 체크리스트가 막 100% 채워진 순간 자동으로 접기. 다시 빈 칸 생기면 펴짐 유지.
@@ -4151,25 +4243,56 @@ function ChallengeCard({
         </div>
       )}
       {showCoverSlot && (
-        challenge.coverUrl ? (
+        <div className="challenge-cover-wrap">
+          {challenge.coverUrl ? (
+            <div className="challenge-cover-frame">
+              <button
+                type="button"
+                className="challenge-cover"
+                onClick={handleCoverPickFile}
+                onDragOver={(e) => e.preventDefault()}
+                onDrop={handleCoverDrop}
+                aria-label="표지 변경 (클릭 또는 드롭)"
+              >
+                <img src={challenge.coverUrl} alt="" />
+              </button>
+              <button
+                type="button"
+                className="challenge-cover-remove"
+                onClick={handleCoverRemove}
+                aria-label="표지 삭제"
+              >
+                ×
+              </button>
+            </div>
+          ) : (
+            <button
+              type="button"
+              className="challenge-cover challenge-cover-empty"
+              onClick={handleCoverPickFile}
+              onDragOver={(e) => e.preventDefault()}
+              onDrop={handleCoverDrop}
+              aria-label="표지 추가 (클릭 또는 드롭)"
+            >
+              + 표지
+              <span className="challenge-cover-hint">드롭/클릭</span>
+            </button>
+          )}
+          <input
+            ref={coverFileInputRef}
+            type="file"
+            accept="image/*"
+            onChange={handleCoverFileChange}
+            style={{ display: "none" }}
+          />
           <button
             type="button"
-            className="challenge-cover"
-            onClick={handleSetCover}
-            aria-label="표지 변경"
+            className="challenge-cover-url"
+            onClick={handleCoverPickUrl}
           >
-            <img src={challenge.coverUrl} alt="" />
+            URL로
           </button>
-        ) : (
-          <button
-            type="button"
-            className="challenge-cover challenge-cover-empty"
-            onClick={handleSetCover}
-            aria-label="표지 추가"
-          >
-            + 표지
-          </button>
-        )
+        </div>
       )}
       <div className="challenge-card-head">
         <span className="challenge-card-title">
