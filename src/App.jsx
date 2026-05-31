@@ -728,6 +728,11 @@ const STALE_TODO_DAYS = 30;
 const MS_PER_DAY = 24 * 60 * 60 * 1000;
 const GHOST_GRACE_MS = MS_PER_DAY;
 
+// 공지: 내용/문구 바꿀 땐 NOTICE_VERSION을 v2, v3 등으로 올리면 모두에게 다시 한 번 popup이 떠요.
+const NOTICE_VERSION = "v1";
+const NOTICE_TEXT = "👑 완벽한 하루 5회 모으면 보상금을 드립니다";
+const NOTICE_SEEN_KEY = `todoRoom_notice_seen_${NOTICE_VERSION}`;
+
 // 1달(STALE_TODO_DAYS) 넘게 미완료인 항목은 제거. createdAt이 없는 레거시 항목은 now로 채워 새 시계 시작.
 function sweepStaleTodos(todos, now = Date.now()) {
   const cutoff = now - STALE_TODO_DAYS * MS_PER_DAY;
@@ -1002,6 +1007,7 @@ export default function App() {
     () => loadStoredTomorrow(tomorrowStorageKey).todos
   );
   const [tomorrowOpen, setTomorrowOpen] = useState(false);
+  const [noticeOpen, setNoticeOpen] = useState(false);
 
   // 이벤트 (D-day)
   const [events, setEvents] = useState(() => loadStoredEvents(eventsStorageKey));
@@ -2389,6 +2395,23 @@ export default function App() {
     syncMyTomorrow(next, currentDayKey);
   };
 
+  /* ── 공지 popup: NOTICE_VERSION별 첫 진입 시 한 번만 ── */
+  useEffect(() => {
+    if (!nicknameConfirmed) return;
+    if (typeof window === "undefined") return;
+    if (localStorage.getItem(NOTICE_SEEN_KEY) === "yes") return;
+    setNoticeOpen(true);
+  }, [nicknameConfirmed]);
+
+  const closeNotice = () => {
+    setNoticeOpen(false);
+    try {
+      localStorage.setItem(NOTICE_SEEN_KEY, "yes");
+    } catch {
+      // localStorage 실패해도 모달은 닫음
+    }
+  };
+
   /* ── 투두 3단계 순환: 진행 전 → 진행중 → 완료 ── */
   const cycleDaily = (id) => {
     const next = myDaily.map((t) => {
@@ -3272,6 +3295,18 @@ export default function App() {
           {/* 멤버 패널 */}
           <section className="member-panel">
             <h2>MEMBERS</h2>
+            <div
+              className="notice-banner"
+              role="button"
+              tabIndex={0}
+              onClick={() => setNoticeOpen(true)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") setNoticeOpen(true);
+              }}
+            >
+              <span className="notice-banner-icon">📣</span>
+              <span className="notice-banner-text">{NOTICE_TEXT}</span>
+            </div>
             {!membersReady && cachedVisibleOtherMembers.length === 0 ? (
               <div className="member-loading">
                 <div className="member-loading-card" />
@@ -3497,6 +3532,27 @@ export default function App() {
           weeklyData={historyWeeklyData}
           onSelect={loadHistory}
         />
+      )}
+
+      {noticeOpen && (
+        <div className="notice-overlay" onClick={closeNotice}>
+          <div
+            className="notice-modal"
+            role="dialog"
+            aria-modal="true"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="notice-modal-title">📣 공지</div>
+            <p className="notice-modal-body">{NOTICE_TEXT}</p>
+            <button
+              type="button"
+              className="notice-modal-close"
+              onClick={closeNotice}
+            >
+              확인
+            </button>
+          </div>
+        </div>
       )}
     </main >
   );

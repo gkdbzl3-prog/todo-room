@@ -267,6 +267,97 @@ body,
   order: 0;
 }
 
+/* ─── 공지 배너 ─── */
+.notice-banner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: -4px 0 12px;
+  padding: 8px 12px;
+  background: linear-gradient(135deg, rgba(252, 211, 77, 0.18), rgba(245, 158, 11, 0.12));
+  border: 1px solid rgba(252, 211, 77, 0.3);
+  border-radius: 12px;
+  font-size: 12px;
+  color: rgba(255, 248, 231, 0.92);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.notice-banner:hover {
+  background: linear-gradient(135deg, rgba(252, 211, 77, 0.28), rgba(245, 158, 11, 0.18));
+  border-color: rgba(252, 211, 77, 0.45);
+}
+
+.notice-banner-icon {
+  flex: 0 0 auto;
+  font-size: 13px;
+}
+
+.notice-banner-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+/* ─── 공지 모달 ─── */
+.notice-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  backdrop-filter: blur(4px);
+}
+
+.notice-modal {
+  width: 100%;
+  max-width: 360px;
+  background: linear-gradient(135deg, #2a1f3a, #1a1428);
+  border: 1px solid rgba(252, 211, 77, 0.35);
+  border-radius: 18px;
+  padding: 22px 22px 18px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.notice-modal-title {
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 800;
+  opacity: 0.6;
+  margin-bottom: 12px;
+}
+
+.notice-modal-body {
+  margin: 0 0 18px;
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.notice-modal-close {
+  width: 100%;
+  padding: 11px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #d89577, #d92828);
+  color: #fff;
+  font-weight: 800;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.notice-modal-close:active {
+  transform: scale(0.97);
+}
+
 .my-panel-todos {
   order: 1;
 }
