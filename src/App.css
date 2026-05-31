@@ -2748,8 +2748,8 @@ input:focus {
   position: absolute;
   left: 50%;
   top: 45%;
-  width: 7px;
-  height: 12px;
+  width: 5px;
+  height: 9px;
   border: solid #fff;
   border-width: 0 2.5px 2.5px 0;
   transform: translate(-50%, -50%) rotate(45deg);
