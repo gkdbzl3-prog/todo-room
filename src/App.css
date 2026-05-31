@@ -2690,6 +2690,7 @@ input:focus {
   position: relative;
   width: 72px;
   margin: 0 auto;
+  right: 40px;
 }
 
 .challenge-cover {
