@@ -2667,6 +2667,47 @@ input:focus {
   animation: challengeCelebrateBanner 0.4s ease both;
 }
 
+/* 챌린지 완주 표지 슬롯 */
+.challenge-cover {
+  display: block;
+  margin: 0 auto 10px;
+  width: 72px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.challenge-cover:hover {
+  transform: translateY(-1px);
+}
+
+.challenge-cover img {
+  width: 100%;
+  display: block;
+  border-radius: 4px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+.challenge-cover-empty {
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px dashed rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 11px;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.challenge-cover-empty:hover {
+  border-color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.75);
+}
+
 .challenge-card-count {
   flex: 0 0 auto;
   font-size: 12px;

@@ -283,6 +283,7 @@ function loadStoredChallenges(key) {
         ? c.items.map(normalizeChallengeItem)
         : [],
       createdAt: typeof c.createdAt === "number" ? c.createdAt : Date.now(),
+      coverUrl: typeof c.coverUrl === "string" && c.coverUrl.trim() ? c.coverUrl.trim() : null,
     }));
   } catch {
     return [];
@@ -2488,6 +2489,15 @@ export default function App() {
     syncMyChallenges(next);
   };
 
+  const setChallengeCover = (id, coverUrl) => {
+    const url = typeof coverUrl === "string" && coverUrl.trim() ? coverUrl.trim() : null;
+    const next = challenges.map((c) =>
+      c.id === id ? { ...c, coverUrl: url } : c
+    );
+    setChallenges(next);
+    syncMyChallenges(next);
+  };
+
   const addChallengeItem = (challengeId, name) => {
     const trimmed = (name || "").trim();
     if (!trimmed) return;
@@ -3506,6 +3516,7 @@ export default function App() {
           onAddItemsBulk={addChallengeItemsBulk}
           onToggleItem={toggleChallengeItem}
           onDeleteItem={deleteChallengeItem}
+          onSetCover={setChallengeCover}
         />
       ) : tab === "quiz" ? (
         quizConfig ? (
@@ -3811,6 +3822,7 @@ function ChallengePanel({
   onAddItemsBulk,
   onToggleItem,
   onDeleteItem,
+  onSetCover,
 }) {
   const [title, setTitle] = useState("");
   const [goalOptions, setGoalOptions] = useState(loadChallengeGoalOptions);
@@ -3976,6 +3988,7 @@ function ChallengePanel({
                       onAddItemsBulk={(names) => onAddItemsBulk(c.id, names)}
                       onToggleItem={(itemId) => onToggleItem(c.id, itemId)}
                       onDeleteItem={(itemId) => onDeleteItem(c.id, itemId)}
+                      onSetCover={(url) => onSetCover && onSetCover(c.id, url)}
                     />
                   ))}
                 </div>
@@ -3991,6 +4004,7 @@ function ChallengePanel({
                   onAddItemsBulk={(names) => onAddItemsBulk(c.id, names)}
                   onToggleItem={(itemId) => onToggleItem(c.id, itemId)}
                   onDeleteItem={(itemId) => onDeleteItem(c.id, itemId)}
+                  onSetCover={(url) => onSetCover && onSetCover(c.id, url)}
                 />
               ))
             )
@@ -4055,6 +4069,7 @@ function ChallengeCard({
   onAddItemsBulk,
   onToggleItem,
   onDeleteItem,
+  onSetCover,
 }) {
   const [text, setText] = useState("");
   const [bulkOpen, setBulkOpen] = useState(false);
@@ -4083,6 +4098,19 @@ function ChallengeCard({
     }
     prevCompleteRef.current = complete;
   }, [complete]);
+
+  // 수치형 챌린지 완주 시 책표지(또는 메모리얼 이미지) 슬롯 노출
+  const showCoverSlot = hasNumeric && complete;
+  const handleSetCover = () => {
+    if (!onSetCover) return;
+    const current = challenge.coverUrl || "";
+    const input = window.prompt(
+      "표지 이미지 URL (빈 칸으로 제출하면 삭제)",
+      current
+    );
+    if (input === null) return;
+    onSetCover(input.trim());
+  };
 
   // 체크리스트가 막 100% 채워진 순간 자동으로 접기. 다시 빈 칸 생기면 펴짐 유지.
   useEffect(() => {
@@ -4121,6 +4149,27 @@ function ChallengeCard({
         <div className="challenge-celebrate" aria-live="polite">
           🎉 목표 달성!
         </div>
+      )}
+      {showCoverSlot && (
+        challenge.coverUrl ? (
+          <button
+            type="button"
+            className="challenge-cover"
+            onClick={handleSetCover}
+            aria-label="표지 변경"
+          >
+            <img src={challenge.coverUrl} alt="" />
+          </button>
+        ) : (
+          <button
+            type="button"
+            className="challenge-cover challenge-cover-empty"
+            onClick={handleSetCover}
+            aria-label="표지 추가"
+          >
+            + 표지
+          </button>
+        )
       )}
       <div className="challenge-card-head">
         <span className="challenge-card-title">
