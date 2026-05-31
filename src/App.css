@@ -2723,6 +2723,7 @@ input:focus {
   margin-bottom: -1px;
   appearance: none;
   -webkit-appearance: none;
+  box-sizing: border-box;
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.06);
   border: 1.5px solid rgba(255, 255, 255, 0.25);
@@ -2745,13 +2746,13 @@ input:focus {
 .challenge-item-check:checked::after {
   content: "";
   position: absolute;
-  left: 50px;
-  top: 48%;
-  width: 4px;
-  height: 8px;
+  left: 50%;
+  top: 45%;
+  width: 3px;
+  height: 6px;
   border: solid #fff;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
+  border-width: 0 1.5px 1.5px 0;
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .challenge-item-row:last-child {
