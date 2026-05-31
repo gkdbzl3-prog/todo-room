@@ -2689,6 +2689,7 @@ input:focus {
 .challenge-cover-frame {
   position: relative;
   width: 72px;
+  margin: 0 auto;
 }
 
 .challenge-cover {
@@ -2710,7 +2711,6 @@ input:focus {
   display: block;
   border-radius: 4px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
-  margin-left: -30px;
 }
 
 .challenge-cover-empty {
