@@ -2672,6 +2672,7 @@ input:focus {
   border-bottom: 1px dashed rgba(255, 255, 255, 0.12);
   text-transform: uppercase;
 }
+
 .challenge-section-header:first-child {
   margin-top: 2px;
 }
@@ -2719,8 +2720,38 @@ input:focus {
   flex: 0 0 auto;
   width: 16px;
   height: 16px;
-  accent-color: #6bd0a6;
   margin-bottom: -1px;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  position: relative;
+  transition: background 0.15s,
+    border-color 0.15s;
+}
+
+.challenge-item-check:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.challenge-item-check:checked {
+  background: #6bd0a6;
+  border-color: #6bd0a6;
+}
+
+.challenge-item-check:checked::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0;
+  width: 4px;
+  height: 8px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }
 
 .challenge-item-row:last-child {
