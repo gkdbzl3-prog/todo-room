@@ -3107,8 +3107,8 @@ input:focus {
 }
 
 .challenge-other-cover {
-  width: 44px;
-  height: 60px;
+  width: 100px;
+  height: 150px;
   object-fit: cover;
   border-radius: 3px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
