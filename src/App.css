@@ -1305,6 +1305,16 @@ input:focus {
     max-height: 280px;
     overflow-y: auto;
   }
+
+  .notice-banner-text {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+  }
+
+  .notice-modal-body {
+    white-space: normal;
+  }
 }
 
 /* ─── 데스크탑: 한 화면에 최대한 ─── */
