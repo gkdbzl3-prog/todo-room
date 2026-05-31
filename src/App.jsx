@@ -2831,6 +2831,79 @@ export default function App() {
       console.log("완료. 새로고침하세요.");
       return deduped;
     };
+
+    // 파일 picker 열고 리사이즈된 data URL 반환. __setUserCover와 조합해서 씀.
+    window.__pickCoverFile = () =>
+      new Promise((resolve) => {
+        const input = document.createElement("input");
+        input.type = "file";
+        input.accept = "image/*";
+        input.onchange = async () => {
+          const file = input.files?.[0];
+          if (!file) return resolve(null);
+          try {
+            const dataUrl = await resizeImageFileToDataUrl(file);
+            resolve(dataUrl);
+          } catch (err) {
+            console.error("표지 처리 실패", err);
+            resolve(null);
+          }
+        };
+        input.click();
+      });
+
+    // 다른 유저 challenge에 표지 박기.
+    //   target: uid 또는 "@닉네임"
+    //   titleMatch: challenge.title의 부분 문자열 (예: "蜘蛛" → "{땡큐일본어}(蜘蛛の糸)" 매치)
+    //   coverUrlOrDataUrl: URL 문자열 또는 base64 data URL. null/빈문자열이면 표지 삭제.
+    // 사용 예:
+    //   await __setUserCover("@능솨", "蜘蛛", "https://...book.jpg")
+    //   const f = await __pickCoverFile(); await __setUserCover("@능솨", "蜘蛛", f)
+    window.__setUserCover = async (target, titleMatch, coverUrlOrDataUrl) => {
+      if (!target || !titleMatch) {
+        return console.error("사용법: __setUserCover('@닉네임', '제목조각', 'URL')");
+      }
+      let targetUid = target;
+      if (typeof target === "string" && target.startsWith("@")) {
+        const wanted = normalizeNickname(target.slice(1));
+        const snap = await getDocs(collection(db, challengesCol()));
+        const match = snap.docs.find(
+          (d) => normalizeNickname(d.data().nickname) === wanted
+        );
+        if (!match) {
+          console.error("닉네임 매치 없음:", target);
+          console.log("후보:");
+          snap.forEach((d) => console.log("  -", d.data().nickname, "/ uid:", d.id));
+          return;
+        }
+        targetUid = match.id;
+      }
+      const ref = doc(db, challengesCol(), targetUid);
+      const snap = await getDoc(ref);
+      if (!snap.exists()) return console.error("challenges doc 없음:", targetUid);
+      const data = snap.data();
+      const list = Array.isArray(data.challenges) ? data.challenges : [];
+      const idx = list.findIndex((c) =>
+        typeof c.title === "string" && c.title.includes(titleMatch)
+      );
+      if (idx === -1) {
+        console.error("챌린지 매치 없음:", titleMatch);
+        console.log("후보:", list.map((c) => c.title));
+        return;
+      }
+      const url =
+        typeof coverUrlOrDataUrl === "string" && coverUrlOrDataUrl.trim()
+          ? coverUrlOrDataUrl.trim()
+          : null;
+      const updated = [...list];
+      updated[idx] = { ...updated[idx], coverUrl: url };
+      await setDoc(
+        ref,
+        { ...data, challenges: updated, updatedAt: serverTimestamp() },
+        { merge: true }
+      );
+      console.log(`완료: ${updated[idx].title} → ${url ? "표지 설정됨" : "표지 제거됨"}`);
+    };
     // List every member document so you can spot ghosts even when nickname spelling differs.
     window.__listAll = async () => {
       console.log("내 uid:", uid, "/ 내 닉네임:", JSON.stringify(nickname));
