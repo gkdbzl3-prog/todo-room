@@ -1,4 +1,5 @@
 import { useEffect, useState, useCallback, useMemo, useRef, Fragment } from "react";
+import { createPortal } from "react-dom";
 import {
   db,
   collection,
@@ -3993,7 +3994,8 @@ function EventPopover({
 
   const sortedEvents = [...events].sort((a, b) => (a.date || "").localeCompare(b.date || ""));
 
-  return (
+  // body로 portal — 부모 .todo-panel의 backdrop-filter가 position:fixed를 가두는 문제 회피.
+  return createPortal(
     <div className="event-popover-overlay" onClick={onClose}>
       <div
         className="event-popover"
@@ -4070,7 +4072,8 @@ function EventPopover({
           </div>
         )}
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
 
