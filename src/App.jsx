@@ -1073,6 +1073,12 @@ export default function App() {
   const [myPerfectDates, setMyPerfectDates] = useState([]);
   const [dailyCarryReady, setDailyCarryReady] = useState(false);
   const perfectRecordedRef = useRef("");
+  // 페이지 로드만으로 자동 기록 트리거 안 되게, 사용자가 실제 daily/routine/weekly에
+  // 조작했을 때만 perfect day 기록 가능하도록 잠금.
+  const [perfectArmed, setPerfectArmed] = useState(false);
+  const armPerfect = useCallback(() => {
+    setPerfectArmed((v) => (v ? v : true));
+  }, []);
 
   // 알림
   const [toasts, setToasts] = useState([]);
@@ -1692,6 +1698,7 @@ export default function App() {
 
   // 3-state cycle (matches TodoItem): 진행 전 → 진행중 → 완료 → (다시 진행 전)
   const cycleRoutine = (id) => {
+    armPerfect();
     let completedItem = null;
     const next = {
       ...myRoutine,
@@ -2449,6 +2456,7 @@ export default function App() {
 
   /* ── 투두 3단계 순환: 진행 전 → 진행중 → 완료 ── */
   const cycleDaily = (id) => {
+    armPerfect();
     const next = myDaily.map((t) => {
       if (t.id !== id) return t;
       // 진행 전 → 진행중
@@ -2607,6 +2615,7 @@ export default function App() {
   };
 
   const cycleWeekly = (id) => {
+    armPerfect();
     const next = myWeekly.map((t) => {
       if (t.id !== id) return t;
       if (!t.started && !t.done) return { ...t, started: true };
@@ -2634,6 +2643,7 @@ export default function App() {
   // 주간 항목을 "오늘 카운트"로 토글 — 뱃지/카운트에 오늘 daily/routine과 함께 합산됨.
   // done 상태는 그대로 유지, countedAt 메타만 변경.
   const toggleWeeklyCountedToday = (id) => {
+    armPerfect();
     const next = myWeekly.map((t) => {
       if (t.id !== id) return t;
       const isCountedToday = t.countedAt === currentDayKey;
@@ -2692,6 +2702,9 @@ export default function App() {
     if (!nicknameConfirmed || !uid) return;
     if (isLocalDevHost()) return;
     if (!isPerfectToday) return;
+    // 페이지 로드만으로 자동 기록 안 됨. 사용자가 cycleDaily/Routine/toggleCounted 등을
+    // 한 번이라도 호출한 다음에야 perfectArmed=true가 되어 기록 가능.
+    if (!perfectArmed) return;
     const sessionKey = `${uid}:${currentDayKey}`;
     if (perfectRecordedRef.current === sessionKey) return;
     if (myPerfectDates.includes(currentDayKey)) {
@@ -2713,7 +2726,7 @@ export default function App() {
       console.error("Failed to record perfect day", error);
       perfectRecordedRef.current = ""; // 실패하면 재시도 가능하도록 리셋
     });
-  }, [isPerfectToday, nicknameConfirmed, uid, nickname, avatar, currentDayKey, myPerfectDates]);
+  }, [isPerfectToday, perfectArmed, nicknameConfirmed, uid, nickname, avatar, currentDayKey, myPerfectDates]);
 
   // 전체 멤버 (나 포함) 카드 데이터
   // Expose admin helpers on window so you can list/delete ghost users from the dev console.
