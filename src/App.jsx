@@ -2630,6 +2630,19 @@ export default function App() {
     syncMyWeekly(next);
   };
 
+  // 주간 항목을 "오늘 카운트"로 토글 — 뱃지/카운트에 오늘 daily/routine과 함께 합산됨.
+  // done 상태는 그대로 유지, countedAt 메타만 변경.
+  const toggleWeeklyCountedToday = (id) => {
+    const next = myWeekly.map((t) => {
+      if (t.id !== id) return t;
+      const isCountedToday = t.countedAt === currentDayKey;
+      return { ...t, countedAt: isCountedToday ? null : currentDayKey };
+    });
+    pendingWeeklyTodosRef.current = next;
+    setMyWeekly(next);
+    syncMyWeekly(next);
+  };
+
   /* ── 히스토리 조회 ── */
   async function loadHistory(date) {
     setSelectedDate(date);
@@ -2661,16 +2674,18 @@ export default function App() {
   const totalDoneCount = dailyDoneCount + weeklyDoneCount + routineDoneCount;
   const totalCount =
     myDaily.length + visibleWeekly.length + routineTotalCount;
-  // 뱃지는 "오늘 단위" 의미라 위클리 제외 — 데일리 + 루틴만
+  // "오늘 카운트"로 표시한 주간 항목만 뱃지 계산에 합류 — done이면 done에, 미완이면 total만.
+  const weeklyCountedToday = visibleWeekly.filter((t) => t.countedAt === currentDayKey);
+  const weeklyCountedDoneToday = weeklyCountedToday.filter((t) => t.done).length;
   const badge = getBadge(
-    dailyDoneCount + routineDoneCount,
-    myDaily.length + routineTotalCount
+    dailyDoneCount + routineDoneCount + weeklyCountedDoneToday,
+    myDaily.length + routineTotalCount + weeklyCountedToday.length
   );
   const closestEvent = pickClosestEvent(events);
 
   /* ── 완벽한 하루 달성 시 perfectDays/{uid}에 오늘 날짜 기록 (arrayUnion으로 idempotent) ── */
-  const myBadgeDone = dailyDoneCount + routineDoneCount;
-  const myBadgeTotal = myDaily.length + routineTotalCount;
+  const myBadgeDone = dailyDoneCount + routineDoneCount + weeklyCountedDoneToday;
+  const myBadgeTotal = myDaily.length + routineTotalCount + weeklyCountedToday.length;
   const isPerfectToday = myBadgeTotal >= 3 && myBadgeDone >= myBadgeTotal;
   useEffect(() => {
     if (!nicknameConfirmed || !uid) return;
@@ -3524,7 +3539,7 @@ export default function App() {
             ) : (
               <div className="member-list">
                 {visibleMembers.map((m) => (
-                  <MemberCard key={m.id} member={m} />
+                  <MemberCard key={m.id} member={m} currentDayKey={currentDayKey} />
                 ))}
               </div>
             )}
@@ -3684,6 +3699,8 @@ export default function App() {
                       todo={todo}
                       onCycle={cycleWeekly}
                       onDelete={deleteWeekly}
+                      countedToday={todo.countedAt === currentDayKey}
+                      onToggleCounted={toggleWeeklyCountedToday}
                     />
                   ))}
                 </div>
@@ -4607,13 +4624,13 @@ function ChallengeCard({
 }
 
 /* ─────────────── TodoItem ─────────────── */
-function TodoItem({ todo, onCycle, onDelete }) {
+function TodoItem({ todo, onCycle, onDelete, countedToday, onToggleCounted }) {
   // 상태: 진행 전 → 진행중 → 완료
   const status = todo.done ? "done" : todo.started ? "doing" : "ready";
   const statusLabel = { ready: "진행 전", doing: "진행중", done: "완료" };
 
   return (
-    <div className={`todo-item ${status}`}>
+    <div className={`todo-item ${status}${countedToday ? " counted-today" : ""}`}>
       <button
         className={`todo-cycle-btn ${status}`}
         onClick={() => onCycle(todo.id)}
@@ -4625,6 +4642,18 @@ function TodoItem({ todo, onCycle, onDelete }) {
         {statusLabel[status]}
       </span>
 
+      {onToggleCounted && (
+        <button
+          type="button"
+          className={`todo-count-btn${countedToday ? " active" : ""}`}
+          onClick={() => onToggleCounted(todo.id)}
+          aria-label={countedToday ? "오늘 카운트 해제" : "오늘 카운트로 표시"}
+          title={countedToday ? "오늘 카운트 해제" : "오늘 뱃지 카운트에 포함"}
+        >
+          📌
+        </button>
+      )}
+
       <button className="todo-delete" onClick={() => onDelete(todo.id)}>
         ×
       </button>
@@ -4633,11 +4662,15 @@ function TodoItem({ todo, onCycle, onDelete }) {
 }
 
 /* ─────────────── MemberCard ─────────────── */
-function MemberCard({ member }) {
+function MemberCard({ member, currentDayKey }) {
   const visibleWeeklyTodos = member.weeklyTodos || [];
   const visibleTomorrowTodos = member.tomorrowTodos || [];
   const routineItems = member.routineItems || [];
   const dailyDone = (member.todos || []).filter((t) => t.done).length;
+  const weeklyCountedToday = visibleWeeklyTodos.filter(
+    (t) => t.countedAt === currentDayKey
+  );
+  const weeklyCountedDoneToday = weeklyCountedToday.filter((t) => t.done).length;
 
   // Per-section counts for routine summary
   const routineCounts = ROUTINE_SECTIONS.reduce((acc, s) => {
@@ -4653,12 +4686,13 @@ function MemberCard({ member }) {
   const routineDoneSum = routineItems.filter((it) => it.done).length;
   const routineAllDone = routineTotal > 0 && routineDoneSum === routineTotal;
 
-  const totalDone = dailyDone + routineDoneSum;
-  const totalCount = (member.todos || []).length + routineTotal;
-  // 뱃지는 "오늘 단위" 의미라 위클리 제외 — 데일리 + 루틴만
+  const totalDone = dailyDone + routineDoneSum + weeklyCountedDoneToday;
+  const totalCount =
+    (member.todos || []).length + routineTotal + weeklyCountedToday.length;
+  // 뱃지 = 오늘 daily + 루틴 + "오늘 카운트" 표시된 주간만
   const badge = getBadge(
-    dailyDone + routineDoneSum,
-    (member.todos || []).length + routineTotal
+    dailyDone + routineDoneSum + weeklyCountedDoneToday,
+    (member.todos || []).length + routineTotal + weeklyCountedToday.length
   );
   const [routineExpanded, setRoutineExpanded] = useState(false);
   const [tomorrowExpanded, setTomorrowExpanded] = useState(false);
