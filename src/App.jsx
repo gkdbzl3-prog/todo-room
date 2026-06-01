@@ -2947,6 +2947,53 @@ export default function App() {
       );
     };
 
+    // 내 perfectDays 목록 보기
+    window.__myPerfectDays = async () => {
+      const ref = doc(db, perfectDaysCol(), uid);
+      const snap = await getDoc(ref);
+      if (!snap.exists()) {
+        console.log("perfectDays doc 없음 — 아직 달성 기록 없음");
+        return [];
+      }
+      const data = snap.data();
+      const dates = Array.isArray(data.dates) ? data.dates : [];
+      console.log(`내 완벽한 하루 (${dates.length}회):`, dates);
+      return dates;
+    };
+
+    // perfectDays에서 특정 날짜 제거 (잘못 박힌 거 청소용).
+    // target: "me" | "@닉네임" | uid
+    // dateKey: "YYYY-MM-DD" 또는 "today" → 자동 치환
+    window.__removePerfectDay = async (target, dateKey) => {
+      if (!target || !dateKey) {
+        return console.error("사용법: __removePerfectDay('me', '2026-05-31')");
+      }
+      let targetUid;
+      if (target === "me") {
+        targetUid = uid;
+      } else {
+        const found = await window.__findUid(target);
+        if (!found) return;
+        targetUid = found.uid;
+      }
+      const realDate = dateKey === "today" ? currentDayKey : dateKey;
+      const ref = doc(db, perfectDaysCol(), targetUid);
+      const snap = await getDoc(ref);
+      if (!snap.exists()) return console.error("perfectDays doc 없음:", targetUid);
+      const data = snap.data();
+      const before = Array.isArray(data.dates) ? data.dates : [];
+      const after = before.filter((d) => d !== realDate);
+      if (after.length === before.length) {
+        return console.log(`${realDate} 없음. 현재 dates:`, before);
+      }
+      await setDoc(
+        ref,
+        { ...data, dates: after, updatedAt: serverTimestamp() },
+        { merge: true }
+      );
+      console.log(`완료: ${realDate} 제거 (${before.length} → ${after.length})`);
+    };
+
     // 파일 picker 열고 리사이즈된 data URL 반환. __setUserCover/__createUserChallenge와 조합해서 씀.
     window.__pickCoverFile = () =>
       new Promise((resolve) => {
