@@ -504,6 +504,20 @@ function choosePreferredRecord(a, b, todoKey = "todos") {
   return getUpdatedAtValue(b.updatedAt) > getUpdatedAtValue(a.updatedAt) ? b : a;
 }
 
+// 같은 id(=같은 사용자)의 주간 doc이 현재 weekKey와 legacy(UTC) weekKey 두 컬렉션에
+// 나뉘어 있을 때 둘을 합치는 기준. 항목 수가 아니라 최신성(updatedAt)을 우선한다.
+// choosePreferredRecord처럼 "항목 많은 쪽 우선"으로 합치면, 사용자가 완료/삭제로
+// 항목이 줄어든 최신 doc보다 항목이 더 많은 오래된 doc이 이겨서 done 체크가
+// 되돌아가는 버그가 생긴다. 타임스탬프가 같거나 없을 때만 항목 수로 폴백.
+function chooseFresherRecord(a, b) {
+  if (!a) return b;
+  if (!b) return a;
+  const av = getUpdatedAtValue(a.updatedAt);
+  const bv = getUpdatedAtValue(b.updatedAt);
+  if (av !== bv) return bv > av ? b : a;
+  return choosePreferredRecord(a, b);
+}
+
 function mergeRecordsByNickname(records, todoKey = "todos") {
   const merged = new Map();
 
@@ -1015,6 +1029,8 @@ export default function App() {
 
   const [uid, setUid] = useState(() => getUid());
   const [currentDayKey, setCurrentDayKey] = useState(() => todayKey());
+  // 인터벌 콜백(빈 deps)에서 최신 day key를 비교하기 위한 ref. setCurrentDayKey와 동기 유지.
+  const dayKeyRef = useRef(currentDayKey);
   const [currentWeekKey, setCurrentWeekKey] = useState(() => weekKey());
   const [nickname, setNickname] = useState(getSavedNickname);
   const [avatar, setAvatar] = useState(getSavedAvatar);
@@ -1115,7 +1131,16 @@ export default function App() {
       const nextDayKey = todayKey();
       const nextWeekKey = weekKey();
 
-      setCurrentDayKey((prev) => (prev === nextDayKey ? prev : nextDayKey));
+      if (nextDayKey !== dayKeyRef.current) {
+        dayKeyRef.current = nextDayKey;
+        setCurrentDayKey(nextDayKey);
+        // 날짜 전환 순간엔 직전 날의 완료 상태가 아직 메모리에 남아 있어
+        // (daily/routine 재로드 전), perfect day 기록 effect가 새 날짜를 잘못
+        // 도장 찍을 수 있다. setCurrentDayKey와 같은 배치에서 무장 해제해
+        // 그 commit에서 perfectArmed=false가 되도록 한다. 새 날엔 사용자가
+        // 실제 조작하면 다시 무장된다.
+        setPerfectArmed(false);
+      }
       setCurrentWeekKey((prev) => (prev === nextWeekKey ? prev : nextWeekKey));
     }, 10000);
 
@@ -2256,7 +2281,7 @@ export default function App() {
 
           mergedWeeklyRecords.set(
             record.id,
-            choosePreferredRecord(existing, record)
+            chooseFresherRecord(existing, record)
           );
         });
       });
