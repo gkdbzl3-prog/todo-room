@@ -915,6 +915,12 @@ const ROUTINE_SECTIONS = [
 ];
 
 const routineStorageKeyFor = (uid) => (uid ? `todoRoom:routine:${uid}` : "");
+// 루틴 문서는 닉네임 기준으로 저장해 같은 닉네임이면 기기가 달라도 같은 문서를 공유한다.
+// (다른 멤버 표시는 attachRoutines가 이미 닉네임 필드로 매칭하므로 doc id 형식은 자유롭다.)
+const routineDocIdFor = (nickname) => {
+  const n = normalizeNickname(nickname);
+  return n ? `nick_${encodeURIComponent(n)}` : "";
+};
 function loadStoredRoutine(key) {
   if (!key) return { items: [], doneDate: "" };
   try {
@@ -1040,6 +1046,8 @@ export default function App() {
   const weeklyStorageKey = `todoRoom_weekly_${uid}_${currentWeekKey}`;
   const tomorrowStorageKey = `todoRoom_tomorrow_${uid}`;
   const routineStorageKey = routineStorageKeyFor(uid);
+  // Firestore 루틴 문서 id (닉네임 기준 — 같은 닉네임이면 기기 간 동기화됨)
+  const routineDocId = routineDocIdFor(nickname);
   const eventsStorageKey = `todoRoom_events_${uid}`;
   const challengesStorageKey = `todoRoom_challenges_${uid}`;
   const [profileRecoveryChecked, setProfileRecoveryChecked] = useState(
@@ -1538,7 +1546,7 @@ export default function App() {
   /* ── Firestore 루틴 동기화 ── */
   const syncMyRoutine = useCallback(
     (next) => {
-      if (!nicknameConfirmed || !uid) return;
+      if (!nicknameConfirmed || !routineDocId) return;
       const payload = {
         nickname,
         avatar,
@@ -1546,11 +1554,11 @@ export default function App() {
         doneDate: next.doneDate || currentDayKey,
         updatedAt: serverTimestamp(),
       };
-      void writeSetDoc(doc(db, routineCol(), uid), payload).catch((error) => {
+      void writeSetDoc(doc(db, routineCol(), routineDocId), payload).catch((error) => {
         console.error("Failed to sync routine", error);
       });
     },
-    [uid, nickname, avatar, nicknameConfirmed, currentDayKey]
+    [routineDocId, nickname, avatar, nicknameConfirmed, currentDayKey]
   );
 
   // Load own routine from localStorage on uid change, with daily rollover applied
@@ -1594,12 +1602,16 @@ export default function App() {
           doneDate: data.doneDate || "",
         });
       });
-      setRoutineMembers(all.filter((m) => m.id !== uid));
+      // 내 문서는 닉네임 기준으로 제외 (doc id가 더 이상 uid가 아님)
+      const myKey = normalizeNickname(nickname);
+      setRoutineMembers(
+        all.filter((m) => normalizeNickname(m.nickname) !== myKey)
+      );
     }, (error) => {
       console.error("Failed to subscribe routine members", error);
     });
     return () => unsub();
-  }, [uid, nicknameConfirmed]);
+  }, [uid, nickname, nicknameConfirmed]);
 
   // 다른 멤버들의 tomorrow 투두 구독
   useEffect(() => {
@@ -1677,11 +1689,17 @@ export default function App() {
   }, [uid, nicknameConfirmed, tomorrowStorageKey]);
 
   // Subscribe to own routine doc in Firestore (so multi-device stays in sync)
+  // 닉네임 기준 문서를 구독 — 같은 닉네임이면 PC/모바일이 같은 문서를 본다.
   useEffect(() => {
-    if (!nicknameConfirmed || !uid) return;
+    if (!nicknameConfirmed || !routineDocId) return;
     if (isLocalDevHost()) return;
-    const unsub = onSnapshot(doc(db, routineCol(), uid), (snap) => {
-      if (!snap.exists()) return;
+    const unsub = onSnapshot(doc(db, routineCol(), routineDocId), (snap) => {
+      if (!snap.exists()) {
+        // 닉네임 문서가 아직 없으면(최초/uid→닉네임 마이그레이션) 로컬 루틴을 올려 문서를 만든다.
+        const localItems = myRoutineRef.current?.items || [];
+        if (localItems.length > 0) syncMyRoutine(myRoutineRef.current);
+        return;
+      }
       const data = snap.data() || {};
       const items = Array.isArray(data.items) ? data.items : [];
       const { items: rolled, changed } = rolloverRoutineDone(items, data.doneDate || "", currentDayKey);
@@ -1693,7 +1711,7 @@ export default function App() {
       if (changed && rolled.length > 0) syncMyRoutine(next);
     });
     return () => unsub();
-  }, [uid, nicknameConfirmed, currentDayKey, routineStorageKey, syncMyRoutine]);
+  }, [routineDocId, nicknameConfirmed, currentDayKey, routineStorageKey, syncMyRoutine]);
 
   useEffect(() => {
     if (!routineStorageKey) return;
@@ -2397,9 +2415,13 @@ export default function App() {
     if (!profileChanged) return;
 
     profileRef.current = { nickname, avatar };
-    syncMyDaily(myDaily);
-    syncMyWeekly(myWeekly);
-    syncMyEvents(events);
+    // 로컬 상태가 아직 로드되지 않은(빈 배열) 시점에 프로필이 바뀌면
+    // 빈 값으로 원격 데이터를 덮어써 투두/이벤트가 통째로 날아갈 수 있다.
+    // 실제로 사용자가 비운 경우는 add/update/delete 핸들러가 이미 원격에 반영하므로,
+    // 여기서는 비어 있지 않을 때만 동기화한다.
+    if (myDaily.length > 0) syncMyDaily(myDaily);
+    if (myWeekly.length > 0) syncMyWeekly(myWeekly);
+    if (events.length > 0) syncMyEvents(events);
   }, [
     nickname,
     avatar,
@@ -2777,6 +2799,8 @@ export default function App() {
             snap.forEach((d) => {
               const data = d.data() || {};
               if (d.id === uid) return;
+              // 닉네임 기준 루틴 문서는 내 정상 문서이므로 ghost로 보지 않음
+              if (d.id === routineDocId) return;
               if (normalizeNickname(data.nickname) !== myKey) return;
               const entry = map.get(d.id) || { id: d.id, nickname: data.nickname, in: [] };
               entry.in.push(tag);
@@ -3258,7 +3282,7 @@ export default function App() {
       if (!confirm(`${targetUid} 루틴 다 지울까요?`)) return;
       await window.__setMemberRoutine(targetUid, []);
     };
-  }, [uid, nickname, currentDayKey, currentWeekKey]);
+  }, [uid, nickname, routineDocId, currentDayKey, currentWeekKey]);
 
   // 앱 로드시 자동 백업 — 마지막 백업이 24시간보다 오래되면 새 스냅샷 저장
   useEffect(() => {
