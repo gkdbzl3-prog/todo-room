@@ -4439,7 +4439,7 @@ function ChallengeCard({
     checklistComplete ||
     (hasNumeric && progress.numericMax >= progress.numericGoal && progress.numericGoal > 0);
   const prevCompleteRef = useRef(complete);
-  const prevChecklistCompleteRef = useRef(checklistComplete);
+  const prevCompleteForCollapseRef = useRef(complete);
 
   useEffect(() => {
     if (!prevCompleteRef.current && complete) {
@@ -4498,15 +4498,16 @@ function ChallengeCard({
     onSetCover(null);
   };
 
-  // 체크리스트가 막 100% 채워진 순간 자동으로 접기. 다시 빈 칸 생기면 펴짐 유지.
+  // 챌린지가 막 올 클리어된 순간 자동으로 접기. 다시 미완료 되면 펴짐.
+  // (체크리스트형뿐 아니라 수치형 완주 등 모든 complete에 적용 — 스크롤 절약)
   useEffect(() => {
-    if (!prevChecklistCompleteRef.current && checklistComplete) {
+    if (!prevCompleteForCollapseRef.current && complete) {
       setListCollapsed(true);
-    } else if (prevChecklistCompleteRef.current && !checklistComplete) {
+    } else if (prevCompleteForCollapseRef.current && !complete) {
       setListCollapsed(false);
     }
-    prevChecklistCompleteRef.current = checklistComplete;
-  }, [checklistComplete]);
+    prevCompleteForCollapseRef.current = complete;
+  }, [complete]);
 
   const submit = () => {
     if (!text.trim()) return;
@@ -4667,7 +4668,7 @@ function ChallengeCard({
         </div>
       )}
 
-      {checklistComplete && (
+      {complete && totalItemCount > 0 && (
         <button
           type="button"
           className="challenge-list-toggle"
@@ -4677,11 +4678,11 @@ function ChallengeCard({
           <span className="challenge-list-chevron">{listCollapsed ? "▾" : "▴"}</span>
           DONE
           <span className="challenge-list-dot">·</span>
-          <span className="challenge-list-num">{progress.total}</span>
+          <span className="challenge-list-num">{totalItemCount}</span>
         </button>
       )}
 
-      {totalItemCount > 0 && !(checklistComplete && listCollapsed) && (
+      {totalItemCount > 0 && !(complete && listCollapsed) && (
         <ul className="challenge-item-list">
           {sectionGroups.map((group) => (
             <Fragment key={group.section || "_default"}>
