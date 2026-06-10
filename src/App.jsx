@@ -4367,53 +4367,53 @@ function ChallengePanel({
                   );
                 });
                 return (
-                <div key={m.id} className="challenge-other-member">
-                  <div className="challenge-other-member-head">
-                    <span className="member-avatar small">
-                      {m.avatar || m.nickname?.charAt(0)?.toUpperCase() || "?"}
-                    </span>
-                    <strong>{m.nickname}</strong>
-                  </div>
-                  {completedCovers.length > 0 && (
-                    <div className="challenge-other-covers">
-                      {completedCovers.map((c) => (
-                        <img
-                          key={c.id}
-                          src={c.coverUrl}
-                          alt=""
-                          className="challenge-other-cover"
-                          title={c.title}
-                          loading="lazy"
-                        />
-                      ))}
+                  <div key={m.id} className="challenge-other-member">
+                    <div className="challenge-other-member-head">
+                      <span className="member-avatar small">
+                        {m.avatar || m.nickname?.charAt(0)?.toUpperCase() || "?"}
+                      </span>
+                      <strong>{m.nickname}</strong>
                     </div>
-                  )}
-                  <div className="challenge-other-rows">
-                    {groupChallengesByGoal(m.challenges || []).map((c) => {
-                      const progress = getChallengeProgress(c.items || []);
-                      return (
-                        <div key={c.id} className="challenge-other-row">
-                          <span className="challenge-other-title">
-                            <RichChallengeText text={c.title} />
-                          </span>
-                          <span className="challenge-other-count">
-                            {progress.hasChecklist
-                              ? `${progress.done}/${progress.total}`
-                              : `${progress.done}개`}
-                          </span>
-                          {progress.hasChecklist && (
-                            <div className="challenge-other-bar">
-                              <div
-                                className="challenge-other-bar-fill"
-                                style={{ width: `${progress.pct}%` }}
-                              />
-                            </div>
-                          )}
-                        </div>
-                      );
-                    })}
+                    {completedCovers.length > 0 && (
+                      <div className="challenge-other-covers">
+                        {completedCovers.map((c) => (
+                          <img
+                            key={c.id}
+                            src={c.coverUrl}
+                            alt=""
+                            className="challenge-other-cover"
+                            title={c.title}
+                            loading="lazy"
+                          />
+                        ))}
+                      </div>
+                    )}
+                    <div className="challenge-other-rows">
+                      {groupChallengesByGoal(m.challenges || []).map((c) => {
+                        const progress = getChallengeProgress(c.items || []);
+                        return (
+                          <div key={c.id} className="challenge-other-row">
+                            <span className="challenge-other-title">
+                              <RichChallengeText text={c.title} />
+                            </span>
+                            <span className="challenge-other-count">
+                              {progress.hasChecklist
+                                ? `${progress.done}/${progress.total}`
+                                : `${progress.done}개`}
+                            </span>
+                            {progress.hasChecklist && (
+                              <div className="challenge-other-bar">
+                                <div
+                                  className="challenge-other-bar-fill"
+                                  style={{ width: `${progress.pct}%` }}
+                                />
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
                   </div>
-                </div>
                 );
               })}
           </div>
@@ -4790,7 +4790,7 @@ function TodoItem({ todo, onCycle, onDelete, countedToday, onToggleCounted, onTo
               : "오늘만 — 내일로 이월 안 함으로 표시"
           }
         >
-          오늘만
+          📅
         </button>
       )}
 
