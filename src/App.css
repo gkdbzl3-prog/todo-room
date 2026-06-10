@@ -594,6 +594,43 @@ input:focus {
   margin-left: -4px;
 }
 
+.todo-oneoff-btn {
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: transparent;
+  color: #94a3b8;
+  font-size: 10px;
+  cursor: pointer;
+  padding: 1px 6px;
+  border-radius: 999px;
+  flex: 0 0 auto;
+  line-height: 1.4;
+  white-space: nowrap;
+  opacity: 0.5;
+  transition: opacity 0.15s, color 0.15s, border-color 0.15s, background 0.15s, transform 0.1s;
+}
+
+.todo-oneoff-btn:hover {
+  opacity: 0.85;
+}
+
+.todo-oneoff-btn.active {
+  opacity: 1;
+  color: #0ea5e9;
+  border-color: rgba(14, 165, 233, 0.6);
+  background: rgba(14, 165, 233, 0.1);
+}
+
+.todo-oneoff-btn:active {
+  transform: scale(0.92);
+}
+
+.todo-item.one-off {
+  background: linear-gradient(90deg, rgba(14, 165, 233, 0.07), transparent);
+  border-radius: 6px;
+  padding-left: 4px;
+  margin-left: -4px;
+}
+
 .todo-delete:active {
   color: #f87171;
 }

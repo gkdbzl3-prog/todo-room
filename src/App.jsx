@@ -755,7 +755,8 @@ function chooseSelfRecord(records, uid, nickname, todoKey = "todos") {
 
 function resetTodosForNewDay(todos) {
   return (todos || [])
-    .filter((todo) => !todo.done)
+    // 완료된 항목, 그리고 "오늘만"(oneOff)으로 표시한 항목은 다음 날로 이월하지 않음
+    .filter((todo) => !todo.done && !todo.oneOff)
     .map((todo) => ({
       ...todo,
       done: false,
@@ -2529,6 +2530,15 @@ export default function App() {
     syncMyDaily(next);
   };
 
+  // "오늘만" 토글: 켜두면 미완료여도 다음 날로 이월되지 않음
+  const toggleDailyOneOff = (id) => {
+    const next = myDaily.map((t) =>
+      t.id === id ? { ...t, oneOff: !t.oneOff } : t
+    );
+    setMyDaily(next);
+    syncMyDaily(next);
+  };
+
   /* ── 이벤트(D-day) ── */
   const addEvent = ({ name, date, isPublic }) => {
     const trimmed = (name || "").trim();
@@ -3705,6 +3715,7 @@ export default function App() {
                       todo={todo}
                       onCycle={cycleDaily}
                       onDelete={deleteDaily}
+                      onToggleOneOff={toggleDailyOneOff}
                     />
                   ))}
                 </div>
@@ -4737,13 +4748,13 @@ function ChallengeCard({
 }
 
 /* ─────────────── TodoItem ─────────────── */
-function TodoItem({ todo, onCycle, onDelete, countedToday, onToggleCounted }) {
+function TodoItem({ todo, onCycle, onDelete, countedToday, onToggleCounted, onToggleOneOff }) {
   // 상태: 진행 전 → 진행중 → 완료
   const status = todo.done ? "done" : todo.started ? "doing" : "ready";
   const statusLabel = { ready: "진행 전", doing: "진행중", done: "완료" };
 
   return (
-    <div className={`todo-item ${status}${countedToday ? " counted-today" : ""}`}>
+    <div className={`todo-item ${status}${countedToday ? " counted-today" : ""}${todo.oneOff ? " one-off" : ""}`}>
       <button
         className={`todo-cycle-btn ${status}`}
         onClick={() => onCycle(todo.id)}
@@ -4764,6 +4775,22 @@ function TodoItem({ todo, onCycle, onDelete, countedToday, onToggleCounted }) {
           title={countedToday ? "오늘 카운트 해제" : "오늘 뱃지 카운트에 포함"}
         >
           📌
+        </button>
+      )}
+
+      {onToggleOneOff && (
+        <button
+          type="button"
+          className={`todo-oneoff-btn${todo.oneOff ? " active" : ""}`}
+          onClick={() => onToggleOneOff(todo.id)}
+          aria-label={todo.oneOff ? "이월 켜기" : "오늘만 (이월 안 함)"}
+          title={
+            todo.oneOff
+              ? "오늘만 — 내일로 이월 안 됨 (클릭하면 이월)"
+              : "오늘만 — 내일로 이월 안 함으로 표시"
+          }
+        >
+          오늘만
         </button>
       )}
 
