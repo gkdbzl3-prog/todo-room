@@ -4438,7 +4438,15 @@ function ChallengeCard({
   const [bulkOpen, setBulkOpen] = useState(false);
   const [bulkText, setBulkText] = useState("");
   const [celebrating, setCelebrating] = useState(false);
-  const [listCollapsed, setListCollapsed] = useState(false);
+  // 접힘 상태는 챌린지별로 localStorage에 저장 — 새로고침해도 접은 채 유지
+  const collapseKey = `todoRoom:chCollapsed:${challenge.id}`;
+  const [listCollapsed, setListCollapsed] = useState(() => {
+    try {
+      return localStorage.getItem(collapseKey) === "1";
+    } catch {
+      return false;
+    }
+  });
   const items = (challenge.items || []).map(normalizeChallengeItem);
   const progress = getChallengeProgress(items, challenge.goal);
   const hasChecklist = progress.hasChecklist;
@@ -4519,6 +4527,15 @@ function ChallengeCard({
     }
     prevCompleteForCollapseRef.current = complete;
   }, [complete]);
+
+  // 접힘 상태가 바뀌면(수동 토글/자동 접기) localStorage에 저장
+  useEffect(() => {
+    try {
+      localStorage.setItem(collapseKey, listCollapsed ? "1" : "0");
+    } catch {
+      /* localStorage 불가 환경 무시 */
+    }
+  }, [collapseKey, listCollapsed]);
 
   const submit = () => {
     if (!text.trim()) return;
@@ -4786,7 +4803,7 @@ function TodoItem({ todo, onCycle, onDelete, countedToday, onToggleCounted, onTo
           aria-label={todo.oneOff ? "이월 켜기" : "오늘만 (이월 안 함)"}
           title={
             todo.oneOff
-              ? "오늘만 — 내일로 이월 안 됨 (클릭하면 이월)"
+              ? "daily — 내일로 이월 안 됨 (클릭하면 이월)"
               : "오늘만 — 내일로 이월 안 함으로 표시"
           }
         >
