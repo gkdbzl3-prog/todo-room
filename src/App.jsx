@@ -1583,10 +1583,8 @@ export default function App() {
         (myRoutineRef.current.items || []).length > 0);
     if (changed) {
       saveStoredRoutine(routineStorageKey, next);
-      // Don't sync an empty payload to Firestore — would wipe items written from another device.
-      if (next.items.length > 0) syncMyRoutine(next);
     }
-  }, [routineStorageKey, currentDayKey, syncMyRoutine]);
+  }, [routineStorageKey, currentDayKey]);
 
   // Subscribe to ALL routine docs (other members) so we can show their summaries
   useEffect(() => {
@@ -4020,7 +4018,7 @@ function RoutineCard({
         <div className="empty">아직 등록한 루틴이 없어요.</div>
       ) : (
         ROUTINE_SECTIONS.map((s) => {
-          const sectionItems = items.filter((i) => i.section === s.id);
+          const sectionItems = items.filter((i) => (i.section || "anytime") === s.id);
           if (sectionItems.length === 0) return null;
           return (
             <div key={s.id} className="routine-section">
