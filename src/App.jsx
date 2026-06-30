@@ -5263,6 +5263,7 @@ function TimeTracker({ tracker, onUpdate, readOnly = false }) {
       onMouseLeave={commitDrag}
       onTouchMove={handleTouchMove}
       onTouchEnd={commitDrag}
+      onTouchCancel={commitDrag}
     >
       <div className="tracker-header">
         <button
