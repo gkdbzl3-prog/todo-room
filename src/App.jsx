@@ -778,7 +778,6 @@ const STALE_TODO_DAYS = 30;
 const MS_PER_DAY = 24 * 60 * 60 * 1000;
 const GHOST_GRACE_MS = MS_PER_DAY;
 
-// 공지: 내용/문구 바꿀 땐 NOTICE_VERSION을 v2, v3 등으로 올리면 모두에게 다시 한 번 popup이 떠요.
 const NOTICE_VERSION = "v1";
 const NOTICE_TEXT = "{👑 완벽한 하루} 뱃지 5개 모으면 보상금을 드립니다💛(TODAY+ROUTINE)";
 const NOTICE_SEEN_KEY = `todoRoom_notice_seen_${NOTICE_VERSION}`;
@@ -1105,10 +1104,8 @@ export default function App() {
     setPerfectArmed((v) => (v ? v : true));
   }, []);
 
-  // 알림
   const [toasts, setToasts] = useState([]);
 
-  // 탭
   const [tab, setTab] = useState("today"); // today | history
   const [historyDates, setHistoryDates] = useState([]);
   const [historyData, setHistoryData] = useState(null);
@@ -2348,7 +2345,6 @@ export default function App() {
       )
     );
 
-    // 알림 리스너 (최근 3개)
     const unsubNoti = onSnapshot(
       query(
         collection(db, notiCol(date)),
@@ -4436,15 +4432,8 @@ function ChallengeCard({
   const [bulkOpen, setBulkOpen] = useState(false);
   const [bulkText, setBulkText] = useState("");
   const [celebrating, setCelebrating] = useState(false);
-  // 접힘 상태는 챌린지별로 localStorage에 저장 — 새로고침해도 접은 채 유지
   const collapseKey = `todoRoom:chCollapsed:${challenge.id}`;
-  const [listCollapsed, setListCollapsed] = useState(() => {
-    try {
-      return localStorage.getItem(collapseKey) === "1";
-    } catch {
-      return false;
-    }
-  });
+  const [listCollapsed, setListCollapsed] = useState(true);
   const items = (challenge.items || []).map(normalizeChallengeItem);
   const progress = getChallengeProgress(items, challenge.goal);
   const hasChecklist = progress.hasChecklist;
@@ -4515,25 +4504,13 @@ function ChallengeCard({
     onSetCover(null);
   };
 
-  // 챌린지가 막 올 클리어된 순간 자동으로 접기. 다시 미완료 되면 펴짐.
-  // (체크리스트형뿐 아니라 수치형 완주 등 모든 complete에 적용 — 스크롤 절약)
+  // 챌린지 완주 시 자동으로 접기
   useEffect(() => {
     if (!prevCompleteForCollapseRef.current && complete) {
       setListCollapsed(true);
-    } else if (prevCompleteForCollapseRef.current && !complete) {
-      setListCollapsed(false);
     }
     prevCompleteForCollapseRef.current = complete;
   }, [complete]);
-
-  // 접힘 상태가 바뀌면(수동 토글/자동 접기) localStorage에 저장
-  useEffect(() => {
-    try {
-      localStorage.setItem(collapseKey, listCollapsed ? "1" : "0");
-    } catch {
-      /* localStorage 불가 환경 무시 */
-    }
-  }, [collapseKey, listCollapsed]);
 
   const submit = () => {
     if (!text.trim()) return;
