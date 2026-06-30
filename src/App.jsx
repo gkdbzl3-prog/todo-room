@@ -5288,7 +5288,6 @@ function TimeTracker({ tracker, onUpdate, readOnly = false }) {
               ? <span onClick={(e) => { e.stopPropagation(); editTime("todayStart", "오늘 시작 시간", tracker?.todayStart); }}>{tracker.todayStart} <span className="tracker-time-sub">에 시작했어</span></span>
               : <span className="tracker-time-sub tracker-time-empty" onClick={(e) => { e.stopPropagation(); editTime("todayStart", "오늘 시작 시간", tracker?.todayStart); }}>시간 입력</span>}
           </span>
-          {todayFilled > 0 && <span className="tracker-filled-badge">{todayFilled * 15}분</span>}
         </button>
       </div>
 
