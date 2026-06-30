@@ -690,6 +690,7 @@ function attachTrackers(displayMembers, trackerMembers) {
       ...m,
       trackerTodayCells: todayCells,
       trackerTomorrowCells: tm.tomorrowCells || [],
+      trackerPlanCells: tm.planCells || [],
       trackerLabels: tm.labels || {},
       trackerTodayStart: tm.todayStart || "",
       trackerTomorrowStart: tm.tomorrowStart || "",
@@ -1122,7 +1123,7 @@ export default function App() {
   const [challengeMembers, setChallengeMembers] = useState([]);
   const [tomorrowMembers, setTomorrowMembers] = useState([]);
   const [trackerMembers, setTrackerMembers] = useState([]);
-  const [myTracker, setMyTracker] = useState({ todayCells: new Array(64).fill(""), tomorrowCells: new Array(64).fill(""), labels: {}, todayStart: "", tomorrowStart: "" });
+  const [myTracker, setMyTracker] = useState({ todayCells: new Array(64).fill(""), tomorrowCells: new Array(64).fill(""), planCells: new Array(64).fill(""), labels: {}, todayStart: "", tomorrowStart: "" });
   const [perfectDayMembers, setPerfectDayMembers] = useState([]);
   const [myPerfectDates, setMyPerfectDates] = useState([]);
   const [dailyCarryReady, setDailyCarryReady] = useState(false);
@@ -1580,6 +1581,7 @@ export default function App() {
         avatar,
         todayCells: next.todayCells || [],
         tomorrowCells: next.tomorrowCells || [],
+        planCells: next.planCells || [],
         labels: next.labels || {},
         todayStart: next.todayStart || "",
         tomorrowStart: next.tomorrowStart || "",
@@ -1615,6 +1617,7 @@ export default function App() {
           avatar: data.avatar || "",
           todayCells,
           tomorrowCells: Array.isArray(data.tomorrowCells) ? data.tomorrowCells : [],
+          planCells: Array.isArray(data.planCells) ? data.planCells : [],
           labels: data.labels && typeof data.labels === "object" ? data.labels : {},
           todayStart: data.todayStart || "",
           tomorrowStart: data.tomorrowStart || "",
@@ -1625,6 +1628,7 @@ export default function App() {
         setMyTracker({
           todayCells: mine.todayCells,
           tomorrowCells: mine.tomorrowCells,
+          planCells: mine.planCells,
           labels: mine.labels,
           todayStart: mine.todayStart,
           tomorrowStart: mine.tomorrowStart,
@@ -1635,6 +1639,42 @@ export default function App() {
       console.error("Failed to subscribe tracker", error);
     });
     return () => unsub();
+  }, [uid, nicknameConfirmed, currentDayKey]);
+
+  /* ── 계획 이월: 어제 짠 "내일 계획"(tomorrowCells)을 오늘의 계획(planCells)으로 ──
+     오늘 계획이 비어 있고 어제 내일계획이 있을 때 한 번만 시드한다.
+     → 날짜가 바뀌어도 어제 계획이 오늘로 넘어와 "오늘 계획 대비 실행"을 볼 수 있고,
+       작성 후 이틀째(다음 날 새 doc)에는 자연히 비워진다. */
+  useEffect(() => {
+    if (!nicknameConfirmed || !uid) return;
+    let cancelled = false;
+    (async () => {
+      try {
+        const prevKey = previousDayKeyFrom(currentDayKey);
+        const [todaySnap, prevSnap] = await Promise.all([
+          getDoc(doc(db, trackerCol(currentDayKey), uid)),
+          getDoc(doc(db, trackerCol(prevKey), uid)),
+        ]);
+        if (cancelled) return;
+        const todayData = todaySnap.exists() ? todaySnap.data() || {} : {};
+        const todayPlan = Array.isArray(todayData.planCells) ? todayData.planCells : [];
+        if (todayPlan.some(Boolean)) return; // 이미 오늘 계획이 있음
+        const prevData = prevSnap.exists() ? prevSnap.data() || {} : {};
+        const prevTomorrow = Array.isArray(prevData.tomorrowCells) ? prevData.tomorrowCells : [];
+        if (!prevTomorrow.some(Boolean)) return; // 이월할 계획 없음
+        setMyTracker((t) => ({ ...t, planCells: prevTomorrow }));
+        void writeSetDoc(
+          doc(db, trackerCol(currentDayKey), uid),
+          { planCells: prevTomorrow, updatedAt: serverTimestamp() },
+          { merge: true }
+        ).catch((error) => console.error("Failed to carry plan", error));
+      } catch (error) {
+        console.error("Failed to carry plan", error);
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
   }, [uid, nicknameConfirmed, currentDayKey]);
 
   /* ── Firestore 루틴 동기화 ── */
@@ -3457,6 +3497,7 @@ export default function App() {
       perfectDayCount: myPerfectDates.length,
       trackerTodayCells: myTracker.todayCells,
       trackerTomorrowCells: myTracker.tomorrowCells,
+      trackerPlanCells: myTracker.planCells,
       trackerLabels: myTracker.labels,
       trackerTodayStart: myTracker.todayStart,
       trackerTomorrowStart: myTracker.tomorrowStart,
@@ -5094,6 +5135,7 @@ function MemberCard({ member, currentDayKey }) {
                 tracker={{
                   todayCells: member.trackerTodayCells || [],
                   tomorrowCells: member.trackerTomorrowCells || [],
+                  planCells: member.trackerPlanCells || [],
                   labels: member.trackerLabels || {},
                   todayStart: member.trackerTodayStart || "",
                   tomorrowStart: member.trackerTomorrowStart || "",
@@ -5146,7 +5188,11 @@ function TimeTracker({ tracker, onUpdate, readOnly = false }) {
   const [localTomorrow, setLocalTomorrow] = useState(() =>
     normTrackerCells(tracker?.tomorrowCells, TOTAL_CELLS)
   );
-  const [editMode, setEditMode] = useState("tomorrow");
+  // 오늘의 계획(어제 짠 "내일 계획"이 이월된 것). 이 화면에서 직접 편집하지 않고 흐리게만 표시.
+  const [localPlan, setLocalPlan] = useState(() =>
+    normTrackerCells(tracker?.planCells, TOTAL_CELLS)
+  );
+  const [editMode, setEditMode] = useState("today");
   const [selectedColor, setSelectedColor] = useState("p");
   const [undoStack, setUndoStack] = useState([]);
   const isDraggingRef = useRef(false);
@@ -5164,6 +5210,11 @@ function TimeTracker({ tracker, onUpdate, readOnly = false }) {
     setLocalTomorrow(normTrackerCells(tracker?.tomorrowCells, TOTAL_CELLS));
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tracker?.tomorrowCells]);
+
+  useEffect(() => {
+    setLocalPlan(normTrackerCells(tracker?.planCells, TOTAL_CELLS));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tracker?.planCells]);
 
   const getIdx = (row, col) => row * CELLS_PER_HOUR + col;
   const activeSetter = editMode === "today" ? setLocalToday : setLocalTomorrow;
@@ -5293,6 +5344,14 @@ function TimeTracker({ tracker, onUpdate, readOnly = false }) {
       </div>
 
       {!readOnly && (
+        <div className="tracker-mode-hint">
+          {editMode === "today"
+            ? "오늘 · 연함 = 어제 짠 계획, 진함 = 오늘 실행 (겹쳐 비교)"
+            : "내일 · 빈 트래커에 계획을 연하게 그려요 (하루 뒤 연한 그대로 '오늘'로 이동)"}
+        </div>
+      )}
+
+      {!readOnly && (
         <div className="tracker-palette">
           {TRACKER_PALETTE.map((p) => (
             <button
@@ -5322,10 +5381,13 @@ function TimeTracker({ tracker, onUpdate, readOnly = false }) {
             <div className="tracker-cells">
               {Array.from({ length: CELLS_PER_HOUR }, (_, colIdx) => {
                 const idx = getIdx(rowIdx, colIdx);
-                const todayColor = localToday[idx];
-                const tomorrowColor = localTomorrow[idx];
-                const todayBg = todayColor ? (TRACKER_COLOR_MAP[todayColor] ?? todayColor) : null;
-                const tomorrowBg = tomorrowColor ? (TRACKER_COLOR_MAP[tomorrowColor] ?? tomorrowColor) : null;
+                // 색 규칙 고정: 연함=계획, 진함=실행.
+                // 오늘 탭: (전날 짠) 계획=연함 + 오늘 실행=진함 겹쳐 비교.
+                // 내일 탭: 빈 새 트래커에 내일 계획을 연하게 그림 (하루 뒤 연한 그대로 오늘 계획으로 이동).
+                const faintColor = editMode === "today" ? localPlan[idx] : localTomorrow[idx];
+                const solidColor = editMode === "today" ? localToday[idx] : "";
+                const faintBg = faintColor ? (TRACKER_COLOR_MAP[faintColor] ?? faintColor) : null;
+                const solidBg = solidColor ? (TRACKER_COLOR_MAP[solidColor] ?? solidColor) : null;
                 return (
                   <div
                     key={colIdx}
@@ -5335,11 +5397,11 @@ function TimeTracker({ tracker, onUpdate, readOnly = false }) {
                     onMouseEnter={() => handleCellEnter(rowIdx, colIdx)}
                     onTouchStart={(e) => { e.preventDefault(); handleTouchStart(e, rowIdx, colIdx); }}
                   >
-                    {todayBg && (
-                      <div className="tracker-cell-layer today-layer" style={{ background: todayBg }} />
+                    {faintBg && (
+                      <div className="tracker-cell-layer tomorrow-layer" style={{ background: faintBg }} />
                     )}
-                    {tomorrowBg && (
-                      <div className="tracker-cell-layer tomorrow-layer" style={{ background: tomorrowBg }} />
+                    {solidBg && (
+                      <div className="tracker-cell-layer today-layer" style={{ background: solidBg }} />
                     )}
                   </div>
                 );

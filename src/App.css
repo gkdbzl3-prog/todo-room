@@ -3441,6 +3441,13 @@ input:focus {
   pointer-events: none;
 }
 
+.tracker-mode-hint {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.45);
+  text-align: center;
+  margin: 2px 0 6px;
+}
+
 .tracker-cell-layer {
   position: absolute;
   inset: 0;
