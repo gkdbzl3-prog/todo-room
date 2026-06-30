@@ -3392,6 +3392,7 @@ input:focus {
   display: flex;
   gap: 2px;
   flex: 1;
+  touch-action: none;
 }
 
 .tracker-cell {
@@ -3402,6 +3403,7 @@ input:focus {
   cursor: pointer;
   transition: background 0.1s;
   flex-shrink: 0;
+  touch-action: none;
 }
 
 .tracker-cell {
@@ -3421,6 +3423,7 @@ input:focus {
   position: absolute;
   inset: 0;
   border-radius: 3px;
+  pointer-events: none;
 }
 
 .tracker-cell-layer.today-layer {
