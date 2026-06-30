@@ -5138,7 +5138,7 @@ function TimeTracker({ tracker, onUpdate, readOnly = false }) {
     return m ? parseInt(m[1], 10) : null;
   };
 
-  const startHour = parseHour(tracker?.todayStart) ?? 7;
+  const startHour = parseHour(tracker?.tomorrowStart) ?? parseHour(tracker?.todayStart) ?? 7;
 
   const [localToday, setLocalToday] = useState(() =>
     normTrackerCells(tracker?.todayCells, TOTAL_CELLS)
