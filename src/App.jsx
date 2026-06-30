@@ -5148,6 +5148,7 @@ function TimeTracker({ tracker, onUpdate, readOnly = false }) {
   );
   const [editMode, setEditMode] = useState("tomorrow");
   const [selectedColor, setSelectedColor] = useState("p");
+  const [undoStack, setUndoStack] = useState([]);
   const isDraggingRef = useRef(false);
   const paintValueRef = useRef("p");
   const touchKeyRef = useRef(null);
@@ -5177,10 +5178,20 @@ function TimeTracker({ tracker, onUpdate, readOnly = false }) {
   }
 
   function startDrag(row, col) {
+    setUndoStack((prev) => [...prev.slice(-9), { todayCells: [...localToday], tomorrowCells: [...localTomorrow] }]);
     const idx = getIdx(row, col);
     paintValueRef.current = activeLocal[idx] === selectedColor ? "" : selectedColor;
     isDraggingRef.current = true;
     activeSetter((prev) => applyPaint(row, col, prev));
+  }
+
+  function handleUndo() {
+    if (undoStack.length === 0) return;
+    const last = undoStack[undoStack.length - 1];
+    setUndoStack((prev) => prev.slice(0, -1));
+    setLocalToday(last.todayCells);
+    setLocalTomorrow(last.tomorrowCells);
+    if (onUpdate) onUpdate({ ...tracker, todayCells: last.todayCells, tomorrowCells: last.tomorrowCells });
   }
 
   function handleCellDown(e, row, col) {
@@ -5265,7 +5276,6 @@ function TimeTracker({ tracker, onUpdate, readOnly = false }) {
               ? <span onClick={(e) => { e.stopPropagation(); editTime("tomorrowStart", "내일 시작 시간", tracker?.tomorrowStart); }}>{tracker.tomorrowStart} <span className="tracker-time-sub">에 시작할 거야</span></span>
               : <span className="tracker-time-sub tracker-time-empty" onClick={(e) => { e.stopPropagation(); editTime("tomorrowStart", "내일 시작 시간", tracker?.tomorrowStart); }}>시간 입력</span>}
           </span>
-          {tomorrowFilled > 0 && <span className="tracker-filled-badge">{tomorrowFilled * 15}분</span>}
         </button>
         <button
           type="button"
@@ -5295,6 +5305,13 @@ function TimeTracker({ tracker, onUpdate, readOnly = false }) {
               title={p.label}
             />
           ))}
+          <button
+            type="button"
+            className="tracker-undo-btn"
+            onClick={handleUndo}
+            disabled={undoStack.length === 0}
+            title="실행취소"
+          >↩</button>
         </div>
       )}
 
