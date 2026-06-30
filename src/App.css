@@ -3331,12 +3331,6 @@ input:focus {
   cursor: pointer;
 }
 
-.tracker-filled-badge {
-  font-size: 10px;
-  color: rgba(255, 255, 255, 0.45);
-  font-variant-numeric: tabular-nums;
-  margin-top: 2px;
-}
 
 .tracker-palette {
   display: flex;
@@ -3366,6 +3360,28 @@ input:focus {
   border-color: rgba(255, 255, 255, 0.9);
   transform: scale(1.2);
   opacity: 1;
+}
+
+.tracker-undo-btn {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 17px;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 6px;
+  line-height: 1;
+  transition: color 0.15s;
+}
+
+.tracker-undo-btn:not(:disabled):hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.tracker-undo-btn:disabled {
+  opacity: 0.2;
+  cursor: default;
 }
 
 .tracker-grid {
