@@ -670,6 +670,31 @@ function attachTomorrows(displayMembers, tomorrowMembers, todayKey) {
   });
 }
 
+// Attach tracker data to display members by matching id.
+function attachTrackers(displayMembers, trackerMembers) {
+  if (!trackerMembers || !trackerMembers.length) return displayMembers;
+  const map = new Map();
+  trackerMembers.forEach((tm) => {
+    if (tm.id) map.set(tm.id, tm);
+    const key = normalizeNickname(tm.nickname);
+    if (key) map.set(`nick:${key}`, tm);
+  });
+  return displayMembers.map((m) => {
+    const tm =
+      (m.id && map.get(m.id)) ||
+      (normalizeNickname(m.nickname) && map.get(`nick:${normalizeNickname(m.nickname)}`)) ||
+      null;
+    if (!tm) return m;
+    return {
+      ...m,
+      trackerCells: tm.cells || [],
+      trackerLabels: tm.labels || {},
+      trackerTodayStart: tm.todayStart || "",
+      trackerTomorrowStart: tm.tomorrowStart || "",
+    };
+  });
+}
+
 // Attach event data to display members by matching nickname.
 function attachEvents(displayMembers, eventMembers) {
   if (!eventMembers || !eventMembers.length) return displayMembers;
@@ -904,6 +929,7 @@ const routineCol = () => "routines";
 const eventsCol = () => "events";
 const challengesCol = () => "challenges";
 const tomorrowCol = () => "tomorrows";
+const trackerCol = (date) => `tracker/${date}/users`;
 const perfectDaysCol = () => "perfectDays";
 
 /* ── 루틴 상수 ── */
@@ -1093,6 +1119,8 @@ export default function App() {
   const [eventMembers, setEventMembers] = useState([]);
   const [challengeMembers, setChallengeMembers] = useState([]);
   const [tomorrowMembers, setTomorrowMembers] = useState([]);
+  const [trackerMembers, setTrackerMembers] = useState([]);
+  const [myTracker, setMyTracker] = useState({ cells: new Array(64).fill(false), labels: {}, todayStart: "", tomorrowStart: "" });
   const [perfectDayMembers, setPerfectDayMembers] = useState([]);
   const [myPerfectDates, setMyPerfectDates] = useState([]);
   const [dailyCarryReady, setDailyCarryReady] = useState(false);
@@ -1540,6 +1568,66 @@ export default function App() {
     });
     return () => unsub();
   }, [uid, nicknameConfirmed]);
+
+  /* ── Firestore 시간 트래커 동기화 ── */
+  const syncMyTracker = useCallback(
+    (next) => {
+      if (!nicknameConfirmed || !uid) return;
+      const payload = {
+        nickname,
+        avatar,
+        cells: next.cells || [],
+        labels: next.labels || {},
+        todayStart: next.todayStart || "",
+        tomorrowStart: next.tomorrowStart || "",
+        updatedAt: serverTimestamp(),
+      };
+      void writeSetDoc(doc(db, trackerCol(currentDayKey), uid), payload).catch((error) => {
+        console.error("Failed to sync tracker", error);
+      });
+    },
+    [uid, nickname, avatar, nicknameConfirmed, currentDayKey]
+  );
+
+  const handleTrackerUpdate = useCallback(
+    (next) => {
+      setMyTracker(next);
+      syncMyTracker(next);
+    },
+    [syncMyTracker]
+  );
+
+  useEffect(() => {
+    if (!nicknameConfirmed) return;
+    const unsub = onSnapshot(collection(db, trackerCol(currentDayKey)), (snap) => {
+      const all = [];
+      snap.forEach((d) => {
+        const data = d.data() || {};
+        all.push({
+          id: d.id,
+          nickname: data.nickname || "",
+          avatar: data.avatar || "",
+          cells: Array.isArray(data.cells) ? data.cells : [],
+          labels: data.labels && typeof data.labels === "object" ? data.labels : {},
+          todayStart: data.todayStart || "",
+          tomorrowStart: data.tomorrowStart || "",
+        });
+      });
+      const mine = all.find((m) => m.id === uid);
+      if (mine) {
+        setMyTracker({
+          cells: mine.cells,
+          labels: mine.labels,
+          todayStart: mine.todayStart,
+          tomorrowStart: mine.tomorrowStart,
+        });
+      }
+      setTrackerMembers(all.filter((m) => m.id !== uid));
+    }, (error) => {
+      console.error("Failed to subscribe tracker", error);
+    });
+    return () => unsub();
+  }, [uid, nicknameConfirmed, currentDayKey]);
 
   /* ── Firestore 루틴 동기화 ── */
   const syncMyRoutine = useCallback(
@@ -3322,23 +3410,26 @@ export default function App() {
   const isSelfMember = (m) =>
     (uid && m.id === uid) ||
     (myNicknameKey && normalizeNickname(m.nickname) === myNicknameKey);
-  const otherMembers = attachPerfectDays(
-    attachChallenges(
-      attachTomorrows(
-        attachEvents(
-          attachRoutines(
-            mergeDisplayMembers(members, weeklyMembers).filter((m) => !isSelfMember(m)),
-            routineMembers.filter((m) => !isSelfMember(m)),
-            currentDayKey
+  const otherMembers = attachTrackers(
+    attachPerfectDays(
+      attachChallenges(
+        attachTomorrows(
+          attachEvents(
+            attachRoutines(
+              mergeDisplayMembers(members, weeklyMembers).filter((m) => !isSelfMember(m)),
+              routineMembers.filter((m) => !isSelfMember(m)),
+              currentDayKey
+            ),
+            eventMembers.filter((m) => !isSelfMember(m))
           ),
-          eventMembers.filter((m) => !isSelfMember(m))
+          tomorrowMembers.filter((m) => !isSelfMember(m)),
+          currentDayKey
         ),
-        tomorrowMembers.filter((m) => !isSelfMember(m)),
-        currentDayKey
+        challengeMembers.filter((m) => !isSelfMember(m))
       ),
-      challengeMembers.filter((m) => !isSelfMember(m))
+      perfectDayMembers.filter((m) => !isSelfMember(m))
     ),
-    perfectDayMembers.filter((m) => !isSelfMember(m))
+    trackerMembers.filter((m) => !isSelfMember(m))
   );
   const cachedVisibleOtherMembers = cachedOtherMembers.filter((m) => !isSelfMember(m));
   const displayOtherMembers =
@@ -3356,6 +3447,10 @@ export default function App() {
       events,
       challenges,
       perfectDayCount: myPerfectDates.length,
+      trackerCells: myTracker.cells,
+      trackerLabels: myTracker.labels,
+      trackerTodayStart: myTracker.todayStart,
+      trackerTomorrowStart: myTracker.tomorrowStart,
       isMe: true,
     },
     ...displayOtherMembers,
@@ -3833,6 +3928,12 @@ export default function App() {
               cycleRoutine={cycleRoutine}
               deleteRoutine={deleteRoutine}
               celebrated={routineCelebrated}
+            />
+
+            {/* 시간 트래커 */}
+            <TimeTracker
+              tracker={myTracker}
+              onUpdate={handleTrackerUpdate}
             />
           </section>
         </div>
@@ -4828,6 +4929,8 @@ function MemberCard({ member, currentDayKey }) {
   );
   const [routineExpanded, setRoutineExpanded] = useState(false);
   const [tomorrowExpanded, setTomorrowExpanded] = useState(false);
+  const [trackerExpanded, setTrackerExpanded] = useState(false);
+  const hasTracker = (member.trackerCells || []).some(Boolean);
   const closestEvent = pickClosestEvent(member.events || []);
   const showEventName = closestEvent && shouldShowMemberEventName(closestEvent.event);
 
@@ -4959,6 +5062,225 @@ function MemberCard({ member, currentDayKey }) {
         </>
       )}
 
+      {hasTracker && (
+        <>
+          <button
+            type="button"
+            className="member-tomorrow-toggle"
+            onClick={() => setTrackerExpanded((v) => !v)}
+            aria-label={trackerExpanded ? "시간 트래커 접기" : "시간 트래커 펼치기"}
+          >
+            <span className="member-tomorrow-chevron">{trackerExpanded ? "▴" : "▾"}</span>
+            TRACKER
+            {member.trackerTodayStart && (
+              <>
+                <span className="member-tomorrow-dot">·</span>
+                <span className="member-tomorrow-num">{member.trackerTodayStart}</span>
+              </>
+            )}
+          </button>
+          {trackerExpanded && (
+            <div className="member-tracker-wrap">
+              <TimeTracker
+                tracker={{
+                  cells: member.trackerCells || [],
+                  labels: member.trackerLabels || {},
+                  todayStart: member.trackerTodayStart || "",
+                  tomorrowStart: member.trackerTomorrowStart || "",
+                }}
+                readOnly
+              />
+            </div>
+          )}
+        </>
+      )}
+
+    </div>
+  );
+}
+
+/* ─────────────── TimeTracker ─────────────── */
+function TimeTracker({ tracker, onUpdate, readOnly = false }) {
+  const HOURS = 16;
+  const CELLS_PER_HOUR = 4;
+  const TOTAL_CELLS = HOURS * CELLS_PER_HOUR;
+
+  const parseHour = (timeStr) => {
+    if (!timeStr) return null;
+    const m = /^(\d{1,2})/.exec(timeStr);
+    return m ? parseInt(m[1], 10) : null;
+  };
+
+  const startHour = parseHour(tracker?.todayStart) ?? 7;
+  const propCells = tracker?.cells ?? [];
+  const normalizedCells = Array.from({ length: TOTAL_CELLS }, (_, i) => !!propCells[i]);
+
+  const [localCells, setLocalCells] = useState(normalizedCells);
+  const isDraggingRef = useRef(false);
+  const paintValueRef = useRef(true);
+  const touchKeyRef = useRef(null);
+
+  useEffect(() => {
+    if (!isDraggingRef.current) {
+      setLocalCells(Array.from({ length: TOTAL_CELLS }, (_, i) => !!propCells[i]));
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tracker?.cells]);
+
+  const getIdx = (row, col) => row * CELLS_PER_HOUR + col;
+
+  function applyPaint(row, col, base) {
+    const idx = getIdx(row, col);
+    if (base[idx] === paintValueRef.current) return base;
+    const next = [...base];
+    next[idx] = paintValueRef.current;
+    return next;
+  }
+
+  function handleCellDown(e, row, col) {
+    if (readOnly) return;
+    e.preventDefault();
+    const idx = getIdx(row, col);
+    paintValueRef.current = !localCells[idx];
+    isDraggingRef.current = true;
+    setLocalCells((prev) => applyPaint(row, col, prev));
+  }
+
+  function handleCellEnter(row, col) {
+    if (!isDraggingRef.current || readOnly) return;
+    setLocalCells((prev) => applyPaint(row, col, prev));
+  }
+
+  function commitDrag() {
+    if (!isDraggingRef.current) return;
+    isDraggingRef.current = false;
+    if (onUpdate) {
+      setLocalCells((prev) => {
+        onUpdate({ ...tracker, cells: prev });
+        return prev;
+      });
+    }
+  }
+
+  function handleTouchStart(e, row, col) {
+    if (readOnly) return;
+    const idx = getIdx(row, col);
+    paintValueRef.current = !localCells[idx];
+    isDraggingRef.current = true;
+    touchKeyRef.current = `${row}:${col}`;
+    setLocalCells((prev) => applyPaint(row, col, prev));
+  }
+
+  function handleTouchMove(e) {
+    if (!isDraggingRef.current || readOnly) return;
+    e.preventDefault();
+    const touch = e.touches[0];
+    const el = document.elementFromPoint(touch.clientX, touch.clientY)?.closest("[data-tc]");
+    if (!el) return;
+    const key = el.dataset.tc;
+    if (key === touchKeyRef.current) return;
+    touchKeyRef.current = key;
+    const [r, c] = key.split(":").map(Number);
+    setLocalCells((prev) => applyPaint(r, c, prev));
+  }
+
+  function editTime(field, label, current) {
+    if (readOnly) return;
+    const val = window.prompt(`${label} (예: 7:00)`, current || "");
+    if (val === null) return;
+    if (onUpdate) onUpdate({ ...tracker, [field]: val.trim() });
+  }
+
+  function handleLabelChange(row, value) {
+    if (readOnly) return;
+    const newLabels = { ...(tracker?.labels ?? {}), [String(row)]: value };
+    if (onUpdate) onUpdate({ ...tracker, labels: newLabels });
+  }
+
+  const rows = Array.from({ length: HOURS }, (_, i) => ({
+    rowIdx: i,
+    hour: (startHour + i) % 24,
+  }));
+
+  const filledCount = localCells.filter(Boolean).length;
+
+  return (
+    <div
+      className={`time-tracker${readOnly ? " read-only" : ""}`}
+      onMouseUp={commitDrag}
+      onMouseLeave={commitDrag}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={commitDrag}
+    >
+      {!readOnly && (
+        <div className="tracker-header">
+          <div className="tracker-time-block">
+            <span className="tracker-time-sub">내일 나는</span>
+            <button
+              type="button"
+              className="tracker-time-val"
+              onClick={() => editTime("tomorrowStart", "내일 시작 시간", tracker?.tomorrowStart)}
+            >
+              {tracker?.tomorrowStart || "--:--"}
+            </button>
+            <span className="tracker-time-sub">에 시작할 거야</span>
+          </div>
+          <div className="tracker-time-block">
+            <span className="tracker-time-sub">오늘은</span>
+            <button
+              type="button"
+              className="tracker-time-val"
+              onClick={() => editTime("todayStart", "오늘 시작 시간", tracker?.todayStart)}
+            >
+              {tracker?.todayStart || "--:--"}
+            </button>
+            <span className="tracker-time-sub">에 시작했어</span>
+          </div>
+          {filledCount > 0 && (
+            <span className="tracker-filled-count">{filledCount * 15}분</span>
+          )}
+        </div>
+      )}
+
+      <div className="tracker-grid" style={{ userSelect: "none", WebkitUserSelect: "none" }}>
+        {rows.map(({ rowIdx, hour }) => (
+          <div key={rowIdx} className="tracker-row">
+            <span className="tracker-hour">{String(hour).padStart(2, "0")}:00</span>
+            <div className="tracker-cells">
+              {Array.from({ length: CELLS_PER_HOUR }, (_, colIdx) => {
+                const filled = localCells[getIdx(rowIdx, colIdx)];
+                return (
+                  <div
+                    key={colIdx}
+                    className={`tracker-cell${filled ? " filled" : ""}`}
+                    data-tc={`${rowIdx}:${colIdx}`}
+                    onMouseDown={(e) => handleCellDown(e, rowIdx, colIdx)}
+                    onMouseEnter={() => handleCellEnter(rowIdx, colIdx)}
+                    onTouchStart={(e) => {
+                      e.preventDefault();
+                      handleTouchStart(e, rowIdx, colIdx);
+                    }}
+                  />
+                );
+              })}
+            </div>
+            {!readOnly ? (
+              <input
+                type="text"
+                className="tracker-label-input"
+                value={(tracker?.labels ?? {})[String(rowIdx)] || ""}
+                onChange={(e) => handleLabelChange(rowIdx, e.target.value)}
+                placeholder="메모"
+                maxLength={20}
+              />
+            ) : (
+              (tracker?.labels ?? {})[String(rowIdx)] ? (
+                <span className="tracker-label-text">{(tracker?.labels ?? {})[String(rowIdx)]}</span>
+              ) : null
+            )}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

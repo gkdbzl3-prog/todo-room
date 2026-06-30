@@ -3258,3 +3258,167 @@ input:focus {
   background: linear-gradient(90deg, #d89577, #6bd0a6);
   border-radius: 999px;
 }
+/* ─────────────── Time Tracker ─────────────── */
+.time-tracker {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 14px;
+  padding: 14px 12px 10px;
+  margin-top: 14px;
+}
+
+.tracker-header {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.tracker-time-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+}
+
+.tracker-time-sub {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 0.3px;
+}
+
+.tracker-time-val {
+  font-size: 22px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.9);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.5px;
+  transition: color 0.15s;
+}
+
+.tracker-time-val:hover {
+  color: #a78bfa;
+}
+
+.tracker-filled-count {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.35);
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+  align-self: flex-end;
+}
+
+.tracker-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.tracker-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tracker-hour {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.35);
+  font-variant-numeric: tabular-nums;
+  min-width: 38px;
+  flex-shrink: 0;
+}
+
+.tracker-cells {
+  display: flex;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.tracker-cell {
+  width: 16px;
+  height: 22px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: background 0.1s;
+  flex-shrink: 0;
+}
+
+.tracker-cell:hover {
+  background: rgba(167, 139, 250, 0.3);
+}
+
+.tracker-cell.filled {
+  background: rgba(167, 139, 250, 0.75);
+}
+
+.tracker-cell.filled:hover {
+  background: rgba(167, 139, 250, 0.9);
+}
+
+.time-tracker.read-only .tracker-cell {
+  cursor: default;
+}
+
+.time-tracker.read-only .tracker-cell:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.time-tracker.read-only .tracker-cell.filled:hover {
+  background: rgba(167, 139, 250, 0.75);
+}
+
+.tracker-label-input {
+  flex: 1;
+  min-width: 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 11px;
+  padding: 2px 4px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.tracker-label-input:focus {
+  border-bottom-color: rgba(167, 139, 250, 0.5);
+}
+
+.tracker-label-input::placeholder {
+  color: rgba(255, 255, 255, 0.15);
+}
+
+.tracker-label-text {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.45);
+  flex: 1;
+  padding: 2px 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.member-tracker-wrap {
+  margin-top: 6px;
+}
+
+.member-tracker-wrap .time-tracker {
+  padding: 8px 8px 6px;
+  margin-top: 0;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.member-tracker-wrap .tracker-hour {
+  font-size: 9px;
+  min-width: 32px;
+}
+
+.member-tracker-wrap .tracker-cell {
+  width: 12px;
+  height: 16px;
+}
