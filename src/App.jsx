@@ -5254,19 +5254,7 @@ function TimeTracker({ tracker, onUpdate, readOnly = false }) {
       onTouchEnd={commitDrag}
     >
       <div className="tracker-header">
-        <button
-          type="button"
-          className={`tracker-day-tab${editMode === "today" || readOnly ? " active" : ""}`}
-          onClick={() => !readOnly && setEditMode("today")}
-        >
-          <span className="tracker-time-sub">오늘은</span>
-          <span className="tracker-time-val">
-            {tracker?.todayStart
-              ? <>{tracker.todayStart} <span className="tracker-time-sub">에 시작했어</span></>
-              : <span className="tracker-time-sub tracker-time-empty" onClick={(e) => { e.stopPropagation(); editTime("todayStart", "오늘 시작 시간", tracker?.todayStart); }}>시간 입력</span>}
-          </span>
-          {todayFilled > 0 && <span className="tracker-filled-badge">{todayFilled * 15}분</span>}
-        </button>
+       
 
         <button
           type="button"
@@ -5281,7 +5269,19 @@ function TimeTracker({ tracker, onUpdate, readOnly = false }) {
           </span>
           {tomorrowFilled > 0 && <span className="tracker-filled-badge">{tomorrowFilled * 15}분</span>}
         </button>
-
+ <button
+          type="button"
+          className={`tracker-day-tab${editMode === "today" || readOnly ? " active" : ""}`}
+          onClick={() => !readOnly && setEditMode("today")}
+        >
+          <span className="tracker-time-sub">오늘은</span>
+          <span className="tracker-time-val">
+            {tracker?.todayStart
+              ? <>{tracker.todayStart} <span className="tracker-time-sub">에 시작했어</span></>
+              : <span className="tracker-time-sub tracker-time-empty" onClick={(e) => { e.stopPropagation(); editTime("todayStart", "오늘 시작 시간", tracker?.todayStart); }}>시간 입력</span>}
+          </span>
+          {todayFilled > 0 && <span className="tracker-filled-badge">{todayFilled * 15}분</span>}
+        </button>
         {!readOnly && editMode === "today" && (
           <span
             className="tracker-time-edit-btn"
