@@ -3260,37 +3260,40 @@ input:focus {
 }
 /* ─────────────── Time Tracker ─────────────── */
 .time-tracker {
-  background: rgba(255, 255, 255, 0.04);
-  border-radius: 14px;
-  padding: 14px 12px 10px;
+  background: rgba(249, 131, 108, 0.521);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 18px;
   margin-top: 14px;
 }
 
 .tracker-header {
   display: flex;
-  align-items: flex-end;
-  gap: 16px;
-  margin-bottom: 12px;
+  align-items: baseline;
+  gap: 20px;
+  margin-bottom: 14px;
   flex-wrap: wrap;
 }
 
 .tracker-time-block {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1px;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 5px;
 }
 
 .tracker-time-sub {
   font-size: 10px;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.55);
   letter-spacing: 0.3px;
+  white-space: nowrap;
 }
 
 .tracker-time-val {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 800;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.95);
   background: none;
   border: none;
   padding: 0;
@@ -3298,6 +3301,7 @@ input:focus {
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.5px;
   transition: color 0.15s;
+  line-height: 1;
 }
 
 .tracker-time-val:hover {
@@ -3306,7 +3310,7 @@ input:focus {
 
 .tracker-filled-count {
   font-size: 11px;
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.4);
   margin-left: auto;
   font-variant-numeric: tabular-nums;
   align-self: flex-end;
@@ -3315,7 +3319,7 @@ input:focus {
 .tracker-grid {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 4px;
 }
 
 .tracker-row {
@@ -3326,38 +3330,38 @@ input:focus {
 
 .tracker-hour {
   font-size: 10px;
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.4);
   font-variant-numeric: tabular-nums;
-  min-width: 38px;
+  min-width: 36px;
   flex-shrink: 0;
 }
 
 .tracker-cells {
   display: flex;
   gap: 2px;
-  flex-shrink: 0;
+  flex: 1;
 }
 
 .tracker-cell {
-  width: 16px;
-  height: 22px;
-  border-radius: 3px;
-  background: rgba(255, 255, 255, 0.08);
+  flex: 1;
+  height: 26px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
   cursor: pointer;
   transition: background 0.1s;
   flex-shrink: 0;
 }
 
 .tracker-cell:hover {
-  background: rgba(167, 139, 250, 0.3);
+  background: rgba(167, 139, 250, 0.35);
 }
 
 .tracker-cell.filled {
-  background: rgba(167, 139, 250, 0.75);
+  background: rgba(167, 139, 250, 0.8);
 }
 
 .tracker-cell.filled:hover {
-  background: rgba(167, 139, 250, 0.9);
+  background: rgba(167, 139, 250, 0.95);
 }
 
 .time-tracker.read-only .tracker-cell {
@@ -3365,39 +3369,39 @@ input:focus {
 }
 
 .time-tracker.read-only .tracker-cell:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .time-tracker.read-only .tracker-cell.filled:hover {
-  background: rgba(167, 139, 250, 0.75);
+  background: rgba(167, 139, 250, 0.8);
 }
 
 .tracker-label-input {
-  flex: 1;
-  min-width: 0;
+  flex: 0 0 60px;
+  width: 60px;
   background: transparent;
   border: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 11px;
-  padding: 2px 4px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 10px;
+  padding: 2px 3px;
   outline: none;
   transition: border-color 0.15s;
 }
 
 .tracker-label-input:focus {
-  border-bottom-color: rgba(167, 139, 250, 0.5);
+  border-bottom-color: rgba(167, 139, 250, 0.6);
 }
 
 .tracker-label-input::placeholder {
-  color: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.18);
 }
 
 .tracker-label-text {
   font-size: 10px;
   color: rgba(255, 255, 255, 0.45);
-  flex: 1;
-  padding: 2px 4px;
+  flex: 0 0 50px;
+  padding: 2px 3px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -3408,17 +3412,17 @@ input:focus {
 }
 
 .member-tracker-wrap .time-tracker {
-  padding: 8px 8px 6px;
+  padding: 10px 10px 8px;
   margin-top: 0;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(249, 131, 108, 0.25);
+  border-color: rgba(255, 255, 255, 0.08);
 }
 
 .member-tracker-wrap .tracker-hour {
   font-size: 9px;
-  min-width: 32px;
+  min-width: 28px;
 }
 
 .member-tracker-wrap .tracker-cell {
-  width: 12px;
   height: 16px;
 }
