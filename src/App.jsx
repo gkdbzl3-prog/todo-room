@@ -685,9 +685,11 @@ function attachTrackers(displayMembers, trackerMembers) {
       (normalizeNickname(m.nickname) && map.get(`nick:${normalizeNickname(m.nickname)}`)) ||
       null;
     if (!tm) return m;
+    const todayCells = tm.todayCells || tm.cells || [];
     return {
       ...m,
-      trackerCells: tm.cells || [],
+      trackerTodayCells: todayCells,
+      trackerTomorrowCells: tm.tomorrowCells || [],
       trackerLabels: tm.labels || {},
       trackerTodayStart: tm.todayStart || "",
       trackerTomorrowStart: tm.tomorrowStart || "",
@@ -1120,7 +1122,7 @@ export default function App() {
   const [challengeMembers, setChallengeMembers] = useState([]);
   const [tomorrowMembers, setTomorrowMembers] = useState([]);
   const [trackerMembers, setTrackerMembers] = useState([]);
-  const [myTracker, setMyTracker] = useState({ cells: new Array(64).fill(false), labels: {}, todayStart: "", tomorrowStart: "" });
+  const [myTracker, setMyTracker] = useState({ todayCells: new Array(64).fill(""), tomorrowCells: new Array(64).fill(""), labels: {}, todayStart: "", tomorrowStart: "" });
   const [perfectDayMembers, setPerfectDayMembers] = useState([]);
   const [myPerfectDates, setMyPerfectDates] = useState([]);
   const [dailyCarryReady, setDailyCarryReady] = useState(false);
@@ -1576,7 +1578,8 @@ export default function App() {
       const payload = {
         nickname,
         avatar,
-        cells: next.cells || [],
+        todayCells: next.todayCells || [],
+        tomorrowCells: next.tomorrowCells || [],
         labels: next.labels || {},
         todayStart: next.todayStart || "",
         tomorrowStart: next.tomorrowStart || "",
@@ -1603,11 +1606,15 @@ export default function App() {
       const all = [];
       snap.forEach((d) => {
         const data = d.data() || {};
+        // backward compat: old docs had `cells` instead of `todayCells`
+        const todayCells = Array.isArray(data.todayCells) ? data.todayCells
+          : Array.isArray(data.cells) ? data.cells : [];
         all.push({
           id: d.id,
           nickname: data.nickname || "",
           avatar: data.avatar || "",
-          cells: Array.isArray(data.cells) ? data.cells : [],
+          todayCells,
+          tomorrowCells: Array.isArray(data.tomorrowCells) ? data.tomorrowCells : [],
           labels: data.labels && typeof data.labels === "object" ? data.labels : {},
           todayStart: data.todayStart || "",
           tomorrowStart: data.tomorrowStart || "",
@@ -1616,7 +1623,8 @@ export default function App() {
       const mine = all.find((m) => m.id === uid);
       if (mine) {
         setMyTracker({
-          cells: mine.cells,
+          todayCells: mine.todayCells,
+          tomorrowCells: mine.tomorrowCells,
           labels: mine.labels,
           todayStart: mine.todayStart,
           tomorrowStart: mine.tomorrowStart,
@@ -3447,7 +3455,8 @@ export default function App() {
       events,
       challenges,
       perfectDayCount: myPerfectDates.length,
-      trackerCells: myTracker.cells,
+      trackerTodayCells: myTracker.todayCells,
+      trackerTomorrowCells: myTracker.tomorrowCells,
       trackerLabels: myTracker.labels,
       trackerTodayStart: myTracker.todayStart,
       trackerTomorrowStart: myTracker.tomorrowStart,
@@ -4930,7 +4939,7 @@ function MemberCard({ member, currentDayKey }) {
   const [routineExpanded, setRoutineExpanded] = useState(false);
   const [tomorrowExpanded, setTomorrowExpanded] = useState(false);
   const [trackerExpanded, setTrackerExpanded] = useState(false);
-  const hasTracker = (member.trackerCells || []).some(Boolean);
+  const hasTracker = (member.trackerTodayCells || []).some(Boolean) || (member.trackerTomorrowCells || []).some(Boolean);
   const closestEvent = pickClosestEvent(member.events || []);
   const showEventName = closestEvent && shouldShowMemberEventName(closestEvent.event);
 
@@ -5083,7 +5092,8 @@ function MemberCard({ member, currentDayKey }) {
             <div className="member-tracker-wrap">
               <TimeTracker
                 tracker={{
-                  cells: member.trackerCells || [],
+                  todayCells: member.trackerTodayCells || [],
+                  tomorrowCells: member.trackerTomorrowCells || [],
                   labels: member.trackerLabels || {},
                   todayStart: member.trackerTodayStart || "",
                   tomorrowStart: member.trackerTomorrowStart || "",
@@ -5100,34 +5110,63 @@ function MemberCard({ member, currentDayKey }) {
 }
 
 /* ─────────────── TimeTracker ─────────────── */
+const TRACKER_PALETTE = [
+  { id: "p", color: "#a78bfa", label: "보라" },
+  { id: "g", color: "#6bd0a6", label: "초록" },
+  { id: "o", color: "#fb923c", label: "주황" },
+  { id: "b", color: "#60a5fa", label: "파랑" },
+  { id: "r", color: "#f87171", label: "빨강" },
+];
+const TRACKER_COLOR_MAP = Object.fromEntries(TRACKER_PALETTE.map((p) => [p.id, p.color]));
+
+function normTrackerCells(raw, total) {
+  return Array.from({ length: total }, (_, i) => {
+    const v = raw?.[i];
+    if (!v) return "";
+    if (typeof v === "boolean") return v ? "p" : "";
+    return typeof v === "string" ? v : "";
+  });
+}
+
 function TimeTracker({ tracker, onUpdate, readOnly = false }) {
   const HOURS = 16;
   const CELLS_PER_HOUR = 4;
   const TOTAL_CELLS = HOURS * CELLS_PER_HOUR;
 
   const parseHour = (timeStr) => {
-    if (!timeStr) return null;
-    const m = /^(\d{1,2})/.exec(timeStr);
+    const m = /^(\d{1,2})/.exec(timeStr || "");
     return m ? parseInt(m[1], 10) : null;
   };
 
   const startHour = parseHour(tracker?.todayStart) ?? 7;
-  const propCells = tracker?.cells ?? [];
-  const normalizedCells = Array.from({ length: TOTAL_CELLS }, (_, i) => !!propCells[i]);
 
-  const [localCells, setLocalCells] = useState(normalizedCells);
+  const [localToday, setLocalToday] = useState(() =>
+    normTrackerCells(tracker?.todayCells, TOTAL_CELLS)
+  );
+  const [localTomorrow, setLocalTomorrow] = useState(() =>
+    normTrackerCells(tracker?.tomorrowCells, TOTAL_CELLS)
+  );
+  const [editMode, setEditMode] = useState("tomorrow");
+  const [selectedColor, setSelectedColor] = useState("p");
   const isDraggingRef = useRef(false);
-  const paintValueRef = useRef(true);
+  const paintValueRef = useRef("p");
   const touchKeyRef = useRef(null);
 
   useEffect(() => {
-    if (!isDraggingRef.current) {
-      setLocalCells(Array.from({ length: TOTAL_CELLS }, (_, i) => !!propCells[i]));
-    }
+    if (isDraggingRef.current) return;
+    setLocalToday(normTrackerCells(tracker?.todayCells, TOTAL_CELLS));
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [tracker?.cells]);
+  }, [tracker?.todayCells]);
+
+  useEffect(() => {
+    if (isDraggingRef.current) return;
+    setLocalTomorrow(normTrackerCells(tracker?.tomorrowCells, TOTAL_CELLS));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tracker?.tomorrowCells]);
 
   const getIdx = (row, col) => row * CELLS_PER_HOUR + col;
+  const activeSetter = editMode === "today" ? setLocalToday : setLocalTomorrow;
+  const activeLocal = editMode === "today" ? localToday : localTomorrow;
 
   function applyPaint(row, col, base) {
     const idx = getIdx(row, col);
@@ -5137,38 +5176,39 @@ function TimeTracker({ tracker, onUpdate, readOnly = false }) {
     return next;
   }
 
+  function startDrag(row, col) {
+    const idx = getIdx(row, col);
+    paintValueRef.current = activeLocal[idx] === selectedColor ? "" : selectedColor;
+    isDraggingRef.current = true;
+    activeSetter((prev) => applyPaint(row, col, prev));
+  }
+
   function handleCellDown(e, row, col) {
     if (readOnly) return;
     e.preventDefault();
-    const idx = getIdx(row, col);
-    paintValueRef.current = !localCells[idx];
-    isDraggingRef.current = true;
-    setLocalCells((prev) => applyPaint(row, col, prev));
+    startDrag(row, col);
   }
 
   function handleCellEnter(row, col) {
     if (!isDraggingRef.current || readOnly) return;
-    setLocalCells((prev) => applyPaint(row, col, prev));
+    activeSetter((prev) => applyPaint(row, col, prev));
   }
 
   function commitDrag() {
     if (!isDraggingRef.current) return;
     isDraggingRef.current = false;
-    if (onUpdate) {
-      setLocalCells((prev) => {
-        onUpdate({ ...tracker, cells: prev });
-        return prev;
-      });
+    if (!onUpdate) return;
+    if (editMode === "today") {
+      setLocalToday((prev) => { onUpdate({ ...tracker, todayCells: prev }); return prev; });
+    } else {
+      setLocalTomorrow((prev) => { onUpdate({ ...tracker, tomorrowCells: prev }); return prev; });
     }
   }
 
   function handleTouchStart(e, row, col) {
     if (readOnly) return;
-    const idx = getIdx(row, col);
-    paintValueRef.current = !localCells[idx];
-    isDraggingRef.current = true;
     touchKeyRef.current = `${row}:${col}`;
-    setLocalCells((prev) => applyPaint(row, col, prev));
+    startDrag(row, col);
   }
 
   function handleTouchMove(e) {
@@ -5181,7 +5221,7 @@ function TimeTracker({ tracker, onUpdate, readOnly = false }) {
     if (key === touchKeyRef.current) return;
     touchKeyRef.current = key;
     const [r, c] = key.split(":").map(Number);
-    setLocalCells((prev) => applyPaint(r, c, prev));
+    activeSetter((prev) => applyPaint(r, c, prev));
   }
 
   function editTime(field, label, current) {
@@ -5202,7 +5242,8 @@ function TimeTracker({ tracker, onUpdate, readOnly = false }) {
     hour: (startHour + i) % 24,
   }));
 
-  const filledCount = localCells.filter(Boolean).length;
+  const todayFilled = localToday.filter(Boolean).length;
+  const tomorrowFilled = localTomorrow.filter(Boolean).length;
 
   return (
     <div
@@ -5212,33 +5253,62 @@ function TimeTracker({ tracker, onUpdate, readOnly = false }) {
       onTouchMove={handleTouchMove}
       onTouchEnd={commitDrag}
     >
+      <div className="tracker-header">
+        <button
+          type="button"
+          className={`tracker-day-tab${editMode === "today" || readOnly ? " active" : ""}`}
+          onClick={() => !readOnly && setEditMode("today")}
+        >
+          <span className="tracker-time-sub">오늘은</span>
+          <span className="tracker-time-val">
+            {tracker?.todayStart
+              ? <>{tracker.todayStart} <span className="tracker-time-sub">에 시작했어</span></>
+              : <span className="tracker-time-sub tracker-time-empty" onClick={(e) => { e.stopPropagation(); editTime("todayStart", "오늘 시작 시간", tracker?.todayStart); }}>시간 입력</span>}
+          </span>
+          {todayFilled > 0 && <span className="tracker-filled-badge">{todayFilled * 15}분</span>}
+        </button>
+
+        <button
+          type="button"
+          className={`tracker-day-tab${editMode === "tomorrow" && !readOnly ? " active" : ""}`}
+          onClick={() => !readOnly && setEditMode("tomorrow")}
+        >
+          <span className="tracker-time-sub">내일 나는</span>
+          <span className="tracker-time-val">
+            {tracker?.tomorrowStart
+              ? <>{tracker.tomorrowStart} <span className="tracker-time-sub">에 시작할 거야</span></>
+              : <span className="tracker-time-sub tracker-time-empty" onClick={(e) => { e.stopPropagation(); editTime("tomorrowStart", "내일 시작 시간", tracker?.tomorrowStart); }}>시간 입력</span>}
+          </span>
+          {tomorrowFilled > 0 && <span className="tracker-filled-badge">{tomorrowFilled * 15}분</span>}
+        </button>
+
+        {!readOnly && editMode === "today" && (
+          <span
+            className="tracker-time-edit-btn"
+            onClick={() => editTime("todayStart", "오늘 시작 시간", tracker?.todayStart)}
+          >✎</span>
+        )}
+        {!readOnly && editMode === "tomorrow" && (
+          <span
+            className="tracker-time-edit-btn"
+            onClick={() => editTime("tomorrowStart", "내일 시작 시간", tracker?.tomorrowStart)}
+          >✎</span>
+        )}
+      </div>
+
       {!readOnly && (
-        <div className="tracker-header">
-          <div className="tracker-time-block">
-            <span className="tracker-time-sub">내일 나는</span>
+        <div className="tracker-palette">
+          {TRACKER_PALETTE.map((p) => (
             <button
+              key={p.id}
               type="button"
-              className="tracker-time-val"
-              onClick={() => editTime("tomorrowStart", "내일 시작 시간", tracker?.tomorrowStart)}
-            >
-              {tracker?.tomorrowStart || "--:--"}
-            </button>
-            <span className="tracker-time-sub">에 시작할 거야</span>
-          </div>
-          <div className="tracker-time-block">
-            <span className="tracker-time-sub">오늘은</span>
-            <button
-              type="button"
-              className="tracker-time-val"
-              onClick={() => editTime("todayStart", "오늘 시작 시간", tracker?.todayStart)}
-            >
-              {tracker?.todayStart || "--:--"}
-            </button>
-            <span className="tracker-time-sub">에 시작했어</span>
-          </div>
-          {filledCount > 0 && (
-            <span className="tracker-filled-count">{filledCount * 15}분</span>
-          )}
+              className={`tracker-palette-dot${selectedColor === p.id ? " selected" : ""}`}
+              style={{ "--dot-color": p.color }}
+              onClick={() => setSelectedColor(p.id)}
+              aria-label={p.label}
+              title={p.label}
+            />
+          ))}
         </div>
       )}
 
@@ -5248,19 +5318,27 @@ function TimeTracker({ tracker, onUpdate, readOnly = false }) {
             <span className="tracker-hour">{String(hour).padStart(2, "0")}:00</span>
             <div className="tracker-cells">
               {Array.from({ length: CELLS_PER_HOUR }, (_, colIdx) => {
-                const filled = localCells[getIdx(rowIdx, colIdx)];
+                const idx = getIdx(rowIdx, colIdx);
+                const todayColor = localToday[idx];
+                const tomorrowColor = localTomorrow[idx];
+                const todayBg = todayColor ? (TRACKER_COLOR_MAP[todayColor] ?? todayColor) : null;
+                const tomorrowBg = tomorrowColor ? (TRACKER_COLOR_MAP[tomorrowColor] ?? tomorrowColor) : null;
                 return (
                   <div
                     key={colIdx}
-                    className={`tracker-cell${filled ? " filled" : ""}`}
+                    className="tracker-cell"
                     data-tc={`${rowIdx}:${colIdx}`}
                     onMouseDown={(e) => handleCellDown(e, rowIdx, colIdx)}
                     onMouseEnter={() => handleCellEnter(rowIdx, colIdx)}
-                    onTouchStart={(e) => {
-                      e.preventDefault();
-                      handleTouchStart(e, rowIdx, colIdx);
-                    }}
-                  />
+                    onTouchStart={(e) => { e.preventDefault(); handleTouchStart(e, rowIdx, colIdx); }}
+                  >
+                    {todayBg && (
+                      <div className="tracker-cell-layer today-layer" style={{ background: todayBg }} />
+                    )}
+                    {tomorrowBg && (
+                      <div className="tracker-cell-layer tomorrow-layer" style={{ background: tomorrowBg }} />
+                    )}
+                  </div>
                 );
               })}
             </div>
