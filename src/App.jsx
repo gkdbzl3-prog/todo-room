@@ -692,6 +692,7 @@ function attachTrackers(displayMembers, trackerMembers) {
       trackerTomorrowCells: tm.tomorrowCells || [],
       trackerPlanCells: tm.planCells || [],
       trackerLabels: tm.labels || {},
+      trackerTomorrowLabels: tm.tomorrowLabels || {},
       trackerTodayStart: tm.todayStart || "",
       trackerTomorrowStart: tm.tomorrowStart || "",
     };
@@ -1123,7 +1124,7 @@ export default function App() {
   const [challengeMembers, setChallengeMembers] = useState([]);
   const [tomorrowMembers, setTomorrowMembers] = useState([]);
   const [trackerMembers, setTrackerMembers] = useState([]);
-  const [myTracker, setMyTracker] = useState({ todayCells: new Array(64).fill(""), tomorrowCells: new Array(64).fill(""), planCells: new Array(64).fill(""), labels: {}, todayStart: "", tomorrowStart: "" });
+  const [myTracker, setMyTracker] = useState({ todayCells: new Array(64).fill(""), tomorrowCells: new Array(64).fill(""), planCells: new Array(64).fill(""), labels: {}, tomorrowLabels: {}, todayStart: "", tomorrowStart: "" });
   const [perfectDayMembers, setPerfectDayMembers] = useState([]);
   const [myPerfectDates, setMyPerfectDates] = useState([]);
   const [dailyCarryReady, setDailyCarryReady] = useState(false);
@@ -1583,6 +1584,7 @@ export default function App() {
         tomorrowCells: next.tomorrowCells || [],
         planCells: next.planCells || [],
         labels: next.labels || {},
+        tomorrowLabels: next.tomorrowLabels || {},
         todayStart: next.todayStart || "",
         tomorrowStart: next.tomorrowStart || "",
         updatedAt: serverTimestamp(),
@@ -1619,6 +1621,7 @@ export default function App() {
           tomorrowCells: Array.isArray(data.tomorrowCells) ? data.tomorrowCells : [],
           planCells: Array.isArray(data.planCells) ? data.planCells : [],
           labels: data.labels && typeof data.labels === "object" ? data.labels : {},
+          tomorrowLabels: data.tomorrowLabels && typeof data.tomorrowLabels === "object" ? data.tomorrowLabels : {},
           todayStart: data.todayStart || "",
           tomorrowStart: data.tomorrowStart || "",
         });
@@ -1630,6 +1633,7 @@ export default function App() {
           tomorrowCells: mine.tomorrowCells,
           planCells: mine.planCells,
           labels: mine.labels,
+          tomorrowLabels: mine.tomorrowLabels,
           todayStart: mine.todayStart,
           tomorrowStart: mine.tomorrowStart,
         });
@@ -1641,18 +1645,11 @@ export default function App() {
     return () => unsub();
   }, [uid, nicknameConfirmed, currentDayKey]);
 
-<<<<<<< HEAD
-  /* ── 계획 이월: 어제 짠 "내일 계획"(tomorrowCells)을 오늘의 계획(planCells)으로 ──
-     오늘 계획이 비어 있고 어제 내일계획이 있을 때 한 번만 시드한다.
-     → 날짜가 바뀌어도 어제 계획이 오늘로 넘어와 "오늘 계획 대비 실행"을 볼 수 있고,
-       작성 후 이틀째(다음 날 새 doc)에는 자연히 비워진다. */
-=======
   /* ── 계획 이월: 어제 짠 "내일 계획"을 오늘로 이어준다 ──
      - tomorrowCells → 오늘 planCells (오늘 계획 대비 실행 비교용)
      - tomorrowStart("내일은 X시에 시작할 거야") → 오늘 todayStart
        → 오늘 트래커가 전날 계획한 시작 시간에 맞춰 시작한다.
      각각 오늘 값이 비어 있을 때만 한 번 시드하고, 이틀째(새 doc)에는 자연히 비워진다. */
->>>>>>> origin/main
   useEffect(() => {
     if (!nicknameConfirmed || !uid) return;
     let cancelled = false;
@@ -1665,17 +1662,6 @@ export default function App() {
         ]);
         if (cancelled) return;
         const todayData = todaySnap.exists() ? todaySnap.data() || {} : {};
-<<<<<<< HEAD
-        const todayPlan = Array.isArray(todayData.planCells) ? todayData.planCells : [];
-        if (todayPlan.some(Boolean)) return; // 이미 오늘 계획이 있음
-        const prevData = prevSnap.exists() ? prevSnap.data() || {} : {};
-        const prevTomorrow = Array.isArray(prevData.tomorrowCells) ? prevData.tomorrowCells : [];
-        if (!prevTomorrow.some(Boolean)) return; // 이월할 계획 없음
-        setMyTracker((t) => ({ ...t, planCells: prevTomorrow }));
-        void writeSetDoc(
-          doc(db, trackerCol(currentDayKey), uid),
-          { planCells: prevTomorrow, updatedAt: serverTimestamp() },
-=======
         const prevData = prevSnap.exists() ? prevSnap.data() || {} : {};
 
         const todayPlan = Array.isArray(todayData.planCells) ? todayData.planCells : [];
@@ -1684,24 +1670,21 @@ export default function App() {
 
         const update = {};
         const patch = {};
-        // 계획 셀 이월 (오늘 계획이 비어 있을 때만)
         if (!todayPlan.some(Boolean) && prevTomorrow.some(Boolean)) {
           update.planCells = prevTomorrow;
           patch.planCells = prevTomorrow;
         }
-        // 시작 시간 이월 (오늘 시작시간이 비어 있을 때만)
         if (!todayData.todayStart && prevStart) {
           update.todayStart = prevStart;
           patch.todayStart = prevStart;
         }
-        if (Object.keys(update).length === 0) return; // 이월할 것 없음
+        if (Object.keys(update).length === 0) return;
 
         setMyTracker((t) => ({ ...t, ...patch }));
         update.updatedAt = serverTimestamp();
         void writeSetDoc(
           doc(db, trackerCol(currentDayKey), uid),
           update,
->>>>>>> origin/main
           { merge: true }
         ).catch((error) => console.error("Failed to carry plan", error));
       } catch (error) {
@@ -3535,6 +3518,7 @@ export default function App() {
       trackerTomorrowCells: myTracker.tomorrowCells,
       trackerPlanCells: myTracker.planCells,
       trackerLabels: myTracker.labels,
+      trackerTomorrowLabels: myTracker.tomorrowLabels,
       trackerTodayStart: myTracker.todayStart,
       trackerTomorrowStart: myTracker.tomorrowStart,
       isMe: true,
@@ -5173,6 +5157,7 @@ function MemberCard({ member, currentDayKey }) {
                   tomorrowCells: member.trackerTomorrowCells || [],
                   planCells: member.trackerPlanCells || [],
                   labels: member.trackerLabels || {},
+                  tomorrowLabels: member.trackerTomorrowLabels || {},
                   todayStart: member.trackerTodayStart || "",
                   tomorrowStart: member.trackerTomorrowStart || "",
                 }}
@@ -5331,9 +5316,16 @@ function TimeTracker({ tracker, onUpdate, readOnly = false }) {
 
   function handleLabelChange(row, value) {
     if (readOnly) return;
-    const newLabels = { ...(tracker?.labels ?? {}), [String(row)]: value };
-    if (onUpdate) onUpdate({ ...tracker, labels: newLabels });
+    if (editMode === "today") {
+      const newLabels = { ...(tracker?.labels ?? {}), [String(row)]: value };
+      if (onUpdate) onUpdate({ ...tracker, labels: newLabels });
+    } else {
+      const newTomorrowLabels = { ...(tracker?.tomorrowLabels ?? {}), [String(row)]: value };
+      if (onUpdate) onUpdate({ ...tracker, tomorrowLabels: newTomorrowLabels });
+    }
   }
+
+  const activeLabels = editMode === "today" ? (tracker?.labels ?? {}) : (tracker?.tomorrowLabels ?? {});
 
   const rows = Array.from({ length: HOURS }, (_, i) => ({
     rowIdx: i,
@@ -5355,8 +5347,8 @@ function TimeTracker({ tracker, onUpdate, readOnly = false }) {
       <div className="tracker-header">
         <button
           type="button"
-          className={`tracker-day-tab${editMode === "tomorrow" && !readOnly ? " active" : ""}`}
-          onClick={() => !readOnly && setEditMode("tomorrow")}
+          className={`tracker-day-tab${editMode === "tomorrow" ? " active" : ""}`}
+          onClick={() => setEditMode("tomorrow")}
         >
           <span className="tracker-time-sub">내일 나는</span>
           <span className="tracker-time-val">
@@ -5367,8 +5359,8 @@ function TimeTracker({ tracker, onUpdate, readOnly = false }) {
         </button>
         <button
           type="button"
-          className={`tracker-day-tab${editMode === "today" || readOnly ? " active" : ""}`}
-          onClick={() => !readOnly && setEditMode("today")}
+          className={`tracker-day-tab${editMode === "today" ? " active" : ""}`}
+          onClick={() => setEditMode("today")}
         >
           <span className="tracker-time-sub">오늘은</span>
           <span className="tracker-time-val">
@@ -5447,14 +5439,14 @@ function TimeTracker({ tracker, onUpdate, readOnly = false }) {
               <input
                 type="text"
                 className="tracker-label-input"
-                value={(tracker?.labels ?? {})[String(rowIdx)] || ""}
+                value={activeLabels[String(rowIdx)] || ""}
                 onChange={(e) => handleLabelChange(rowIdx, e.target.value)}
                 placeholder="메모"
                 maxLength={20}
               />
             ) : (
-              (tracker?.labels ?? {})[String(rowIdx)] ? (
-                <span className="tracker-label-text">{(tracker?.labels ?? {})[String(rowIdx)]}</span>
+              activeLabels[String(rowIdx)] ? (
+                <span className="tracker-label-text">{activeLabels[String(rowIdx)]}</span>
               ) : null
             )}
           </div>
