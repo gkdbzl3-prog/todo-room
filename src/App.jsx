@@ -1641,10 +1641,18 @@ export default function App() {
     return () => unsub();
   }, [uid, nicknameConfirmed, currentDayKey]);
 
+<<<<<<< HEAD
   /* ── 계획 이월: 어제 짠 "내일 계획"(tomorrowCells)을 오늘의 계획(planCells)으로 ──
      오늘 계획이 비어 있고 어제 내일계획이 있을 때 한 번만 시드한다.
      → 날짜가 바뀌어도 어제 계획이 오늘로 넘어와 "오늘 계획 대비 실행"을 볼 수 있고,
        작성 후 이틀째(다음 날 새 doc)에는 자연히 비워진다. */
+=======
+  /* ── 계획 이월: 어제 짠 "내일 계획"을 오늘로 이어준다 ──
+     - tomorrowCells → 오늘 planCells (오늘 계획 대비 실행 비교용)
+     - tomorrowStart("내일은 X시에 시작할 거야") → 오늘 todayStart
+       → 오늘 트래커가 전날 계획한 시작 시간에 맞춰 시작한다.
+     각각 오늘 값이 비어 있을 때만 한 번 시드하고, 이틀째(새 doc)에는 자연히 비워진다. */
+>>>>>>> origin/main
   useEffect(() => {
     if (!nicknameConfirmed || !uid) return;
     let cancelled = false;
@@ -1657,6 +1665,7 @@ export default function App() {
         ]);
         if (cancelled) return;
         const todayData = todaySnap.exists() ? todaySnap.data() || {} : {};
+<<<<<<< HEAD
         const todayPlan = Array.isArray(todayData.planCells) ? todayData.planCells : [];
         if (todayPlan.some(Boolean)) return; // 이미 오늘 계획이 있음
         const prevData = prevSnap.exists() ? prevSnap.data() || {} : {};
@@ -1666,6 +1675,33 @@ export default function App() {
         void writeSetDoc(
           doc(db, trackerCol(currentDayKey), uid),
           { planCells: prevTomorrow, updatedAt: serverTimestamp() },
+=======
+        const prevData = prevSnap.exists() ? prevSnap.data() || {} : {};
+
+        const todayPlan = Array.isArray(todayData.planCells) ? todayData.planCells : [];
+        const prevTomorrow = Array.isArray(prevData.tomorrowCells) ? prevData.tomorrowCells : [];
+        const prevStart = prevData.tomorrowStart || "";
+
+        const update = {};
+        const patch = {};
+        // 계획 셀 이월 (오늘 계획이 비어 있을 때만)
+        if (!todayPlan.some(Boolean) && prevTomorrow.some(Boolean)) {
+          update.planCells = prevTomorrow;
+          patch.planCells = prevTomorrow;
+        }
+        // 시작 시간 이월 (오늘 시작시간이 비어 있을 때만)
+        if (!todayData.todayStart && prevStart) {
+          update.todayStart = prevStart;
+          patch.todayStart = prevStart;
+        }
+        if (Object.keys(update).length === 0) return; // 이월할 것 없음
+
+        setMyTracker((t) => ({ ...t, ...patch }));
+        update.updatedAt = serverTimestamp();
+        void writeSetDoc(
+          doc(db, trackerCol(currentDayKey), uid),
+          update,
+>>>>>>> origin/main
           { merge: true }
         ).catch((error) => console.error("Failed to carry plan", error));
       } catch (error) {
