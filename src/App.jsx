@@ -1637,6 +1637,16 @@ export default function App() {
           todayStart: mine.todayStart,
           tomorrowStart: mine.tomorrowStart,
         });
+      } else {
+        // 오늘 doc 없음 (새 날, 이월 전) — 셀만 초기화, 라벨은 유지
+        setMyTracker((prev) => ({
+          ...prev,
+          todayCells: new Array(64).fill(""),
+          tomorrowCells: new Array(64).fill(""),
+          planCells: new Array(64).fill(""),
+          todayStart: "",
+          tomorrowStart: "",
+        }));
       }
       setTrackerMembers(all.filter((m) => m.id !== uid));
     }, (error) => {
