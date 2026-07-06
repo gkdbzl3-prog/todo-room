@@ -4346,24 +4346,11 @@ function ChallengePanel({
     return p.hasNumeric && p.numericMax >= p.numericGoal && p.numericGoal > 0;
   };
 
-  const allCompletedBooks = [
-    ...challenges.filter(isCompleted).map((c) => ({
-      key: `me-${c.id}`,
-      coverUrl: c.coverUrl,
-      title: c.title,
-      memberNickname: nickname || "나",
-      memberAvatar: avatar,
-    })),
-    ...(otherMembers || []).flatMap((m) =>
-      (m.challenges || []).filter(isCompleted).map((c) => ({
-        key: `${m.id}-${c.id}`,
-        coverUrl: c.coverUrl,
-        title: c.title,
-        memberNickname: m.nickname,
-        memberAvatar: m.avatar,
-      }))
-    ),
-  ];
+  const allCompletedBooks = challenges.filter(isCompleted).map((c) => ({
+    key: `me-${c.id}`,
+    coverUrl: c.coverUrl,
+    title: c.title,
+  }));
 
   const submit = () => {
     const challengeTitle = getChallengeTitle(selectedGoal?.label, title);
@@ -4506,11 +4493,8 @@ function ChallengePanel({
           <div className="challenge-bookshelf-title">📚 완독 서재 · {allCompletedBooks.length}권</div>
           <div className="challenge-bookshelf-row">
             {allCompletedBooks.map((book) => (
-              <div key={book.key} className="bookshelf-book" title={`${book.title}\n${book.memberNickname}`}>
+              <div key={book.key} className="bookshelf-book" title={book.title.replace(/[{}()]/g, "").trim()}>
                 <img src={book.coverUrl} alt="" className="bookshelf-book-cover" loading="lazy" />
-                <div className="bookshelf-badge">
-                  {book.memberAvatar || book.memberNickname?.charAt(0)?.toUpperCase() || "?"}
-                </div>
                 <div className="bookshelf-book-title">{book.title.replace(/[{}()]/g, "").trim()}</div>
               </div>
             ))}
