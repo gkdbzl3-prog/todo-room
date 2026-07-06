@@ -5179,6 +5179,7 @@ const TRACKER_PALETTE = [
   { id: "o", color: "#fb923c", label: "주황" },
   { id: "b", color: "#60a5fa", label: "파랑" },
   { id: "r", color: "#f87171", label: "빨강" },
+  { id: "br", color: "#a0714f", label: "갈색" },
 ];
 const TRACKER_COLOR_MAP = Object.fromEntries(TRACKER_PALETTE.map((p) => [p.id, p.color]));
 
