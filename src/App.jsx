@@ -4011,6 +4011,8 @@ export default function App() {
         <ChallengePanel
           challenges={challenges}
           otherMembers={displayOtherMembers}
+          nickname={nickname}
+          avatar={avatar}
           onAddChallenge={addChallenge}
           onDeleteChallenge={deleteChallenge}
           onAddItem={addChallengeItem}
@@ -4319,6 +4321,8 @@ function EventPopover({
 function ChallengePanel({
   challenges,
   otherMembers,
+  nickname,
+  avatar,
   onAddChallenge,
   onDeleteChallenge,
   onAddItem,
@@ -4335,6 +4339,31 @@ function ChallengePanel({
   const [goalNumber, setGoalNumber] = useState("");
   const selectedGoal = goalOptions.find((option) => option.id === selectedGoalId) || null;
   const challengeGroups = groupChallengeCardsByGoal(challenges);
+
+  const isCompleted = (c) => {
+    if (!c.coverUrl) return false;
+    const p = getChallengeProgress(c.items || [], c.goal);
+    return p.hasNumeric && p.numericMax >= p.numericGoal && p.numericGoal > 0;
+  };
+
+  const allCompletedBooks = [
+    ...challenges.filter(isCompleted).map((c) => ({
+      key: `me-${c.id}`,
+      coverUrl: c.coverUrl,
+      title: c.title,
+      memberNickname: nickname || "나",
+      memberAvatar: avatar,
+    })),
+    ...(otherMembers || []).flatMap((m) =>
+      (m.challenges || []).filter(isCompleted).map((c) => ({
+        key: `${m.id}-${c.id}`,
+        coverUrl: c.coverUrl,
+        title: c.title,
+        memberNickname: m.nickname,
+        memberAvatar: m.avatar,
+      }))
+    ),
+  ];
 
   const submit = () => {
     const challengeTitle = getChallengeTitle(selectedGoal?.label, title);
@@ -4471,6 +4500,23 @@ function ChallengePanel({
       <p className="challenge-hint">
         목표를 안 고르면 누적형 · 수치 칸을 채우면 진행률 바가 생겨요
       </p>
+
+      {allCompletedBooks.length > 0 && (
+        <div className="challenge-bookshelf">
+          <div className="challenge-bookshelf-title">📚 완독 서재 · {allCompletedBooks.length}권</div>
+          <div className="challenge-bookshelf-row">
+            {allCompletedBooks.map((book) => (
+              <div key={book.key} className="bookshelf-book" title={`${book.title}\n${book.memberNickname}`}>
+                <img src={book.coverUrl} alt="" className="bookshelf-book-cover" loading="lazy" />
+                <div className="bookshelf-badge">
+                  {book.memberAvatar || book.memberNickname?.charAt(0)?.toUpperCase() || "?"}
+                </div>
+                <div className="bookshelf-book-title">{book.title.replace(/[{}()]/g, "").trim()}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {challenges.length === 0 ? (
         <div className="empty">아직 챌린지가 없어요.</div>

@@ -3128,6 +3128,73 @@ input:focus {
 }
 
 /* ─── 챌린지 탭: 다른 사람들 ─── */
+.challenge-bookshelf {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 14px 14px 16px;
+  margin-bottom: 14px;
+}
+
+.challenge-bookshelf-title {
+  font-size: 12px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 0 12px;
+}
+
+.challenge-bookshelf-row {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 6px;
+}
+
+.challenge-bookshelf-row::-webkit-scrollbar { display: none; }
+
+.bookshelf-book {
+  position: relative;
+  flex-shrink: 0;
+  width: 64px;
+}
+
+.bookshelf-book-cover {
+  width: 64px;
+  height: 90px;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bookshelf-badge {
+  position: absolute;
+  bottom: 22px;
+  right: -5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(21, 17, 31, 0.9);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.bookshelf-book-title {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: 5px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .challenge-others {
   margin-top: 20px;
   padding-top: 16px;
