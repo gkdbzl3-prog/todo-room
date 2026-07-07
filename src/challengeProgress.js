@@ -140,6 +140,15 @@ export function getChallengeProgress(items, goal = null) {
   };
 }
 
+// ChallengeCard의 complete 판정과 동일한 기준: 체크리스트 전부 완료 또는 수치 목표 도달.
+export function isChallengeComplete(challenge) {
+  const p = getChallengeProgress(challenge?.items || [], challenge?.goal);
+  const checklistComplete = p.hasChecklist && p.total > 0 && p.done >= p.total;
+  const numericComplete =
+    p.hasNumeric && p.numericMax >= p.numericGoal && p.numericGoal > 0;
+  return checklistComplete || numericComplete;
+}
+
 export function sortChallengeItemsForDisplay(items) {
   return [...(items || [])].map(normalizeChallengeItem).sort((a, b) => {
     return (a.createdAt || a.doneAt || 0) - (b.createdAt || b.doneAt || 0);

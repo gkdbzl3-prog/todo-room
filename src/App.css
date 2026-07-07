@@ -2697,6 +2697,36 @@ input:focus {
   gap: 8px;
 }
 
+.challenge-done-section {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.challenge-done-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 4px 2px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 800;
+  color: rgba(107, 179, 138, 0.9);
+}
+
+.challenge-done-chevron {
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+.challenge-done-list {
+  margin-top: 12px;
+  opacity: 0.9;
+}
+
 .challenge-goal-heading {
   padding: 0 2px;
   font-size: 13px;

@@ -44,6 +44,7 @@ import {
   groupChallengeCardsByGoal,
   groupChallengesByGoal,
   groupItemsBySection,
+  isChallengeComplete,
   normalizeChallengeItem,
   parseBulkChallengeInput,
   toggleChallengeItemDone,
@@ -4162,7 +4163,7 @@ function RoutineItem({ item, onCycle, onDelete, onNote }) {
           type="button"
           className={`routine-note-btn${hasNote ? " has-note" : ""}`}
           onClick={() => setEditingNote((v) => !v)}
-          aria-label="Detail"
+          aria-label="상세 항목 추"
           title="Detail"
         >
           ✎
@@ -4413,7 +4414,12 @@ function ChallengePanel({
   const [customGoalName, setCustomGoalName] = useState("");
   const [goalNumber, setGoalNumber] = useState("");
   const selectedGoal = goalOptions.find((option) => option.id === selectedGoalId) || null;
-  const challengeGroups = groupChallengeCardsByGoal(challenges);
+  const [doneCollapsed, setDoneCollapsed] = useState(true);
+  // 진행 중 / 완료 분리 — 완료된 챌린지는 아래 별도 카테고리로 뺀다.
+  const activeChallenges = challenges.filter((c) => !isChallengeComplete(c));
+  const doneChallenges = challenges.filter((c) => isChallengeComplete(c));
+  const challengeGroups = groupChallengeCardsByGoal(activeChallenges);
+  const doneGroups = groupChallengeCardsByGoal(doneChallenges);
 
   const isCompleted = (c) => {
     if (!c.coverUrl) return false;
@@ -4466,6 +4472,32 @@ function ChallengePanel({
     setCustomMode(false);
     setCustomGoalName("");
   };
+
+  const renderCard = (c) => (
+    <ChallengeCard
+      key={c.id}
+      challenge={c}
+      displayTitle={c.displayTitle}
+      onDelete={() => onDeleteChallenge(c.id)}
+      onAddItem={(name) => onAddItem(c.id, name)}
+      onAddItemsBulk={(names) => onAddItemsBulk(c.id, names)}
+      onToggleItem={(itemId) => onToggleItem(c.id, itemId)}
+      onDeleteItem={(itemId) => onDeleteItem(c.id, itemId)}
+      onSetCover={(url) => onSetCover && onSetCover(c.id, url)}
+    />
+  );
+
+  const renderGroup = (group) =>
+    group.hasGoal ? (
+      <div key={group.id} className="challenge-goal-section">
+        <div className="challenge-goal-heading">{group.title}</div>
+        <div className="challenge-goal-cards">
+          {group.challenges.map(renderCard)}
+        </div>
+      </div>
+    ) : (
+      group.challenges.map(renderCard)
+    );
 
   return (
     <div className="challenge-panel">
@@ -4580,44 +4612,35 @@ function ChallengePanel({
       {challenges.length === 0 ? (
         <div className="empty">아직 챌린지가 없어요.</div>
       ) : (
-        <div className="challenge-list">
-          {challengeGroups.map((group) =>
-            group.hasGoal ? (
-              <div key={group.id} className="challenge-goal-section">
-                <div className="challenge-goal-heading">{group.title}</div>
-                <div className="challenge-goal-cards">
-                  {group.challenges.map((c) => (
-                    <ChallengeCard
-                      key={c.id}
-                      challenge={c}
-                      displayTitle={c.displayTitle}
-                      onDelete={() => onDeleteChallenge(c.id)}
-                      onAddItem={(name) => onAddItem(c.id, name)}
-                      onAddItemsBulk={(names) => onAddItemsBulk(c.id, names)}
-                      onToggleItem={(itemId) => onToggleItem(c.id, itemId)}
-                      onDeleteItem={(itemId) => onDeleteItem(c.id, itemId)}
-                      onSetCover={(url) => onSetCover && onSetCover(c.id, url)}
-                    />
-                  ))}
-                </div>
-              </div>
+        <>
+          <div className="challenge-list">
+            {activeChallenges.length === 0 ? (
+              <div className="empty">진행 중인 챌린지가 없어요.</div>
             ) : (
-              group.challenges.map((c) => (
-                <ChallengeCard
-                  key={c.id}
-                  challenge={c}
-                  displayTitle={c.displayTitle}
-                  onDelete={() => onDeleteChallenge(c.id)}
-                  onAddItem={(name) => onAddItem(c.id, name)}
-                  onAddItemsBulk={(names) => onAddItemsBulk(c.id, names)}
-                  onToggleItem={(itemId) => onToggleItem(c.id, itemId)}
-                  onDeleteItem={(itemId) => onDeleteItem(c.id, itemId)}
-                  onSetCover={(url) => onSetCover && onSetCover(c.id, url)}
-                />
-              ))
-            )
+              challengeGroups.map(renderGroup)
+            )}
+          </div>
+
+          {doneChallenges.length > 0 && (
+            <div className="challenge-done-section">
+              <button
+                type="button"
+                className="challenge-done-toggle"
+                onClick={() => setDoneCollapsed((v) => !v)}
+              >
+                <span className="challenge-done-chevron">
+                  {doneCollapsed ? "▾" : "▴"}
+                </span>
+                ✅ 완료 · {doneChallenges.length}
+              </button>
+              {!doneCollapsed && (
+                <div className="challenge-list challenge-done-list">
+                  {doneGroups.map(renderGroup)}
+                </div>
+              )}
+            </div>
           )}
-        </div>
+        </>
       )}
 
       {otherMembers && otherMembers.some((m) => (m.challenges || []).length > 0) && (
