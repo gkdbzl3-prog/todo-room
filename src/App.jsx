@@ -4175,7 +4175,7 @@ function RoutineItem({ item, onCycle, onDelete, onNote }) {
             e.currentTarget.blur();
           }
         }}
-        placeholder="한마디 (예: 영어 듣기 · 일본어 필사)"
+        placeholder="Detail (예: 영어 듣기 · 일본어 필사)"
       />
     </div>
   );
