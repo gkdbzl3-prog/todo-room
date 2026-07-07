@@ -1154,10 +1154,15 @@ export default function App() {
   const currentMembersReadyKey = `${uid}:${nickname}:${currentDayKey}:${currentWeekKey}:${legacyWeekKeyValue}`;
   const membersReady = membersReadyKey === currentMembersReadyKey;
   const memberSnapshotCacheKey = `${MEMBER_SNAPSHOT_CACHE_PREFIX}_${currentDayKey}_${currentWeekKey}`;
-  const cachedOtherMembers = useMemo(
-    () => loadCachedMemberSnapshot(memberSnapshotCacheKey),
-    [memberSnapshotCacheKey]
-  );
+  const cachedOtherMembers = useMemo(() => {
+    const todaySnapshot = loadCachedMemberSnapshot(memberSnapshotCacheKey);
+    if (todaySnapshot.length > 0) return todaySnapshot;
+    // 새 날 진입 직후엔 오늘 캐시가 비어 있으므로, 전날 스냅샷으로 스켈레톤을 채운다.
+    // (활동 없는 멤버는 렌더링 시 visibleMembers 필터에서 어차피 걸러진다.)
+    const prevDayKey = previousDayKeyFrom(currentDayKey);
+    const prevKey = `${MEMBER_SNAPSHOT_CACHE_PREFIX}_${prevDayKey}_${weekKeyForDate(prevDayKey)}`;
+    return loadCachedMemberSnapshot(prevKey);
+  }, [memberSnapshotCacheKey, currentDayKey]);
   const [quizConfig, setQuizConfig] = useState(null);
 
   // (위클리 항상 표시)
