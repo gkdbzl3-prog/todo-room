@@ -16,6 +16,7 @@ import {
   serverTimestamp,
   limit,
   arrayUnion,
+  arrayRemove,
 } from "./firebase";
 import "./App.css";
 import QuizHome from "./quiz/QuizHome";
@@ -2957,6 +2958,29 @@ export default function App() {
     });
   }, [isPerfectToday, perfectArmed, nicknameConfirmed, uid, nickname, avatar, currentDayKey, myPerfectDates]);
 
+  /* ── 완벽한 하루가 깨지면(진행중/미완 항목 발생) 오늘 도장 회수 (arrayRemove) ── */
+  useEffect(() => {
+    if (!nicknameConfirmed || !uid) return;
+    if (isLocalDevHost()) return;
+    if (isPerfectToday) return;
+    // 새 날 진입/재로드 순간엔 todos가 아직 안 실려 "미완"처럼 보일 수 있어,
+    // 사용자가 실제로 오늘 조작(perfectArmed)한 경우에만 회수한다.
+    if (!perfectArmed) return;
+    if (!myPerfectDates.includes(currentDayKey)) return;
+    // 다시 완벽해지면 재기록될 수 있도록 기록 래치 해제.
+    perfectRecordedRef.current = "";
+    void setDoc(
+      doc(db, perfectDaysCol(), uid),
+      {
+        dates: arrayRemove(currentDayKey),
+        updatedAt: serverTimestamp(),
+      },
+      { merge: true }
+    ).catch((error) => {
+      console.error("Failed to revoke perfect day", error);
+    });
+  }, [isPerfectToday, perfectArmed, nicknameConfirmed, uid, currentDayKey, myPerfectDates]);
+
   // 전체 멤버 (나 포함) 카드 데이터
   // Expose admin helpers on window so you can list/delete ghost users from the dev console.
   // Usage:
@@ -4163,7 +4187,7 @@ function RoutineItem({ item, onCycle, onDelete, onNote }) {
           type="button"
           className={`routine-note-btn${hasNote ? " has-note" : ""}`}
           onClick={() => setEditingNote((v) => !v)}
-          aria-label="상세 항목 추"
+          aria-label="Detail"
           title="Detail"
         >
           ✎

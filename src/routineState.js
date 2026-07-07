@@ -6,6 +6,7 @@ export function rolloverRoutineDone(items, doneDate, todayKey) {
     started: false,
     done: false,
     completedAt: null,
+    note: "",
   }));
   return { items: next, changed: true };
 }
