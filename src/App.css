@@ -1223,6 +1223,11 @@ input:focus {
   opacity: 0.4;
 }
 
+.mini-note {
+  color: rgba(255, 255, 255, 0.45);
+  font-weight: 400;
+}
+
 .mini-empty {
   font-size: 11px;
   opacity: 0.4;
@@ -2219,15 +2224,47 @@ input:focus {
 
 .routine-item {
   display: flex;
-  align-items: center;
-  gap: 8px;
+  flex-direction: column;
+  gap: 4px;
   padding: 10px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   transition: opacity 0.15s;
 }
 
+.routine-item-main {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .routine-item:last-child {
   border-bottom: none;
+}
+
+.routine-note-input {
+  margin-left: 30px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.82rem;
+  padding: 2px 0;
+  width: calc(100% - 30px);
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.routine-note-input::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.routine-note-input:focus {
+  border-bottom-color: rgba(107, 179, 138, 0.6);
+  color: var(--text, #f3f4f6);
+}
+
+.routine-item.done .routine-note-input {
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .routine-item.done .routine-text {

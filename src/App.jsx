@@ -1939,6 +1939,18 @@ export default function App() {
     syncMyRoutine(next);
   };
 
+  // 항목별 "한마디" 메모 — 매일 바꿔 달 수 있는 상세 (예: 외국어 → "영어 듣기")
+  const updateRoutineNote = (id, note) => {
+    const next = {
+      ...myRoutine,
+      items: (myRoutine.items || []).map((it) =>
+        it.id === id ? { ...it, note } : it
+      ),
+    };
+    setMyRoutine(next);
+    syncMyRoutine(next);
+  };
+
   // Celebration pulse fires once when the LAST item is checked off
   const routineDoneCount = (myRoutine.items || []).filter((i) => i.done).length;
   const routineTotalCount = (myRoutine.items || []).length;
@@ -4007,6 +4019,7 @@ export default function App() {
               addRoutine={addRoutine}
               cycleRoutine={cycleRoutine}
               deleteRoutine={deleteRoutine}
+              updateRoutineNote={updateRoutineNote}
               celebrated={routineCelebrated}
             />
 
@@ -4118,28 +4131,52 @@ function RoutineDonut({ done, total, isComplete }) {
 }
 
 /* ─────────────── RoutineItem ─────────────── */
-function RoutineItem({ item, onCycle, onDelete }) {
+function RoutineItem({ item, onCycle, onDelete, onNote }) {
   // 3-state cycle: 진행 전 → 진행중 → 완료 (TodoItem과 동일)
   const status = item.done ? "done" : item.started ? "doing" : "ready";
   const statusLabel = { ready: "진행 전", doing: "진행중", done: "완료" };
+  const [note, setNote] = useState(item.note || "");
+  // 다른 기기에서 바뀌면(동기화) 로컬 입력값도 따라가되, 편집 중이 아닐 때만 반영
+  useEffect(() => {
+    setNote(item.note || "");
+  }, [item.note]);
+  const commitNote = () => {
+    const v = note.trim();
+    if (v !== (item.note || "")) onNote(item.id, v);
+  };
   return (
     <div className={`routine-item ${status}`}>
-      <button
-        type="button"
-        className={`todo-cycle-btn routine-cycle ${status}`}
-        onClick={() => onCycle(item.id)}
-        aria-label={statusLabel[status]}
+      <div className="routine-item-main">
+        <button
+          type="button"
+          className={`todo-cycle-btn routine-cycle ${status}`}
+          onClick={() => onCycle(item.id)}
+          aria-label={statusLabel[status]}
+        />
+        <span className="routine-text">{item.text}</span>
+        <span className={`todo-status-label ${status}`}>{statusLabel[status]}</span>
+        <button
+          type="button"
+          className="routine-del"
+          onClick={() => onDelete(item.id)}
+          aria-label="삭제"
+        >
+          ×
+        </button>
+      </div>
+      <input
+        className="routine-note-input"
+        value={note}
+        onChange={(e) => setNote(e.target.value)}
+        onBlur={commitNote}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            commitNote();
+            e.currentTarget.blur();
+          }
+        }}
+        placeholder="한마디 (예: 영어 듣기 · 일본어 필사)"
       />
-      <span className="routine-text">{item.text}</span>
-      <span className={`todo-status-label ${status}`}>{statusLabel[status]}</span>
-      <button
-        type="button"
-        className="routine-del"
-        onClick={() => onDelete(item.id)}
-        aria-label="삭제"
-      >
-        ×
-      </button>
     </div>
   );
 }
@@ -4154,6 +4191,7 @@ function RoutineCard({
   addRoutine,
   cycleRoutine,
   deleteRoutine,
+  updateRoutineNote,
   celebrated,
 }) {
   const items = routine.items || [];
@@ -4211,6 +4249,7 @@ function RoutineCard({
                     item={item}
                     onCycle={cycleRoutine}
                     onDelete={deleteRoutine}
+                    onNote={updateRoutineNote}
                   />
                 ))}
               </div>
@@ -5160,6 +5199,9 @@ function MemberCard({ member, currentDayKey }) {
                           <span className={`todo-dot ${st}`} />
                           <span className={st === "done" ? "mini-text done" : "mini-text"}>
                             {it.text}
+                            {it.note ? (
+                              <span className="mini-note"> · {it.note}</span>
+                            ) : null}
                           </span>
                         </div>
                       );
