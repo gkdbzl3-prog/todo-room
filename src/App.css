@@ -2241,6 +2241,29 @@ input:focus {
   border-bottom: none;
 }
 
+.routine-note-btn {
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.routine-note-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.routine-note-btn.has-note {
+  color: rgba(107, 179, 138, 0.9);
+}
+
 .routine-note-input {
   margin-left: 30px;
   background: transparent;
@@ -2263,7 +2286,25 @@ input:focus {
   color: var(--text, #f3f4f6);
 }
 
-.routine-item.done .routine-note-input {
+.routine-note-text {
+  margin-left: 30px;
+  background: transparent;
+  border: none;
+  text-align: left;
+  padding: 0;
+  color: rgba(107, 179, 138, 0.85);
+  font-size: 0.82rem;
+  cursor: pointer;
+  word-break: break-word;
+}
+
+.routine-note-text:hover {
+  color: rgba(107, 179, 138, 1);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+.routine-item.done .routine-note-text {
   color: rgba(255, 255, 255, 0.4);
 }
 

@@ -4136,14 +4136,17 @@ function RoutineItem({ item, onCycle, onDelete, onNote }) {
   const status = item.done ? "done" : item.started ? "doing" : "ready";
   const statusLabel = { ready: "진행 전", doing: "진행중", done: "완료" };
   const [note, setNote] = useState(item.note || "");
+  const [editingNote, setEditingNote] = useState(false);
   // 다른 기기에서 바뀌면(동기화) 로컬 입력값도 따라가되, 편집 중이 아닐 때만 반영
   useEffect(() => {
-    setNote(item.note || "");
-  }, [item.note]);
+    if (!editingNote) setNote(item.note || "");
+  }, [item.note, editingNote]);
   const commitNote = () => {
     const v = note.trim();
     if (v !== (item.note || "")) onNote(item.id, v);
+    setEditingNote(false);
   };
+  const hasNote = Boolean((item.note || "").trim());
   return (
     <div className={`routine-item ${status}`}>
       <div className="routine-item-main">
@@ -4157,6 +4160,15 @@ function RoutineItem({ item, onCycle, onDelete, onNote }) {
         <span className={`todo-status-label ${status}`}>{statusLabel[status]}</span>
         <button
           type="button"
+          className={`routine-note-btn${hasNote ? " has-note" : ""}`}
+          onClick={() => setEditingNote((v) => !v)}
+          aria-label="Detail"
+          title="Detail"
+        >
+          ✎
+        </button>
+        <button
+          type="button"
           className="routine-del"
           onClick={() => onDelete(item.id)}
           aria-label="삭제"
@@ -4164,19 +4176,33 @@ function RoutineItem({ item, onCycle, onDelete, onNote }) {
           ×
         </button>
       </div>
-      <input
-        className="routine-note-input"
-        value={note}
-        onChange={(e) => setNote(e.target.value)}
-        onBlur={commitNote}
-        onKeyDown={(e) => {
-          if (e.key === "Enter") {
-            commitNote();
-            e.currentTarget.blur();
-          }
-        }}
-        placeholder="Detail (예: 영어 듣기 · 일본어 필사)"
-      />
+      {editingNote ? (
+        <input
+          className="routine-note-input"
+          value={note}
+          autoFocus
+          onChange={(e) => setNote(e.target.value)}
+          onBlur={commitNote}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              commitNote();
+              e.currentTarget.blur();
+            } else if (e.key === "Escape") {
+              setNote(item.note || "");
+              setEditingNote(false);
+            }
+          }}
+          placeholder="Detail"
+        />
+      ) : hasNote ? (
+        <button
+          type="button"
+          className="routine-note-text"
+          onClick={() => setEditingNote(true)}
+        >
+          {item.note}
+        </button>
+      ) : null}
     </div>
   );
 }
