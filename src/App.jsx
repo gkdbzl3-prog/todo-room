@@ -650,7 +650,13 @@ function attachPerfectDays(displayMembers, perfectDayMembers) {
 }
 
 // Attach tomorrow todos to display members by matching id/nickname.
-// 멤버 카드에 내일 투두 표시. setAt < todayKey이면 이미 옮겨졌어야 하니 표시하지 않음.
+// 멤버 카드에 내일 투두 표시.
+// 이월(내일→오늘)은 그 사람이 앱을 직접 열어야만 돈다. 그래서 어제 계획을
+// 써두고 오늘 아직 앱을 안 연 사람은, 예전 로직(setAt < todayKey면 숨김)에서
+// 계획한 투두가 이월도 안 되고 화면에서도 사라졌다.
+// 이제는 그런 "이미 그 날이 온 계획"은 숨기는 대신 그 사람의 오늘 투두로
+// 합쳐서 보여준다. 본인이 앱을 열면 실제로 이월되면서 tomorrow 문서가
+// 비워지고, 카드에는 진짜 오늘 투두만 남는다.
 function attachTomorrows(displayMembers, tomorrowMembers, todayKey) {
   if (!tomorrowMembers || !tomorrowMembers.length) return displayMembers;
   const map = new Map();
@@ -666,9 +672,22 @@ function attachTomorrows(displayMembers, tomorrowMembers, todayKey) {
     if (m.id) keys.push(`id:${m.id}`);
     const tm = keys.map((key) => map.get(key)).find(Boolean) || null;
     if (!tm) return m;
+    const items = tm.todos || [];
+    if (!items.length) return m;
     const setAt = typeof tm.setAt === "string" ? tm.setAt : "";
-    if (setAt && todayKey && setAt < todayKey) return m;
-    return { ...m, tomorrowTodos: tm.todos || [] };
+    // 어제 이전에 적어둔 계획인데 아직 이월이 안 됨 → 오늘 투두로 합쳐서 표시.
+    if (setAt && todayKey && setAt < todayKey) {
+      const planned = items.map((t) => ({
+        ...t,
+        id: `plan-${t.id}`,
+        done: false,
+        started: false,
+        completedAt: null,
+      }));
+      return { ...m, todos: [...(m.todos || []), ...planned] };
+    }
+    // 오늘 적은 진짜 '내일' 계획은 내일 투두 칸에 그대로 표시.
+    return { ...m, tomorrowTodos: items };
   });
 }
 
