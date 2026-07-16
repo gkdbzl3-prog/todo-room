@@ -879,6 +879,30 @@ async function findRecentDailyFallbackRecords(currentDateKey) {
   return Array.from(fallbackRecordsByKey.values());
 }
 
+// 이월 소스: 오늘 이전에 이 uid doc이 존재하는 "가장 최근" 날의 데이터.
+// 어제만 보지 않으므로 중간에 빈 날이 있어도 미완료 항목이 안 사라진다.
+// (STALE_TODO_DAYS보다 오래된 날은 어차피 sweep 대상이라 스캔 안 함)
+async function findCarrySourceDaily(userUid, currentDateKey) {
+  const cutoff = new Date(`${currentDateKey}T00:00:00`);
+  cutoff.setDate(cutoff.getDate() - STALE_TODO_DAYS);
+  const cutoffKey = formatLocalDateKey(cutoff);
+
+  const historySnap = await getDocs(
+    query(collection(db, historyDatesCol()), orderBy("date", "desc"))
+  );
+
+  for (const historyDoc of historySnap.docs) {
+    const historyDate = historyDoc.data().date;
+    if (!historyDate || historyDate >= currentDateKey) continue;
+    if (historyDate < cutoffKey) break;
+    const snap = await getDoc(doc(db, dailyCol(historyDate), userUid));
+    if (snap.exists() && (snap.data().todos || []).length > 0) {
+      return snap.data();
+    }
+  }
+  return null;
+}
+
 async function findRecentDailyMatchByNickname(targetNickname) {
   if (!targetNickname) return null;
 
@@ -2182,26 +2206,35 @@ export default function App() {
         const today = currentDayKey;
         const todayRef = doc(db, dailyCol(today), uid);
         const todaySnap = await getDoc(todayRef);
-        const todayTodos = todaySnap.exists() ? todaySnap.data().todos || [] : [];
+        const todayData = todaySnap.exists() ? todaySnap.data() : null;
+        const todayTodos = todayData?.todos || [];
 
         if (cancelled) return;
-        if (todayTodos.length > 0) {
-          localStorage.setItem(carryKey, "done");
+
+        // 어제 하루가 아니라, uid doc이 있는 가장 최근 날에서 이월(빈 날 건너뜀).
+        const sourceData = await findCarrySourceDaily(uid, today);
+
+        if (cancelled) return;
+
+        if (!sourceData) {
+          if (todayTodos.length > 0) localStorage.setItem(carryKey, "done");
           return;
         }
 
-        const prevSnap = await getDoc(doc(db, dailyCol(previousDayKeyFrom(today)), uid));
-        const sourceData = prevSnap.exists() ? prevSnap.data() : null;
+        const carryCandidates = resetTodosForNewDay(sourceData.todos || []);
 
-        if (cancelled) return;
+        // all-or-nothing이 아니라 병합: 오늘에 이미 있는 항목(id 기준)은 빼고
+        // 어제 미완료 항목만 이어붙인다. 오늘 doc이 먼저 만들어져 있어도 누락 없이 이월됨.
+        const existingIds = new Set(todayTodos.map((t) => t.id));
+        const missing = carryCandidates.filter((t) => !existingIds.has(t.id));
 
-        if (!sourceData) return;
+        if (!missing.length) {
+          if (todayTodos.length > 0) localStorage.setItem(carryKey, "done");
+          return;
+        }
 
-        const carryTodos = resetTodosForNewDay(sourceData.todos || []);
-
-        if (!carryTodos.length) return;
-
-        const nextAvatar = sourceData.avatar || avatar;
+        const mergedTodos = [...todayTodos, ...missing];
+        const nextAvatar = sourceData.avatar || todayData?.avatar || avatar;
 
         if (nextAvatar && nextAvatar !== avatar) {
           setAvatar(nextAvatar);
@@ -2209,11 +2242,11 @@ export default function App() {
           localStorage.setItem("todoRoom_avatar", nextAvatar);
         }
 
-        setMyDaily(carryTodos);
+        setMyDaily(mergedTodos);
         await writeSetDoc(todayRef, {
-          nickname: sourceData.nickname || nickname,
+          nickname: todayData?.nickname || sourceData.nickname || nickname,
           avatar: nextAvatar,
-          todos: carryTodos,
+          todos: mergedTodos,
           updatedAt: serverTimestamp(),
         });
         await writeSetDoc(doc(db, historyDatesCol(), today), { date: today });
