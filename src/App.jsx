@@ -1709,6 +1709,7 @@ export default function App() {
      - tomorrowCells → 오늘 planCells (오늘 계획 대비 실행 비교용)
      - tomorrowStart("내일은 X시에 시작할 거야") → 오늘 todayStart
        → 오늘 트래커가 전날 계획한 시작 시간에 맞춰 시작한다.
+     - tomorrowLabels → 오늘 labels (내일 탭에 적은 행 라벨: 독서/일기/컴활 등)
      각각 오늘 값이 비어 있을 때만 한 번 시드하고, 이틀째(새 doc)에는 자연히 비워진다. */
   useEffect(() => {
     if (!nicknameConfirmed || !uid) return;
@@ -1727,6 +1728,12 @@ export default function App() {
         const todayPlan = Array.isArray(todayData.planCells) ? todayData.planCells : [];
         const prevTomorrow = Array.isArray(prevData.tomorrowCells) ? prevData.tomorrowCells : [];
         const prevStart = prevData.tomorrowStart || "";
+        const todayLabels =
+          todayData.labels && typeof todayData.labels === "object" ? todayData.labels : {};
+        const prevTomorrowLabels =
+          prevData.tomorrowLabels && typeof prevData.tomorrowLabels === "object"
+            ? prevData.tomorrowLabels
+            : {};
 
         const update = {};
         const patch = {};
@@ -1737,6 +1744,11 @@ export default function App() {
         if (!todayData.todayStart && prevStart) {
           update.todayStart = prevStart;
           patch.todayStart = prevStart;
+        }
+        // "내일 나는" 탭에 적은 행 라벨(독서/일기/컴활 등)도 오늘 라벨로 이월.
+        if (!Object.keys(todayLabels).length && Object.keys(prevTomorrowLabels).length) {
+          update.labels = prevTomorrowLabels;
+          patch.labels = prevTomorrowLabels;
         }
         if (Object.keys(update).length === 0) return;
 
