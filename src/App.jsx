@@ -830,6 +830,53 @@ function resetTodosForNewDay(todos) {
     }));
 }
 
+const normalizeLabel = (s) => (s || "").normalize("NFC").trim().toLowerCase();
+
+/* ── 루틴 detail → 오늘의 TO-DO ──
+   루틴 "집안일"의 detail에 "설거지, 청소"를 적으면 그 내용이 오늘 투두로 올라간다.
+   detail에 루틴 이름 자신이 섞여 있으면("집안일, 청소") 그건 부모 이름이므로 뺀다. */
+function parseRoutineNoteParts(item) {
+  const raw = (item?.note || "").trim();
+  if (!raw) return [];
+  const ownName = normalizeLabel(item?.text);
+  const seen = new Set();
+  const parts = [];
+  raw.split(",").forEach((chunk) => {
+    const text = chunk.trim();
+    const key = normalizeLabel(text);
+    if (!key || key === ownName || seen.has(key)) return;
+    seen.add(key);
+    parts.push(text);
+  });
+  return parts;
+}
+
+// 원본은 루틴 item의 noteState — 여기서 만드는 건 투두 목록에 끼워 넣는 파생 뷰다.
+function getRoutineNoteTodos(routineItems) {
+  const out = [];
+  (routineItems || []).forEach((it) => {
+    if (it.off) return;
+    const state = it.noteState && typeof it.noteState === "object" ? it.noteState : {};
+    parseRoutineNoteParts(it).forEach((part) => {
+      const st = state[part];
+      out.push({
+        id: `rt-${it.id}-${part}`,
+        text: part,
+        started: st === "doing",
+        done: st === "done",
+        fromRoutine: it.id,
+        notePart: part,
+      });
+    });
+  });
+  return out;
+}
+
+// detail이 투두로 올라간 루틴은 루틴 카운트에서 빼고 투두 쪽에서만 센다 (중복 방지).
+function isRoutineCountable(item) {
+  return !item.off && parseRoutineNoteParts(item).length === 0;
+}
+
 function carryWeeklyForNewWeek(todos) {
   return (todos || [])
     .filter((todo) => !todo.done)
@@ -2000,6 +2047,21 @@ export default function App() {
       doneDate: currentDayKey,
       items: (myRoutine.items || []).map((it) => {
         if (it.id !== id) return it;
+        // detail이 투두로 올라간 루틴은 부모를 누르면 하위 조각이 전부 같이 완료/해제된다.
+        const parts = parseRoutineNoteParts(it);
+        if (parts.length) {
+          const state = it.noteState || {};
+          const allDone = parts.every((p) => state[p] === "done");
+          if (allDone) {
+            return { ...it, noteState: {}, started: false, done: false, completedAt: null };
+          }
+          const nextState = {};
+          parts.forEach((p) => {
+            nextState[p] = "done";
+          });
+          completedItem = it;
+          return { ...it, noteState: nextState, started: true, done: true, completedAt: Date.now() };
+        }
         // 진행 전 → 진행중
         if (!it.started && !it.done) return { ...it, started: true };
         // 진행중 → 완료
@@ -2017,6 +2079,68 @@ export default function App() {
         createdAt: serverTimestamp(),
       });
     }
+    setMyRoutine(next);
+    syncMyRoutine(next);
+  };
+
+  /* ── detail에서 올라온 투두 ── 원본은 루틴의 noteState라, 어느 쪽에서 눌러도 같이 움직인다. */
+  const cycleRoutineNoteTodo = (routineId, part) => {
+    armPerfect();
+    let completedText = null;
+    const next = {
+      ...myRoutine,
+      doneDate: currentDayKey,
+      items: (myRoutine.items || []).map((it) => {
+        if (it.id !== routineId) return it;
+        const parts = parseRoutineNoteParts(it);
+        const state = { ...(it.noteState || {}) };
+        const cur = state[part];
+        if (!cur) state[part] = "doing";
+        else if (cur === "doing") {
+          state[part] = "done";
+          completedText = part;
+        } else delete state[part];
+        // 부모 루틴은 조각이 전부 완료됐을 때만 완료.
+        const allDone = parts.length > 0 && parts.every((p) => state[p] === "done");
+        return {
+          ...it,
+          noteState: state,
+          started: allDone || parts.some((p) => state[p]),
+          done: allDone,
+          completedAt: allDone ? Date.now() : null,
+        };
+      }),
+    };
+    if (completedText) {
+      writeAddDoc(collection(db, notiCol(currentDayKey)), {
+        message: `${nickname}님이 '${completedText}'을(를) 완수하였습니다! (루틴)`,
+        createdAt: serverTimestamp(),
+      });
+    }
+    setMyRoutine(next);
+    syncMyRoutine(next);
+  };
+
+  // 투두에서 지우면 detail에서도 빠진다. detail이 다 비면 그 루틴은 다시 일반 루틴으로 카운트된다.
+  const deleteRoutineNoteTodo = (routineId, part) => {
+    const next = {
+      ...myRoutine,
+      items: (myRoutine.items || []).map((it) => {
+        if (it.id !== routineId) return it;
+        const rest = parseRoutineNoteParts(it).filter((p) => p !== part);
+        const state = { ...(it.noteState || {}) };
+        delete state[part];
+        const allDone = rest.length > 0 && rest.every((p) => state[p] === "done");
+        return {
+          ...it,
+          note: rest.join(", "),
+          noteState: state,
+          started: rest.length ? allDone : false,
+          done: rest.length ? allDone : false,
+          completedAt: null,
+        };
+      }),
+    };
     setMyRoutine(next);
     syncMyRoutine(next);
   };
@@ -2061,8 +2185,9 @@ export default function App() {
   };
 
   // Celebration pulse fires once when the LAST item is checked off
-  // off로 꺼둔 루틴은 카운트에서 제외 (뱃지/완벽한 하루 계산에도 그대로 반영됨)
-  const routineActiveItems = (myRoutine.items || []).filter((i) => !i.off);
+  // off로 꺼둔 루틴, 그리고 detail이 투두로 올라간 루틴은 카운트에서 제외
+  // (후자는 올라간 투두 쪽에서 세므로 — 뱃지/완벽한 하루 계산에도 그대로 반영됨)
+  const routineActiveItems = (myRoutine.items || []).filter(isRoutineCountable);
   const routineDoneCount = routineActiveItems.filter((i) => i.done).length;
   const routineTotalCount = routineActiveItems.length;
   const routineAllDone = routineTotalCount > 0 && routineDoneCount === routineTotalCount;
@@ -3030,23 +3155,32 @@ export default function App() {
   const visibleWeekly = myWeekly;
   // 날짜가 바뀌면(currentDayKey) 다시 계산되어 토/일에 뱃지가 뜬다.
   const weekEndNotice = useMemo(() => getWeekEndNotice(), [currentDayKey]);
-  const dailyDoneCount = myDaily.filter((t) => t.done).length;
+  // 루틴 detail에서 올라온 투두 — 저장은 루틴 쪽에만 되고, 목록/카운트에만 합류한다.
+  const routineNoteTodos = useMemo(
+    () => getRoutineNoteTodos(myRoutine.items),
+    [myRoutine.items]
+  );
+  const effectiveDaily = useMemo(
+    () => [...myDaily, ...routineNoteTodos],
+    [myDaily, routineNoteTodos]
+  );
+  const dailyDoneCount = effectiveDaily.filter((t) => t.done).length;
   const weeklyDoneCount = visibleWeekly.filter((t) => t.done).length;
   const totalDoneCount = dailyDoneCount + weeklyDoneCount + routineDoneCount;
   const totalCount =
-    myDaily.length + visibleWeekly.length + routineTotalCount;
+    effectiveDaily.length + visibleWeekly.length + routineTotalCount;
   // "오늘 카운트"로 표시한 주간 항목만 뱃지 계산에 합류 — done이면 done에, 미완이면 total만.
   const weeklyCountedToday = visibleWeekly.filter((t) => t.countedAt === currentDayKey);
   const weeklyCountedDoneToday = weeklyCountedToday.filter((t) => t.done).length;
   const badge = getBadge(
     dailyDoneCount + routineDoneCount + weeklyCountedDoneToday,
-    myDaily.length + routineTotalCount + weeklyCountedToday.length
+    effectiveDaily.length + routineTotalCount + weeklyCountedToday.length
   );
   const closestEvent = pickClosestEvent(events);
 
   /* ── 완벽한 하루 달성 시 perfectDays/{uid}에 오늘 날짜 기록 (arrayUnion으로 idempotent) ── */
   const myBadgeDone = dailyDoneCount + routineDoneCount + weeklyCountedDoneToday;
-  const myBadgeTotal = myDaily.length + routineTotalCount + weeklyCountedToday.length;
+  const myBadgeTotal = effectiveDaily.length + routineTotalCount + weeklyCountedToday.length;
   const isPerfectToday = myBadgeTotal >= 3 && myBadgeDone >= myBadgeTotal;
   useEffect(() => {
     if (!nicknameConfirmed || !uid) return;
@@ -4021,7 +4155,7 @@ export default function App() {
               <h2>
                 오늘의 TO-DO{" "}
                 <span className="count-badge">
-                  {dailyDoneCount}/{myDaily.length}
+                  {dailyDoneCount}/{effectiveDaily.length}
                 </span>
               </h2>
               {closestEvent && (
@@ -4033,19 +4167,30 @@ export default function App() {
 
               <p className="reset-notice">매일 새벽 2시에 초기화됩니다</p>
 
-              {myDaily.length === 0 ? (
+              {effectiveDaily.length === 0 ? (
                 <div className="empty">아직 투두가 없어요.</div>
               ) : (
                 <div className="todo-list">
-                  {myDaily.map((todo) => (
-                    <TodoItem
-                      key={todo.id}
-                      todo={todo}
-                      onCycle={cycleDaily}
-                      onDelete={deleteDaily}
-                      onToggleOneOff={toggleDailyOneOff}
-                    />
-                  ))}
+                  {effectiveDaily.map((todo) =>
+                    todo.fromRoutine ? (
+                      // 루틴 detail에서 올라온 항목 — 체크/삭제가 루틴 원본으로 간다.
+                      <TodoItem
+                        key={todo.id}
+                        todo={todo}
+                        fromRoutine
+                        onCycle={() => cycleRoutineNoteTodo(todo.fromRoutine, todo.notePart)}
+                        onDelete={() => deleteRoutineNoteTodo(todo.fromRoutine, todo.notePart)}
+                      />
+                    ) : (
+                      <TodoItem
+                        key={todo.id}
+                        todo={todo}
+                        onCycle={cycleDaily}
+                        onDelete={deleteDaily}
+                        onToggleOneOff={toggleDailyOneOff}
+                      />
+                    )
+                  )}
                 </div>
               )}
 
@@ -5206,19 +5351,25 @@ function ChallengeCard({
 }
 
 /* ─────────────── TodoItem ─────────────── */
-function TodoItem({ todo, onCycle, onDelete, countedToday, onToggleCounted, onToggleOneOff }) {
+function TodoItem({ todo, onCycle, onDelete, countedToday, onToggleCounted, onToggleOneOff, fromRoutine = false }) {
   // 상태: 진행 전 → 진행중 → 완료
   const status = todo.done ? "done" : todo.started ? "doing" : "ready";
   const statusLabel = { ready: "진행 전", doing: "진행중", done: "완료" };
 
   return (
-    <div className={`todo-item ${status}${countedToday ? " counted-today" : ""}${todo.oneOff ? " one-off" : ""}`}>
+    <div className={`todo-item ${status}${countedToday ? " counted-today" : ""}${todo.oneOff ? " one-off" : ""}${fromRoutine ? " from-routine" : ""}`}>
       <button
         className={`todo-cycle-btn ${status}`}
         onClick={() => onCycle(todo.id)}
       />
 
       <div className="todo-text">{todo.text}</div>
+
+      {fromRoutine && (
+        <span className="todo-routine-tag" title="루틴 detail에서 올라온 항목">
+          루틴
+        </span>
+      )}
 
       <span className={`todo-status-label ${status}`}>
         {statusLabel[status]}
@@ -5263,9 +5414,14 @@ function TodoItem({ todo, onCycle, onDelete, countedToday, onToggleCounted, onTo
 function MemberCard({ member, currentDayKey }) {
   const visibleWeeklyTodos = member.weeklyTodos || [];
   const visibleTomorrowTodos = member.tomorrowTodos || [];
-  // off로 꺼둔 루틴은 카운트/뱃지에서 제외 (본인 화면 계산과 동일)
-  const routineItems = (member.routineItems || []).filter((it) => !it.off);
-  const dailyDone = (member.todos || []).filter((t) => t.done).length;
+  // 본인 화면과 같은 규칙: off 루틴은 제외하고, detail이 투두로 올라간 루틴도
+  // 루틴 카운트에서 빼고 투두 쪽(memberDailyTodos)에서 센다.
+  const routineItems = (member.routineItems || []).filter(isRoutineCountable);
+  const memberDailyTodos = [
+    ...(member.todos || []),
+    ...getRoutineNoteTodos(member.routineItems),
+  ];
+  const dailyDone = memberDailyTodos.filter((t) => t.done).length;
   const weeklyCountedToday = visibleWeeklyTodos.filter(
     (t) => t.countedAt === currentDayKey
   );
@@ -5287,11 +5443,11 @@ function MemberCard({ member, currentDayKey }) {
 
   const totalDone = dailyDone + routineDoneSum + weeklyCountedDoneToday;
   const totalCount =
-    (member.todos || []).length + routineTotal + weeklyCountedToday.length;
+    memberDailyTodos.length + routineTotal + weeklyCountedToday.length;
   // 뱃지 = 오늘 daily + 루틴 + "오늘 카운트" 표시된 주간만
   const badge = getBadge(
     dailyDone + routineDoneSum + weeklyCountedDoneToday,
-    (member.todos || []).length + routineTotal + weeklyCountedToday.length
+    memberDailyTodos.length + routineTotal + weeklyCountedToday.length
   );
   const [routineExpanded, setRoutineExpanded] = useState(false);
   const [tomorrowExpanded, setTomorrowExpanded] = useState(false);
@@ -5344,7 +5500,7 @@ function MemberCard({ member, currentDayKey }) {
       )}
 
       <div className="member-todo-title">TODAY</div>
-      <MiniTodoList todos={member.todos || []} />
+      <MiniTodoList todos={memberDailyTodos} />
 
       {visibleWeeklyTodos.length > 0 && (
         <>

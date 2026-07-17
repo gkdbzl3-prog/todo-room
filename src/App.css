@@ -608,6 +608,24 @@ input:focus {
   margin-left: -4px;
 }
 
+/* 루틴 detail에서 올라온 투두 — 원본이 루틴이라 표시로 구분 */
+.todo-routine-tag {
+  flex: 0 0 auto;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 1px 5px;
+  border-radius: 999px;
+  background: rgba(107, 179, 138, 0.16);
+  border: 1px solid rgba(107, 179, 138, 0.35);
+  color: rgba(150, 214, 178, 0.95);
+  white-space: nowrap;
+}
+
+.todo-item.from-routine {
+  border-left: 2px solid rgba(107, 179, 138, 0.45);
+}
+
 .todo-oneoff-btn {
   border: 1px solid rgba(148, 163, 184, 0.4);
   background: transparent;
