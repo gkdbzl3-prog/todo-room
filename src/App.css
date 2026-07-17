@@ -449,6 +449,20 @@ input:focus {
   margin-left: 6px;
 }
 
+/* 주말이 다가올 때 주간 TO-DO에 뜨는 알림 뱃지 (토/일) */
+.week-end-badge {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(255, 176, 87, 0.16);
+  border: 1px solid rgba(255, 176, 87, 0.35);
+  color: rgba(255, 199, 140, 0.95);
+  font-weight: 600;
+  vertical-align: middle;
+  margin-left: 6px;
+  white-space: nowrap;
+}
+
 /* ─── 투두 아이템 ─── */
 .todo-list {
   display: flex;
@@ -2264,6 +2278,49 @@ input:focus {
   color: rgba(107, 179, 138, 0.9);
 }
 
+/* off — 잠시 쉬는 루틴 (카운트에서 제외) */
+.routine-off-btn {
+  flex: 0 0 auto;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.routine-off-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.routine-off-btn.active {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.routine-item.off .routine-text {
+  opacity: 0.4;
+  text-decoration: line-through;
+  text-decoration-color: rgba(255, 255, 255, 0.3);
+}
+
+.routine-item.off .routine-cycle {
+  opacity: 0.25;
+  cursor: default;
+}
+
+.routine-item.off .todo-status-label.off {
+  color: rgba(255, 255, 255, 0.35);
+}
+
 .routine-note-input {
   margin-left: 30px;
   background: transparent;
@@ -3506,6 +3563,14 @@ input:focus {
   cursor: pointer;
 }
 
+/* 계획 레이어(어제 짠 "내일") 참고 표시 — 실제 값과 구분되게 흐리게 */
+.tracker-time-plan {
+  font-size: 10px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.32);
+  white-space: nowrap;
+}
+
 
 .tracker-palette {
   display: flex;
@@ -3675,6 +3740,12 @@ input:focus {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+/* 오늘 메모가 없을 때 대신 보여주는 계획 메모 */
+.tracker-label-text.plan {
+  color: rgba(255, 255, 255, 0.25);
+  font-style: italic;
 }
 
 .member-tracker-wrap {

@@ -98,6 +98,20 @@ function nextMondayLabel() {
   return `${next.getMonth() + 1}/${next.getDate()}(월)`;
 }
 
+// 이번 주(월~일)가 며칠 남았는지. 일요일이면 0 = 오늘이 마지막 날.
+function daysLeftInWeek() {
+  const day = getEffectiveDate().getDay(); // 0=일 … 6=토
+  return day === 0 ? 0 : 7 - day;
+}
+
+// 주말이 다가오면 주간 TO-DO에 띄울 알림 뱃지 (그 외 기간엔 없음)
+function getWeekEndNotice() {
+  const left = daysLeftInWeek();
+  if (left === 0) return { emoji: "💥", text: "졌잘싸" };
+  if (left === 1) return { emoji: "🫪", text: "주말이 끝나갑니다^!^" };
+  return null;
+}
+
 function previousDayKeyFrom(dateKey) {
   const d = new Date(`${dateKey}T00:00:00`);
   d.setDate(d.getDate() - 1);
@@ -714,8 +728,10 @@ function attachTrackers(displayMembers, trackerMembers) {
       trackerPlanCells: tm.planCells || [],
       trackerLabels: tm.labels || {},
       trackerTomorrowLabels: tm.tomorrowLabels || {},
+      trackerPlanLabels: tm.planLabels || {},
       trackerTodayStart: tm.todayStart || "",
       trackerTomorrowStart: tm.tomorrowStart || "",
+      trackerPlanStart: tm.planStart || "",
     };
   });
 }
@@ -1169,7 +1185,7 @@ export default function App() {
   const [challengeMembers, setChallengeMembers] = useState([]);
   const [tomorrowMembers, setTomorrowMembers] = useState([]);
   const [trackerMembers, setTrackerMembers] = useState([]);
-  const [myTracker, setMyTracker] = useState({ todayCells: new Array(64).fill(""), tomorrowCells: new Array(64).fill(""), planCells: new Array(64).fill(""), labels: {}, tomorrowLabels: {}, todayStart: "", tomorrowStart: "" });
+  const [myTracker, setMyTracker] = useState({ todayCells: new Array(64).fill(""), tomorrowCells: new Array(64).fill(""), planCells: new Array(64).fill(""), labels: {}, tomorrowLabels: {}, planLabels: {}, todayStart: "", tomorrowStart: "", planStart: "" });
   const [perfectDayMembers, setPerfectDayMembers] = useState([]);
   const [myPerfectDates, setMyPerfectDates] = useState([]);
   const [dailyCarryReady, setDailyCarryReady] = useState(false);
@@ -1635,8 +1651,10 @@ export default function App() {
         planCells: next.planCells || [],
         labels: next.labels || {},
         tomorrowLabels: next.tomorrowLabels || {},
+        planLabels: next.planLabels || {},
         todayStart: next.todayStart || "",
         tomorrowStart: next.tomorrowStart || "",
+        planStart: next.planStart || "",
         updatedAt: serverTimestamp(),
       };
       void writeSetDoc(doc(db, trackerCol(currentDayKey), uid), payload).catch((error) => {
@@ -1672,8 +1690,10 @@ export default function App() {
           planCells: Array.isArray(data.planCells) ? data.planCells : [],
           labels: data.labels && typeof data.labels === "object" ? data.labels : {},
           tomorrowLabels: data.tomorrowLabels && typeof data.tomorrowLabels === "object" ? data.tomorrowLabels : {},
+          planLabels: data.planLabels && typeof data.planLabels === "object" ? data.planLabels : {},
           todayStart: data.todayStart || "",
           tomorrowStart: data.tomorrowStart || "",
+          planStart: data.planStart || "",
         });
       });
       const mine = all.find((m) => m.id === uid);
@@ -1684,18 +1704,25 @@ export default function App() {
           planCells: mine.planCells,
           labels: mine.labels,
           tomorrowLabels: mine.tomorrowLabels,
+          planLabels: mine.planLabels,
           todayStart: mine.todayStart,
           tomorrowStart: mine.tomorrowStart,
+          planStart: mine.planStart,
         });
       } else {
-        // 오늘 doc 없음 (새 날, 이월 전) — 셀만 초기화, 라벨은 유지
+        // 오늘 doc 없음 (새 날, 이월 전) — 오늘 레이어(셀/메모/시작시간)는 비우고
+        // 계획 레이어(plan*)는 이월 effect가 채운다.
         setMyTracker((prev) => ({
           ...prev,
           todayCells: new Array(64).fill(""),
           tomorrowCells: new Array(64).fill(""),
           planCells: new Array(64).fill(""),
+          labels: {},
+          tomorrowLabels: {},
+          planLabels: {},
           todayStart: "",
           tomorrowStart: "",
+          planStart: "",
         }));
       }
       setTrackerMembers(all.filter((m) => m.id !== uid));
@@ -1705,12 +1732,13 @@ export default function App() {
     return () => unsub();
   }, [uid, nicknameConfirmed, currentDayKey]);
 
-  /* ── 계획 이월: 어제 짠 "내일 계획"을 오늘로 이어준다 ──
-     - tomorrowCells → 오늘 planCells (오늘 계획 대비 실행 비교용)
-     - tomorrowStart("내일은 X시에 시작할 거야") → 오늘 todayStart
-       → 오늘 트래커가 전날 계획한 시작 시간에 맞춰 시작한다.
-     - tomorrowLabels → 오늘 labels (내일 탭에 적은 행 라벨: 독서/일기/컴활 등)
-     각각 오늘 값이 비어 있을 때만 한 번 시드하고, 이틀째(새 doc)에는 자연히 비워진다. */
+  /* ── 계획 이월: 어제 짠 "내일 계획"을 오늘의 "계획 레이어"로 옮긴다 ──
+     계획(plan*)과 실제(today*)는 별개 레이어다. 계획은 참고용으로만 넘어오고,
+     오늘 실제로 적는 값(todayCells/labels/todayStart)은 하루가 바뀌면 빈 상태로 시작한다.
+     - tomorrowCells  → planCells  (연하게 깔리는 오늘의 계획)
+     - tomorrowLabels → planLabels (계획 메모 — 오늘 메모는 따로 자유롭게 적음)
+     - tomorrowStart  → planStart  (계획한 시작 시간 — 실제 시작은 todayStart에 따로 기록)
+     각각 오늘 계획 값이 비어 있을 때만 한 번 시드한다. */
   useEffect(() => {
     if (!nicknameConfirmed || !uid) return;
     let cancelled = false;
@@ -1728,8 +1756,10 @@ export default function App() {
         const todayPlan = Array.isArray(todayData.planCells) ? todayData.planCells : [];
         const prevTomorrow = Array.isArray(prevData.tomorrowCells) ? prevData.tomorrowCells : [];
         const prevStart = prevData.tomorrowStart || "";
-        const todayLabels =
-          todayData.labels && typeof todayData.labels === "object" ? todayData.labels : {};
+        const todayPlanLabels =
+          todayData.planLabels && typeof todayData.planLabels === "object"
+            ? todayData.planLabels
+            : {};
         const prevTomorrowLabels =
           prevData.tomorrowLabels && typeof prevData.tomorrowLabels === "object"
             ? prevData.tomorrowLabels
@@ -1741,14 +1771,13 @@ export default function App() {
           update.planCells = prevTomorrow;
           patch.planCells = prevTomorrow;
         }
-        if (!todayData.todayStart && prevStart) {
-          update.todayStart = prevStart;
-          patch.todayStart = prevStart;
+        if (!todayData.planStart && prevStart) {
+          update.planStart = prevStart;
+          patch.planStart = prevStart;
         }
-        // "내일 나는" 탭에 적은 행 라벨(독서/일기/컴활 등)도 오늘 라벨로 이월.
-        if (!Object.keys(todayLabels).length && Object.keys(prevTomorrowLabels).length) {
-          update.labels = prevTomorrowLabels;
-          patch.labels = prevTomorrowLabels;
+        if (!Object.keys(todayPlanLabels).length && Object.keys(prevTomorrowLabels).length) {
+          update.planLabels = prevTomorrowLabels;
+          patch.planLabels = prevTomorrowLabels;
         }
         if (Object.keys(update).length === 0) return;
 
@@ -1992,6 +2021,24 @@ export default function App() {
     syncMyRoutine(next);
   };
 
+  // off 토글: 잠시 쉬는 루틴. 삭제하지 않고 뱃지/완벽한 하루 카운트에서만 뺀다.
+  const toggleRoutineOff = (id) => {
+    armPerfect();
+    const next = {
+      ...myRoutine,
+      items: (myRoutine.items || []).map((it) =>
+        it.id === id
+          ? // off로 끌 땐 진행 상태도 같이 정리해 카운트 잔상이 남지 않게 한다.
+            it.off
+            ? { ...it, off: false }
+            : { ...it, off: true, started: false, done: false, completedAt: null }
+          : it
+      ),
+    };
+    setMyRoutine(next);
+    syncMyRoutine(next);
+  };
+
   const deleteRoutine = (id) => {
     const next = {
       ...myRoutine,
@@ -2014,8 +2061,10 @@ export default function App() {
   };
 
   // Celebration pulse fires once when the LAST item is checked off
-  const routineDoneCount = (myRoutine.items || []).filter((i) => i.done).length;
-  const routineTotalCount = (myRoutine.items || []).length;
+  // off로 꺼둔 루틴은 카운트에서 제외 (뱃지/완벽한 하루 계산에도 그대로 반영됨)
+  const routineActiveItems = (myRoutine.items || []).filter((i) => !i.off);
+  const routineDoneCount = routineActiveItems.filter((i) => i.done).length;
+  const routineTotalCount = routineActiveItems.length;
   const routineAllDone = routineTotalCount > 0 && routineDoneCount === routineTotalCount;
   useEffect(() => {
     if (routineAllDone) setRoutineCelebrated(true);
@@ -2979,6 +3028,8 @@ export default function App() {
 
   /* ── 합산 ── */
   const visibleWeekly = myWeekly;
+  // 날짜가 바뀌면(currentDayKey) 다시 계산되어 토/일에 뱃지가 뜬다.
+  const weekEndNotice = useMemo(() => getWeekEndNotice(), [currentDayKey]);
   const dailyDoneCount = myDaily.filter((t) => t.done).length;
   const weeklyDoneCount = visibleWeekly.filter((t) => t.done).length;
   const totalDoneCount = dailyDoneCount + weeklyDoneCount + routineDoneCount;
@@ -3635,8 +3686,10 @@ export default function App() {
       trackerPlanCells: myTracker.planCells,
       trackerLabels: myTracker.labels,
       trackerTomorrowLabels: myTracker.tomorrowLabels,
+      trackerPlanLabels: myTracker.planLabels,
       trackerTodayStart: myTracker.todayStart,
       trackerTomorrowStart: myTracker.tomorrowStart,
+      trackerPlanStart: myTracker.planStart,
       isMe: true,
     },
     ...displayOtherMembers,
@@ -4068,6 +4121,11 @@ export default function App() {
                 <span className="count-badge">
                   {visibleWeekly.filter((t) => t.done).length}/{visibleWeekly.length}
                 </span>
+                {weekEndNotice && (
+                  <span className="week-end-badge">
+                    {weekEndNotice.emoji} {weekEndNotice.text}
+                  </span>
+                )}
               </h2>
               <p className="reset-notice">
                 매주 월요일 새벽 2시에 초기화됩니다 · 다음 초기화: {nextMondayLabel()}
@@ -4114,6 +4172,7 @@ export default function App() {
               cycleRoutine={cycleRoutine}
               deleteRoutine={deleteRoutine}
               updateRoutineNote={updateRoutineNote}
+              toggleRoutineOff={toggleRoutineOff}
               celebrated={routineCelebrated}
             />
 
@@ -4225,10 +4284,11 @@ function RoutineDonut({ done, total, isComplete }) {
 }
 
 /* ─────────────── RoutineItem ─────────────── */
-function RoutineItem({ item, onCycle, onDelete, onNote }) {
+function RoutineItem({ item, onCycle, onDelete, onNote, onToggleOff }) {
   // 3-state cycle: 진행 전 → 진행중 → 완료 (TodoItem과 동일)
-  const status = item.done ? "done" : item.started ? "doing" : "ready";
-  const statusLabel = { ready: "진행 전", doing: "진행중", done: "완료" };
+  const isOff = !!item.off;
+  const status = isOff ? "off" : item.done ? "done" : item.started ? "doing" : "ready";
+  const statusLabel = { ready: "진행 전", doing: "진행중", done: "완료", off: "off" };
   const [note, setNote] = useState(item.note || "");
   const [editingNote, setEditingNote] = useState(false);
   // 다른 기기에서 바뀌면(동기화) 로컬 입력값도 따라가되, 편집 중이 아닐 때만 반영
@@ -4249,9 +4309,19 @@ function RoutineItem({ item, onCycle, onDelete, onNote }) {
           className={`todo-cycle-btn routine-cycle ${status}`}
           onClick={() => onCycle(item.id)}
           aria-label={statusLabel[status]}
+          disabled={isOff}
         />
         <span className="routine-text">{item.text}</span>
         <span className={`todo-status-label ${status}`}>{statusLabel[status]}</span>
+        <button
+          type="button"
+          className={`routine-off-btn${isOff ? " active" : ""}`}
+          onClick={() => onToggleOff(item.id)}
+          aria-label={isOff ? "off 해제 (다시 카운트)" : "off — 카운트에서 빼기"}
+          title={isOff ? "off 해제 — 다시 카운트에 포함" : "off — 오늘 카운트에서 빼기"}
+        >
+          off
+        </button>
         <button
           type="button"
           className={`routine-note-btn${hasNote ? " has-note" : ""}`}
@@ -4312,11 +4382,14 @@ function RoutineCard({
   cycleRoutine,
   deleteRoutine,
   updateRoutineNote,
+  toggleRoutineOff,
   celebrated,
 }) {
   const items = routine.items || [];
-  const done = items.filter((i) => i.done).length;
-  const total = items.length;
+  // off로 꺼둔 루틴은 진행 링/카운트에서 제외 (목록에는 그대로 보임)
+  const activeItems = items.filter((i) => !i.off);
+  const done = activeItems.filter((i) => i.done).length;
+  const total = activeItems.length;
   const isComplete = total > 0 && done === total;
   return (
     <div className={`todo-panel routine${celebrated ? " celebrated" : ""}`}>
@@ -4370,6 +4443,7 @@ function RoutineCard({
                     onCycle={cycleRoutine}
                     onDelete={deleteRoutine}
                     onNote={updateRoutineNote}
+                    onToggleOff={toggleRoutineOff}
                   />
                 ))}
               </div>
@@ -5189,7 +5263,8 @@ function TodoItem({ todo, onCycle, onDelete, countedToday, onToggleCounted, onTo
 function MemberCard({ member, currentDayKey }) {
   const visibleWeeklyTodos = member.weeklyTodos || [];
   const visibleTomorrowTodos = member.tomorrowTodos || [];
-  const routineItems = member.routineItems || [];
+  // off로 꺼둔 루틴은 카운트/뱃지에서 제외 (본인 화면 계산과 동일)
+  const routineItems = (member.routineItems || []).filter((it) => !it.off);
   const dailyDone = (member.todos || []).filter((t) => t.done).length;
   const weeklyCountedToday = visibleWeeklyTodos.filter(
     (t) => t.countedAt === currentDayKey
@@ -5382,8 +5457,10 @@ function MemberCard({ member, currentDayKey }) {
                   planCells: member.trackerPlanCells || [],
                   labels: member.trackerLabels || {},
                   tomorrowLabels: member.trackerTomorrowLabels || {},
+                  planLabels: member.trackerPlanLabels || {},
                   todayStart: member.trackerTodayStart || "",
                   tomorrowStart: member.trackerTomorrowStart || "",
+                  planStart: member.trackerPlanStart || "",
                 }}
                 readOnly
               />
@@ -5426,7 +5503,13 @@ function TimeTracker({ tracker, onUpdate, readOnly = false }) {
     return m ? parseInt(m[1], 10) : null;
   };
 
-  const startHour = parseHour(tracker?.tomorrowStart) ?? parseHour(tracker?.todayStart) ?? 7;
+  // 오늘 탭의 시간축은 "계획한 시작 시간"에 맞춘다 — planCells가 그 축으로 그려졌기 때문.
+  // 실제 시작(todayStart)은 축을 흔들지 않고 기록만 된다.
+  const startHour =
+    parseHour(tracker?.tomorrowStart) ??
+    parseHour(tracker?.planStart) ??
+    parseHour(tracker?.todayStart) ??
+    7;
 
   const [localToday, setLocalToday] = useState(() =>
     normTrackerCells(tracker?.todayCells, TOTAL_CELLS)
@@ -5551,6 +5634,8 @@ function TimeTracker({ tracker, onUpdate, readOnly = false }) {
   }
 
   const activeLabels = editMode === "today" ? (tracker?.labels ?? {}) : (tracker?.tomorrowLabels ?? {});
+  // 오늘 탭에서만 계획 메모를 괄호로 참고 표시 (오늘 메모는 빈 칸에서 자유롭게 새로 적음)
+  const activePlanLabels = editMode === "today" ? (tracker?.planLabels ?? {}) : {};
 
   const rows = Array.from({ length: HOURS }, (_, i) => ({
     rowIdx: i,
@@ -5592,6 +5677,9 @@ function TimeTracker({ tracker, onUpdate, readOnly = false }) {
             {tracker?.todayStart
               ? <span onClick={(e) => { e.stopPropagation(); editTime("todayStart", "오늘 시작 시간", tracker?.todayStart); }}>{tracker.todayStart} <span className="tracker-time-sub">에 시작했어</span></span>
               : <span className="tracker-time-sub tracker-time-empty" onClick={(e) => { e.stopPropagation(); editTime("todayStart", "오늘 시작 시간", tracker?.todayStart); }}>시간 입력</span>}
+            {tracker?.planStart && (
+              <span className="tracker-time-plan"> (계획 {tracker.planStart})</span>
+            )}
           </span>
         </button>
       </div>
@@ -5666,12 +5754,20 @@ function TimeTracker({ tracker, onUpdate, readOnly = false }) {
                 className="tracker-label-input"
                 value={activeLabels[String(rowIdx)] || ""}
                 onChange={(e) => handleLabelChange(rowIdx, e.target.value)}
-                placeholder="메모"
+                placeholder={
+                  activePlanLabels[String(rowIdx)]
+                    ? `(계획) ${activePlanLabels[String(rowIdx)]}`
+                    : "메모"
+                }
                 maxLength={20}
               />
             ) : (
               activeLabels[String(rowIdx)] ? (
                 <span className="tracker-label-text">{activeLabels[String(rowIdx)]}</span>
+              ) : activePlanLabels[String(rowIdx)] ? (
+                <span className="tracker-label-text plan">
+                  (계획) {activePlanLabels[String(rowIdx)]}
+                </span>
               ) : null
             )}
           </div>
