@@ -140,13 +140,18 @@ export function getChallengeProgress(items, goal = null) {
   };
 }
 
-// ChallengeCard의 complete 판정과 동일한 기준: 체크리스트 전부 완료 또는 수치 목표 도달.
+export function challengeHasCover(challenge) {
+  return typeof challenge?.coverUrl === "string" && challenge.coverUrl.trim().length > 0;
+}
+
+// 체크리스트 전부 완료 또는 수치 목표 도달 시 완료.
+// 단, 수치형(독서 등)은 페이지를 다 채워도 인증 사진(표지)이 없으면 완료로 치지 않는다.
 export function isChallengeComplete(challenge) {
   const p = getChallengeProgress(challenge?.items || [], challenge?.goal);
   const checklistComplete = p.hasChecklist && p.total > 0 && p.done >= p.total;
   const numericComplete =
     p.hasNumeric && p.numericMax >= p.numericGoal && p.numericGoal > 0;
-  return checklistComplete || numericComplete;
+  return checklistComplete || (numericComplete && challengeHasCover(challenge));
 }
 
 export function sortChallengeItemsForDisplay(items) {

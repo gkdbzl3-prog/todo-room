@@ -48,6 +48,7 @@ import {
   isChallengeComplete,
   normalizeChallengeItem,
   parseBulkChallengeInput,
+  parseChallengeTitle,
   toggleChallengeItemDone,
 } from "./challengeProgress";
 /* ── 유틸 ── */
@@ -857,15 +858,18 @@ function getRoutineNoteTodos(routineItems) {
   (routineItems || []).forEach((it) => {
     if (it.off) return;
     const state = it.noteState && typeof it.noteState === "object" ? it.noteState : {};
+    const routineName = (it.text || "").trim();
     parseRoutineNoteParts(it).forEach((part) => {
       const st = state[part];
       out.push({
+        // 어느 루틴에서 올라온 항목인지 알 수 있게 루틴 이름을 앞에 붙인다.
         id: `rt-${it.id}-${part}`,
-        text: part,
+        text: routineName ? `${routineName} · ${part}` : part,
         started: st === "doing",
         done: st === "done",
         fromRoutine: it.id,
         notePart: part,
+        routineName,
       });
     });
   });
@@ -4733,6 +4737,37 @@ function ChallengePanel({
   const challengeGroups = groupChallengeCardsByGoal(activeChallenges);
   const doneGroups = groupChallengeCardsByGoal(doneChallenges);
 
+  // 챌린지가 새로 '완료'로 넘어가는 순간 화면 중앙에 축하 팝업.
+  // 카드는 곧바로 완료 그룹으로 이동(리마운트)하므로 축하 연출은 카드와 분리해 여기서 띄운다.
+  const prevCompleteIdsRef = useRef(null);
+  const celebrateTimerRef = useRef(null);
+  const [celebrateTitle, setCelebrateTitle] = useState(null);
+
+  useEffect(() => {
+    const completeNow = new Set(
+      challenges.filter((c) => isChallengeComplete(c)).map((c) => c.id)
+    );
+    const prev = prevCompleteIdsRef.current;
+    prevCompleteIdsRef.current = completeNow;
+    // 첫 렌더: 이미 완료돼 있던 챌린지는 축하하지 않음
+    if (prev === null) return;
+    const newlyDone = challenges.find(
+      (c) => completeNow.has(c.id) && !prev.has(c.id)
+    );
+    if (!newlyDone) return;
+    const parsed = parseChallengeTitle(newlyDone.title);
+    setCelebrateTitle(parsed.detailLabel || parsed.goalLabel || newlyDone.title);
+    if (celebrateTimerRef.current) clearTimeout(celebrateTimerRef.current);
+    celebrateTimerRef.current = setTimeout(() => setCelebrateTitle(null), 2800);
+  }, [challenges]);
+
+  useEffect(
+    () => () => {
+      if (celebrateTimerRef.current) clearTimeout(celebrateTimerRef.current);
+    },
+    []
+  );
+
   const isCompleted = (c) => {
     if (!c.coverUrl) return false;
     const p = getChallengeProgress(c.items || [], c.goal);
@@ -4813,6 +4848,19 @@ function ChallengePanel({
 
   return (
     <div className="challenge-panel">
+      {celebrateTitle &&
+        createPortal(
+          <div className="challenge-celebrate-pop" role="status" aria-live="polite">
+            <div className="challenge-celebrate-pop-card">
+              <div className="challenge-celebrate-pop-emoji">🎉</div>
+              <div className="challenge-celebrate-pop-title">목표 달성!</div>
+              <div className="challenge-celebrate-pop-sub">
+                ‘{celebrateTitle}’ 챌린지 완료
+              </div>
+            </div>
+          </div>,
+          document.body
+        )}
       <div className="challenge-add">
         {customMode ? (
           <div className="challenge-goal-custom">

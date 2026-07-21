@@ -2930,6 +2930,96 @@ input:focus {
   animation: challengeCelebrateBanner 0.4s ease both;
 }
 
+/* 챌린지 완료 축하 팝업 (화면 중앙 오버레이) */
+.challenge-celebrate-pop {
+  position: fixed;
+  inset: 0;
+  z-index: 4000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  animation: challengeCelebratePopFade 2.8s ease both;
+}
+
+.challenge-celebrate-pop-card {
+  text-align: center;
+  padding: 26px 34px;
+  border-radius: 20px;
+  color: #fff;
+  background: linear-gradient(135deg,
+      rgba(40, 30, 20, 0.92),
+      rgba(60, 40, 30, 0.92));
+  border: 1px solid rgba(255, 215, 120, 0.55);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.45),
+    0 0 40px rgba(255, 200, 120, 0.3);
+  animation: challengeCelebratePopIn 0.45s cubic-bezier(0.2, 0.9, 0.3, 1.3) both;
+}
+
+.challenge-celebrate-pop-emoji {
+  font-size: 40px;
+  line-height: 1;
+  animation: challengeCelebratePopBounce 0.9s ease 0.1s both;
+}
+
+.challenge-celebrate-pop-title {
+  margin-top: 8px;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.challenge-celebrate-pop-sub {
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 235, 200, 0.9);
+}
+
+@keyframes challengeCelebratePopIn {
+  0% {
+    transform: translateY(12px) scale(0.8);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes challengeCelebratePopBounce {
+  0% {
+    transform: scale(0.4) rotate(-12deg);
+  }
+
+  60% {
+    transform: scale(1.25) rotate(6deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes challengeCelebratePopFade {
+  0% {
+    opacity: 0;
+  }
+
+  8% {
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 /* 챌린지 완주 표지 슬롯 */
 .challenge-cover-wrap {
   display: flex;
