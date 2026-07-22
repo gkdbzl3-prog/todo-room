@@ -10,7 +10,17 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <!-- 폰트 CSS를 render-blocking에서 제외: media=print로 받아 로드되면 all로 전환.
+         덕분에 부팅 스켈레톤이 폰트를 기다리지 않고 시스템 폰트로 즉시 뜬다. -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    >
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    </noscript>
     <title>TO-DO ROOM</title>
     <!-- 부팅 스켈레톤: JS 번들이 로드/파싱되기 전에도 즉시 그려진다.
          React가 #root에 마운트되면 이 내용은 자동으로 교체된다. -->

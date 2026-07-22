@@ -1267,12 +1267,16 @@ export default function App() {
   const [selectedDate, setSelectedDate] = useState(null);
   const ghostSweepRef = useRef("");
   const [membersReadyKey, setMembersReadyKey] = useState("");
+  // 데일리 리스너만 도착하면 true. 스켈레톤은 이걸 기준으로 걷어내
+  // 위클리까지 안 기다리고 멤버 카드를 먼저 보여준다. (membersReady는 위클리 포함 완전 준비 상태)
+  const [dailyReadyKey, setDailyReadyKey] = useState("");
   const skipDailyStorageSaveRef = useRef(false);
   const skipWeeklyStorageSaveRef = useRef(false);
   const memberSnapshotSavedRef = useRef("");
   const legacyWeekKeyValue = legacyWeekKey();
   const currentMembersReadyKey = `${uid}:${nickname}:${currentDayKey}:${currentWeekKey}:${legacyWeekKeyValue}`;
   const membersReady = membersReadyKey === currentMembersReadyKey;
+  const dailyReady = dailyReadyKey === currentMembersReadyKey;
   const memberSnapshotCacheKey = `${MEMBER_SNAPSHOT_CACHE_PREFIX}_${currentDayKey}_${currentWeekKey}`;
   const cachedOtherMembers = useMemo(() => {
     const todaySnapshot = loadCachedMemberSnapshot(memberSnapshotCacheKey);
@@ -2631,6 +2635,7 @@ export default function App() {
   useEffect(() => {
     if (!nicknameConfirmed || !uid) return;
     if (isLocalDevHost()) {
+      setDailyReadyKey(currentMembersReadyKey);
       setMembersReadyKey(currentMembersReadyKey);
       return;
     }
@@ -2693,11 +2698,13 @@ export default function App() {
         dailyDocsBySource.set("today", all);
         dailyLoaded = true;
         applyDailyMembers();
+        if (!cancelled) setDailyReadyKey(currentMembersReadyKey);
         finalizeMembersReady();
       },
       (error) => {
         console.error("Failed to subscribe daily todos", error);
         dailyLoaded = true;
+        if (!cancelled) setDailyReadyKey(currentMembersReadyKey);
         finalizeMembersReady();
       }
     );
@@ -3815,7 +3822,7 @@ export default function App() {
   );
   const cachedVisibleOtherMembers = cachedOtherMembers.filter((m) => !isSelfMember(m));
   const displayOtherMembers =
-    otherMembers.length > 0 || membersReady ? otherMembers : cachedVisibleOtherMembers;
+    otherMembers.length > 0 || dailyReady ? otherMembers : cachedVisibleOtherMembers;
   const allMembers = [
     {
       id: uid,
@@ -4126,7 +4133,7 @@ export default function App() {
               <span className="notice-banner-icon">📣</span>
               <span className="notice-banner-text">{NOTICE_TEXT}</span>
             </div>
-            {!membersReady && cachedVisibleOtherMembers.length === 0 ? (
+            {!dailyReady && cachedVisibleOtherMembers.length === 0 ? (
               <div className="member-loading">
                 <div className="member-loading-card" />
                 <div className="member-loading-card" />
