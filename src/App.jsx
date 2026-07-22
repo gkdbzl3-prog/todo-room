@@ -1240,6 +1240,7 @@ export default function App() {
 
   // 다른 멤버
   const [members, setMembers] = useState([]);
+  const [previousDayMembers, setPreviousDayMembers] = useState([]);
   const [weeklyMembers, setWeeklyMembers] = useState([]);
   const [routineMembers, setRoutineMembers] = useState([]);
   const [eventMembers, setEventMembers] = useState([]);
@@ -2633,6 +2634,35 @@ export default function App() {
 
   /* ── 실시간 리스너 ── */
   useEffect(() => {
+    if (!nicknameConfirmed || !uid || isLocalDevHost()) {
+      return;
+    }
+
+    let cancelled = false;
+    const previousDate = previousDayKeyFrom(currentDayKey);
+
+    void getDocs(collection(db, dailyCol(previousDate)))
+      .then((snapshot) => {
+        if (cancelled) return;
+
+        const records = snapshot.docs.map((docSnap) => ({
+          id: docSnap.id,
+          ...docSnap.data(),
+        }));
+        setPreviousDayMembers(mergeRecordsByNickname(records));
+      })
+      .catch((error) => {
+        if (cancelled) return;
+        console.error("Failed to load previous-day members", error);
+        setPreviousDayMembers([]);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [nicknameConfirmed, uid, currentDayKey]);
+
+  useEffect(() => {
     if (!nicknameConfirmed || !uid) return;
     if (isLocalDevHost()) {
       setDailyReadyKey(currentMembersReadyKey);
@@ -3821,8 +3851,13 @@ export default function App() {
     trackerMembers.filter((m) => !isSelfMember(m))
   );
   const cachedVisibleOtherMembers = cachedOtherMembers.filter((m) => !isSelfMember(m));
+  const previousDayOtherMembers = previousDayMembers.filter((m) => !isSelfMember(m));
+  const fallbackOtherMembers =
+    cachedVisibleOtherMembers.length > 0
+      ? cachedVisibleOtherMembers
+      : previousDayOtherMembers;
   const displayOtherMembers =
-    otherMembers.length > 0 || dailyReady ? otherMembers : cachedVisibleOtherMembers;
+    otherMembers.length > 0 || dailyReady ? otherMembers : fallbackOtherMembers;
   const allMembers = [
     {
       id: uid,
@@ -4133,7 +4168,7 @@ export default function App() {
               <span className="notice-banner-icon">📣</span>
               <span className="notice-banner-text">{NOTICE_TEXT}</span>
             </div>
-            {!dailyReady && cachedVisibleOtherMembers.length === 0 ? (
+            {!dailyReady && fallbackOtherMembers.length === 0 ? (
               <div className="member-loading">
                 <div className="member-loading-card" />
                 <div className="member-loading-card" />
