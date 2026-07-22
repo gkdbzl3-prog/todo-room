@@ -12,10 +12,63 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
     <title>TO-DO ROOM</title>
+    <!-- 부팅 스켈레톤: JS 번들이 로드/파싱되기 전에도 즉시 그려진다.
+         React가 #root에 마운트되면 이 내용은 자동으로 교체된다. -->
+    <style>
+      html, body { margin: 0; }
+      body {
+        background-color: #1a1230;
+        color: #fff;
+        font-family: -apple-system, "Noto Sans KR", sans-serif;
+      }
+      #boot {
+        min-height: 100dvh;
+        padding: 20px 16px 40px;
+        box-sizing: border-box;
+      }
+      #boot .boot-title {
+        text-align: center;
+        letter-spacing: 4px;
+        font-size: 20px;
+        font-weight: 700;
+        opacity: 0.85;
+        margin: 6px 0 22px;
+      }
+      #boot .boot-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-width: 560px;
+        margin: 0 auto;
+      }
+      #boot .boot-card {
+        height: 84px;
+        border-radius: 16px;
+        background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0.05),
+            rgba(255, 255, 255, 0.11),
+            rgba(255, 255, 255, 0.05));
+        background-size: 200% 100%;
+        animation: bootShimmer 1.1s linear infinite;
+      }
+      @keyframes bootShimmer {
+        from { background-position: 200% 0; }
+        to { background-position: -200% 0; }
+      }
+    </style>
   </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div id="boot">
+        <div class="boot-title">TO-DO ROOM</div>
+        <div class="boot-cards">
+          <div class="boot-card"></div>
+          <div class="boot-card"></div>
+          <div class="boot-card"></div>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

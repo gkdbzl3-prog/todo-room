@@ -1,4 +1,13 @@
-import { useEffect, useState, useCallback, useMemo, useRef, Fragment } from "react";
+import {
+  useEffect,
+  useState,
+  useCallback,
+  useMemo,
+  useRef,
+  Fragment,
+  lazy,
+  Suspense,
+} from "react";
 import { createPortal } from "react-dom";
 import {
   db,
@@ -19,8 +28,9 @@ import {
   arrayRemove,
 } from "./firebase";
 import "./App.css";
-import QuizHome from "./quiz/QuizHome";
-import QuizPlayer from "./quiz/QuizPlayer";
+// 퀴즈 데이터셋(문제은행 JSON ~2MB)이 무거워, 퀴즈 탭을 열 때만 로드하도록 지연 로딩.
+const QuizHome = lazy(() => import("./quiz/QuizHome"));
+const QuizPlayer = lazy(() => import("./quiz/QuizPlayer"));
 import {
   collectNicknameMatches,
   choosePreferredNicknameMatch,
@@ -4347,22 +4357,31 @@ export default function App() {
           onSetCover={setChallengeCover}
         />
       ) : tab === "quiz" ? (
-        quizConfig ? (
-          <QuizPlayer
-            subject={quizConfig.subject}
-            level={quizConfig.level}
-            uid={uid}
-            nickname={nickname}
-            onExit={() => setQuizConfig(null)}
-          />
-        ) : (
-          <QuizHome
-            uid={uid}
-            onStart={(subject, level) => {
-              setQuizConfig({ subject, level });
-            }}
-          />
-        )
+        <Suspense
+          fallback={
+            <div className="member-loading">
+              <div className="member-loading-card" />
+              <div className="member-loading-card" />
+            </div>
+          }
+        >
+          {quizConfig ? (
+            <QuizPlayer
+              subject={quizConfig.subject}
+              level={quizConfig.level}
+              uid={uid}
+              nickname={nickname}
+              onExit={() => setQuizConfig(null)}
+            />
+          ) : (
+            <QuizHome
+              uid={uid}
+              onStart={(subject, level) => {
+                setQuizConfig({ subject, level });
+              }}
+            />
+          )}
+        </Suspense>
       ) : (
         <HistoryPanel
           dates={historyDates}
