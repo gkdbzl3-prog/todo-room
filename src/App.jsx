@@ -361,6 +361,7 @@ function saveStoredChallenges(key, challenges) {
 
 const CHALLENGE_GOAL_OPTIONS_KEY = "todoRoom_challengeGoalOptions";
 const MEMBER_SNAPSHOT_CACHE_PREFIX = "todoRoom_memberSnapshot";
+const MEMBER_LATEST_SNAPSHOT_CACHE_KEY = `${MEMBER_SNAPSHOT_CACHE_PREFIX}_latest`;
 
 function loadChallengeGoalOptions() {
   try {
@@ -937,12 +938,16 @@ async function findRecentDailyFallbackRecords(currentDateKey) {
   );
 
   const fallbackRecordsByKey = new Map();
+  const historyDates = historySnap.docs
+    .map((historyDoc) => historyDoc.data().date)
+    .filter((historyDate) => historyDate && historyDate < currentDateKey);
+  const dailySnapshots = await Promise.all(
+    historyDates.map((historyDate) =>
+      getDocs(collection(db, dailyCol(historyDate)))
+    )
+  );
 
-  for (const historyDoc of historySnap.docs) {
-    const historyDate = historyDoc.data().date;
-    if (!historyDate || historyDate >= currentDateKey) continue;
-
-    const dailySnap = await getDocs(collection(db, dailyCol(historyDate)));
+  dailySnapshots.forEach((dailySnap) => {
     dailySnap.forEach((docSnap) => {
       const record = { id: docSnap.id, ...docSnap.data() };
       const key = getRecordIdentityKey(record);
@@ -951,7 +956,7 @@ async function findRecentDailyFallbackRecords(currentDateKey) {
         fallbackRecordsByKey.set(key, record);
       }
     });
-  }
+  });
 
   return Array.from(fallbackRecordsByKey.values());
 }
@@ -1282,11 +1287,15 @@ export default function App() {
   const cachedOtherMembers = useMemo(() => {
     const todaySnapshot = loadCachedMemberSnapshot(memberSnapshotCacheKey);
     if (todaySnapshot.length > 0) return todaySnapshot;
-    // 새 날 진입 직후엔 오늘 캐시가 비어 있으므로, 전날 스냅샷으로 스켈레톤을 채운다.
+    // 새 날 진입 직후엔 오늘 캐시가 비어 있으므로, 전날 스냅샷을 먼저 쓴다.
     // (활동 없는 멤버는 렌더링 시 visibleMembers 필터에서 어차피 걸러진다.)
     const prevDayKey = previousDayKeyFrom(currentDayKey);
     const prevKey = `${MEMBER_SNAPSHOT_CACHE_PREFIX}_${prevDayKey}_${weekKeyForDate(prevDayKey)}`;
-    return loadCachedMemberSnapshot(prevKey);
+    const previousSnapshot = loadCachedMemberSnapshot(prevKey);
+    if (previousSnapshot.length > 0) return previousSnapshot;
+
+    // 어제 접속하지 않았어도 이 기기에서 마지막으로 본 멤버 카드를 바로 보여준다.
+    return loadCachedMemberSnapshot(MEMBER_LATEST_SNAPSHOT_CACHE_KEY);
   }, [memberSnapshotCacheKey, currentDayKey]);
   const [quizConfig, setQuizConfig] = useState(null);
 
@@ -4017,6 +4026,7 @@ export default function App() {
     if (memberSnapshotSavedRef.current === signature) return;
     memberSnapshotSavedRef.current = signature;
     saveCachedMemberSnapshot(memberSnapshotCacheKey, otherMembers);
+    saveCachedMemberSnapshot(MEMBER_LATEST_SNAPSHOT_CACHE_KEY, otherMembers);
   }, [memberSnapshotCacheKey, membersReady, otherMembers]);
 
   if (!nicknameConfirmed && !profileRecoveryChecked) {
