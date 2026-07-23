@@ -77,4 +77,12 @@ export const quizSubjects = [
             { id: "ncs-problem", label: "문제해결", desc: "추론·상황판단" },
         ],
     },
+    {
+        id: "computer",
+        emoji: "🖥️",
+        title: "컴활",
+        levels: [
+        { id: "computer-skill", label: "1급", desc: "필기" }
+        ],
+    }
 ];

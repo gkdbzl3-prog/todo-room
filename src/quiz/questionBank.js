@@ -15,6 +15,7 @@ import koreanHistoryHangeomQuestions from "./data/koreanHistoryHangeomQuestions.
 import koreanHistoryHangeomAdvancedQuestions from "./data/koreanHistoryHangeomAdvancedQuestions.json";
 import adminLawCoreOxFullQuestions from "./data/adminLawCoreOxFullQuestions.json";
 import adminLawUnexpectedOxFullQuestions from "./data/adminLawUnexpectedOxFullQuestions.json";
+import computerSkillsLevel1Questions from "./data/computerSkillsLevel1Questions.json"
 
 const sampleQuestions = [
     {
@@ -102,6 +103,8 @@ export const questionBank = {
         "자기개발능력",
         "NCS OX",
     ]),
+
+    "computer-skill": computerSkillsLevel1Questions
 };
 
 export const getQuestionsByLevel = (levelId) => {
