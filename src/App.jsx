@@ -892,6 +892,16 @@ function isRoutineCountable(item) {
   return !item.off && parseRoutineNoteParts(item).length === 0;
 }
 
+// 루틴 항목 하나의 완료 여부. detail(조각)이 있으면 조각이 전부 done이어야 완료.
+function isRoutineItemDone(item) {
+  const parts = parseRoutineNoteParts(item);
+  if (parts.length > 0) {
+    const st = item.noteState && typeof item.noteState === "object" ? item.noteState : {};
+    return parts.every((p) => st[p] === "done");
+  }
+  return !!item.done;
+}
+
 function carryWeeklyForNewWeek(todos) {
   return (todos || [])
     .filter((todo) => !todo.done)
@@ -5558,6 +5568,9 @@ function MemberCard({ member, currentDayKey }) {
   // 루틴 카운트에서 빼고 투두 쪽(memberDailyTodos)에서 센다.
   const routineItems = (member.routineItems || []).filter(isRoutineCountable);
   const routineNoteTodos = getRoutineNoteTodos(member.routineItems);
+  // 루틴 칸 표시/카운트용: off만 제외하고 detail 루틴도 포함(전체 루틴 진행률).
+  // detail은 부모 1개 단위로 세고, 조각 전부 done이면 완료로 친다.
+  const routineDisplayItems = (member.routineItems || []).filter((it) => !it.off);
   const memberDailyTodos = [
     ...(member.todos || []),
     ...routineNoteTodos,
@@ -5568,15 +5581,15 @@ function MemberCard({ member, currentDayKey }) {
   );
   const weeklyCountedDoneToday = weeklyCountedToday.filter((t) => t.done).length;
 
-  // Per-section counts for routine summary
+  // Per-section counts for routine summary (detail 포함, off 제외)
   const routineCounts = ROUTINE_SECTIONS.reduce((acc, s) => {
     acc[s.id] = { done: 0, total: 0 };
     return acc;
   }, {});
-  routineItems.forEach((it) => {
+  routineDisplayItems.forEach((it) => {
     const s = routineCounts[it.section] ? it.section : "anytime";
     routineCounts[s].total += 1;
-    if (it.done) routineCounts[s].done += 1;
+    if (isRoutineItemDone(it)) routineCounts[s].done += 1;
   });
   const routineTotal = routineItems.length;
   const routineDoneSum = routineItems.filter((it) => it.done).length;
@@ -5676,7 +5689,7 @@ function MemberCard({ member, currentDayKey }) {
         </>
       )}
 
-      {routineTotal > 0 && (
+      {routineDisplayItems.length > 0 && (
         <>
           <div className="member-todo-title member-routine-title">
             ROUTINE
@@ -5704,7 +5717,7 @@ function MemberCard({ member, currentDayKey }) {
           {routineExpanded && (
             <div className="member-routine-list">
               {ROUTINE_SECTIONS.map((s) => {
-                const sItems = routineItems.filter((i) => (i.section || "anytime") === s.id);
+                const sItems = routineDisplayItems.filter((i) => (i.section || "anytime") === s.id);
                 if (!sItems.length) return null;
                 return (
                   <div key={s.id} className="member-routine-group">
@@ -5712,7 +5725,7 @@ function MemberCard({ member, currentDayKey }) {
                       {s.emoji} {s.label}
                     </div>
                     {sItems.map((it) => {
-                      const st = it.done ? "done" : it.started ? "doing" : "ready";
+                      const st = isRoutineItemDone(it) ? "done" : it.started ? "doing" : "ready";
                       return (
                         <div key={it.id} className={`mini-todo ${st}`}>
                           <span className={`todo-dot ${st}`} />
