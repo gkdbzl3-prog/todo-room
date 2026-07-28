@@ -82,7 +82,7 @@ export const quizSubjects = [
         emoji: "🖥️",
         title: "컴활",
         levels: [
-        { id: "computer-skill", label: "1급", desc: "필기" }
+        { id: "computer-skill", label: "1급 필기", desc: "필기" }
         ],
     }
 ];

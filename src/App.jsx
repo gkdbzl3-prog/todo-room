@@ -2204,9 +2204,25 @@ export default function App() {
   const updateRoutineNote = (id, note) => {
     const next = {
       ...myRoutine,
-      items: (myRoutine.items || []).map((it) =>
-        it.id === id ? { ...it, note } : it
-      ),
+      items: (myRoutine.items || []).map((it) => {
+        if (it.id !== id) return it;
+        const updated = { ...it, note };
+        // note를 편집하면 옛 조각의 noteState 키가 잔여물로 남는다(예: "05 풀기"→"05 50개 풀기"로
+        // 바꿔도 옛 키가 남음). 현재 조각에 해당하는 키만 남기고 정리한 뒤 done/started를 재동기화.
+        const parts = parseRoutineNoteParts(updated);
+        const partSet = new Set(parts);
+        const prev = it.noteState && typeof it.noteState === "object" ? it.noteState : {};
+        const state = {};
+        Object.keys(prev).forEach((k) => {
+          if (partSet.has(k)) state[k] = prev[k];
+        });
+        const allDone = parts.length > 0 && parts.every((p) => state[p] === "done");
+        updated.noteState = state;
+        updated.started = allDone || parts.some((p) => state[p]);
+        updated.done = allDone;
+        updated.completedAt = allDone ? (it.completedAt || Date.now()) : null;
+        return updated;
+      }),
     };
     setMyRoutine(next);
     syncMyRoutine(next);
@@ -2218,7 +2234,12 @@ export default function App() {
   const routineActiveItems = (myRoutine.items || []).filter(isRoutineCountable);
   const routineDoneCount = routineActiveItems.filter((i) => i.done).length;
   const routineTotalCount = routineActiveItems.length;
-  const routineAllDone = routineTotalCount > 0 && routineDoneCount === routineTotalCount;
+  // detail(TODAY로 올라간) 루틴까지 모두 done이어야 완료 축하가 뜬다.
+  const routineNoteTodosMine = getRoutineNoteTodos(myRoutine.items || []);
+  const routineAllDone =
+    routineTotalCount + routineNoteTodosMine.length > 0 &&
+    routineDoneCount === routineTotalCount &&
+    routineNoteTodosMine.every((t) => t.done);
   useEffect(() => {
     if (routineAllDone) setRoutineCelebrated(true);
     else setRoutineCelebrated(false);
@@ -5536,9 +5557,10 @@ function MemberCard({ member, currentDayKey }) {
   // 본인 화면과 같은 규칙: off 루틴은 제외하고, detail이 투두로 올라간 루틴도
   // 루틴 카운트에서 빼고 투두 쪽(memberDailyTodos)에서 센다.
   const routineItems = (member.routineItems || []).filter(isRoutineCountable);
+  const routineNoteTodos = getRoutineNoteTodos(member.routineItems);
   const memberDailyTodos = [
     ...(member.todos || []),
-    ...getRoutineNoteTodos(member.routineItems),
+    ...routineNoteTodos,
   ];
   const dailyDone = memberDailyTodos.filter((t) => t.done).length;
   const weeklyCountedToday = visibleWeeklyTodos.filter(
@@ -5558,7 +5580,12 @@ function MemberCard({ member, currentDayKey }) {
   });
   const routineTotal = routineItems.length;
   const routineDoneSum = routineItems.filter((it) => it.done).length;
-  const routineAllDone = routineTotal > 0 && routineDoneSum === routineTotal;
+  // "완료"는 순수 루틴뿐 아니라 detail(TODAY로 올라간) 루틴까지 모두 done이어야 한다.
+  // 예전엔 순수 루틴만 봐서, detail 항목이 미완료여도 완료로 잘못 표시됐다.
+  const routineAllDone =
+    routineTotal + routineNoteTodos.length > 0 &&
+    routineDoneSum === routineTotal &&
+    routineNoteTodos.every((t) => t.done);
 
   const totalDone = dailyDone + routineDoneSum + weeklyCountedDoneToday;
   const totalCount =
