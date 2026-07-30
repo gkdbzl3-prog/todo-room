@@ -2286,23 +2286,22 @@ export default function App() {
 
     let cancelled = false;
 
+    // 8초 안전망: Firebase 요청이 끝없이 걸려도 로딩 화면을 빠져나오게 함
+    const safetyTimer = setTimeout(() => {
+      if (!cancelled) setProfileRecoveryChecked(true);
+    }, 8000);
+
     const recoverProfile = async () => {
       try {
         const weeklyKeys =
           currentWeekKey === legacyWeekKeyValue
             ? [currentWeekKey]
             : [currentWeekKey, legacyWeekKeyValue];
-        const fetchTimeout = new Promise((_, reject) =>
-          setTimeout(() => reject(new Error("profile-recovery-timeout")), 8000)
-        );
-        const [dailySnap, weeklySnaps] = await Promise.race([
-          Promise.all([
-            getDoc(doc(db, dailyCol(currentDayKey), oldUid)),
-            Promise.all(
-              weeklyKeys.map((wk) => getDoc(doc(db, weeklyCol(wk), oldUid)))
-            ),
-          ]),
-          fetchTimeout,
+        const [dailySnap, weeklySnaps] = await Promise.all([
+          getDoc(doc(db, dailyCol(currentDayKey), oldUid)),
+          Promise.all(
+            weeklyKeys.map((wk) => getDoc(doc(db, weeklyCol(wk), oldUid)))
+          ),
         ]);
 
         if (cancelled) return;
@@ -2351,6 +2350,7 @@ export default function App() {
       } catch (error) {
         console.error("Failed to recover profile", error);
       } finally {
+        clearTimeout(safetyTimer);
         if (!cancelled) {
           setProfileRecoveryChecked(true);
         }
@@ -2361,6 +2361,7 @@ export default function App() {
 
     return () => {
       cancelled = true;
+      clearTimeout(safetyTimer);
     };
   }, [nicknameConfirmed, uid, currentDayKey, currentWeekKey, legacyWeekKeyValue]);
 
