@@ -2292,11 +2292,17 @@ export default function App() {
           currentWeekKey === legacyWeekKeyValue
             ? [currentWeekKey]
             : [currentWeekKey, legacyWeekKeyValue];
-        const [dailySnap, weeklySnaps] = await Promise.all([
-          getDoc(doc(db, dailyCol(currentDayKey), oldUid)),
-          Promise.all(
-            weeklyKeys.map((wk) => getDoc(doc(db, weeklyCol(wk), oldUid)))
-          ),
+        const fetchTimeout = new Promise((_, reject) =>
+          setTimeout(() => reject(new Error("profile-recovery-timeout")), 8000)
+        );
+        const [dailySnap, weeklySnaps] = await Promise.race([
+          Promise.all([
+            getDoc(doc(db, dailyCol(currentDayKey), oldUid)),
+            Promise.all(
+              weeklyKeys.map((wk) => getDoc(doc(db, weeklyCol(wk), oldUid)))
+            ),
+          ]),
+          fetchTimeout,
         ]);
 
         if (cancelled) return;
