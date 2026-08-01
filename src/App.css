@@ -2133,6 +2133,61 @@ input:focus {
   opacity: 0.7;
 }
 
+/* 과목 문제은행을 고른 뒤에 내려받으므로 기다리는 화면이 필요하다.
+   문제 카드와 높이를 맞춰 두면 로딩에서 첫 문제로 넘어갈 때 화면이 튀지 않는다. */
+.quiz-load-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 180px;
+  text-align: center;
+}
+
+.quiz-load-spinner {
+  width: 30px;
+  height: 30px;
+  border: 3px solid rgba(255, 255, 255, 0.14);
+  border-top-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  animation: quizLoadSpin 0.8s linear infinite;
+}
+
+.quiz-load-icon {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.quiz-load-message {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  opacity: 0.85;
+}
+
+.quiz-load-sub {
+  margin: 0;
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+.quiz-load-state .quiz-main-btn {
+  margin-top: 6px;
+}
+
+@keyframes quizLoadSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quiz-load-spinner {
+    animation-duration: 2.4s;
+  }
+}
+
 /* ─── 루틴 카드 ─── */
 :root {
   --routine-track: rgba(255, 255, 255, 0.12);

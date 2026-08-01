@@ -1,5 +1,5 @@
-import { useMemo, useState } from "react";
-import { getQuestionsByLevel } from "./questionBank";
+import { useEffect, useMemo, useState } from "react";
+import { loadQuestionsByLevel } from "./questionBank";
 import { saveQuizAttempt } from "./quizStore";
 
 
@@ -22,11 +22,38 @@ export default function QuizPlayer({ subject, level, onExit, uid, nickname }) {
     const [solved, setSolved] = useState([]);
     const [isFinished, setIsFinished] = useState(false);
     const [roundNo, setRoundNo] = useState(0);
-    const sourceQuestions = getQuestionsByLevel(level?.id);
+
+    // 과목 데이터를 고른 뒤에 불러오므로 로딩과 실패라는 상태가 생긴다. loadKey에
+    // 시도 횟수를 섞어두면, 재시도할 때 직전 실패 기록이 아직 유효해 보이는 일이 없다.
+    const [attempt, setAttempt] = useState(0);
+    const [loaded, setLoaded] = useState(null);
+    const [loadError, setLoadError] = useState(null);
+    const loadKey = `${level?.id ?? ""}#${attempt}`;
+
+    useEffect(() => {
+        let cancelled = false;
+
+        loadQuestionsByLevel(level?.id).then(
+            (nextQuestions) => {
+                if (!cancelled) setLoaded({ key: loadKey, questions: nextQuestions });
+            },
+            (error) => {
+                console.error("Quiz question load failed:", error);
+                if (!cancelled) setLoadError({ key: loadKey });
+            }
+        );
+
+        return () => {
+            cancelled = true;
+        };
+    }, [loadKey, level?.id]);
+
+    const sourceQuestions = loaded?.key === loadKey ? loaded.questions : null;
+    const hasFailed = loadError?.key === loadKey;
 
     const questions = useMemo(() => {
-        return pickRandomQuestions(sourceQuestions, ROUND_SIZE);
-    }, [level?.id, roundNo]);
+        return sourceQuestions ? pickRandomQuestions(sourceQuestions, ROUND_SIZE) : [];
+    }, [sourceQuestions, roundNo]);
 
     const question = questions[index];
     const [saving, setSaving] = useState(false);
@@ -36,6 +63,24 @@ export default function QuizPlayer({ subject, level, onExit, uid, nickname }) {
         }`;
 
     const displayDesc = level?.desc ?? "";
+
+    // 로딩·실패·문제풀이 세 화면이 같은 머리말을 쓴다. 데이터를 기다리는 동안에도
+    // 과목 선택으로 돌아갈 수 있어야 하고, 레이아웃이 튀지 않아야 한다.
+    const quizHead = (
+        <div className="quiz-head">
+            <div>
+                <button className="quiz-back-btn" onClick={onExit}>
+                    ← 과목 선택
+                </button>
+
+                <div className="quiz-kicker">QUIZ ROOM</div>
+                <h2>{displayTitle}</h2>
+                {displayDesc && <p className="quiz-subtitle">{displayDesc}</p>}
+            </div>
+
+            <span className="reward-badge">5문제 풀면 ⭐ 별 획득!</span>
+        </div>
+    );
 
 
     const correctCount = useMemo(() => {
@@ -157,21 +202,43 @@ export default function QuizPlayer({ subject, level, onExit, uid, nickname }) {
         );
     }
 
+    if (hasFailed) {
+        return (
+            <section className="quiz-panel">
+                {quizHead}
+
+                <div className="quiz-card quiz-load-state">
+                    <div className="quiz-load-icon" aria-hidden="true">📡</div>
+                    <p className="quiz-load-message">문제를 불러오지 못했어.</p>
+                    <p className="quiz-load-sub">연결을 확인하고 다시 시도해줘.</p>
+
+                    <button
+                        className="btn-primary quiz-main-btn"
+                        onClick={() => setAttempt((prev) => prev + 1)}
+                    >
+                        다시 시도
+                    </button>
+                </div>
+            </section>
+        );
+    }
+
+    if (!question) {
+        return (
+            <section className="quiz-panel">
+                {quizHead}
+
+                <div className="quiz-card quiz-load-state">
+                    <div className="quiz-load-spinner" aria-hidden="true" />
+                    <p className="quiz-load-message">문제 불러오는 중...</p>
+                </div>
+            </section>
+        );
+    }
+
     return (
         <section className="quiz-panel">
-            <div className="quiz-head">
-                <div>
-                    <button className="quiz-back-btn" onClick={onExit}>
-                        ← 과목 선택
-                    </button>
-
-                    <div className="quiz-kicker">QUIZ ROOM</div>
-                    <h2>{displayTitle}</h2>
-                    {displayDesc && <p className="quiz-subtitle">{displayDesc}</p>}
-                </div>
-
-                <span className="reward-badge">5문제 풀면 ⭐ 별 획득!</span>
-            </div>
+            {quizHead}
 
             <div className="quiz-card">
                 <div className="quiz-topic">{question.topic}</div>
