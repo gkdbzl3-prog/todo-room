@@ -2286,6 +2286,11 @@ export default function App() {
 
     let cancelled = false;
 
+    // 8초 안전망: Firebase 요청이 끝없이 걸려도 로딩 화면을 빠져나오게 함
+    const safetyTimer = setTimeout(() => {
+      if (!cancelled) setProfileRecoveryChecked(true);
+    }, 8000);
+
     const recoverProfile = async () => {
       try {
         const weeklyKeys =
@@ -2345,6 +2350,7 @@ export default function App() {
       } catch (error) {
         console.error("Failed to recover profile", error);
       } finally {
+        clearTimeout(safetyTimer);
         if (!cancelled) {
           setProfileRecoveryChecked(true);
         }
@@ -2355,6 +2361,7 @@ export default function App() {
 
     return () => {
       cancelled = true;
+      clearTimeout(safetyTimer);
     };
   }, [nicknameConfirmed, uid, currentDayKey, currentWeekKey, legacyWeekKeyValue]);
 
