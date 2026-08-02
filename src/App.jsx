@@ -2206,6 +2206,10 @@ export default function App() {
         Object.keys(prev).forEach((k) => {
           if (partSet.has(k)) state[k] = prev[k];
         });
+        // parts가 비면 allDone도 false다. 조각을 다 끝낸 뒤 detail을 통째로 지우면
+        // 루틴이 미완료로 돌아가 루틴 카운트에 다시 잡히고, 그만큼 진행률이 뒤로 간다.
+        // 버그가 아니라 의도된 동작 — detail을 지운 루틴은 오늘 안 한 것으로 보고
+        // 처음부터 다시 체크한다. (2026-08-03 날 확인)
         const allDone = parts.length > 0 && parts.every((p) => state[p] === "done");
         updated.noteState = state;
         updated.started = allDone || parts.some((p) => state[p]);
