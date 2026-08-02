@@ -38,6 +38,7 @@ import {
 } from "./memberIdentity";
 import {
   getRoutineForStorageLoad,
+  parseRoutineNoteParts,
   rolloverRoutineDone,
 } from "./routineState";
 import { getOwnWeeklyTodosFromRemote } from "./weeklyState";
@@ -840,27 +841,6 @@ function resetTodosForNewDay(todos) {
       done: false,
       completedAt: null,
     }));
-}
-
-const normalizeLabel = (s) => (s || "").normalize("NFC").trim().toLowerCase();
-
-/* ── 루틴 detail → 오늘의 TO-DO ──
-   루틴 "집안일"의 detail에 "설거지, 청소"를 적으면 그 내용이 오늘 투두로 올라간다.
-   detail에 루틴 이름 자신이 섞여 있으면("집안일, 청소") 그건 부모 이름이므로 뺀다. */
-function parseRoutineNoteParts(item) {
-  const raw = (item?.note || "").trim();
-  if (!raw) return [];
-  const ownName = normalizeLabel(item?.text);
-  const seen = new Set();
-  const parts = [];
-  raw.split(",").forEach((chunk) => {
-    const text = chunk.trim();
-    const key = normalizeLabel(text);
-    if (!key || key === ownName || seen.has(key)) return;
-    seen.add(key);
-    parts.push(text);
-  });
-  return parts;
 }
 
 // 원본은 루틴 item의 noteState — 여기서 만드는 건 투두 목록에 끼워 넣는 파생 뷰다.
@@ -4546,7 +4526,10 @@ function RoutineItem({ item, onCycle, onDelete, onNote, onToggleOff }) {
   // 3-state cycle: 진행 전 → 진행중 → 완료 (TodoItem과 동일)
   const isOff = !!item.off;
   const status = isOff ? "off" : item.done ? "done" : item.started ? "doing" : "ready";
-  const statusLabel = { ready: "진행 전", doing: "진행중", done: "완료", off: "off" };
+  // off일 땐 상태 배지를 아예 띄우지 않는다. 바로 옆 off 버튼이 이미 그 말을
+  // 하고 있어 "off"가 두 번 보이고, 그렇다고 "진행 전"을 쓰면 꺼둔 루틴이
+  // 살아 있는 것처럼 읽힌다.
+  const statusLabel = { ready: "진행 전", doing: "진행중", done: "완료" };
   const [note, setNote] = useState(item.note || "");
   const [editingNote, setEditingNote] = useState(false);
   // 다른 기기에서 바뀌면(동기화) 로컬 입력값도 따라가되, 편집 중이 아닐 때만 반영
@@ -4566,11 +4549,13 @@ function RoutineItem({ item, onCycle, onDelete, onNote, onToggleOff }) {
           type="button"
           className={`todo-cycle-btn routine-cycle ${status}`}
           onClick={() => onCycle(item.id)}
-          aria-label={statusLabel[status]}
+          aria-label={isOff ? "off — 오늘 카운트에서 빠짐" : statusLabel[status]}
           disabled={isOff}
         />
         <span className="routine-text">{item.text}</span>
-        <span className={`todo-status-label ${status}`}>{statusLabel[status]}</span>
+        {statusLabel[status] && (
+          <span className={`todo-status-label ${status}`}>{statusLabel[status]}</span>
+        )}
         <button
           type="button"
           className={`routine-off-btn${isOff ? " active" : ""}`}

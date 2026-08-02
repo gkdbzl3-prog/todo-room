@@ -2390,10 +2390,6 @@ input:focus {
   cursor: default;
 }
 
-.routine-item.off .todo-status-label.off {
-  color: rgba(255, 255, 255, 0.35);
-}
-
 .routine-note-input {
   margin-left: 30px;
   background: transparent;
