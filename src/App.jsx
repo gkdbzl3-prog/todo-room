@@ -45,6 +45,7 @@ import {
 import {
   applyTomorrowRoutineParts,
   formatRoutineTomorrowText,
+  parseRoutineTomorrowInput,
   splitTomorrowTodos,
 } from "./tomorrowRoutine";
 import { getOwnWeeklyTodosFromRemote } from "./weeklyState";
@@ -1219,8 +1220,6 @@ export default function App() {
     () => loadStoredTomorrow(tomorrowStorageKey).todos
   );
   const [tomorrowOpen, setTomorrowOpen] = useState(false);
-  // 미리 세울 때 고른 루틴. 날짜가 바뀌면 이 루틴의 detail로 들어간다.
-  const [tomorrowRoutineId, setTomorrowRoutineId] = useState(null);
   const [noticeOpen, setNoticeOpen] = useState(false);
 
   // 이벤트 (D-day)
@@ -2241,10 +2240,6 @@ export default function App() {
   const routineDoneCount = routineActiveItems.filter((i) => i.done).length;
   const routineTotalCount = routineActiveItems.length;
   // detail(TODAY로 올라간) 루틴까지 모두 done이어야 완료 축하가 뜬다.
-  // 미리 세울 때 고를 수 있는 루틴 — 쉬는 중(off)인 건 오늘 목록에 안 뜨므로 뺀다.
-  const tomorrowRoutineChoices = (myRoutine.items || []).filter(
-    (it) => !it.off && (it.text || "").trim()
-  );
   const routineNoteTodosMine = getRoutineNoteTodos(myRoutine.items || []);
   const routineAllDone =
     routineTotalCount + routineNoteTodosMine.length > 0 &&
@@ -3002,25 +2997,22 @@ export default function App() {
   };
 
   const addTomorrow = () => {
-    const text = tomorrowText.trim();
-    if (!text) return;
-    // 고른 루틴이 그새 지워졌을 수 있으니 지금 살아 있는 항목만 묶는다.
-    const routine = (myRoutine.items || []).find((it) => it.id === tomorrowRoutineId);
+    // "[집안일] 빨래"처럼 적으면 그 루틴에 예약된다. 이름이 안 맞으면 평범한 투두다.
+    // routineName은 표시용 스냅샷 — 나중에 루틴이 사라져도 뭘 가리켰는지는 남는다.
+    const parsed = parseRoutineTomorrowInput(tomorrowText, myRoutine.items);
+    if (!parsed.text) return;
     const item = {
+      ...parsed,
       id: Date.now(),
-      text,
       done: false,
       started: false,
       createdAt: Date.now(),
-      // 루틴 이름은 표시용 스냅샷 — 나중에 루틴이 사라져도 뭘 가리켰는지는 남는다.
-      ...(routine ? { routineId: routine.id, routineName: (routine.text || "").trim() } : {}),
     };
     const next = [...myTomorrow, item];
     setMyTomorrow(next);
     saveStoredTomorrow(tomorrowStorageKey, { todos: next, setAt: currentDayKey });
     syncMyTomorrow(next, currentDayKey);
     setTomorrowText("");
-    setTomorrowRoutineId(null);
   };
 
   const deleteTomorrow = (id) => {
@@ -4348,36 +4340,17 @@ export default function App() {
                   <div className="tomorrow-panel">
                     <p className="tomorrow-hint">
                       날짜가 바뀌면 오늘 TO-DO로 자동 이동합니다.
+                      <br />
+                      <span className="tomorrow-hint-routine">
+                        [집안일] 빨래 처럼 적으면 그 루틴에 예약됩니다.
+                      </span>
                     </p>
-                    {tomorrowRoutineChoices.length > 0 && (
-                      <div className="tomorrow-routine-chips">
-                        {tomorrowRoutineChoices.map((it) => (
-                          <button
-                            key={it.id}
-                            type="button"
-                            className={`tomorrow-routine-chip${
-                              it.id === tomorrowRoutineId ? " on" : ""
-                            }`}
-                            aria-pressed={it.id === tomorrowRoutineId}
-                            onClick={() =>
-                              setTomorrowRoutineId((prev) => (prev === it.id ? null : it.id))
-                            }
-                          >
-                            {it.text}
-                          </button>
-                        ))}
-                      </div>
-                    )}
                     <div className="todo-input-row">
                       <input
                         value={tomorrowText}
                         onChange={(e) => setTomorrowText(e.target.value)}
                         onKeyDown={(e) => e.key === "Enter" && addTomorrow()}
-                        placeholder={
-                          tomorrowRoutineId
-                            ? "이 루틴에서 내일 할 일"
-                            : "내일 할일 미리 입력"
-                        }
+                        placeholder="내일 할일 미리 입력"
                       />
                       <button className="btn-add" onClick={addTomorrow}>
                         추가

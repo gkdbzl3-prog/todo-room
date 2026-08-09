@@ -2,8 +2,40 @@ import assert from "node:assert/strict";
 import {
   applyTomorrowRoutineParts,
   formatRoutineTomorrowText,
+  parseRoutineTomorrowInput,
   splitTomorrowTodos,
 } from "./tomorrowRoutine.js";
+
+/* ── 입력 파싱: "[집안일] 설거지" ── */
+
+const routines = [
+  { id: 10, text: "집안일" },
+  { id: 11, text: "쉬는루틴", off: true },
+];
+
+assert.deepEqual(parseRoutineTomorrowInput("[집안일] 설거지", routines), {
+  text: "설거지",
+  routineId: 10,
+  routineName: "집안일",
+});
+// 공백과 대소문자는 무시하고 맞춘다.
+assert.equal(parseRoutineTomorrowInput("[ 집안일 ]설거지", routines).routineId, 10);
+// 이름이 어느 루틴과도 안 맞으면 적은 그대로 평범한 투두다.
+assert.deepEqual(parseRoutineTomorrowInput("[없는루틴] 설거지", routines), {
+  text: "[없는루틴] 설거지",
+});
+// 쉬는 중인 루틴은 대상이 아니다 — detail에 넣어도 오늘 목록에 안 뜬다.
+assert.deepEqual(parseRoutineTomorrowInput("[쉬는루틴] 설거지", routines), {
+  text: "[쉬는루틴] 설거지",
+});
+// 내용 없이 이름만 적었으면 예약이 아니다.
+assert.deepEqual(parseRoutineTomorrowInput("[집안일]", routines), { text: "[집안일]" });
+// 대괄호가 없으면 그냥 투두.
+assert.deepEqual(parseRoutineTomorrowInput("  장보기  ", routines), { text: "장보기" });
+assert.deepEqual(parseRoutineTomorrowInput("", routines), { text: "" });
+assert.deepEqual(parseRoutineTomorrowInput("[집안일] 설거지", null), {
+  text: "[집안일] 설거지",
+});
 
 /* ── 표시 텍스트 ── */
 

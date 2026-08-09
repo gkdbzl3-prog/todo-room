@@ -14,6 +14,26 @@ export function formatRoutineTomorrowText(todo) {
   return `[${name}] ${text}`;
 }
 
+/* "[집안일] 설거지"처럼 앞에 대괄호로 루틴 이름을 적으면 그 루틴에 예약한다.
+   이름이 어느 루틴과도 안 맞으면 손대지 않는다 — 적은 그대로 평범한 투두가 된다.
+   쉬는 중(off)인 루틴은 detail을 넣어도 오늘 목록에 안 뜨므로 대상에서 뺀다. */
+export function parseRoutineTomorrowInput(raw, routineItems) {
+  const input = (raw || "").trim();
+  const match = /^\[([^\]]+)\]\s*(.*)$/.exec(input);
+  if (!match) return { text: input };
+
+  const wanted = normalizeLabel(match[1]);
+  const rest = match[2].trim();
+  if (!wanted || !rest) return { text: input };
+
+  const routine = (Array.isArray(routineItems) ? routineItems : []).find(
+    (it) => !it?.off && normalizeLabel(it?.text) === wanted
+  );
+  if (!routine) return { text: input };
+
+  return { text: rest, routineId: routine.id, routineName: (routine.text || "").trim() };
+}
+
 export function splitTomorrowTodos(todos) {
   const plain = [];
   const routineBound = [];
