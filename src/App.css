@@ -740,6 +740,50 @@ input:focus {
   pointer-events: none;
 }
 
+/* 루틴 예약: 칩을 고르고 적으면 그 루틴의 detail로 예약된다 */
+.tomorrow-routine-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.tomorrow-routine-chip {
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 11px;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.tomorrow-routine-chip:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.tomorrow-routine-chip.on {
+  background: rgba(126, 200, 255, 0.22);
+  border-color: rgba(126, 200, 255, 0.55);
+  color: #d6ecff;
+  font-weight: 700;
+}
+
+.tomorrow-routine-tag {
+  display: inline-block;
+  margin-right: 6px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  background: rgba(126, 200, 255, 0.18);
+  color: #cbe6ff;
+  font-size: 10px;
+  font-weight: 700;
+  vertical-align: middle;
+}
+
 /* ─── 데일리 패널 + 이벤트 (D-day) ─── */
 .todo-panel-daily {
   position: relative;

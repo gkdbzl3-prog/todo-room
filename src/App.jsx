@@ -39,8 +39,14 @@ import {
 import {
   getRoutineForStorageLoad,
   parseRoutineNoteParts,
+  recalcRoutineNoteState,
   rolloverRoutineDone,
 } from "./routineState";
+import {
+  applyTomorrowRoutineParts,
+  formatRoutineTomorrowText,
+  splitTomorrowTodos,
+} from "./tomorrowRoutine";
 import { getOwnWeeklyTodosFromRemote } from "./weeklyState";
 import { shouldShowMemberEventName } from "./eventVisibility";
 import {
@@ -1213,6 +1219,8 @@ export default function App() {
     () => loadStoredTomorrow(tomorrowStorageKey).todos
   );
   const [tomorrowOpen, setTomorrowOpen] = useState(false);
+  // 미리 세울 때 고른 루틴. 날짜가 바뀌면 이 루틴의 detail로 들어간다.
+  const [tomorrowRoutineId, setTomorrowRoutineId] = useState(null);
   const [noticeOpen, setNoticeOpen] = useState(false);
 
   // 이벤트 (D-day)
@@ -1226,6 +1234,12 @@ export default function App() {
 
   // 루틴 (반복되는 매일 습관 — 매일 자정에 done만 리셋, 항목은 영구)
   const [myRoutine, setMyRoutine] = useState({ items: [], doneDate: "" });
+  // 루틴 문서가 도착하기 전에는 예약을 붙일 대상을 찾을 수 없다. 그 상태로 롤오버하면
+  // 전부 "루틴 없음"으로 판정돼 일반 투두로 떨어지므로, 도착할 때까지 미룬다.
+  const [routineDocLoaded, setRoutineDocLoaded] = useState(false);
+  // 구독하지 않는 경로(로컬 개발, 닉네임 문서 id 없음)에서는 로컬 루틴이 곧 진실이다.
+  // 여기서 열어주지 않으면 미리 세운 루틴 예약이 영영 내려오지 못한다.
+  const routineReady = !routineDocId || isLocalDevHost() || routineDocLoaded;
   const myRoutineRef = useRef(myRoutine);
   const previousRoutineStorageKeyRef = useRef(routineStorageKey);
   const pendingWeeklyTodosRef = useRef(null);
@@ -1863,9 +1877,11 @@ export default function App() {
   }, [uid, nicknameConfirmed, currentDayKey]);
 
   /* ── Firestore 루틴 동기화 ── */
-  const syncMyRoutine = useCallback(
+  // 실패를 호출자가 알아야 하는 경로(미리 세운 예약을 루틴에 넣는 롤오버)가 있어서
+  // 쓰기 자체는 Promise를 돌려주고, 뒷정리성 호출만 아래 syncMyRoutine으로 삼킨다.
+  const writeRoutineDoc = useCallback(
     (next) => {
-      if (!nicknameConfirmed || !routineDocId) return;
+      if (!nicknameConfirmed || !routineDocId) return Promise.resolve();
       const payload = {
         nickname,
         avatar,
@@ -1873,11 +1889,18 @@ export default function App() {
         doneDate: next.doneDate || currentDayKey,
         updatedAt: serverTimestamp(),
       };
-      void writeSetDoc(doc(db, routineCol(), routineDocId), payload).catch((error) => {
+      return writeSetDoc(doc(db, routineCol(), routineDocId), payload);
+    },
+    [routineDocId, nickname, avatar, nicknameConfirmed, currentDayKey]
+  );
+
+  const syncMyRoutine = useCallback(
+    (next) => {
+      void writeRoutineDoc(next).catch((error) => {
         console.error("Failed to sync routine", error);
       });
     },
-    [routineDocId, nickname, avatar, nicknameConfirmed, currentDayKey]
+    [writeRoutineDoc]
   );
 
   // Load own routine from localStorage on uid change, with daily rollover applied
@@ -2015,6 +2038,7 @@ export default function App() {
         // 닉네임 문서가 아직 없으면(최초/uid→닉네임 마이그레이션) 로컬 루틴을 올려 문서를 만든다.
         const localItems = myRoutineRef.current?.items || [];
         if (localItems.length > 0) syncMyRoutine(myRoutineRef.current);
+        setRoutineDocLoaded(true);
         return;
       }
       const data = snap.data() || {};
@@ -2023,6 +2047,7 @@ export default function App() {
       const next = { items: rolled, doneDate: currentDayKey };
       setMyRoutine(next);
       setRoutineCelebrated(false);
+      setRoutineDocLoaded(true);
       saveStoredRoutine(routineStorageKey, next);
       // Never write back an empty payload — would wipe a legit doc that has items elsewhere
       if (changed && rolled.length > 0) syncMyRoutine(next);
@@ -2196,26 +2221,13 @@ export default function App() {
       ...myRoutine,
       items: (myRoutine.items || []).map((it) => {
         if (it.id !== id) return it;
-        const updated = { ...it, note };
         // note를 편집하면 옛 조각의 noteState 키가 잔여물로 남는다(예: "05 풀기"→"05 50개 풀기"로
-        // 바꿔도 옛 키가 남음). 현재 조각에 해당하는 키만 남기고 정리한 뒤 done/started를 재동기화.
-        const parts = parseRoutineNoteParts(updated);
-        const partSet = new Set(parts);
-        const prev = it.noteState && typeof it.noteState === "object" ? it.noteState : {};
-        const state = {};
-        Object.keys(prev).forEach((k) => {
-          if (partSet.has(k)) state[k] = prev[k];
-        });
+        // 바꿔도 옛 키가 남음). recalcRoutineNoteState가 현재 조각의 키만 남기고 정리한다.
         // parts가 비면 allDone도 false다. 조각을 다 끝낸 뒤 detail을 통째로 지우면
         // 루틴이 미완료로 돌아가 루틴 카운트에 다시 잡히고, 그만큼 진행률이 뒤로 간다.
         // 버그가 아니라 의도된 동작 — detail을 지운 루틴은 오늘 안 한 것으로 보고
         // 처음부터 다시 체크한다. (2026-08-03 날 확인)
-        const allDone = parts.length > 0 && parts.every((p) => state[p] === "done");
-        updated.noteState = state;
-        updated.started = allDone || parts.some((p) => state[p]);
-        updated.done = allDone;
-        updated.completedAt = allDone ? (it.completedAt || Date.now()) : null;
-        return updated;
+        return recalcRoutineNoteState(it, parseRoutineNoteParts({ ...it, note }));
       }),
     };
     setMyRoutine(next);
@@ -2229,6 +2241,10 @@ export default function App() {
   const routineDoneCount = routineActiveItems.filter((i) => i.done).length;
   const routineTotalCount = routineActiveItems.length;
   // detail(TODAY로 올라간) 루틴까지 모두 done이어야 완료 축하가 뜬다.
+  // 미리 세울 때 고를 수 있는 루틴 — 쉬는 중(off)인 건 오늘 목록에 안 뜨므로 뺀다.
+  const tomorrowRoutineChoices = (myRoutine.items || []).filter(
+    (it) => !it.off && (it.text || "").trim()
+  );
   const routineNoteTodosMine = getRoutineNoteTodos(myRoutine.items || []);
   const routineAllDone =
     routineTotalCount + routineNoteTodosMine.length > 0 &&
@@ -2566,26 +2582,45 @@ export default function App() {
     if (!nicknameConfirmed || !uid) return;
     if (!membersReady) return;
     if (!dailyCarryReady) return;
+    // 루틴이 도착하기 전에 옮기면 루틴 예약이 전부 일반 투두로 떨어진다.
+    if (!routineReady) return;
 
     const now = Date.now();
     let nextDaily = myDaily;
     let dailyChanged = false;
     let movedTomorrow = false;
+    let nextRoutine = null;
 
     // 1) 내일 투두가 어제 이전에 적힌 거면 오늘로 이동
     const stored = loadStoredTomorrow(tomorrowStorageKey);
     if (stored.todos.length && stored.setAt && stored.setAt < currentDayKey) {
+      // 루틴에 묶인 예약은 오늘 투두가 아니라 그 루틴의 detail로 들어간다. 붙일 루틴이
+      // 없거나 쉬는 중이면 leftovers로 돌아와 아래에서 평범한 투두가 된다.
+      const { plain, routineBound } = splitTomorrowTodos(stored.todos);
+      const merged = applyTomorrowRoutineParts(myRoutineRef.current?.items, routineBound);
+      if (merged.changed) {
+        nextRoutine = { ...myRoutineRef.current, items: merged.items };
+      }
+
       let nextId = now;
-      const moved = stored.todos.map((t) => ({
-        ...t,
-        id: nextId++,
-        done: false,
-        started: false,
-        completedAt: null,
-        createdAt: now,
-      }));
+      const moved = [...plain, ...merged.leftovers].map((t) => {
+        const item = {
+          ...t,
+          id: nextId++,
+          text: formatRoutineTomorrowText(t) || t.text || "",
+          done: false,
+          started: false,
+          completedAt: null,
+          createdAt: now,
+        };
+        // 루틴 꼬리표는 예약에만 쓰는 필드다. 오늘 투두가 된 뒤엔 지운다 —
+        // Firestore는 undefined 필드를 거부하므로 덮어쓰기가 아니라 delete여야 한다.
+        delete item.routineId;
+        delete item.routineName;
+        return item;
+      });
       nextDaily = [...nextDaily, ...moved];
-      dailyChanged = true;
+      dailyChanged = moved.length > 0;
       movedTomorrow = true;
     }
 
@@ -2608,7 +2643,9 @@ export default function App() {
       localStorage.setItem(sweepKey, currentDayKey);
     }
 
-    if (dailyChanged) {
+    // 예약이 전부 루틴으로 들어가면 오늘 목록은 그대로다. 그래도 tomorrow를 비우고
+    // 루틴을 써야 하므로 dailyChanged만 보고 판단하면 안 된다.
+    if (dailyChanged || movedTomorrow) {
       if (movedTomorrow) {
         // 핵심: 로컬(localStorage + state)을 setMyDaily 전에 즉시 비움.
         // 안 그러면 setMyDaily → 재렌더 → effect 재실행 → loadStoredTomorrow가 같은 데이터 반환 → 무한 중복.
@@ -2617,6 +2654,7 @@ export default function App() {
         saveStoredTomorrow(tomorrowStorageKey, { todos: [], setAt: "" });
         setMyTomorrow([]);
         setMyDaily(nextDaily);
+        if (nextRoutine) setMyRoutine(nextRoutine);
         void (async () => {
           try {
             const date = currentDayKey;
@@ -2627,6 +2665,8 @@ export default function App() {
               updatedAt: serverTimestamp(),
             };
             await writeSetDoc(doc(db, dailyCol(date), uid), payload);
+            // 루틴 쓰기도 같은 try 안에 둔다. 실패하면 예약을 되돌려 다음 진입에 다시 시도한다.
+            if (nextRoutine) await writeRoutineDoc(nextRoutine);
             void syncDuplicateNicknameDocs(dailyCol(date), nickname, payload).catch(
               (error) => console.error("Failed to sync duplicate daily todos", error)
             );
@@ -2648,6 +2688,7 @@ export default function App() {
   }, [
     membersReady,
     dailyCarryReady,
+    routineReady,
     nicknameConfirmed,
     uid,
     nickname,
@@ -2660,6 +2701,7 @@ export default function App() {
     syncMyDaily,
     syncMyWeekly,
     syncMyTomorrow,
+    writeRoutineDoc,
     syncDuplicateNicknameDocs,
   ]);
 
@@ -2962,18 +3004,23 @@ export default function App() {
   const addTomorrow = () => {
     const text = tomorrowText.trim();
     if (!text) return;
+    // 고른 루틴이 그새 지워졌을 수 있으니 지금 살아 있는 항목만 묶는다.
+    const routine = (myRoutine.items || []).find((it) => it.id === tomorrowRoutineId);
     const item = {
       id: Date.now(),
       text,
       done: false,
       started: false,
       createdAt: Date.now(),
+      // 루틴 이름은 표시용 스냅샷 — 나중에 루틴이 사라져도 뭘 가리켰는지는 남는다.
+      ...(routine ? { routineId: routine.id, routineName: (routine.text || "").trim() } : {}),
     };
     const next = [...myTomorrow, item];
     setMyTomorrow(next);
     saveStoredTomorrow(tomorrowStorageKey, { todos: next, setAt: currentDayKey });
     syncMyTomorrow(next, currentDayKey);
     setTomorrowText("");
+    setTomorrowRoutineId(null);
   };
 
   const deleteTomorrow = (id) => {
@@ -4302,12 +4349,35 @@ export default function App() {
                     <p className="tomorrow-hint">
                       날짜가 바뀌면 오늘 TO-DO로 자동 이동합니다.
                     </p>
+                    {tomorrowRoutineChoices.length > 0 && (
+                      <div className="tomorrow-routine-chips">
+                        {tomorrowRoutineChoices.map((it) => (
+                          <button
+                            key={it.id}
+                            type="button"
+                            className={`tomorrow-routine-chip${
+                              it.id === tomorrowRoutineId ? " on" : ""
+                            }`}
+                            aria-pressed={it.id === tomorrowRoutineId}
+                            onClick={() =>
+                              setTomorrowRoutineId((prev) => (prev === it.id ? null : it.id))
+                            }
+                          >
+                            {it.text}
+                          </button>
+                        ))}
+                      </div>
+                    )}
                     <div className="todo-input-row">
                       <input
                         value={tomorrowText}
                         onChange={(e) => setTomorrowText(e.target.value)}
                         onKeyDown={(e) => e.key === "Enter" && addTomorrow()}
-                        placeholder="내일 할일 미리 입력"
+                        placeholder={
+                          tomorrowRoutineId
+                            ? "이 루틴에서 내일 할 일"
+                            : "내일 할일 미리 입력"
+                        }
                       />
                       <button className="btn-add" onClick={addTomorrow}>
                         추가
@@ -4320,7 +4390,12 @@ export default function App() {
                         {myTomorrow.map((todo) => (
                           <div key={todo.id} className="todo-item ready tomorrow-item">
                             <span className="todo-cycle-btn ready tomorrow-disabled" aria-hidden />
-                            <div className="todo-text">{todo.text}</div>
+                            <div className="todo-text">
+                              {todo.routineName && (
+                                <span className="tomorrow-routine-tag">{todo.routineName}</span>
+                              )}
+                              {todo.text}
+                            </div>
                             <button
                               className="todo-delete"
                               onClick={() => deleteTomorrow(todo.id)}

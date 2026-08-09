@@ -1,4 +1,26 @@
-const normalizeLabel = (s) => (s || "").normalize("NFC").trim().toLowerCase();
+export const normalizeLabel = (s) => (s || "").normalize("NFC").trim().toLowerCase();
+
+/* detail 조각 목록이 바뀐 뒤 항목의 진행 상태를 다시 맞춘다.
+   note를 고쳐 쓰든 조각을 새로 붙이든 규칙은 같아야 하므로 여기 한 군데만 둔다:
+   현재 조각에 해당하는 noteState 키만 남기고, 전부 done일 때만 완료로 본다.
+   조각이 하나라도 새로 붙으면 allDone이 깨지므로 끝냈던 루틴은 미완료로 돌아간다. */
+export function recalcRoutineNoteState(item, parts) {
+  const prev = item?.noteState && typeof item.noteState === "object" ? item.noteState : {};
+  const partSet = new Set(parts);
+  const state = {};
+  Object.keys(prev).forEach((k) => {
+    if (partSet.has(k)) state[k] = prev[k];
+  });
+  const allDone = parts.length > 0 && parts.every((p) => state[p] === "done");
+  return {
+    ...item,
+    note: parts.join(", "),
+    noteState: state,
+    started: allDone || parts.some((p) => state[p]),
+    done: allDone,
+    completedAt: allDone ? item?.completedAt || Date.now() : null,
+  };
+}
 
 /* ── 루틴 detail → 오늘의 TO-DO ──
    루틴 "집안일"의 detail에 "설거지, 청소"를 적으면 그 내용이 오늘 투두로 올라간다.
