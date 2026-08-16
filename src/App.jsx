@@ -48,6 +48,7 @@ import {
   parseRoutineTomorrowInput,
   splitTomorrowTodos,
 } from "./tomorrowRoutine";
+import { buildTrackerCarryPatch, hasTrackerTomorrowPlan } from "./trackerCarry";
 import { getOwnWeeklyTodosFromRemote } from "./weeklyState";
 import { shouldShowMemberEventName } from "./eventVisibility";
 import {
@@ -1829,41 +1830,34 @@ export default function App() {
         ]);
         if (cancelled) return;
         const todayData = todaySnap.exists() ? todaySnap.data() || {} : {};
-        const prevData = prevSnap.exists() ? prevSnap.data() || {} : {};
+        const directPrevData = prevSnap.exists() ? prevSnap.data() || {} : {};
+        let previousSources = [directPrevData];
 
-        const todayPlan = Array.isArray(todayData.planCells) ? todayData.planCells : [];
-        const prevTomorrow = Array.isArray(prevData.tomorrowCells) ? prevData.tomorrowCells : [];
-        const prevStart = prevData.tomorrowStart || "";
-        const todayPlanLabels =
-          todayData.planLabels && typeof todayData.planLabels === "object"
-            ? todayData.planLabels
-            : {};
-        const prevTomorrowLabels =
-          prevData.tomorrowLabels && typeof prevData.tomorrowLabels === "object"
-            ? prevData.tomorrowLabels
-            : {};
+        // 프로필 복구가 같은 닉네임의 다른 uid로 재연결한 경우, 어제 계획은
+        // 이전 uid 문서에 남아 있다. 현재 uid 문서가 비었을 때 닉네임으로 복구한다.
+        if (!hasTrackerTomorrowPlan(directPrevData) && nickname.trim()) {
+          const matches = await getDocs(
+            query(
+              collection(db, trackerCol(prevKey)),
+              where("nickname", "==", normalizeNickname(nickname))
+            )
+          );
+          if (cancelled) return;
+          previousSources = [
+            directPrevData,
+            ...matches.docs
+              .filter((match) => match.id !== uid)
+              .map((match) => match.data() || {}),
+          ];
+        }
 
-        const update = {};
-        const patch = {};
-        if (!todayPlan.some(Boolean) && prevTomorrow.some(Boolean)) {
-          update.planCells = prevTomorrow;
-          patch.planCells = prevTomorrow;
-        }
-        if (!todayData.planStart && prevStart) {
-          update.planStart = prevStart;
-          patch.planStart = prevStart;
-        }
-        if (!Object.keys(todayPlanLabels).length && Object.keys(prevTomorrowLabels).length) {
-          update.planLabels = prevTomorrowLabels;
-          patch.planLabels = prevTomorrowLabels;
-        }
-        if (Object.keys(update).length === 0) return;
+        const patch = buildTrackerCarryPatch(todayData, previousSources);
+        if (Object.keys(patch).length === 0) return;
 
         setMyTracker((t) => ({ ...t, ...patch }));
-        update.updatedAt = serverTimestamp();
         void writeSetDoc(
           doc(db, trackerCol(currentDayKey), uid),
-          update,
+          { ...patch, updatedAt: serverTimestamp() },
           { merge: true }
         ).catch((error) => console.error("Failed to carry plan", error));
       } catch (error) {
@@ -1873,7 +1867,7 @@ export default function App() {
     return () => {
       cancelled = true;
     };
-  }, [uid, nicknameConfirmed, currentDayKey]);
+  }, [uid, nickname, nicknameConfirmed, currentDayKey]);
 
   /* ── Firestore 루틴 동기화 ── */
   // 실패를 호출자가 알아야 하는 경로(미리 세운 예약을 루틴에 넣는 롤오버)가 있어서
