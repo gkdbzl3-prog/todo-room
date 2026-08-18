@@ -83,7 +83,8 @@ export const quizSubjects = [
         title: "컴활",
         levels: [
             { id: "computer-skill", label: "1급 필기", desc: "필기" },
-            { id: "computer-skill(obsidian)", label: "1급 필기(옵시디언)", desc: "필기" }
+            { id: "computer-skill(obsidian)", label: "1급 필기(옵시디언)", desc: "필기" },
+            { id: "computer-skill(obsidian-hard)", label: "1급 필기(옵시디언-고급", desc: "필기" },
         ],
     }
 ];

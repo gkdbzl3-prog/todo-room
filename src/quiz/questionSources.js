@@ -58,7 +58,10 @@ export const levelSources = {
     "computer-skill(obsidian)": {
         file: "computerSkillsLevel1Questions_vault.json"
     },
-};
+    "computer-Skill(obsidian-hard)": {
+        file: "computerSkillsLevel1Questions_vault_hard.json"
+    },
+}
 
 // 파일마다 통째 배열인 것과 { questions: [...] }인 것이 섞여 있다.
 export const readSourceQuestions = (loadedJson, source) => {
