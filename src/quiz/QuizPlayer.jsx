@@ -1,20 +1,11 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { loadQuestionsByLevel } from "./questionBank";
+import { selectRoundQuestions } from "./questionSelection";
+import { getSeenStorageKey, readSeenKeys, writeSeenKeys } from "./seenQuestions";
 import { saveQuizAttempt } from "./quizStore";
 
 
 const ROUND_SIZE = 5;
-
-function pickRandomQuestions(questionList, size = ROUND_SIZE) {
-    const pool = [...(questionList ?? [])];
-
-    for (let i = pool.length - 1; i > 0; i -= 1) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [pool[i], pool[j]] = [pool[j], pool[i]];
-    }
-
-    return pool.slice(0, Math.min(size, pool.length));
-}
 
 export default function QuizPlayer({ subject, level, onExit, uid, nickname }) {
     const [index, setIndex] = useState(0);
@@ -51,9 +42,29 @@ export default function QuizPlayer({ subject, level, onExit, uid, nickname }) {
     const sourceQuestions = loaded?.key === loadKey ? loaded.questions : null;
     const hasFailed = loadError?.key === loadKey;
 
-    const questions = useMemo(() => {
-        return sourceQuestions ? pickRandomQuestions(sourceQuestions, ROUND_SIZE) : [];
-    }, [sourceQuestions, roundNo]);
+    // 라운드를 뽑는 일에는 "본 문제 기록 갱신"이라는 부수효과가 붙어서 useMemo로는
+    // 못 다룬다. StrictMode가 effect를 두 번 돌려도 같은 라운드를 다시 뽑지 않도록
+    // 뽑은 라운드 키를 ref로 붙잡아 둔다.
+    const [round, setRound] = useState(null);
+    const pickedRoundKey = useRef(null);
+    const roundKey = `${loadKey}#${roundNo}`;
+    const seenStorageKey = getSeenStorageKey(uid, level?.id);
+
+    useEffect(() => {
+        if (!sourceQuestions || pickedRoundKey.current === roundKey) return;
+
+        const picked = selectRoundQuestions({
+            questions: sourceQuestions,
+            seenKeys: readSeenKeys(seenStorageKey),
+            size: ROUND_SIZE,
+        });
+
+        writeSeenKeys(seenStorageKey, picked.seenKeys);
+        pickedRoundKey.current = roundKey;
+        setRound({ key: roundKey, questions: picked.questions });
+    }, [sourceQuestions, roundKey, seenStorageKey]);
+
+    const questions = round?.key === roundKey ? round.questions : [];
 
     const question = questions[index];
     const [saving, setSaving] = useState(false);
