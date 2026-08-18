@@ -58,7 +58,7 @@ export const levelSources = {
     "computer-skill(obsidian)": {
         file: "computerSkillsLevel1Questions_vault.json"
     },
-    "computer-Skill(obsidian-hard)": {
+    "computer-skill(obsidian-hard)": {
         file: "computerSkillsLevel1Questions_vault_hard.json"
     },
 }
