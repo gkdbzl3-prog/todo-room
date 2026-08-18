@@ -13,27 +13,39 @@ const getStorage = () => {
     }
 };
 
-export const readSeenKeys = (storageKey) => {
+const toKeyList = (value) => (Array.isArray(value) ? value.filter((key) => typeof key === "string") : []);
+
+const emptyRecord = { seenKeys: [], recentKeys: [] };
+
+export const readSeenRecord = (storageKey) => {
     const storage = getStorage();
 
-    if (!storage) return [];
+    if (!storage) return emptyRecord;
 
     try {
-        const parsed = JSON.parse(storage.getItem(storageKey) || "[]");
+        const parsed = JSON.parse(storage.getItem(storageKey) || "null");
 
-        return Array.isArray(parsed) ? parsed.filter((key) => typeof key === "string") : [];
+        // 먼저 나간 판은 배열 하나만 저장했다. 그건 이번 바퀴 기록으로 읽어준다.
+        if (Array.isArray(parsed)) return { seenKeys: toKeyList(parsed), recentKeys: [] };
+
+        if (!parsed || typeof parsed !== "object") return emptyRecord;
+
+        return {
+            seenKeys: toKeyList(parsed.seenKeys),
+            recentKeys: toKeyList(parsed.recentKeys),
+        };
     } catch {
-        return [];
+        return emptyRecord;
     }
 };
 
-export const writeSeenKeys = (storageKey, seenKeys) => {
+export const writeSeenRecord = (storageKey, { seenKeys, recentKeys }) => {
     const storage = getStorage();
 
     if (!storage) return;
 
     try {
-        storage.setItem(storageKey, JSON.stringify(seenKeys));
+        storage.setItem(storageKey, JSON.stringify({ seenKeys, recentKeys }));
     } catch {
         // 저장 실패는 중복이 다시 나올 수 있다는 뜻일 뿐이라 풀이를 막지 않는다.
     }

@@ -1848,6 +1848,28 @@ input:focus {
   color: #fff;
 }
 
+.quiz-cycle-done {
+  margin: 14px auto 0;
+  padding: 12px;
+  border-radius: 16px;
+  background: rgba(192, 132, 252, 0.14);
+  border: 1px solid rgba(192, 132, 252, 0.34);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.quiz-cycle-done strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 15px;
+  color: #fff;
+}
+
+.quiz-cycle-done p {
+  margin: 2px 0;
+  opacity: 0.85;
+}
+
 .quiz-save-error {
   margin-top: 12px;
   padding: 10px 12px;

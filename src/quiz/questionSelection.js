@@ -51,32 +51,54 @@ const shuffle = (items, random) => {
     return pool;
 };
 
-// 안 본 문제로 먼저 채우고, 모자라면 그때 한 바퀴를 끝낸 것으로 보고 기록을 비운다.
-// 리셋한 라운드에서도 방금 뽑은 문제는 다시 뽑지 않으므로 한 라운드 안 중복은 없다.
+// 기록을 두 개로 나눠 둔다. seenKeys는 "이번 한 바퀴에서 본 문제"라 완주 판정에
+// 쓰이고, recentKeys는 "직전 라운드에 나온 문제"라 라운드가 연달아 겹치는 것만 막는다.
+// 한 덩어리로 두면, 한 바퀴를 끝낸 라운드가 되쓴 문제까지 다음 바퀴의 기록으로
+// 넘겨서 다음 바퀴가 그만큼 짧아지고 완주 안내가 주기보다 자주 뜬다.
+const preferring = (questions, avoidKeys, random) => {
+    const avoided = [];
+    const preferred = [];
+
+    for (const question of questions) {
+        (avoidKeys.has(getQuestionKey(question)) ? avoided : preferred).push(question);
+    }
+
+    return [...shuffle(preferred, random), ...shuffle(avoided, random)];
+};
+
 export const selectRoundQuestions = ({
     questions,
     seenKeys = [],
+    recentKeys = [],
     size = ROUND_SIZE,
     random = Math.random,
 } = {}) => {
     const pool = dedupeQuestions(questions);
     const seen = new Set(seenKeys);
+    const recent = new Set(recentKeys);
 
     const unseen = pool.filter((question) => !seen.has(getQuestionKey(question)));
-    const picked = shuffle(unseen, random).slice(0, size);
 
-    let carriedKeys = seenKeys;
+    // 이번 라운드가 안 본 문제를 바닥내면 한 바퀴가 끝난 것이다. 남은 게 처음부터
+    // 없는 라운드는 없다. 바퀴가 끝나는 즉시 기록을 비워 다음 바퀴를 열기 때문이다.
+    const isCycleComplete = unseen.length > 0 && unseen.length <= size;
+
+    const picked = preferring(unseen, recent, random).slice(0, size);
 
     if (picked.length < size) {
         const pickedKeys = new Set(picked.map(getQuestionKey));
         const rest = pool.filter((question) => !pickedKeys.has(getQuestionKey(question)));
 
-        picked.push(...shuffle(rest, random).slice(0, size - picked.length));
-        carriedKeys = [];
+        picked.push(...preferring(rest, recent, random).slice(0, size - picked.length));
     }
+
+    const pickedKeys = picked.map(getQuestionKey);
 
     return {
         questions: picked,
-        seenKeys: [...carriedKeys, ...picked.map(getQuestionKey)],
+        seenKeys: isCycleComplete ? [] : [...seenKeys, ...pickedKeys],
+        recentKeys: pickedKeys,
+        isCycleComplete,
+        cycleSize: pool.length,
     };
 };

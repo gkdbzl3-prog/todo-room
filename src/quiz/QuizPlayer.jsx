@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { loadQuestionsByLevel } from "./questionBank";
 import { selectRoundQuestions } from "./questionSelection";
-import { getSeenStorageKey, readSeenKeys, writeSeenKeys } from "./seenQuestions";
+import { getSeenStorageKey, readSeenRecord, writeSeenRecord } from "./seenQuestions";
 import { saveQuizAttempt } from "./quizStore";
 
 
@@ -53,18 +53,29 @@ export default function QuizPlayer({ subject, level, onExit, uid, nickname }) {
     useEffect(() => {
         if (!sourceQuestions || pickedRoundKey.current === roundKey) return;
 
+        const record = readSeenRecord(seenStorageKey);
+
         const picked = selectRoundQuestions({
             questions: sourceQuestions,
-            seenKeys: readSeenKeys(seenStorageKey),
+            seenKeys: record.seenKeys,
+            recentKeys: record.recentKeys,
             size: ROUND_SIZE,
         });
 
-        writeSeenKeys(seenStorageKey, picked.seenKeys);
+        writeSeenRecord(seenStorageKey, picked);
         pickedRoundKey.current = roundKey;
-        setRound({ key: roundKey, questions: picked.questions });
+        setRound({
+            key: roundKey,
+            questions: picked.questions,
+            isCycleComplete: picked.isCycleComplete,
+            cycleSize: picked.cycleSize,
+        });
     }, [sourceQuestions, roundKey, seenStorageKey]);
 
-    const questions = round?.key === roundKey ? round.questions : [];
+    const isCurrentRound = round?.key === roundKey;
+    const questions = isCurrentRound ? round.questions : [];
+    const isCycleComplete = isCurrentRound && Boolean(round.isCycleComplete);
+    const cycleSize = isCurrentRound ? round.cycleSize : 0;
 
     const question = questions[index];
     const [saving, setSaving] = useState(false);
@@ -185,6 +196,15 @@ export default function QuizPlayer({ subject, level, onExit, uid, nickname }) {
                     <div className="quiz-reward">
                         ⭐ {earnedStars}개 획득!
                     </div>
+
+                    {isCycleComplete && (
+                        <div className="quiz-cycle-done">
+                            <strong>🏁 퀴즈가 종료되었습니다</strong>
+                            <p>이 과목 {cycleSize}문제를 한 바퀴 다 풀었어!</p>
+                            <p>계속 풀면 처음부터 다시 나와.</p>
+                        </div>
+                    )}
+
                     {saveResult?.reward && (
                         <div className="quiz-reward-detail">
                             <p>현재 별: ⭐ {saveResult.reward.stars} / 7</p>
@@ -203,7 +223,7 @@ export default function QuizPlayer({ subject, level, onExit, uid, nickname }) {
                     )}
 
                     <button className="btn-primary quiz-main-btn" onClick={startNextRound}>
-                        Keep Going
+                        {isCycleComplete ? "처음부터 다시 풀기" : "Keep Going"}
                     </button>
                     <button className="quiz-secondary-btn" onClick={onExit}>
                         Back
