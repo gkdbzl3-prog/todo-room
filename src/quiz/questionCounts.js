@@ -13,7 +13,7 @@ export const subjectQuestionCounts = {
     adminlaw: 512,
     sqld: 199,
     ncs: 115,
-    computer: 75,
+    computer: 175,
 };
 
 export const getSubjectQuestionTotal = (subjectId) => subjectQuestionCounts[subjectId] ?? 0;

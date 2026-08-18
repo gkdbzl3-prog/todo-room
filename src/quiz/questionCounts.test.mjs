@@ -56,9 +56,9 @@ for (const subject of quizSubjects) {
 
 // 진도율은 푼 수 대비 과목 문항 수이고, 다시 푼 기록 때문에 100%를 넘지 않는다.
 {
-    assert.deepEqual(getSubjectProgress("computer", 30), { total: 75, percent: 40 });
-    assert.deepEqual(getSubjectProgress("computer", 0), { total: 75, percent: 0 });
-    assert.deepEqual(getSubjectProgress("computer", 500), { total: 75, percent: 100 });
+    assert.deepEqual(getSubjectProgress("computer", 30), { total: 175, percent: 17 });
+    assert.deepEqual(getSubjectProgress("computer", 0), { total: 175, percent: 0 });
+    assert.deepEqual(getSubjectProgress("computer", 500), { total: 175, percent: 100 });
     assert.equal(getSubjectProgress("unknown", 10), null);
 }
 
