@@ -1912,6 +1912,65 @@ input:focus {
   opacity: 0.62;
 }
 
+.quiz-note-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding: 12px 14px;
+  border-radius: 18px;
+  background: rgba(192, 132, 252, 0.14);
+  border: 1px solid rgba(192, 132, 252, 0.34);
+}
+
+.quiz-note-card.locked {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.09);
+  opacity: 0.66;
+}
+
+.quiz-note-card strong {
+  display: block;
+  font-size: 14px;
+}
+
+.quiz-note-card small {
+  display: block;
+  margin-top: 3px;
+  font-size: 11px;
+  opacity: 0.62;
+}
+
+.quiz-note-btn {
+  flex: none;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(192, 132, 252, 0.85);
+  color: #1b1030;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.quiz-note-unlocked {
+  margin-top: 8px !important;
+  padding-top: 8px;
+  border-top: 1px solid rgba(192, 132, 252, 0.3);
+  font-weight: 700;
+  opacity: 1 !important;
+}
+
+.quiz-note-remaining {
+  margin: 14px auto 0;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 13px;
+}
+
 .quiz-mini-note {
   margin: 6px 0 12px;
   font-size: 12px;

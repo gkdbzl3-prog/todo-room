@@ -4485,6 +4485,7 @@ export default function App() {
             <QuizPlayer
               subject={quizConfig.subject}
               level={quizConfig.level}
+              mode={quizConfig.mode}
               uid={uid}
               nickname={nickname}
               onExit={() => setQuizConfig(null)}
@@ -4493,7 +4494,16 @@ export default function App() {
             <QuizHome
               uid={uid}
               onStart={(subject, level) => {
-                setQuizConfig({ subject, level });
+                setQuizConfig({ subject, level, mode: "level" });
+              }}
+              onStartReview={() => {
+                // 오답 노트 기록은 과목 진도율의 분모가 없는 자리에 쌓아야 같은
+                // 문제를 다시 풀었다고 원래 과목의 진도율이 올라가지 않는다.
+                setQuizConfig({
+                  subject: { id: "review", emoji: "📕", title: "오답 노트" },
+                  level: null,
+                  mode: "review",
+                });
               }}
             />
           )}

@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { quizSubjects } from "./quizSubjects";
 import { getSubjectProgress } from "./questionCounts";
+import { getCycledStorageKey, readCycledLevels } from "./seenQuestions";
+import { countReviewableNotes, getWrongStorageKey, readWrongNotes } from "./wrongNotes";
 import { loadQuizSummary } from "./quizStore";
 import WeeklySolvedChart from "./WeeklySolvedChart";
 
-export default function QuizHome({ onStart, uid }) {
+export default function QuizHome({ onStart, onStartReview, uid }) {
     const pickRandomLevel = (subject = null) => {
         const levels = subject
             ? subject.levels.map((level) => ({ subject, level }))
@@ -13,6 +15,17 @@ export default function QuizHome({ onStart, uid }) {
         const randomItem = levels[Math.floor(Math.random() * levels.length)];
         onStart(randomItem.subject, randomItem.level);
     };
+
+    // 오답 노트는 기기에만 있어서 읽는 데 네트워크가 필요 없다. 이 화면은 풀이를
+    // 끝내고 돌아올 때마다 새로 마운트되니 그때 다시 센다.
+    const notes = useMemo(() => {
+        const stored = readWrongNotes(getWrongStorageKey(uid));
+
+        return {
+            total: stored.length,
+            reviewable: countReviewableNotes(stored, readCycledLevels(getCycledStorageKey(uid))),
+        };
+    }, [uid]);
 
     const [summary, setSummary] = useState(null);
     const [loadingSummary, setLoadingSummary] = useState(false);
@@ -84,6 +97,26 @@ export default function QuizHome({ onStart, uid }) {
 
                 </div>
             </div>
+
+            {notes.reviewable > 0 ? (
+                <div className="quiz-note-card">
+                    <div>
+                        <strong>📕 오답 노트</strong>
+                        <small>다시 풀 문제 {notes.reviewable}개</small>
+                    </div>
+
+                    <button className="quiz-note-btn" onClick={onStartReview}>
+                        다시 풀기
+                    </button>
+                </div>
+            ) : notes.total > 0 ? (
+                <div className="quiz-note-card locked">
+                    <div>
+                        <strong>📕 오답 노트</strong>
+                        <small>한 레벨을 한 바퀴 다 푸시면 열립니다</small>
+                    </div>
+                </div>
+            ) : null}
 
             {loadingSummary && <p className="quiz-mini-note">기록 불러오는 중...</p>}
             {summary?.subjectStats?.length > 0 && (

@@ -1,13 +1,31 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { loadQuestionsByLevel } from "./questionBank";
-import { selectRoundQuestions } from "./questionSelection";
-import { getSeenStorageKey, readSeenRecord, writeSeenRecord } from "./seenQuestions";
+import { getQuestionKey, selectRoundQuestions } from "./questionSelection";
+import {
+    getCycledStorageKey,
+    getSeenStorageKey,
+    markLevelCycled,
+    readCycledLevels,
+    readSeenRecord,
+    writeSeenRecord,
+} from "./seenQuestions";
+import {
+    addWrongNote,
+    countReviewableNotes,
+    getWrongStorageKey,
+    readWrongNotes,
+    removeWrongNote,
+    selectReviewQuestions,
+} from "./wrongNotes";
 import { saveQuizAttempt } from "./quizStore";
 
 
 const ROUND_SIZE = 5;
 
-export default function QuizPlayer({ subject, level, onExit, uid, nickname }) {
+export default function QuizPlayer({ subject, level, onExit, uid, nickname, mode = "level" }) {
+    // 오답 노트는 이미 기기에 담긴 문제로만 도니까 과목 JSON을 부르지 않는다.
+    // 로딩·실패 화면도 지나갈 일이 없고, 한 바퀴라는 개념도 없다.
+    const isReview = mode === "review";
     const [index, setIndex] = useState(0);
     const [selected, setSelected] = useState(null);
     const [solved, setSolved] = useState([]);
@@ -22,6 +40,8 @@ export default function QuizPlayer({ subject, level, onExit, uid, nickname }) {
     const loadKey = `${level?.id ?? ""}#${attempt}`;
 
     useEffect(() => {
+        if (isReview) return undefined;
+
         let cancelled = false;
 
         loadQuestionsByLevel(level?.id).then(
@@ -37,7 +57,7 @@ export default function QuizPlayer({ subject, level, onExit, uid, nickname }) {
         return () => {
             cancelled = true;
         };
-    }, [loadKey, level?.id]);
+    }, [loadKey, level?.id, isReview]);
 
     const sourceQuestions = loaded?.key === loadKey ? loaded.questions : null;
     const hasFailed = loadError?.key === loadKey;
@@ -49,9 +69,29 @@ export default function QuizPlayer({ subject, level, onExit, uid, nickname }) {
     const pickedRoundKey = useRef(null);
     const roundKey = `${loadKey}#${roundNo}`;
     const seenStorageKey = getSeenStorageKey(uid, level?.id);
+    const cycledStorageKey = getCycledStorageKey(uid);
+    const wrongStorageKey = getWrongStorageKey(uid);
+
+    // 복습 라운드는 기기에 있는 오답을 섞기만 하면 끝이라 기다릴 것도, 남길 기록도
+    // 없다. effect로 미루면 빈 라운드가 한 번 렌더된 뒤에야 문제가 붙는다. 라운드
+    // 키에 묶어 두면 렌더가 여러 번 돌아도 같은 문제가 그대로 남는다.
+    const reviewRound = useRef(null);
+
+    if (isReview && reviewRound.current?.key !== roundKey) {
+        reviewRound.current = {
+            key: roundKey,
+            questions: selectReviewQuestions({
+                notes: readWrongNotes(wrongStorageKey),
+                unlockedLevelIds: readCycledLevels(cycledStorageKey),
+                size: ROUND_SIZE,
+            }),
+            isCycleComplete: false,
+            cycleSize: 0,
+        };
+    }
 
     useEffect(() => {
-        if (!sourceQuestions || pickedRoundKey.current === roundKey) return;
+        if (isReview || !sourceQuestions || pickedRoundKey.current === roundKey) return;
 
         const record = readSeenRecord(seenStorageKey);
 
@@ -63,6 +103,11 @@ export default function QuizPlayer({ subject, level, onExit, uid, nickname }) {
         });
 
         writeSeenRecord(seenStorageKey, picked);
+
+        // 완주하면 seenKeys가 그 자리에서 비워져 사실이 사라진다. 오답 노트를 여는
+        // 조건이라 여기서 따로 남긴다.
+        if (picked.isCycleComplete) markLevelCycled(cycledStorageKey, level?.id);
+
         pickedRoundKey.current = roundKey;
         setRound({
             key: roundKey,
@@ -70,12 +115,13 @@ export default function QuizPlayer({ subject, level, onExit, uid, nickname }) {
             isCycleComplete: picked.isCycleComplete,
             cycleSize: picked.cycleSize,
         });
-    }, [sourceQuestions, roundKey, seenStorageKey]);
+    }, [sourceQuestions, roundKey, seenStorageKey, cycledStorageKey, wrongStorageKey, isReview, level?.id]);
 
-    const isCurrentRound = round?.key === roundKey;
-    const questions = isCurrentRound ? round.questions : [];
-    const isCycleComplete = isCurrentRound && Boolean(round.isCycleComplete);
-    const cycleSize = isCurrentRound ? round.cycleSize : 0;
+    const activeRound = isReview ? reviewRound.current : round;
+    const isCurrentRound = activeRound?.key === roundKey;
+    const questions = isCurrentRound ? activeRound.questions : [];
+    const isCycleComplete = isCurrentRound && Boolean(activeRound.isCycleComplete);
+    const cycleSize = isCurrentRound ? activeRound.cycleSize : 0;
 
     const question = questions[index];
     const [saving, setSaving] = useState(false);
@@ -117,6 +163,19 @@ export default function QuizPlayer({ subject, level, onExit, uid, nickname }) {
         if (selected) return;
 
         const isCorrect = answer === question.answer;
+
+        // 맞히면 어느 화면에서 맞혔든 노트에서 뺀다. 오답 노트를 통해서만 지워지면
+        // 평소에 맞히게 된 문제가 계속 남는다.
+        //
+        // 다시 틀렸을 때 addWrongNote가 넘겨받는 subject·level은 복습 라운드에서는
+        // 오답 노트의 것이라 원래 과목이 아니다. 이미 있는 문제는 wrongCount만
+        // 올리고 원래 기록을 그대로 두므로 레벨이 지워질 일은 없다.
+        if (isCorrect) {
+            removeWrongNote(wrongStorageKey, getQuestionKey(question));
+        } else {
+            addWrongNote(wrongStorageKey, { question, subject, level });
+        }
+
         setSelected(answer);
         setSolved((prev) => [
             ...prev,
@@ -129,8 +188,17 @@ export default function QuizPlayer({ subject, level, onExit, uid, nickname }) {
         ]);
     };
 
+    const [remainingNotes, setRemainingNotes] = useState(0);
+
     const finishQuiz = async () => {
         if (saving) return;
+
+        setRemainingNotes(
+            countReviewableNotes(
+                readWrongNotes(wrongStorageKey),
+                readCycledLevels(cycledStorageKey)
+            )
+        );
 
         setSaving(true);
 
@@ -151,7 +219,7 @@ export default function QuizPlayer({ subject, level, onExit, uid, nickname }) {
             console.error("Quiz save failed:", error);
             setSaveResult({
                 error: true,
-                message: "기록 저장에 실패했어. 그래도 결과는 볼 수 있어.",
+                message: "기록 저장에 실패했어요. 그래도 결과는 보실 수 있어요.",
             });
         } finally {
             setSaving(false);
@@ -200,8 +268,22 @@ export default function QuizPlayer({ subject, level, onExit, uid, nickname }) {
                     {isCycleComplete && (
                         <div className="quiz-cycle-done">
                             <strong>🏁 퀴즈가 종료되었습니다</strong>
-                            <p>이 과목 {cycleSize}문제를 한 바퀴 다 풀었어!</p>
-                            <p>계속 풀면 처음부터 다시 나와.</p>
+                            <p>이 과목 {cycleSize}문제를 한 바퀴 다 푸셨어요!</p>
+                            <p>계속 풀면 처음부터 다시 나옵니다.</p>
+
+                            {remainingNotes > 0 && (
+                                <p className="quiz-note-unlocked">
+                                    📕 오답 노트가 열렸어요 — 다시 풀 문제 {remainingNotes}개
+                                </p>
+                            )}
+                        </div>
+                    )}
+
+                    {isReview && (
+                        <div className="quiz-note-remaining">
+                            {remainingNotes > 0
+                                ? `📕 오답 노트에 ${remainingNotes}문제 남았어요.`
+                                : "📕 오답 노트를 모두 비우셨어요. 훌륭합니다!"}
                         </div>
                     )}
 
@@ -222,9 +304,15 @@ export default function QuizPlayer({ subject, level, onExit, uid, nickname }) {
                         </div>
                     )}
 
-                    <button className="btn-primary quiz-main-btn" onClick={startNextRound}>
-                        {isCycleComplete ? "처음부터 다시 풀기" : "Keep Going"}
-                    </button>
+                    {(!isReview || remainingNotes > 0) && (
+                        <button className="btn-primary quiz-main-btn" onClick={startNextRound}>
+                            {isReview
+                                ? "남은 오답 계속 풀기"
+                                : isCycleComplete
+                                    ? "처음부터 다시 풀기"
+                                    : "Keep Going"}
+                        </button>
+                    )}
                     <button className="quiz-secondary-btn" onClick={onExit}>
                         Back
                     </button>
@@ -240,14 +328,36 @@ export default function QuizPlayer({ subject, level, onExit, uid, nickname }) {
 
                 <div className="quiz-card quiz-load-state">
                     <div className="quiz-load-icon" aria-hidden="true">📡</div>
-                    <p className="quiz-load-message">문제를 불러오지 못했어.</p>
-                    <p className="quiz-load-sub">연결을 확인하고 다시 시도해줘.</p>
+                    <p className="quiz-load-message">문제를 불러오지 못했어요.</p>
+                    <p className="quiz-load-sub">연결을 확인하고 다시 시도해 주세요.</p>
 
                     <button
                         className="btn-primary quiz-main-btn"
                         onClick={() => setAttempt((prev) => prev + 1)}
                     >
                         다시 시도
+                    </button>
+                </div>
+            </section>
+        );
+    }
+
+    // 복습은 내려받을 것이 없어서 라운드가 비었다면 곧 채워지는 게 아니라 정말로
+    // 풀 오답이 없는 것이다. 여기서 잡지 않으면 로딩 화면이 영영 돌아간다.
+    if (isReview && isCurrentRound && questions.length === 0) {
+        return (
+            <section className="quiz-panel">
+                {quizHead}
+
+                <div className="quiz-card quiz-load-state">
+                    <div className="quiz-load-icon" aria-hidden="true">📕</div>
+                    <p className="quiz-load-message">지금 다시 풀 오답이 없어요.</p>
+                    <p className="quiz-load-sub">
+                        한 레벨을 한 바퀴 다 푸시면 그 레벨에서 틀린 문제가 여기에 열립니다.
+                    </p>
+
+                    <button className="btn-primary quiz-main-btn" onClick={onExit}>
+                        과목 선택으로
                     </button>
                 </div>
             </section>

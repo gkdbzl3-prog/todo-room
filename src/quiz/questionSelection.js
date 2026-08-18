@@ -40,7 +40,7 @@ export const dedupeQuestions = (questions) => {
     return unique;
 };
 
-const shuffle = (items, random) => {
+export const shuffle = (items, random = Math.random) => {
     const pool = [...items];
 
     for (let i = pool.length - 1; i > 0; i -= 1) {
