@@ -1,0 +1,1682 @@
+[
+  {
+    "topic": "컴퓨터 일반 - 시스템",
+    "type": "multiple",
+    "question": "컴퓨터를 데이터 취급 형태에 따라 분류한 것으로 옳은 것은?",
+    "choices": [
+      "디지털 컴퓨터, 아날로그 컴퓨터, 하이브리드 컴퓨터",
+      "슈퍼 컴퓨터, 메인프레임, 미니 컴퓨터, 마이크로 컴퓨터",
+      "범용 컴퓨터, 전용 컴퓨터",
+      "데스크톱, 노트북, 태블릿"
+    ],
+    "answer": "디지털 컴퓨터, 아날로그 컴퓨터, 하이브리드 컴퓨터",
+    "explanation": "데이터 취급 형태 기준은 디지털·아날로그·하이브리드이다. 슈퍼·메인프레임·미니·마이크로는 처리 능력과 규모에 따른 분류이고, 범용·전용은 사용 용도에 따른 분류이다.",
+    "id": "vault-trap-001",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "컴퓨터 일반 - 시스템",
+    "type": "multiple",
+    "question": "아날로그 컴퓨터와 디지털 컴퓨터에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "아날로그 컴퓨터는 증폭 회로로, 디지털 컴퓨터는 논리 회로로 구성된다.",
+      "아날로그 컴퓨터는 논리 회로로, 디지털 컴퓨터는 증폭 회로로 구성된다.",
+      "두 컴퓨터 모두 기억 기능을 가지고 있다.",
+      "정밀도는 아날로그 컴퓨터가 디지털 컴퓨터보다 우수하다."
+    ],
+    "answer": "아날로그 컴퓨터는 증폭 회로로, 디지털 컴퓨터는 논리 회로로 구성된다.",
+    "explanation": "구성 회로는 아날로그가 증폭 회로, 디지털이 논리 회로이다. 기억 기능은 디지털에만 있으며, 정밀도는 디지털이 필요한 한도까지 무제한인 반면 아날로그는 제한적이다. 다만 연산 속도는 아날로그가 더 빠르다.",
+    "id": "vault-trap-002",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "컴퓨터 일반 - 입출력",
+    "type": "multiple",
+    "question": "USB 인터페이스에 대한 설명으로 옳지 않은 것은?",
+    "choices": [
+      "플러그 앤 플레이 기능을 지원하는 범용 병렬 인터페이스이다.",
+      "주변기기를 최대 127개까지 연결할 수 있다.",
+      "컴퓨터를 종료하지 않고 장치를 연결하거나 분리할 수 있다.",
+      "USB 3.0의 커넥터는 파란색으로 구분한다."
+    ],
+    "answer": "플러그 앤 플레이 기능을 지원하는 범용 병렬 인터페이스이다.",
+    "explanation": "USB는 Universal Serial Bus의 약자로 병렬이 아니라 직렬 인터페이스이다. 플러그 앤 플레이 지원, 최대 127개 연결, 핫 플러그인, USB 3.0의 파란색 커넥터는 모두 옳은 설명이다.",
+    "id": "vault-trap-003",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "컴퓨터 일반 - 입출력",
+    "type": "multiple",
+    "question": "USB 포트에 여러 대의 주변기기를 동시에 연결했을 때 나타나는 현상으로 옳은 것은?",
+    "choices": [
+      "대역폭을 나누어 사용하므로 개별 장치의 전송 속도는 느려진다.",
+      "연결된 장치 수와 무관하게 각 장치의 전송 속도는 항상 동일하다.",
+      "장치를 추가할수록 전체 대역폭이 함께 늘어난다.",
+      "127개를 넘지 않으면 속도 저하가 전혀 없다."
+    ],
+    "answer": "대역폭을 나누어 사용하므로 개별 장치의 전송 속도는 느려진다.",
+    "explanation": "USB는 하나의 컨트롤러에 연결된 장치들이 전체 대역폭을 분할해 사용하는 구조이므로, 장치를 많이 연결할수록 개별 전송 속도는 떨어진다. 최대 127개 연결이 가능하다는 것과 속도가 유지된다는 것은 별개이다.",
+    "id": "vault-trap-004",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "컴퓨터 일반 - 입출력",
+    "type": "multiple",
+    "question": "USB 버전별 최대 전송 속도와 커넥터 색상의 연결이 옳은 것은?",
+    "choices": [
+      "USB 3.0 - 5Gbps - 파란색",
+      "USB 2.0 - 5Gbps - 파란색",
+      "USB 3.0 - 480Mbps - 검은색",
+      "USB 1.1 - 480Mbps - 흰색"
+    ],
+    "answer": "USB 3.0 - 5Gbps - 파란색",
+    "explanation": "USB 1.1은 12Mbps 흰색, USB 2.0은 480Mbps 검은색, USB 3.0은 5Gbps 파란색, USB 3.1은 10Gbps이다. 480Mbps는 USB 2.0의 속도이다.",
+    "id": "vault-trap-005",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 3
+  },
+  {
+    "topic": "컴퓨터 일반 - 입출력",
+    "type": "multiple",
+    "question": "3D 프린터의 출력 속도를 나타내는 단위로 옳은 것은?",
+    "choices": [
+      "MMS",
+      "PPM",
+      "CPS",
+      "DPI"
+    ],
+    "answer": "MMS",
+    "explanation": "3D 프린터는 초당 이동 거리를 뜻하는 MMS(Milli-Meter per Second)를 사용한다. PPM은 레이저 프린터의 분당 페이지 수, CPS는 도트 매트릭스의 초당 문자 수이며, DPI는 속도가 아니라 인쇄 품질을 나타내는 단위이다.",
+    "id": "vault-trap-006",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "컴퓨터 일반 - 입출력",
+    "type": "multiple",
+    "question": "잉크젯 프린터의 인쇄 원리로 옳은 것은?",
+    "choices": [
+      "노즐에서 잉크를 미세한 방울로 분사하여 인쇄한다.",
+      "레이저로 토너를 감광시켜 인쇄한다.",
+      "핀으로 리본을 때려 인쇄한다.",
+      "재료를 녹여 층층이 쌓아 올린다."
+    ],
+    "answer": "노즐에서 잉크를 미세한 방울로 분사하여 인쇄한다.",
+    "explanation": "잉크젯은 열이나 압전 소자로 잉크를 가열·가압해 미세한 방울로 분사하는 비충격식 방식이다. 레이저 감광은 레이저 프린터, 리본 타격은 도트 매트릭스, 적층은 3D 프린터의 원리이다.",
+    "id": "vault-trap-007",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 3
+  },
+  {
+    "topic": "컴퓨터 일반 - 기억장치",
+    "type": "multiple",
+    "question": "자기 디스크의 접근 시간(Access Time)을 구성하는 요소로만 묶인 것은?",
+    "choices": [
+      "탐색 시간 + 회전 지연 시간 + 전송 시간",
+      "탐색 시간 + 대기 시간 + 실행 시간",
+      "회전 지연 시간 + 인출 시간 + 해독 시간",
+      "전송 시간 + 처리 시간 + 응답 시간"
+    ],
+    "answer": "탐색 시간 + 회전 지연 시간 + 전송 시간",
+    "explanation": "접근 시간은 헤드가 트랙까지 이동하는 탐색 시간, 섹터가 헤드 밑으로 회전해 오는 회전 지연 시간, 읽은 데이터를 주기억장치로 보내는 전송 시간의 합이다. 이 중 물리적 이동이 필요한 탐색 시간이 가장 오래 걸린다.",
+    "id": "vault-trap-008",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "컴퓨터 일반 - 기억장치",
+    "type": "multiple",
+    "question": "읽은 데이터를 주기억장치로 보내는 데 걸리는 시간을 뜻하는 전송 시간(Transfer Time)은 어떤 장치와 관련된 용어인가?",
+    "choices": [
+      "자기 디스크",
+      "캐시 메모리",
+      "레지스터",
+      "연관 메모리"
+    ],
+    "answer": "자기 디스크",
+    "explanation": "전송 시간은 자기 디스크의 접근 시간을 구성하는 세 요소 중 하나이다. 캐시 메모리는 CPU와 주기억장치의 속도 차이를 줄이는 장치로 접근 시간을 이런 방식으로 나누지 않는다.",
+    "id": "vault-trap-009",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "컴퓨터 일반 - CPU",
+    "type": "multiple",
+    "question": "인터럽트에 대한 설명으로 옳지 않은 것은?",
+    "choices": [
+      "CPU와 입출력장치 사이의 속도 차이를 해결하기 위한 전용 처리기이다.",
+      "예기치 않은 상황이 발생하면 현재 작업을 중단하고 우선순위에 따라 처리한다.",
+      "주변장치가 자신의 상태 변화를 CPU에 알리는 것도 인터럽트에 해당한다.",
+      "0으로 나누기나 오버플로에 의해 발생하는 것은 내부 인터럽트이다."
+    ],
+    "answer": "CPU와 입출력장치 사이의 속도 차이를 해결하기 위한 전용 처리기이다.",
+    "explanation": "속도 차이를 해결하는 전용 처리기는 채널이다. 인터럽트는 예기치 않은 상황이 발생했을 때 현재 작업을 중단하고 우선순위에 따라 먼저 처리한 뒤 복귀하는 것으로, 주변장치의 상태 변화 통보도 포함된다.",
+    "id": "vault-trap-010",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "컴퓨터 일반 - 운영체제",
+    "type": "multiple",
+    "question": "Windows의 [시스템] → [정보]에 관한 설명으로 옳지 않은 것은?",
+    "choices": [
+      "설치된 시스템 종류를 32비트나 64비트 운영체제로 변경할 수 있다.",
+      "Windows의 버전과 시스템에 대한 기본 정보를 확인할 수 있다.",
+      "설치된 RAM의 크기를 확인할 수 있다.",
+      "컴퓨터의 이름을 확인하거나 변경할 수 있다."
+    ],
+    "answer": "설치된 시스템 종류를 32비트나 64비트 운영체제로 변경할 수 있다.",
+    "explanation": "시스템 종류는 확인만 가능하며 비트 변경은 운영체제를 다시 설치해야 한다. [정보] 화면에서 실제로 변경할 수 있는 것은 컴퓨터 이름뿐이다.",
+    "id": "vault-trap-011",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "컴퓨터 일반 - 운영체제",
+    "type": "multiple",
+    "question": "실행 중인 프로세스별 CPU·메모리·디스크·네트워크 사용 현황을 네 개의 탭으로 나누어 실시간으로 상세하게 분석할 수 있는 도구는?",
+    "choices": [
+      "리소스 모니터",
+      "장치 관리자",
+      "시스템 정보",
+      "디스크 정리"
+    ],
+    "answer": "리소스 모니터",
+    "explanation": "리소스 모니터(resmon)는 CPU·메모리·디스크·네트워크 네 개 탭으로 자원 사용 현황을 상세히 보여준다. 작업 관리자가 프로세스 종료 등 조작 중심이라면 리소스 모니터는 관찰 중심의 도구이다.",
+    "id": "vault-trap-012",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 3
+  },
+  {
+    "topic": "컴퓨터 일반 - 운영체제",
+    "type": "multiple",
+    "question": "Windows 메모장에 대한 설명으로 옳지 않은 것은?",
+    "choices": [
+      "그림이나 도표, 차트 등의 개체를 삽입할 수 있다.",
+      "[페이지 설정]에서 머리글과 바닥글을 설정할 수 있다.",
+      "문서의 첫 줄에 .LOG를 입력하면 파일을 열 때마다 시간과 날짜가 자동으로 기록된다.",
+      "글꼴 서식은 문서 전체에만 적용된다."
+    ],
+    "answer": "그림이나 도표, 차트 등의 개체를 삽입할 수 있다.",
+    "explanation": "메모장은 텍스트만 다루므로 그림·도표·OLE 개체를 삽입할 수 없다. 머리글과 바닥글은 메모장에는 있고 워드패드에는 없다는 점도 함께 기억해야 한다.",
+    "id": "vault-trap-013",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "컴퓨터 일반 - 운영체제",
+    "type": "multiple",
+    "question": "Windows 메모장에서 [편집] → [이동] 메뉴가 비활성화되는 경우는?",
+    "choices": [
+      "자동 줄 바꿈이 설정되어 있을 때",
+      "문서가 저장되지 않았을 때",
+      "글꼴이 변경되었을 때",
+      "문서가 100줄을 넘었을 때"
+    ],
+    "answer": "자동 줄 바꿈이 설정되어 있을 때",
+    "explanation": "자동 줄 바꿈이 켜져 있으면 실제 줄 번호를 특정할 수 없어 [이동] 명령이 비활성화된다. 자동 줄 바꿈을 해제하면 사용할 수 있다.",
+    "id": "vault-trap-014",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "컴퓨터 일반 - 운영체제",
+    "type": "multiple",
+    "question": "다음 중 디스크 공간을 확보하기 위한 목적으로 사용하는 것은?",
+    "choices": [
+      "디스크 정리",
+      "드라이브 조각 모음",
+      "디스크 검사",
+      "레지스트리 편집기"
+    ],
+    "answer": "디스크 정리",
+    "explanation": "디스크 정리는 임시 파일, 휴지통, 다운로드한 프로그램 파일 등을 삭제해 용량을 확보한다. 드라이브 조각 모음은 접근 속도를 향상시키는 것이 목적이며 디스크 용량 증가와는 관계가 없다.",
+    "id": "vault-trap-015",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 3
+  },
+  {
+    "topic": "컴퓨터 일반 - 운영체제",
+    "type": "multiple",
+    "question": "ClearType에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "화면에 표시되는 글꼴의 가독성을 향상시키는 기능이다.",
+      "글자의 모양과 크기를 자유롭게 변경하는 기능이다.",
+      "화면의 깜박임을 줄여 눈의 피로를 덜어주는 기능이다.",
+      "글꼴 파일을 벡터 형식으로 변환하는 기능이다."
+    ],
+    "answer": "화면에 표시되는 글꼴의 가독성을 향상시키는 기능이다.",
+    "explanation": "ClearType은 LCD 화면에서 글자를 더 선명하고 부드럽게 보이도록 하는 기술로 가독성만 개선한다. 글자의 모양이나 크기 자체를 바꾸지는 않으며, 화면 깜박임을 줄이는 것은 플리커 프리이다.",
+    "id": "vault-trap-016",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "컴퓨터 일반 - 운영체제",
+    "type": "multiple",
+    "question": "장치를 설치할 때 필요한 정보를 담고 있는 파일의 확장자는?",
+    "choices": [
+      "INF",
+      "INI",
+      "TMP",
+      "SYS"
+    ],
+    "answer": "INF",
+    "explanation": "INF는 장치 설치 정보 파일이고, INI는 프로그램의 환경 설정 정보를 담은 파일이다. 이름이 비슷해 서로 바꿔놓은 선지가 자주 출제된다.",
+    "id": "vault-trap-017",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 3
+  },
+  {
+    "topic": "컴퓨터 일반 - 운영체제",
+    "type": "multiple",
+    "question": "다음 중 비트맵 방식의 글꼴 파일 확장자는?",
+    "choices": [
+      "FON",
+      "TTF",
+      "OTF",
+      "PFB"
+    ],
+    "answer": "FON",
+    "explanation": "FON은 비트맵 글꼴이라 확대하면 계단 현상이 나타난다. TTF와 OTF는 벡터 방식이므로 크기를 키워도 매끄럽게 표시된다.",
+    "id": "vault-trap-018",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 3
+  },
+  {
+    "topic": "컴퓨터 일반 - 네트워크",
+    "type": "multiple",
+    "question": "모든 지점의 컴퓨터와 단말장치를 서로 연결하여 노드 하나가 고장 나도 우회 경로로 통신할 수 있는 네트워크 구성 형태는?",
+    "choices": [
+      "망형",
+      "성형",
+      "링형",
+      "버스형"
+    ],
+    "answer": "망형",
+    "explanation": "망형(Mesh)은 모든 노드를 서로 연결한 형태로 신뢰성이 가장 높고 우회 경로를 확보할 수 있다. 다만 회선 수가 n(n-1)/2로 많아져 설치비와 유지비가 크다.",
+    "id": "vault-trap-019",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "컴퓨터 일반 - 네트워크",
+    "type": "multiple",
+    "question": "단말장치의 추가·제거 및 기밀 보호가 어렵다는 특징을 갖는 네트워크 구성 형태는?",
+    "choices": [
+      "버스형",
+      "성형",
+      "망형",
+      "계층형"
+    ],
+    "answer": "버스형",
+    "explanation": "버스형은 하나의 통신 회선에 여러 단말이 물려 있어 데이터가 회선 전체로 흐르므로 기밀 보호가 어렵고, 단말을 추가·제거하려면 회선 자체를 건드려야 한다.",
+    "id": "vault-trap-020",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "컴퓨터 일반 - 네트워크",
+    "type": "multiple",
+    "question": "중앙 컴퓨터가 고장 나면 전체 네트워크가 마비되는 구성 형태는?",
+    "choices": [
+      "성형",
+      "망형",
+      "버스형",
+      "링형"
+    ],
+    "answer": "성형",
+    "explanation": "성형(Star)은 중앙 컴퓨터에 각 노드가 방사형으로 연결되므로 개별 노드가 고장 나도 나머지는 정상이지만, 중앙 컴퓨터가 멈추면 전체가 마비된다.",
+    "id": "vault-trap-021",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "컴퓨터 일반 - 네트워크",
+    "type": "multiple",
+    "question": "사물 인터넷(IoT)에서 무선 광역 네트워크로 사용되며, 저전력과 광역을 기반으로 소량의 데이터를 장거리 전송하고 안정적인 통신을 지원하는 기술은?",
+    "choices": [
+      "LPWA",
+      "LTE",
+      "Wi-Fi",
+      "USN"
+    ],
+    "answer": "LPWA",
+    "explanation": "LPWA(Low Power Wide Area)는 배터리로 수년간 동작하며 소량 데이터를 장거리 전송한다. LTE는 고속·대용량이라 저전력이 아니고, Wi-Fi는 근거리이며, USN은 특정 통신 기술이 아니라 센서 네트워크라는 개념이다.",
+    "id": "vault-trap-022",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "컴퓨터 일반 - 네트워크",
+    "type": "multiple",
+    "question": "고정된 기반 시설의 도움 없이 이동 단말기들만으로 자율적으로 구성되는 무선 네트워크는?",
+    "choices": [
+      "애드혹 네트워크",
+      "인프라스트럭처 모드",
+      "USN",
+      "와이브로"
+    ],
+    "answer": "애드혹 네트워크",
+    "explanation": "애드혹 네트워크는 AP나 기지국 없이 단말끼리 직접 연결하며 각 노드가 스스로 라우터 역할을 한다. AP를 거쳐 통신하는 것은 인프라스트럭처 모드이다.",
+    "id": "vault-trap-023",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "컴퓨터 일반 - 네트워크",
+    "type": "multiple",
+    "question": "전송 도중 약해진 신호를 증폭·재생하여 데이터 전송의 정확성을 보장하는 네트워크 장비는?",
+    "choices": [
+      "리피터",
+      "라우터",
+      "게이트웨이",
+      "브리지"
+    ],
+    "answer": "리피터",
+    "explanation": "리피터는 감쇠된 신호를 원래 형태로 증폭·재생해 전송 거리를 늘리고 정확성을 확보한다. 라우터는 최적 경로 선택, 게이트웨이는 서로 다른 프로토콜의 네트워크 연결을 담당한다.",
+    "id": "vault-trap-024",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "컴퓨터 일반 - 네트워크",
+    "type": "multiple",
+    "question": "전자우편에서 기본적으로 사용하는 문자 코드는?",
+    "choices": [
+      "7비트 ASCII 코드",
+      "16진수 EBCDIC 코드",
+      "8비트 유니코드",
+      "BCD 코드"
+    ],
+    "answer": "7비트 ASCII 코드",
+    "explanation": "전자우편은 기본적으로 7비트 ASCII를 사용하므로 영문과 숫자만 전송할 수 있다. 한글이나 이미지 같은 데이터를 보내기 위해 MIME으로 변환하는 과정이 필요하다.",
+    "id": "vault-trap-025",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "컴퓨터 일반 - 보안",
+    "type": "multiple",
+    "question": "전자상거래에서 신용카드 결제의 안전성을 보장하기 위한 보안 프로토콜은?",
+    "choices": [
+      "SET",
+      "PGP",
+      "PEM",
+      "SSL"
+    ],
+    "answer": "SET",
+    "explanation": "SET(Secure Electronic Transaction)은 전자상거래 결제 보안을 위한 표준이다. PGP와 PEM은 전자우편 암호화, SSL은 웹 통신 암호화에 사용된다.",
+    "id": "vault-trap-026",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "컴퓨터 일반 - 보안",
+    "type": "multiple",
+    "question": "전자우편 암호화 방식 중 개인이 개발하여 무료로 배포되었으며 널리 사용되는 것은?",
+    "choices": [
+      "PGP",
+      "PEM",
+      "SET",
+      "SSL"
+    ],
+    "answer": "PGP",
+    "explanation": "PGP(Pretty Good Privacy)는 개인이 개발해 무료 배포한 메일 암호화 방식으로 실제 사용률이 높다. PEM은 인터넷 표준으로 제정되었으나 상대적으로 덜 사용된다.",
+    "id": "vault-trap-027",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "컴퓨터 일반 - 보안",
+    "type": "multiple",
+    "question": "프로그램이 할당된 버퍼 크기보다 큰 데이터를 입력받아 인접 메모리 영역을 침범하게 되는 보안 취약점은?",
+    "choices": [
+      "버퍼 오버플로",
+      "스니핑",
+      "파밍",
+      "백도어"
+    ],
+    "answer": "버퍼 오버플로",
+    "explanation": "버퍼 오버플로(BOF)는 넘친 데이터가 인접 메모리를 덮어써 악성 코드 실행이나 권한 탈취로 이어질 수 있다. Access의 BOF(Begin Of File)와는 전혀 다른 개념이다.",
+    "id": "vault-trap-028",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "컴퓨터 일반 OX",
+    "type": "ox",
+    "question": "USB는 플러그 앤 플레이 기능을 지원하는 범용 병렬 인터페이스이다.",
+    "answer": "X",
+    "explanation": "USB는 Universal Serial Bus의 약자로 직렬 인터페이스이다. 플러그 앤 플레이를 지원한다는 부분은 옳지만 병렬이라는 서술이 틀렸다.",
+    "id": "vault-trap-029",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "컴퓨터 일반 OX",
+    "type": "ox",
+    "question": "USB는 주변장치를 최대 127개까지 연결할 수 있으며, 많은 장치를 연결해도 각 장치의 전송 속도는 동일하게 유지된다.",
+    "answer": "X",
+    "explanation": "127개까지 연결할 수 있다는 것은 옳지만, USB는 대역폭을 나누어 쓰므로 장치를 많이 연결할수록 개별 전송 속도는 느려진다.",
+    "id": "vault-trap-030",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "컴퓨터 일반 OX",
+    "type": "ox",
+    "question": "Windows의 [시스템] → [정보]에서는 설치된 시스템 종류를 32비트나 64비트로 변경할 수 있다.",
+    "answer": "X",
+    "explanation": "시스템 종류는 확인만 가능하다. 비트를 바꾸려면 운영체제를 다시 설치해야 하며, [정보]에서 변경할 수 있는 것은 컴퓨터 이름뿐이다.",
+    "id": "vault-trap-031",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "컴퓨터 일반 OX",
+    "type": "ox",
+    "question": "메모장에서는 머리글과 바닥글을 설정할 수 있지만 워드패드에서는 설정할 수 없다.",
+    "answer": "O",
+    "explanation": "머리글·바닥글은 메모장의 [페이지 설정]에만 있다. 반대로 그림 삽입과 부분 글꼴 서식은 워드패드에서만 가능하다.",
+    "id": "vault-trap-032",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 3
+  },
+  {
+    "topic": "컴퓨터 일반 OX",
+    "type": "ox",
+    "question": "인터럽트는 CPU와 입출력장치 사이의 속도 차이를 해결하기 위해 사용하는 전용 처리기이다.",
+    "answer": "X",
+    "explanation": "속도 차이를 해결하는 전용 처리기는 채널이다. 인터럽트는 예기치 않은 상황이 발생했을 때 현재 작업을 중단하고 우선순위에 따라 처리하는 것이다.",
+    "id": "vault-trap-033",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "컴퓨터 일반 OX",
+    "type": "ox",
+    "question": "망형 네트워크에서 n개의 노드를 모두 연결하는 데 필요한 회선 수는 n(n-1)/2이다.",
+    "answer": "O",
+    "explanation": "망형은 모든 노드를 서로 연결하므로 두 노드를 고르는 조합의 수만큼 회선이 필요하다. 회선 수가 많아 비용이 크다는 단점의 근거가 된다.",
+    "id": "vault-trap-034",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 3
+  },
+  {
+    "topic": "컴퓨터 일반 OX",
+    "type": "ox",
+    "question": "드라이브 조각 모음을 실행하면 디스크의 사용 가능한 공간이 늘어난다.",
+    "answer": "X",
+    "explanation": "조각 모음은 흩어진 파일을 재배치해 접근 속도를 향상시킬 뿐 용량과는 무관하다. 공간을 확보하려면 디스크 정리를 사용해야 한다.",
+    "id": "vault-trap-035",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "스프레드시트 일반 - 함수",
+    "type": "multiple",
+    "question": "SUBTOTAL 함수의 함수 번호와 기능의 연결이 옳은 것은?",
+    "choices": [
+      "9 - SUM",
+      "1 - SUM",
+      "9 - AVERAGE",
+      "2 - MAX"
+    ],
+    "answer": "9 - SUM",
+    "explanation": "SUBTOTAL의 함수 번호는 1이 AVERAGE, 2가 COUNT, 3이 COUNTA, 4가 MAX, 5가 MIN, 9가 SUM이다. 부분합을 실행하면 합계에 대해 SUBTOTAL(9, ...)가 자동으로 삽입된다.",
+    "id": "vault-trap-036",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "스프레드시트 일반 - 함수",
+    "type": "multiple",
+    "question": "=SUBTOTAL(109, A1:A10)과 =SUBTOTAL(9, A1:A10)의 차이로 옳은 것은?",
+    "choices": [
+      "109는 숨겨진 행을 제외하고, 9는 숨겨진 행을 포함해 계산한다.",
+      "109는 숨겨진 행을 포함하고, 9는 숨겨진 행을 제외해 계산한다.",
+      "109는 평균을, 9는 합계를 구한다.",
+      "두 수식의 결과는 항상 같다."
+    ],
+    "answer": "109는 숨겨진 행을 제외하고, 9는 숨겨진 행을 포함해 계산한다.",
+    "explanation": "1~11번대는 숨겨진 행을 포함하고, 101~111번대는 제외한다. 다만 필터로 걸러진 행은 번호대와 관계없이 항상 제외된다는 점도 함께 알아두어야 한다.",
+    "id": "vault-trap-037",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "스프레드시트 일반 - 함수",
+    "type": "multiple",
+    "question": "REPT 함수의 인수 순서로 옳은 것은?",
+    "choices": [
+      "=REPT(반복할 텍스트, 반복 횟수)",
+      "=REPT(반복 횟수, 반복할 텍스트)",
+      "=REPT(범위, 조건)",
+      "=REPT(시작 위치, 문자 개수)"
+    ],
+    "answer": "=REPT(반복할 텍스트, 반복 횟수)",
+    "explanation": "REPT는 텍스트가 먼저, 횟수가 나중이다. 인수 순서를 바꿔놓거나 REPLACE로 대체한 선지가 오답으로 함께 출제된다.",
+    "id": "vault-trap-038",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "스프레드시트 일반 - 함수",
+    "type": "multiple",
+    "question": "성취율 [B2]를 10%로 나눈 값만큼 기호를 표시하되, 성취율이 70%를 초과하면 '■', 그 외에는 '□'를 반복 표시하는 수식으로 옳은 것은?",
+    "choices": [
+      "=REPT(IF(B2>70%,\"■\",\"□\"), QUOTIENT(B2,10%))",
+      "=REPT(QUOTIENT(B2,10%), IF(B2>70%,\"■\",\"□\"))",
+      "=REPLACE(IF(B2>70%,\"■\",\"□\"), QUOTIENT(B2,10%))",
+      "=REPLACE(QUOTIENT(B2,10%), IF(B2>70%,\"■\",\"□\"))"
+    ],
+    "answer": "=REPT(IF(B2>70%,\"■\",\"□\"), QUOTIENT(B2,10%))",
+    "explanation": "REPT는 반복할 텍스트를 먼저, 반복 횟수를 나중에 받는다. QUOTIENT는 나눗셈의 몫만 반환하므로 성취율을 10%로 나눈 정수 값이 반복 횟수가 된다. REPLACE는 문자열 일부를 교체하는 함수라 반복 기능이 없다.",
+    "id": "vault-trap-039",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 5
+  },
+  {
+    "topic": "스프레드시트 일반 - 함수",
+    "type": "multiple",
+    "question": "TEXT 함수의 결과에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "결과는 문자 데이터이므로 셀에서 왼쪽 정렬된다.",
+      "결과는 숫자 데이터이므로 그대로 계산에 사용할 수 있다.",
+      "표시 형식과 관계없이 항상 소수점 두 자리로 표시된다.",
+      "날짜 데이터에는 사용할 수 없다."
+    ],
+    "answer": "결과는 문자 데이터이므로 셀에서 왼쪽 정렬된다.",
+    "explanation": "TEXT는 숫자를 지정한 표시 형식의 문자열로 변환하는 함수이다. 결과가 문자이므로 왼쪽 정렬되며 그대로는 산술 연산에 사용할 수 없다.",
+    "id": "vault-trap-040",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 3
+  },
+  {
+    "topic": "스프레드시트 일반 - 함수",
+    "type": "multiple",
+    "question": "여러 텍스트를 연결할 때 구분자를 지정할 수 있는 함수는?",
+    "choices": [
+      "TEXTJOIN",
+      "CONCAT",
+      "REPT",
+      "PROPER"
+    ],
+    "answer": "TEXTJOIN",
+    "explanation": "CONCAT은 텍스트를 그냥 이어붙이며 범위 지정이 가능하다. 구분자를 넣으려면 TEXTJOIN(구분자, 빈 셀 무시 여부, 범위)를 사용해야 한다.",
+    "id": "vault-trap-041",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 3
+  },
+  {
+    "topic": "스프레드시트 일반 - 함수",
+    "type": "multiple",
+    "question": "각 단어의 첫 글자만 대문자로 변환하는 함수는?",
+    "choices": [
+      "PROPER",
+      "UPPER",
+      "LOWER",
+      "TRIM"
+    ],
+    "answer": "PROPER",
+    "explanation": "PROPER(\"hello world\")는 Hello World를 반환한다. UPPER는 모두 대문자, LOWER는 모두 소문자로 바꾸며, TRIM은 불필요한 공백을 제거한다.",
+    "id": "vault-trap-042",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 3
+  },
+  {
+    "topic": "스프레드시트 일반 - 함수",
+    "type": "multiple",
+    "question": "연이율 6%, 기간 3년, 대출금 1,000만원일 때 매월 상환할 금액을 구하는 수식으로 옳은 것은?",
+    "choices": [
+      "=PMT(6%/12, 3*12, -10000000)",
+      "=PMT(6%, 3, -10000000)",
+      "=PMT(6%*12, 3/12, -10000000)",
+      "=PMT(6%/12, 3, 10000000)"
+    ],
+    "answer": "=PMT(6%/12, 3*12, -10000000)",
+    "explanation": "월 단위로 상환하므로 이자율은 12로 나누고 기간은 12를 곱해야 한다. 현재가치인 대출 원금을 음수로 입력하면 결과가 양수로 나온다.",
+    "id": "vault-trap-043",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "스프레드시트 일반 - 함수",
+    "type": "multiple",
+    "question": "나눗셈의 몫만 반환하는 함수와 나머지를 반환하는 함수를 순서대로 바르게 짝지은 것은?",
+    "choices": [
+      "QUOTIENT - MOD",
+      "MOD - QUOTIENT",
+      "INT - TRUNC",
+      "ROUND - ROUNDDOWN"
+    ],
+    "answer": "QUOTIENT - MOD",
+    "explanation": "QUOTIENT는 몫만, MOD는 나머지만 반환한다. INT와 TRUNC는 모두 소수점을 처리하는 함수로 나눗셈의 몫·나머지와는 성격이 다르다.",
+    "id": "vault-trap-044",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "스프레드시트 일반 - 셀 참조",
+    "type": "multiple",
+    "question": "3차원 참조에 대한 설명으로 옳지 않은 것은?",
+    "choices": [
+      "배열 수식에 3차원 참조를 사용할 수 있다.",
+      "여러 워크시트에 있는 동일한 셀이나 셀 범위에 대한 참조를 뜻한다.",
+      "=SUM(Sheet2:Sheet4!A2)와 같이 표현할 수 있다.",
+      "SUM, AVERAGE, COUNTA, STDEV 등의 함수를 사용할 수 있다."
+    ],
+    "answer": "배열 수식에 3차원 참조를 사용할 수 있다.",
+    "explanation": "3차원 참조는 배열 수식에 사용할 수 없다. 시작시트:끝시트!셀주소 형식으로 여러 시트의 같은 위치를 한 번에 참조하며, SUM·AVERAGE·COUNTA·STDEV 등 지정된 함수에서만 쓸 수 있다.",
+    "id": "vault-trap-045",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 5
+  },
+  {
+    "topic": "스프레드시트 일반 - 셀 참조",
+    "type": "multiple",
+    "question": "[C1] 셀에 수식 '=A1+B1+C1'을 입력할 경우 발생하는 상황으로 옳은 것은?",
+    "choices": [
+      "순환 참조 경고 메시지 창이 표시된다.",
+      "[C1] 셀에 #REF! 오류가 표시된다.",
+      "[C1] 셀에 #NUM! 오류가 표시된다.",
+      "데이터 유효성 검사 메시지 창이 표시된다."
+    ],
+    "answer": "순환 참조 경고 메시지 창이 표시된다.",
+    "explanation": "수식 안에 자기 자신인 C1이 포함되어 있어 계산이 무한 반복되므로 순환 참조에 해당한다. 이때는 오류값이 표시되는 것이 아니라 경고 메시지 창이 뜬다.",
+    "id": "vault-trap-046",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "스프레드시트 일반 - 셀 참조",
+    "type": "multiple",
+    "question": "셀에 입력된 수식을 계산된 결과값으로 바꾸는 데 사용하는 단축키는?",
+    "choices": [
+      "F9",
+      "F4",
+      "F2",
+      "F5"
+    ],
+    "answer": "F9",
+    "explanation": "수식 입력줄에서 수식을 선택하고 F9를 누르면 결과값인 상수로 바뀐다. Enter 대신 Esc를 누르면 원래 수식으로 되돌아간다. F4는 참조 방식 변경, F2는 편집 모드이다.",
+    "id": "vault-trap-047",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 3
+  },
+  {
+    "topic": "스프레드시트 일반 - 정렬",
+    "type": "multiple",
+    "question": "공백으로 시작하는 문자열과 빈 셀의 정렬에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "공백으로 시작하는 문자열은 정렬 방향에 따라 위치가 바뀌지만, 빈 셀은 항상 마지막에 위치한다.",
+      "둘 다 정렬 방향에 따라 위치가 바뀐다.",
+      "둘 다 항상 마지막에 위치한다.",
+      "공백으로 시작하는 문자열은 항상 마지막에, 빈 셀은 항상 처음에 위치한다."
+    ],
+    "answer": "공백으로 시작하는 문자열은 정렬 방향에 따라 위치가 바뀌지만, 빈 셀은 항상 마지막에 위치한다.",
+    "explanation": "공백도 문자 데이터이므로 정렬 대상이 되어 오름차순에서는 앞쪽, 내림차순에서는 뒤쪽으로 간다. 반면 빈 셀은 정렬에서 제외되어 방향과 무관하게 항상 맨 아래에 남는다.",
+    "id": "vault-trap-048",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "스프레드시트 일반 - 정렬",
+    "type": "multiple",
+    "question": "정렬 [옵션]에서 대/소문자 구분을 설정하고 오름차순으로 정렬할 때의 결과로 옳은 것은?",
+    "choices": [
+      "같은 철자일 때 소문자가 대문자보다 먼저 온다.",
+      "같은 철자일 때 대문자가 소문자보다 먼저 온다.",
+      "아스키 코드값 순서를 그대로 따른다.",
+      "대소문자는 정렬 결과에 영향을 주지 않는다."
+    ],
+    "answer": "같은 철자일 때 소문자가 대문자보다 먼저 온다.",
+    "explanation": "아스키 코드값은 대문자가 더 작지만 엑셀 정렬은 코드값 순서를 그대로 쓰지 않고 소문자를 앞에 둔다. 기본값은 대/소문자 구분이 꺼져 있는 상태이다.",
+    "id": "vault-trap-049",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "스프레드시트 일반 - 데이터 입력",
+    "type": "multiple",
+    "question": "여러 셀을 선택한 상태에서 Backspace 키를 눌렀을 때의 결과로 옳은 것은?",
+    "choices": [
+      "활성 셀 하나의 내용만 지워지고 편집 모드로 전환된다.",
+      "선택한 범위 전체의 내용이 삭제된다.",
+      "선택한 범위에 공백 문자가 입력된다.",
+      "아무 변화도 일어나지 않는다."
+    ],
+    "answer": "활성 셀 하나의 내용만 지워지고 편집 모드로 전환된다.",
+    "explanation": "범위 전체를 지우려면 Delete 키를 사용해야 한다. 한편 스페이스바는 내용을 지우는 것이 아니라 공백 문자를 입력하는 것이므로 셀이 비워지지 않는다.",
+    "id": "vault-trap-050",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "스프레드시트 일반 - 데이터 입력",
+    "type": "multiple",
+    "question": "셀의 내용을 지우기 위해 스페이스바를 누른 경우에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "공백 문자가 입력되므로 빈 셀이 되지 않는다.",
+      "Delete 키를 누른 것과 동일하게 처리된다.",
+      "COUNTBLANK 함수로 셀 수를 세면 빈 셀로 집계된다.",
+      "ISBLANK 함수의 결과가 TRUE가 된다."
+    ],
+    "answer": "공백 문자가 입력되므로 빈 셀이 되지 않는다.",
+    "explanation": "스페이스바는 공백이라는 문자를 입력하는 것이라 겉보기에만 비어 보인다. 실제로는 데이터가 있으므로 COUNTBLANK에 집계되지 않고 ISBLANK도 FALSE를 반환한다.",
+    "id": "vault-trap-051",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "스프레드시트 일반 - 부분합",
+    "type": "multiple",
+    "question": "부분합에 대한 설명으로 옳지 않은 것은?",
+    "choices": [
+      "부분합을 실행하면 그룹화할 항목이 자동으로 정렬된다.",
+      "부분합 실행 전에 그룹화할 항목을 기준으로 미리 정렬해야 한다.",
+      "'새로운 값으로 대치'를 해제하면 부분합을 중첩할 수 있다.",
+      "내부적으로 SUBTOTAL 함수가 사용된다."
+    ],
+    "answer": "부분합을 실행하면 그룹화할 항목이 자동으로 정렬된다.",
+    "explanation": "부분합은 자동 정렬 기능이 없으므로 사용자가 미리 그룹화할 항목을 기준으로 정렬해 두어야 한다. 오름차순이어야 한다는 제약은 없으며 정렬 방향과 무관하게 그룹별 결과는 동일하다.",
+    "id": "vault-trap-052",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "스프레드시트 일반 - 인쇄",
+    "type": "multiple",
+    "question": "워크시트에 행/열 머리글을 함께 인쇄하려면 [페이지 설정]의 어느 탭에서 설정해야 하는가?",
+    "choices": [
+      "[시트] 탭",
+      "[머리글/바닥글] 탭",
+      "[여백] 탭",
+      "[페이지] 탭"
+    ],
+    "answer": "[시트] 탭",
+    "explanation": "행/열 머리글은 이름 때문에 [머리글/바닥글] 탭으로 착각하기 쉽지만 [시트] 탭의 인쇄 옵션에 있다. [시트] 탭에는 눈금선, 인쇄 영역, 반복할 행/열도 함께 있다.",
+    "id": "vault-trap-053",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "스프레드시트 일반 - 인쇄",
+    "type": "multiple",
+    "question": "[페이지 설정]에서 '페이지 가운데 맞춤'을 설정할 수 있는 탭은?",
+    "choices": [
+      "[여백] 탭",
+      "[시트] 탭",
+      "[페이지] 탭",
+      "[머리글/바닥글] 탭"
+    ],
+    "answer": "[여백] 탭",
+    "explanation": "가로·세로 가운데 맞춤은 [여백] 탭에 있다. [페이지] 탭에는 용지 방향과 배율, [시트] 탭에는 인쇄 영역과 눈금선 관련 옵션이 있다.",
+    "id": "vault-trap-054",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 3
+  },
+  {
+    "topic": "스프레드시트 일반 - 인쇄",
+    "type": "multiple",
+    "question": "차트를 선택한 상태에서 [페이지 설정] 대화상자를 열었을 때 나타나는 변화로 옳은 것은?",
+    "choices": [
+      "[시트] 탭이 [차트] 탭으로 바뀌어 인쇄 영역과 반복할 행을 설정할 수 없다.",
+      "[여백] 탭이 사라진다.",
+      "[머리글/바닥글] 탭이 [차트] 탭으로 바뀐다.",
+      "모든 탭이 그대로 유지된다."
+    ],
+    "answer": "[시트] 탭이 [차트] 탭으로 바뀌어 인쇄 영역과 반복할 행을 설정할 수 없다.",
+    "explanation": "차트가 선택된 상태에서는 [시트] 탭 대신 [차트] 탭이 표시되며, 인쇄 영역이나 반복할 행/열 같은 워크시트 전용 설정은 사용할 수 없다.",
+    "id": "vault-trap-055",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "스프레드시트 일반 - 매크로",
+    "type": "multiple",
+    "question": "양식 컨트롤의 명령 단추와 ActiveX 컨트롤의 명령 단추에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "양식 컨트롤의 단추를 추가하면 [매크로 지정] 대화상자가 자동으로 표시된다.",
+      "ActiveX 컨트롤의 단추를 추가하면 [매크로 지정] 대화상자가 자동으로 표시된다.",
+      "두 컨트롤 모두 [매크로 지정] 대화상자가 자동으로 표시된다.",
+      "두 컨트롤 모두 VBA 코드를 직접 작성해야만 동작한다."
+    ],
+    "answer": "양식 컨트롤의 단추를 추가하면 [매크로 지정] 대화상자가 자동으로 표시된다.",
+    "explanation": "양식 컨트롤은 배치하는 순간 [매크로 지정] 창이 떠서 기존 매크로를 연결한다. ActiveX 컨트롤은 디자인 모드로 전환되며 속성 설정과 VBA 이벤트 코드 작성을 통해 동작을 정의한다.",
+    "id": "vault-trap-056",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "스프레드시트 일반 - 매크로",
+    "type": "multiple",
+    "question": "VBA에서 Worksheets.Add 메서드에 대한 설명으로 옳지 않은 것은?",
+    "choices": [
+      "Before와 After 인수를 동시에 지정할 수 있다.",
+      "Before:=Sheets(1)은 첫 번째 시트 앞에 삽입한다.",
+      "Count 인수로 추가할 시트 개수를 지정할 수 있다.",
+      "Before와 After를 모두 생략하면 현재 활성 시트 앞에 추가된다."
+    ],
+    "answer": "Before와 After 인수를 동시에 지정할 수 있다.",
+    "explanation": "Before와 After는 삽입 위치를 정하는 상반된 인수이므로 동시에 지정할 수 없다. 콜론과 등호를 결합한 := 는 명명된 인수를 지정하는 VBA 연산자이다.",
+    "id": "vault-trap-057",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "스프레드시트 일반 - 매크로",
+    "type": "multiple",
+    "question": "Sub 프로시저와 Function 프로시저의 차이로 옳은 것은?",
+    "choices": [
+      "Function은 값을 반환하지만 Sub는 값을 반환하지 않는다.",
+      "Sub는 값을 반환하지만 Function은 값을 반환하지 않는다.",
+      "둘 다 값을 반환한다.",
+      "둘 다 값을 반환하지 않는다."
+    ],
+    "answer": "Function은 값을 반환하지만 Sub는 값을 반환하지 않는다.",
+    "explanation": "Function은 프로시저 이름에 값을 대입해 결과를 돌려주며 워크시트에서 사용자 정의 함수로 쓸 수 있다. Sub는 일련의 동작만 수행하고 값을 반환하지 않는다.",
+    "id": "vault-trap-058",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "스프레드시트 일반 - 매크로",
+    "type": "multiple",
+    "question": "매크로 [옵션] 대화상자에서 변경할 수 있는 항목으로만 묶인 것은?",
+    "choices": [
+      "바로 가기 키, 설명",
+      "매크로 이름, 저장 위치",
+      "매크로 이름, 바로 가기 키",
+      "저장 위치, 설명"
+    ],
+    "answer": "바로 가기 키, 설명",
+    "explanation": "[옵션]에서는 바로 가기 키와 설명만 변경할 수 있다. 매크로 이름은 [편집]에서, 저장 위치는 기록 시점에만 지정할 수 있다.",
+    "id": "vault-trap-059",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "스프레드시트 일반 - 매크로",
+    "type": "multiple",
+    "question": "매크로의 바로 가기 키로 지정할 수 있는 것은?",
+    "choices": [
+      "Ctrl + 영문자",
+      "Ctrl + 한글",
+      "Ctrl + 숫자",
+      "Alt + 기능키"
+    ],
+    "answer": "Ctrl + 영문자",
+    "explanation": "매크로 바로 가기 키는 Ctrl과 영문자의 조합만 가능하며, Shift를 함께 써서 대문자로 지정할 수도 있다. 한글이나 숫자는 사용할 수 없다.",
+    "id": "vault-trap-060",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 3
+  },
+  {
+    "topic": "스프레드시트 일반 - 이름 정의",
+    "type": "multiple",
+    "question": "이름 정의 규칙으로 옳지 않은 것은?",
+    "choices": [
+      "이름의 첫 글자로 숫자를 사용할 수 있다.",
+      "이름에 공백을 포함할 수 없다.",
+      "셀 주소와 같은 형태의 이름은 사용할 수 없다.",
+      "이름은 최대 255자까지 지정할 수 있다."
+    ],
+    "answer": "이름의 첫 글자로 숫자를 사용할 수 있다.",
+    "explanation": "이름의 첫 글자는 문자, 밑줄, 역슬래시만 가능하며 숫자로 시작할 수 없다. 공백과 셀 주소 형태도 사용할 수 없다.",
+    "id": "vault-trap-061",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 3
+  },
+  {
+    "topic": "스프레드시트 일반 - 차트",
+    "type": "multiple",
+    "question": "피벗 차트로 작성할 수 없는 차트 종류로만 묶인 것은?",
+    "choices": [
+      "분산형, 주식형, 거품형",
+      "세로 막대형, 꺾은선형, 원형",
+      "영역형, 도넛형, 방사형",
+      "가로 막대형, 표면형, 원통형"
+    ],
+    "answer": "분산형, 주식형, 거품형",
+    "explanation": "피벗 차트는 분산형·주식형·거품형으로 만들 수 없다. 분산형 차트는 점으로 표시하며 3차원으로 작성할 수 없다는 특징도 함께 출제된다.",
+    "id": "vault-trap-062",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "스프레드시트 일반 - 조건부 서식",
+    "type": "multiple",
+    "question": "조건부 서식에서 수식을 입력할 때 셀을 마우스로 클릭하면 기본적으로 어떤 참조 방식이 적용되는가?",
+    "choices": [
+      "절대 참조",
+      "상대 참조",
+      "혼합 참조",
+      "3차원 참조"
+    ],
+    "answer": "절대 참조",
+    "explanation": "조건부 서식의 수식 입력란에서 셀을 클릭하면 절대 참조로 입력된다. 행이나 열 방향으로 규칙을 적용하려면 F4를 눌러 참조 방식을 직접 바꿔야 한다.",
+    "id": "vault-trap-063",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "스프레드시트 일반 OX",
+    "type": "ox",
+    "question": "3차원 참조는 배열 수식에서도 사용할 수 있다.",
+    "answer": "X",
+    "explanation": "3차원 참조는 배열 수식에 사용할 수 없다. Sheet2:Sheet4!A2 형태로 여러 시트의 같은 셀을 참조하며 SUM·AVERAGE 등 지정된 함수에서만 쓸 수 있다.",
+    "id": "vault-trap-064",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "스프레드시트 일반 OX",
+    "type": "ox",
+    "question": "SUBTOTAL 함수는 계산 범위 안에 포함된 다른 SUBTOTAL 결과를 자동으로 무시한다.",
+    "answer": "O",
+    "explanation": "이 성질 덕분에 소계가 총계에 중복으로 더해지지 않는다. 같은 범위를 일반 SUM으로 더하면 소계까지 합산되어 값이 두 배가 된다.",
+    "id": "vault-trap-065",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "스프레드시트 일반 OX",
+    "type": "ox",
+    "question": "행/열 머리글을 인쇄하려면 [페이지 설정]의 [머리글/바닥글] 탭에서 설정한다.",
+    "answer": "X",
+    "explanation": "행/열 머리글은 [시트] 탭의 인쇄 옵션에 있다. [머리글/바닥글] 탭은 페이지 상단과 하단에 표시할 텍스트를 지정하는 곳이다.",
+    "id": "vault-trap-066",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "스프레드시트 일반 OX",
+    "type": "ox",
+    "question": "시나리오 요약 보고서는 시나리오를 수정하거나 삭제하면 그 내용이 자동으로 반영된다.",
+    "answer": "X",
+    "explanation": "시나리오 요약 보고서는 만든 시점의 스냅샷이므로 자동 반영되지 않고 새로 고침 기능도 없다. 변경 내용을 반영하려면 보고서를 다시 만들어야 한다.",
+    "id": "vault-trap-067",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "스프레드시트 일반 OX",
+    "type": "ox",
+    "question": "셀에 '=A1+B1+C1'을 [C1] 셀에 입력하면 #NUM! 오류가 표시된다.",
+    "answer": "X",
+    "explanation": "수식에 자기 자신인 C1이 포함되어 있으므로 순환 참조에 해당한다. 이 경우 오류값이 아니라 순환 참조 경고 메시지 창이 표시된다.",
+    "id": "vault-trap-068",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 3
+  },
+  {
+    "topic": "스프레드시트 일반 OX",
+    "type": "ox",
+    "question": "셀에서 스페이스바를 눌러 내용을 지우면 해당 셀은 빈 셀이 된다.",
+    "answer": "X",
+    "explanation": "스페이스바는 공백 문자를 입력하는 것이므로 셀에 데이터가 남는다. 실제로 비우려면 Delete 키를 사용해야 한다.",
+    "id": "vault-trap-069",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "스프레드시트 일반 OX",
+    "type": "ox",
+    "question": "PMT 함수로 월 상환액을 구할 때 연이율을 그대로 입력하고 기간에는 연수를 입력한다.",
+    "answer": "X",
+    "explanation": "월 단위로 계산하려면 이자율은 12로 나누고 기간은 12를 곱해야 한다. 예를 들어 연이율 6%, 3년이면 6%/12와 3*12를 입력한다.",
+    "id": "vault-trap-070",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "데이터베이스 일반 - SQL",
+    "type": "multiple",
+    "question": "다음 SQL문의 실행 순서로 옳은 것은?",
+    "choices": [
+      "FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY",
+      "SELECT → FROM → WHERE → GROUP BY → HAVING → ORDER BY",
+      "FROM → SELECT → WHERE → GROUP BY → HAVING → ORDER BY",
+      "WHERE → FROM → SELECT → GROUP BY → HAVING → ORDER BY"
+    ],
+    "answer": "FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY",
+    "explanation": "작성 순서는 SELECT부터 시작하지만 실제 실행은 FROM부터 이루어진다. 계산 결과를 묻는 문제는 실행 순서를 따라가야 정확한 값을 얻을 수 있다.",
+    "id": "vault-trap-071",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 5
+  },
+  {
+    "topic": "데이터베이스 일반 - SQL",
+    "type": "multiple",
+    "question": "GROUP BY와 HAVING이 함께 사용된 SELECT문에서 집계 함수의 계산 범위로 옳은 것은?",
+    "choices": [
+      "HAVING 조건을 통과한 그룹 안에서만 계산된다.",
+      "WHERE 조건을 통과한 전체 행에 대해 계산된다.",
+      "테이블의 모든 행에 대해 계산된다.",
+      "HAVING과 무관하게 모든 그룹에 대해 계산된다."
+    ],
+    "answer": "HAVING 조건을 통과한 그룹 안에서만 계산된다.",
+    "explanation": "GROUP BY로 그룹이 나뉘고 HAVING으로 일부 그룹이 탈락한 뒤, 남은 그룹 안에서만 집계 함수가 계산된다. WHERE로 거른 전체 행의 평균을 구하는 것이 가장 흔한 실수이다.",
+    "id": "vault-trap-072",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 5
+  },
+  {
+    "topic": "데이터베이스 일반 - SQL",
+    "type": "multiple",
+    "question": "WHERE절과 HAVING절에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "WHERE는 개별 행 조건, HAVING은 그룹 조건이며 집계 함수는 HAVING에만 사용할 수 있다.",
+      "WHERE는 그룹 조건, HAVING은 개별 행 조건이다.",
+      "WHERE절에도 COUNT(*) 같은 집계 함수를 사용할 수 있다.",
+      "HAVING절은 GROUP BY 없이 단독으로 사용해야 한다."
+    ],
+    "answer": "WHERE는 개별 행 조건, HAVING은 그룹 조건이며 집계 함수는 HAVING에만 사용할 수 있다.",
+    "explanation": "WHERE는 그룹을 만들기 전 개별 행을 거르므로 집계 함수를 쓸 수 없다. 그룹에 대한 조건은 GROUP BY 뒤의 HAVING에서 지정한다.",
+    "id": "vault-trap-073",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "데이터베이스 일반 - SQL",
+    "type": "multiple",
+    "question": "GROUP BY 고객번호로 그룹화한 뒤 Count(고객번호)를 구했을 때 그 결과가 의미하는 것은?",
+    "choices": [
+      "해당 고객의 주문 횟수",
+      "전체 고객의 인원수",
+      "고객번호의 합계",
+      "중복을 제거한 고객 수"
+    ],
+    "answer": "해당 고객의 주문 횟수",
+    "explanation": "GROUP BY가 걸리면 집계 함수의 범위가 그룹 안으로 좁아지므로 Count는 그 그룹의 행 개수를 센다. 전체 인원수를 세려면 Count(DISTINCT 고객번호)를 사용하거나 GROUP BY를 하지 않아야 한다.",
+    "id": "vault-trap-074",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "데이터베이스 일반 - SQL",
+    "type": "multiple",
+    "question": "SELECT문에서 중복된 행을 제거할 때 사용하는 예약어는?",
+    "choices": [
+      "DISTINCT",
+      "UNIQUE",
+      "DELETE",
+      "DROP"
+    ],
+    "answer": "DISTINCT",
+    "explanation": "DISTINCT는 조회 결과에서 중복 행을 제거한다. UNIQUE는 테이블을 만들 때 중복 입력을 막는 제약조건이므로 성격이 다르다.",
+    "id": "vault-trap-075",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "데이터베이스 일반 - SQL",
+    "type": "multiple",
+    "question": "데이터 제어어(DCL)에 속하는 명령어로만 묶인 것은?",
+    "choices": [
+      "GRANT, REVOKE, COMMIT, ROLLBACK",
+      "CREATE, ALTER, DROP",
+      "SELECT, INSERT, UPDATE, DELETE",
+      "GROUP BY, HAVING, ORDER BY"
+    ],
+    "answer": "GRANT, REVOKE, COMMIT, ROLLBACK",
+    "explanation": "DCL은 권한 부여와 회수, 트랜잭션 제어를 담당하며 주로 데이터베이스 관리자(DBA)의 영역이다. CREATE 계열은 DDL, SELECT 계열은 DML이다.",
+    "id": "vault-trap-076",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "데이터베이스 일반 - 데이터 형식",
+    "type": "multiple",
+    "question": "Access의 통화 형식에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "기본 필드 크기는 8바이트이며 소수점 이하 4자리까지 저장할 수 있다.",
+      "기본 필드 크기는 4바이트이며 소수점 이하 2자리까지 저장할 수 있다.",
+      "기본 필드 크기는 8바이트이며 정수만 저장할 수 있다.",
+      "기본 필드 크기는 1바이트이며 소수점 이하 4자리까지 저장할 수 있다."
+    ],
+    "answer": "기본 필드 크기는 8바이트이며 소수점 이하 4자리까지 저장할 수 있다.",
+    "explanation": "통화 형식은 8바이트를 사용하며 소수점 이하 4자리, 정수 15자리까지 저장한다. 계산 과정에서 반올림 오차가 발생하지 않는다는 것이 특징이다.",
+    "id": "vault-trap-077",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "데이터베이스 일반 - 데이터 형식",
+    "type": "multiple",
+    "question": "예/아니요 중 하나만 입력하는 필드의 기본 크기로 옳은 것은?",
+    "choices": [
+      "1비트",
+      "1바이트",
+      "4바이트",
+      "8바이트"
+    ],
+    "answer": "1비트",
+    "explanation": "Yes/No 형식은 두 값 중 하나만 저장하면 되므로 1비트를 사용한다. 날짜/시간과 통화는 8바이트, 일련 번호는 4바이트이다.",
+    "id": "vault-trap-078",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "데이터베이스 일반 - 데이터 형식",
+    "type": "multiple",
+    "question": "기본키로 설정할 수 없는 데이터 형식으로만 묶인 것은?",
+    "choices": [
+      "OLE 개체, 첨부 파일, 계산",
+      "짧은 텍스트, 숫자, 날짜/시간",
+      "일련 번호, 통화, Yes/No",
+      "긴 텍스트, 하이퍼링크, 숫자"
+    ],
+    "answer": "OLE 개체, 첨부 파일, 계산",
+    "explanation": "OLE 개체와 첨부 파일은 대용량 데이터를 담아 인덱스를 만들 수 없고, 계산 필드는 값이 저장되지 않고 유도되므로 기본키가 될 수 없다.",
+    "id": "vault-trap-079",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 3
+  },
+  {
+    "topic": "데이터베이스 일반 - 인덱스",
+    "type": "multiple",
+    "question": "Access에서 하나의 테이블에 지정할 수 있는 인덱스의 최대 개수는?",
+    "choices": [
+      "32개",
+      "10개",
+      "16개",
+      "64개"
+    ],
+    "answer": "32개",
+    "explanation": "한 테이블에 최대 32개의 인덱스를 만들 수 있고, 인덱스 하나에는 최대 10개의 필드를 조합할 수 있다. 인덱스를 만들면 검색과 정렬은 빨라지지만 추가·수정·삭제 속도는 느려진다.",
+    "id": "vault-trap-080",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "데이터베이스 일반 - 인덱스",
+    "type": "multiple",
+    "question": "인덱스 설정에 따른 변화로 옳은 것은?",
+    "choices": [
+      "검색과 정렬은 빨라지지만 데이터의 추가·수정·삭제는 느려진다.",
+      "검색과 정렬, 추가·수정·삭제 모두 빨라진다.",
+      "검색은 느려지지만 추가·수정·삭제는 빨라진다.",
+      "인덱스는 성능에 영향을 주지 않는다."
+    ],
+    "answer": "검색과 정렬은 빨라지지만 데이터의 추가·수정·삭제는 느려진다.",
+    "explanation": "인덱스는 별도의 정렬 구조를 유지하므로 데이터가 바뀔 때마다 인덱스도 갱신해야 해서 쓰기 작업이 느려진다.",
+    "id": "vault-trap-081",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "데이터베이스 일반 - 폼",
+    "type": "multiple",
+    "question": "폼에서의 컨트롤 작업에 대한 설명으로 가장 옳지 않은 것은?",
+    "choices": [
+      "목록 상자나 콤보 상자는 특정 필드에 바운드시킬 수 없다.",
+      "폼의 컨트롤을 특정 필드에 바운드시키려면 컨트롤 원본 속성을 이용한다.",
+      "'필드 목록' 창에서 필드 이름을 끌어와 폼에 드롭시키면 컨트롤이 생성되고 자동으로 해당 필드에 바운드된다.",
+      "컨트롤에 표시된 값을 수정하면 바운드된 필드의 값도 변경된다."
+    ],
+    "answer": "목록 상자나 콤보 상자는 특정 필드에 바운드시킬 수 없다.",
+    "explanation": "목록 상자와 콤보 상자도 컨트롤 원본을 지정해 바운드시킬 수 있다. 이때 컨트롤 원본은 값이 저장될 필드를, 행 원본은 목록에 표시할 데이터의 출처를 지정한다.",
+    "id": "vault-trap-082",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "데이터베이스 일반 - 폼",
+    "type": "multiple",
+    "question": "컨트롤을 만드는 방법에 따른 바운드 여부로 옳은 것은?",
+    "choices": [
+      "필드 목록에서 드래그하면 자동으로 바운드되고, 도구 상자로 직접 그리면 언바운드 상태가 된다.",
+      "어떤 방법으로 만들어도 항상 바운드된다.",
+      "어떤 방법으로 만들어도 항상 언바운드 상태이다.",
+      "필드 목록에서 드래그하면 언바운드, 도구 상자로 그리면 바운드된다."
+    ],
+    "answer": "필드 목록에서 드래그하면 자동으로 바운드되고, 도구 상자로 직접 그리면 언바운드 상태가 된다.",
+    "explanation": "필드 목록에서 끌어오면 데이터 형식에 맞는 컨트롤이 생성되고 컨트롤 원본이 자동 지정되며 레이블도 함께 만들어진다. 도구 상자로 그린 경우에는 컨트롤 원본을 직접 지정해야 한다.",
+    "id": "vault-trap-083",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "데이터베이스 일반 - 폼",
+    "type": "multiple",
+    "question": "컨트롤의 성격과 특징을 설정하는 것에 해당하는 것은?",
+    "choices": [
+      "속성",
+      "이벤트",
+      "매크로",
+      "모듈"
+    ],
+    "answer": "속성",
+    "explanation": "이름·크기·색·표시 여부처럼 개체의 성격과 특징을 정하는 것은 속성이다. 이벤트는 클릭이나 값 변경 같은 동작이 발생했을 때 실행할 작업을 지정하는 것으로 역할이 다르다.",
+    "id": "vault-trap-084",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 5
+  },
+  {
+    "topic": "데이터베이스 일반 - 폼",
+    "type": "multiple",
+    "question": "입력값의 유효성을 검사하여 조건에 맞지 않으면 저장 자체를 취소하려고 할 때 사용해야 하는 이벤트는?",
+    "choices": [
+      "Before Update",
+      "After Update",
+      "On Click",
+      "On Load"
+    ],
+    "answer": "Before Update",
+    "explanation": "Before Update는 값이 저장되기 직전에 발생하므로 Cancel = True로 저장을 취소할 수 있다. After Update는 이미 저장이 끝난 뒤라 취소할 수 없다.",
+    "id": "vault-trap-085",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "데이터베이스 일반 - 폼",
+    "type": "multiple",
+    "question": "바운드 폼과 언바운드 폼에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "바운드 폼은 테이블이나 쿼리에 연결되어 입·출력 환경으로 사용된다.",
+      "언바운드 폼은 테이블에 연결되어 레코드를 수정하는 데 사용된다.",
+      "바운드 폼에는 언바운드 컨트롤을 둘 수 없다.",
+      "언바운드 폼에 입력한 값은 자동으로 테이블에 저장된다."
+    ],
+    "answer": "바운드 폼은 테이블이나 쿼리에 연결되어 입·출력 환경으로 사용된다.",
+    "explanation": "바운드 폼은 레코드 원본이 지정되어 데이터를 보고 수정할 수 있다. 언바운드 폼은 레코드 원본이 없어 안내 화면이나 메뉴로 쓰이며, 바운드 폼 안에 언바운드 컨트롤을 배치하는 것도 가능하다.",
+    "id": "vault-trap-086",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "데이터베이스 일반 - 폼",
+    "type": "multiple",
+    "question": "폼에 요약 정보를 표시하기 위해 함수나 식을 입력하는 속성으로 옳은 것은?",
+    "choices": [
+      "컨트롤 원본",
+      "데이터",
+      "행 원본",
+      "레코드 원본"
+    ],
+    "answer": "컨트롤 원본",
+    "explanation": "식은 컨트롤 원본 속성에 입력한다. 속성 시트에 [데이터] 탭이 있어 혼동하기 쉬우나 '데이터'라는 이름의 속성 자체는 존재하지 않는다.",
+    "id": "vault-trap-087",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "데이터베이스 일반 - 폼",
+    "type": "multiple",
+    "question": "속성 값 입력란 오른쪽의 '...' 버튼을 눌러 함수나 페이지 번호를 목록에서 골라 지정할 수 있게 해 주는 도구는?",
+    "choices": [
+      "작성기",
+      "탐색 창",
+      "관계 창",
+      "인쇄 미리 보기"
+    ],
+    "answer": "작성기",
+    "explanation": "작성기에는 식 작성기, 쿼리 작성기, 매크로 작성기가 있다. 식 작성기를 사용하면 함수 이름을 외우지 않고도 목록에서 골라 식을 조립할 수 있다.",
+    "id": "vault-trap-088",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 3
+  },
+  {
+    "topic": "데이터베이스 일반 - 폼",
+    "type": "multiple",
+    "question": "분할 표시 폼에 대한 설명으로 옳지 않은 것은?",
+    "choices": [
+      "폼 보기 상태에서 새로운 필드를 추가할 수 있다.",
+      "데이터시트 보기와 폼 보기를 동시에 표시한다.",
+      "두 보기 중 어느 쪽에서든 데이터를 편집할 수 있다.",
+      "한쪽에서 선택한 레코드가 다른 쪽에도 동일하게 반영된다."
+    ],
+    "answer": "폼 보기 상태에서 새로운 필드를 추가할 수 있다.",
+    "explanation": "분할 표시 폼에서 데이터 편집은 가능하지만 필드를 추가하려면 디자인 보기나 레이아웃 보기로 전환해야 한다.",
+    "id": "vault-trap-089",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "데이터베이스 일반 - 쿼리",
+    "type": "multiple",
+    "question": "크로스탭 쿼리에 대한 설명으로 옳지 않은 것은?",
+    "choices": [
+      "열 머리글로 사용할 필드는 최대 3개까지 지정할 수 있다.",
+      "열 머리글로 사용할 필드는 반드시 하나만 지정해야 한다.",
+      "행 머리글은 최대 3개까지 지정할 수 있다.",
+      "크로스탭 쿼리의 데이터시트에서는 데이터를 편집할 수 없다."
+    ],
+    "answer": "열 머리글로 사용할 필드는 최대 3개까지 지정할 수 있다.",
+    "explanation": "크로스탭 쿼리에서 열 머리글은 반드시 1개만 지정할 수 있고, 행 머리글은 최대 3개까지 지정할 수 있다. 결과 데이터시트는 요약 결과이므로 편집할 수 없다.",
+    "id": "vault-trap-090",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "데이터베이스 일반 - 쿼리",
+    "type": "multiple",
+    "question": "쿼리를 실행할 때마다 조건 값을 묻는 대화상자를 표시하는 쿼리는?",
+    "choices": [
+      "매개 변수 쿼리",
+      "크로스탭 쿼리",
+      "통합 쿼리",
+      "실행 쿼리"
+    ],
+    "answer": "매개 변수 쿼리",
+    "explanation": "매개 변수 쿼리는 조건란에 대괄호로 묶은 메시지를 넣어 실행할 때마다 값을 입력받는다. 크로스탭 쿼리는 행과 열로 교차 요약하는 쿼리이다.",
+    "id": "vault-trap-091",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 3
+  },
+  {
+    "topic": "데이터베이스 일반 - 관계",
+    "type": "multiple",
+    "question": "참조 무결성에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "외래키 값이 NULL인 경우에도 참조 무결성은 유지된다.",
+      "외래키 값이 NULL이면 참조 무결성 위반이다.",
+      "기본키는 NULL 값을 가질 수 있다.",
+      "참조 무결성이 설정되면 관련 레코드를 절대 삭제할 수 없다."
+    ],
+    "answer": "외래키 값이 NULL인 경우에도 참조 무결성은 유지된다.",
+    "explanation": "외래키가 NULL이라는 것은 아직 참조하는 대상이 없다는 뜻이므로 위반이 아니다. 존재하지 않는 기본키 값을 참조할 때가 위반에 해당한다.",
+    "id": "vault-trap-092",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "데이터베이스 일반 - 정규화",
+    "type": "multiple",
+    "question": "정규화의 목적으로 옳은 것은?",
+    "choices": [
+      "데이터의 중복과 이상 현상을 제거하는 것",
+      "테이블 간의 종속성을 높이는 것",
+      "테이블의 개수를 최소화하는 것",
+      "검색 속도를 무조건 향상시키는 것"
+    ],
+    "answer": "데이터의 중복과 이상 현상을 제거하는 것",
+    "explanation": "정규화는 함수적 종속성을 분석해 테이블을 분해함으로써 중복과 삽입·삭제·갱신 이상을 제거한다. 종속성을 높이는 것이 아니라 제거하는 과정이다.",
+    "id": "vault-trap-093",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "데이터베이스 일반 - 스키마",
+    "type": "multiple",
+    "question": "데이터베이스 전체의 논리적 구조를 정의하는 스키마는?",
+    "choices": [
+      "개념 스키마",
+      "논리 스키마",
+      "외부 스키마",
+      "내부 스키마"
+    ],
+    "answer": "개념 스키마",
+    "explanation": "전체 논리 구조를 나타내는 것은 개념 스키마이다. '논리 스키마'는 존재하지 않는 용어이며, 외부 스키마는 사용자 관점, 내부 스키마는 물리적 저장 구조를 뜻한다.",
+    "id": "vault-trap-094",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "데이터베이스 일반 OX",
+    "type": "ox",
+    "question": "이벤트를 통하여 컨트롤의 성격과 특징을 설정할 수 있다.",
+    "answer": "X",
+    "explanation": "성격과 특징을 설정하는 것은 속성이다. 이벤트는 클릭이나 값 변경 같은 동작이 발생했을 때 실행할 작업을 지정하는 것이다.",
+    "id": "vault-trap-095",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 5
+  },
+  {
+    "topic": "데이터베이스 일반 OX",
+    "type": "ox",
+    "question": "WHERE절에서는 COUNT(*)나 SUM() 같은 집계 함수를 사용할 수 있다.",
+    "answer": "X",
+    "explanation": "WHERE는 그룹을 만들기 전 개별 행을 거르는 단계이므로 집계 함수를 쓸 수 없다. 그룹에 대한 조건은 HAVING절에 작성해야 한다.",
+    "id": "vault-trap-096",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "데이터베이스 일반 OX",
+    "type": "ox",
+    "question": "Access의 Yes/No 데이터 형식은 기본 필드 크기가 1비트이다.",
+    "answer": "O",
+    "explanation": "예/아니요, 참/거짓, 켬/끔 중 하나만 저장하면 되므로 1비트를 사용한다. 통화와 날짜/시간은 8바이트를 사용한다.",
+    "id": "vault-trap-097",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "데이터베이스 일반 OX",
+    "type": "ox",
+    "question": "폼의 컨트롤에 표시된 값을 수정하면 바운드된 필드의 값도 함께 변경된다.",
+    "answer": "O",
+    "explanation": "바운드 컨트롤은 테이블의 필드와 연결되어 있으므로 컨트롤에서 값을 고치면 원본 레코드가 수정된다. 이것이 폼을 데이터 입력·수정 도구로 쓰는 이유이다.",
+    "id": "vault-trap-098",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "데이터베이스 일반 OX",
+    "type": "ox",
+    "question": "크로스탭 쿼리에서 열 머리글로 사용할 필드는 최대 3개까지 지정할 수 있다.",
+    "answer": "X",
+    "explanation": "열 머리글은 반드시 1개만 지정할 수 있다. 최대 3개까지 지정할 수 있는 것은 행 머리글이다.",
+    "id": "vault-trap-099",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  },
+  {
+    "topic": "데이터베이스 일반 OX",
+    "type": "ox",
+    "question": "After Update 이벤트에서 Cancel = True를 사용하면 입력값의 저장을 취소할 수 있다.",
+    "answer": "X",
+    "explanation": "After Update는 값이 이미 저장된 뒤에 발생하므로 취소할 수 없다. 저장을 막으려면 Before Update 이벤트를 사용해야 한다.",
+    "id": "vault-trap-100",
+    "subject": "컴퓨터활용능력 1급",
+    "sourceLabel": "컴활 1급",
+    "examStyle": "computer-skills-level1",
+    "difficulty": 4
+  }
+]

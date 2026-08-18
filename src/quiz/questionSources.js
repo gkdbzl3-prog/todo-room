@@ -55,6 +55,9 @@ export const levelSources = {
     },
 
     "computer-skill": { file: "computerSkillsLevel1Questions.json" },
+    "computer-skill(obsidian)": {
+        file: "computerSkillsLevel1Questions_vault.json"
+    },
 };
 
 // 파일마다 통째 배열인 것과 { questions: [...] }인 것이 섞여 있다.
