@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { quizSubjects } from "./quizSubjects";
+import { getSubjectProgress } from "./questionCounts";
 import { loadQuizSummary } from "./quizStore";
 import WeeklySolvedChart from "./WeeklySolvedChart";
 
@@ -48,11 +49,6 @@ export default function QuizHome({ onStart, uid }) {
         };
     }, [uid]);
 
-    const totalSolvedForStats =
-        summary?.subjectStats?.reduce((sum, stat) => {
-            return sum + Number(stat.solvedCount || 0);
-        }, 0) ?? 0;
-
     return (
         <section className="quiz-panel">
             <div className="quiz-head">
@@ -97,10 +93,9 @@ export default function QuizHome({ onStart, uid }) {
                     {summary.subjectStats.map((stat) => {
                         const solvedCount = Number(stat.solvedCount || 0);
 
-                        const share =
-                            totalSolvedForStats > 0
-                                ? Math.round((solvedCount / totalSolvedForStats) * 100)
-                                : 0;
+                        // 과목이 지워졌거나 기록이 옛 과목이면 분모가 없다. 그때는
+                        // 푼 개수만 두고 진도율은 아예 빼는 편이 낫다.
+                        const progress = getSubjectProgress(stat.subjectId, solvedCount);
 
                         return (
                             <div className="quiz-recent-row" key={stat.subjectId}>
@@ -116,7 +111,11 @@ export default function QuizHome({ onStart, uid }) {
 
                                 <div className="subject-stat-right">
                                     <span>{solvedCount}문제</span>
-                                    <small>전체의 {share}%</small>
+                                    {progress && (
+                                        <small>
+                                            {progress.total}문제 중 {progress.percent}%
+                                        </small>
+                                    )}
                                 </div>
                             </div>
                         );
