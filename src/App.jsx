@@ -1092,7 +1092,9 @@ function loadStoredRoutine(key) {
 }
 function saveStoredRoutine(key, value) {
   if (!key) return;
-  try { localStorage.setItem(key, JSON.stringify(value)); } catch { }
+  try { localStorage.setItem(key, JSON.stringify(value)); } catch {
+    // 저장 공간이 막혀도 현재 세션의 루틴 편집은 유지한다.
+  }
 }
 
 function clearTodoRoomBrowserStorage() {
@@ -1355,6 +1357,8 @@ export default function App() {
   }, [weeklyStorageKey]);
 
   useEffect(() => {
+    // 저장소 키가 바뀌면 해당 사용자의 로컬 이벤트로 즉시 전환한다.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setEvents(loadStoredEvents(eventsStorageKey));
   }, [eventsStorageKey]);
 
@@ -1363,6 +1367,8 @@ export default function App() {
   }, [eventsStorageKey, events]);
 
   useEffect(() => {
+    // 저장소 키가 바뀌면 해당 사용자의 로컬 챌린지로 즉시 전환한다.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setChallenges(loadStoredChallenges(challengesStorageKey));
   }, [challengesStorageKey]);
 
@@ -2240,6 +2246,8 @@ export default function App() {
     routineDoneCount === routineTotalCount &&
     routineNoteTodosMine.every((t) => t.done);
   useEffect(() => {
+    // 완료 여부에서 파생되지만 축하 애니메이션의 재생 상태는 별도로 보존한다.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (routineAllDone) setRoutineCelebrated(true);
     else setRoutineCelebrated(false);
   }, [routineAllDone]);
@@ -2266,6 +2274,8 @@ export default function App() {
   useEffect(() => {
     if (nicknameConfirmed) return;
     if (isLocalDevHost()) {
+      // 로컬 개발 환경에는 복구할 원격 프로필이 없다.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setProfileRecoveryChecked(true);
       return;
     }
@@ -2422,11 +2432,14 @@ export default function App() {
   useEffect(() => {
     if (!nicknameConfirmed || !uid) return;
 
+    // 사용자나 날짜가 바뀌면 새 이월 작업이 끝날 때까지 준비 상태를 초기화한다.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setDailyCarryReady(false);
 
     let cancelled = false;
 
     if (isLocalDevHost()) {
+      // 로컬 개발 환경에서는 원격 이월 없이 즉시 준비된다.
       setDailyCarryReady(true);
       return () => {
         cancelled = true;
@@ -2625,6 +2638,8 @@ export default function App() {
       const sweptWeekly = sweepStaleTodos(myWeekly, now);
       if (sweptWeekly.length !== myWeekly.length) {
         pendingWeeklyTodosRef.current = sweptWeekly;
+        // 저장소 정리 결과를 같은 effect에서 화면 상태에도 반영한다.
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setMyWeekly(sweptWeekly);
         syncMyWeekly(sweptWeekly);
       }
@@ -2727,6 +2742,8 @@ export default function App() {
   useEffect(() => {
     if (!nicknameConfirmed || !uid) return;
     if (isLocalDevHost()) {
+      // 로컬 환경에는 원격 구독이 없으므로 현재 키를 곧바로 준비 완료로 표시한다.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setDailyReadyKey(currentMembersReadyKey);
       setMembersReadyKey(currentMembersReadyKey);
       return;
@@ -3021,6 +3038,8 @@ export default function App() {
     if (!nicknameConfirmed) return;
     if (typeof window === "undefined") return;
     if (localStorage.getItem(NOTICE_SEEN_KEY) === "yes") return;
+    // 로그인 완료와 저장된 열람 여부를 조합해 공지 표시 상태를 동기화한다.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setNoticeOpen(true);
   }, [nicknameConfirmed]);
 
@@ -4590,6 +4609,8 @@ function RoutineItem({ item, onCycle, onDelete, onNote, onToggleOff }) {
   const [editingNote, setEditingNote] = useState(false);
   // 다른 기기에서 바뀌면(동기화) 로컬 입력값도 따라가되, 편집 중이 아닐 때만 반영
   useEffect(() => {
+    // 편집 중이 아닐 때만 원격 note 변경을 로컬 입력값에 반영한다.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (!editingNote) setNote(item.note || "");
   }, [item.note, editingNote]);
   const commitNote = () => {
@@ -5893,19 +5914,20 @@ function TimeTracker({ tracker, onUpdate, readOnly = false }) {
 
   useEffect(() => {
     if (isDraggingRef.current) return;
+    // 드래그 중이 아닐 때 원격 트래커 변경을 로컬 편집 버퍼에 반영한다.
     setLocalToday(normTrackerCells(tracker?.todayCells, TOTAL_CELLS));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tracker?.todayCells]);
 
   useEffect(() => {
     if (isDraggingRef.current) return;
+    // 드래그 중이 아닐 때 원격 트래커 변경을 로컬 편집 버퍼에 반영한다.
     setLocalTomorrow(normTrackerCells(tracker?.tomorrowCells, TOTAL_CELLS));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tracker?.tomorrowCells]);
 
   useEffect(() => {
+    // 원격 계획 변경을 읽기 전용 로컬 표시 버퍼에 반영한다.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLocalPlan(normTrackerCells(tracker?.planCells, TOTAL_CELLS));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tracker?.planCells]);
 
   const getIdx = (row, col) => row * CELLS_PER_HOUR + col;
