@@ -3567,13 +3567,10 @@ input:focus {
 
 .challenge-bookshelf-row {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
-  overflow-x: auto;
-  scrollbar-width: none;
   padding-bottom: 6px;
 }
-
-.challenge-bookshelf-row::-webkit-scrollbar { display: none; }
 
 .bookshelf-book {
   position: relative;
