@@ -49,7 +49,7 @@ import {
   splitTomorrowTodos,
 } from "./tomorrowRoutine";
 import { buildTrackerCarryPatch, hasTrackerTomorrowPlan } from "./trackerCarry";
-import { getOwnWeeklyTodosFromRemote } from "./weeklyState";
+import { getOwnTodosFromRemote } from "./weeklyState";
 import { shouldShowMemberEventName } from "./eventVisibility";
 import {
   addChallengeGoalOption,
@@ -70,6 +70,7 @@ import {
   parseChallengeTitle,
   toggleChallengeItemDone,
 } from "./challengeProgress";
+import { buildCarryMerge, resetTodosForNewDay } from "./dailyCarry";
 /* ── 유틸 ── */
 // 새벽 2시 기준: 2시 이전이면 전날로 취급
 function getEffectiveDate() {
@@ -840,17 +841,6 @@ function chooseSelfRecord(records, uid, nickname, todoKey = "todos") {
 }
 
 
-function resetTodosForNewDay(todos) {
-  return (todos || [])
-    // 완료된 항목, 그리고 "오늘만"(oneOff)으로 표시한 항목은 다음 날로 이월하지 않음
-    .filter((todo) => !todo.done && !todo.oneOff)
-    .map((todo) => ({
-      ...todo,
-      done: false,
-      completedAt: null,
-    }));
-}
-
 // 원본은 루틴 item의 noteState — 여기서 만드는 건 투두 목록에 끼워 넣는 파생 뷰다.
 function getRoutineNoteTodos(routineItems) {
   const out = [];
@@ -971,11 +961,23 @@ async function findCarrySourceDaily(userUid, currentDateKey) {
     query(collection(db, historyDatesCol()), orderBy("date", "desc"))
   );
 
+  const candidateDates = [];
   for (const historyDoc of historySnap.docs) {
     const historyDate = historyDoc.data().date;
     if (!historyDate || historyDate >= currentDateKey) continue;
     if (historyDate < cutoffKey) break;
-    const snap = await getDoc(doc(db, dailyCol(historyDate), userUid));
+    candidateDates.push(historyDate);
+  }
+
+  // 순차로 읽으면 최대 30번의 왕복이라 이월이 수 초씩 늦어진다. 그 사이 사용자가
+  // 빈 목록을 보고 새 항목을 적으면 쓰기가 엇갈리므로, 한 번에 읽고 최근 날을 고른다.
+  const snaps = await Promise.all(
+    candidateDates.map((historyDate) =>
+      getDoc(doc(db, dailyCol(historyDate), userUid))
+    )
+  );
+
+  for (const snap of snaps) {
     if (snap.exists() && (snap.data().todos || []).length > 0) {
       return snap.data();
     }
@@ -1243,8 +1245,15 @@ export default function App() {
   // 여기서 열어주지 않으면 미리 세운 루틴 예약이 영영 내려오지 못한다.
   const routineReady = !routineDocId || isLocalDevHost() || routineDocLoaded;
   const myRoutineRef = useRef(myRoutine);
+  // 오늘 목록의 "지금 이 순간" 값. 이월은 Firestore 왕복이 여러 번이라 수 초가
+  // 걸리는데, 그 사이 사용자가 새 항목을 적으면 렌더 클로저의 myDaily는 이미
+  // 낡아 있다. 낡은 배열로 문서를 통째로 덮어쓰면 서로의 항목을 지운다.
+  // 목록을 바꾸는 쪽은 모두 이 ref를 먼저 갱신하고, 쓰는 쪽은 이 ref를 읽는다.
+  const myDailyRef = useRef(myDaily);
   const previousRoutineStorageKeyRef = useRef(routineStorageKey);
   const pendingWeeklyTodosRef = useRef(null);
+  // 아직 원격에서 되돌아오지 않은 오늘 목록. 주간 목록이 쓰던 보호를 오늘에도 건다.
+  const pendingDailyTodosRef = useRef(null);
   const [routineText, setRoutineText] = useState("");
   const [routineSection, setRoutineSection] = useState("morning");
   const [routineCelebrated, setRoutineCelebrated] = useState(false);
@@ -1311,6 +1320,21 @@ export default function App() {
     myRoutineRef.current = myRoutine;
   }, [myRoutine]);
 
+  // 원격 스냅샷·로컬 캐시 등 commitMyDaily를 거치지 않는 경로까지 ref를 맞춘다.
+  useEffect(() => {
+    myDailyRef.current = myDaily;
+  }, [myDaily]);
+
+  // 오늘 목록을 바꾸는 표준 경로. state보다 먼저 ref를 갱신해서, 같은 틱에
+  // 이어지는 원격 쓰기가 항상 최신 목록을 보게 한다.
+  const commitMyDaily = useCallback((next) => {
+    myDailyRef.current = next;
+    // 같은 내용이 원격에서 돌아올 때까지는 로컬이 진실이다. 이게 없으면 조금 늦게
+    // 도착한 옛 스냅샷이 방금 적은 항목을 지운 목록으로 화면을 되돌린다.
+    pendingDailyTodosRef.current = next;
+    setMyDaily(next);
+  }, []);
+
   useEffect(() => {
     const timer = window.setInterval(() => {
       const nextDayKey = todayKey();
@@ -1336,8 +1360,13 @@ export default function App() {
 
   useEffect(() => {
     skipDailyStorageSaveRef.current = true;
+    // 날짜나 사용자가 바뀌면 이전 목록에 걸어둔 보호를 푼다. 안 그러면 어제 목록이
+    // 오늘 스냅샷을 계속 이긴다.
+    pendingDailyTodosRef.current = null;
     const timer = window.setTimeout(() => {
-      setMyDaily(loadStoredTodos(dailyStorageKey));
+      const stored = loadStoredTodos(dailyStorageKey);
+      myDailyRef.current = stored;
+      setMyDaily(stored);
     }, 0);
 
     return () => {
@@ -1473,6 +1502,7 @@ export default function App() {
         }
 
         if (bestMatch) {
+          pendingDailyTodosRef.current = null;
           setMyDaily(bestMatch.hasDailyDoc ? bestMatch.dailyTodos : []);
           setMyWeekly(bestMatch.hasWeeklyDoc ? bestMatch.weeklyTodos : []);
           if (bestMatch.hasEventsDoc) setEvents(bestMatch.events || []);
@@ -2416,6 +2446,7 @@ export default function App() {
         }
 
         setUid(bestMatch.id);
+        pendingDailyTodosRef.current = null;
         setMyDaily(bestMatch.hasDailyDoc ? bestMatch.dailyTodos : []);
         setMyWeekly(bestMatch.hasWeeklyDoc ? bestMatch.weeklyTodos : []);
         if (bestMatch.hasEventsDoc) setEvents(bestMatch.events || []);
@@ -2477,17 +2508,22 @@ export default function App() {
 
         const carryCandidates = resetTodosForNewDay(sourceData.todos || []);
 
-        // all-or-nothing이 아니라 병합: 오늘에 이미 있는 항목(id 기준)은 빼고
-        // 어제 미완료 항목만 이어붙인다. 오늘 doc이 먼저 만들어져 있어도 누락 없이 이월됨.
-        const existingIds = new Set(todayTodos.map((t) => t.id));
-        const missing = carryCandidates.filter((t) => !existingIds.has(t.id));
+        // all-or-nothing이 아니라 병합: 이미 있는 항목(id 기준)은 빼고 어제 미완료
+        // 항목만 이어붙인다. 여기까지 오는 데 원격 왕복이 여러 번 걸리므로, 그 사이
+        // 사용자가 적은 항목(todayTodos엔 없고 화면엔 있는 것)도 함께 살린다.
+        // 낡은 배열로 덮어쓰면 그 입력이 그대로 사라진다.
+        const { todos: mergedTodos, added } = buildCarryMerge({
+          remoteToday: todayTodos,
+          localTodos: myDailyRef.current,
+          sourceTodos: sourceData.todos,
+          carryCandidates,
+        });
 
-        if (!missing.length) {
-          if (todayTodos.length > 0) localStorage.setItem(carryKey, "done");
+        if (!added) {
+          if (mergedTodos.length > 0) localStorage.setItem(carryKey, "done");
           return;
         }
 
-        const mergedTodos = [...todayTodos, ...missing];
         const nextAvatar = sourceData.avatar || todayData?.avatar || avatar;
 
         if (nextAvatar && nextAvatar !== avatar) {
@@ -2496,7 +2532,7 @@ export default function App() {
           localStorage.setItem("todoRoom_avatar", nextAvatar);
         }
 
-        setMyDaily(mergedTodos);
+        commitMyDaily(mergedTodos);
         await writeSetDoc(todayRef, {
           nickname: todayData?.nickname || sourceData.nickname || nickname,
           avatar: nextAvatar,
@@ -2588,7 +2624,9 @@ export default function App() {
     if (!routineReady) return;
 
     const now = Date.now();
-    let nextDaily = myDaily;
+    // 렌더 클로저가 아니라 최신 목록에서 출발한다. 이월이 방금 붙여 넣은 항목을
+    // 한 박자 전의 배열로 되돌려 쓰면 그대로 사라진다.
+    let nextDaily = myDailyRef.current;
     let dailyChanged = false;
     let movedTomorrow = false;
     let nextRoutine = null;
@@ -2651,32 +2689,37 @@ export default function App() {
     // 루틴을 써야 하므로 dailyChanged만 보고 판단하면 안 된다.
     if (dailyChanged || movedTomorrow) {
       if (movedTomorrow) {
-        // 핵심: 로컬(localStorage + state)을 setMyDaily 전에 즉시 비움.
+        // 핵심: 로컬(localStorage + state)을 commitMyDaily 전에 즉시 비움.
         // 안 그러면 setMyDaily → 재렌더 → effect 재실행 → loadStoredTomorrow가 같은 데이터 반환 → 무한 중복.
         // Firestore 쓰기 실패 시 tomorrow 데이터 복구해서 다음 진입에 재시도 가능.
         const restore = { todos: stored.todos, setAt: stored.setAt };
         saveStoredTomorrow(tomorrowStorageKey, { todos: [], setAt: "" });
         setMyTomorrow([]);
-        setMyDaily(nextDaily);
+        if (dailyChanged) commitMyDaily(nextDaily);
         if (nextRoutine) setMyRoutine(nextRoutine);
         void (async () => {
           try {
             const date = currentDayKey;
-            const payload = {
-              nickname,
-              avatar,
-              todos: nextDaily,
-              updatedAt: serverTimestamp(),
-            };
-            await writeSetDoc(doc(db, dailyCol(date), uid), payload);
+            // 예약이 전부 루틴으로 들어가 오늘 목록이 그대로면 오늘 문서는 건드리지
+            // 않는다. 예전엔 여기서 항상 덮어써서, 아직 목록이 비어 있는 순간에
+            // 진입하면 오늘 문서가 통째로 빈 배열이 됐다.
+            if (dailyChanged) {
+              const payload = {
+                nickname,
+                avatar,
+                todos: nextDaily,
+                updatedAt: serverTimestamp(),
+              };
+              await writeSetDoc(doc(db, dailyCol(date), uid), payload);
+              void syncDuplicateNicknameDocs(dailyCol(date), nickname, payload).catch(
+                (error) => console.error("Failed to sync duplicate daily todos", error)
+              );
+              void writeSetDoc(doc(db, historyDatesCol(), date), { date }).catch(
+                (error) => console.error("Failed to sync history date", error)
+              );
+            }
             // 루틴 쓰기도 같은 try 안에 둔다. 실패하면 예약을 되돌려 다음 진입에 다시 시도한다.
             if (nextRoutine) await writeRoutineDoc(nextRoutine);
-            void syncDuplicateNicknameDocs(dailyCol(date), nickname, payload).catch(
-              (error) => console.error("Failed to sync duplicate daily todos", error)
-            );
-            void writeSetDoc(doc(db, historyDatesCol(), date), { date }).catch(
-              (error) => console.error("Failed to sync history date", error)
-            );
             syncMyTomorrow([], "");
           } catch (error) {
             console.error("Failed to move tomorrow into today", error);
@@ -2685,7 +2728,7 @@ export default function App() {
           }
         })();
       } else {
-        setMyDaily(nextDaily);
+        commitMyDaily(nextDaily);
         syncMyDaily(nextDaily);
       }
     }
@@ -2784,11 +2827,15 @@ export default function App() {
         nickname
       );
 
-      if (preferredSelf) {
-        setMyDaily(preferredSelf.todos || []);
-      } else {
-        setMyDaily([]);
-      }
+      // pending은 updater 밖에서 읽는다 — StrictMode가 updater를 두 번 부를 때
+      // 두 번째 호출이 이미 비워진 pending을 보고 다른 결과를 내면 안 된다.
+      const pendingDaily = pendingDailyTodosRef.current;
+      setMyDaily((current) => {
+        const next = getOwnTodosFromRemote(current, preferredSelf, pendingDaily);
+        pendingDailyTodosRef.current = next.pendingTodos;
+        myDailyRef.current = next.todos;
+        return next.todos;
+      });
 
       setMembers(
         mergeRecordsByNickname(
@@ -2860,7 +2907,7 @@ export default function App() {
       );
 
       setMyWeekly((current) => {
-        const next = getOwnWeeklyTodosFromRemote(
+        const next = getOwnTodosFromRemote(
           current,
           preferredSelf,
           pendingWeeklyTodosRef.current
@@ -2966,7 +3013,7 @@ export default function App() {
     // 빈 값으로 원격 데이터를 덮어써 투두/이벤트가 통째로 날아갈 수 있다.
     // 실제로 사용자가 비운 경우는 add/update/delete 핸들러가 이미 원격에 반영하므로,
     // 여기서는 비어 있지 않을 때만 동기화한다.
-    if (myDaily.length > 0) syncMyDaily(myDaily);
+    if (myDailyRef.current.length > 0) syncMyDaily(myDailyRef.current);
     if (myWeekly.length > 0) syncMyWeekly(myWeekly);
     if (events.length > 0) syncMyEvents(events);
   }, [
@@ -2982,14 +3029,16 @@ export default function App() {
   ]);
 
   /* ── 투두 추가 ── */
+  // 목록을 건드리는 핸들러는 렌더 클로저의 myDaily가 아니라 myDailyRef를 읽는다.
+  // 이월이 늦게 도착한 항목을 렌더 한 박자 전의 배열로 덮어써 지우는 걸 막는다.
   const addDaily = () => {
     const text = todoText.trim();
     if (!text) return;
     const next = [
-      ...myDaily,
+      ...myDailyRef.current,
       { id: Date.now(), text, done: false, started: false, createdAt: Date.now() },
     ];
-    setMyDaily(next);
+    commitMyDaily(next);
     syncMyDaily(next);
     setTodoText("");
   };
@@ -3055,7 +3104,7 @@ export default function App() {
   /* ── 투두 3단계 순환: 진행 전 → 진행중 → 완료 ── */
   const cycleDaily = (id) => {
     armPerfect();
-    const next = myDaily.map((t) => {
+    const next = myDailyRef.current.map((t) => {
       if (t.id !== id) return t;
       // 진행 전 → 진행중
       if (!t.started && !t.done) return { ...t, started: true };
@@ -3070,22 +3119,22 @@ export default function App() {
       // 완료 → 진행 전 (되돌리기)
       return { ...t, started: false, done: false, completedAt: null };
     });
-    setMyDaily(next);
+    commitMyDaily(next);
     syncMyDaily(next);
   };
 
   const deleteDaily = (id) => {
-    const next = myDaily.filter((t) => t.id !== id);
-    setMyDaily(next);
+    const next = myDailyRef.current.filter((t) => t.id !== id);
+    commitMyDaily(next);
     syncMyDaily(next);
   };
 
   // "오늘만" 토글: 켜두면 미완료여도 다음 날로 이월되지 않음
   const toggleDailyOneOff = (id) => {
-    const next = myDaily.map((t) =>
+    const next = myDailyRef.current.map((t) =>
       t.id === id ? { ...t, oneOff: !t.oneOff } : t
     );
-    setMyDaily(next);
+    commitMyDaily(next);
     syncMyDaily(next);
   };
 

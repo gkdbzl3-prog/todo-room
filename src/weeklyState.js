@@ -16,7 +16,10 @@ function todoSignature(todos) {
     .join("|");
 }
 
-export function getOwnWeeklyTodosFromRemote(currentTodos, preferredSelf, pendingTodos = null) {
+// 원격 스냅샷이 방금 한 로컬 수정을 되돌리지 않게 한다.
+// pendingTodos(= 아직 원격에서 되돌아오지 않은 로컬 목록)가 있으면, 원격이 그
+// 내용과 같아질 때까지 로컬을 진실로 삼는다. 주간·오늘 목록이 함께 쓴다.
+export function getOwnTodosFromRemote(currentTodos, preferredSelf, pendingTodos = null) {
   const pending = Array.isArray(pendingTodos) ? pendingTodos : null;
   const remoteTodos = preferredSelf ? normalizeTodos(preferredSelf.todos) : null;
 
