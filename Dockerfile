@@ -1,6 +1,8 @@
 FROM node:20-alpine AS build
 WORKDIR /app
-COPY package.json pnpm-lock.yaml* ./
+# pnpm-workspace.yaml에는 @firebase/util·protobufjs의 빌드 스크립트 허용 여부가
+# 적혀 있다. 이 파일이 없으면 설치가 ERR_PNPM_IGNORED_BUILDS로 멈춘다.
+COPY package.json pnpm-lock.yaml* pnpm-workspace.yaml* ./
 RUN corepack enable && pnpm install --frozen-lockfile || npm install
 COPY . .
 ARG VITE_FIREBASE_API_KEY
