@@ -3610,21 +3610,21 @@ input:focus {
   opacity: 0.55;
 }
 
+/* 보기 전용이라 체크박스처럼 보이면 안 된다 — 누를 수 있는 것으로 오해된다. */
 .cert-mark {
   width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.55);
+  text-align: center;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .cert-mark.doing {
-  background: #f9e900db;
-  border-color: #f9e900db;
+  color: #f9e900db;
 }
 
 .cert-mark.done {
-  background: #6bd0a6;
-  border-color: #6bd0a6;
+  color: #6bd0a6;
 }
 
 .cert-text {

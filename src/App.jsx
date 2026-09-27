@@ -371,7 +371,6 @@ function saveStoredChallenges(key, challenges) {
 
 const CHALLENGE_GOAL_OPTIONS_KEY = "todoRoom_challengeGoalOptions";
 const MEMBER_SNAPSHOT_CACHE_PREFIX = "todoRoom_memberSnapshot";
-const MEMBER_LATEST_SNAPSHOT_CACHE_KEY = `${MEMBER_SNAPSHOT_CACHE_PREFIX}_latest`;
 
 function loadChallengeGoalOptions() {
   try {
@@ -853,47 +852,6 @@ function sweepStaleTodos(todos, now = Date.now()) {
     .filter((todo) => todo.done || todo.createdAt >= cutoff);
 }
 
-function buildFallbackDailyRecords(currentRecords, previousRecords) {
-  const mergedCurrentRecords = mergeRecordsByNickname(currentRecords);
-  const currentKeys = new Set(mergedCurrentRecords.map(getRecordIdentityKey));
-
-  return mergeRecordsByNickname(previousRecords)
-    .filter((record) => !currentKeys.has(getRecordIdentityKey(record)))
-    .map((record) => ({
-      ...record,
-      todos: resetTodosForNewDay(record.todos || []),
-    }));
-}
-
-async function findRecentDailyFallbackRecords(currentDateKey) {
-  const historySnap = await getDocs(
-    query(collection(db, historyDatesCol()), orderBy("date", "desc"))
-  );
-
-  const fallbackRecordsByKey = new Map();
-  const historyDates = historySnap.docs
-    .map((historyDoc) => historyDoc.data().date)
-    .filter((historyDate) => historyDate && historyDate < currentDateKey);
-  const dailySnapshots = await Promise.all(
-    historyDates.map((historyDate) =>
-      getDocs(collection(db, dailyCol(historyDate)))
-    )
-  );
-
-  dailySnapshots.forEach((dailySnap) => {
-    dailySnap.forEach((docSnap) => {
-      const record = { id: docSnap.id, ...docSnap.data() };
-      const key = getRecordIdentityKey(record);
-
-      if (!fallbackRecordsByKey.has(key)) {
-        fallbackRecordsByKey.set(key, record);
-      }
-    });
-  });
-
-  return Array.from(fallbackRecordsByKey.values());
-}
-
 // 이월 소스: 오늘 이전에 넘길 항목이 실제로 남아 있는 "가장 최근" 날의 데이터.
 // 어제만 보지 않으므로 중간에 빈 날이나 전부 완료한 날이 있어도 미완료 항목이 안 사라진다.
 // (STALE_TODO_DAYS보다 오래된 날은 어차피 sweep 대상이라 스캔 안 함)
@@ -1194,7 +1152,6 @@ export default function App() {
 
   // 다른 멤버
   const [members, setMembers] = useState([]);
-  const [previousDayMembers, setPreviousDayMembers] = useState([]);
   const [weeklyMembers, setWeeklyMembers] = useState([]);
   const [routineMembers, setRoutineMembers] = useState([]);
   const [eventMembers, setEventMembers] = useState([]);
@@ -1219,19 +1176,13 @@ export default function App() {
   const membersReady = membersReadyKey === currentMembersReadyKey;
   const dailyReady = dailyReadyKey === currentMembersReadyKey;
   const memberSnapshotCacheKey = `${MEMBER_SNAPSHOT_CACHE_PREFIX}_${currentDayKey}_${currentWeekKey}`;
-  const cachedOtherMembers = useMemo(() => {
-    const todaySnapshot = loadCachedMemberSnapshot(memberSnapshotCacheKey);
-    if (todaySnapshot.length > 0) return todaySnapshot;
-    // 새 날 진입 직후엔 오늘 캐시가 비어 있으므로, 전날 스냅샷을 먼저 쓴다.
-    // (활동 없는 멤버는 렌더링 시 visibleMembers 필터에서 어차피 걸러진다.)
-    const prevDayKey = previousDayKeyFrom(currentDayKey);
-    const prevKey = `${MEMBER_SNAPSHOT_CACHE_PREFIX}_${prevDayKey}_${weekKeyForDate(prevDayKey)}`;
-    const previousSnapshot = loadCachedMemberSnapshot(prevKey);
-    if (previousSnapshot.length > 0) return previousSnapshot;
-
-    // 어제 접속하지 않았어도 이 기기에서 마지막으로 본 멤버 카드를 바로 보여준다.
-    return loadCachedMemberSnapshot(MEMBER_LATEST_SNAPSHOT_CACHE_KEY);
-  }, [memberSnapshotCacheKey, currentDayKey]);
+  // 폴백은 "오늘" 스냅샷만. 전날·마지막본 스냅샷까지 쓰면 한참 전에 떠난 사람이
+  // 다시 뜬다 — 스냅샷은 그 사람이 활동하던 때의 todos를 그대로 안고 있고
+  // updatedAt은 저장되지도 않아서, 어떤 "오늘 활동했나" 검사도 통과해 버린다.
+  const cachedOtherMembers = useMemo(
+    () => loadCachedMemberSnapshot(memberSnapshotCacheKey),
+    [memberSnapshotCacheKey]
+  );
   const [quizConfig, setQuizConfig] = useState(null);
 
   // (위클리 항상 표시)
@@ -2467,35 +2418,6 @@ export default function App() {
 
   /* ── 실시간 리스너 ── */
   useEffect(() => {
-    if (!nicknameConfirmed || !uid || isLocalDevHost()) {
-      return;
-    }
-
-    let cancelled = false;
-    const previousDate = previousDayKeyFrom(currentDayKey);
-
-    void getDocs(collection(db, dailyCol(previousDate)))
-      .then((snapshot) => {
-        if (cancelled) return;
-
-        const records = snapshot.docs.map((docSnap) => ({
-          id: docSnap.id,
-          ...docSnap.data(),
-        }));
-        setPreviousDayMembers(mergeRecordsByNickname(records));
-      })
-      .catch((error) => {
-        if (cancelled) return;
-        console.error("Failed to load previous-day members", error);
-        setPreviousDayMembers([]);
-      });
-
-    return () => {
-      cancelled = true;
-    };
-  }, [nicknameConfirmed, uid, currentDayKey]);
-
-  useEffect(() => {
     if (!nicknameConfirmed || !uid) return;
     if (isLocalDevHost()) {
       // 로컬 환경에는 원격 구독이 없으므로 현재 키를 곧바로 준비 완료로 표시한다.
@@ -2515,7 +2437,6 @@ export default function App() {
     const dailyDocsBySource = new Map();
     let cancelled = false;
     let dailyLoaded = false;
-    let fallbackLoaded = false;
     const weeklyLoadedKeys = new Set();
 
     const finalizeMembersReady = () => {
@@ -2529,10 +2450,10 @@ export default function App() {
     };
 
     const applyDailyMembers = () => {
-      const todayRecords = dailyDocsBySource.get("today") || [];
-      const fallbackSourceRecords = dailyDocsBySource.get("fallback") || [];
-      const fallbackRecords = buildFallbackDailyRecords(todayRecords, fallbackSourceRecords);
-      const all = mergeRecordsByNickname([...todayRecords, ...fallbackRecords]);
+      // 오늘 문서가 있는 사람만 멤버다. 예전엔 과거 날짜를 전부 훑어 사람별 최근
+      // 기록을 되살렸는데(findRecentDailyFallbackRecords), 그 기록이 그때의 미완료
+      // todos를 안고 오는 바람에 몇 달 전에 떠난 사람도 계속 카드로 남았다.
+      const all = mergeRecordsByNickname(dailyDocsBySource.get("today") || []);
 
       const { preferred: preferredSelf, selfCandidates } = chooseSelfRecord(
         all,
@@ -2577,20 +2498,6 @@ export default function App() {
         finalizeMembersReady();
       }
     );
-
-    void findRecentDailyFallbackRecords(currentDayKey)
-      .then((records) => {
-        if (cancelled) return;
-        dailyDocsBySource.set("fallback", records);
-        fallbackLoaded = true;
-        applyDailyMembers();
-        finalizeMembersReady();
-      })
-      .catch((error) => {
-        console.error("Failed to load fallback daily todos", error);
-        fallbackLoaded = true;
-        finalizeMembersReady();
-      });
 
     // 위클리 멤버 리스너
     const weeklyDocsByKey = new Map();
@@ -3550,12 +3457,7 @@ export default function App() {
       ),
     challengeMembers.filter((m) => !isSelfMember(m))
   );
-  const cachedVisibleOtherMembers = cachedOtherMembers.filter((m) => !isSelfMember(m));
-  const previousDayOtherMembers = previousDayMembers.filter((m) => !isSelfMember(m));
-  const fallbackOtherMembers =
-    cachedVisibleOtherMembers.length > 0
-      ? cachedVisibleOtherMembers
-      : previousDayOtherMembers;
+  const fallbackOtherMembers = cachedOtherMembers.filter((m) => !isSelfMember(m));
   const displayOtherMembers =
     otherMembers.length > 0 || dailyReady ? otherMembers : fallbackOtherMembers;
   const allMembers = [
@@ -3707,7 +3609,6 @@ export default function App() {
     if (memberSnapshotSavedRef.current === signature) return;
     memberSnapshotSavedRef.current = signature;
     saveCachedMemberSnapshot(memberSnapshotCacheKey, otherMembers);
-    saveCachedMemberSnapshot(MEMBER_LATEST_SNAPSHOT_CACHE_KEY, otherMembers);
   }, [memberSnapshotCacheKey, membersReady, otherMembers]);
 
   if (!nicknameConfirmed && !profileRecoveryChecked) {
@@ -4068,7 +3969,7 @@ export default function App() {
                 <div className="cert-list">
                   {certRows.map((row) => (
                     <div key={row.key} className={`cert-item ${row.status}`}>
-                      <span className={`cert-mark ${row.status}`} aria-hidden="true" />
+                      <span className={`cert-mark ${row.status}`} aria-hidden="true">·</span>
                       <span className="cert-text">{row.text}</span>
                       <span className={`cert-source ${row.source}`}>
                         {CERT_SOURCE_LABEL[row.source]}
