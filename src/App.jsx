@@ -70,7 +70,7 @@ import {
   parseChallengeTitle,
   toggleChallengeItemDone,
 } from "./challengeProgress";
-import { buildCarryMerge, resetTodosForNewDay } from "./dailyCarry";
+import { buildCarryMerge, pickCarrySource, resetTodosForNewDay } from "./dailyCarry";
 /* ── 유틸 ── */
 // 새벽 2시 기준: 2시 이전이면 전날로 취급
 function getEffectiveDate() {
@@ -949,8 +949,8 @@ async function findRecentDailyFallbackRecords(currentDateKey) {
   return Array.from(fallbackRecordsByKey.values());
 }
 
-// 이월 소스: 오늘 이전에 이 uid doc이 존재하는 "가장 최근" 날의 데이터.
-// 어제만 보지 않으므로 중간에 빈 날이 있어도 미완료 항목이 안 사라진다.
+// 이월 소스: 오늘 이전에 넘길 항목이 실제로 남아 있는 "가장 최근" 날의 데이터.
+// 어제만 보지 않으므로 중간에 빈 날이나 전부 완료한 날이 있어도 미완료 항목이 안 사라진다.
 // (STALE_TODO_DAYS보다 오래된 날은 어차피 sweep 대상이라 스캔 안 함)
 async function findCarrySourceDaily(userUid, currentDateKey) {
   const cutoff = new Date(`${currentDateKey}T00:00:00`);
@@ -977,12 +977,7 @@ async function findCarrySourceDaily(userUid, currentDateKey) {
     )
   );
 
-  for (const snap of snaps) {
-    if (snap.exists() && (snap.data().todos || []).length > 0) {
-      return snap.data();
-    }
-  }
-  return null;
+  return pickCarrySource(snaps.map((snap) => (snap.exists() ? snap.data() : null)));
 }
 
 async function findRecentDailyMatchByNickname(targetNickname) {

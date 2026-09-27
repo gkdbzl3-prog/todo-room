@@ -53,3 +53,16 @@ export function buildCarryMerge({ remoteToday, localTodos, sourceTodos, carryCan
     added: additions.length + carried.length,
   };
 }
+
+// 이월 소스 선택: 최신 날부터 훑어 "실제로 넘길 항목이 하나라도 있는" 첫 날을 고른다.
+// 항목 수만 보고 멈추면 전부 완료된 날이 그보다 오래된 미완료 항목을 영구히 가린다.
+// (2026-09-27 실제: 09-03의 완료된 "여성외과" 때문에 08-31의 미완료 2개가 도달 불가)
+export function pickCarrySource(dailyDataNewestFirst) {
+  const days = Array.isArray(dailyDataNewestFirst) ? dailyDataNewestFirst : [];
+
+  for (const data of days) {
+    if (!data) continue;
+    if (resetTodosForNewDay(data.todos).length > 0) return data;
+  }
+  return null;
+}

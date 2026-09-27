@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import {
   buildCarryMerge,
   collectLocalAdditions,
+  pickCarrySource,
   resetTodosForNewDay,
 } from "./dailyCarry.js";
 
@@ -109,3 +110,31 @@ const texts = (todos) => todos.map((todo) => todo.text);
 }
 
 console.log("dailyCarry tests passed");
+
+// Regression (2026-09-27 실제 데이터): 이월 소스를 "todos가 비지 않은 첫 날"로 고르면,
+// 09-03(여성외과 완료 1개)에서 멈춰 08-31의 미완료 2개를 영구히 못 본다.
+// 넘길 항목이 실제로 있는 날까지 계속 훑어야 한다.
+{
+  const source = pickCarrySource([
+    { todos: [] },                                              // 09-18: 빈 배열
+    null,                                                       // 09-07: 문서 없음
+    { avatar: "🌿", todos: [{ id: 3, text: "여성외과", done: true }] }, // 09-03: 전부 완료
+    {
+      avatar: "🐰",
+      todos: [
+        { id: 1, text: "택배 부치기", done: false },
+        { id: 2, text: "강의 시청", done: false },
+      ],
+    },
+  ]);
+
+  assert.equal(source.avatar, "🐰");
+  assert.deepEqual(texts(resetTodosForNewDay(source.todos)), ["택배 부치기", "강의 시청"]);
+}
+
+// 넘길 게 아무 날에도 없으면 null — 호출 측이 "이월할 것 없음"으로 처리한다.
+{
+  assert.equal(pickCarrySource([{ todos: [] }, { todos: [{ id: 1, done: true }] }]), null);
+  assert.equal(pickCarrySource([]), null);
+  assert.equal(pickCarrySource(undefined), null);
+}
