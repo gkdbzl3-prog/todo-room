@@ -1446,18 +1446,17 @@ input:focus {
   .room-layout {
     max-width: 1200px;
     display: grid;
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: 2fr 1fr;
     grid-template-rows: auto 1fr;
     align-items: start;
     gap: 16px;
   }
 
-  /* 데스크탑: 왼쪽 = 멤버, 오른쪽 = 입력+투두 */
+  /* 데스크탑: 왼쪽 = 내 입력+투두(메인), 오른쪽 = 멤버(보조) */
   .member-panel {
-    grid-column: 1;
+    grid-column: 2;
     grid-row: 1 / -1;
     order: unset;
-    min-width: fit-content;
     position: sticky;
     top: 16px;
     max-height: fit-content;
@@ -1465,13 +1464,13 @@ input:focus {
   }
 
   .my-panel-input {
-    grid-column: 2;
+    grid-column: 1;
     grid-row: 1;
     order: unset;
   }
 
   .my-panel-todos {
-    grid-column: 2;
+    grid-column: 1;
     grid-row: 2;
     order: unset;
   }
@@ -1484,13 +1483,13 @@ input:focus {
 
   .member-list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 8px;
   }
 
   .member-loading {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 8px;
   }
 
@@ -1564,18 +1563,6 @@ input:focus {
 
 /* ─── 와이드 데스크탑: 3열 그리드 ─── */
 @media (min-width: 1100px) {
-  .member-list {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .member-loading {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .member-list-idle {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
   .challenge-list {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -3744,280 +3731,73 @@ input:focus {
   background: linear-gradient(90deg, #d89577, #6bd0a6);
   border-radius: 999px;
 }
-/* ─────────────── Time Tracker ─────────────── */
-.time-tracker {
-  background: rgba(249, 131, 108, 0.521);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(12px);
-  border-radius: 20px;
-  padding: 18px;
-  margin-top: 14px;
+
+/* ─────────────── 인증 목록 ─────────────── */
+.cert-count {
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.75;
 }
 
-.tracker-header {
-  display: flex;
-  align-items: stretch;
-  gap: 8px;
-  margin-bottom: 12px;
-  flex-wrap: wrap;
-}
-
-.tracker-day-tab {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 13px 13px;
-  min-height: 64px;
-  border-radius: 12px;
-  border: 1.5px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.05);
-  cursor: pointer;
-  text-align: left;
-  transition: background 0.15s, border-color 0.15s;
-  flex: 1;
-}
-
-.tracker-day-tab:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.tracker-day-tab.active {
-  background: rgba(255, 255, 255, 0.14);
-  border-color: rgba(255, 255, 255, 0.3);
-}
-
-.tracker-time-sub {
-  font-size: 10px;
-  color: rgba(255, 255, 255, 0.5);
-  letter-spacing: 0.3px;
-  white-space: nowrap;
-  display: block;
-}
-
-.tracker-time-val {
-  font-size: 17px;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.9);
-  font-variant-numeric: tabular-nums;
-  letter-spacing: -0.3px;
-  display: flex;
-  align-items: baseline;
-  gap: 4px;
-  flex-wrap: wrap;
-}
-
-.tracker-time-val > span[onClick] {
-  cursor: pointer;
-}
-
-.tracker-time-empty {
-  font-size: 10px;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.3);
-  cursor: pointer;
-}
-
-/* 계획 레이어(어제 짠 "내일") 참고 표시 — 실제 값과 구분되게 흐리게 */
-.tracker-time-plan {
-  font-size: 10px;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.32);
-  white-space: nowrap;
-}
-
-
-.tracker-palette {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 10px;
-}
-
-.tracker-palette-dot {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: var(--dot-color);
-  border: 2px solid transparent;
-  cursor: pointer;
-  padding: 0;
-  transition: transform 0.12s, border-color 0.12s, opacity 0.12s;
-  flex-shrink: 0;
+.cert-empty {
+  font-size: 13px;
   opacity: 0.6;
+  padding: 4px 0;
 }
 
-.tracker-palette-dot:hover {
-  transform: scale(1.15);
-  opacity: 0.9;
-}
-
-.tracker-palette-dot.selected {
-  border-color: rgba(255, 255, 255, 0.9);
-  transform: scale(1.2);
-  opacity: 1;
-}
-
-.tracker-undo-btn {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 17px;
-  cursor: pointer;
-  padding: 0;
-  border-radius: 8px;
-  line-height: 1;
-  transition: color 0.15s, background 0.15s, border-color 0.15s;
-}
-
-.tracker-undo-btn:not(:disabled):hover {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.18);
-}
-
-.tracker-undo-btn:disabled {
-  opacity: 0.35;
-  cursor: default;
-}
-
-.tracker-grid {
+.cert-list {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-}
-
-.tracker-row {
-  display: flex;
-  align-items: center;
   gap: 6px;
 }
 
-.tracker-hour {
-  font-size: 10px;
-  color: rgba(255, 255, 255, 0.4);
-  font-variant-numeric: tabular-nums;
-  min-width: 30px;
-  flex-shrink: 0;
-}
-
-.tracker-cells {
-  display: flex;
-  gap: 2px;
-  flex: 1;
-  touch-action: none;
-}
-
-.tracker-cell {
-  flex: 1;
-  height: 26px;
-  border-radius: 4px;
+.cert-item {
+  display: grid;
+  grid-template-columns: 14px 1fr auto;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border-radius: 12px;
   background: rgba(255, 255, 255, 0.1);
-  cursor: pointer;
-  transition: background 0.1s;
-  flex-shrink: 0;
-  touch-action: none;
+  font-size: 14px;
 }
 
-.tracker-cell {
-  position: relative;
-  overflow: hidden;
-}
-
-.tracker-cell:hover::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.12);
-  pointer-events: none;
-}
-
-.tracker-mode-hint {
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.45);
-  text-align: center;
-  margin: 2px 0 6px;
-}
-
-.tracker-cell-layer {
-  position: absolute;
-  inset: 0;
-  border-radius: 3px;
-  pointer-events: none;
-}
-
-.tracker-cell-layer.today-layer {
-  inset: 2px;
-  border-radius: 2px;
-  opacity: 1;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.45), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
-}
-
-.tracker-cell-layer.tomorrow-layer {
+.cert-item.done {
   opacity: 0.55;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
 }
 
-.time-tracker.read-only .tracker-cell {
-  cursor: default;
+.cert-mark {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.55);
 }
 
-.tracker-label-input {
-  flex: 0 0 60px;
-  width: 75px;
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 10px;
-  padding: 2px 3px;
-  outline: none;
-  transition: border-color 0.15s;
+.cert-mark.doing {
+  background: #f9e900db;
+  border-color: #f9e900db;
 }
 
-.tracker-label-input:focus {
-  border-bottom-color: rgba(167, 139, 250, 0.6);
+.cert-mark.done {
+  background: #6bd0a6;
+  border-color: #6bd0a6;
 }
 
-.tracker-label-input::placeholder {
-  color: rgba(255, 255, 255, 0.18);
+.cert-text {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
-.tracker-label-text {
-  font-size: 10px;
-  color: rgba(255, 255, 255, 0.45);
-  flex: 0 0 50px;
-  padding: 2px 3px;
+.cert-item.done .cert-text {
+  text-decoration: line-through;
+}
+
+.cert-source {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.18);
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* 오늘 메모가 없을 때 대신 보여주는 계획 메모 */
-.tracker-label-text.plan {
-  color: rgba(255, 255, 255, 0.25);
-  font-style: italic;
-}
-
-.member-tracker-wrap {
-  margin-top: 6px;
-}
-
-.member-tracker-wrap .time-tracker {
-  padding: 10px 10px 8px;
-  margin-top: 0;
-  background: rgba(249, 131, 108, 0.25);
-  border-color: rgba(255, 255, 255, 0.08);
-}
-
-.member-tracker-wrap .tracker-hour {
-  font-size: 9px;
-  min-width: 28px;
-}
-
-.member-tracker-wrap .tracker-cell {
-  height: 16px;
 }

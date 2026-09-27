@@ -48,7 +48,6 @@ import {
   parseRoutineTomorrowInput,
   splitTomorrowTodos,
 } from "./tomorrowRoutine";
-import { buildTrackerCarryPatch, hasTrackerTomorrowPlan } from "./trackerCarry";
 import { getOwnTodosFromRemote } from "./weeklyState";
 import { shouldShowMemberEventName } from "./eventVisibility";
 import {
@@ -71,6 +70,7 @@ import {
   toggleChallengeItemDone,
 } from "./challengeProgress";
 import { buildCarryMerge, pickCarrySource, resetTodosForNewDay } from "./dailyCarry";
+import { buildCertList } from "./todayCertList";
 /* ── 유틸 ── */
 // 새벽 2시 기준: 2시 이전이면 전날로 취급
 function getEffectiveDate() {
@@ -727,37 +727,6 @@ function attachTomorrows(displayMembers, tomorrowMembers, todayKey) {
   });
 }
 
-// Attach tracker data to display members by matching id.
-function attachTrackers(displayMembers, trackerMembers) {
-  if (!trackerMembers || !trackerMembers.length) return displayMembers;
-  const map = new Map();
-  trackerMembers.forEach((tm) => {
-    if (tm.id) map.set(tm.id, tm);
-    const key = normalizeNickname(tm.nickname);
-    if (key) map.set(`nick:${key}`, tm);
-  });
-  return displayMembers.map((m) => {
-    const tm =
-      (m.id && map.get(m.id)) ||
-      (normalizeNickname(m.nickname) && map.get(`nick:${normalizeNickname(m.nickname)}`)) ||
-      null;
-    if (!tm) return m;
-    const todayCells = tm.todayCells || tm.cells || [];
-    return {
-      ...m,
-      trackerTodayCells: todayCells,
-      trackerTomorrowCells: tm.tomorrowCells || [],
-      trackerPlanCells: tm.planCells || [],
-      trackerLabels: tm.labels || {},
-      trackerTomorrowLabels: tm.tomorrowLabels || {},
-      trackerPlanLabels: tm.planLabels || {},
-      trackerTodayStart: tm.todayStart || "",
-      trackerTomorrowStart: tm.tomorrowStart || "",
-      trackerPlanStart: tm.planStart || "",
-    };
-  });
-}
-
 // Attach event data to display members by matching nickname.
 function attachEvents(displayMembers, eventMembers) {
   if (!eventMembers || !eventMembers.length) return displayMembers;
@@ -1055,7 +1024,6 @@ const routineCol = () => "routines";
 const eventsCol = () => "events";
 const challengesCol = () => "challenges";
 const tomorrowCol = () => "tomorrows";
-const trackerCol = (date) => `tracker/${date}/users`;
 const perfectDaysCol = () => "perfectDays";
 
 /* ── 루틴 상수 ── */
@@ -1261,8 +1229,6 @@ export default function App() {
   const [eventMembers, setEventMembers] = useState([]);
   const [challengeMembers, setChallengeMembers] = useState([]);
   const [tomorrowMembers, setTomorrowMembers] = useState([]);
-  const [trackerMembers, setTrackerMembers] = useState([]);
-  const [myTracker, setMyTracker] = useState({ todayCells: new Array(64).fill(""), tomorrowCells: new Array(64).fill(""), planCells: new Array(64).fill(""), labels: {}, tomorrowLabels: {}, planLabels: {}, todayStart: "", tomorrowStart: "", planStart: "" });
   const [perfectDayMembers, setPerfectDayMembers] = useState([]);
   const [myPerfectDates, setMyPerfectDates] = useState([]);
   const [dailyCarryReady, setDailyCarryReady] = useState(false);
@@ -1749,156 +1715,6 @@ export default function App() {
     return () => unsub();
   }, [uid, nicknameConfirmed]);
 
-  /* ── Firestore 시간 트래커 동기화 ── */
-  const syncMyTracker = useCallback(
-    (next) => {
-      if (!nicknameConfirmed || !uid) return;
-      const payload = {
-        nickname,
-        avatar,
-        todayCells: next.todayCells || [],
-        tomorrowCells: next.tomorrowCells || [],
-        planCells: next.planCells || [],
-        labels: next.labels || {},
-        tomorrowLabels: next.tomorrowLabels || {},
-        planLabels: next.planLabels || {},
-        todayStart: next.todayStart || "",
-        tomorrowStart: next.tomorrowStart || "",
-        planStart: next.planStart || "",
-        updatedAt: serverTimestamp(),
-      };
-      void writeSetDoc(doc(db, trackerCol(currentDayKey), uid), payload).catch((error) => {
-        console.error("Failed to sync tracker", error);
-      });
-    },
-    [uid, nickname, avatar, nicknameConfirmed, currentDayKey]
-  );
-
-  const handleTrackerUpdate = useCallback(
-    (next) => {
-      setMyTracker(next);
-      syncMyTracker(next);
-    },
-    [syncMyTracker]
-  );
-
-  useEffect(() => {
-    if (!nicknameConfirmed) return;
-    const unsub = onSnapshot(collection(db, trackerCol(currentDayKey)), (snap) => {
-      const all = [];
-      snap.forEach((d) => {
-        const data = d.data() || {};
-        // backward compat: old docs had `cells` instead of `todayCells`
-        const todayCells = Array.isArray(data.todayCells) ? data.todayCells
-          : Array.isArray(data.cells) ? data.cells : [];
-        all.push({
-          id: d.id,
-          nickname: data.nickname || "",
-          avatar: data.avatar || "",
-          todayCells,
-          tomorrowCells: Array.isArray(data.tomorrowCells) ? data.tomorrowCells : [],
-          planCells: Array.isArray(data.planCells) ? data.planCells : [],
-          labels: data.labels && typeof data.labels === "object" ? data.labels : {},
-          tomorrowLabels: data.tomorrowLabels && typeof data.tomorrowLabels === "object" ? data.tomorrowLabels : {},
-          planLabels: data.planLabels && typeof data.planLabels === "object" ? data.planLabels : {},
-          todayStart: data.todayStart || "",
-          tomorrowStart: data.tomorrowStart || "",
-          planStart: data.planStart || "",
-        });
-      });
-      const mine = all.find((m) => m.id === uid);
-      if (mine) {
-        setMyTracker({
-          todayCells: mine.todayCells,
-          tomorrowCells: mine.tomorrowCells,
-          planCells: mine.planCells,
-          labels: mine.labels,
-          tomorrowLabels: mine.tomorrowLabels,
-          planLabels: mine.planLabels,
-          todayStart: mine.todayStart,
-          tomorrowStart: mine.tomorrowStart,
-          planStart: mine.planStart,
-        });
-      } else {
-        // 오늘 doc 없음 (새 날, 이월 전) — 오늘 레이어(셀/메모/시작시간)는 비우고
-        // 계획 레이어(plan*)는 이월 effect가 채운다.
-        setMyTracker((prev) => ({
-          ...prev,
-          todayCells: new Array(64).fill(""),
-          tomorrowCells: new Array(64).fill(""),
-          planCells: new Array(64).fill(""),
-          labels: {},
-          tomorrowLabels: {},
-          planLabels: {},
-          todayStart: "",
-          tomorrowStart: "",
-          planStart: "",
-        }));
-      }
-      setTrackerMembers(all.filter((m) => m.id !== uid));
-    }, (error) => {
-      console.error("Failed to subscribe tracker", error);
-    });
-    return () => unsub();
-  }, [uid, nicknameConfirmed, currentDayKey]);
-
-  /* ── 계획 이월: 어제 짠 "내일 계획"을 오늘의 "계획 레이어"로 옮긴다 ──
-     계획(plan*)과 실제(today*)는 별개 레이어다. 계획은 참고용으로만 넘어오고,
-     오늘 실제로 적는 값(todayCells/labels/todayStart)은 하루가 바뀌면 빈 상태로 시작한다.
-     - tomorrowCells  → planCells  (연하게 깔리는 오늘의 계획)
-     - tomorrowLabels → planLabels (계획 메모 — 오늘 메모는 따로 자유롭게 적음)
-     - tomorrowStart  → planStart  (계획한 시작 시간 — 실제 시작은 todayStart에 따로 기록)
-     각각 오늘 계획 값이 비어 있을 때만 한 번 시드한다. */
-  useEffect(() => {
-    if (!nicknameConfirmed || !uid) return;
-    let cancelled = false;
-    (async () => {
-      try {
-        const prevKey = previousDayKeyFrom(currentDayKey);
-        const [todaySnap, prevSnap] = await Promise.all([
-          getDoc(doc(db, trackerCol(currentDayKey), uid)),
-          getDoc(doc(db, trackerCol(prevKey), uid)),
-        ]);
-        if (cancelled) return;
-        const todayData = todaySnap.exists() ? todaySnap.data() || {} : {};
-        const directPrevData = prevSnap.exists() ? prevSnap.data() || {} : {};
-        let previousSources = [directPrevData];
-
-        // 프로필 복구가 같은 닉네임의 다른 uid로 재연결한 경우, 어제 계획은
-        // 이전 uid 문서에 남아 있다. 현재 uid 문서가 비었을 때 닉네임으로 복구한다.
-        if (!hasTrackerTomorrowPlan(directPrevData) && nickname.trim()) {
-          const matches = await getDocs(
-            query(
-              collection(db, trackerCol(prevKey)),
-              where("nickname", "==", normalizeNickname(nickname))
-            )
-          );
-          if (cancelled) return;
-          previousSources = [
-            directPrevData,
-            ...matches.docs
-              .filter((match) => match.id !== uid)
-              .map((match) => match.data() || {}),
-          ];
-        }
-
-        const patch = buildTrackerCarryPatch(todayData, previousSources);
-        if (Object.keys(patch).length === 0) return;
-
-        setMyTracker((t) => ({ ...t, ...patch }));
-        void writeSetDoc(
-          doc(db, trackerCol(currentDayKey), uid),
-          { ...patch, updatedAt: serverTimestamp() },
-          { merge: true }
-        ).catch((error) => console.error("Failed to carry plan", error));
-      } catch (error) {
-        console.error("Failed to carry plan", error);
-      }
-    })();
-    return () => {
-      cancelled = true;
-    };
-  }, [uid, nickname, nicknameConfirmed, currentDayKey]);
 
   /* ── Firestore 루틴 동기화 ── */
   // 실패를 호출자가 알아야 하는 경로(미리 세운 예약을 루틴에 넣는 롤오버)가 있어서
@@ -3342,6 +3158,18 @@ export default function App() {
     () => [...myDaily, ...routineNoteTodos],
     [myDaily, routineNoteTodos]
   );
+  // 인증용 모아보기 — 오늘의 TO-DO + 주간 📌 + 루틴을 한 목록으로. 읽기 전용이다.
+  const certRows = useMemo(
+    () =>
+      buildCertList({
+        dailyTodos: effectiveDaily,
+        weeklyTodos: visibleWeekly,
+        routineItems: routineActiveItems,
+        dayKey: currentDayKey,
+      }),
+    [effectiveDaily, visibleWeekly, routineActiveItems, currentDayKey]
+  );
+
   const dailyDoneCount = effectiveDaily.filter((t) => t.done).length;
   const weeklyDoneCount = visibleWeekly.filter((t) => t.done).length;
   const totalDoneCount = dailyDoneCount + weeklyDoneCount + routineDoneCount;
@@ -3956,26 +3784,23 @@ export default function App() {
   const isSelfMember = (m) =>
     (uid && m.id === uid) ||
     (myNicknameKey && normalizeNickname(m.nickname) === myNicknameKey);
-  const otherMembers = attachTrackers(
-    attachPerfectDays(
-      attachChallenges(
-        attachTomorrows(
-          attachEvents(
-            attachRoutines(
-              mergeDisplayMembers(members, weeklyMembers).filter((m) => !isSelfMember(m)),
-              routineMembers.filter((m) => !isSelfMember(m)),
-              currentDayKey
-            ),
-            eventMembers.filter((m) => !isSelfMember(m))
+  const otherMembers = attachPerfectDays(
+    attachChallenges(
+      attachTomorrows(
+        attachEvents(
+          attachRoutines(
+            mergeDisplayMembers(members, weeklyMembers).filter((m) => !isSelfMember(m)),
+            routineMembers.filter((m) => !isSelfMember(m)),
+            currentDayKey
           ),
-          tomorrowMembers.filter((m) => !isSelfMember(m)),
-          currentDayKey
+          eventMembers.filter((m) => !isSelfMember(m))
         ),
-        challengeMembers.filter((m) => !isSelfMember(m))
+        tomorrowMembers.filter((m) => !isSelfMember(m)),
+        currentDayKey
       ),
-      perfectDayMembers.filter((m) => !isSelfMember(m))
+      challengeMembers.filter((m) => !isSelfMember(m))
     ),
-    trackerMembers.filter((m) => !isSelfMember(m))
+    perfectDayMembers.filter((m) => !isSelfMember(m))
   );
   const cachedVisibleOtherMembers = cachedOtherMembers.filter((m) => !isSelfMember(m));
   const previousDayOtherMembers = previousDayMembers.filter((m) => !isSelfMember(m));
@@ -3998,15 +3823,6 @@ export default function App() {
       events,
       challenges,
       perfectDayCount: myPerfectDates.length,
-      trackerTodayCells: myTracker.todayCells,
-      trackerTomorrowCells: myTracker.tomorrowCells,
-      trackerPlanCells: myTracker.planCells,
-      trackerLabels: myTracker.labels,
-      trackerTomorrowLabels: myTracker.tomorrowLabels,
-      trackerPlanLabels: myTracker.planLabels,
-      trackerTodayStart: myTracker.todayStart,
-      trackerTomorrowStart: myTracker.tomorrowStart,
-      trackerPlanStart: myTracker.planStart,
       isMe: true,
     },
     ...displayOtherMembers,
@@ -4030,11 +3846,14 @@ export default function App() {
           : null;
     return !!millis && Date.now() - millis < GHOST_GRACE_MS;
   };
+  // 남의 카드는 "오늘 실제로 와 있다"는 근거가 있을 때만 띄운다.
+  // 주간·내일 투두와 루틴 문서는 며칠씩 남아 있어서, 한참 안 들어온 사람도 계속
+  // 멤버로 보이게 만들었다. 그 둘은 존재 근거에서 빼고 오늘 투두와 최근 updatedAt만 본다.
+  // 막는 게 아니라 미루는 것 — 그 사람이 오늘 열어 뭐든 적으면 바로 다시 나타난다.
   const visibleMembers = allMembers.filter(
     (member) =>
       member.isMe ||
-      getMemberTodoTotal(member) > 0 ||
-      hasRoutineItems(member) ||
+      getTodoCount(member.todos) > 0 ||
       isRecentlyActive(member)
   );
   const ghostCandidates = allMembers.filter(
@@ -4514,11 +4333,30 @@ export default function App() {
               celebrated={routineCelebrated}
             />
 
-            {/* 시간 트래커 */}
-            <TimeTracker
-              tracker={myTracker}
-              onUpdate={handleTrackerUpdate}
-            />
+            {/* 인증 목록 — 오늘 찍을 것만 한자리에 모은 읽기 전용 요약 */}
+            <div className="todo-panel cert-panel">
+              <h2>
+                인증 목록{" "}
+                <span className="cert-count">
+                  {certRows.filter((r) => r.status === "done").length}/{certRows.length}
+                </span>
+              </h2>
+              {certRows.length === 0 ? (
+                <div className="cert-empty">오늘 인증할 항목이 없음</div>
+              ) : (
+                <div className="cert-list">
+                  {certRows.map((row) => (
+                    <div key={row.key} className={`cert-item ${row.status}`}>
+                      <span className={`cert-mark ${row.status}`} aria-hidden="true" />
+                      <span className="cert-text">{row.text}</span>
+                      <span className={`cert-source ${row.source}`}>
+                        {CERT_SOURCE_LABEL[row.source]}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
           </section>
         </div>
       ) : tab === "challenge" ? (
@@ -5613,6 +5451,8 @@ function ChallengeCard({
   );
 }
 
+const CERT_SOURCE_LABEL = { daily: "오늘", weekly: "주간 📌", routine: "루틴" };
+
 /* ─────────────── TodoItem ─────────────── */
 function TodoItem({ todo, onCycle, onDelete, countedToday, onToggleCounted, onToggleOneOff, fromRoutine = false }) {
   // 상태: 진행 전 → 진행중 → 완료
@@ -5723,8 +5563,6 @@ function MemberCard({ member, currentDayKey }) {
   );
   const [routineExpanded, setRoutineExpanded] = useState(false);
   const [tomorrowExpanded, setTomorrowExpanded] = useState(false);
-  const [trackerExpanded, setTrackerExpanded] = useState(false);
-  const hasTracker = (member.trackerTodayCells || []).some(Boolean) || (member.trackerTomorrowCells || []).some(Boolean);
   const closestEvent = pickClosestEvent(member.events || []);
   const showEventName = closestEvent && shouldShowMemberEventName(closestEvent.event);
 
@@ -5859,352 +5697,10 @@ function MemberCard({ member, currentDayKey }) {
         </>
       )}
 
-      {hasTracker && (
-        <>
-          <button
-            type="button"
-            className="member-tomorrow-toggle"
-            onClick={() => setTrackerExpanded((v) => !v)}
-            aria-label={trackerExpanded ? "시간 트래커 접기" : "시간 트래커 펼치기"}
-          >
-            <span className="member-tomorrow-chevron">{trackerExpanded ? "▴" : "▾"}</span>
-            TRACKER
-            {member.trackerTodayStart && (
-              <>
-                <span className="member-tomorrow-dot">·</span>
-                <span className="member-tomorrow-num">{member.trackerTodayStart}</span>
-              </>
-            )}
-          </button>
-          {trackerExpanded && (
-            <div className="member-tracker-wrap">
-              <TimeTracker
-                tracker={{
-                  todayCells: member.trackerTodayCells || [],
-                  tomorrowCells: member.trackerTomorrowCells || [],
-                  planCells: member.trackerPlanCells || [],
-                  labels: member.trackerLabels || {},
-                  tomorrowLabels: member.trackerTomorrowLabels || {},
-                  planLabels: member.trackerPlanLabels || {},
-                  todayStart: member.trackerTodayStart || "",
-                  tomorrowStart: member.trackerTomorrowStart || "",
-                  planStart: member.trackerPlanStart || "",
-                }}
-                readOnly
-              />
-            </div>
-          )}
-        </>
-      )}
-
     </div>
   );
 }
 
-/* ─────────────── TimeTracker ─────────────── */
-const TRACKER_PALETTE = [
-  { id: "p", color: "#a78bfa", label: "보라" },
-  { id: "g", color: "#6bd0a6", label: "초록" },
-  { id: "o", color: "#fb923c", label: "주황" },
-  { id: "b", color: "#60a5fa", label: "파랑" },
-  { id: "r", color: "#f87171", label: "빨강" },
-  { id: "br", color: "#f9e900db", label: "노랑" },
-];
-const TRACKER_COLOR_MAP = Object.fromEntries(TRACKER_PALETTE.map((p) => [p.id, p.color]));
-
-function normTrackerCells(raw, total) {
-  return Array.from({ length: total }, (_, i) => {
-    const v = raw?.[i];
-    if (!v) return "";
-    if (typeof v === "boolean") return v ? "p" : "";
-    return typeof v === "string" ? v : "";
-  });
-}
-
-function TimeTracker({ tracker, onUpdate, readOnly = false }) {
-  const HOURS = 16;
-  const CELLS_PER_HOUR = 4;
-  const TOTAL_CELLS = HOURS * CELLS_PER_HOUR;
-
-  const parseHour = (timeStr) => {
-    const m = /^(\d{1,2})/.exec(timeStr || "");
-    return m ? parseInt(m[1], 10) : null;
-  };
-
-  // 오늘 탭의 시간축은 "계획한 시작 시간"에 맞춘다 — planCells가 그 축으로 그려졌기 때문.
-  // 실제 시작(todayStart)은 축을 흔들지 않고 기록만 된다.
-  const startHour =
-    parseHour(tracker?.tomorrowStart) ??
-    parseHour(tracker?.planStart) ??
-    parseHour(tracker?.todayStart) ??
-    7;
-
-  const [localToday, setLocalToday] = useState(() =>
-    normTrackerCells(tracker?.todayCells, TOTAL_CELLS)
-  );
-  const [localTomorrow, setLocalTomorrow] = useState(() =>
-    normTrackerCells(tracker?.tomorrowCells, TOTAL_CELLS)
-  );
-  // 오늘의 계획(어제 짠 "내일 계획"이 이월된 것). 이 화면에서 직접 편집하지 않고 흐리게만 표시.
-  const [localPlan, setLocalPlan] = useState(() =>
-    normTrackerCells(tracker?.planCells, TOTAL_CELLS)
-  );
-  const [editMode, setEditMode] = useState("today");
-  const [selectedColor, setSelectedColor] = useState("p");
-  const [undoStack, setUndoStack] = useState([]);
-  const isDraggingRef = useRef(false);
-  const paintValueRef = useRef("p");
-  const touchKeyRef = useRef(null);
-
-  useEffect(() => {
-    if (isDraggingRef.current) return;
-    // 드래그 중이 아닐 때 원격 트래커 변경을 로컬 편집 버퍼에 반영한다.
-    setLocalToday(normTrackerCells(tracker?.todayCells, TOTAL_CELLS));
-  }, [tracker?.todayCells]);
-
-  useEffect(() => {
-    if (isDraggingRef.current) return;
-    // 드래그 중이 아닐 때 원격 트래커 변경을 로컬 편집 버퍼에 반영한다.
-    setLocalTomorrow(normTrackerCells(tracker?.tomorrowCells, TOTAL_CELLS));
-  }, [tracker?.tomorrowCells]);
-
-  useEffect(() => {
-    // 원격 계획 변경을 읽기 전용 로컬 표시 버퍼에 반영한다.
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setLocalPlan(normTrackerCells(tracker?.planCells, TOTAL_CELLS));
-  }, [tracker?.planCells]);
-
-  const getIdx = (row, col) => row * CELLS_PER_HOUR + col;
-  const activeSetter = editMode === "today" ? setLocalToday : setLocalTomorrow;
-  const activeLocal = editMode === "today" ? localToday : localTomorrow;
-
-  function applyPaint(row, col, base) {
-    const idx = getIdx(row, col);
-    if (base[idx] === paintValueRef.current) return base;
-    const next = [...base];
-    next[idx] = paintValueRef.current;
-    return next;
-  }
-
-  function startDrag(row, col) {
-    setUndoStack((prev) => [...prev.slice(-9), { todayCells: [...localToday], tomorrowCells: [...localTomorrow] }]);
-    const idx = getIdx(row, col);
-    paintValueRef.current = activeLocal[idx] === selectedColor ? "" : selectedColor;
-    isDraggingRef.current = true;
-    activeSetter((prev) => applyPaint(row, col, prev));
-  }
-
-  function handleUndo() {
-    if (undoStack.length === 0) return;
-    const last = undoStack[undoStack.length - 1];
-    setUndoStack((prev) => prev.slice(0, -1));
-    setLocalToday(last.todayCells);
-    setLocalTomorrow(last.tomorrowCells);
-    if (onUpdate) onUpdate({ ...tracker, todayCells: last.todayCells, tomorrowCells: last.tomorrowCells });
-  }
-
-  function handleCellDown(e, row, col) {
-    if (readOnly) return;
-    e.preventDefault();
-    startDrag(row, col);
-  }
-
-  function handleCellEnter(row, col) {
-    if (!isDraggingRef.current || readOnly) return;
-    activeSetter((prev) => applyPaint(row, col, prev));
-  }
-
-  function commitDrag() {
-    if (!isDraggingRef.current) return;
-    isDraggingRef.current = false;
-    if (!onUpdate) return;
-    if (editMode === "today") {
-      setLocalToday((prev) => { onUpdate({ ...tracker, todayCells: prev }); return prev; });
-    } else {
-      setLocalTomorrow((prev) => { onUpdate({ ...tracker, tomorrowCells: prev }); return prev; });
-    }
-  }
-
-  function handleTouchStart(e, row, col) {
-    if (readOnly) return;
-    touchKeyRef.current = `${row}:${col}`;
-    startDrag(row, col);
-  }
-
-  function handleTouchMove(e) {
-    if (!isDraggingRef.current || readOnly) return;
-    e.preventDefault();
-    const touch = e.touches[0];
-    const el = document.elementFromPoint(touch.clientX, touch.clientY)?.closest("[data-tc]");
-    if (!el) return;
-    const key = el.dataset.tc;
-    if (key === touchKeyRef.current) return;
-    touchKeyRef.current = key;
-    const [r, c] = key.split(":").map(Number);
-    activeSetter((prev) => applyPaint(r, c, prev));
-  }
-
-  function editTime(field, label, current) {
-    if (readOnly) return;
-    const val = window.prompt(`${label} (예: 7:00)`, current || "");
-    if (val === null) return;
-    if (onUpdate) onUpdate({ ...tracker, [field]: val.trim() });
-  }
-
-  function handleLabelChange(row, value) {
-    if (readOnly) return;
-    if (editMode === "today") {
-      const newLabels = { ...(tracker?.labels ?? {}), [String(row)]: value };
-      if (onUpdate) onUpdate({ ...tracker, labels: newLabels });
-    } else {
-      const newTomorrowLabels = { ...(tracker?.tomorrowLabels ?? {}), [String(row)]: value };
-      if (onUpdate) onUpdate({ ...tracker, tomorrowLabels: newTomorrowLabels });
-    }
-  }
-
-  const activeLabels = editMode === "today" ? (tracker?.labels ?? {}) : (tracker?.tomorrowLabels ?? {});
-  // 오늘 탭에서만 계획 메모를 괄호로 참고 표시 (오늘 메모는 빈 칸에서 자유롭게 새로 적음)
-  const activePlanLabels = editMode === "today" ? (tracker?.planLabels ?? {}) : {};
-
-  const rows = Array.from({ length: HOURS }, (_, i) => ({
-    rowIdx: i,
-    hour: (startHour + i) % 24,
-  }));
-
-  const todayFilled = localToday.filter(Boolean).length;
-  const tomorrowFilled = localTomorrow.filter(Boolean).length;
-
-  return (
-    <div
-      className={`time-tracker${readOnly ? " read-only" : ""}`}
-      onMouseUp={commitDrag}
-      onMouseLeave={commitDrag}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={commitDrag}
-      onTouchCancel={commitDrag}
-    >
-      <div className="tracker-header">
-        <button
-          type="button"
-          className={`tracker-day-tab${editMode === "tomorrow" ? " active" : ""}`}
-          onClick={() => setEditMode("tomorrow")}
-        >
-          <span className="tracker-time-sub">내일 나는</span>
-          <span className="tracker-time-val">
-            {tracker?.tomorrowStart
-              ? <span onClick={(e) => { e.stopPropagation(); editTime("tomorrowStart", "내일 시작 시간", tracker?.tomorrowStart); }}>{tracker.tomorrowStart} <span className="tracker-time-sub">에 시작할 거야</span></span>
-              : <span className="tracker-time-sub tracker-time-empty" onClick={(e) => { e.stopPropagation(); editTime("tomorrowStart", "내일 시작 시간", tracker?.tomorrowStart); }}>시간 입력</span>}
-          </span>
-        </button>
-        <button
-          type="button"
-          className={`tracker-day-tab${editMode === "today" ? " active" : ""}`}
-          onClick={() => setEditMode("today")}
-        >
-          <span className="tracker-time-sub">오늘은</span>
-          <span className="tracker-time-val">
-            {tracker?.todayStart
-              ? <span onClick={(e) => { e.stopPropagation(); editTime("todayStart", "오늘 시작 시간", tracker?.todayStart); }}>{tracker.todayStart} <span className="tracker-time-sub">에 시작했어</span></span>
-              : <span className="tracker-time-sub tracker-time-empty" onClick={(e) => { e.stopPropagation(); editTime("todayStart", "오늘 시작 시간", tracker?.todayStart); }}>시간 입력</span>}
-            {tracker?.planStart && (
-              <span className="tracker-time-plan"> (계획 {tracker.planStart})</span>
-            )}
-          </span>
-        </button>
-      </div>
-
-      {!readOnly && (
-        <div className="tracker-mode-hint">
-          {editMode === "today"
-            ? "오늘 · 연함 = 어제 짠 계획, 진함 = 오늘 실행 (겹쳐 비교)"
-            : "내일 · 빈 트래커에 계획을 연하게 그려요 (하루 뒤 연한 그대로 '오늘'로 이동)"}
-        </div>
-      )}
-
-      {!readOnly && (
-        <div className="tracker-palette">
-          {TRACKER_PALETTE.map((p) => (
-            <button
-              key={p.id}
-              type="button"
-              className={`tracker-palette-dot${selectedColor === p.id ? " selected" : ""}`}
-              style={{ "--dot-color": p.color }}
-              onClick={() => setSelectedColor(p.id)}
-              aria-label={p.label}
-              title={p.label}
-            />
-          ))}
-          <button
-            type="button"
-            className="tracker-undo-btn"
-            onClick={handleUndo}
-            disabled={undoStack.length === 0}
-            title="실행취소"
-          >↩</button>
-        </div>
-      )}
-
-      <div className="tracker-grid" style={{ userSelect: "none", WebkitUserSelect: "none" }}>
-        {rows.map(({ rowIdx, hour }) => (
-          <div key={rowIdx} className="tracker-row">
-            <span className="tracker-hour">{String(hour).padStart(2, "0")}:00</span>
-            <div className="tracker-cells">
-              {Array.from({ length: CELLS_PER_HOUR }, (_, colIdx) => {
-                const idx = getIdx(rowIdx, colIdx);
-                // 색 규칙 고정: 연함=계획, 진함=실행.
-                // 오늘 탭: (전날 짠) 계획=연함 + 오늘 실행=진함 겹쳐 비교.
-                // 내일 탭: 빈 새 트래커에 내일 계획을 연하게 그림 (하루 뒤 연한 그대로 오늘 계획으로 이동).
-                const faintColor = editMode === "today" ? localPlan[idx] : localTomorrow[idx];
-                const solidColor = editMode === "today" ? localToday[idx] : "";
-                const faintBg = faintColor ? (TRACKER_COLOR_MAP[faintColor] ?? faintColor) : null;
-                const solidBg = solidColor ? (TRACKER_COLOR_MAP[solidColor] ?? solidColor) : null;
-                return (
-                  <div
-                    key={colIdx}
-                    className="tracker-cell"
-                    data-tc={`${rowIdx}:${colIdx}`}
-                    onMouseDown={(e) => handleCellDown(e, rowIdx, colIdx)}
-                    onMouseEnter={() => handleCellEnter(rowIdx, colIdx)}
-                    onTouchStart={(e) => { e.preventDefault(); handleTouchStart(e, rowIdx, colIdx); }}
-                  >
-                    {faintBg && (
-                      <div className="tracker-cell-layer tomorrow-layer" style={{ background: faintBg }} />
-                    )}
-                    {solidBg && (
-                      <div className="tracker-cell-layer today-layer" style={{ background: solidBg }} />
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-            {!readOnly ? (
-              <input
-                type="text"
-                className="tracker-label-input"
-                value={activeLabels[String(rowIdx)] || ""}
-                onChange={(e) => handleLabelChange(rowIdx, e.target.value)}
-                placeholder={
-                  activePlanLabels[String(rowIdx)]
-                    ? `(계획) ${activePlanLabels[String(rowIdx)]}`
-                    : "메모"
-                }
-                maxLength={20}
-              />
-            ) : (
-              activeLabels[String(rowIdx)] ? (
-                <span className="tracker-label-text">{activeLabels[String(rowIdx)]}</span>
-              ) : activePlanLabels[String(rowIdx)] ? (
-                <span className="tracker-label-text plan">
-                  (계획) {activePlanLabels[String(rowIdx)]}
-                </span>
-              ) : null
-            )}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
 
 /* ─────────────── MiniTodoList ─────────────── */
 function MiniTodoList({ todos }) {
