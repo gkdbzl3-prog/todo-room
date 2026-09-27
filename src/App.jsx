@@ -70,6 +70,7 @@ import {
   toggleChallengeItemDone,
 } from "./challengeProgress";
 import { buildCarryMerge, pickCarrySource, resetTodosForNewDay } from "./dailyCarry";
+import { mergeWeeklyForNewWeek, sameWeeklyTodos } from "./weeklyKeep";
 import { buildCertList } from "./todayCertList";
 /* ── 유틸 ── */
 // 새벽 2시 기준: 2시 이전이면 전날로 취급
@@ -108,15 +109,6 @@ function legacyWeekKey() {
   const day = d.getDay();
   d.setDate(d.getDate() - ((day + 6) % 7));
   return formatUtcDateKey(d);
-}
-
-function nextMondayLabel() {
-  const d = getEffectiveDate();
-  const day = d.getDay();
-  const daysUntilMon = (8 - day) % 7 || 7;
-  const next = new Date(d);
-  next.setDate(next.getDate() + daysUntilMon);
-  return `${next.getMonth() + 1}/${next.getDate()}(월)`;
 }
 
 // 이번 주(월~일)가 며칠 남았는지. 일요일이면 0 = 오늘이 마지막 날.
@@ -828,17 +820,9 @@ function isRoutineItemDone(item) {
   return !!item.done;
 }
 
-function carryWeeklyForNewWeek(todos) {
-  return (todos || [])
-    .filter((todo) => !todo.done)
-    .map((todo) => ({
-      ...todo,
-      done: false,
-      completedAt: null,
-    }));
-}
-
 const STALE_TODO_DAYS = 30;
+// 주간 목록을 이어받을 때 거슬러 볼 주 수. 한 주를 통째로 건너뛰어도 잃지 않는다.
+const WEEKLY_LOOKBACK_WEEKS = 5;
 const MS_PER_DAY = 24 * 60 * 60 * 1000;
 const GHOST_GRACE_MS = MS_PER_DAY;
 
@@ -2219,51 +2203,54 @@ export default function App() {
     };
   }, [uid, nicknameConfirmed, nickname, avatar, currentDayKey]);
 
-  /* ── 새 주 첫 진입 시 지난주 미완료 주간 투두 이어받기 ── */
+  /* ── 주가 바뀌어도 주간 투두를 그대로 이어받기 (초기화 없음) ── */
   useEffect(() => {
     if (!nicknameConfirmed || !uid) return;
     if (isLocalDevHost()) return;
 
-    const carryKey = `todoRoom_weeklyCarry_${uid}_${currentWeekKey}`;
+    // 예전 키(todoRoom_weeklyCarry_*)와 이름이 달라서 이번 주에 한 번 더 돈다.
+    // 2026-09-28 월요일 새벽 초기화로 빠진 지난주 완수 항목이 이 통로로 돌아온다.
+    const carryKey = `todoRoom_weeklyKeep_${uid}_${currentWeekKey}`;
     if (localStorage.getItem(carryKey) === "done") return;
 
     let cancelled = false;
 
     const carryOverWeekly = async () => {
       try {
-        const thisWeek = currentWeekKey;
-        const thisRef = doc(db, weeklyCol(thisWeek), uid);
+        const thisRef = doc(db, weeklyCol(currentWeekKey), uid);
         const thisSnap = await getDoc(thisRef);
-        const thisTodos = thisSnap.exists() ? thisSnap.data().todos || [] : [];
+        const thisData = thisSnap.exists() ? thisSnap.data() : null;
+        const thisTodos = thisData?.todos || [];
 
         if (cancelled) return;
-        if (thisTodos.length > 0) {
+
+        // 이번 주에 항목이 이미 있어도 멈추지 않는다 — 초기화가 미완수만 남겨둔
+        // 상태일 수 있어서, 지난주 목록과 병합해야 완수 기록이 돌아온다.
+        let sourceTodos = null;
+        let lookupWeek = currentWeekKey;
+        for (let i = 0; i < WEEKLY_LOOKBACK_WEEKS; i += 1) {
+          lookupWeek = previousWeekKeyFrom(lookupWeek);
+          const snap = await getDoc(doc(db, weeklyCol(lookupWeek), uid));
+          if (cancelled) return;
+          const todos = snap.exists() ? snap.data().todos || [] : [];
+          if (todos.length > 0) {
+            sourceTodos = todos;
+            break;
+          }
+        }
+
+        const merged = mergeWeeklyForNewWeek(sourceTodos, thisTodos);
+        if (sameWeeklyTodos(merged, thisTodos)) {
           localStorage.setItem(carryKey, "done");
           return;
         }
 
-        const prevWeek = previousWeekKeyFrom(thisWeek);
-        const prevSnap = await getDoc(doc(db, weeklyCol(prevWeek), uid));
-        const sourceData = prevSnap.exists() ? prevSnap.data() : null;
-
-        if (cancelled) return;
-        if (!sourceData) {
-          localStorage.setItem(carryKey, "done");
-          return;
-        }
-
-        const carry = carryWeeklyForNewWeek(sourceData.todos || []);
-        if (!carry.length) {
-          localStorage.setItem(carryKey, "done");
-          return;
-        }
-
-        pendingWeeklyTodosRef.current = carry;
-        setMyWeekly(carry);
+        pendingWeeklyTodosRef.current = merged;
+        setMyWeekly(merged);
         await writeSetDoc(thisRef, {
-          nickname: sourceData.nickname || nickname,
-          avatar: sourceData.avatar || avatar,
-          todos: carry,
+          nickname: thisData?.nickname || nickname,
+          avatar: thisData?.avatar || avatar,
+          todos: merged,
           updatedAt: serverTimestamp(),
         });
         localStorage.setItem(carryKey, "done");
@@ -3904,10 +3891,6 @@ export default function App() {
                   </span>
                 )}
               </h2>
-              <p className="reset-notice">
-                매주 월요일 새벽 2시에 초기화됩니다 · 다음 초기화: {nextMondayLabel()}
-              </p>
-
               <div className="todo-input-row">
                 <input
                   value={weeklyTodoText}
