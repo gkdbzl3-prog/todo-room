@@ -3602,12 +3602,17 @@ input:focus {
   gap: 8px;
   padding: 7px 10px;
   border-radius: 12px;
+  /* 아직 안 찍은 것에만 하얀 테두리를 둔다 — 완수한 줄과 한눈에 갈린다.
+     완수 줄도 같은 두께를 투명으로 두어 높이가 흔들리지 않게 한다. */
+  border: 1px solid rgba(255, 255, 255, 0.55);
   background: rgba(255, 255, 255, 0.1);
   font-size: 14px;
 }
 
 .cert-item.done {
-  opacity: 0.55;
+  opacity: 0.45;
+  border-color: transparent;
+  background: rgba(255, 255, 255, 0.04);
 }
 
 /* 보기 전용이라 체크박스처럼 보이면 안 된다 — 누를 수 있는 것으로 오해된다. */
