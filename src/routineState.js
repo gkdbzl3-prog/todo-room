@@ -80,3 +80,48 @@ export function getRoutineForStorageLoad({
 
   return { items, doneDate: currentDayKey };
 }
+
+/* ── "[집안일] 설거지" 입력 → 루틴 detail 예약 ──
+   오늘의 TO-DO와 미리 세우는 TO-DO가 같은 문법을 쓴다. 이름이 어느 루틴과도
+   안 맞으면 손대지 않는다 — 적은 그대로 평범한 투두가 된다.
+   쉬는 중(off)인 루틴은 detail을 넣어도 오늘 목록에 안 뜨므로 대상에서 뺀다. */
+export function parseRoutineTagInput(raw, routineItems) {
+  const input = (raw || "").trim();
+  const match = /^\[([^\]]+)\]\s*(.*)$/.exec(input);
+  if (!match) return { text: input };
+
+  const wanted = normalizeLabel(match[1]);
+  const rest = match[2].trim();
+  if (!wanted || !rest) return { text: input };
+
+  const routine = (Array.isArray(routineItems) ? routineItems : []).find(
+    (it) => !it?.off && normalizeLabel(it?.text) === wanted
+  );
+  if (!routine) return { text: input };
+
+  return { text: rest, routineId: routine.id, routineName: (routine.text || "").trim() };
+}
+
+/* 루틴 detail 뒤에 조각을 붙인다. detail의 구분자는 쉼표라 입력도 같은 규칙으로
+   쪼갠다. 이미 있는 조각과 부모 이름은 빼므로, 붙을 게 없으면 item을 그대로 둔다
+   (중복 입력이 끝낸 루틴을 미완료로 되돌리지 않게). */
+export function appendRoutineNoteParts(item, texts) {
+  const parts = parseRoutineNoteParts(item);
+  const seen = new Set(parts.map(normalizeLabel));
+  const ownName = normalizeLabel(item?.text);
+  let added = false;
+
+  (Array.isArray(texts) ? texts : [texts]).forEach((raw) => {
+    (raw || "").split(",").forEach((chunk) => {
+      const text = chunk.trim();
+      const key = normalizeLabel(text);
+      if (!key || key === ownName || seen.has(key)) return;
+      seen.add(key);
+      parts.push(text);
+      added = true;
+    });
+  });
+
+  if (!added) return { item, added: false };
+  return { item: recalcRoutineNoteState(item, parts), added: true };
+}

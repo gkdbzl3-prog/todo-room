@@ -37,15 +37,16 @@ import {
   getNicknameMatchCurrentTotal,
 } from "./memberIdentity";
 import {
+  appendRoutineNoteParts,
   getRoutineForStorageLoad,
   parseRoutineNoteParts,
+  parseRoutineTagInput,
   recalcRoutineNoteState,
   rolloverRoutineDone,
 } from "./routineState";
 import {
   applyTomorrowRoutineParts,
   formatRoutineTomorrowText,
-  parseRoutineTomorrowInput,
   splitTomorrowTodos,
 } from "./tomorrowRoutine";
 import { getOwnTodosFromRemote } from "./weeklyState";
@@ -135,6 +136,13 @@ function previousWeekKeyFrom(weekKeyValue) {
   const d = new Date(`${weekKeyValue}T12:00:00`);
   d.setDate(d.getDate() - 7);
   return formatLocalDateKey(d);
+}
+
+// 주가 시작되는 시각 = 월요일 새벽 2시 (하루 경계가 2시라 주 경계도 같다).
+// 주간 TO-DO에서 "이번 주에 끝낸 것"과 "지난주에 끝낸 것"을 가르는 기준이다.
+function weekStartMsFrom(weekKeyValue) {
+  const at = new Date(`${weekKeyValue}T02:00:00`).getTime();
+  return Number.isFinite(at) ? at : null;
 }
 
 function weekKeyForDate(dateKey) {
@@ -1911,6 +1919,26 @@ export default function App() {
     syncMyRoutine(next);
   };
 
+  /* 오늘의 TO-DO 입력에 "[집안일] 설거지"로 적은 조각 — 저장은 루틴의 detail 쪽에만 된다.
+     detail은 그대로 오늘 목록에 올라오므로 보이는 결과는 평범한 투두와 같고,
+     체크하면 부모 루틴도 같이 움직인다. (미리 세우는 TO-DO와 같은 통로) */
+  const addRoutineNotePart = (routineId, text) => {
+    const base = myRoutineRef.current || { items: [], doneDate: "" };
+    let added = false;
+    const items = (base.items || []).map((it) => {
+      // Firestore를 거치면 id가 숫자로도 문자열로도 돌아온다.
+      if (String(it?.id) !== String(routineId)) return it;
+      const appended = appendRoutineNoteParts(it, text);
+      if (appended.added) added = true;
+      return appended.item;
+    });
+    // 이미 같은 조각이 있으면 아무것도 쓰지 않는다 — 끝낸 루틴을 되돌리지 않기 위해.
+    if (!added) return;
+    const next = { ...base, items, doneDate: currentDayKey };
+    setMyRoutine(next);
+    syncMyRoutine(next);
+  };
+
   // Celebration pulse fires once when the LAST item is checked off
   // off로 꺼둔 루틴, 그리고 detail이 투두로 올라간 루틴은 카운트에서 제외
   // (후자는 올라간 투두 쪽에서 세므로 — 뱃지/완벽한 하루 계산에도 그대로 반영됨)
@@ -2203,14 +2231,14 @@ export default function App() {
     };
   }, [uid, nicknameConfirmed, nickname, avatar, currentDayKey]);
 
-  /* ── 주가 바뀌어도 주간 투두를 그대로 이어받기 (초기화 없음) ── */
+  /* ── 주가 바뀌면 완수한 주간 투두만 정리하고 나머지는 이어받기 ── */
   useEffect(() => {
     if (!nicknameConfirmed || !uid) return;
     if (isLocalDevHost()) return;
 
-    // 예전 키(todoRoom_weeklyCarry_*)와 이름이 달라서 이번 주에 한 번 더 돈다.
-    // 2026-09-28 월요일 새벽 초기화로 빠진 지난주 완수 항목이 이 통로로 돌아온다.
-    const carryKey = `todoRoom_weeklyKeep_${uid}_${currentWeekKey}`;
+    // 키 이름이 바뀌면 이번 주에 한 번 더 돈다. 규칙을 바꿀 때마다 새 이름을 쓴다 —
+    // 2026-10-05: 아무것도 안 버리던 동안 쌓인 완수 항목을 이 통로로 정리한다.
+    const carryKey = `todoRoom_weeklyReset_${uid}_${currentWeekKey}`;
     if (localStorage.getItem(carryKey) === "done") return;
 
     let cancelled = false;
@@ -2224,8 +2252,8 @@ export default function App() {
 
         if (cancelled) return;
 
-        // 이번 주에 항목이 이미 있어도 멈추지 않는다 — 초기화가 미완수만 남겨둔
-        // 상태일 수 있어서, 지난주 목록과 병합해야 완수 기록이 돌아온다.
+        // 이번 주에 항목이 이미 있어도 멈추지 않는다 — 이어받기가 돌기 전에
+        // 사용자가 적은 항목이 있을 수 있고, 지난주 완수 항목 정리도 해야 한다.
         let sourceTodos = null;
         let lookupWeek = currentWeekKey;
         for (let i = 0; i < WEEKLY_LOOKBACK_WEEKS; i += 1) {
@@ -2239,7 +2267,12 @@ export default function App() {
           }
         }
 
-        const merged = mergeWeeklyForNewWeek(sourceTodos, thisTodos);
+        // 지난주에 끝낸 항목은 여기서 빠진다. 이번 주에 체크한 건 남는다.
+        const merged = mergeWeeklyForNewWeek(
+          sourceTodos,
+          thisTodos,
+          weekStartMsFrom(currentWeekKey)
+        );
         if (sameWeeklyTodos(merged, thisTodos)) {
           localStorage.setItem(carryKey, "done");
           return;
@@ -2624,6 +2657,14 @@ export default function App() {
   const addDaily = () => {
     const text = todoText.trim();
     if (!text) return;
+    // "[집안일] 설거지"처럼 적으면 평범한 투두가 아니라 그 루틴의 detail로 들어간다.
+    // 이름이 어느 루틴과도 안 맞거나 쉬는 중이면 적은 그대로 투두가 된다.
+    const tagged = parseRoutineTagInput(text, myRoutineRef.current?.items);
+    if (tagged.routineId != null) {
+      addRoutineNotePart(tagged.routineId, tagged.text);
+      setTodoText("");
+      return;
+    }
     const next = [
       ...myDailyRef.current,
       { id: Date.now(), text, done: false, started: false, createdAt: Date.now() },
@@ -2649,7 +2690,7 @@ export default function App() {
   const addTomorrow = () => {
     // "[집안일] 빨래"처럼 적으면 그 루틴에 예약된다. 이름이 안 맞으면 평범한 투두다.
     // routineName은 표시용 스냅샷 — 나중에 루틴이 사라져도 뭘 가리켰는지는 남는다.
-    const parsed = parseRoutineTomorrowInput(tomorrowText, myRoutine.items);
+    const parsed = parseRoutineTagInput(tomorrowText, myRoutine.items);
     if (!parsed.text) return;
     const item = {
       ...parsed,
@@ -3723,7 +3764,7 @@ export default function App() {
                   value={todoText}
                   onChange={(e) => setTodoText(e.target.value)}
                   onKeyDown={(e) => e.key === "Enter" && addDaily()}
-                  placeholder="오늘 할일 입력"
+                  placeholder="오늘 할일 입력 (예: [집안일] 빨래)"
                 />
                 <button className="btn-add" onClick={addDaily}>
                   추가

@@ -1,4 +1,4 @@
-import { normalizeLabel, parseRoutineNoteParts, recalcRoutineNoteState } from "./routineState.js";
+import { appendRoutineNoteParts } from "./routineState.js";
 
 /* ── 미리 세우는 TO-DO → 루틴 detail ──
    루틴 detail은 적는 즉시 오늘 투두로 올라온다. 그래서 "내일 할 설거지"를 루틴에
@@ -12,26 +12,6 @@ export function formatRoutineTomorrowText(todo) {
   const text = (todo?.text || "").trim();
   if (!name) return text;
   return `[${name}] ${text}`;
-}
-
-/* "[집안일] 설거지"처럼 앞에 대괄호로 루틴 이름을 적으면 그 루틴에 예약한다.
-   이름이 어느 루틴과도 안 맞으면 손대지 않는다 — 적은 그대로 평범한 투두가 된다.
-   쉬는 중(off)인 루틴은 detail을 넣어도 오늘 목록에 안 뜨므로 대상에서 뺀다. */
-export function parseRoutineTomorrowInput(raw, routineItems) {
-  const input = (raw || "").trim();
-  const match = /^\[([^\]]+)\]\s*(.*)$/.exec(input);
-  if (!match) return { text: input };
-
-  const wanted = normalizeLabel(match[1]);
-  const rest = match[2].trim();
-  if (!wanted || !rest) return { text: input };
-
-  const routine = (Array.isArray(routineItems) ? routineItems : []).find(
-    (it) => !it?.off && normalizeLabel(it?.text) === wanted
-  );
-  if (!routine) return { text: input };
-
-  return { text: rest, routineId: routine.id, routineName: (routine.text || "").trim() };
 }
 
 export function splitTomorrowTodos(todos) {
@@ -75,26 +55,10 @@ export function applyTomorrowRoutineParts(routineItems, boundTodos) {
     const pending = pendingByRoutine.get(String(it?.id));
     if (!pending) return it;
 
-    const parts = parseRoutineNoteParts(it);
-    const seen = new Set(parts.map(normalizeLabel));
-    const ownName = normalizeLabel(it?.text);
-    let added = false;
-
-    pending.forEach((todo) => {
-      // detail의 구분자는 쉼표다. 예약 텍스트도 같은 규칙으로 쪼갠다.
-      (todo.text || "").split(",").forEach((chunk) => {
-        const text = chunk.trim();
-        const key = normalizeLabel(text);
-        if (!key || key === ownName || seen.has(key)) return;
-        seen.add(key);
-        parts.push(text);
-        added = true;
-      });
-    });
-
-    if (!added) return it;
+    const appended = appendRoutineNoteParts(it, pending.map((todo) => todo.text));
+    if (!appended.added) return it;
     changed = true;
-    return recalcRoutineNoteState(it, parts);
+    return appended.item;
   });
 
   return { items: changed ? items : safeItems, leftovers, changed };
