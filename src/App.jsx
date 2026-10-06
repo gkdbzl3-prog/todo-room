@@ -28,6 +28,13 @@ import {
   arrayRemove,
 } from "./firebase";
 import "./App.css";
+import {
+  choosePreferredRecord,
+  getTodoCount,
+  getUpdatedAtValue,
+  mergeDisplayMembers,
+  normalizeNickname,
+} from "./displayMembers.js";
 // 퀴즈 데이터셋(문제은행 JSON ~2MB)이 무거워, 퀴즈 탭을 열 때만 로드하도록 지연 로딩.
 const QuizHome = lazy(() => import("./quiz/QuizHome"));
 const QuizPlayer = lazy(() => import("./quiz/QuizPlayer"));
@@ -494,14 +501,6 @@ function pickClosestEvent(events) {
   return best ? { event: best, diff: bestDiff } : null;
 }
 
-function normalizeNickname(nickname) {
-  return nickname?.trim() || "";
-}
-
-function getTodoCount(todos) {
-  return Array.isArray(todos) ? todos.length : 0;
-}
-
 function getMemberTodoTotal(member) {
   return (
     getTodoCount(member?.todos) +
@@ -510,35 +509,10 @@ function getMemberTodoTotal(member) {
   );
 }
 
-function getUpdatedAtValue(updatedAt) {
-  if (!updatedAt) return 0;
-  if (typeof updatedAt === "number") return updatedAt;
-  if (typeof updatedAt.seconds === "number") return updatedAt.seconds;
-  return 0;
-}
-
 function hasSameNickname(record, nickname) {
   const normalizedNickname = normalizeNickname(nickname);
   const recordNickname = normalizeNickname(record?.nickname);
   return !!normalizedNickname && recordNickname === normalizedNickname;
-}
-
-function choosePreferredRecord(a, b, todoKey = "todos") {
-  if (!a) return b;
-  if (!b) return a;
-
-  const aTodoCount = getTodoCount(a[todoKey]);
-  const bTodoCount = getTodoCount(b[todoKey]);
-
-  if (aTodoCount !== bTodoCount) {
-    return bTodoCount > aTodoCount ? b : a;
-  }
-
-  if (!!a.avatar !== !!b.avatar) {
-    return b.avatar ? b : a;
-  }
-
-  return getUpdatedAtValue(b.updatedAt) > getUpdatedAtValue(a.updatedAt) ? b : a;
 }
 
 // 같은 id(=같은 사용자)의 주간 doc이 현재 weekKey와 legacy(UTC) weekKey 두 컬렉션에
@@ -722,53 +696,6 @@ function attachEvents(displayMembers, eventMembers) {
   });
 }
 
-function mergeDisplayMembers(dailyMembers, weeklyMembers) {
-  const merged = new Map();
-
-  dailyMembers.forEach((member) => {
-    const nicknameKey = normalizeNickname(member.nickname);
-    const key = nicknameKey ? `nick:${nicknameKey}` : `id:${member.id}`;
-    merged.set(key, {
-      ...member,
-      todos: member.todos || [],
-      weeklyTodos: [],
-      isMe: false,
-    });
-  });
-
-  weeklyMembers.forEach((member) => {
-    const nicknameKey = normalizeNickname(member.nickname);
-    const key = nicknameKey ? `nick:${nicknameKey}` : `id:${member.id}`;
-    const existing = merged.get(key);
-
-    if (!existing) {
-      merged.set(key, {
-        id: member.id,
-        nickname: member.nickname,
-        avatar: member.avatar,
-        todos: [],
-        weeklyTodos: member.todos || [],
-        isMe: false,
-      });
-      return;
-    }
-
-    const preferred = choosePreferredRecord(existing, member, "todos");
-    merged.set(key, {
-      ...existing,
-      id: preferred.id || existing.id,
-      nickname: preferred.nickname || existing.nickname,
-      avatar: existing.avatar || member.avatar || "",
-      weeklyTodos:
-        getTodoCount(existing.weeklyTodos) >= getTodoCount(member.todos)
-          ? existing.weeklyTodos
-          : member.todos || [],
-      isMe: false,
-    });
-  });
-
-  return Array.from(merged.values());
-}
 
 function chooseSelfRecord(records, uid, nickname, todoKey = "todos") {
   const selfCandidates = records.filter(
