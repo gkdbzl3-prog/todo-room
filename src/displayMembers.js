@@ -9,6 +9,33 @@ export function getTodoCount(todos) {
   return Array.isArray(todos) ? todos.length : 0;
 }
 
+const MS_PER_DAY = 24 * 60 * 60 * 1000;
+
+// "최근에 와 있었다"로 인정하는 기간. 멤버 카드를 띄울 근거이자 ghost 정리의
+// 보호 기간이다. 예전엔 24시간이었는데, 하루만 안 들어와도 카드가 사라져
+// 서로 뭘 하는지 안 보인다는 신고가 있었다. 이제 1주일.
+export const MEMBER_PRESENCE_GRACE_MS = 7 * MS_PER_DAY;
+
+// Firestore Timestamp / epoch millis / {seconds} 중 어느 모양으로 와도 밀리초로.
+export function getUpdatedAtMillis(updatedAt) {
+  if (!updatedAt) return null;
+  if (typeof updatedAt.toMillis === "function") return updatedAt.toMillis();
+  if (typeof updatedAt === "number") return updatedAt;
+  if (typeof updatedAt.seconds === "number") return updatedAt.seconds * 1000;
+  return null;
+}
+
+// 오늘 투두가 없는 멤버의 카드를 띄울 유일한 근거. updatedAt을 흘리면 영구히
+// false가 되므로 mergeDisplayMembers가 반드시 그 값을 들고 와야 한다.
+export function isMemberRecentlyActive(
+  member,
+  now = Date.now(),
+  graceMs = MEMBER_PRESENCE_GRACE_MS
+) {
+  const millis = getUpdatedAtMillis(member?.updatedAt);
+  return !!millis && now - millis < graceMs;
+}
+
 export function getUpdatedAtValue(updatedAt) {
   if (!updatedAt) return 0;
   if (typeof updatedAt === "number") return updatedAt;

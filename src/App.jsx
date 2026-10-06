@@ -32,6 +32,8 @@ import {
   choosePreferredRecord,
   getTodoCount,
   getUpdatedAtValue,
+  isMemberRecentlyActive,
+  MEMBER_PRESENCE_GRACE_MS,
   mergeDisplayMembers,
   normalizeNickname,
 } from "./displayMembers.js";
@@ -759,7 +761,6 @@ const STALE_TODO_DAYS = 30;
 // 주간 목록을 이어받을 때 거슬러 볼 주 수. 한 주를 통째로 건너뛰어도 잃지 않는다.
 const WEEKLY_LOOKBACK_WEEKS = 5;
 const MS_PER_DAY = 24 * 60 * 60 * 1000;
-const GHOST_GRACE_MS = MS_PER_DAY;
 
 // 1달(STALE_TODO_DAYS) 넘게 미완료인 항목은 제거. createdAt이 없는 레거시 항목은 now로 채워 새 시계 시작.
 function sweepStaleTodos(todos, now = Date.now()) {
@@ -1083,6 +1084,7 @@ export default function App() {
   const [historyWeeklyData, setHistoryWeeklyData] = useState(null);
   const [selectedDate, setSelectedDate] = useState(null);
   const ghostSweepRef = useRef("");
+  const presenceRef = useRef("");
   const [membersReadyKey, setMembersReadyKey] = useState("");
   // 데일리 리스너만 도착하면 true. 스켈레톤은 이걸 기준으로 걷어내
   // 위클리까지 안 기다리고 멤버 카드를 먼저 보여준다. (membersReady는 위클리 포함 완전 준비 상태)
@@ -2363,6 +2365,61 @@ export default function App() {
     syncDuplicateNicknameDocs,
   ]);
 
+  /* ── 진입 시 1회: 오늘 daily 문서를 만들어 "지금 와 있다"를 남긴다 ── */
+  // 멤버 카드의 존재 근거는 오늘 daily 문서다(6426759). 그런데 그 문서는 투두를
+  // 건드릴 때(syncMyDaily)나 이월할 게 있을 때(carryOverTodos)만 쓰였다. 그래서
+  // 어제 전부 완료한 사람이 오늘 앱을 열고 가만히 있으면 문서가 안 생겨, 본인도
+  // 남들 화면에도 카드가 안 떴다. 열기만 해도 문서를 남겨 그 구멍을 막는다.
+  useEffect(() => {
+    if (!nicknameConfirmed || !uid || !nickname) return;
+    // 이월이 끝난 뒤에 쓴다. 먼저 쓰면 carryOverTodos가 보는 todayTodos가
+    // 빈 배열로 보여 이월 판단이 틀어진다.
+    if (!dailyCarryReady) return;
+    if (isLocalDevHost()) return;
+
+    const presenceKey = `${uid}:${currentDayKey}`;
+    if (presenceRef.current === presenceKey) return;
+    presenceRef.current = presenceKey;
+
+    let cancelled = false;
+
+    void (async () => {
+      try {
+        const todayRef = doc(db, dailyCol(currentDayKey), uid);
+        const snap = await getDoc(todayRef);
+        if (cancelled) return;
+
+        if (snap.exists()) {
+          // todos는 건드리지 않는다. 여기서 배열을 덮어쓰면 방금 적은 항목이 날아간다.
+          await writeSetDoc(
+            todayRef,
+            { nickname, avatar, updatedAt: serverTimestamp() },
+            { merge: true }
+          );
+        } else {
+          await writeSetDoc(todayRef, {
+            nickname,
+            avatar,
+            todos: myDailyRef.current || [],
+            updatedAt: serverTimestamp(),
+          });
+        }
+
+        await writeSetDoc(doc(db, historyDatesCol(), currentDayKey), {
+          date: currentDayKey,
+        });
+      } catch (error) {
+        // 다음 진입에 다시 시도할 수 있게 가드를 푼다.
+        presenceRef.current = "";
+        console.error("Failed to mark today presence", error);
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [nicknameConfirmed, uid, nickname, avatar, currentDayKey, dailyCarryReady]);
+
   /* ── 실시간 리스너 ── */
   useEffect(() => {
     if (!nicknameConfirmed || !uid) return;
@@ -3440,16 +3497,7 @@ export default function App() {
     return 0;
   });
   const hasRoutineItems = (m) => (m?.routineItems?.length || 0) > 0;
-  const isRecentlyActive = (m) => {
-    const ts = m?.updatedAt;
-    const millis =
-      typeof ts?.toMillis === "function"
-        ? ts.toMillis()
-        : typeof ts === "number"
-          ? ts
-          : null;
-    return !!millis && Date.now() - millis < GHOST_GRACE_MS;
-  };
+  const isRecentlyActive = (m) => isMemberRecentlyActive(m);
   // 남의 카드는 "오늘 실제로 와 있다"는 근거가 있을 때만 띄운다.
   // 주간·내일 투두와 루틴 문서는 며칠씩 남아 있어서, 한참 안 들어온 사람도 계속
   // 멤버로 보이게 만들었다. 그 둘은 존재 근거에서 빼고 오늘 투두와 최근 updatedAt만 본다.
@@ -3505,8 +3553,14 @@ export default function App() {
 
           if (routineSnap.exists() && (routineSnap.data().items || []).length > 0) continue;
           if (tomSnap.exists() && (tomSnap.data().todos || []).length > 0) continue;
+          // 챌린지·이벤트도 내용이 있으면 지우지 않는다. getMemberTodoTotal은 이 둘을
+          // 세지 않아서 ghostCandidates를 통과해 버린다. 앱을 열기만 해도 오늘 daily
+          // 문서가 생기게 바뀐 뒤로는, 책장만 채워두고 투두는 안 쓰는 사람이 이 경로로
+          // 들어올 수 있다. 그 사람의 챌린지를 지우면 복구할 길이 없다.
+          if (chSnap.exists() && (chSnap.data().challenges || []).length > 0) continue;
+          if (evSnap.exists() && (evSnap.data().events || []).length > 0) continue;
 
-          // 24h 이내 업데이트된 doc이 하나라도 있으면 막 가입한 유저일 가능성 → skip
+          // 보호 기간(1주일) 안에 업데이트된 doc이 하나라도 있으면 → skip
           let lastActivity = 0;
           for (const snap of [dailySnap, tomSnap, evSnap, chSnap, routineSnap, ...weeklySnaps]) {
             if (!snap.exists()) continue;
@@ -3514,7 +3568,8 @@ export default function App() {
             const millis = typeof ts?.toMillis === "function" ? ts.toMillis() : null;
             if (millis && millis > lastActivity) lastActivity = millis;
           }
-          if (lastActivity && Date.now() - lastActivity < GHOST_GRACE_MS) continue;
+          if (lastActivity && Date.now() - lastActivity < MEMBER_PRESENCE_GRACE_MS)
+            continue;
         } catch (err) {
           console.warn("ghost verify failed", ghostId, err);
           continue;
@@ -3703,19 +3758,21 @@ export default function App() {
           {/* 멤버 패널 */}
           <section className="member-panel">
             <h2>MEMBERS</h2>
-            {!dailyReady && fallbackOtherMembers.length === 0 ? (
-              <div className="member-loading">
-                <div className="member-loading-card" />
-                <div className="member-loading-card" />
-                <div className="member-loading-card" />
-              </div>
-            ) : (
-              <div className="member-list">
-                {visibleMembers.map((m) => (
-                  <MemberCard key={m.id} member={m} currentDayKey={currentDayKey} />
-                ))}
-              </div>
-            )}
+            {/* 내 카드는 로딩 게이트 밖에 둔다. 예전엔 원격이 정착할 때까지 패널
+                전체를 스켈레톤으로 덮어, 데이터가 이미 로컬에 있는 본인 카드까지
+                안 보였다. 새 기기·캐시 지운 직후 다시 들어온 사람은 리스너가
+                늦거나 실패하면 자기 카드를 아예 못 본다. 남의 카드 자리만 기다린다. */}
+            <div className="member-list">
+              {visibleMembers.map((m) => (
+                <MemberCard key={m.id} member={m} currentDayKey={currentDayKey} />
+              ))}
+              {!dailyReady && fallbackOtherMembers.length === 0 && (
+                <>
+                  <div className="member-loading-card" />
+                  <div className="member-loading-card" />
+                </>
+              )}
+            </div>
           </section>
 
           {/* 내 투두 목록 */}
