@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import {
+  getTodoCount,
   getUpdatedAtValue,
   isMemberRecentlyActive,
   MEMBER_PRESENCE_GRACE_MS,
@@ -124,6 +125,107 @@ const ts = (iso) => ({ seconds: Math.floor(Date.parse(iso) / 1000) });
     true,
     "merged weekly-only member must still pass the grace check"
   );
+}
+
+// ── routines를 세 번째 근거로 ──
+// daily도 weekly도 없는 멤버는 아무리 최근에 와 있었어도 merge 결과에 아예
+// 들어오지 못해서 grace가 판단할 기회조차 없었다. 하루끝님이 사라진 실제 경로다.
+// 루틴 문서는 닉네임당 하나라 사람이 바뀌어도 남아 있고 updatedAt도 있다.
+{
+  const NOW = Date.parse("2026-10-12T00:00:00Z");
+
+  // 최근에 쓰인 루틴 문서만 있는 멤버 → 카드가 떠야 한다.
+  {
+    const members = mergeDisplayMembers(
+      [],
+      [],
+      [
+        {
+          id: "nick_%ED%95%98%EB%A3%A8%EB%81%9D",
+          nickname: "하루끝",
+          avatar: "🍀",
+          items: [{ id: "r1" }],
+          updatedAt: ts("2026-10-10T01:00:00Z"),
+        },
+      ],
+      NOW
+    );
+    assert.equal(members.length, 1, "recent routine doc alone must introduce the member");
+    assert.equal(members[0].nickname, "하루끝");
+    assert.equal(members[0].avatar, "🍀");
+    assert.deepEqual(members[0].todos, []);
+    assert.deepEqual(members[0].weeklyTodos, []);
+    assert.equal(isMemberRecentlyActive(members[0], NOW), true);
+    // id가 uid가 아니라 nick_ 꼴이다. ghost 정리가 이 id로 삭제를 돌면
+    // 남의 루틴 문서를 지우므로 반드시 표시가 남아 있어야 한다.
+    assert.equal(members[0].fromRoutineOnly, true);
+  }
+
+  // grace를 넘긴 루틴 문서는 멤버를 만들지 않는다. 루틴 문서는 영구히 남으므로
+  // 존재만으로 띄우면 떠난 사람이 영원히 방에 남는다.
+  {
+    const members = mergeDisplayMembers(
+      [],
+      [],
+      [{ id: "nick_old", nickname: "옛사람", items: [{ id: "r1" }], updatedAt: ts("2026-08-01T00:00:00Z") }],
+      NOW
+    );
+    assert.deepEqual(members, [], "stale routine doc must not introduce a member");
+  }
+
+  // updatedAt이 없는 루틴 문서도 근거가 없다. (구독이 그 필드를 안 담던 시절의 데이터)
+  {
+    const members = mergeDisplayMembers(
+      [],
+      [],
+      [{ id: "nick_x", nickname: "무근거", items: [{ id: "r1" }] }],
+      NOW
+    );
+    assert.deepEqual(members, [], "routine doc without updatedAt is no evidence");
+  }
+
+  // 이미 있는 멤버에게는 더 최근 쪽을 활동 시각으로 준다.
+  {
+    const [member] = mergeDisplayMembers(
+      [{ id: "u-haru", nickname: "하루끝", todos: [], updatedAt: ts("2026-09-20T00:00:00Z") }],
+      [],
+      [{ id: "nick_haru", nickname: "하루끝", items: [], updatedAt: ts("2026-10-10T01:00:00Z") }],
+      NOW
+    );
+    assert.equal(
+      getUpdatedAtValue(member.updatedAt),
+      getUpdatedAtValue(ts("2026-10-10T01:00:00Z")),
+      "routine updatedAt must win when it is newer"
+    );
+    // uid로 들어온 멤버는 그대로 uid를 유지해야 한다. ghost 정리가 쓰는 id다.
+    assert.equal(member.id, "u-haru");
+    assert.notEqual(member.fromRoutineOnly, true);
+  }
+
+  // 반대로 루틴이 더 오래됐으면 기존 값을 지킨다.
+  {
+    const [member] = mergeDisplayMembers(
+      [{ id: "u-haru", nickname: "하루끝", todos: [{ id: "t1" }], updatedAt: ts("2026-10-11T00:00:00Z") }],
+      [],
+      [{ id: "nick_haru", nickname: "하루끝", items: [], updatedAt: ts("2026-10-01T00:00:00Z") }],
+      NOW
+    );
+    assert.equal(
+      getUpdatedAtValue(member.updatedAt),
+      getUpdatedAtValue(ts("2026-10-11T00:00:00Z")),
+      "older routine updatedAt must not overwrite a newer one"
+    );
+    assert.equal(getTodoCount(member.todos), 1, "routine merge must not drop today's todos");
+  }
+
+  // 세 번째 인자를 안 주던 기존 호출은 그대로 동작해야 한다.
+  {
+    const members = mergeDisplayMembers(
+      [{ id: "u1", nickname: "갑", todos: [{ id: "t1" }], updatedAt: ts("2026-10-11T00:00:00Z") }],
+      []
+    );
+    assert.equal(members.length, 1);
+  }
 }
 
 console.log("display member merge tests passed");

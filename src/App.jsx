@@ -1605,6 +1605,9 @@ export default function App() {
           avatar: data.avatar || "",
           items: Array.isArray(data.items) ? data.items : [],
           doneDate: data.doneDate || "",
+          // mergeDisplayMembers가 루틴을 세 번째 존재 근거로 쓴다. 이 필드를
+          // 흘리면 grace가 영구히 false가 되어 넓힌 의미가 없어진다.
+          updatedAt: data.updatedAt || null,
         });
       });
       // 내 문서는 닉네임 기준으로 제외 (doc id가 더 이상 uid가 아님)
@@ -3458,7 +3461,14 @@ export default function App() {
       attachTomorrows(
         attachEvents(
           attachRoutines(
-            mergeDisplayMembers(members, weeklyMembers).filter((m) => !isSelfMember(m)),
+            // 루틴을 세 번째 인자로도 넘긴다. attachRoutines(바로 아래 인자)는
+            // 이미 있는 멤버에 루틴을 붙이기만 해서, daily/weekly 어디에도 없는
+            // 사람은 애초에 목록에 없었다. merge 쪽에서 들여와야 카드가 뜬다.
+            mergeDisplayMembers(
+              members,
+              weeklyMembers,
+              routineMembers.filter((m) => !isSelfMember(m))
+            ).filter((m) => !isSelfMember(m)),
             routineMembers.filter((m) => !isSelfMember(m)),
             currentDayKey
           ),
@@ -3513,6 +3523,10 @@ export default function App() {
       !member.isMe &&
       member.id &&
       member.id !== uid &&
+      // 루틴 문서만 근거로 들어온 멤버는 id가 uid가 아니라 `nick_<닉네임>`이다.
+      // 아래 정리 루틴은 그 id로 daily/weekly/routines/events/challenges 문서를
+      // 지우므로, 넣으면 남의 루틴 문서를 지운다.
+      !member.fromRoutineOnly &&
       getMemberTodoTotal(member) === 0 &&
       !hasRoutineItems(member) &&
       !isRecentlyActive(member)

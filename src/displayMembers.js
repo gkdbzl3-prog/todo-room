@@ -1,5 +1,14 @@
-// 멤버 카드 목록을 만드는 순수 로직. 오늘 daily 문서와 이번 주 weekly 문서를
-// 닉네임 기준으로 합친다.
+// 멤버 카드 목록을 만드는 순수 로직. 오늘 daily 문서, 이번 주 weekly 문서,
+// 그리고 루틴 문서를 닉네임 기준으로 합친다.
+//
+// 루틴을 세 번째 근거로 넣은 이유: daily도 weekly도 없는 멤버는 아무리 최근에
+// 와 있었어도 이 목록에 아예 들어오지 못해서 grace가 판단할 기회조차 없었다.
+// 하루끝님 카드가 사라진 실제 경로다(2026-10-12). 루틴 문서는 닉네임당 하나라
+// 날짜가 바뀌어도 남아 있고 updatedAt도 있다.
+//
+// 다만 루틴 문서는 영구히 남으므로 "존재한다"만으로 띄우면 떠난 사람이 영원히
+// 방에 남는다. 그래서 들여올 때 grace를 먼저 통과시킨다 — 근거는 items가
+// 있다는 사실이 아니라 updatedAt이다.
 
 export function normalizeNickname(nickname) {
   return nickname?.trim() || "";
@@ -65,7 +74,12 @@ export function choosePreferredRecord(a, b, todoKey = "todos") {
   return getUpdatedAtValue(b.updatedAt) > getUpdatedAtValue(a.updatedAt) ? b : a;
 }
 
-export function mergeDisplayMembers(dailyMembers, weeklyMembers) {
+export function mergeDisplayMembers(
+  dailyMembers,
+  weeklyMembers,
+  routineMembers = [],
+  now = Date.now()
+) {
   const merged = new Map();
 
   dailyMembers.forEach((member) => {
@@ -115,6 +129,42 @@ export function mergeDisplayMembers(dailyMembers, weeklyMembers) {
         getUpdatedAtValue(member.updatedAt) > getUpdatedAtValue(existing.updatedAt)
           ? member.updatedAt
           : existing.updatedAt,
+      isMe: false,
+    });
+  });
+
+  // 루틴은 투두를 주지 않는다. 활동 시각만 보태고, daily/weekly 어디에도 없는
+  // 사람은 grace를 통과할 때만 새로 들여온다.
+  (routineMembers || []).forEach((member) => {
+    const nicknameKey = normalizeNickname(member.nickname);
+    const key = nicknameKey ? `nick:${nicknameKey}` : `id:${member.id}`;
+    const existing = merged.get(key);
+
+    if (existing) {
+      // 비교는 getUpdatedAtMillis로 한다. 세 가지 모양(Timestamp/숫자/{seconds})을
+      // 모두 밀리초로 맞춰주는 쪽이라 단위가 섞이지 않는다.
+      const next = getUpdatedAtMillis(member.updatedAt);
+      const prev = getUpdatedAtMillis(existing.updatedAt);
+      if (next && (!prev || next > prev)) {
+        merged.set(key, { ...existing, updatedAt: member.updatedAt });
+      }
+      return;
+    }
+
+    if (!isMemberRecentlyActive(member, now)) return;
+
+    merged.set(key, {
+      id: member.id,
+      nickname: member.nickname,
+      avatar: member.avatar || "",
+      todos: [],
+      weeklyTodos: [],
+      updatedAt: member.updatedAt,
+      // 루틴 문서 id는 uid가 아니라 `nick_<인코딩된 닉네임>`이다. ghost 정리는
+      // 이 id로 daily/weekly/routines/events/challenges 문서를 지우므로, 그 경로에
+      // 이 멤버가 들어가면 남의 루틴 문서를 지운다. 호출하는 쪽이 걸러낼 수 있게
+      // 표시를 남긴다.
+      fromRoutineOnly: true,
       isMe: false,
     });
   });
