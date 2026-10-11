@@ -12,9 +12,13 @@ export function getTodoCount(todos) {
 const MS_PER_DAY = 24 * 60 * 60 * 1000;
 
 // "최근에 와 있었다"로 인정하는 기간. 멤버 카드를 띄울 근거이자 ghost 정리의
-// 보호 기간이다. 예전엔 24시간이었는데, 하루만 안 들어와도 카드가 사라져
-// 서로 뭘 하는지 안 보인다는 신고가 있었다. 이제 1주일.
-export const MEMBER_PRESENCE_GRACE_MS = 7 * MS_PER_DAY;
+// 보호 기간이다. 24시간 → 1주일 → 한 달로 늘려왔다.
+//
+// 1주일도 짧았다. 하루끝님이 2026-10-06부터 엿새 동안 접속을 못 하는 사이
+// 주가 바뀌었고, 멤버 목록이 읽는 두 곳(오늘 daily, 이번 주 weekly) 모두에서
+// 빠지면서 카드가 사라졌다. 며칠 바쁜 사람이 방에서 지워진 것처럼 보이는 게
+// 이 앱에서는 데이터가 좀 오래 남는 것보다 나쁘다.
+export const MEMBER_PRESENCE_GRACE_MS = 30 * MS_PER_DAY;
 
 // Firestore Timestamp / epoch millis / {seconds} 중 어느 모양으로 와도 밀리초로.
 export function getUpdatedAtMillis(updatedAt) {

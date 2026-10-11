@@ -82,20 +82,23 @@ const ts = (iso) => ({ seconds: Math.floor(Date.parse(iso) / 1000) });
   assert.deepEqual(member.weeklyTodos, []);
 }
 
-// grace는 1주일. 하루만 안 들어와도 카드가 사라지면 안 된다.
+// grace는 한 달. 1주일이었을 때 하루끝님이 엿새 접속을 못 한 사이 주가 바뀌며
+// 카드가 사라졌다. 며칠 바쁜 사람이 방에서 지워진 것처럼 보이지 않게 넉넉히 둔다.
 {
   const MS_PER_DAY = 24 * 60 * 60 * 1000;
-  assert.equal(MEMBER_PRESENCE_GRACE_MS, 7 * MS_PER_DAY, "grace must be one week");
+  assert.equal(MEMBER_PRESENCE_GRACE_MS, 30 * MS_PER_DAY, "grace must be one month");
 
   const now = Date.parse("2026-10-06T11:03:00Z");
   const at = (iso) => ({ updatedAt: ts(iso) });
 
   // 하루끝님이 사라진 그 시점. 19시간 전 활동 → 보여야 한다.
   assert.equal(isMemberRecentlyActive(at("2026-10-05T15:42:25Z"), now), true);
-  // 6일 전도 아직 1주일 안쪽.
-  assert.equal(isMemberRecentlyActive(at("2026-09-30T11:03:00Z"), now), true);
-  // 1주일을 막 넘기면 숨는다.
-  assert.equal(isMemberRecentlyActive(at("2026-09-29T11:02:00Z"), now), false);
+  // 예전 기준(1주일)을 넘긴 8일 전도 이제는 보인다.
+  assert.equal(isMemberRecentlyActive(at("2026-09-28T11:03:00Z"), now), true);
+  // 29일 전도 아직 한 달 안쪽.
+  assert.equal(isMemberRecentlyActive(at("2026-09-07T11:03:00Z"), now), true);
+  // 한 달을 막 넘기면 숨는다.
+  assert.equal(isMemberRecentlyActive(at("2026-09-06T11:02:00Z"), now), false);
   // updatedAt이 없으면 근거가 없다.
   assert.equal(isMemberRecentlyActive({}, now), false);
   assert.equal(isMemberRecentlyActive(null, now), false);
@@ -105,7 +108,7 @@ const ts = (iso) => ({ seconds: Math.floor(Date.parse(iso) / 1000) });
     isMemberRecentlyActive({ updatedAt: { toMillis: () => now - MS_PER_DAY } }, now),
     true
   );
-  assert.equal(isMemberRecentlyActive({ updatedAt: now - 8 * MS_PER_DAY }, now), false);
+  assert.equal(isMemberRecentlyActive({ updatedAt: now - 31 * MS_PER_DAY }, now), false);
 }
 
 // weekly-only 멤버가 merge를 통과한 뒤에도 grace 판정이 살아 있어야 한다.
