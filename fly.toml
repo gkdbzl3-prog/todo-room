@@ -1,3 +1,8 @@
+# ⚠️ 쓰이지 않는 설정이다. 2026-10-12 기준 본체는 Firebase Hosting이고,
+#    이 fly 앱(todo-room)은 deploy/fly-redirect의 리다이렉트를 돌리고 있다.
+#    여기서 `flyctl deploy`를 돌리면 그 리다이렉트가 덮어써져 옛 주소가
+#    다시 죽는다. fly를 본체로 되돌릴 때만 이 파일을 쓴다.
+#
 # fly.toml app configuration file generated for todo-room on 2026-04-30T14:30:02+09:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.

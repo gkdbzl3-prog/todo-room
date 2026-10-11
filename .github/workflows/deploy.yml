@@ -1,5 +1,9 @@
-name: Fly Deploy
+name: Deploy
 
+# 본체는 Firebase Hosting(https://todo-room-dfb69.web.app)이다.
+# 옛 fly 주소(todo-room.fly.dev)는 deploy/fly-redirect가 301로 넘겨주기만 하며,
+# 바뀌는 일이 없어서 CI가 건드리지 않는다. 손으로 고칠 때만 그 디렉터리에서
+# `flyctl deploy`를 돌린다. 여기서 fly로 배포하면 그 리다이렉트를 덮어쓴다.
 on:
   push:
     branches:
@@ -20,7 +24,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Validate Firebase build env
+      - name: Validate deploy secrets
         env:
           VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
           VITE_FIREBASE_AUTH_DOMAIN: ${{ secrets.VITE_FIREBASE_AUTH_DOMAIN }}
@@ -29,6 +33,7 @@ jobs:
           VITE_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.VITE_FIREBASE_MESSAGING_SENDER_ID }}
           VITE_FIREBASE_APP_ID: ${{ secrets.VITE_FIREBASE_APP_ID }}
           VITE_FIREBASE_MEASUREMENT_ID: ${{ secrets.VITE_FIREBASE_MEASUREMENT_ID }}
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
         run: |
           missing=0
           for key in \
@@ -38,7 +43,8 @@ jobs:
             VITE_FIREBASE_STORAGE_BUCKET \
             VITE_FIREBASE_MESSAGING_SENDER_ID \
             VITE_FIREBASE_APP_ID \
-            VITE_FIREBASE_MEASUREMENT_ID
+            VITE_FIREBASE_MEASUREMENT_ID \
+            FIREBASE_SERVICE_ACCOUNT
           do
             if [ -z "${!key}" ]; then
               echo "::error::Missing GitHub secret: $key"
@@ -46,6 +52,7 @@ jobs:
             fi
           done
           if [ "$missing" -ne 0 ]; then
+            echo "::error::배포 중단. 조용히 넘어가면 '푸시했으니 배포됐다'고 착각하게 된다."
             exit 1
           fi
 
@@ -61,8 +68,22 @@ jobs:
           VITE_FIREBASE_MEASUREMENT_ID=${{ secrets.VITE_FIREBASE_MEASUREMENT_ID }}
           EOF
 
-      - uses: superfly/flyctl-actions/setup-flyctl@master
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 12
 
-      - run: flyctl deploy --remote-only
-        env:
-          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm build
+
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          projectId: todo-room-dfb69
+          channelId: live

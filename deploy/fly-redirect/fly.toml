@@ -1,0 +1,18 @@
+# 옛 주소를 살려두기만 하는 구성. 본체는 Firebase Hosting이다.
+#
+# min_machines_running = 0 + auto_start: 평소엔 머신이 꺼져 있고 요청이 오면
+# 깨어난다. nginx라 콜드 스타트가 1초 안쪽이고, 켜져 있는 시간만 과금되므로
+# 예전 구성(min 1 / 1GB)과 달리 사실상 공짜다.
+app = 'todo-room'
+primary_region = 'nrt'
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+
+[[vm]]
+  memory = '256mb'
+  cpus = 1
