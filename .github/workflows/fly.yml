@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  # 코드 변화 없이 다시 배포해야 할 때를 위한 수동 트리거.
+  # fly 앱이 사라져 재생성한 뒤처럼, 푸시할 커밋이 없는데 배포는 필요한 경우가 있다.
+  workflow_dispatch:
 
 jobs:
   deploy:
